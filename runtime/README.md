@@ -129,9 +129,11 @@ reasoning:
 
 ```
 Memory=false · Tools=true · Planning=true · Domain=true (→ praesidium)
-R2 → smallest sufficient rung: subagent (stopped before swarm)
+R2 → smallest sufficient rung: plan
 R11 → frontier: high-stakes domain (security) — reserved for money and security calls
 ```
+
+The local runner executes one agent loop. A serial plan with tool calls does not create subagents or earn the frontier tier by itself. Agent-engineering requests can load Cohors as guidance; delegation is a capability of the enclosing harness, not an executor supplied by this runner. Keyword routing is a deterministic approximation and can miss intent; the printed classification is inspectable rather than a guarantee of cross-harness routing parity.
 
 Then the routed `SKILL.md` contracts are **read off disk and handed to the model**,
 verbatim from the files the provenance seal covers. In a harness like Claude Code the

@@ -3,9 +3,8 @@
 // ambiguity, architecture, security, money, irreversibility).
 //
 // Heuristic and inspectable on purpose: no model call, no network, fully deterministic,
-// and it prints its reasoning. The same classification the fabius router rule (R1)
-// specifies, so a task routed on this machine lands on the same specialist it would
-// land on inside any harness that loads the plugin.
+// and it prints its reasoning. It approximates the fabius routing contract (R1);
+// keyword matches are inspectable hints, not semantic equivalence to every harness.
 
 import { PROVIDERS, resolveModel, overrideModel, availableProviders } from './providers.mjs';
 import { loadConfig } from './config.mjs';
@@ -19,6 +18,8 @@ const SIG = {
     'חפש*', 'בדוק*', 'קרא*', 'הרץ*', 'התקן*', 'פרוס*', 'משוך*', 'שאילת*', 'חשב*', 'סרוק*', 'מסד נתונים', 'קובץ'],
   discipline: ['build', 'implement', 'fix', 'refactor', 'debug', 'patch', 'run tests', 'write tests', 'test the code', 'review the code',
     'בנה', 'בנו', 'יישם*', 'ממש*', 'תקן*', 'רפקטור*', 'דבג*', 'כתוב בדיקות', 'הרץ בדיקות', 'בדוק את הקוד'],
+  architecture: ['software architecture', 'code architecture', 'codebase architecture', 'system design', 'dependency graph', 'module boundaries',
+    'ארכיטקטורת תוכנה', 'תכנון מערכת', 'גרף תלויות', 'גבולות מודולים'],
   planning: ['plan', 'steps', 'roadmap', 'orchestrate*', 'pipeline', 'workflow', 'phase', 'milestone', 'sequence', 'then', 'first', 'multi-agent',
     'תכנן*', 'תכנית', 'תוכנית', 'שלבים', 'מפת דרכים', 'תזמר*', 'תהליך עבודה', 'זרימת עבודה', 'מקצה לקצה', 'אחר כך', 'ואז', 'במקביל'],
   strong: ['architecture', 'architect*', 'security', 'threat', 'vuln*', 'crypto', 'auth', 'oauth', 'design system', 'migration', 'irreversible', 'delete', 'production', 'strategy', 'ambiguous', 'trade-off', 'tradeoff', 'why', 'should we', 'decide', 'choose between', 'risk', 'legal', 'payment', 'money',
@@ -36,11 +37,11 @@ const DOMAIN = {
     'עיצוב', 'עצב*', 'ממשק', 'דף נחיתה', 'רכיב', 'מותג', 'פריסה', 'תרשים', 'גרף', 'דשבורד', 'ויזואל*'],
   'fabius-cohors': ['build an agent', 'agent system', 'agent architecture', 'agent workflow', 'agent orchestration', 'orchestrate agents', 'subagent', 'swarm', 'multi-agent',
     'בנה סוכן', 'מערכת סוכנים', 'ארכיטקטורת סוכנים', 'זרימת סוכנים', 'תת סוכן', 'תתי סוכנים', 'נחיל סוכנים', 'תזמור סוכנים'],
-  'fabius-archivum': ['knowledge base', 'wiki', 'memory', 'מאגר ידע', 'ויקי', 'זיכרון'],
+  'fabius-archivum': ['knowledge base', 'wiki', 'memory', 'מאגר ידע', 'ויקי', 'לוויקי', 'זיכרון'],
   'fabius-mercatus': ['copy', 'positioning', 'launch', 'campaign', 'funnel', 'market*', 'headline', 'go-to-market', 'seo', 'advertising', 'landing copy',
     'קופי', 'מיצוב', 'השקה', 'קמפיין', 'משפך', 'שיווק', 'כותרת שיווקית', 'פרסום'],
   'fabius-praesidium': ['secure*', 'security', 'threat', 'vuln*', 'security audit', 'harden*', 'owasp', 'stride', 'xss', 'injection', 'pentest', 'recon', 'attack surface', 'security headers', 'tls', 'certificate', 'dmarc', 'spf', 'dnssec', 'signature verification',
-    'אבטחה', 'אבטח*', 'איום', 'חולשה', 'ביקורת אבטחה', 'הקשח*', 'בדיקת חדירות', 'שטח תקיפה', 'כותרות אבטחה', 'תעודה', 'אימות חתימה'],
+    'אבטחה', 'האבטחה', 'אבטח*', 'איום', 'חולשה', 'ביקורת אבטחה', 'הקשח*', 'בדיקת חדירות', 'שטח תקיפה', 'כותרות אבטחה', 'תעודה', 'אימות חתימה'],
   'fabius-ludus': ['game', 'gameplay', 'playable', 'sprite', 'level design', 'platformer', 'משחק', 'משחקיות', 'ספרייט', 'עיצוב שלב'],
   'fabius-catena': ['smart contract', 'on-chain', 'onchain', 'crypto wallet', 'solidity', 'solana', 'evm', 'token mint', 'blockchain transaction', 'transaction signing', 'blockchain seal', 'provenance anchor', 'blockchain', 'foundry', 'eip-712',
     'חוזה חכם', 'בלוקציין', 'בלוקצ׳יין', 'ארנק קריפטו', 'עסקה בשרשרת', 'חתימת עסקה', 'הטבעת טוקן'],
@@ -93,7 +94,7 @@ function hitSpans(text, words) {
   const t = String(text || '').toLowerCase();
   const out = [];
   for (const w of words) {
-    const rx = new RegExp(kwRx(w).source, 'g');
+    const rx = new RegExp(kwRx(w).source, 'gu');
     for (let m = rx.exec(t); m; m = rx.exec(t)) {
       out.push({ w, start: m.index, end: m.index + m[0].length });
       if (m.index === rx.lastIndex) rx.lastIndex++;   // zero-width guard
@@ -108,6 +109,7 @@ export function route(task, opts = {}) {
   const words = text.split(/\s+/).filter(Boolean).length;
   const mem = countHits(text, SIG.memory), tool = countHits(text, SIG.tools), plan = countHits(text, SIG.planning);
   const discipline = countHits(text, SIG.discipline);
+  const architecture = hitSpans(text, SIG.architecture);
   const longText = words > 60;
   const freshEyes = /\b(incident|breach|outage|vulnerab\w*|exploit|threat.?model|security|forensic|data.?loss|rollback|postmortem|recon|error recovery)\b/i.test(text)
     || /(אירוע אבטחה|אבטחה|פריצה|השבתה|חולש\w*|ניצול חולשה|מודל איומים|חקירה פורנזית|אובדן מידע|שחזור מתקלה|פוסט.?מורטם)/u.test(text);
@@ -116,7 +118,7 @@ export function route(task, opts = {}) {
   // fresh-eyes routes override even that request and stay off.
   const recall = freshEyes ? 'off' : (mem.n > 0 ? 'normal' : 'off');
   const recallReason = freshEyes ? 'fresh-eyes' : (mem.n > 0 ? 'explicit-signal' : 'no-signal');
-  const axes = { memory: mem.n > 0 && recall !== 'off', tools: tool.n > 0 || discipline.n > 0, planning: plan.n > 0 || longText };
+  const axes = { memory: mem.n > 0 && recall !== 'off', tools: tool.n > 0 || discipline.n > 0, planning: plan.n > 0 || architecture.length > 0 || longText };
 
   // Longest-match-wins, judged POSITIONALLY. A word boundary cannot stop a key firing inside a
   // longer phrase another layer owns — 'market' sits inside fortuna's 'the market', 'design'
@@ -128,7 +130,9 @@ export function route(task, opts = {}) {
     const s = hitSpans(text, DOMAIN[layer]);
     if (s.length) spans[layer] = s;
   }
-  const allSpans = Object.values(spans).flat();
+  // Architecture is a process concern. Its exact phrases suppress only contained
+  // visual keywords ('design', 'graph'), never a separate UI request elsewhere.
+  const allSpans = [...Object.values(spans).flat(), ...architecture];
   const swallowed = (h) => allSpans.some((o) =>
     (o.end - o.start) > (h.end - h.start) && o.start <= h.start && o.end >= h.end);
   const domains = Object.keys(spans).filter((layer) => spans[layer].some((h) => !swallowed(h)));
@@ -150,7 +154,8 @@ export function route(task, opts = {}) {
   if (axes.tools) climb('tool');
   if (axes.memory) climb('retrieval');
   if (axes.planning) climb('plan');
-  if (axes.planning && axes.tools) climb('subagent');
+  // Planning with tools does not imply independent work. The local loop exposes
+  // no delegation executor, so even agent-engineering tasks stay at this rung.
   const rungIndex = LADDER.indexOf(rung);
 
   const strong = countHits(text, SIG.strong), fast = countHits(text, SIG.fast);
@@ -170,11 +175,11 @@ export function route(task, opts = {}) {
   const domainStrong = domains.some((d) => DOMAIN_STRONG.includes(d));
 
   let tier = 'mid', tierWhy;
-  if (strong.n > 0 || ambiguous || rung === 'subagent' || domainStrong) {
+  if (strong.n > 0 || architecture.length > 0 || ambiguous || domainStrong) {
     tier = 'frontier';
     tierWhy = strong.n > 0 ? `strong-tier signal (${strong.matched.slice(0, 3).join(', ')}) — R11 reserves frontier for ambiguity/architecture/security/irreversible`
       : domainStrong ? `high-stakes domain (${domains.filter((d) => DOMAIN_STRONG.includes(d)).join(', ')}) — R11 reserves frontier for money/security calls`
-      : rung === 'subagent' ? 'work splits across agents — lead reasoning needs the strong tier'
+      : architecture.length > 0 ? `software architecture (${architecture.map((h) => h.w).slice(0, 3).join(', ')}) — R11 reserves frontier for architecture decisions`
       : 'ambiguous request — resolve with the strong tier';
   } else if (fast.n > 0 && !axes.planning && !axes.tools && !axes.domain) {
     tier = 'fast'; tierWhy = `mechanical/contracted work (${fast.matched.slice(0, 3).join(', ')}) — R11 cheap tier`;
@@ -195,7 +200,7 @@ export function route(task, opts = {}) {
     available, fireable: !!resolved,
     rationale: {
       classify: `Memory=${axes.memory} · Tools=${axes.tools} · Planning=${axes.planning} · Domain=${axes.domain} · Recall=${recall}(${recallReason})` +
-        ` (mem:${mem.n} tool:${tool.n} plan:${plan.n} process:${discipline.n}${longText ? ' +long' : ''}${domains.length ? ' → ' + domains.map((d) => d.replace('fabius-', '')).join(', ') : ''})`,
+        ` (mem:${mem.n} tool:${tool.n} plan:${plan.n} process:${discipline.n}${architecture.length ? ' +architecture' : ''}${longText ? ' +long' : ''}${domains.length ? ' → ' + domains.map((d) => d.replace('fabius-', '')).join(', ') : ''})`,
       ladder: `R2 → smallest sufficient rung: ${rung} (stopped before ${LADDER[Math.min(rungIndex + 1, LADDER.length - 1)]})`,
       tier: `R11 → ${tier}: ${tierWhy}`,
       select: resolved

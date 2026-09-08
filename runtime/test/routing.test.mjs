@@ -18,9 +18,72 @@ test('Hebrew routing exercises the same axes and owners as English', () => {
     assert.equal(r.rung, rung, task);
   }
   const broad = route('הרץ בדיקות על הריפו ותכנן שיפור מקצה לקצה', { cfg: CFG });
-  assert.equal(broad.rung, 'subagent');
+  assert.equal(broad.rung, 'plan', 'a plan with tools does not establish independent agent work');
   assert.ok(!broad.layers.includes('fabius-cohors'), 'using tools is machinery, not agent-engineering ownership');
   assert.ok(broad.layers.includes('fabius-disciplina'));
+});
+
+test('serial steps stay on the planning rung without buying the frontier tier', () => {
+  for (const task of [
+    'first read the file then summarize it',
+    'fix the typo then run tests',
+    'הרץ בדיקות ואז סכם את הפלט',
+  ]) {
+    const r = route(task, { cfg: CFG });
+    assert.equal(r.rung, 'plan', task);
+    assert.equal(r.tier, 'mid', task);
+    assert.ok(!r.layers.includes('fabius-cohors'), task);
+    assert.doesNotMatch(r.rationale.tier, /work splits across agents/);
+  }
+
+  const agents = route('plan a multi-agent architecture then build an agent system', { cfg: CFG });
+  assert.ok(agents.layers.includes('fabius-cohors'), 'agent engineering remains a domain');
+  assert.equal(agents.rung, 'plan', 'the local loop has no delegation executor');
+  assert.equal(agents.tier, 'frontier', 'architecture, not delegation, earns the strong tier');
+});
+
+test('domain keywords keep Unicode boundaries when searching every occurrence', () => {
+  for (const task of [
+    'explain gametes',
+    'summarize the endgame',
+    'discuss graphology',
+    'compare chartreuse paint',
+    'copyediting a letter',
+    'xgame',
+    'game9',
+    'game_test',
+    'משחקים',
+    'תיקון',
+  ]) {
+    assert.deepEqual(route(task, { cfg: CFG }).domains, [], task);
+  }
+  assert.deepEqual(route('make a game', { cfg: CFG }).domains, ['fabius-ludus']);
+  assert.deepEqual(route('משחק', { cfg: CFG }).domains, ['fabius-ludus']);
+  assert.deepEqual(route('visualize the figures', { cfg: CFG }).domains, ['fabius-decor'], 'intentional stems still match');
+});
+
+test('software architecture belongs to process while separate visual work keeps its owner', () => {
+  for (const task of [
+    'review the software architecture',
+    'plan the system design',
+    'review the dependency graph',
+    'review module boundaries',
+    'בדוק ארכיטקטורת תוכנה',
+    'בדוק גרף תלויות',
+  ]) {
+    const r = route(task, { cfg: CFG });
+    assert.ok(r.layers.includes('fabius-disciplina'), task);
+    assert.ok(!r.domains.includes('fabius-decor'), task);
+    assert.ok(!r.domains.includes('fabius-cohors'), task);
+    assert.equal(r.rung, 'plan', task);
+    assert.equal(r.tier, 'frontier', task);
+  }
+
+  const mixed = route('review the system design; also improve the CSS design', { cfg: CFG });
+  assert.ok(mixed.layers.includes('fabius-disciplina'));
+  assert.deepEqual(mixed.domains, ['fabius-decor'], 'a distinct design occurrence keeps its owner');
+  assert.deepEqual(route('design a landing page', { cfg: CFG }).domains, ['fabius-decor']);
+  assert.deepEqual(route('review the agent architecture', { cfg: CFG }).domains, ['fabius-cohors']);
 });
 
 test('build, fix, and test work loads Disciplina without inventing Cohors ownership', () => {

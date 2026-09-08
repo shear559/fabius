@@ -30,12 +30,13 @@ test('the always-on lean core rides every route', () => {
   }
 });
 
-test('the ladder climbs only as far as the task demands, and every rung is reachable', () => {
+test('the ladder climbs only as far as the task and local runner support', () => {
   assert.equal(route('rename this variable', { cfg: FAKE }).rung, 'inline');
   assert.equal(route('fetch the pricing page', { cfg: FAKE }).rung, 'tool');
   assert.equal(route('recall what we decided about the schema', { cfg: FAKE }).rung, 'retrieval');
   assert.equal(route('plan the migration in phases', { cfg: FAKE }).rung, 'plan');
-  assert.equal(route('plan the migration then query the api for each table', { cfg: FAKE }).rung, 'subagent');
+  // Tool use inside a plan is serial work; this runner has no subagent executor.
+  assert.equal(route('plan the migration then query the api for each table', { cfg: FAKE }).rung, 'plan');
 });
 
 test('an explicit tier overrides the heuristic', () => {
