@@ -22,18 +22,18 @@ plot(p("fig-capability-ladder.svg"),
      [{"x": cost, "y": cap, "color": B}], (0, 10), (0, 1.06),
      xticks=[(0, "inline"), (knee, "knee"), (5.5, "+subagent"), (10, "swarm")],
      yticks=[(0, "0"), (0.5, "½"), (1, "1")],
-     points=[{"x": knee, "y": 1-np.exp(-0.55*knee), "label": "fabius stops here", "color": G}],
-     shade=[{"x0": 6.2, "x1": 10, "color": R, "opacity": 0.07, "label": "over-spend: swarm / long chains"}])
+     points=[{"x": knee, "y": 1-np.exp(-0.55*knee), "label": "example stopping point", "color": G}],
+     shade=[{"x0": 6.2, "x1": 10, "color": R, "opacity": 0.07, "label": "lower marginal gain in this model"}])
 
 # F2 — tool-call value gate: step at threshold τ on expected error-reduction
-dl = np.linspace(-1, 1, 400); keep = (dl >= 0).astype(float)
+dl = np.linspace(-1, 1, 401); keep = (dl > 0).astype(float)
 plot(p("fig-tool-value-gate.svg"),
      "Tool-call value gate",
-     "expected error reduction from the call   ΔL = loss(inline) − loss(call)", "route to the call?",
+     "expected loss reduction minus call cost   ΔL − c", "route to the call?",
      [{"x": dl, "y": keep, "color": B, "width": 3}], (-1, 1), (-0.06, 1.12),
-     xticks=[(-1, "−1"), (0, "τ"), (1, "+1")], yticks=[(0, "inline"), (1, "call")],
-     vlines=[{"x": 0, "label": "threshold τ", "color": G}],
-     shade=[{"x0": -1, "x1": 0, "color": R, "opacity": 0.09, "label": "pure overhead — answer inline"}])
+     xticks=[(-1, "−1"), (0, "0"), (1, "+1")], yticks=[(0, "inline"), (1, "call")],
+     vlines=[{"x": 0, "label": "net gain = 0", "color": G}],
+     shade=[{"x0": -1, "x1": 0, "color": R, "opacity": 0.09, "label": "cost exceeds benefit — stay inline"}])
 
 # F3 — branching factor vs accuracy at fixed budget (informative vs no evaluator)
 b = np.linspace(1, 8, 200)
@@ -42,7 +42,7 @@ uninfo = 0.34 - 0.018*(b-1)
 bstar = b[int(np.argmax(info))]
 plot(p("fig-branching-accuracy.svg"),
      "Branching factor vs accuracy at a fixed budget",
-     "branching factor b   (usable depth d ≈ budget / b)", "task accuracy",
+     "branching factor b   (usable depth d ≈ budget / b)", "illustrative accuracy",
      [{"x": b, "y": info, "color": B}, {"x": b, "y": uninfo, "color": GR, "dash": "5 4"}],
      (1, 8), (0, 0.95),
      xticks=[(1, "1"), (bstar, "b*"), (8, "8")], yticks=[(0, "0"), (0.5, "½"), (0.9, ".9")],
@@ -55,13 +55,13 @@ hard = np.array([0.45, 0.66, 0.80, 0.87, 0.90, 0.92])
 soft = np.array([0.40, 0.60, 0.59, 0.57, 0.56, 0.55])
 plot(p("fig-reflection-iteration.svg"),
      "Reflection quality vs iteration",
-     "iteration / retry  k", "cumulative success",
+     "iteration / retry  k", "illustrative quality",
      [{"x": k, "y": hard, "color": B}, {"x": k, "y": soft, "color": G}],
      (1, 6), (0, 1.0),
      xticks=[(1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"), (6, "6")],
      yticks=[(0, "0"), (0.5, "½"), (1, "1")],
      vlines=[{"x": 2, "label": "soft cap", "color": G}, {"x": 3, "label": "hard cap", "color": B}],
-     legend=[("hard oracle (test/compiler)", B), ("soft self-critique", G)])
+     legend=[("assumed contracting correction", B), ("example self-critique trajectory", G)])
 
 # F5 — recall quality vs context tokens loaded (retrieve-slice vs stuff-everything)
 x = np.linspace(0, 10, 260)
@@ -70,7 +70,7 @@ stuff = recall - np.maximum(x-7, 0)*0.055
 infl = 3.0
 plot(p("fig-recall-context.svg"),
      "Recall vs context loaded",
-     "context tokens loaded   (index-matched slice → whole directory)", "answer recall quality",
+     "context tokens loaded   (index-matched slice → whole directory)", "illustrative recall",
      [{"x": x, "y": recall, "color": B}, {"x": x, "y": stuff, "color": R, "dash": "5 4"}],
      (0, 10), (0, 1.0),
      xticks=[(0, "0"), (infl, "slice"), (7, "window"), (10, "dir")],
@@ -89,7 +89,7 @@ plot(p("fig-plan-then-bind.svg"),
      (1, 8), (0, 9),
      xticks=[(1, "1"), (4, "4"), (8, "8")], yticks=[(0, "0"), (4, "4"), (8, "8")],
      legend=[("serial: prompt→tool→prompt→tool", R), ("plan-then-bind (parallel)", B)],
-     notes=[{"x": 4.4, "y": 1.0, "t": "converge when every call depends on the last", "color": GR}])
+     notes=[{"x": 4.4, "y": 1.0, "t": "example assumes enough parallel slots", "color": GR}])
 
 # F7 — instruction emphasis: adherence rises, breadth falls; product has a sweet spot
 e = np.linspace(0, 10, 260)

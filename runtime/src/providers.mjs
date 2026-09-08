@@ -69,10 +69,10 @@ const PRICES = {
   ollama: {},   // local inference costs no money
 };
 
-// An UNKNOWN model bills at the provider's MAX published rate. Over-counting stops a
-// run early; under-counting spends the owner's money. Errs toward stopping. A moving
-// alias (`*-latest`) is therefore kept OUT of the table by design: give it a row and it
-// silently bills the old model's rate the day the alias re-points.
+// An UNKNOWN model is estimated at the MAX rate in this provider's LOCAL table, not
+// the provider's entire live catalog. A newer or more expensive model can exceed that
+// estimate; provider-side spending controls are the billing boundary. A moving alias
+// (`*-latest`) is kept OUT of the table so it cannot keep a stale model-specific rate.
 function maxRate(table) {
   let mi = 0, mo = 0;
   for (const k of Object.keys(table)) { mi = Math.max(mi, table[k][0]); mo = Math.max(mo, table[k][1]); }

@@ -13,7 +13,7 @@
 <br/>
 <br/>
 
-[![Plugin](https://img.shields.io/badge/plugin-install_in_Claude_Code_%C2%B7_Codex_%C2%B7_Grok_Build-76b900?style=for-the-badge)](#install-once-every-model-every-session)
+[![Plugin](https://img.shields.io/badge/plugin-install_in_Claude_Code_%C2%B7_Codex_%C2%B7_Grok_Build-76b900?style=for-the-badge)](#install-in-your-agent-app)
 [![Runs above every model](https://img.shields.io/badge/runs_above-every_model-76b900?style=for-the-badge)](#runs-above-every-model-exactly-the-same-rules)
 [![Benchmark](https://img.shields.io/badge/benchmark-blind,_reproducible-2ea44f?style=for-the-badge)](BENCHMARKS.md)
 [![Whitepaper](https://img.shields.io/badge/whitepaper-proofs_+_coherence-76b900?style=for-the-badge)](paper/fabius-as-a-system.pdf)
@@ -24,7 +24,7 @@
 
 ## one set of rules. above every model.
 
-fabius is a plugin — **fifteen coordinated public skills and twenty-two formally argued core routing rules**, loaded on top of whatever model you already run, inside the harness you already use. The model supplies the capability; fabius supplies the discipline. **You choose the goal; fabius chooses the machinery** — capability-first routing, research that stops the moment another step can no longer change the decision, verification before anything ships, and permissioned memory that stops re-deriving. Nothing to host. Nothing to sign up for.
+fabius is a plugin — **fifteen coordinated public skills and twenty-two core routing rules**, loaded through a compatible agent environment. Mathematical arguments and operational heuristics are distinguished in the research. The model supplies the capability; fabius supplies the discipline. **You choose the goal; fabius chooses the machinery** — capability-first routing, research that stops the moment another step can no longer change the decision, verification before anything ships, and permissioned memory that stops re-deriving. Nothing to host. Nothing to sign up for.
 
 The contract is written down, not implied: [IDENTITY.md](IDENTITY.md) defines the testable objective—whether the same model can produce a better outcome with less waste—not a universal result claimed in advance. The orchestration doctrine (the flow, provider selection, stopping logic, and acting ladder) is [`skills/fabius/references/orchestration-doctrine.md`](skills/fabius/references/orchestration-doctrine.md); the site is **[fabius-landing.vercel.app](https://fabius-landing.vercel.app)**.
 
@@ -32,7 +32,7 @@ The contract is written down, not implied: [IDENTITY.md](IDENTITY.md) defines th
 
 ## Runs above every model. Exactly the same rules.
 
-fabius has no required model roster, hosted service, or external runtime: its core is a set of rules the harness hands to whichever model you choose. The repository also includes an optional zero-dependency local runner for use without a harness. Frontier or open-weight, hosted, routed or local: the contract is identical. Thirty-six compatible model families are shown below; compatibility is not a benchmark claim:
+fabius has no required model roster, hosted service, or external runtime: its core is a set of rules the harness hands to whichever model you choose. The repository also includes an optional zero-dependency local runner for use without a harness. Frontier or open-weight, hosted, routed or local: the contract is identical. Thirty-six model families are shown as examples below. Their names do not establish host integration or tested compatibility: skill loading, tool access and instruction-following capability determine what can run.
 
 <table align="center"><tr>
 <td align="center" title="Anthropic"><img src="assets/brands/s/anthropic.webp" width="30" /><br/><sub><b>Claude</b></sub></td>
@@ -82,9 +82,9 @@ fabius has no required model roster, hosted service, or external runtime: its co
 
 ---
 
-## Install once. Every model, every session.
+## Install in your agent app
 
-The rules load into the harness you already use. Free to install for personal use — the model you already run is the only thing that costs money.
+The rules load into a compatible harness. Installation is free for personal use; your model, connected services and compute may have separate costs.
 
 **Claude Code**
 
@@ -94,18 +94,19 @@ The rules load into the harness you already use. Free to install for personal us
 /reload-plugins
 ```
 
-Stay current automatically: `/plugin` → Marketplaces → fabius → **Enable auto-update**. Every release bumps the version, so updates arrive on their own.
+For background updates, select `/plugin` → Marketplaces → fabius → **Enable auto-update**. An update on disk takes effect after `/reload-plugins` or the next launch; the running session keeps its loaded version until then. [Claude Code update behavior](https://code.claude.com/docs/en/discover-plugins#configure-auto-updates).
 
-**Codex** — add the git marketplace to `~/.codex/config.toml`:
+**Codex** — use a Codex CLI that supports `codex plugin`:
 
-```toml
-[marketplaces.fabius]
-source_type = "git"
-source = "https://github.com/shear559/fabius.git"
-
-[plugins."fabius@fabius"]
-enabled = true
+```sh
+codex plugin marketplace add shear559/fabius
+codex plugin add fabius@fabius
+codex plugin list --marketplace fabius
 ```
+
+Confirm that the listing reports the plugin installed and enabled, then restart Codex and check that its skills appear in a fresh task. Adding a marketplace or an enabled config entry alone is not an installation check. If `codex plugin --help` is unavailable, update the host before using these commands. The command syntax was checked with Codex CLI 0.153.4 on 2026-09-08.
+
+To update an existing installation, run `codex plugin marketplace upgrade fabius`, then `codex plugin add fabius@fabius`, and repeat the listing and restart checks. Marketplace refresh, installed files and active-session loading are separate states. The host may use a sparse package; do not assume every repository file or a plugin-root `AGENTS.md` becomes active instructions.
 
 **Grok Build**
 
@@ -114,7 +115,11 @@ grok plugin install shear559/fabius --trust
 grok plugin enable fabius
 ```
 
-**Anywhere else** — Cursor, Windsurf, Cline, Copilot, Gemini CLI, OpenCode or a raw system prompt: carry [`AGENTS.md`](AGENTS.md) in at the path your tool reads, and the same rules apply. Without any harness, the repo ships a zero-dependency local runner for the same sealed rules — `node runtime/fabius.mjs run "…"` — read-only until you allow writes, holding anything irreversible even in autonomous mode.
+Run `grok plugin details fabius` to inspect its version and component inventory, then reload plugins or start a fresh session. Checked with Grok Build 0.2.103 on 2026-09-08. `grok plugin update fabius` updates an unpinned installation; in this version it skips a saved `@ref`, including a release tag. A pinned installation needs an explicit release transition, followed by another version check. [Grok plugin commands](https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-pager/docs/user-guide/09-plugins.md).
+
+**Anywhere else** — review [`AGENTS.md`](AGENTS.md) and merge its portable core rules into the instruction path your tool supports. Preserve existing project instructions; do not download over an existing `AGENTS.md`, `GEMINI.md` or rules file. This single file carries the core stance. Full specialist workflows also need the relevant skill files and tools.
+
+Without a harness, the repository includes an optional zero-dependency local runner that reads the sealed contracts: `node runtime/fabius.mjs run "…"`. Its available providers, tools and routing implementation are described in [runtime/README.md](runtime/README.md); they are separate from a host's plugin integration.
 
 Try a concrete task after loading the plugin:
 

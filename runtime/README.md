@@ -20,11 +20,10 @@ vectors once. They skip loudly rather than passing quietly.
 
 ## Why a runner at all
 
-Inside a harness the harness reads the routed contracts and drives the model; the plugin
-needs nothing else. Without one you still want the same rules — and you want them to run
-where the work is: a hosted sandbox has no filesystem, so it cannot read the repository you
-are working in, cannot run your test suite against your toolchain, and sends your task to
-a server, so the task leaves the building.
+Inside a harness the harness reads the routed contracts and drives the model. This runner
+provides a local execution loop when no harness is present, using the working tree and
+toolchain on your machine. A hosted sandbox can run a supplied checkout and its dependencies;
+it does not automatically share your current local files, processes, or services.
 
 This runner keeps its state and tools local. The selected model provider still receives
 the prompt and any observations placed in model context. Agent fetches are separate: each
@@ -40,7 +39,7 @@ exact origin must be approved for the run (or pre-authorized with repeatable
 | `recon <domain>` | audit a domain you own — no API key, no account, nothing to sign up for |
 | `route "<task>"` | print the routing decision and spend nothing |
 | `memory list \| search \| add \| rm` | the on-disk knowledge base |
-| `listen --owner <npub>` | reachable by encrypted message with no server in between |
+| `listen --owner <npub>` | encrypted messaging through public relay servers |
 | `send <npub> "<text>"` | send one encrypted message |
 | `whoami` | this machine's agent address |
 | `doctor` | providers, contracts, seal, paths |
@@ -54,8 +53,9 @@ So capability is not a setting here — it is a gate every tool passes through.
 Four capabilities. Jailed, non-secret `read` is passive and does not prompt. `net` is
 egress: first contact with each exact origin prompts unless the operator supplied
 `--allow-origin`; redirects repeat the origin check. `write` and `exec` are not offered
-unless you pass `--act`. Posture `never` (`--read-only`) refuses all outbound network,
-writes, and commands.
+unless you pass `--act`. Posture `never` (`--read-only`) refuses agent network-tool requests,
+writes, and commands. Provider calls still transmit model context; neither `--read-only`
+nor `--offline` makes a remote model local.
 
 Three postures:
 
@@ -88,7 +88,7 @@ it: the oracle asks even in autonomous mode, and an unattended run skips the exe
 rather than running authored code unread. `--dangerously-approve-everything` is what runs it
 unattended.
 
-Two boundaries hold regardless of posture:
+The file-tool checks hold regardless of posture; shell screening has a narrower scope:
 
 - **The working directory is a jail.** Existing paths and the nearest existing ancestor
   of a new path are resolved through symlinks before the
@@ -104,6 +104,11 @@ Two boundaries hold regardless of posture:
   it. Model-initiated processes receive a scrubbed environment. Shell-string screening is
   defense in depth; the enforceable autonomous boundary is that interpreters and general
   shell commands are not auto-approved, and `exec` does not exist without `--act`.
+
+An approved subprocess runs with the operating system permissions of the user. The command
+gate and scrubbed environment do not isolate its filesystem or network access. Review the
+code being approved; these checks are not an OS sandbox or a guarantee that arbitrary
+programs cannot expose secrets.
 
 The model-visible `fetch` tool reaches only an operator-approved exact origin on the public
 internet: loopback, RFC1918, link-local (including cloud instance metadata at
@@ -135,11 +140,13 @@ R11 → frontier: high-stakes domain (security) — reserved for money and secur
 
 The local runner executes one agent loop. A serial plan with tool calls does not create subagents or earn the frontier tier by itself. Agent-engineering requests can load Cohors as guidance; delegation is a capability of the enclosing harness, not an executor supplied by this runner. Keyword routing is a deterministic approximation and can miss intent; the printed classification is inspectable rather than a guarantee of cross-harness routing parity.
 
-Then the routed `SKILL.md` contracts are **read off disk and handed to the model**,
-verbatim from the files the provenance seal covers. In a harness like Claude Code the
-harness does that. Here there is no harness, so the runner does it — which is what makes
-a local run *fabius* rather than a generic loop. `fabius doctor` reports whether those
-files still match the sealed manifest.
+Then selected `SKILL.md` bodies are **read off disk and handed to the model**, within a
+contract budget that reports omissions. The local keyword router supplies routing logic;
+it does not inject the full router contract. `fabius doctor` reports whether files match
+the local manifest. Add `--sealed-only` to reject manifest drift or unsealed contracts before
+loading them; ordinary runs allow a working copy during editing. These hash checks do not
+authenticate the manifest's publisher or timestamp. Use `bash provenance/verify.sh` for
+signed-release verification.
 
 The rules that were measured, and fire here too:
 
@@ -156,11 +163,14 @@ acting, the runtime executes it in a throwaway directory, with credential-shaped
 environment variables stripped, once you approve the body it prints. A non-zero exit
 overrules the reviewer's score — a judge can be talked past, a failing process cannot.
 
-**Two walls.** Steps, and money. Before each model or reviewer call, the runtime reserves
-a conservative upper bound for the whole input and maximum output, shrinking the output
-ceiling or refusing the call when it cannot fit. Missing usage is charged at that
-reservation; unknown models use the provider's highest listed rate. The audit receipt
-separates reserved authorization from provider-reported cost.
+**Two limits.** Steps and estimated model spend. Before each model or reviewer call, the
+runtime reserves input and maximum-output cost using its local price table, shrinking the
+output ceiling or refusing the call when that estimate cannot fit. Missing usage is charged
+at the reservation; unknown models use the highest rate recorded for that provider in the
+local table. The table can be stale or omit a more expensive model, so this is not a hard
+cap on the provider's bill. Use provider-side spending controls where available for that
+boundary. The receipt separates reserved estimates from costs calculated using reported
+token usage; neither is an invoice from the provider.
 
 ## Memory
 
@@ -200,20 +210,21 @@ Everything above is passive: it reads what the host already publishes to any cli
 one active check, a TCP connect on common service ports, is off unless you pass `--ports`
 against a host you are authorised to test.
 
-## The channel with no server
+## The encrypted relay channel
 
 ```bash
 fabius whoami                                    # npub1…  — this agent's address
 fabius listen --owner npub1yourphone…            # now message it from anywhere
 ```
 
-A bot hosted by a messaging platform can be suspended by that platform. A bridge into a
-closed network needs a host and carries a ban risk. This channel has no owner: a keypair
-is the identity, relays are public and interchangeable, and there is no account to
-suspend or number to ban.
+A keypair identifies the endpoint. Public Nostr relay servers transport the messages;
+you do not need to host a Fabius messaging service. Relays are replaceable, but each
+operator can refuse traffic and delivery is not guaranteed.
 
-Messages are end-to-end encrypted and metadata-wrapped, so a relay sees only that some
-ephemeral key sent something to you.
+Message contents are encrypted between the sender and recipient keys. Gift wrapping hides
+the sender's stable key from the outer event; relays still see recipient routing data,
+connection metadata, timing, and ciphertext size. After decryption, a task and selected
+observations reach the configured model provider under the same rules as a local CLI run.
 
 - **BIP-340 signing** — verified against the specification's own vectors.
 - **NIP-44 v2 encryption** — verified against its official vectors, ciphertext reproduced

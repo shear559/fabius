@@ -36,7 +36,7 @@ Rung one is **self-samples of the strongest seat**, not a panel: N samples of on
 ## The three stages
 
 1. **First opinions** — send the user's question, unmodified, to every council member in parallel. Each answers independently, never seeing the others. Same prompt, N models → N raw answers. (Fan-out; no barrier needed until stage 2.)
-2. **Anonymized peer-review** — give each model **all** the answers (its own included), **every identity stripped** ("Response A / B / C…", order shuffled per reviewer), and ask it to rank them on accuracy and insight with a one-line reason each. Anonymity is the point: it kills the brand-name bias where models flatter a name they recognize (or their own text). This is the blind-judge discipline — `fabius-doctrina` owns *why* a blind judge is the honest one.
+2. **Anonymized peer-review** — give each model **all** the answers (its own included), remove explicit model labels ("Response A / B / C…", order shuffled per reviewer), and ask it to rank them on accuracy and insight with a one-line reason each. This reduces explicit attribution and position cues; style or self-identification can still reveal an author, so anonymity and unbiased judging are not guaranteed. Record known leaks. `fabius-doctrina` owns judge calibration and evaluation rigor.
 3. **Chairman synthesis** — one designated model receives the full field (all first opinions + all rankings, now de-anonymized for the chair) and writes the **final answer**: not a vote tally and not a copy of the top-ranked seat, but a reasoned merge that takes the strongest correct points, resolves the contradictions the council exposed, and flags anything the seats genuinely split on.
 
 ## Seating the council

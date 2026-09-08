@@ -26,7 +26,7 @@ import { listen, identity, send } from './src/channel.mjs';
 import { DEFAULT_RELAYS } from './src/nostr.mjs';
 import { say, paint, die, warn } from './src/util.mjs';
 
-const VERSION = '2.8.0';
+const VERSION = '2.8.1';
 
 const HELP = `
 ${paint('violet', 'fabius')} ${paint('dim', VERSION)} — the agent, on your machine
@@ -35,12 +35,12 @@ ${paint('violet', 'fabius')} ${paint('dim', VERSION)} — the agent, on your mac
       --act                    let it write files and run commands (asks before each)
       --yes                    auto-approve bounded in-directory writes and a tiny set
                                of read-only system probes; code and other commands ask
-      --read-only              refuse egress, writes, commands, and durable memory writes
-      --dir <path>             the working directory it is confined to (default: cwd)
+      --read-only              refuse agent fetches, writes, commands, and memory writes
+      --dir <path>             file-tool boundary; approved shell is unsandboxed (default: cwd)
       --provider <name>        ${PROVIDER_ORDER.join(' · ')}
       --model <id>             a specific model, e.g. any HuggingFace repo
       --tier frontier|mid|fast  override the router's choice
-      --budget <usd>           stop rather than spend more (default 2.00)
+      --budget <usd>           cap estimated model spend; not a provider billing cap (default 2.00)
       --offline                no network tools
       --allow-origin <origin>  permit agent fetches to this exact origin (repeatable)
       --sealed-only            refuse any contract the seal does not cover
@@ -55,7 +55,7 @@ ${paint('violet', 'fabius')} ${paint('dim', VERSION)} — the agent, on your mac
       --json                   full findings as JSON
   ${paint('bold', 'fabius route')} "<task>"       print the routing decision, call no model
   ${paint('bold', 'fabius memory')} list|search <q>|add <title>|rm <name>
-  ${paint('bold', 'fabius listen')} --owner <npub>  reachable by encrypted DM, no server in between
+  ${paint('bold', 'fabius listen')} --owner <npub>  encrypted DMs through public relay servers
       --act                    let a message make it write and run things
       --relay <wss://…>        repeatable; defaults to three public relays
   ${paint('bold', 'fabius send')} <npub> "<text>"  send one encrypted message

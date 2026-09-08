@@ -5,24 +5,20 @@ type: software
 authors:
   - name: shear559
 abstract: >-
-  A fifteen-skill agent architecture with a router that dispatches by
-  layer, machinery and model tier over an always-on lean core. The
-  decision core is twenty-two routing rules, each carrying a proof of
-  the mathematics beneath it, together with a coherence theorem stating
-  that the core composes into one consistent, complete and composable
-  decision system, exceptions printed rather than omitted. Each of the
-  twenty-six formal statements was written by one agent and then
-  adversarially reviewed by an independent verifier whose only task was
-  to find an error; that pass corrected ten of them before publication.
-  Proof blocks are classed real-math or qualitative (22 and 4
-  respectively) and every rule is fabius's own — derived and
-  adversarially verified, proved where a proof is claimed and labelled
-  heuristic where it is not.
-  Evaluation is one dated benchmark in four panels, including a blind-judged
-  quality panel across four Claude tiers, a mixed historical execution-score and
-  model-graded factual-check track, and the versioned hundred-task FBS suite
-  run BASE, FAB and FAB_MEMORY. Historical receipt limits are stated explicitly.
-version: 2.8.0
+  A fifteen-skill agent architecture with a router that selects relevant
+  specialists, machinery and model tier over an always-on lean core.
+  The decision core contains twenty-two parent routing rules developed
+  in twenty-six argument blocks: twenty-two mathematical arguments under
+  stated assumptions and four qualitative operational heuristics.
+  A coherence analysis describes composition and precedence in that
+  formalized model; it does not guarantee compliance or correctness of
+  an executing agent. Evaluation retains one dated benchmark in four
+  panels, including blind model-judged quality, historical execution-score
+  records and model-graded factual checks, aggregate cross-family demos,
+  and the hundred-task FBS suite. Gains, regressions and missing historical
+  artifacts are stated explicitly. Current maintenance checks establish
+  the tested behavior and release integrity, not a new benchmark gain.
+version: 2.8.1
 repository-code: "https://github.com/shear559/fabius"
 url: "https://fabius-landing.vercel.app"
 license-url: "https://github.com/shear559/fabius/blob/main/LICENSE"

@@ -5,6 +5,7 @@ Used by render_figures.py to produce the conceptual decision-model diagrams in R
 The figures are ILLUSTRATIVE shapes of documented principles, not fabius measurements.
 """
 import numpy as np
+from html import escape
 
 W, H = 660, 410
 ML, MR, MT, MB = 74, 26, 48, 60           # margins
@@ -19,6 +20,7 @@ def plot(path, title, xlabel, ylabel, series, xlim, ylim,
     """series: [{x,y,color,width,dash}]. shade: [{x0,x1,color,opacity,label}] vertical bands."""
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
          f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif">']
+    s.append(f'<title>{escape(title)}</title><desc>Illustrative decision model, not measured Fabius performance. Shapes depend on the stated assumptions.</desc>')
     s.append(f'<rect x="1" y="1" width="{W-2}" height="{H-2}" rx="12" fill="#ffffff" stroke="#d0d7de"/>')
     for b in (shade or []):
         x0=_sx(b['x0'],xlim); x1=_sx(b['x1'],xlim)

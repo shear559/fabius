@@ -145,12 +145,12 @@ def load_svg(name, cls=None):
 
 # ---- figures for section 4 (Figure N + honesty caption) ----
 FIGCAP = {
- "fig-capability-ladder": "<b>Figure 1.</b> Capability scales sub-linearly with machinery; fabius adds the smallest sufficient rung and targets the <em>knee</em> (R2), never the tail. The shape fabius's value-of-information threshold predicts — a schematic of the principle, not a fitted curve.",
- "fig-tool-value-gate": "<b>Figure 2.</b> The value-of-information gate (R3): route to the call only when expected error-reduction clears its cost; below threshold is pure overhead. At routing time fabius asks which wrong answer the call prevents.",
- "fig-branching-accuracy": "<b>Figure 3.</b> With an informative evaluator, accuracy peaks at an interior branching factor (R7); with none, more branches only cost depth — the shape fabius's branch-value gate predicts.",
- "fig-plan-then-bind": "<b>Figure 4.</b> Bind-as-you-go grows latency linearly with the number of tool calls; plan-then-bind (R6) stays near-flat by overlapping independent calls; the lines converge when every call depends on the last.",
- "fig-reflection-iteration": "<b>Figure 5.</b> A hard oracle (test, compiler) keeps improving and saturates late; soft self-critique plateaus and dips after two passes (R8). The ~2 soft / ~3 hard caps are fabius's operational heuristics.",
- "fig-recall-context": "<b>Figure 6.</b> Recall rises as the index-matched slice loads, then plateaus; stuffing everything degrades past the context window (R9) — the shape fabius's retrieval-budget gate predicts.",
+ "fig-capability-ladder": "<b>Figure 1.</b> Illustrative concave capability curve (R2). The marginal stopping test is optimal under the stated value and cost assumptions; the marked knee is an example, not a measured or universal stopping point.",
+ "fig-tool-value-gate": "<b>Figure 2.</b> The optional-call gate (R3): act when expected loss reduction minus call cost is strictly positive. At equality the cheaper inline path wins. The expected losses must be estimated; the diagram does not measure them.",
+ "fig-branching-accuracy": "<b>Figure 3.</b> Illustrative branching trajectories under a fixed budget. An informative evaluator can make search useful (R7), but neither an interior optimum nor these accuracy values follows from informativeness alone.",
+ "fig-plan-then-bind": "<b>Figure 4.</b> Illustrative serial and parallel schedules for independent calls with sufficient execution capacity (R6). Dependencies, reasoning overhead and finite parallel slots limit the gain; near-flat latency is not a general guarantee.",
+ "fig-reflection-iteration": "<b>Figure 5.</b> Illustrative correction trajectories (R8). The stated theorem guarantees geometric convergence for a contracting update on a complete metric space; a test or compiler alone does not establish that property. The ~2 soft / ~3 hard caps are operational budgets.",
+ "fig-recall-context": "<b>Figure 6.</b> Illustrative retrieval and context-stuffing curves (R9). The formal result concerns a relevance objective under a token budget, not these recall values or guaranteed downstream answer quality.",
 }
 
 def figure_html(name):

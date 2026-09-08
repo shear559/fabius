@@ -125,13 +125,13 @@ stock · market · economy · valuation ·       → fabius-fortuna     (analysi
 
 ## Where fabius loads
 
-Two ways in, one set of rules. Whichever is in front of you, the routing above is the same.
+Check host capabilities: shared rules do not guarantee identical loading, routing, or execution.
 
-- **A harness** (Claude Code · Codex · Grok Build · any AGENTS.md reader — Cursor, Windsurf, Cline, Copilot, Gemini CLI, OpenCode) — it loads these contracts and fabius shapes the work. This core needs no hosted fabius service, account, or server.
-- **Locally, in `runtime/`** — a zero-dependency runner for the same rules when no harness is present — it reads the working tree, runs the real toolchain, and keeps the task on the machine. Same router, same rules, with local hands behind a permission gate: `fabius run` · `chat` · `recon <domain>` (keyless external audit) · `listen` (encrypted, no server) · `doctor`. Zero dependencies, Node 22+. Design contract → `../fabius-cohors/references/local-agent-runtime.md`.
+- **A harness** (Claude Code · Codex · Grok Build) — it discovers the plugin skills and loads relevant contracts. Other tools can read the standalone stance from `AGENTS.md` at their supported rules path; that bridge does not install the full specialist corpus. No fabius service or account is required.
+- **Locally, in `runtime/`** — one agent loop, selected contract bodies, keyword routing; zero dependencies, Node 22+. State and tools stay local; prompts and observations reach the model provider. Approved shell execution is not an OS sandbox. Commands: `run` · `chat` · `recon <domain>` (keyless audit) · `listen` (encrypted through public relays) · `doctor` (local manifest report). `--sealed-only` enforces manifest matches; signed-release verification is separate. Details → `../fabius-cohors/references/local-agent-runtime.md`.
 
 ## Boundaries
 
-Lean is a discipline, never a corner-cut — it never trims validation at trust boundaries, data-loss handling, security, or accessibility. The full never-trim list lives in `fabius-parcus`. A minimal artifact, not a flimsy one. `fabius-praesidium` is **defensive only** — it hardens, never weaponizes.
+Never trim trust-boundary validation, data-loss handling, security or accessibility; the full floor is in `fabius-parcus`. `fabius-praesidium` is **defensive only**.
 
 Fabius governs **how** you work, never **what** the user wants. The user's instruction always wins. `stop fabius` / `normal mode` drops the stance.

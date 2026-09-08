@@ -3,12 +3,14 @@
 How to build an agent that runs on the user's own machine — and why almost every hard
 problem in one is a permission problem wearing a different hat.
 
-A hosted agent's blast radius is a container someone else pays for. A local agent's blast
-radius is the user's laptop: their repositories, their credentials, their shell. That one
-change of setting rewrites the design. Everything below follows from it.
+A hosted agent's blast radius depends on its sandbox, credentials, and integrations. A
+local process can inherit access to the user's repositories, credentials, and shell.
+Choose boundaries from that actual authority, not from the word "local" or "hosted".
 
-fabius ships a working implementation of this document — a zero-dependency local runner for the same rules — at `runtime/` in this repository.
-Read it when a claim here needs a referent.
+This is a design guide. Fabius implements a subset in the zero-dependency runner at
+`runtime/`; its command surface, implemented checks, and limitations are documented in
+[`runtime/README.md`](../../../runtime/README.md). Patterns below are not a claim that every
+mechanism is installed or enforced by that runner.
 
 ---
 
@@ -18,18 +20,20 @@ Be honest about the trade, because "local" is not automatically better:
 
 | | hosted | managed harness | local |
 |---|---|---|---|
-| survives the laptop closing | yes | yes | no |
-| reads the repo you are in | no | no | yes |
-| runs your test suite, your toolchain | no | no | yes |
-| the task leaves the building | yes | yes | no |
+| survives the laptop closing | if deployed independently | depends on the execution environment | no, when running on that laptop |
+| reads the working tree | a supplied checkout or mounted workspace | a supplied or connected workspace | the permitted local working tree |
+| runs your test suite and dependencies | when provisioned in its environment | when provisioned in its environment | when installed and execution is authorized |
+| content reaches a model provider | when remote inference is used | determined by the provider/control plane | when remote inference is used |
 | reachable from a phone | yes | yes | only via a channel you add |
-| blast radius | a container | a container | your machine |
-| who owns the loop, the sandbox, the state | you | the provider | you |
+| blast radius | configured isolation and credentials | configured isolation and integrations | user-process permissions unless separately sandboxed |
+| who operates the loop and state | your deployment | the managed provider; check self-hosted boundaries | your local process |
 
-The two rows that decide it are **"reads the repo you are in"** and **"the task leaves the
-building"**. If neither matters, host it — hosting is less work and it stays up. Build
-local when the agent's value comes from touching the real working tree, or when the
-material must not be transmitted at all.
+Choose based on access to the working environment, uptime, isolation, and data flow.
+Local execution is useful when the agent must operate directly on the current working
+tree or installed tools. If material must not be transmitted, local tools alone are
+insufficient: inference, memory, telemetry, and connectors must also stay within the
+permitted boundary. Fabius's runner sends prompts and observations to its selected model
+provider; its `--offline` flag only removes the agent network tool.
 
 The middle column is the newer option, and it changes what "host it" costs. A **managed
 agent harness** — Claude Managed Agents is the current example, in beta — runs the loop,
@@ -39,20 +43,18 @@ is either the provider's cloud sandbox or a **self-hosted sandbox on infrastruct
 control**. Sessions are long-running, resume cleanly, and can be steered or interrupted
 mid-run — which is most of what sections 2, 5 and 8 of this document tell you to build.
 
-Two facts decide whether that trade is yours to take. **You stop owning the sandbox, and
-you stop owning the state:** sessions persist conversation history, sandbox contents and
-outputs server-side, which is exactly why that tier is **not eligible for zero-data-retention
-or a HIPAA BAA**. The self-hosted sandbox narrows this rather than closing it — tool
-*execution* moves onto your infrastructure, while orchestration, and therefore tool inputs
-and outputs, still flow through the provider's control plane.
+Check who controls execution and who retains state separately. A managed control plane
+can retain conversation history and outputs even when tool execution uses a self-hosted
+sandbox. Verify the current product's retention terms and supported environment before
+handling restricted data; self-hosting execution does not itself keep tool inputs and
+outputs away from that control plane.
 
-So the same two rows still decide it, only more sharply. If you went local because the
-material must not be transmitted, stay local — the managed tier fails that row by
-construction. If you went local *only* so the loop would survive the laptop closing, you
-were building a runtime you can now rent.
+If material must not leave an environment, verify every transmission path in the chosen
+design. If the requirement is uptime after the laptop closes, an independent deployment
+may satisfy it without building a local daemon.
 
-The usual right answer is more than one of these, sharing one brain: the same router, the
-same rules, the same contracts, with different hands.
+These deployment shapes can share operating contracts. Their routing, tool access, and
+execution behavior still depend on the host; shared text does not establish parity.
 
 ## 2. The process model
 
@@ -171,8 +173,8 @@ the jail, so mark it absolute and let the check refuse it. State the limit out l
 can rely on is what autonomy is permitted to recognise at all, plus the fact that `exec` is
 not offered without the acting flag.
 
-**A public-internet-only egress check.** This is the boundary people forget, because `net`
-never prompts and reads like the harmless capability. It is not: a tool that will GET any
+**A public-internet-only egress check.** Reading through `net` still transmits a request.
+Require exact-origin authority as well as address checks: a tool that will GET any
 URL reaches `127.0.0.1` admin panels, LAN devices on the operator's own network, and cloud
 instance metadata at `169.254.169.254` — where, on a cloud host, IAM credentials are served
 to anything that asks. The agent is inside the firewall, so `net` is a hole in every
@@ -222,16 +224,18 @@ A loop that can only be tested by spending money is a loop that does not get tes
 
 ## 7. The oracle is better locally
 
-Hosted, verification means a language model's opinion, plus at best a remote sandbox
-running a snippet with none of your dependencies.
+Both hosted and local environments can execute meaningful tests when the checkout and
+dependencies are present. Verify against the environment the claim concerns; local tests
+alone do not establish that a deployed service works.
 
 Locally, run the delivered artifact against the real toolchain and let the exit status
 overrule the judge. A generous reviewer can be talked past — including by an instruction
 hidden in the deliverable it is reviewing. A non-zero exit cannot.
 
-Run it in a throwaway directory, never in the working tree: verification must not be able
-to leave a file behind, and an artifact that writes as a side effect is exactly the
-artifact you want to discover this way. Strip credential-shaped environment variables
+Run a standalone candidate in a throwaway directory to keep ordinary relative outputs
+away from the working tree. That directory is not a sandbox: approved code can still
+access other paths and the network with the user's process permissions. Use actual
+isolation when the code is untrusted. Strip credential-shaped environment variables
 before spawning — `/KEY|TOKEN|SECRET|PASSWORD|PASSWD|CREDENTIAL|SESSION|COOKIE|AUTH|PRIVATE/i`
 over the variable *names* — because verification needs a toolchain, not the operator's AWS
 session. Inheriting `process.env` whole hands every key on the machine to a program the
@@ -249,13 +253,15 @@ back to the reviewer's verdict, shipping the deliverable unverified-by-execution
 than running authored code unread. Only the explicit dangerously-approve-everything flag
 runs it unattended.
 
-## 8. Two walls, not one
+## 8. Bound steps and estimated spend
 
 Bound steps *and* money. On someone's own key, a loop that will not converge is a bill.
 
-Count an unknown model at its provider's **highest** published rate. Over-counting stops a
-run early; under-counting spends the owner's money. When one of the two errors is
-recoverable and the other is not, choose the recoverable one deliberately and say why.
+Reserve estimated input and maximum-output cost before each call. Keep the price source
+and its date visible; a local price table cannot guarantee the provider's eventual bill.
+Fabius estimates unknown models at the highest rate in its local provider table, which may
+omit a more expensive model or a price change. Use provider-side limits where available
+when a hard spending boundary is required, and label the runtime receipt as an estimate.
 
 ## 9. Reaching it — the channel, and who owns it
 
@@ -266,13 +272,13 @@ ownership models, and the difference between them is who can take it away:
 |---|---|---|
 | a bot hosted by a messaging platform | none — they host it | the platform |
 | a bridge into a closed consumer network | a host you pay for | the platform, and the account |
-| a keypair on public relays (Nostr-class) | none | nobody — relays are interchangeable |
+| a keypair on public relays (Nostr-class) | relay servers operated by others or by you | each relay can refuse traffic; the keypair can use another relay |
 
-The third is worth understanding even if you never ship it, because it removes the
-dependency rather than moving it: the identity *is* a keypair, relays are disposable and
-substitutable, there is no account to suspend and no phone number to ban. Cost is a
-smaller ecosystem and no delivery guarantee — a relay may simply not have your message.
-Publish to several and treat any single one as unreliable.
+The third separates identity from a single messaging account. Relays are substitutable,
+but transport still depends on reachable servers and their operators. There is no delivery
+guarantee — a relay may refuse or miss a message. Publish to several and treat any single
+one as unreliable. Encryption hides contents, not all routing, timing, size, or connection
+metadata; after decryption, the configured model provider may receive the task.
 
 Three rules make a channel safe enough to leave running:
 
@@ -298,8 +304,8 @@ reachable and under what authority*.
 
 ## 10. If the contracts are sealed, let the loader enforce it
 
-A local runtime that reads its instructions off disk inherits a provenance question the
-hosted one never had: *are these the files that were sealed?* Report it in `doctor`, and
+A runtime loading instructions in any environment has a provenance question: *are these
+the files that were sealed?* Report local manifest matching in `doctor`, and
 offer a mode that refuses anything outside the sealed set rather than merely noting it.
 
 The trap is the same one every manifest checker starts with: re-hashing each listed file
@@ -311,6 +317,11 @@ to the model with a clean report. (The verification primitive, and the two-leg c
 Keep the gate opt-in. A working copy mid-edit is a normal state, and a runtime that
 refuses to start in it would be theatre — the useful posture is *report by default, refuse
 when the provenance claim has to hold.*
+
+Manifest matching establishes consistency with that local manifest. It does not by itself
+authenticate the publisher, verify a signed release, or confirm its timestamp. Fabius's
+`--sealed-only` checks membership and bytes; `bash provenance/verify.sh` performs the
+separate signed-release verification.
 
 ## 11. Connectors, and when to stop adding them
 
@@ -382,11 +393,11 @@ Before calling a local runtime finished:
 - [ ] Irreversible actions are held even under autonomy; the override is separate and logged.
 - [ ] The jail resolves symlinks; a link out of the working directory is refused — for commands as well as files: a recognised command naming a path outside the jail, or a secret-bearing one, still stops for a human.
 - [ ] The secret deny-list is unconditional, and observations are redacted on the way out.
-- [ ] Outbound requests resolve-and-check before connecting, every redirect hop is re-checked, and a read-only run makes no outbound request at all.
+- [ ] Agent network-tool requests require origin authority, resolve-and-check before connecting, and re-check every redirect. Read-only mode disables that tool's egress; document provider and connector traffic separately.
 - [ ] No TTY means `ask` denies rather than hangs.
 - [ ] The model call is injectable, and the loop is tested with no key.
 - [ ] Verification runs the artifact in a throwaway directory with credentials stripped, through the same gate as any other command and against the same budget; a non-zero exit overrules the judge.
-- [ ] Both a step wall and a money wall; unknown models bill at the highest rate.
+- [ ] Step and estimated-spend limits are enforced; price-table limits and provider-side spending controls are documented.
 - [ ] Every permission decision lands in the run's journal.
 - [ ] The seal is reported, and a mode exists that refuses anything outside the sealed set.
 - [ ] The child process dies with its parent — verified by killing the parent, not by reading the code.

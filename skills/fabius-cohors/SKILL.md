@@ -25,6 +25,10 @@ metadata:
 
 ## The definition — every agent needs these four
 
+This schema illustrates the information to specify, not a universal configuration format.
+Map it to the active harness's documented fields, supported model controls, and permission
+semantics before creating an agent; unsupported fields do not enforce a boundary.
+
 ```yaml
 ---
 description: what it does AND when to dispatch it   # the dispatcher reads this — make it precise
@@ -110,7 +114,7 @@ Still lean: if the task list is short and serial, it's a pipeline, not a swarm. 
 
 More shapes — grounded/cited RAG, a safety guard that screens for prompt injection before execution, cross-session memory, an eval harness that scores skill-vs-baseline — are in `references/agent-patterns.md`. The full catalog of agent references to copy and adapt (by domain and language) is in `references/agents/`; start from `references/agent-catalog.md`. Grounding and memory lean on `fabius-archivum`. The operational tier — scoring an agent on a ground-truth benchmark, surviving long-horizon runs (checkpoint + dual exit gate), acquiring tools via MCP at least privilege, and sandboxing agent-written code — is in `references/agent-evaluation-and-durability.md`. The framework + tool-caller map — agent frameworks per orchestration pattern, the function-calling eval (BFCL / τ²), and open tool-callers with the Llama-community-license trap flagged → `references/agent-frameworks.md`.
 
-**Running an agent on the user's own machine** is a different design: the blast radius stops being a container and becomes their laptop. Capability-per-tool over a working-directory jail (symlink-resolved) and an unconditional secret deny-list; read-only default, acting opt-in, autonomy a second flag — with irreversible actions (`git push`, `--prod`, `rm -rf`, `sudo`) held even under autonomy; no TTY means an approval prompt DENIES rather than hangs; the model call is injectable so the whole loop tests with no key; verification runs the artifact locally and a non-zero exit overrules the judge; a money wall beside the step wall. Also how the agent is REACHED — the three channel-ownership models and the allow-list/opt-in-acting/untrusted-inbound rules → `references/local-agent-runtime.md`. Working implementation: `runtime/` in this repository.
+**Running an agent on the user's own machine** requires explicit boundaries around user-process authority. Fabius's optional `runtime/` provides file-tool path and secret-pattern checks, opt-in writes/execution, command approval gates, injectable model calls, an authorized execution oracle, and step/estimated-spend limits. Approved subprocesses are not OS-sandboxed; remote model calls transmit context, and the spend estimate is not a provider billing cap. Encrypted messaging uses public relays with allowed senders. The design guide and current implementation limits are in `references/local-agent-runtime.md`; choose actual isolation and provider controls when the task requires stronger boundaries.
 
 ## Build loop
 

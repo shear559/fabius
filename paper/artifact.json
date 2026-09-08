@@ -1,10 +1,10 @@
 {
   "schema": "fabius-paper-artifact/v1",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "file": "paper/fabius-as-a-system.pdf",
-  "sha256": "f3c9ae8e91f2efafac89fa51561e7825cb27313cc0de2cdbbbd253d8867571ec",
+  "sha256": "e29a23055a38cc9694d57e8ac18327e9c5d632b3ed9d69e78d79ab963255cc56",
   "pages": 50,
-  "source_sha256": "005b23804479ba138722dd9634d18915bed785a587edb78f451d7e55704b76f9",
+  "source_sha256": "fab6bf7934cd020f5a4afd7070c8dcbd81e055462064e1912df9c1e497917277",
   "sources": [
     {
       "file": "assets/architecture.svg",
@@ -12,11 +12,11 @@
     },
     {
       "file": "assets/charts/render_figures.py",
-      "sha256": "e5206b664299d2c0af3bdea5a88d7de30dbf8c5dcb8067d686645face233f9bd"
+      "sha256": "dd1fac69b4fa2e29e66d05ac141580b129af9c0a5c560eebbafe7e4569ee9318"
     },
     {
       "file": "assets/charts/svgplot.py",
-      "sha256": "239af649771acf0efd33a5439112ed6d816fe5d048561a05289686200b3e9d47"
+      "sha256": "6ab01aa343bd3c9fb551621106102fe96bdb5341f90be514585fb2a232b84708"
     },
     {
       "file": "assets/fabius-pixel.svg",
@@ -24,31 +24,31 @@
     },
     {
       "file": "assets/fig-branching-accuracy.svg",
-      "sha256": "bbf418cbcd17be87d04a4f6c24ff2a47da395ba445554dc4e3d2c846bcbee2d8"
+      "sha256": "afe0770cda4206d3009a5349b978f201771b5a365f1572bae032674b012dd40d"
     },
     {
       "file": "assets/fig-capability-ladder.svg",
-      "sha256": "de62a46ddbfae83cf23ef971a96cdd244a979a4d236c7b3e689e6f0d357b69ec"
+      "sha256": "dae556cdd5b9c91d08514e5b46da5c1977ce4733411ce5295419a35a5ce47d00"
     },
     {
       "file": "assets/fig-plan-then-bind.svg",
-      "sha256": "1e750594fe15b698fbaa501fea3972ec50b30e833f5d3acfd2cf10663d058cef"
+      "sha256": "2b32c2ffb183e71cb5ae781e5ea82ee46233810343be7e587f88e2525f7c0801"
     },
     {
       "file": "assets/fig-recall-context.svg",
-      "sha256": "362ae29ddfd4c8949f292bf450666f2cb8a67550f1cc109f74d5343f9bfb42d8"
+      "sha256": "1589122930be3bbc8f014ce45ee3acca19a89fc7acd270408c990cbdb8544c6f"
     },
     {
       "file": "assets/fig-reflection-iteration.svg",
-      "sha256": "6cb98b0da02eee6d6809c262899ed7a6803322a77f533f1f9850c04138e25c65"
+      "sha256": "39ad5076e20dd69af3402817cb70528c65dc727f0360a699946462aea6678cb3"
     },
     {
       "file": "assets/fig-tool-value-gate.svg",
-      "sha256": "e70beaf81edc70658614862b06c6d936d3d6c59cde8602924462e6c609ced5d2"
+      "sha256": "7aa8f94fa925ac7179dcd10fe57663cd1cdbb54779934bbb1be951727facca69"
     },
     {
       "file": "paper/build.py",
-      "sha256": "24b7c54cd56f468c7066e9e1c8b13ce98673490ff05b68c0f6fcbf8207a5da9e"
+      "sha256": "ecc51b420455939af851c38d30b07fa4e469c2af665a2e703108e22e1c88ad50"
     },
     {
       "file": "paper/build.sh",
@@ -56,19 +56,19 @@
     },
     {
       "file": "paper/coherence-ext.html",
-      "sha256": "7d7cbeb2f2ed9673554111d16137ef8568bd21430f32236760ec92859eb687b2"
+      "sha256": "2796f059e4c1973fc25a883ac820a90a7ee3997ac0a88a8cba6b936dbd1d3a20"
     },
     {
       "file": "paper/coherence.html",
-      "sha256": "7d7548d22bf8c08faa3f528a8884e5622837bde2843f44f0c81b772c6f547301"
+      "sha256": "15a873f777048c661a47b0c2ded458bd11ea023394db62993bd2a0903e270c46"
     },
     {
       "file": "paper/proofs.json",
-      "sha256": "f6d774058b6b37aa2218e5ec077ae7146a9d88594eb0119a3dbe757de145325e"
+      "sha256": "0d523d863d7c8f1de5bd4329037991d6b2c4b510da304ae9d8ff84fd8e97136c"
     },
     {
       "file": "paper/template.html",
-      "sha256": "7d756a1b69137d5872a2899e801edc2f480327179bb64b989926d823967a843c"
+      "sha256": "cb40d108dcd2dffd99751cfccbe7eae64ad0752bdac1a384ccc6eebf5d27b17c"
     }
   ],
   "external_sources": [
@@ -79,8 +79,8 @@
     }
   ],
   "rendered_markers": [
-    "Whitepaper · v2.8.0",
-    "Version 2.8.0",
-    "Fabius v2.8.0"
+    "Whitepaper · v2.8.1",
+    "Version 2.8.1",
+    "Fabius v2.8.1"
   ]
 }

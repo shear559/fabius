@@ -4,9 +4,9 @@ description: >
   fabius's on-chain layer — build trustless systems on a blockchain and prove provenance with one.
   Two jobs under one concern: (1) write and review on-chain code — EVM (Solidity / Foundry / EIP-712)
   and Solana (Anchor / Pinocchio) programs, wallets, transactions, on-chain reads — account-validation
-  first, money-safe by default; (2) cryptographically SEAL any artifact with verifiable, trustless
-  provenance — a content-bound hash, a signature, and a Bitcoin-anchored timestamp that anyone can
-  re-check offline, forever. Use when the task touches a smart contract, a program, a wallet, a
+  first, money-safe by default; (2) cryptographically SEAL artifacts with independently checkable
+  provenance — a content-bound hash, a signature, and a timestamp whose pending or confirmed
+  status and trust assumptions are reported. Use when the task touches a smart contract, a program, a wallet, a
   transaction, a token/mint, an on-chain read, or when the user says "seal this", "sign this file",
   "prove provenance", "anchor it", or "verify authenticity". Boring-cryptography only; defensive — it
   hardens and proves, never weaponizes: no exploit tooling, no wallet-draining, no rug mechanics,
@@ -53,12 +53,12 @@ Versions and stacks decay fast; this layer's `references/` corpus is a **point-i
 
 ## 5. Seal — verifiable provenance, boring cryptography only
 
-The achievable guarantee is **provenance, not truth**: not that an artifact is *good*, but that it is *exactly what was registered, by which key, and when* — re-checkable by anyone, indefinitely, with no trusted third party. Four moving parts, each a public, recomputable fact:
+The bounded claim is **provenance, not truth**: exact bytes attributed to a signing key, plus an existence upper bound when their timestamp is independently confirmed. It does not establish first creation, originality, ownership, or quality. Verification depends on preserved evidence, the signing-key trust root, and the cryptographic and chain assumptions. Four parts:
 
-1. **Hard-bind** the content — a collision-resistant hash over the exact bytes (`exactHash`). Forging a seal requires a hash collision, which is a public event.
+1. **Hard-bind** the content — a collision-resistant hash over the exact bytes (`exactHash`). Integrity relies on the hash's collision and second-preimage resistance; a digest alone does not authenticate its publisher.
 2. **Sign** the commitment with an EUF-CMA signature (the author's key) — possession, not origination; multi-attestation allowed.
-3. **Anchor** the timestamp so it can't be backdated — terminate in **Bitcoin** via OpenTimestamps; the priority date is math against the public chain.
-4. **Bundle** a self-contained verification artifact that still verifies **offline**, after any operator, indexer, or even the ledger is gone.
+3. **Anchor** through **Bitcoin** via OpenTimestamps. A fresh calendar receipt is pending. Confirm the digest-bound proof against a trusted Bitcoin source before claiming the record existed no later than the attested block; the block date is not its exact creation time.
+4. **Preserve** the content, manifest, signatures, trust root, and timestamp proof. Offline checks cover only the evidence and trusted chain data actually retained; do not promise perpetual verification or survival of missing dependencies.
 
 Two standing rules from the research: **boring cryptography only** (collision-resistant hashing, EUF-CMA signatures, Merkle trees, ledger persistence — no trusted setup, no exotic primitive in the trust core), and **scheduled renewal** (every algorithm in use today eventually falls; re-anchor under fresh algorithms on a calendar, not in a panic). Aggregate many files under one **Merkle root** to seal a whole release at once. **Rely on the cryptographic signature — never on a coin.** fabius seals its **own** skills exactly this way ([PROVENANCE.md](../../PROVENANCE.md)); the full primitive is in `references/sealing.md`.
 

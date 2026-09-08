@@ -45,11 +45,11 @@ Run it in order, and never skip the hinge: **data → train / fine-tune → EVAL
 
 A model claim without an eval is a vibe. The discipline is fabius's own benchmark posture (see the repo's `BENCHMARKS.md`), applied to every model decision:
 
-- **A held-out, representative eval set** the model never trained on — the only thing that predicts production. Leakage from train into eval is the cardinal sin; it manufactures a number that doesn't survive contact with a user.
+- **A held-out, representative eval set** excluded from training and tuning. Document contamination uncertainty for externally trained models. Held-out performance estimates behavior on the sampled distribution; distribution shifts and untested failure modes still require production monitoring.
 - **The metric matches the job**: classification → precision/recall/F1 at the operating threshold (accuracy lies on imbalance); generation/LLM → a task rubric scored by a **blind judge** (never told which system produced the answer) plus an objective signal (length, exact-match, latency) that can't be flattered.
 - **Compare against a control, not just a baseline** — a cheaper model, last week's prompt, the previous checkpoint. "Better than nothing" is easy; "better than the thing it replaces" is the real test.
 - **A score without an interval isn't a comparison** — quote the standard error across questions, compare on paired per-question differences, and check the eval is powered to resolve the effect before you run it.
-- **Make it a regression gate**: the eval runs in CI; a prompt or model change that drops the score fails the change. An eval you run once is a measurement; an eval that gates is a guarantee. Gate on the interval, not the point estimate — a check that fires on noise gets muted, and then nothing is gated.
+- **Make it a regression gate**: run the eval in CI against a predeclared tolerance and reject material regressions. The gate checks the sampled behavior; it does not guarantee production quality. Use uncertainty estimates when setting the decision threshold — a check that fires on noise gets muted, and then nothing is gated.
 
 (LLM-as-judge is directional — its scores carry model-family priors; keep the objective signals as the hard floor and read the outputs. And a judge is a measurement with its own error rate: hold back a human-labeled calibration slice and correct the number *per comparison* — an uncorrected judge gap can come out confidently wrong-signed. The estimator and the statistics are in `references/ml-engineering-playbook.md` §2. Same honest posture as fabius's own benchmarks.)
 
