@@ -90,8 +90,9 @@ When the work is too big for one context window **and** splits into many paralle
 
 **Run it with the native tools — nothing to install:**
 
-- The **Workflow tool** is the swarm engine: `parallel()` for a fan-out barrier, `pipeline()` for find → build → verify with no barrier, a coordinator loop for assign → integrate. Deterministic control flow, not model-improvised.
-- The **Agent / Task tool** spawns each worker (`agentType` for a specialist, `isolation: "worktree"` for parallel writers, `run_in_background` for concurrency).
+- Discover the harness's actual delegation and waiting tools, then read their schemas. Express the pattern with those capabilities; tool names and argument shapes are host-specific.
+- Give workers disjoint ownership or isolated worktrees, bounded outputs, and the evidence they need. Share coordinator history only when it helps; a claimed independent review must not inherit the author's answer as its conclusion.
+- If delegation is unavailable, perform the lenses sequentially and disclose the loss of reviewer independence. Never invent tool calls or pretend several perspectives are independent agents. If independence is a required acceptance criterion, report that criterion as blocked while completing the available work.
 - A worker's `description` + output contract is still the law — a swarm is N well-defined cohort members, not N vague ones.
 
 **Anti-drift — what keeps a swarm from thrashing:**

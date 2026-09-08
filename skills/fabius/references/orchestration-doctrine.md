@@ -34,7 +34,7 @@ then fill it with whatever the harness actually exposes: an MCP server, a CLI, a
 connected, or the model's own native ability. The provider behind a capability can change
 without touching a single routing decision; that indirection is what keeps the doctrine stable
 while the tool landscape churns. Corollary: **no external tool is the default.** The first
-candidate for any capability is native ability at zero marginal cost; a tool must beat it
+candidate for synthesis is native ability without an extra integration; a tool must beat it
 (R3).
 
 ## 2 · Provider selection — when several tools fill one capability
@@ -44,9 +44,12 @@ latency · reliability · privacy (where the data travels) · granted permission
 current context already holds · track record in the failure log. When the choice is close,
 prefer the one already warm in context — switching has a price too.
 
-**Graceful fallback is part of the selection.** A provider failing is a routing event, not a
-task failure: fall to the next provider, then to native ability, then to a different approach
-to the same goal. No single dependency is allowed to kill a workflow.
+**Fallback must preserve the required capability.** After a bounded retry or a changed
+hypothesis, use an authorized equivalent with the same evidence quality and privacy boundary.
+Native reasoning can replace synthesis, but cannot stand in for fresh retrieval, browser
+execution, or an authenticated write. If no equivalent exists, complete independent work and
+report the unmet acceptance criterion. Never convert a draft, simulation, or remembered fact
+into a claim that the missing action succeeded.
 
 ## 3 · Model routing — best model for the step, not one model for everything
 
@@ -60,7 +63,7 @@ legitimately cross tiers mid-flight.
 No fixed workflow. Plan depth is set by: complexity · risk · importance · information already
 in hand · confidence the decision needs · time · cost · permissions available. A simple task
 ends in one action. A high-stakes one composes layers, verifiers, and — rarely — a council.
-The plan is placeholders first, bindings last (R6), so independent steps run in parallel.
+When dependencies justify a plan, name outputs before binding later calls (R6), so independent reads can run in parallel. Tool count alone does not require a separate planning phase.
 
 ## 5 · Adaptive research and the stopping logic
 

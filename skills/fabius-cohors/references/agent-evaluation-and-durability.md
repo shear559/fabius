@@ -84,6 +84,8 @@ Agents get capabilities through **MCP servers** — the standard for tool acquis
 
 **CodeAct: the sandbox's tool registry is owned, never inferred.** When the model writes code that calls tools from *inside* the sandbox, the set of reachable tools is an **explicit registry owned by the code-execution provider** — never inferred from the agent's direct tool surface. Inference is fragile and silently widens the sandbox. Exposure is decided purely by placement: a sandbox-only tool is registered on the provider only; a direct-only tool on the agent only; a tool meant for both is registered in both — and re-registering a name replaces it. Keep the sandbox's capabilities as **portable config, not backend wiring**: file mounts and an outbound domain allowlist live as CRUD-managed registry entries, so execution backends stay swappable behind the same contract.
 
+**A policy edit is not proof of revocation.** Record whether mounts, tool permissions, and egress rules are checked per request or captured when an instance starts. Default added mounts to read-only unless the task requires writes. When a changed policy needs a reload or restart, apply it only to the affected instances within the authorized scope; verify permitted access and a denied operation from the effective running instance before saying access was removed. A configuration-file check alone misses a process still holding the old permissions. Coordinate state and recovery through the [transactional update procedure](../../fabius-disciplina/references/transactional-updates.md).
+
 → Prompt-injection screening *before* execution is the safety-guard shape in `references/agent-patterns.md`; sandboxing is the containment *after* it.
 
 ## 5. Portability — author once, transform out

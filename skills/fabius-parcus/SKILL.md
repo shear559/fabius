@@ -54,7 +54,7 @@ Rules that fall out of it: no abstraction with a single implementation, no facto
 
 The same ladder governs *orchestration*, not just code. The capability-deployment ladder (`inline → one tool → retrieval → plan → single subagent → swarm`, the router's routing-policy R2) is this code ladder's twin — don't instantiate a swarm, a corrector, or a vector engine until the rung below it is shown insufficient on *this* task. Over-steering a sub-agent — repeating or stacking a constraint (R10) — is the orchestration form of over-building: state a constraint once on breadth tasks; hard-steer only narrow contracts.
 
-The heaviest rung of all is a cross-model council (`fabius-concilium`) — **N + N + 1** model calls where a single strike is one. This layer owns the convene-at-all gate: a council passes the ladder only when the answer is high-stakes and a wrong one is expensive, genuinely contested, or the user explicitly asks for a panel. Otherwise: one strike, one model.
+The heaviest rung is a cross-model council (`fabius-concilium`): **N + M + R + 1** completion calls for N configured seats, M surviving opinions and R ballot retries, capped at **3N + 1**. Convene on an explicit panel request, or when a high-stakes task exposes the same failure across samples of a strong seat. Disagreement alone is insufficient; Concilium owns the protocol and actual accounting.
 
 Mark a deliberate shortcut with a `fabius:` comment that names the ceiling and the upgrade path:
 `# fabius: global lock for now; per-account locks if throughput ever matters.`
@@ -67,7 +67,7 @@ Read this rule the narrow way. *Don't refactor what isn't broken* forbids the dr
 
 ## 4. Lean scope — think first
 
-State assumptions out loud before coding. Two readings of the request both fit → present both, don't silently pick one. A simpler approach exists → say so, push back when it's warranted. Something is unclear → stop and name it. (The interactive clarifying-question procedure belongs to `fabius-disciplina`; this layer just refuses to guess.)
+State assumptions that affect the result. For small reversible details, make a reasonable choice and proceed. Clarify when competing readings change the outcome, risk, or authority; `fabius-disciplina` owns that procedure. Suggest a simpler approach when it satisfies the actual request.
 
 Minimum code for the stated problem — nothing speculative. No feature past what was asked, no flexibility that wasn't requested, no error handling for impossible states. 200 lines that could be 50 → rewrite. The check: *would a senior engineer call this overcomplicated?*
 

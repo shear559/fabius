@@ -20,6 +20,7 @@ run_gate() {
 }
 
 run_gate "structural install + seal invariants" node evals/structural.mjs
+run_gate "structural frontmatter adversarial regression" node scripts/test-structural.mjs
 run_gate "nested reference quarantine" node scripts/verify-reference-quarantine.mjs
 run_gate "FBS suite schema" node evals/suite/validate.mjs
 run_gate "committed benchmark receipt replay" node evals/verify-receipts.mjs

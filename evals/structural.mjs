@@ -15,9 +15,11 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { dirname, join, basename } from "node:path";
+import { dirname, join, basename, resolve } from "node:path";
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const ROOT = process.env.FABIUS_VERIFY_ROOT
+  ? resolve(process.env.FABIUS_VERIFY_ROOT)
+  : join(dirname(fileURLToPath(import.meta.url)), "..");
 const sha256 = (b) => createHash("sha256").update(b).digest();
 const sha256hex = (b) => createHash("sha256").update(b).digest("hex");
 
@@ -50,6 +52,22 @@ const flattenKey = (fmText, key) => {
   return parts.join(" ").replace(/\s+/g, " ").trim();
 };
 const flattenDescription = (fmText) => flattenKey(fmText, "description");
+// Deliberately validate the authored YAML subset; never accept raw comments,
+// collections, aliases, or null/bool/number sentinels as a string value.
+const scalarText = (value) => {
+  const v = String(value || "").trim();
+  if (v.startsWith('"')) {
+    try { const s = JSON.parse(v); return typeof s === "string" ? s.trim() : ""; }
+    catch { return ""; }
+  }
+  if (v.startsWith("'")) return /^'(?:[^']|'')*'$/.test(v) ? v.slice(1, -1).replace(/''/g, "'").trim() : "";
+  if (/^[\[\]{}&*!|>@%`]/.test(v) || /(?:^|\s)#/.test(v) || /:\s/.test(v)) return "";
+  return /^(?:null|~|true|false|[-+]?\d+(?:\.\d+)?)$/i.test(v) ? "" : v;
+};
+const textKey = (fm, key) => {
+  const first = fm.split("\n").find((l) => l.startsWith(`${key}:`))?.slice(key.length + 1).trim() || "";
+  return /^[|>][-+]?\s*$/.test(first) ? flattenKey(fm, key) : scalarText(first);
+};
 
 const skills = skillNames.map((d) => {
   const path = join(skillDir, d, "SKILL.md");
@@ -76,7 +94,7 @@ const uniq = new Set(skills.map((s) => s.name));
 ok("single-owner: no duplicate skill name", uniq.size === skills.length, `${uniq.size} unique`);
 ok("router present: fabius", skills.some((s) => s.name === "fabius"));
 ok("always-on core present: fabius-parcus", skills.some((s) => s.name === "fabius-parcus"));
-ok("frontmatter: every contract declares name + description", skills.every((s) => s.name && s.hasDesc));
+ok("frontmatter: every contract declares name + description", skills.every((s) => s.name && s.hasDesc && s.descFlat));
 
 // every description, flattened to a single line, fits the discovery budget.
 // Measured in BYTES, not JS string length: these contracts are read by several harnesses and a
@@ -99,7 +117,15 @@ const topKeys = (fmText) => (fmText || "").split("\n")
   .filter((l) => /^[A-Za-z0-9_-]+:/.test(l)).map((l) => l.match(/^([A-Za-z0-9_-]+):/)[1]);
 const keyViolations = [];
 for (const s of skills) {
-  for (const k of topKeys(s.fm)) {
+  const keys = topKeys(s.fm);
+  for (const k of CANONICAL_KEYS) {
+    const n = keys.filter((key) => key === k).length;
+    if (n !== 1) keyViolations.push(`${s.dir} → ${k} occurs ${n} times (required exactly once)`);
+  }
+  if (!textKey(s.fm, "when_to_use")) keyViolations.push(`${s.dir} → empty/non-text when_to_use`);
+  const malformed = s.fm.split("\n").filter((l) => /^\S/.test(l) && !/^#/.test(l) && !/^[A-Za-z0-9_-]+:/.test(l));
+  if (malformed.length) keyViolations.push(`${s.dir} → unsupported top-level YAML form`);
+  for (const k of keys) {
     if (k === "when-to-use") keyViolations.push(`${s.dir} → when-to-use (kebab-case; policy is when_to_use)`);
     else if (!CANONICAL_KEYS.has(k)) keyViolations.push(`${s.dir} → ${k}`);
   }
@@ -107,7 +133,7 @@ for (const s of skills) {
 ok("frontmatter: keys canonical (name · description · when_to_use · license · metadata)",
    keyViolations.length === 0, keyViolations.length ? `banned: ${keyViolations.join(", ")}` : "all canonical");
 
-// description + optional when_to_use share one combined discovery budget, both flattened
+// description + required when_to_use share one combined discovery budget, both flattened
 const COMBINED_BUDGET = 1536;
 const combLen = (s) => Buffer.byteLength(s.descFlat + flattenKey(s.fm, "when_to_use"), "utf8");
 const combOver = skills.filter((s) => combLen(s) > COMBINED_BUDGET);
@@ -115,32 +141,31 @@ const maxComb = Math.max(...skills.map(combLen));
 ok(`frontmatter: description + when_to_use ≤ ${COMBINED_BUDGET} bytes flattened`, combOver.length === 0,
    `max ${maxComb} bytes (${skills.find((s) => combLen(s) === maxComb).name}); ${combOver.length} over`);
 
-// license, when a contract declares one, must match the plugin manifest's license
+// Every contract must carry the plugin license; omission cannot pass vacuously.
 const pluginLicense = JSON.parse(readFileSync(join(ROOT, ".claude-plugin", "plugin.json"), "utf8")).license;
 const licenseOf = (fmText) => (fmText.match(/^license:\s*(.+)$/m)?.[1] || "").trim().replace(/^["']|["']$/g, "");
-const licDeclared = skills.filter((s) => /^license:/m.test(s.fm));
-const licMismatch = licDeclared.filter((s) => licenseOf(s.fm) !== pluginLicense);
-ok("frontmatter: license matches plugin.json license (when declared)", licMismatch.length === 0,
+const licMismatch = skills.filter((s) => licenseOf(s.fm) !== pluginLicense);
+ok("frontmatter: license matches plugin.json license (required)", licMismatch.length === 0,
    licMismatch.length ? `mismatch: ${licMismatch.map((s) => `${s.dir} → ${licenseOf(s.fm)}`).join(", ")}`
-                      : `plugin license ${pluginLicense}; ${licDeclared.length}/${skills.length} declare it`);
+                      : `plugin license ${pluginLicense}; all ${skills.length} declare it`);
 
-// metadata, when a contract declares one, must carry a non-empty author
+// Require a metadata mapping with one non-empty author, never a duplicate or null.
 const metaAuthor = (fmText) => {
   const lines = (fmText || "").split("\n");
   const i = lines.findIndex((l) => /^metadata:/.test(l));
-  if (i === -1) return null; // no metadata key — check passes vacuously
+  if (i === -1 || !/^metadata:[ \t]*$/.test(lines[i])) return "";
+  const authors = [];
   for (let j = i + 1; j < lines.length; j++) {
     if (/^\S/.test(lines[j])) break; // next top-level key ends the block
-    const m = lines[j].match(/^\s+author:\s*(.*)$/);
-    if (m) return m[1].trim().replace(/^["']|["']$/g, "");
+    const m = lines[j].match(/^  author:[ \t]*(.*)$/);
+    if (m) authors.push(scalarText(m[1]));
   }
-  return ""; // metadata present, author missing
+  return authors.length === 1 ? authors[0] : "";
 };
-const metaDeclared = skills.filter((s) => metaAuthor(s.fm) !== null);
-const metaBad = metaDeclared.filter((s) => !metaAuthor(s.fm));
-ok("frontmatter: metadata carries non-empty author (when present)", metaBad.length === 0,
+const metaBad = skills.filter((s) => !metaAuthor(s.fm));
+ok("frontmatter: metadata carries non-empty author (required)", metaBad.length === 0,
    metaBad.length ? `missing author: ${metaBad.map((s) => s.dir).join(", ")}`
-                  : `${metaDeclared.length}/${skills.length} declare metadata`);
+                  : `all ${skills.length} declare one author`);
 
 // ---- 2. progressive disclosure: every lean contract under budget -----------------
 const BUDGET = 12000; // bytes; depth lives in references/, not in SKILL.md

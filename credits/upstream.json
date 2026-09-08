@@ -1,7 +1,75 @@
 {
   "schema": "fabius-upstream/v1",
-  "generated": "2026-09-01",
+  "generated": "2026-09-08",
   "entries": [
+    {
+      "id": "nanoclaw-code-architect",
+      "repo": "https://github.com/nanocoai/nanoclaw-templates",
+      "owner": "nanocoai",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/architecture-decisions.md"
+      ],
+      "pinned_commit": "0b9eeea30d1e6032a9fd1cadf1f0963f06b5c21a",
+      "pinned_version": null,
+      "pinned_at": "2026-09-08",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Architecture planning/review, scoped evidence, preserved strengths and smallest proof. Original synthesis; no books, agents, schemas or runtime bundled."
+    },
+    {
+      "id": "nanoclaw-skill-maintenance",
+      "repo": "https://github.com/nanocoai/nanoclaw",
+      "owner": "Gavriel",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/skill-maintenance.md"
+      ],
+      "pinned_commit": "6656b326a900dcfba4be8ca76412d954cfc915b5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-08",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Refine the existing owner from inspected source; preserve provenance, authority and install activation boundaries. Learn and update skill practices, no upstream code bundled."
+    },
+    {
+      "id": "nanoclaw-transactional-updates",
+      "repo": "https://github.com/nanocoai/nanoclaw",
+      "owner": "Gavriel",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/transactional-updates.md"
+      ],
+      "pinned_commit": "6656b326a900dcfba4be8ca76412d954cfc915b5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-08",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Stage updates; reconcile every selected result; separate source, mutable-state and external-pin recovery. Includes permission activation/revocation lifecycle linked by Cohors."
+    },
+    {
+      "id": "nanoclaw-memory-migration",
+      "repo": "https://github.com/nanocoai/nanoclaw",
+      "owner": "Gavriel",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-archivum",
+      "fabius_paths": [
+        "skills/fabius-archivum/references/memory-migration.md"
+      ],
+      "pinned_commit": "6656b326a900dcfba4be8ca76412d954cfc915b5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-08",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy migration into the declared canonical store with safe path inventory, outcome coverage, index and fresh-context recall. Pinned source supersedes the stale provider-copy catalog description."
+    },
     {
       "id": "impeccable",
       "repo": "https://github.com/pbakaus/impeccable",

@@ -29,6 +29,8 @@ One fabius-branded index over the capability libraries owned by the fifteen publ
 
 **Resource toolkits.** Owners also index external tools and datasets with licence/risk notes. These catalogs are recommendations to inspect at task time, not bundled dependencies and not proof that every upstream entry remains available or suitable. The router's [`skill-frontmatter.md`](skills/fabius/references/skill-frontmatter.md) contract applies to the fifteen public `SKILL.md` files; nested `REFERENCE.md` source documents are deliberately non-discoverable.
 
+**Architecture and maintenance.** Disciplina owns [architecture decisions](skills/fabius-disciplina/references/architecture-decisions.md) and [transactional updates](skills/fabius-disciplina/references/transactional-updates.md). The router owns [skill maintenance](skills/fabius/references/skill-maintenance.md); Archivum owns [memory migration](skills/fabius-archivum/references/memory-migration.md). Read only the relevant procedure. Their inspected upstream revisions and licenses are recorded in the source registry; no NanoClaw runtime or channel adapter is bundled.
+
 ## Retrieval contract — how the brain reaches the corpus
 
 1. **Classify** the task (routing-policy R1) → the owning skill → its library above.

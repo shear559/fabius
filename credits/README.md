@@ -25,6 +25,8 @@ What we owe to the open community is the **learning**: the on-demand depth under
 
 | fabius layer | Inspired / adapted from | Upstream license |
 |---|---|---|
+| `fabius-disciplina` (architecture decisions) | **NanoClaw Code Architect** ([nanocoai/nanoclaw-templates](https://github.com/nanocoai/nanoclaw-templates)) — planning/review boundaries, evidence and production-proof separation; independent Fabius synthesis, no upstream files bundled | **MIT** |
+| `fabius` · `fabius-disciplina` · `fabius-archivum` · `fabius-cohors` (skill maintenance, updates, memory migration, permission activation) | **NanoClaw** ([nanocoai/nanoclaw](https://github.com/nanocoai/nanoclaw), copyright Gavriel) — source-backed refinement, complete update outcomes, state-aware recovery, canonical-store migration and effective permission checks; source revisions pinned in the registry | **MIT** |
 | `fabius` (router · dispatch · model-tier) | claude-code-router (musistudio), cc-switch (farion1231) — model/route switching | see repos |
 | `fabius` (long-horizon loop · R12) | the "Ralph" autonomous-loop technique (Geoff Huntley) via ralph-claude-code (frankbria) | see repo |
 | `fabius-parcus` (lean guidelines) | the caveman (prose-trim) and ponytail (code-trim) disciplines | — |

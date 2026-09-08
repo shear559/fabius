@@ -1,18 +1,18 @@
 # Fabius Disciplina — scout the codebase, scout reality, prove in a browser
 
-The on-demand depth for `fabius-disciplina`'s *scout* and *prove* steps when the unknown is a large codebase, a current-world fact, or a UI in a browser. The skill is the contract; this is how you run the loop well. These are capabilities fabius can **apply** by reaching for named ecosystem tools — fabius bundles no runtime; the optional live tier routes to ARCHITECTURE.md external connections. Tool names and versions are a point-in-time snapshot (early 2026); re-verify before you depend on one.
+The on-demand depth for `fabius-disciplina`'s *scout* and *prove* steps when the unknown is a large codebase, a current-world fact, or a UI in a browser. The skill is the contract; this is how you run the loop well. The repository's optional local runner is separate from these ecosystem tools; external connections are documented in ARCHITECTURE.md. Tool names and versions are a point-in-time snapshot (early 2026); re-verify before you depend on one.
 
 Scout wide, strike narrow. Three of these sharpen *how you understand* before an edit; the rest sharpen *how you prove* after it.
 
-## 1. Scout the code with a graph, not a grep
+## 1. Map the code with the smallest sufficient tool
 
-On an unfamiliar or large repo, grepping for a symbol gives you matches, not understanding — and it floods the context with hits you have to read to discard. **Build a local code graph first.**
+Start with targeted symbol search, imports, build metadata, and covering tests. Reuse an existing local code graph when it answers the remaining dependency question; build one only when repeated cross-file queries justify the setup. Missing graph tooling does not block an otherwise answerable review.
 
 - Parse the repo with tree-sitter (14+ languages), store the symbol/call/import graph in **SQLite**, keep it **auto-synced** to the working tree (FSEvents / inotify). The graph is the index; the query is surgical. *(ecosystem: codegraph, GitNexus, Code Review Graph.)*
 - Query the graph for the answers an edit actually needs: **impact analysis** (what calls this, what breaks if I change the signature), **dependency tracing** (what this module pulls in), **taint analysis** (does untrusted input reach this sink). One query returns the blast radius; a grep returns a wall of strings.
 - **100% local** — the graph is built and queried on-device, no code leaves the machine. That is the precondition for using it on a client repo at all (→ `fabius-praesidium` owns the secrets/exfil boundary).
 
-**Decision rule:** unfamiliar or large repo → build/query the graph **before** editing. Small repo you already hold in your head → a grep is fine; the graph is overhead. The graph earns its build cost exactly when the context wouldn't fit in your head otherwise.
+**Decision rule:** choose the evidence needed for the change, then the least costly tool that produces it. A graph helps trace impact but does not prove runtime behavior; verify material edges against code and tests.
 
 ## 2. Scout reality — verify current-world facts against the live web
 
@@ -53,7 +53,7 @@ Phase 4 is the iron law: no production code for non-trivial logic until a test f
 - A **pre-edit hook** blocks writing implementation while no failing test exists — **RED → GREEN enforced** across 9+ test frameworks. The hook refuses the edit until red is real.
 - This turns "I'll write the test after" — the anti-pattern that proves the code does what it does, not what it should (→ `references/process-playbook.md`) — into something the harness won't let you skip.
 
-**Decision rule:** wire the gate when correctness is load-bearing and the cost of a silent regression is high. Don't gate throwaway prototypes, generated code, or pure config — the same narrow exceptions phase 4 already names, each with the human's sign-off.
+**Decision rule:** wire a hook only when its failure-prevention value and the task's authorization justify changing the harness. Throwaway prototypes, generated code, and pure config use the closest executable validator under phase 4; they need no separate approval ceremony. A suggested hook is not an installed enforcement mechanism.
 
 ## 6. Verify on stop — gate the turn's end, not just its start
 

@@ -1,16 +1,12 @@
 ---
 name: fabius-disciplina
 description: >
-  fabius's engineering-discipline layer — one repeatable procedure for HOW the agent builds,
-  debugs, and finishes: scope → plan → source/test impact map → strengthen the oracle → prove, plus grilling ambiguity and
-  root-cause debugging. Use before building any feature, fixing any bug, or refactoring — any
-  task bigger than a one-line edit. Also use when the user says "plan this", "grill me",
-  "debug this", "find the root cause", or "is this actually done?". Worked debug walkthrough and
-  test anti-patterns live in references/process-playbook.md; the full process reference library — craft
-  material (prototype, TDD, grill, handoff, writing) and discipline material (brainstorming,
-  systematic-debugging, writing-plans, verification-before-completion, parallel agents) — lives in
-  references/process/. The on-device prove loop for a UI app — build + assert state on a simulator,
-  semantic-tree-first and token-cheap — lives in references/simulator-verify.md.
+  Plan and review software architecture; build, debug, refactor, and verify non-trivial changes.
+  Fabius's engineering process connects scope, evidence, alternatives, source/test impact, and
+  observed results. Architecture analysis separates design direction from production proof;
+  implementation follows the user's existing authorization. Use for system design, architecture
+  assessment, technology choices, migrations, root-cause debugging, and completion checks.
+  UI craft belongs to fabius-decor; agent engineering belongs to fabius-cohors.
 when_to_use: >
   "where do we start", "write the tests first", "it keeps regressing", "why is it slow",
   "why does it still fail", "walk me through the fix before coding".
@@ -36,7 +32,9 @@ Start with enough context to make the next safe move; ceremony is not evidence:
 
 ## 2. Grill the ambiguity
 
-When the plan leans on fuzzy words or domain terms, interrogate one question at a time until every branch of the decision tree is closed. A new term that collides with the project's existing vocabulary is a stop-and-resolve event, not a thing to guess past. The instant a fact crystallizes, write it down (→ `fabius-archivum`). Sharpening the language now is cheaper than the rewrite later.
+Resolve a fuzzy term when its meaning changes the design, acceptance check, or authority boundary. Ask one focused question and continue independent work; don't interview over reversible details. Preserve the project's vocabulary. Record durable decisions through `fabius-archivum` when writing is authorized.
+
+For **architecture planning or review**, use [architecture-decisions.md](references/architecture-decisions.md): concrete evidence, alternatives, preserved strengths, and the smallest missing proof. An analysis request does not authorize implementation; an implementation request already does. For updates involving running code or mutable state, use [transactional-updates.md](references/transactional-updates.md).
 
 ## 3. Plan — for multi-step work
 
@@ -106,7 +104,7 @@ The full process reference library — prototype, TDD, grill, handoff, writing, 
 From the agent-research canon (full set in the router's [routing-policy.md](../fabius/references/routing-policy.md)):
 
 - **Reason → act → observe (R5).** In tool/sub-agent work, never act on an assumed result — one thought, one action, read the *real* observation, then continue. After ~3 cycles with no progress toward the verify condition, stop and re-plan (the same 3-strike trigger as the debug rule above). *(ReAct)*
-- **Plan in placeholders (R6).** For any task that will call ≥2 tools, finish a tool-free plan naming each tool *output* as a placeholder before binding a call — so the skeleton can be grilled, independent calls parallelize, and a wrong result re-runs one tool, not the plan. *(Chain of Abstraction)*
+- **Plan dependencies (R6).** When several steps depend on tool results, name the outputs before binding later calls; batch independent reads and revise only the affected step on failure. A routine pair of tool calls needs no separate planning ceremony.
 - **Branch only when partials are scorable (R7).** Keep brainstorm/plan a single pass by default; escalate to a scored tree (generate → score → prune) only when a cheap evaluator can rank half-finished candidates and early mistakes are costly. No evaluator → single path. *(Tree of Thoughts)*
 - **Reflect on a real signal (R8).** Enter a refine loop only on an attributable critique. A hard oracle (test/compiler/schema) earns ~3 iterations; soft self-critique caps at 1–2; no signal → ship once, route to human review. *(Reflexion + Self-Refine)*
 - **Reflect-then-retry, escalate when hypotheses run out (M4).** On a verifiable failure, prepend a one-paragraph reflection (what was tried · the failure signal · inferred cause · one changed action) to the retry; if it repeats the prior cause with no new hypothesis, stop and escalate to a human (hard cap ~3 — the same trigger as the debug rule above). *(Reflexion)*

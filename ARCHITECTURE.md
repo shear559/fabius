@@ -37,10 +37,10 @@ The organizing idea is the Fabian one: **scout wide, strike narrow.** Investigat
 
 - **`fabius`** — the router (the *praetorium*). Reads the task; classifies Memory, Tools/Action, and Planning; selects any domain owner; then chooses the smallest sufficient machinery rung and model tier. Owns the system-level kill-switch and the *scout-wide / strike-narrow* maxim.
 - **`fabius-parcus`** — the always-on lean core. Runs *underneath* every other layer (never instead of one): terse prose, the YAGNI ladder, surgical changes, assumption-checking.
-- **`fabius-disciplina`** — the engineering-process layer: impact map → failing reproduction → minimal fix → mapped regression set → proof, plus root-cause debugging. Owns planning, test discipline, and the clarifying-question procedure; it does not impose slogan-level TDD without a covering-test map.
+- **`fabius-disciplina`** — the engineering-process layer: architecture planning/review with scoped evidence, transactional updates, impact map → failing reproduction → minimal fix → mapped regression set → proof, plus root-cause debugging. Owns material clarification; analysis and implementation retain the user's requested boundary.
 - **`fabius-decor`** — the design layer: token vocabulary, the one-accent laws, mobile-first, the live-verify checklist — **and the data-visualization concern** (the *figura* library: data-ink charts, reproducible tokenized SVG, diagrams-as-code).
 - **`fabius-cohors`** — the agent-engineering layer: the definition schema, least-privilege permissions, the five orchestration patterns (sequential / parallel / hierarchical / human-in-the-loop / swarm).
-- **`fabius-archivum`** — the permissioned persistent-memory layer: interlinked notes, index + append-only log, gated recall, and when to add vector retrieval. Security, incident, outage, rollback, and error-recovery routes begin with fresh evidence rather than recalled precedent.
+- **`fabius-archivum`** — the permissioned persistent-memory layer: canonical records, legacy migration with source accounting and fresh-context retrieval checks, index + append-only log, gated recall, and when to add vector retrieval. Security, incident, outage, rollback, and error-recovery routes begin with fresh evidence rather than recalled precedent.
 - **`fabius-mercatus`** — the go-to-market layer: positioning, message-to-awareness match, proof over adjectives, a one-action funnel, converting copy, the smallest-campaign launch loop.
 - **`fabius-praesidium`** — the defensive-security layer: STRIDE threat-modeling per trust boundary, the OWASP pass, secrets + least-privilege hygiene, and a severity→fix→proof finding contract. Hardens, never weaponizes.
 - **`fabius-ludus`** — the game-craft layer: the core loop first, deliberate game feel (juice), state as an explicit machine, the pixel-art lane, balance one knob at a time, jam-sized scope.
@@ -58,6 +58,8 @@ Each rule has exactly one owning layer; every other layer references it instead 
 | Rule | Owner |
 |---|---|
 | Planning (`step → verify`), test discipline, the clarifying-question / grill procedure | `fabius-disciplina` |
+| Architecture planning/review, scoped proof and transactional updates | `fabius-disciplina` |
+| Capture/refine a skill, its routing ownership and maintenance workflow | `fabius` |
 | Lean prose, the YAGNI ladder, the never-trim list, auto-clarity carve-outs | `fabius-parcus` |
 | System kill-switch, routing + dispatch (layer · machinery · model tier), the shared maxim | `fabius` |
 | Token contract, the one-accent laws, the data-visualization (figura) rules | `fabius-decor` |
@@ -99,6 +101,8 @@ prompt → fabius (router)   ── classify Memory/Tools/Planning + Domain; cho
 ```
 
 Skills self-surface by their `description`; the router composes them. "Build a landing page" resolves to `fabius-disciplina` (brainstorm the spec) → `fabius-decor` (execute at quality), all under `fabius-parcus`. A vertical (a game, a launch, a security review) runs a studio: the domain skill leads, process plans, execution follows (routing-policy R13).
+
+Architecture planning and assessment load [`architecture-decisions.md`](skills/fabius-disciplina/references/architecture-decisions.md); updates load [`transactional-updates.md`](skills/fabius-disciplina/references/transactional-updates.md). Skill refinement loads the router's [`skill-maintenance.md`](skills/fabius/references/skill-maintenance.md). Legacy record consolidation loads Archivum's [`memory-migration.md`](skills/fabius-archivum/references/memory-migration.md). These are on-demand procedures, not additional discoverable skills or installed services. Delegation uses the current harness's actual tool schema; the local runner performs one loop and does not implement a subagent executor.
 
 ## The spine
 

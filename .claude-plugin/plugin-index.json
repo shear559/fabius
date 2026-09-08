@@ -6,11 +6,11 @@
         "skills": [
           {
             "name": "fabius",
-            "description": "Router and stance-setter — loads first on any non-trivial task, sets scout wide, strike narrow, then dispatches to fourteen layers."
+            "description": "Router and stance-setter: classify the task, select an available execution path and model tier, and refine existing skills from verified sources."
           },
           {
             "name": "fabius-archivum",
-            "description": "Persistent memory: write learnings into an interlinked markdown knowledge base, retrieve cheaply, keep it healthy — knowledge compounds; video and source-grounded notebooks enter as sources."
+            "description": "Persistent memory: use the canonical project record, check staleness, retrieve and sync durable facts, and consolidate legacy notes without duplicating shared stores."
           },
           {
             "name": "fabius-catena",
@@ -18,7 +18,7 @@
           },
           {
             "name": "fabius-cohors",
-            "description": "Agent engineering: definition schema, permission model, single-vs-multi decision, five orchestration patterns, and a curated agent-reference corpus."
+            "description": "Agent engineering: discover actual harness capabilities, define bounded roles and permissions, select single or multi-agent execution, and verify effective permissions after lifecycle changes."
           },
           {
             "name": "fabius-concilium",
@@ -30,7 +30,7 @@
           },
           {
             "name": "fabius-disciplina",
-            "description": "Engineering discipline: brainstorm, plan, test-first, prove — plus grilling ambiguity and root-cause debugging on any non-trivial change."
+            "description": "Engineering discipline: resolve material ambiguity, plan and review architecture against evidence, preserve working invariants, test and prove changes, and recover incomplete updates."
           },
           {
             "name": "fabius-doctrina",

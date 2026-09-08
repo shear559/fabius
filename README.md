@@ -116,6 +116,14 @@ grok plugin enable fabius
 
 **Anywhere else** — Cursor, Windsurf, Cline, Copilot, Gemini CLI, OpenCode or a raw system prompt: carry [`AGENTS.md`](AGENTS.md) in at the path your tool reads, and the same rules apply. Without any harness, the repo ships a zero-dependency local runner for the same sealed rules — `node runtime/fabius.mjs run "…"` — read-only until you allow writes, holding anything irreversible even in autonomous mode.
 
+Try a concrete task after loading the plugin:
+
+- “Review this architecture. Preserve the working boundaries, compare alternatives, and separate design advice from evidence we still need.”
+- “Improve this skill from these sources. Update its existing owner, preserve attribution, and test both the intended route and a near-neighbor.”
+- “Plan this upgrade. Account for every selected component and show how code, data, and external version pins can be recovered.”
+
+These workflows use your harness's available tools and permissions. Missing execution or live access is reported explicitly. [Architecture decisions](skills/fabius-disciplina/references/architecture-decisions.md) · [Skill maintenance](skills/fabius/references/skill-maintenance.md) · [Transactional updates](skills/fabius-disciplina/references/transactional-updates.md).
+
 ---
 
 ## The system
@@ -126,12 +134,12 @@ grok plugin enable fabius
 
 | Layer | Owns |
 |---|---|
-| `fabius` | the router — reads the job, picks the layers, the machinery rung, the model tier |
+| `fabius` | the router — selects layers, machinery and model tier; maintains skill ownership and source-backed refinement |
 | `fabius-parcus` | the always-on lean core — terse output, the YAGNI ladder, surgical change |
-| `fabius-disciplina` | engineering process — impact map → failing reproduction → minimal fix → prove, root-cause debugging |
+| `fabius-disciplina` | architecture planning/review, state-aware updates, impact-mapped implementation and root-cause debugging |
 | `fabius-decor` | ship-grade design — tokens, one accent, data-viz, decks + infographics, RTL, review against the generated-UI tells |
 | `fabius-cohors` | agent engineering — least privilege, orchestration up to a swarm |
-| `fabius-archivum` | permissioned memory — typed records, gated recall, append-only history, fresh-eyes routes; video and source-grounded notebooks as sources |
+| `fabius-archivum` | permissioned memory — canonical records, legacy migration, gated recall and history; video and source-grounded notebooks as sources |
 | `fabius-mercatus` | go-to-market — positioning, converting copy, SEO, draft-only outreach |
 | `fabius-praesidium` | defensive security — STRIDE, OWASP, severity → fix → regression test |
 | `fabius-ludus` | game craft — core loop first, deliberate juice, jam-sized scope |
@@ -149,6 +157,8 @@ Depth on demand: [ARCHITECTURE.md](ARCHITECTURE.md) · [CORPUS.md](CORPUS.md) ·
 ## The proof
 
 One versioned benchmark, four panels, every miss printed: blind-judged quality, a mixed track of executed checks and explicitly model-graded factual checklists, cross-family demonstrations, and the 100-task FBS run of the identity contract. Results are reported per model, panel, and task; they do not establish that every model or domain improves. Reproducibility is limited to the artifacts actually committed, and those limits are printed beside the numbers. Method and receipts: [BENCHMARKS.md](BENCHMARKS.md) · formal arguments and coherence analysis: [the whitepaper](paper/fabius-as-a-system.pdf) (50 pp).
+
+Run the repository checks with `bash scripts/verify-all.sh --mode=dev`. Routing regressions exercise real input phrases; frontmatter controls remove, duplicate and corrupt required fields to test the gate itself. Separate [maintenance smoke scenarios](evals/maintenance-smoke/README.md) retain prompts and observed responses; they are not an additional benchmark panel or a measured quality gain.
 
 ---
 

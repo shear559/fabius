@@ -1,20 +1,16 @@
 ---
 name: fabius-archivum
 description: >
-  fabius's persistent-memory layer — lets the agent stop re-deriving: write what it learns into an
-  interlinked markdown knowledge base, retrieve from it cheaply, and keep it healthy (index + log +
-  when-to-add-vector). Use when work spans sessions, when a fact or decision is worth keeping, when
-  the user says "remember this", when a knowledge base is growing, to set up a per-project memory or
-  an Obsidian vault so the next session starts ahead, or whenever the agent is about
-  to redo research it (or a past session) already did. Directory schema and page conventions live in
-  references/memory-schema.md; the knowledge engine itself — a vector engine, the wiki pattern, and a
-  RAG pipeline — lives in references/knowledge/. Cross-session auto-recall (capture → compress →
-  re-inject without being asked) and source-grounded external-corpus connectors live in
-  references/external-recall.md.
+  Maintain and retrieve permissioned project memory in the workspace's declared record store.
+  Read a named project's record before work; preserve decisions, provenance, indexes, and history.
+  Use for cross-session continuation, recording verified lessons, knowledge-base maintenance,
+  legacy memory migration, meeting or video source ingest, and source-grounded notebook questions.
+  One canonical store, gated writes, and fresh evidence before recalled conclusions on incident
+  routes. Provider changes do not require moving records when the store is already shared.
 when_to_use: >
   "what did we decide last time", "save this for later", "set up project memory", "index the
   vault", before work on a project that already has a record, "watch this video", "what does this recording show", "ask my sources", or before
-  redoing research a past session covered.
+  redoing research a past session covered, "migrate memory", "consolidate legacy notes".
 license: UNLICENSED
 metadata:
   author: shear559
@@ -67,6 +63,8 @@ Inside the write boundary, the agent handles summarizing, cross-referencing, fil
 ## Cross-session memory — the project record
 
 The next session starts where the last ended, but only inside a workspace that opted into a **record store**. The store is *declared*, not discovered from the repo: it may sit outside every repo and serve many projects, one page per project. Full contract → [`references/project-records.md`](references/project-records.md).
+
+Legacy consolidation or a store-schema change → [memory-migration.md](references/memory-migration.md): preserve sources, account for every import, respect link boundaries, and verify retrieval in a fresh context. A provider switch with a shared store needs no copy.
 
 - **Resolve the store before testing for one.** A central hub (one page per project, shared index + log) or an in-project store — never both. Already opted in → the offer is spent: read every time, never re-ask, never scaffold a second store beside a declared one.
 - **Project-page gate — a precondition, not a dial.** Work that names a project reads that project's ONE page IN FULL first: brief · stack · decisions · health · open items · live URL. Not the index row, not a grep hit. No page for a named project in a declared store → propose the page; don't start blind.
