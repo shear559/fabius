@@ -11,10 +11,10 @@ fabius is proprietary — the [LICENSE](LICENSE) grants personal, non-commercial
 
 ## What cannot be accepted
 
-Pull requests that add or modify the Software. There is no licence grant to build on, so merging outside code would put the repository's provenance story — a signed Merkle root over every skill contract — in an ambiguous state. It is not personal; it is what "sealed" means.
+Unsolicited pull requests that add or modify the Software. This is the maintainer’s contribution policy under the current license; cryptographic sealing does not inherently prevent accepting reviewed contributions.
 
-If you want to build something on fabius, [open an issue and ask](https://github.com/shear559/fabius/issues/new/choose). Written permission is how the LICENSE says yes, and the answer to reasonable asks usually is.
+If you want to build something on fabius, [open an issue and ask](https://github.com/shear559/fabius/issues/new/choose). Written permission is how the LICENSE says yes, and an answer is not guaranteed.
 
 ## The bar for reports
 
-The project's own standard is that claims carry receipts. A report meets the same bar with three things: what you ran, what you expected, what happened. `fabius --version` output and the harness (Claude Code / Codex / grok-build) turn a maybe into a fix.
+The project's own standard is that claims carry receipts. A report meets the same bar with three things: what you ran, what you expected, what happened. Include the host name/version and the plugin version shown by its plugin manager. If using the optional runner from a full checkout, include `node runtime/fabius.mjs --version`. Review every shared log manually for private information; automatic redaction is not a guarantee.

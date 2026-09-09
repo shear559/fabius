@@ -1,0 +1,11 @@
+{
+  "line_totals": {
+    "coffee": 120,
+    "tea": 90,
+    "mug": 70
+  },
+  "total": 280,
+  "items": 10,
+  "largest_product_by_revenue": "coffee",
+  "currency": null
+}

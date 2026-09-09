@@ -1,14 +1,14 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
-<!-- fabius-release: 2.8.1 -->
+<!-- fabius-release: 2.8.2 -->
 # The fabius benchmark
 
 One dated benchmark, with its misses intact: **Panel A improved three of four measured Claude tiers while shortening all four; Panel B's historical model-operated executed-code score records tied at ceiling and its model-graded factual-check track improved; Panel C recorded positive blind-judge demos across four external families; Panel D contains both gains and regressions.**
 
-One test, four panels, one canonical aggregate: [`evals/results.benchmark.json`](evals/results.benchmark.json). Every published number came from a named run, but the historical evidence is not complete: v5/v6/v7 retain scores rather than candidate answers; v6 omits generated files and raw stdout/stderr; Panel C's raw portable receipt was never committed. A rerun creates a new measurement on moving endpoints — it cannot reconstruct those missing artifacts. `node evals/verify-receipts.mjs` deterministically replays every aggregate the committed score receipts can support and refuses silent drift. Panel D executes the evaluation contract of [IDENTITY.md](IDENTITY.md) on the versioned **Fabius Benchmark Suite** (`evals/suite/`, FBS v1.0) with **BASE → FAB → FAB_MEMORY**.
+One test, four panels, one canonical aggregate: [`evals/results.benchmark.json`](evals/results.benchmark.json). Every published number came from a named run, but the historical evidence is not complete: v5/v6/v7 retain scores rather than candidate answers; v6 omits generated files and raw stdout/stderr; Panel C's raw portable receipt was never committed. A rerun creates a new measurement on moving endpoints — it cannot reconstruct those missing artifacts. `node evals/verify-receipts.mjs` deterministically replays every aggregate the committed score receipts can support and refuses silent drift. Panel D tests the text-output portion of the evaluation contract of [IDENTITY.md](IDENTITY.md) on the versioned **Fabius Benchmark Suite** (`evals/suite/`, FBS v1.0) with **BASE → FAB → FAB_MEMORY**.
 
-## The three arms
+## Arms in Panels A, B and C
 
-Every task in every panel is answered three ways:
+Panels A, B and C use the following three arms. Panel D instead compares BASE, FAB and FAB_MEMORY; it has no generic brevity control:
 
 - **`baseline`** — the task only.
 - **`terse`** — the task + a generic *"Be concise. Write minimal code."* line. **This is the real test.** Beating a bare model is easy; the control isolates fabius's *structure* (the YAGNI ladder, the never-trim guardrails, the routed specialist contracts) from plain brevity.
@@ -45,7 +45,7 @@ Raw data: [`evals/results.v5.json`](evals/results.v5.json).
 
 ## Panel B — Mixed historical verification: model-operated execution + model-graded factual checks
 
-Panel A ends in a blind quality score. Panel B changes the rubric, but the historical run did **not** remove models from verification. Four code tasks were extracted, written, executed and reported by a tool-using Workflow agent against hidden tests. Five domain deliverables (SQL route, RNA-seq, Solana, webhook, threat-model) were interpreted against fixed factual checklists by two model graders. The current harness replaces the code operator with a deterministic local runner and preserves answers, hashes, stdout/stderr and individual votes; the 2026-07-02 receipt predates that evidence schema.
+Panel A ends in a blind quality score. Panel B changes the rubric, but the historical run did **not** remove models from verification. A tool-using Workflow agent reported extracting, writing and executing four code tasks against hidden tests; retained score rows cannot independently establish those actions. Five domain deliverables (SQL route, RNA-seq, Solana, webhook, threat-model) were interpreted against fixed factual checklists by two model graders. The current harness replaces the code operator with a deterministic local runner and preserves answers, hashes, stdout/stderr and individual votes; the 2026-07-02 receipt predates that evidence schema.
 
 Mixed score = deterministic test pass rate + model-graded checklist pass rate:
 
@@ -81,7 +81,7 @@ Raw data: [`evals/results.v6.json`](evals/results.v6.json).
 
 ## Panel C — External-model demos, blind, cross-family
 
-The same three-arm design run *outside* the Claude family, through the portable harness ([`evals/portable_eval.py`](evals/portable_eval.py) — stdlib only, your keys): 6 tasks across trust/order, pure-YAGNI, and genuine-build categories, measured 2026-06-22 with live provider keys, judged blind cross-family (the judge never sees which arm wrote which answer).
+The same three-arm design run *across* model families, through the portable harness ([`evals/portable_eval.py`](evals/portable_eval.py) — stdlib only, your keys): 6 tasks across trust/order, pure-YAGNI, and genuine-build categories, measured 2026-06-22 with live provider keys, judged blind cross-family (the judge never sees which arm wrote which answer).
 
 Lift vs the "be concise" control on **genuine-build** tasks, /15:
 
@@ -113,7 +113,7 @@ Historical raw receipt: **not committed**. A new run writes `evals/results.porta
 
 ## Panel D — the FBS run: BASE → FAB → FAB_MEMORY on the versioned suite
 
-Panel D executes the evaluation contract fixed in [IDENTITY.md](IDENTITY.md): does the exact same model achieve better outcomes with less waste? The **Fabius Benchmark Suite** has 100 production-shaped tasks — 20 smoke / 50 core / 30 stress across A–J — each with 3–6 fixed factual checks and, where memory matters, a committed snapshot. Modes: **BASE** · **FAB** · **FAB_MEMORY**. Two blind model judges score the seven-dimension rubric; another model grader interprets the fixed factual checks from answer text. Run 2026-07-05.
+Panel D tests the text-output portion of the evaluation contract fixed in [IDENTITY.md](IDENTITY.md): does the exact same model achieve better outcomes with less waste? The **Fabius Benchmark Suite** has 100 production-shaped tasks — 20 smoke / 50 core / 30 stress across A–J — each with 3–6 fixed factual checks and, where memory matters, a committed snapshot. Modes: **BASE** · **FAB** · **FAB_MEMORY**. Two blind model judges score the seven-dimension rubric; another model grader interprets the fixed factual checks from answer text. Run 2026-07-05.
 
 **Sonnet 5 — the full 100-task suite:**
 
@@ -158,7 +158,7 @@ Separate from "does the stance help," a deterministic suite proves the *system* 
 | Progressive disclosure — every `SKILL.md` ≤ 12000 B (depth lives in `references/`) | **PASS** (maximum and headroom are computed in live output) |
 | Provenance `fab1-` fingerprint embedded in all 15 contracts | **PASS** |
 | Reference integrity — every linked **and backtick-quoted** `references/` path resolves | **PASS** |
-| Plugin manifest skill list == recursive discovery set; version is valid semver (`2.8.1`) | **PASS** |
+| Plugin manifest skill list == recursive discovery set; version is valid semver (`2.8.2`) | **PASS** |
 | No sealed-set drift — seal-manifest file list == skills on disk + ARCHITECTURE/CORPUS/AGENTS | **PASS** |
 | Content-bound seal — 18 sealed files hash-match + Merkle root recomputes | **PASS** |
 | Count coherence — README / ARCHITECTURE / AGENTS all state "fifteen" | **PASS** |
@@ -169,7 +169,7 @@ All structural invariants pass once the seal is recomputed; the command derives 
 
 ## The mechanism — why the structure should help
 
-Each fabius rule counters a *documented* default tendency of current code models:
+The rules are intended to counter documented tendencies of current code models:
 
 | Common model default | The fabius rule that counters it |
 |---|---|
@@ -186,7 +186,7 @@ A good result is shorter answers that survive stronger verification. Here, Panel
 
 - **Panel A tests: does injecting the shipped files, verbatim, improve blind-model-judged quality on this dated Claude roster?** Fable 5, Sonnet 5, and Opus 4.8 beat both controls; Haiku falls overall while its specialist-task subset rises. Output drops 20–35% on all four rows. The regression motivates testing model-tier routing and a leaner route; it does not prove either mechanism fixes it.
 - **Panel B tests two different things.** Historical executed-code score records tie at 100% but lack replayable artifacts. Two model graders mark more factual checklist items in the fabius domain answers. The combined score rises +3.5 to +17.4; that is not equivalent to a judge-free correctness gain.
-- **Panel C reports cross-family demos outside the Claude family.** Its four published genuine-build aggregates are positive vs the "be concise" control (Grok +8.5, GPT +7.0, Claude +7.0, Mistral +2.5), but the absent raw receipt prevents independent replay or answer-level verification.
+- **Panel C reports demos across four model families, including Claude.** Its four published genuine-build aggregates are positive vs the "be concise" control (Grok +8.5, GPT +7.0, Claude +7.0, Mistral +2.5), but the absent raw receipt prevents independent replay or answer-level verification.
 - **The structural suite tests: is the declared system built right** (recursive install surface, ownership, budgets, references, seal). Its live output derives the invariant count.
 - **Panel D tests the same-model outcome/waste contract through model grading plus deterministic length.** The fast-tier rubric rises (+0.73 stance, +1.46 with memory) on 11–14% less output. On the mid tier the rubric stays near 93% on 10–12% less output, with explicit core-tier and memory regressions. This is directional, not an objective oracle.
 - **Not tested by a one-shot benchmark:** cross-session memory accumulation (Panel D's snapshots are committed fixtures, not a live growing store), the `fabius` router's dispatch accuracy (checked structurally, not behaviorally), and the cross-model `fabius-concilium` layer (its proper test is whether a council beats its best single seat — a measurement to add, not a claim to make here).
@@ -195,7 +195,7 @@ Caveats, plainly: Panel A and Panel C are model-judged; Panel B's checklist half
 
 ---
 
-## Reproduce it (one command per panel)
+## Run a new experiment or replay retained scores
 
 ```bash
 # Panel A — quality, four Claude tiers (roster current at the run), shipped files verbatim, two blind judges
@@ -209,10 +209,10 @@ Workflow({ scriptPath: "evals/harness.v6.workflow.js" })
 # Panel C — external families, your keys (OpenAI / Grok-compatible / Mistral / Anthropic / Gemini)
 OPENAI_API_KEY=... XAI_API_KEY=... MISTRAL_API_KEY=... GEMINI_API_KEY=... python evals/portable_eval.py
 
-# Panel D — the FBS run: validate the committed suite, then execute BASE/FAB/FAB_MEMORY
-#   (inside Claude Code)            -> evals/results.v7.json
+# Panel D infrastructure — synthetic smoke, no model call or product score
 node evals/suite/validate.mjs
-Workflow({ scriptPath: "evals/harness.v7.workflow.js", args: { tasks: [/* evals/suite/*.jsonl */], model: "sonnet" } })
+node evals/text-eval.mjs fixture --tiers 1 --out /tmp/fabius-text-fixture.json
+node evals/text-eval.mjs replay --input /tmp/fabius-text-fixture.json --out /tmp/fabius-text-replayed.json
 
 # Structural suite + committed-receipt replay — no key, no cost, no network
 node evals/structural.mjs
@@ -222,7 +222,7 @@ node evals/verify-receipts.mjs
 bash scripts/verify-all.sh --mode=dev
 ```
 
-The canonical consolidated receipt is [`evals/results.benchmark.json`](evals/results.benchmark.json). New harness runs use richer answer/evidence schemas, but they do not retroactively fill historical gaps. Add tasks, raise n, swap judges, and preserve content-addressed answers and execution artifacts.
+The canonical consolidated receipt is [`evals/results.benchmark.json`](evals/results.benchmark.json). New harness runs use richer answer/evidence schemas, but they do not retroactively fill historical gaps. See the [FBS execution instructions](evals/suite/README.md#execution-harness) for deterministic preparation and the host-specific Workflow adapter. Workflow examples require a host exposing that API; it is not a Node command or a guaranteed Claude Code tool. New output paths must not already exist. Add tasks, raise n, swap judges, and preserve content-addressed answers and execution artifacts.
 
 ---
 

@@ -6,8 +6,8 @@ body:
     id: surface
     attributes:
       label: Where
-      description: Harness and version — Claude Code / Codex / grok-build, and `fabius --version` if the local runtime is involved
-      placeholder: Claude Code · fabius v2.8.1
+      description: Host name/version and plugin-manager version. For the optional runner from a full checkout, include `node runtime/fabius.mjs --version`.
+      placeholder: Claude Code · fabius v2.8.2
     validations:
       required: true
   - type: textarea
@@ -21,4 +21,4 @@ body:
     id: receipts
     attributes:
       label: Receipts
-      description: Output, transcript excerpt, or the doc line that is wrong. Redact anything private — the runtime's redact() should have done it already, and if it did not, that is a security report instead.
+      description: Output, transcript excerpt, or the incorrect documentation. Manually remove secrets and personal information before sharing. Report possible secret exposure privately through SECURITY.md; do not paste it here.
