@@ -1,6 +1,6 @@
 # Compatibility and acceptance evidence
 
-Checked 2026-09-09. Published baseline: **2.8.1**, commit `e224daccd393ac2081b38d4a804aa70637b90095`. The follow-up working tree is a release candidate; publication and fresh-install acceptance of it are separate steps.
+Checked 2026-09-09. Host-test baseline: **2.8.1**, commit `e224daccd393ac2081b38d4a804aa70637b90095`. The **2.8.2** checks below were recorded during candidate preparation; publication and fresh-install acceptance are separate steps. A published release does not retroactively establish those host results.
 
 | Surface | Evidence available | Remaining acceptance |
 |---|---|---|
