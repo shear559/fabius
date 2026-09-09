@@ -67,7 +67,7 @@ window.MathJax = {
   /* ---- proof cards ---- */
   .rulecard{ break-inside:avoid; page-break-inside:avoid; border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:7px; padding:11px 15px 6px; margin:0 0 13px; background:#fcfdff; }
   .rulecard.qualitative{ border-left-color:var(--grey); background:#fafbfc; }
-  .rulehead{ display:flex; align-items:baseline; gap:9px; margin-bottom:.3em; flex-wrap:wrap; }
+  .rulehead{ display:flex; align-items:baseline; gap:9px; margin-bottom:.3em; flex-wrap:wrap; break-inside:avoid; break-after:avoid; }
   .ruleid{ font-family:"Helvetica Neue",Arial,sans-serif; font-weight:800; font-size:10.5pt; color:var(--ink); }
   .ruletitle{ font-family:"Helvetica Neue",Arial,sans-serif; font-weight:600; font-size:10.4pt; color:var(--soft); }
   .badge{ margin-left:auto; font-family:"Helvetica Neue",Arial,sans-serif; font-size:7.2pt; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:2px 7px; border-radius:20px; white-space:nowrap; }
@@ -112,7 +112,7 @@ window.MathJax = {
 <!-- ================= TITLE ================= -->
 <div class="title-page">
   <!--FIG:fabius-pixel-->
-  <div class="kicker" style="text-align:center;margin-bottom:8px">Whitepaper · v2.8.1</div>
+  <div class="kicker" style="text-align:center;margin-bottom:8px">Whitepaper · v2.8.2</div>
   <div class="title">Fabius</div>
   <div class="subtitle">Fifteen coordinated skills, twenty-two core routing rules, and conditional mathematical models for choosing how to work and when to stop.</div>
   <hr class="rule-hr" />
@@ -125,7 +125,7 @@ window.MathJax = {
     <p>The decision core contains <strong>twenty-two parent routing rules</strong>, developed in twenty-six argument blocks: twenty-two mathematical arguments under stated assumptions and four qualitative operational heuristics. The composition analysis concerns the declared labels and bounded procedure. It does not establish classification accuracy, calibrated estimates, model compliance or host enforcement. The research-informed frontier rules remain outside that analysis.</p>
     <p>Four dated benchmark panels report model-judged quality, historical execution-score records, model-graded checklists, cross-family aggregates and a separate memory evaluation. Panel A improved three of four measured tiers while shortening all four; the other panels include gains, ties and regressions. Missing historical answers, execution artifacts and raw cross-family runs limit independent replay. Current maintenance checks are separate from those historical measurements.</p>
     <p>The model supplies capability; the plugin supplies instructions and workflows. Execution depends on the host, available tools and permissions. The repository includes an optional local runner and verification of signed release provenance. Neither local execution nor a content seal guarantees answer quality.</p>
-    <div class="meta-row">Version 2.8.1 · September 2026 · figures computed (numpy → SVG), reproducible</div>
+    <div class="meta-row">Version 2.8.2 · September 2026 · figures computed (numpy → SVG), reproducible</div>
   </div>
 </div>
 
@@ -342,7 +342,7 @@ window.MathJax = {
 <!-- ================= 7. HONESTY ================= -->
 <section class="sec">
 <h2>7 · The honesty ledger</h2>
-<p>The quality bar of the whole project is one phrase: <strong>measured, not claimed.</strong> It runs in two places. In the mathematics, a rule earns a place in the theorem only with a proof that survived adversarial checking; the few operational heuristics (R4, R5, R10, M8b) are labelled as heuristics, carry no proof claim, and never govern a route the way the mathematical gates do. In the benchmark, every number is reported with its method, its controls, and its misses — the losses printed in the receipt, not smoothed away.</p>
+<p>The quality bar of the whole project is one phrase: <strong>measured, not claimed.</strong> It runs in two places. In the mathematics, a rule earns a place in the theorem only with a proof that survived adversarial checking; the few operational heuristics (R4, R5, R10, M8b) are labelled as heuristics, carry no proof claim, and can still impose mandatory admissibility conditions, such as R5’s grounding guard. In the benchmark, every number is reported with its method, its controls, and its misses — the losses printed in the receipt, not smoothed away.</p>
 
 <p>Several rules share a cost-benefit threshold; others concern classification, scheduling, algebra, ownership, or qualitative control. The twenty-two parent rules are represented by twenty-six formal blocks. The four qualitative blocks make no proof claim, and the mathematical blocks remain conditional on their stated assumptions. Every rule is fabius's own — derived, proved where a proof is claimed, and stated as a heuristic where it is not.</p>
 
@@ -374,7 +374,7 @@ GEMINI_API_KEY=...     python evals/portable_eval.py --models gemini</pre>
 
 <!-- ================= FOOTER ================= -->
 <section>
-<div class="footer-tag">Fabius v2.8.1 · scout wide, strike narrow · fabius-landing.vercel.app · public · proprietary · provenance-verifiable</div>
+<div class="footer-tag">Fabius v2.8.2 · scout wide, strike narrow · fabius-landing.vercel.app · public · proprietary · provenance-verifiable</div>
 </section>
 
 </div>

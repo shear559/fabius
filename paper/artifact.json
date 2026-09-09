@@ -1,10 +1,10 @@
 {
   "schema": "fabius-paper-artifact/v1",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "file": "paper/fabius-as-a-system.pdf",
-  "sha256": "e29a23055a38cc9694d57e8ac18327e9c5d632b3ed9d69e78d79ab963255cc56",
-  "pages": 50,
-  "source_sha256": "fab6bf7934cd020f5a4afd7070c8dcbd81e055462064e1912df9c1e497917277",
+  "sha256": "da983a687f6575b9b5d5dec90874114d702cf9a45f22ed3a6ba32d90af94aa22",
+  "pages": 51,
+  "source_sha256": "098adc6274c32f77b0cde92aaea0279eb8f883d19234300f6d5f243f10530521",
   "sources": [
     {
       "file": "assets/architecture.svg",
@@ -48,7 +48,7 @@
     },
     {
       "file": "paper/build.py",
-      "sha256": "ecc51b420455939af851c38d30b07fa4e469c2af665a2e703108e22e1c88ad50"
+      "sha256": "e2bb682f31e2b61b087ccee180891a9cb3ec3a2240473c53b6e0abfe12026b6c"
     },
     {
       "file": "paper/build.sh",
@@ -56,19 +56,19 @@
     },
     {
       "file": "paper/coherence-ext.html",
-      "sha256": "2796f059e4c1973fc25a883ac820a90a7ee3997ac0a88a8cba6b936dbd1d3a20"
+      "sha256": "140ce887b2f136fed846de00e70168e03b7e421b861f0625ce736096ddd50914"
     },
     {
       "file": "paper/coherence.html",
-      "sha256": "15a873f777048c661a47b0c2ded458bd11ea023394db62993bd2a0903e270c46"
+      "sha256": "078135143950244021c6167f82db1dd2f4776d944de7a2372530669b396bece9"
     },
     {
       "file": "paper/proofs.json",
-      "sha256": "0d523d863d7c8f1de5bd4329037991d6b2c4b510da304ae9d8ff84fd8e97136c"
+      "sha256": "bc720b18e1cc233bc8d49dfaadf39dc98ac59a8a8f55d596e7a97967bbb86c4d"
     },
     {
       "file": "paper/template.html",
-      "sha256": "cb40d108dcd2dffd99751cfccbe7eae64ad0752bdac1a384ccc6eebf5d27b17c"
+      "sha256": "8e46ffb9d51cb7cb81162fb19db2e1561bf0237b5c682a1ab72f07dd9f1d6552"
     }
   ],
   "external_sources": [
@@ -79,8 +79,8 @@
     }
   ],
   "rendered_markers": [
-    "Whitepaper · v2.8.1",
-    "Version 2.8.1",
-    "Fabius v2.8.1"
+    "Whitepaper · v2.8.2",
+    "Version 2.8.2",
+    "Fabius v2.8.2"
   ]
 }

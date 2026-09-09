@@ -126,7 +126,7 @@ def write_artifact():
 _INLINE = re.compile(r"\\\(.*?\\\)", re.S)
 _DISPLAY = re.compile(r"\\\[.*?\\\]", re.S)
 def _fix(span):
-    s = span.group(0)
+    s = span.group(0).replace(r"\*", r"\ast ")
     return s.replace("<", r"\lt ").replace(">", r"\gt ")
 def math_safe(html):
     html = _DISPLAY.sub(_fix, html)

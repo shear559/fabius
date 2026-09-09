@@ -24,6 +24,10 @@ run_gate "structural frontmatter adversarial regression" node scripts/test-struc
 run_gate "nested reference quarantine" node scripts/verify-reference-quarantine.mjs
 run_gate "FBS suite schema" node evals/suite/validate.mjs
 run_gate "committed benchmark receipt replay" node evals/verify-receipts.mjs
+run_gate "text-eval evidence regression" node --test evals/text-eval.test.mjs
+run_gate "focused proof boundary regressions" node evals/proof-boundaries.mjs
+run_gate "starter artifact checks" python3 -B examples/verify.py
+run_gate "prepared launch cases and evidence boundaries" node launch/validate-tasks.mjs --self-test
 run_gate "base eval harness selftest" node evals/eval.mjs --selftest
 run_gate "portable eval harness selftest" python3 evals/portable_eval.py --selftest
 run_gate "runtime unit/integration tests" node --test runtime/test/*.test.mjs
@@ -31,6 +35,9 @@ run_gate "Concilium deterministic protocol selftest" node skills/fabius-conciliu
 run_gate "repo-local package truth" node scripts/verify-package.mjs
 run_gate "upstream registry coherence" node scripts/verify-upstream.mjs
 run_gate "upstream registry adversarial regression" node scripts/test-verify-upstream.mjs
+run_gate "distribution adversarial regression" python3 -B scripts/test-distribution.py
+run_gate "local upstream content inventory" python3 -B scripts/distribution.py check --include-file credits/content-manifest.json
+run_gate "paper TeX rendering boundary" python3 -B paper/test_rendering.py
 run_gate "paper artifact oracle" node scripts/verify-paper-artifact.mjs
 run_gate "paper artifact adversarial regression" node scripts/test-verify-paper-artifact.mjs
 run_gate "OpenTimestamps detached-proof binding" node scripts/test-verify-ots-binding.mjs
