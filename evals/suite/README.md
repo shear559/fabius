@@ -1,9 +1,7 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: ../../PROVENANCE.md · github.com/shear559/fabius -->
 # Fabius Benchmark Suite (FBS) — v1.0
 
-**The agentic-control-layer evaluation framework.** The executable form of [IDENTITY.md](../../IDENTITY.md): fabius is not a standalone model — it is an intelligence amplification layer on top of existing LLMs — so benchmarking it is fundamentally different from benchmarking an LLM. We are not evaluating intelligence. We are evaluating **orchestration**: behavioral optimization, decision quality, and whether the layer produces better outputs, better decisions, fewer mistakes, fewer retries, and fewer wasted tokens — while preserving correctness.
-
-> Better outputs. Better decisions. Fewer wasted tokens.
+**A fixed suite for comparing model answers with and without Fabius instructions.** The current harness is a **text-only, model-graded experiment**. It measures answer scores, check decisions and output length. It does not execute generated code, observe tool use, prove host installation, or measure operational retries and token savings. Those require separate agent execution and human-use evidence.
 
 ## Files
 
@@ -15,11 +13,11 @@
 | `schema.json` | The task metadata schema (JSON Schema). Every line of every JSONL validates against it. |
 | `validate.mjs` | Deterministic suite validator — no model, no key: schema conformance, exact counts (20/50/30), unique IDs, category balance, tier rules, neutrality lint. `node evals/suite/validate.mjs` |
 
-The runner is [`../harness.v7.workflow.js`](../harness.v7.workflow.js); measured results land in `../results.v7.json` and are surfaced in [BENCHMARKS.md](../../BENCHMARKS.md).
+The shared implementation is [`../text-eval-core.mjs`](../text-eval-core.mjs). The ordinary Node entry point [`../text-eval.mjs`](../text-eval.mjs) prepares inputs, exercises synthetic fixtures and replays receipts offline. [`../harness.v7.workflow.js`](../harness.v7.workflow.js) preserves the legacy host Workflow adapter. Historical `results.v7.json` remains unchanged; new experiments use separate versioned receipts. Historical arithmetic is checked by `node evals/verify-receipts.mjs` and described in [BENCHMARKS.md](../../BENCHMARKS.md).
 
 ## The three evaluation modes
 
-Every task is executed under identical conditions in three modes. Same model. Same task. Fresh context. No history, no leakage. Only the orchestration changes.
+Each task requests the same generation model and task text in three modes. The host must provide a fresh context per call and configure tools appropriately. The adapter records its requests and returned answers; it cannot independently prove host isolation or the model version behind an alias.
 
 | Mode | Contents |
 |---|---|
@@ -29,7 +27,7 @@ Every task is executed under identical conditions in three modes. Same model. Sa
 
 ## Benchmark rules
 
-- **Isolation** — every run is a fresh conversation; no context leakage, no hidden memory.
+- **Isolation** — require fresh conversations and no hidden memory in the host setup; document that setup separately. A text receipt alone does not prove isolation.
 - **Task equality** — every mode receives the exact same task text.
 - **Neutrality** — prompts never mention the stance or its vocabulary, never inherently favor any mode, and avoid toy problems. They represent realistic workloads.
 - **Reproducibility** — prompts fixed, expected behaviors fixed, suite versioned (this is FBS v1.0), fabius releases versioned, memory snapshots versioned (they live inside the task records).
@@ -63,7 +61,7 @@ A task's `routed_skill` may override the default when its content clearly belong
 | Token efficiency | excessive waste | poor | average | efficient | highly optimized |
 | Final output quality | unusable | weak | adequate | strong | exceptional |
 
-Scored by **two independent blind judges** (averaged) that are never told the mode, the model, or the stance — plus each task's **`automatic_checks`**: 3–6 objective, text-decidable checks graded separately (checks passed / total). Average output length is recorded as the bias-free waste metric.
+The harness withholds mode, generation model and stance from **two rubric judge requests**; answers themselves may reveal clues, so blinding is not guaranteed. Both complete ballots are required. Each must contain exactly the seven integer scores from 0 through 4. Each task's **`automatic_checks`** are fixed, text-decidable criteria interpreted by a model grader. Check IDs are derived as `FAB-001/check-1`, etc.; every expected ID must appear exactly once with a boolean `passed` and string `evidence`. Output characters are a length proxy, not a bias-free quality or token-use metric.
 
 ## Task metadata schema
 
@@ -89,25 +87,63 @@ One JSON object per line (JSONL), per [`schema.json`](schema.json):
 
 ## Execution harness
 
-```
-validate suite (deterministic) → for each task × mode: generate (no tools, fresh context)
-  → auto-check grader (objective checks) → two blind judges (7-dim rubric)
-  → aggregate: by mode · by tier · by category · by dimension · output length
-  → deltas BASE→FAB→FAB_MEMORY → human review → report
+```text
+validate committed suite → read files and verify contract hashes before any model call
+  → generate text per task × mode → model-grade the exact fixed check IDs
+  → validate two complete rubric votes → aggregate only complete cells
+  → retain exact inputs, returned text/objects, errors and request hashes → offline replay
 ```
 
-Run it (Claude Code `Workflow` tool; tasks are passed as `args` so the run is exactly the committed suite):
+From the repository root, this single command exercises the complete infrastructure without a model, key, network call or provider charge:
 
+```bash
+node evals/text-eval.mjs fixture --tiers 1 --out /tmp/fabius-text-fixture.json
 ```
-Workflow({ scriptPath: "evals/harness.v7.workflow.js", args: { tiers: [1,2,3], model: "sonnet" } })
+
+The receipt is labelled **synthetic fixture** and cannot support a product-performance claim. Its execution kind is bound to the captured plan and every response; replay rejects an inconsistent fixture flag. The output path must not exist. All output writes are exclusive; historical results paths are reserved.
+
+Prepare the full task set and captured contract bytes for a later authorized experiment:
+
+```bash
+node evals/text-eval.mjs prepare --tiers 1,2,3 --model sonnet --grader-model sonnet --judges opus,fable --out /tmp/fabius-text-plan.json
 ```
+
+Preparation validates task records against the committed schema and tier/category/neutrality rules, then reads `AGENTS.md` and each routed `SKILL.md` directly as UTF-8 bytes, requires matching entries in `provenance/seal-manifest.json`, and aborts on missing, empty, changed or invalid files. It hashes `failures.md` separately as **unsealed memory**, records task/source-file, task-schema and core-implementation hashes plus the checkout commit, and captures the loaded text. A prepared run cannot call models through a different core implementation. These hashes establish input identity relative to the captured manifest. Signed-release authenticity remains a separate `bash provenance/verify.sh` check.
+
+A host exposing the existing `Workflow`, `agent`, `phase` and `log` API can run the adapter. Pass **parsed task records** in `args.tasks`; a `tiers` selector by itself is not a valid adapter invocation. For example, after reading the prepared plan in that host:
+
+```js
+Workflow({
+  scriptPath: 'evals/harness.v7.workflow.js',
+  args: {
+    tasks: plan.tasks,
+    model: plan.models.generation,
+    graderModel: plan.models.grader,
+    judges: plan.models.judges,
+    run: 'FBS text experiment — candidate version and host configuration'
+  }
+})
+```
+
+`Workflow` is host-specific, not a Node global or a promised tool in every Claude Code installation. The adapter reloads and rechecks current contracts before its first call. Compare the returned plan hashes with the prepared plan if using a preapproved input snapshot. The complete 100-task suite requires at most **1,200 logical requests** (300 generation, 300 grader, 600 judge requests); host retries and billing may differ. No live model calls were needed to validate the infrastructure.
+
+Save that returned receipt to a new file. Replay it without calling models:
+
+```bash
+node evals/text-eval.mjs replay --input /tmp/fabius-text-fixture.json --out /tmp/fabius-text-replayed.json
+node --test evals/text-eval.test.mjs
+node evals/suite/validate.mjs
+node evals/verify-receipts.mjs
+```
+
+The versioned `fabius-text-eval/v1` receipt retains candidate answers and SHA-256 digests, full grade/vote responses, original judge identities, request options and prompt hashes, elapsed call time, task/contract snapshots and errors. Returned string bytes are preserved as UTF-8; a host's structured object is preserved as its JSON serialization, **not** claimed as raw provider wire bytes. Resolved provider model versions and token usage are `null` because this adapter does not receive them. Exact response-envelope validation rejects invented provider/usage fields, unsupported raw-byte labels and invalid timing values. Prompts are reproducible from the retained plan and answers. No tools, execution artifacts or stdout traces are asserted by this experiment.
+
+Malformed or missing responses are **infrastructure-invalid**, separate from a valid model answer that receives a zero. A failed generation skips its grading calls. A missing judge cannot be replaced by the surviving judge or silently relabelled. Incomplete cells have null scores; groups containing them have null aggregates and deltas, with expected/valid cells and check denominators reported separately. Missing cells remain visible, and duplicate or unexpected task/mode cells are rejected. Replay recomputes scores from evidence rather than trusting saved aggregates. Malformed replay input is retained byte-for-byte in a failure receipt; existing files are never overwritten.
 
 ## Reported metrics
 
-Per mode: mean rubric total (/28), per-dimension means, automatic-check pass rate, mean output length; then the public table — BASE vs FAB vs FAB+MEMORY with the improvement column per metric: task success · instruction obedience · scope control · technical correctness · security · token efficiency · output quality · error recovery · memory usage · overall.
+For complete groups: mean rubric total (/28), per-dimension means, model-graded check pass rate and mean output characters, grouped by mode/tier/category. Deltas compare BASE → FAB → FAB_MEMORY. Null means evidence is incomplete or a denominator is zero; it is never silently converted to zero. These text scores do not establish real tool discipline, runtime behavior, working memory persistence, production quality or user success.
 
 ## The evaluation objective
 
-The benchmark does not ask *"is fabius smarter?"*. It asks: **does fabius enable the exact same model to achieve better outcomes with less waste?** Success = higher quality, fewer iterations, improved discipline, better scope, better adherence, reduced token consumption, measurable operational gains.
-
-Maximize capability. Minimize waste. Every token should justify its existence.
+The research question is whether adding the shipped instructions improves the same model's outcomes. The current text experiment can test answer quality and length under a documented setup. Working artifacts, fewer iterations, token savings and independent user outcomes require separate evidence. A passing offline fixture validates the harness, not that hypothesis.
