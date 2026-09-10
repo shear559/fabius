@@ -1,10 +1,10 @@
 {
   "schema": "fabius-paper-artifact/v1",
-  "version": "2.8.3",
+  "version": "3.0.0",
   "file": "paper/fabius-as-a-system.pdf",
-  "sha256": "b13485ae902d7a33d89300073de9a061891a0eecb2a776d58697a9446507cb8f",
+  "sha256": "904bfbde6129c9ec10f038c498d3b0eee76d7723948cf1a3272a7840ec82f574",
   "pages": 51,
-  "source_sha256": "04ec9ca053b24e7cb3c84bef6aac5a297bef7a6fdb220a9095eeb345b57a13e0",
+  "source_sha256": "e68932b33d16a66aebf74ceac7b6828e6525914ac56440fe9f7e4e75a137fbe0",
   "sources": [
     {
       "file": "assets/architecture.svg",
@@ -16,7 +16,7 @@
     },
     {
       "file": "assets/charts/svgplot.py",
-      "sha256": "6ab01aa343bd3c9fb551621106102fe96bdb5341f90be514585fb2a232b84708"
+      "sha256": "5454d687cd19ed5ca411dc22c38f323e6143a58d962c4225c8c0b45278844e4e"
     },
     {
       "file": "assets/fabius-pixel.svg",
@@ -64,11 +64,11 @@
     },
     {
       "file": "paper/proofs.json",
-      "sha256": "bc720b18e1cc233bc8d49dfaadf39dc98ac59a8a8f55d596e7a97967bbb86c4d"
+      "sha256": "7d0cb42adbc5bfdd3090e46731325d52adaf25d4b71686f6f3102fddc9faae35"
     },
     {
       "file": "paper/template.html",
-      "sha256": "f8f2b954a4f5bd14c2aeaeb353441e41b359912560f1dc0f17426a9c73ce06eb"
+      "sha256": "f0cc1a13010f23c84d057721669b0e81eb97a80f2d70350671c20970675e18ce"
     }
   ],
   "external_sources": [
@@ -79,8 +79,8 @@
     }
   ],
   "rendered_markers": [
-    "Whitepaper · v2.8.3",
-    "Version 2.8.3",
-    "Fabius v2.8.3"
+    "Whitepaper · v3.0.0",
+    "Version 3.0.0",
+    "Fabius v3.0.0"
   ]
 }

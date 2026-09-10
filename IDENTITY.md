@@ -7,13 +7,11 @@ The canonical statement of **what fabius is** and **how it must be judged**. Eve
 
 ## What fabius is
 
-fabius is **not a model**. Not a prompt collection. Not a wrapper.
-
-fabius is an **intelligence amplification layer** — an agentic control layer that operates on top of existing LLMs. The underlying model still generates, still reasons, still produces the output. fabius governs the *process behind* that reasoning: structure, discipline, decision frameworks, skills, heuristics, execution patterns, validation mechanisms, operational guidance.
+fabius is **one set of rules above every model**: a coordinated set of instructions and local helpers that guide an LLM through its host tools and permissions. The underlying model still generates, still reasons, still produces the output. fabius governs the *process behind* that reasoning: structure, discipline, decision frameworks, skills, heuristics, execution patterns, validation mechanisms, operational guidance.
 
 It does not change model weights. It changes **behavior, process, and execution** — it helps a model find, organize, and apply capabilities it already has but does not naturally deploy. Latent capability → practical capability.
 
-Concretely, fabius provides: reusable skills · workflows · heuristics · operational patterns · validation systems · execution strategies · memory practices · planning approaches · optimization mechanisms. Fifteen coordinated, zero-overlap public layers ([ARCHITECTURE.md](ARCHITECTURE.md)); deeper bundled source material is reference data, not a second skill surface. One stance: **scout wide, strike narrow.**
+Concretely, fabius provides: reusable skills · workflows · heuristics · operational patterns · validation systems · execution strategies · memory practices · planning approaches · optimization mechanisms. Fifteen coordinated, zero-overlap public layers ([ARCHITECTURE.md](ARCHITECTURE.md)); supporting Fabius references and executable helpers stay behind those owners, rather than creating another skill surface. One stance: **scout wide, strike narrow.**
 
 ## Core objective
 
@@ -59,11 +57,13 @@ Same model, same task, fresh context, no context leakage. Only the orchestration
 
 If outcomes improve while waste decreases as you move BASE → FAB → FAB_MEMORY, fabius is succeeding.
 
+The table describes the intended operating-policy comparison. The historical FBS runner does not implement that selective-recall policy exactly: its FAB_MEMORY arm may inject a fixed fallback memory even on a fresh-eyes security route such as FAB-061. Its results must not be presented as verification of the current memory-routing policy. New evaluations must record the exact contracts, harness and memory-selection rule used.
+
 ### What gets measured
 
 Output quality · instruction obedience · scope control · token efficiency · hallucination reduction · skill utilization · capability amplification · tool discipline · memory usage · security preservation · error recovery · agent coordination · task-completion reliability.
 
-The executable form of this contract is the **Fabius Benchmark Suite** (`FBS v1`) — 100 neutral tasks in three tiers across ten categories, a fixed 0–4 rubric on seven dimensions, and three controlled modes: [`evals/suite/`](evals/suite/). [BENCHMARKS.md](BENCHMARKS.md) labels executed checks, model-graded checklist scores, committed receipts, and replay limitations separately; an uncommitted artifact is not called reproducible.
+The **Fabius Benchmark Suite** (`FBS v1`) is a historical evaluation instrument with 100 neutral tasks in three tiers across ten categories, a fixed 0–4 rubric on seven dimensions, and three controlled modes: [`evals/suite/`](evals/suite/). [BENCHMARKS.md](BENCHMARKS.md) labels executed checks, model-graded checklist scores, committed receipts, and replay limitations separately; an uncommitted artifact is not called reproducible.
 
 ## Success definition
 

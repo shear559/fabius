@@ -112,7 +112,7 @@ window.MathJax = {
 <!-- ================= TITLE ================= -->
 <div class="title-page">
   <!--FIG:fabius-pixel-->
-  <div class="kicker" style="text-align:center;margin-bottom:8px">Whitepaper · v2.8.3</div>
+  <div class="kicker" style="text-align:center;margin-bottom:8px">Whitepaper · v3.0.0</div>
   <div class="title">Fabius</div>
   <div class="subtitle">One set of rules above every model. Fifteen coordinated skills, twenty-two core routing rules, and conditional mathematical models for choosing how to work and when to stop.</div>
   <hr class="rule-hr" />
@@ -125,7 +125,7 @@ window.MathJax = {
     <p>The decision core contains <strong>twenty-two parent routing rules</strong>, developed in twenty-six argument blocks: twenty-two mathematical arguments under stated assumptions and four qualitative operational heuristics. The composition analysis concerns the declared labels and bounded procedure. It does not establish classification accuracy, calibrated estimates, model compliance or host enforcement. The research-informed frontier rules remain outside that analysis.</p>
     <p>Four dated benchmark panels report model-judged quality, historical execution-score records, model-graded checklists, cross-family aggregates and a separate memory evaluation. Panel A improved three of four measured tiers while shortening all four; the other panels include gains, ties and regressions. Missing historical answers, execution artifacts and raw cross-family runs limit independent replay. Current maintenance checks are separate from those historical measurements.</p>
     <p>The model supplies capability; Fabius supplies operating rules and workflows. Execution depends on the host, available tools and permissions. The repository includes an optional local runner and verification of signed release provenance. Neither local execution nor a content seal guarantees answer quality.</p>
-    <div class="meta-row">Version 2.8.3 · September 2026 · figures computed (numpy → SVG), reproducible</div>
+    <div class="meta-row">Version 3.0.0 · September 2026 · figures computed (numpy → SVG), reproducible</div>
   </div>
 </div>
 
@@ -180,8 +180,18 @@ window.MathJax = {
 <h3>2.2 · Single owner, zero overlap</h3>
 <p>The coordination contract is one rule: <strong>each rule has exactly one owning layer; every other layer links to it instead of restating it.</strong> Planning, test discipline, and the clarifying-question procedure are owned by <code>disciplina</code>; lean prose, the YAGNI ladder, and the never-trim guardrail list by <code>parcus</code>; routing and the kill-switch by <code>fabius</code>. The line between core and vertical is drawn the same way: <code>parcus</code> owns the <em>never-trim security floor</em> (don't cut validation), while <code>praesidium</code> owns the <em>active</em> security work (model the threat, name the check, prove it closed) and references that floor rather than restating it. <code>parcus</code> is the only always-on layer: it composes <em>underneath</em> whatever task layer the router selects and never competes for a task verb. This single-owner discipline is what makes the formal coherence of Section 5 possible — no two layers write the same rule with opposite intent.</p>
 
-<h3>2.3 · The corpus — the brain holds the index, not the library</h3>
-<p>The depth behind the skills — design references, an agent catalog with a vector index, a knowledge engine, and the marketing, security, and game-craft playbooks — is large. Fabius keeps the <em>discovered contract surface</em> lean by separating brain from library: a single fabius-branded index (<code>CORPUS.md</code>) sits over every capability library, and the router holds only the index. Recursive verification requires exactly fifteen top-level <code>SKILL.md</code> contracts; nested library documents use <code>REFERENCE.md</code>, so a host cannot accidentally discover them as extra skills. On a task the system reads the index and pages in the matching slice. The standing rule is that adding library depth is adding an indexed reference, not another discovered contract.</p>
+<h3>2.3 · Indexed depth and original capability helpers</h3>
+<p>Fabius keeps fifteen public skill contracts and a small owner index (<code>CORPUS.md</code>). Each contract selects the relevant Fabius reference or helper; the complete library need not enter the model context. Release 3.0.0 replaces the previously imported example corpora with original implementations. The current discovery check rejects nested <code>SKILL.md</code> and retired <code>REFERENCE.md</code> contracts. Historical source names, licences and missing pins remain recorded in <code>credits/retired-upstream.json</code>; previous signed releases retain their original files and notices.</p>
+<table>
+<thead><tr><th>Owner</th><th>Original executable mechanism</th><th>Boundary</th></tr></thead>
+<tbody>
+<tr><td>Cohors</td><td>Agent definitions, dependency validation, bounded concurrency and typed outputs</td><td>A caller supplies authorized runners; cancellation is cooperative and no sandbox or provider session is created.</td></tr>
+<tr><td>Archivum</td><td>Selected-file lexical indexing, BM25 ranking, source citations and byte-based freshness checks</td><td>Bounded Markdown/text corpus; no neural embeddings, approximate vector engine or automatic vault discovery.</td></tr>
+<tr><td>Decor</td><td>Semantic token checks, CSS generation and deterministic text scenes</td><td>A focused browser kit; no whole-framework, brand-library or video-compositor parity.</td></tr>
+<tr><td>Disciplina</td><td>Acceptance-to-check coverage and plan/source/log hash consistency</td><td>Supplied evidence is not authenticated; the checker does not execute tests or establish their adequacy.</td></tr>
+</tbody>
+</table>
+<p>The capability map names source files and tests in <code>credits/capabilities.json</code>. Boundary tests and executed examples establish selected implementation behavior. They do not establish universal model gains, legal originality or equivalence with all features of retired repositories. External research, model providers and separately identified assets remain the work of their respective authors.</p>
 <h3>2.4 · Maintenance follows the same evidence loop</h3>
 <p>Architecture work separates a plan, an assessment, and an implementation request. Recommendations name inspected code or requirements, compare viable alternatives, and identify the smallest missing operational check. Skill maintenance updates the existing owner from pinned sources and checks a positive route, a nearby non-match, and a missing-capability case. Memory migration inventories the declared stores, preserves history, verifies recoverable copies, and changes ownership only within the user’s authority. Multi-file updates stage a coherent change with validation and recovery before publication.</p>
 <p>These are instructions to the host agent. Structural checks establish contract and package coherence; qualitative maintenance cases exercise selected behavior; neither proves a universal quality gain. Source changes, a published release, an installed copy, and an active session are separate states. A release receipt or installed byte match does not prove that an already-running conversation has loaded the new contracts.</p>
@@ -321,7 +331,7 @@ window.MathJax = {
 <p>Each of the four measured families has a positive aggregate in this dated demo. The raw portable receipt was not committed, so the published cells cannot be independently replayed; a rerun on moving endpoints is a new measurement. Gemini is wired into the harness, and no Gemini number is printed without a measured run.</p>
 
 <h3>6.5 · Panel D — the FBS run: BASE / FAB / FAB_MEMORY on a versioned suite</h3>
-<p>The system now carries its own identity-and-evaluation contract, <code>IDENTITY.md</code>: fabius is an <em>intelligence amplification layer</em>, not a model, so the benchmark question is fixed as <em>"does the exact same model achieve better outcomes with less waste?"</em> — and the executable form of that contract is the <strong>Fabius Benchmark Suite</strong> (<code>evals/suite/</code>, FBS v1.0). One hundred neutral, production-shaped tasks — 20 smoke, 50 core, 30 stress across ten categories — each carries 3–6 fixed textual <code>automatic_checks</code> and, where memory matters, a committed <code>memory_snapshot</code>. Each task runs as <code>BASE</code>, <code>FAB</code>, and <code>FAB_MEMORY</code>. Two blind model judges score the seven-dimension rubric /28; another model grader interprets the fixed checks from answer text. Character count is deterministic. The historical receipt preserves score rows, not candidate answers or individual judge votes, so its aggregates replay but its judgments cannot be independently repeated.</p>
+<p>The system now carries its own identity-and-evaluation contract, <code>IDENTITY.md</code>: fabius is an <em>intelligence amplification layer</em>, not a model, so the benchmark question is fixed as <em>"does the exact same model achieve better outcomes with less waste?"</em> — and a historical text-only evaluation instrument is the <strong>Fabius Benchmark Suite</strong> (<code>evals/suite/</code>, FBS v1.0). One hundred neutral, production-shaped tasks — 20 smoke, 50 core, 30 stress across ten categories — each carries 3–6 fixed textual <code>automatic_checks</code> and, where memory matters, a committed <code>memory_snapshot</code>. Each task runs as <code>BASE</code>, <code>FAB</code>, and <code>FAB_MEMORY</code>. Two blind model judges score the seven-dimension rubric /28; another model grader interprets the fixed checks from answer text. Character count is deterministic. The historical receipt preserves score rows, not candidate answers or individual judge votes, so its aggregates replay but its judgments cannot be independently repeated.</p>
 <table>
   <caption><b>Panel D</b> — the FBS run, 2026-07-05. Sonnet 5 on the full 100-task suite; Haiku 4.5 on the 20-task smoke tier. Model-judged rubric /28, model-graded factual checks, deterministic mean output chars. Score receipt: <code>evals/results.v7.json</code>.</caption>
   <thead><tr><th>Model · mode</th><th class="num">rubric /28</th><th class="num">checks</th><th class="num">output</th><th class="num">vs BASE</th></tr></thead>
@@ -337,6 +347,7 @@ window.MathJax = {
 <p>Four results. <strong>(i)</strong> On the fast tier the model-judged rubric rises +0.73 from the stance and +0.73 more from memory, on 11–14% less output. <strong>(ii)</strong> On Sonnet 5 the rubric is nearly flat while output falls 10–12%; on stress tasks the model-graded factual-check rate rises 89.9%→93.7%. <strong>(iii)</strong> The core tier is the printed miss: <code>FAB_MEMORY</code> −0.60, and <code>FAB</code> −0.48, driven largely by one 363-character stub scored 1.5/28 against 28/28 for the other modes. <strong>(iv)</strong> Memory cuts both ways: the model-judged design/product category rises +4.91, while security (−1.57) and error recovery (−1.37) fall. These are dated model-graded measurements with explicit regressions, not an objective oracle.</p>
 
 <p>The honest claim: <strong>in this dated benchmark, Panel A improved three of four measured Claude tiers while shortening all four; the other panels show a mixture of model-graded gains, ties, and regressions.</strong> Not "smarter." Not "10× on everything." The caveats are load-bearing: samples are small; all quality, checklist, and FBS scores are model-mediated; the historical receipts omit candidate answers, Panel B execution artifacts, and Panel C raw data; and every roster is dated. Character counts and future local code execution are deterministic, but they do not retroactively upgrade the historical evidence.</p>
+<p>These are historical measurements, not results for the 3.0.0 capability rewrite. The current task suite revision 1.0.1 replaces an unverified credential-shaped fixture literal with an explicit synthetic sentinel in FAB-088; the prior scores and original suite remain unchanged in release history. The historical FAB_MEMORY arm can also inject fallback memory on a fresh-eyes security route, so it does not verify the current selective-recall policy.</p>
 </section>
 
 <!-- ================= 7. HONESTY ================= -->
@@ -374,7 +385,7 @@ GEMINI_API_KEY=...     python evals/portable_eval.py --models gemini</pre>
 
 <!-- ================= FOOTER ================= -->
 <section>
-<div class="footer-tag">Fabius v2.8.3 · scout wide, strike narrow · fabius-landing.vercel.app · public · proprietary · provenance-verifiable</div>
+<div class="footer-tag">Fabius v3.0.0 · scout wide, strike narrow · fabius-landing.vercel.app · public · proprietary · provenance-verifiable</div>
 </section>
 
 </div>

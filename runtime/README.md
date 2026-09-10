@@ -1,10 +1,13 @@
 # fabius, locally
 
-A zero-dependency local runner for the same rules. fabius is a plugin — one set of rules
-above every model — and normally your harness (Claude Code, Codex, an AGENTS.md reader)
-loads it. This folder is the convenience for when there is no harness: it reads the same
-sealed `SKILL.md` contracts off disk and hands them to a model through your own API key,
-with hands only a local process can have: your files, your shell, your network.
+A zero-dependency local runner for Fabius: **one set of rules above every model**.
+It reads the sealed `SKILL.md` contracts and supplies them to your chosen model using
+your own provider account. Its tools operate within the workspace and permissions
+you select. It is separate from installation through an agent app.
+
+This documents a technical path, not an additional licence grant. The current
+[LICENSE](../LICENSE) permits personal, non-commercial use through the published
+marketplace command; standalone use requires separate permission from the owner.
 
 ```bash
 node runtime/fabius.mjs doctor          # what is configured and what is missing
@@ -259,8 +262,11 @@ npm test                        # derives the current total; vector checks may s
 npm run vectors && npm test     # fetch BIP-340/NIP-44 vectors once, then run every check
 ```
 
-The vectors are never vendored: they belong to their upstream projects, and a stale copy
-would quietly stop testing what it claims to test.
+The downloaded BIP-340 and NIP-44 vector files are not vendored. Eight public BIP-173
+vectors and one invalid variant are retained in `test/nostr.test.mjs`; their source,
+authors and BSD-2-Clause notice are recorded in
+[retained-test-data.json](../credits/retained-test-data.json). These vectors remain
+upstream test data, not Fabius-owned examples.
 
 The model call is injectable, so the whole loop — routing, tools, the gate, every rule,
 the oracle, the memory decision — is exercised by a scripted model. A loop that can only

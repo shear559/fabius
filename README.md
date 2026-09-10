@@ -22,7 +22,7 @@
 
 ---
 
-## one set of rules. above every model.
+## one set of rules above every model
 
 Fabius is **a shared set of operating rules for AI models**. It guides how a model plans work, selects tools, checks results and uses approved project memory. You keep your model; Fabius supplies a consistent working method.
 
@@ -67,9 +67,9 @@ grok plugin enable fabius
 
 Run `grok plugin details fabius` to inspect its version and component inventory, then reload plugins or start a fresh session. Checked with Grok Build 0.2.103 on 2026-09-08. `grok plugin update fabius` updates an unpinned installation; in this version it skips a saved `@ref`, including a release tag. A pinned installation needs an explicit release transition, followed by another version check. [Grok plugin commands](https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-pager/docs/user-guide/09-plugins.md).
 
-**Anywhere else** — review [`AGENTS.md`](AGENTS.md) and merge its portable core rules into the instruction path your tool supports. Preserve existing project instructions; do not download over an existing `AGENTS.md`, `GEMINI.md` or rules file. This single file carries the core stance. Full specialist workflows also need the relevant skill files and tools.
+**Other instruction-reading tools** — [`AGENTS.md`](AGENTS.md) describes the portable core. Copying or adapting it outside the marketplace-use permission requires separate permission under the current [LICENSE](LICENSE). Where authorized, preserve existing project instructions instead of overwriting them. The single file carries the core stance; full specialist workflows also need the relevant skill files and tools.
 
-Without a harness, the repository includes an optional zero-dependency local runner that reads the sealed contracts: `node runtime/fabius.mjs run "…"`. Its available providers, tools and routing implementation are described in [runtime/README.md](runtime/README.md); they are separate from a host's plugin integration.
+The repository also includes an optional zero-dependency local runner that reads the sealed contracts: `node runtime/fabius.mjs run "…"`. Its providers, tools and permissions are described in [runtime/README.md](runtime/README.md). Standalone use requires separate permission under the current licence.
 
 Try a concrete task after loading the rules:
 
@@ -80,6 +80,21 @@ Try a concrete task after loading the rules:
 These workflows use your harness's available tools and permissions. Missing execution or live access is reported explicitly. [Architecture decisions](skills/fabius-disciplina/references/architecture-decisions.md) · [Skill maintenance](skills/fabius/references/skill-maintenance.md) · [Transactional updates](skills/fabius-disciplina/references/transactional-updates.md).
 
 ---
+
+## Original Fabius capabilities
+
+Version 3.0.0 replaces the imported example libraries with Fabius-authored code and procedures. Four local helpers turn selected rules into deterministic checks and operations, using Node built-ins:
+
+| Capability | What runs | Entry point |
+|---|---|---|
+| Agent workflows | Explicit roles, validated dependencies, bounded parallelism and failure propagation through a caller-authorized runner | [Cohors scheduler](skills/fabius-cohors/references/catalogue/scheduler.md) |
+| Local knowledge | Search selected notes with lexical ranking, line citations and stale-index rejection | [Archivum retrieval](skills/fabius-archivum/references/local-retrieval.md) |
+| Design and scenes | Validate semantic tokens and generate an original, seekable HTML storyboard | [Decor kit](skills/fabius-decor/references/design-system.md) |
+| Completion evidence | Connect acceptance checks to selected sources and detect missing or stale evidence | [Disciplina ledger](skills/fabius-disciplina/references/engineering-workflows.md) |
+
+These are focused implementations, not copies of upstream frameworks or a claim to reproduce every archived example. Model access, real tool execution and sandboxing remain with the host. [Capabilities and limits](credits/capabilities.json) · [Source history](credits/README.md).
+
+Fabius is developed using the same method: load the relevant rules, define the behavior and its check, implement the change, then inspect the actual result. The LLM generates code and the host executes tools; Fabius supplies the working rules and these local helpers. This is observable use of the system, not a claim that it is an independent model or improves itself without authorization.
 
 ## Try one useful task
 
@@ -175,7 +190,7 @@ fabius has no required model roster, hosted service, or external runtime: its co
 <td align="center" title="Swiss AI"><img src="assets/brands/s/swiss-ai.webp" width="30" /><br/><sub><b>Apertus</b></sub></td>
 </tr></table>
 
-<sub>Model, maker and platform marks identify compatible engines only ([sources](assets/brands/README.md)); example families change with each vendor's roster. No affiliation or endorsement is implied. Served any way you like — hosted, via a router, or local. Harnesses: **Claude Code · Codex · Grok Build** natively, anywhere else through [AGENTS.md](AGENTS.md).</sub>
+<sub>Model and platform marks illustrate example model families and providers ([sources](assets/brands/README.md)); they do not establish tested compatibility, affiliation or endorsement. Execution depends on the chosen host, available tools and permissions. See [compatibility evidence](COMPATIBILITY.md) and [installation and permitted use](#install-in-your-agent-app).</sub>
 
 </details>
 
@@ -197,6 +212,6 @@ The fifteen public contracts are content-sealed with SHA-256 and a Merkle root; 
 
 **Boundaries** — fabius governs *how* the work is done, never *what* you want; `stop fabius` drops the stance. `fabius-praesidium` and `fabius-catena` are defensive only. Lean never trims validation, security, or accessibility.
 
-**License** — proprietary, free to install for personal use ([LICENSE](LICENSE)). Third-party reference material is credited in [`credits/`](credits/).
+**License** — proprietary, free to install for personal use ([LICENSE](LICENSE)). Research inputs and retired-source history are recorded in [`credits/`](credits/); separately identified third-party marks and assets retain their own terms.
 
 If a task helped, a [GitHub star](https://github.com/shear559/fabius) is a useful way to bookmark the project. Installation and support never depend on starring.

@@ -25,12 +25,12 @@ From a committed checkout, choose a new output directory outside any Git checkou
 ```sh
 python3 -B scripts/distribution.py check
 python3 -B scripts/distribution.py build --output-dir /tmp/fabius-candidate-package
-python3 -B scripts/distribution.py verify /tmp/fabius-candidate-package/fabius-2.8.3-claude-plugin.zip
+python3 -B scripts/distribution.py verify /tmp/fabius-candidate-package/fabius-3.0.0-claude-plugin.zip
 ```
 
 The builder includes tracked files, required attribution and all fifteen root skills. It rejects missing authored resource links, escaping symlinks, selected secrets and concurrent source changes. Two builds of identical source bytes produce identical ZIP bytes. The embedded manifest records the commit, selected source hashes, archive hashes and any dirty paths; it is not a signature or store approval. Untracked files require explicit `--include-file` arguments. Existing archives are never overwritten.
 
-The local upstream inventory preserves all 18 registry entries and leaves 11 unknown historical revisions as null. Bundled LICENSE/NOTICE files and local bytes are checked; that does not recover historical import commits. The archive also inventories 359 unresolved links in preserved reference corpora. Those historical examples remain reference data, not certified runnable packages. Required authored links pass the narrower resource check; arbitrary imports, remote URLs and host loading require separate verification.
+The current source registry contains seven informed-by references. The separate retirement record preserves eleven former bundled sources and their unknown historical revisions. Version 3.0.0 removes the old source trees and their unresolved example links; it provides original implementations with explicit limits. Retained BIP-173 test data and third-party brand assets keep their attribution. The inventory and link checks establish selected bytes and resource closure, not originality, compatibility with every host or a right to reuse external material.
 
 Primary requirements checked 2026-09-09: [OpenAI submission](https://developers.openai.com/plugins/deploy/submission) asks for five positive and three negative cases; [direct Claude archive import](https://developers.openai.com/plugins/guides/submit-claude-plugin) converts a qualifying skills archive and still requires testing the imported tree. [Anthropic submission](https://claude.com/docs/plugins/submit) distinguishes community directory access from additional verification. None of these mechanisms guarantees approval or a review date.
 

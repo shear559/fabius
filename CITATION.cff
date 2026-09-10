@@ -18,7 +18,7 @@ abstract: >-
   and the hundred-task FBS suite. Gains, regressions and missing historical
   artifacts are stated explicitly. Current maintenance checks establish
   the tested behavior and release integrity, not a new benchmark gain.
-version: 2.8.3
+version: 3.0.0
 repository-code: "https://github.com/shear559/fabius"
 url: "https://fabius-landing.vercel.app"
 license-url: "https://github.com/shear559/fabius/blob/main/LICENSE"

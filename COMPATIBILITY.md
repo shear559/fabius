@@ -1,23 +1,34 @@
 # Compatibility and acceptance evidence
 
-Checked 2026-09-09. Host-test baseline: **2.8.1**, commit `e224daccd393ac2081b38d4a804aa70637b90095`. The **2.8.2** checks below were recorded during candidate preparation; publication and fresh-install acceptance are separate steps. A published release does not retroactively establish those host results.
+Checked 2026-09-10. The published host baseline is **2.8.3**, commit `b31628684fed2267a58eb7afa530aed0215fc80e`. Version **3.0.0** replaces the imported capability trees with original local implementations. A package test, a fresh-session task and a model-quality comparison are separate evidence.
 
-| Surface | Evidence available | Remaining acceptance |
+| Surface | Observed evidence | Boundary |
 |---|---|---|
-| Claude Code plugin | September 8 installed 2.8.1 inventory and byte comparison; 15 public skills | Clean profile, fresh-session natural prompt, output, update/disable/remove on candidate; `claude` executable was not found on current PATH |
-| Codex CLI 0.153.4 | September 9 manager lists enabled 2.8.1; one fresh ephemeral CLI session produced a checked CSV summary | Candidate install and full lifecycle; that task did not establish Fabius routing |
-| Codex desktop | This maintainer session exposes Fabius 2.8.1 skill files | Independent fresh account/workspace and candidate acceptance |
-| Codex IDE | No candidate execution receipt | Test separately; CLI success does not cover IDE loading |
-| Grok Build 0.2.103 | Native binary help and installed 2.8.1 inventory available; earlier byte verification | Candidate clean-profile task and lifecycle; update skips pinned refs on this version |
-| ChatGPT Work / directory | Official skills-only Claude archive import path documented | Owner access, portal conversion/scan, clean import and actual task; no approval/listing claim |
-| Other instruction-reading tools | Portable `AGENTS.md` core available | Host-specific instruction path and task tests; the single file does not install all specialists |
-| Optional Node runner | Separate deterministic routing, capability gates and tests in `runtime/` | Live provider calls require configured account/key; do not confuse with host integration |
+| Claude Code 2.1.260 | Clean profile installed 2.8.3 from the public marketplace, discovered 15 skills, updated, disabled, enabled and removed it | No clean-profile model task; lifecycle commands do not establish natural-language routing |
+| Codex CLI 0.153.4 | Native 2.8.3 installation and two fresh existing-account task sessions; explicit Fabius request loaded router, Parcus and Disciplina and produced a checked fix | Ordinary-language task did not show Fabius loading; no clean-profile lifecycle receipt |
+| Codex desktop | Maintainer sessions expose the installed skills | Does not establish an independent user's first-use experience |
+| Codex IDE | No current execution receipt | CLI and desktop results do not establish IDE loading |
+| Grok Build 0.2.103 | Clean profile installed 2.8.3, discovered 15 skills, updated and removed it; disable/enable commands completed | Listing did not expose disabled state; no fresh-session absence or model task claim; updater skips pinned refs |
+| ChatGPT Work / directory | Skills-only Claude archive import mechanism is documented | No submitted, approved or clean-imported Fabius listing |
+| Other instruction-reading tools | Portable core is present in `AGENTS.md` | Host-specific paths and tasks are untested; copying/adapting outside current marketplace permission needs separate authorization |
+| Local capability helpers | Original scheduler, selected-file retrieval, tokens/scenes and evidence ledger have executable positive and negative tests | Deterministic helper correctness does not measure model judgment or enforce an OS sandbox |
+| Optional Node runner | Executed deterministic routing, tool gates and runtime tests | Live provider calls need a configured account; standalone use needs separate licence permission |
 
 Model families are examples of engines a host may supply, not independently tested integrations. Claude Code is distinct from other Claude surfaces; Grok Build is distinct from a Grok model endpoint.
 
-## Bounded native task — September 9
+## Bounded native tasks — September 10
 
-An existing-account Codex CLI session ran an ordinary-language request in a disposable workspace with a synthetic three-row CSV. It wrote `summary.json` and executed a local arithmetic check: line totals 120, 90 and 70, total 280, ten items and unspecified currency. The process exited successfully within the 180-second limit. The installed plugin was **2.8.1**, not this candidate. The session announced the spreadsheets skill; the retained trace does not establish that the Fabius router was loaded. This is a host artifact smoke check, not clean-install acceptance, a user study or evidence of a Fabius performance gain. Raw host logs remain private task outputs because they may contain account and workspace context.
+Two fresh existing-account Codex CLI sessions used disposable Python bug-fix workspaces. Both produced a correct result that passed six independently rerun tests. The ordinary-language request did not leave observable evidence of Fabius loading. The explicit “Use Fabius” request did: the retained trace shows the 2.8.3 router, Parcus and Disciplina being read, five failing tests before the fix, and all six passing afterward. This verifies one task and its observed route. It does not establish automatic routing, a clean install, a user study or a gain over another model.
+
+Clean Claude and Grok lifecycle checks used their documented isolated profile controls. Synthetic user-created records survived removal. No real account profile was reset, and no credentials were copied into test artifacts. Raw logs remain private because host output can include account and workspace context.
+
+## Local 3.0.0 candidate acceptance
+
+Fresh disposable Claude Code 2.1.260 and Grok Build 0.2.103 profiles installed the local candidate, reported version 3.0.0 and discovered all fifteen public skills. Both managers completed disable, enable and uninstall; each ended empty and preserved the synthetic user-created record. Grok's listing does not expose enabled state, so command completion is the boundary of that observation.
+
+Each installed copy contained all 110 skill files. The four original helper implementations matched the tested source bytes. Six helper/demo invocations per host passed, including generated scene-template closure; required Markdown resource links resolved. A prose reference changed after those installation snapshots, so these receipts do not certify the final sealed tree byte-for-byte. They test the local-directory installation mechanism, not downloading the future public release. No clean-profile model task was run.
+
+A separate fresh existing-account Codex CLI session explicitly read the local 3.0.0 router, Parcus and Disciplina contracts before repairing a seeded Python average function. The retained trace contains all three complete file reads and matching SHA-256 values. Six tests passed in the task and in an independent rerun. This is one explicitly routed local-candidate task, not automatic skill discovery or a clean-profile model trial. The host reported shortening some skill descriptions to fit its context budget; full contract reads were still observed.
 
 ## Repeatable host acceptance
 

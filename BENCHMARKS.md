@@ -1,5 +1,5 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
-<!-- fabius-release: 2.8.3 -->
+<!-- fabius-release: 3.0.0 -->
 # The fabius benchmark
 
 One dated benchmark, with its misses intact: **Panel A improved three of four measured Claude tiers while shortening all four; Panel B's historical model-operated executed-code score records tied at ceiling and its model-graded factual-check track improved; Panel C recorded positive blind-judge demos across four external families; Panel D contains both gains and regressions.**
@@ -67,7 +67,7 @@ The split between the two tracks is the whole story:
 - **On domain deliverables the two model graders marked more fixed checklist items present.** That is useful model-mediated evidence, not a deterministic correctness proof (baseline → fabius, all models pooled):
 
 ```
-SQL route (parameterized query, not string-concat)   67.5%  ->  100.0%  +32.5  ← real injection risk removed
+SQL route (parameterized query, not string-concat)   67.5%  ->  100.0%  +32.5  ← parameterization marked present by the graders
 webhook   (idempotency, auth, retry, secret-in-env)  40.0%  ->   67.5%  +27.5
 Solana    (account exists/owner/mint validation)     47.5%  ->   57.5%  +10.0  ← untrusted-input money safety
 RNA-seq / threat-model                                100%  ->    100%  (already at ceiling)
@@ -158,7 +158,7 @@ Separate from "does the stance help," a deterministic suite proves the *system* 
 | Progressive disclosure — every `SKILL.md` ≤ 12000 B (depth lives in `references/`) | **PASS** (maximum and headroom are computed in live output) |
 | Provenance `fab1-` fingerprint embedded in all 15 contracts | **PASS** |
 | Reference integrity — every linked **and backtick-quoted** `references/` path resolves | **PASS** |
-| Plugin manifest skill list == recursive discovery set; version is valid semver (`2.8.3`) | **PASS** |
+| Plugin manifest skill list == recursive discovery set; version is valid semver (`3.0.0`) | **PASS** |
 | No sealed-set drift — seal-manifest file list == skills on disk + ARCHITECTURE/CORPUS/AGENTS | **PASS** |
 | Content-bound seal — 18 sealed files hash-match + Merkle root recomputes | **PASS** |
 | Count coherence — README / ARCHITECTURE / AGENTS all state "fifteen" | **PASS** |

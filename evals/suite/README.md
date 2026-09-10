@@ -1,7 +1,9 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: ../../PROVENANCE.md · github.com/shear559/fabius -->
-# Fabius Benchmark Suite (FBS) — v1.0
+# Fabius Benchmark Suite (FBS) — v1.0.1
 
 **A fixed suite for comparing model answers with and without Fabius instructions.** The current harness is a **text-only, model-graded experiment**. It measures answer scores, check decisions and output length. It does not execute generated code, observe tool use, prove host installation, or measure operational retries and token savings. Those require separate agent execution and human-use evidence.
+
+Version 1.0.1 changes only the explicitly synthetic credential sentinel in FAB-088. The original literal had no proven issuance or authenticity. Historical v1.0 scores remain unchanged and are not a measurement of this edited task. [revision.json](revision.json) records the old and new suite-file hashes; signed release `v2.8.3-sealed` retains the historical source.
 
 ## Files
 
@@ -30,7 +32,7 @@ Each task requests the same generation model and task text in three modes. The h
 - **Isolation** — require fresh conversations and no hidden memory in the host setup; document that setup separately. A text receipt alone does not prove isolation.
 - **Task equality** — every mode receives the exact same task text.
 - **Neutrality** — prompts never mention the stance or its vocabulary, never inherently favor any mode, and avoid toy problems. They represent realistic workloads.
-- **Reproducibility** — prompts fixed, expected behaviors fixed, suite versioned (this is FBS v1.0), fabius releases versioned, memory snapshots versioned (they live inside the task records).
+- **Reproducibility** — prompts fixed, expected behaviors fixed, suite versioned (this is FBS v1.0.1), fabius releases versioned, memory snapshots versioned (they live inside the task records).
 
 ## Categories
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// FBS v1.0 deterministic suite validator — no model, no key, no network.
+// FBS v1.0.1 deterministic suite validator — no model, no key, no network.
 // Validates every task line against schema.json semantics + suite-level invariants.
 // Usage: node evals/suite/validate.mjs
 import { readFileSync } from 'node:fs'

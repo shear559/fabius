@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/shear559/fabius/evals/suite/schema.json",
-  "title": "Fabius Benchmark Suite task (FBS v1.0)",
+  "title": "Fabius Benchmark Suite task (FBS v1.0.1)",
   "type": "object",
   "properties": {
     "id": { "type": "string", "pattern": "^FAB-\\d{3}$" },

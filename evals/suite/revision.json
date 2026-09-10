@@ -1,0 +1,12 @@
+{
+  "schema": "fabius-suite-revision/v1",
+  "version": "1.0.1",
+  "date": "2026-09-10",
+  "previous_version": "1.0",
+  "previous_release": "v2.8.3-sealed",
+  "changed_task": "FAB-088",
+  "reason": "Replace an unverified credential-shaped synthetic fixture literal with an explicitly non-credential sentinel. No authentication check was made; no working credential is asserted.",
+  "tier3_before_sha256": "a90d3f8175c896521f0f274ae62f75ca6a1edbe1c92226a9b72f7b303aa50b66",
+  "tier3_after_sha256": "bcb7edbbaf005a615248d9abe0ecfffc8c2c1195ec073098006339b197eaae42",
+  "historical_results": "Unchanged; do not describe historical FBS v1.0 scores as measurements of this revision."
+}

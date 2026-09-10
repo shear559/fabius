@@ -1,7 +1,7 @@
 {
   "schema": "fabius-local-content/v1",
   "snapshot_date": "2026-09-10",
-  "source_head": "b31628684fed2267a58eb7afa530aed0215fc80e",
+  "source_head": "bbaa94669e4f56df608919c628ec19d66614ec67",
   "registry_sha256": "26b2fa70408cf5199ca4b4e4d24fdf437afa46e356f0b956e1eb7d6ed8cccc59",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",

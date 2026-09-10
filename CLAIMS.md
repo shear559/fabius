@@ -5,6 +5,8 @@ This table governs current descriptions of Fabius. A capability describes instru
 | Claim | Supported wording | Boundary / evidence |
 |---|---|---|
 | Product | Fifteen public skills: router, lean core, thirteen specialists | `node evals/structural.mjs`; ownership is declared, routing accuracy needs behavior tests |
+| Original capabilities | Fabius-authored scheduler, selected-file retrieval, token/scene tools and an evidence-consistency ledger | `credits/capabilities.json` maps code to tests and limits; retained public test vectors and third-party assets remain attributed |
+| Self-development | Fabius rules guided the development process through the selected model and host tools | The model generates code; Fabius supplies rules and local checks; no autonomous self-improvement or model-independent agency claim |
 | Research | Twenty-two core rules, represented by 26 blocks: 22 conditional mathematical arguments and four qualitative rules | `paper/proofs.json`; assumptions matter; a count is not a proof of every statement |
 | Host compatibility | Native installation paths for the tested versions of Claude Code, Codex CLI and Grok Build | `COMPATIBILITY.md`; distinguish package installation, session loading and task execution |
 | Model choice | Rules can be supplied to different models by a compatible host | A model logo is not an integration test or endorsement |

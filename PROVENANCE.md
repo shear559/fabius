@@ -78,7 +78,7 @@ The fingerprint above is a *discovery* aid; it is not derived from the content. 
 | **Lazy human** | fork, swap the README, claim it | fingerprint + signed tag + your earlier OTS date (§1–3) |
 | **Determined plagiarist** | strip markers, reword, re-commit | the signed tag attributes exact bytes to a key and OTS can bound when their record existed; either may support a later comparison, but neither proves the other work is derivative, and the fingerprint cannot help once removed |
 | **"I can just copy it"** | redistribute, drop your name | fabius grants **no broad license**; copying may infringe absent permission or an applicable exception, while idea-level reimplementations remain out of reach (§4) |
-| **Anyone** | obtain & re-clone the repo | nothing prevents it — the repo is **public** and clonable by a stranger with no credentials (the honesty stance, up front); the seal (§1–4) plus the absence of any license grant (§4) is the *whole* defense, not a backstop |
+| **Anyone** | obtain & re-clone the repo | nothing prevents it — the repo is **public** and clonable by a stranger with no credentials (the honesty stance, up front); the seal (§1–4) plus the limited permission in LICENSE (§4) is the *whole* defense, not a backstop |
 
 What this package **cannot** stop: a determined actor who rewrites fabius from scratch using only the *ideas*. This apparatus binds exact expression, release-key attribution and priority evidence; it neither protects ideas nor decides ownership or infringement. That gap is real and is the price of publishing.
 

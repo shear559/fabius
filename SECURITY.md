@@ -24,13 +24,13 @@ fabius is a set of skill contracts, a plugin manifest and a zero-dependency loca
 - Anything requiring an already-compromised machine, since the runner holds the user's own API keys by design.
 - The fact that a public repository can be cloned. [PROVENANCE.md](PROVENANCE.md) states this plainly: the design defends provenance and enforcement, not access.
 
-## Bundled reference projects
+## Original helpers and historical examples
 
-The active `runtime/` has no third-party package dependencies. Files below `skills/*/references/**` are inert, vendored research and example-project snapshots: the plugin does not install their manifests, resolve their lockfiles, or execute their build scripts. Dependency alerts on those paths therefore are not dependencies of the Fabius runner or release tooling.
+The current local runner and capability helpers use Node built-ins without third-party package dependencies. Their actual boundaries are in scope: source/index validation and bounded reads in Archivum, caller authority and task/output validation in Cohors, generated-content escaping and output-path handling in Decor, and evidence consistency in Disciplina. These helpers are local processes; they do not provide an operating-system sandbox.
 
-They are still real upstream dependency warnings for anyone who deliberately extracts and runs an example. Treat such a directory as a separate untrusted project: review and update its manifest and lockfile before installing or executing it. Bundling a snapshot is not a support claim for its historical dependency versions.
+Version 3.0.0 removes the imported example projects and their dependency manifests. Historical releases still contain those files and their upstream licence notices. Dependency warnings for those older snapshots remain relevant if someone deliberately runs them; a successful old package install did not establish the security of an extracted example.
 
-Dependabot proposes weekly updates for pinned GitHub Actions references only. It does not update the zero-dependency runtime or the bundled reference snapshots, and its pull requests are reviewed rather than auto-merged.
+Dependabot proposes weekly updates for pinned GitHub Actions references. Its changes are reviewed rather than automatically merged. The current source scan and package gates must be rerun for each release; a removed manifest is not evidence that unrelated code is secure.
 
 Release verification does not rely on an optional OpenTimestamps installation for detached-proof integrity. `scripts/verify-ots-binding.mjs` parses the bounded proof structure and binds its embedded SHA-256 to the exact sealed record using Node built-ins; the external OTS client is used only to classify and trusted-verify attestations. The historical signing tag object and key digest are pinned, every canonical tag must verify with that root, and an in-release or recent-tag signing-key replacement is rejected.
 
