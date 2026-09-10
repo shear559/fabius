@@ -1,8 +1,8 @@
 # AGENTS.md — the fabius stance (tool-agnostic)
 
-This file is the portable operating stance of **fabius — one set of operating rules above every model (a plugin, not a platform)**. It is plain markdown, so it works in any agent that reads a standing-instructions file — Codex / OpenAI, grok-build / xAI, Cursor, Windsurf, Cline, GitHub Copilot, OpenCode, Gemini CLI, or a raw system prompt. Copy it into your repo (or paste it into your tool's rules) and that tool runs end-to-end under the fabius stance.
+This file is the portable operating stance of **fabius — one set of rules above every model**. It is plain Markdown for agent apps that read standing instructions — Codex / OpenAI, Grok Build / xAI, Cursor, Windsurf, Cline, GitHub Copilot, OpenCode, Gemini CLI, or a system prompt. Merge it into the instruction path your app supports, preserving existing project rules. The model follows the stance using the tools and permissions available in that environment.
 
-> fabius ships as a plugin (Claude Code · Codex · Grok Build) whose fifteen coordinated layers (router `fabius` + always-on `fabius-parcus` + 13 specialists) load with progressive disclosure. This file is the lite, universal bridge to that same stance. The operating rules through **Boundary** are standalone; repository paths and commands in the final contributor appendix apply only when the full fabius checkout is present.
+> Fabius organizes its rules into fifteen coordinated layers (router `fabius` + always-on `fabius-parcus` + 13 specialists), loaded as needed. Claude Code, Codex and Grok Build install these files through their plugin managers. This file carries the portable core stance. The operating rules through **Boundary** are standalone; repository paths and commands in the final contributor appendix apply only when the full fabius checkout is present.
 
 ---
 

@@ -7,7 +7,7 @@ body:
     attributes:
       label: Where
       description: Host name/version and plugin-manager version. For the optional runner from a full checkout, include `node runtime/fabius.mjs --version`.
-      placeholder: Claude Code · fabius v2.8.2
+      placeholder: Claude Code · fabius v2.8.3
     validations:
       required: true
   - type: textarea

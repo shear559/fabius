@@ -12,7 +12,7 @@ This table governs current descriptions of Fabius. A capability describes instru
 | Reproducibility | Retained score aggregates can be replayed; new harness receipts retain more evidence | Historical answers and some execution artifacts are absent; a rerun is a new measurement |
 | Panel D | BASE / FAB / FAB_MEMORY text-output experiment | No generic terse arm, tool execution or growing cross-session memory test |
 | Execution | Say a file, image, video or action was produced only when it exists and was inspected | A plan, tool call request or model claim is insufficient |
-| Security | Instructions plus separate host/runtime controls | Plugin prose does not enforce an OS sandbox; approved shell execution is not one |
+| Security | Instructions plus separate host/runtime controls | Written rules do not enforce an OS sandbox; approved shell execution is not one |
 | Memory | Uses a declared record store with granted permission | Does not silently create a second store or guarantee host history deletion |
 | Provenance | Hashes bind bytes; signed tags bind a release to a key; verified timestamps bound existence time | Not proof of originality, legal ownership, safety or improved model quality |
 | Cost and license | Personal non-commercial plugin use is permitted by current LICENSE | Model/service costs are separate; professional permission is unresolved |

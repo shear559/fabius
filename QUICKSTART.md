@@ -1,6 +1,6 @@
 # Start with one checkable task
 
-Fabius supplies reusable instructions inside an agent host. You need an account and a compatible version of that host; model access, connected services and compute are provided separately. The plugin currently permits personal, non-commercial use only. See [LICENSE](LICENSE) before professional or client work.
+Fabius supplies reusable operating rules for the model you use through a compatible agent app. Model access, connected services and compute are provided separately. The current license permits personal, non-commercial installation and use through the published marketplace command. See [LICENSE](LICENSE) before professional or client work.
 
 1. Follow the [installation commands](README.md#install-in-your-agent-app) for your host. Claude Code commands run inside Claude Code; Codex and Grok commands shown as shell commands run in a terminal.
 2. Check the plugin manager shows **fabius**, its version and enabled state. Open a fresh session after installing or updating. A downloaded repository or marketplace entry alone is insufficient.

@@ -2,9 +2,9 @@
 name: fabius
 description: >
   Load at the start of any non-trivial task — the router that sets HOW to work before any
-  specialist fires. fabius is a plugin — one set of operating rules loaded above every model
-  (Claude · GPT · Gemini · DeepSeek · GLM · Qwen · Llama · Mistral · Kimi · Grok and any
-  other), never a platform of its own. One stance, end to end: code, prose, agents, UI, data
+  specialist fires. fabius supplies one set of operating rules for different AI models
+  (Claude · GPT · Gemini · DeepSeek · GLM · Qwen · Llama · Mistral · Kimi · Grok), loaded
+  through a compatible agent app. One stance, end to end: code, prose, agents, UI, data
   visualization, debugging, marketing, defensive security, games, on-chain work and sealing,
   automations, scientific research, ML/LLM engineering, market analysis, cross-model
   deliberation, and memory. Scout wide, strike narrow — talk lean, build lean, run a

@@ -25,7 +25,7 @@ From a committed checkout, choose a new output directory outside any Git checkou
 ```sh
 python3 -B scripts/distribution.py check
 python3 -B scripts/distribution.py build --output-dir /tmp/fabius-candidate-package
-python3 -B scripts/distribution.py verify /tmp/fabius-candidate-package/fabius-2.8.2-claude-plugin.zip
+python3 -B scripts/distribution.py verify /tmp/fabius-candidate-package/fabius-2.8.3-claude-plugin.zip
 ```
 
 The builder includes tracked files, required attribution and all fifteen root skills. It rejects missing authored resource links, escaping symlinks, selected secrets and concurrent source changes. Two builds of identical source bytes produce identical ZIP bytes. The embedded manifest records the commit, selected source hashes, archive hashes and any dirty paths; it is not a signature or store approval. Untracked files require explicit `--include-file` arguments. Existing archives are never overwritten.
@@ -46,7 +46,7 @@ Use [pilot-ledger.csv](pilot-ledger.csv) privately; do not commit participant id
 
 Draft for a permitted personal social channel, after publication:
 
-> I built Fabius as a plugin for the AI assistant you already use. It gives recurring tasks a written process: understand the input, choose the relevant skill, produce something you can inspect, and check it. The repository includes four starter examples and the limits of its historical evaluations. Try one task and tell me where the instructions or result break: https://github.com/shear559/fabius
+> I built Fabius as a set of operating rules for different AI models. It gives recurring tasks a written process: understand the input, choose the relevant skill, produce something you can inspect, and check it. You use the rules with your chosen model through a compatible agent app. The repository includes four starter examples and the limits of its historical evaluations. Try one task and tell me where the instructions or result break: https://github.com/shear559/fabius
 
 Draft for an opt-in pilot invitation, to send only with owner approval:
 

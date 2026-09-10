@@ -5,15 +5,15 @@
     "url": "https://github.com/shear559"
   },
   "metadata": {
-    "description": "fabius — a plugin, not a platform: one set of operating rules for supported agent harnesses and model families (code · prose · UI + data-viz · agents · debug · memory · marketing · defensive-security · games · on-chain + sealing · automation · science · ML/AI engineering · markets & finance · cross-model council) under a single Fabian stance: scout wide, strike narrow. You choose the goal; fabius chooses the machinery — capability-first routing that stops the moment another step can no longer change the decision. Fifteen coordinated capability layers, twenty-two core routing rules with stated assumptions, nothing to host.",
-    "version": "2.8.2"
+    "description": "Fabius — one set of rules above every model: plan, act, verify and remember. Fifteen coordinated skills guide the work through your chosen model and a compatible agent app, using its tools and permissions. Scout wide, strike narrow.",
+    "version": "2.8.3"
   },
   "plugins": [
     {
       "name": "fabius",
       "source": "./",
-      "description": "fabius — a plugin that supplies one set of operating rules across supported agent harnesses and model families, under one lean Fabian stance: scout wide, strike narrow. You choose the goal; fabius chooses the machinery — capability-first routing, expected-value research that stops on decision stability, verification before ship. Fifteen coordinated capability layers with declared ownership (always-on lean core + a router that dispatches by layer + machinery + model-tier + thirteen process/design/agents/memory/marketing/security/game/on-chain/automation/science/ML-engineering/markets/council specialists), nothing to host.",
-      "version": "2.8.2",
+      "description": "Fabius — one set of rules above every model: plan, act, verify and remember. Fifteen coordinated skills guide the work through your chosen model and a compatible agent app, using its tools and permissions. Scout wide, strike narrow.",
+      "version": "2.8.3",
       "author": {
         "name": "shear559",
         "url": "https://github.com/shear559"

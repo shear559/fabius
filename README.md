@@ -4,17 +4,17 @@
 
 #### scout wide · strike narrow
 
-*A plugin, not a platform — one set of rules above every model.*
+*one set of rules above every model*
 
 <br/>
 
-<img src="assets/hero.webp" alt="fabius — one set of rules above every model: the install command and the model marks it runs above" width="100%" />
+<img src="assets/hero-rules.webp" alt="fabius — one set of rules above every model: plan, act, verify and remember" width="100%" />
 
 <br/>
 <br/>
 
-[![Plugin](https://img.shields.io/badge/plugin-install_in_Claude_Code_%C2%B7_Codex_%C2%B7_Grok_Build-76b900?style=for-the-badge)](#install-in-your-agent-app)
-[![Runs above every model](https://img.shields.io/badge/runs_above-every_model-76b900?style=for-the-badge)](#runs-above-every-model-exactly-the-same-rules)
+[![Get started](https://img.shields.io/badge/get_started-Claude_Code_%C2%B7_Codex_%C2%B7_Grok_Build-76b900?style=for-the-badge)](#install-in-your-agent-app)
+[![Portable rules](https://img.shields.io/badge/operating_rules-different_models-76b900?style=for-the-badge)](#use-the-same-rules-with-different-models)
 [![Benchmark](https://img.shields.io/badge/benchmark-results_+_limitations-2ea44f?style=for-the-badge)](BENCHMARKS.md)
 [![Whitepaper](https://img.shields.io/badge/whitepaper-proofs_+_coherence-76b900?style=for-the-badge)](paper/fabius-as-a-system.pdf)
 
@@ -24,7 +24,9 @@
 
 ## one set of rules. above every model.
 
-fabius is a plugin — **fifteen coordinated public skills and twenty-two core routing rules**, loaded through a compatible agent environment. Mathematical arguments and operational heuristics are distinguished in the research. The model supplies the capability; fabius supplies the discipline. **You choose the goal; fabius chooses the machinery** — capability-first routing, research that stops the moment another step can no longer change the decision, verification before anything ships, and permissioned memory that stops re-deriving. Nothing to host. Nothing to sign up for.
+Fabius is **a shared set of operating rules for AI models**. It guides how a model plans work, selects tools, checks results and uses approved project memory. You keep your model; Fabius supplies a consistent working method.
+
+The rules are organized into **fifteen coordinated skills and twenty-two core routing rules**. A router selects the relevant specialists for the task. Claude, GPT, Gemini and open models can receive the instructions through a compatible agent app; execution depends on the model, available tools and permissions. The research distinguishes mathematical arguments from operational heuristics.
 
 The contract is written down, not implied: [IDENTITY.md](IDENTITY.md) defines the testable objective—whether the same model can produce a better outcome with less waste—not a universal result claimed in advance. The orchestration doctrine (the flow, provider selection, stopping logic, and acting ladder) is [`skills/fabius/references/orchestration-doctrine.md`](skills/fabius/references/orchestration-doctrine.md); the site is **[fabius-landing.vercel.app](https://fabius-landing.vercel.app)**.
 
@@ -32,7 +34,7 @@ The contract is written down, not implied: [IDENTITY.md](IDENTITY.md) defines th
 
 ## Install in your agent app
 
-The rules load into a compatible harness. Installation is free for personal use; your model, connected services and compute may have separate costs.
+The rules load into a compatible agent app. Claude Code, Codex and Grok Build use their plugin managers to install the files; other tools can read the portable core instructions in `AGENTS.md`. Installation is free for personal use under [LICENSE](LICENSE); your model, connected services and compute may have separate costs.
 
 **Claude Code**
 
@@ -52,7 +54,7 @@ codex plugin add fabius@fabius
 codex plugin list --marketplace fabius
 ```
 
-Confirm that the listing reports the plugin installed and enabled, then restart Codex and check that its skills appear in a fresh task. Adding a marketplace or an enabled config entry alone is not an installation check. If `codex plugin --help` is unavailable, update the host before using these commands. The command syntax was checked with Codex CLI 0.153.4 on 2026-09-08.
+Confirm that the listing reports Fabius installed and enabled, then restart Codex and check that its skills appear in a fresh task. Adding a marketplace or an enabled config entry alone is not an installation check. If `codex plugin --help` is unavailable, update the host before using these commands. The command syntax was checked with Codex CLI 0.153.4 on 2026-09-08.
 
 To update an existing installation, run `codex plugin marketplace upgrade fabius`, then `codex plugin add fabius@fabius`, and repeat the listing and restart checks. Marketplace refresh, installed files and active-session loading are separate states. The host may use a sparse package; do not assume every repository file or a plugin-root `AGENTS.md` becomes active instructions.
 
@@ -69,7 +71,7 @@ Run `grok plugin details fabius` to inspect its version and component inventory,
 
 Without a harness, the repository includes an optional zero-dependency local runner that reads the sealed contracts: `node runtime/fabius.mjs run "…"`. Its available providers, tools and routing implementation are described in [runtime/README.md](runtime/README.md); they are separate from a host's plugin integration.
 
-Try a concrete task after loading the plugin:
+Try a concrete task after loading the rules:
 
 - “Review this architecture. Preserve the working boundaries, compare alternatives, and separate design advice from evidence we still need.”
 - “Improve this skill from these sources. Update its existing owner, preserve attribution, and test both the intended route and a near-neighbor.”
@@ -125,7 +127,7 @@ Depth on demand: [ARCHITECTURE.md](ARCHITECTURE.md) · [CORPUS.md](CORPUS.md) ·
 <details>
 <summary>Model-family examples and portability limits</summary>
 
-## Runs above every model. Exactly the same rules.
+## Use the same rules with different models
 
 fabius has no required model roster, hosted service, or external runtime: its core is a set of rules the harness hands to whichever model you choose. The repository also includes an optional zero-dependency local runner for use without a harness. Frontier or open-weight, hosted, routed or local: the contract is identical. Thirty-six model families are shown as examples below. Their names do not establish host integration or tested compatibility: skill loading, tool access and instruction-following capability determine what can run.
 

@@ -1,7 +1,7 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
 # Fabius — system architecture
 
-Fabius is **one agent**, not a bundle of plugins. A router (`fabius` itself) coordinates fourteen capability layers over a thin supporting spine — fifteen public layers in all, counting the router — composing the agent's end-to-end engineering capability. It first classifies three binary process loads—**Memory**, **Tools/Action**, and **Planning**—and separately selects any domain owner. Only then does it choose the machinery rung and model tier. This document is the system's own architecture and capability matrix.
+Fabius is **one coordinated system of operating rules for AI models**. A router (`fabius` itself) coordinates fourteen capability layers over a thin supporting spine — fifteen public layers in all, counting the router — guiding the model's work through its available tools and permissions. It first classifies three binary process loads—**Memory**, **Tools/Action**, and **Planning**—and separately selects any domain owner. Only then does it choose the machinery rung and model tier. This document is the system's own architecture and capability matrix.
 
 The organizing idea is the Fabian one: **scout wide, strike narrow.** Investigate broadly (process and memory make you wide); deliver the single smallest correct thing (lean makes you narrow). The layers below split exactly along that line.
 

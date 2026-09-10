@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Fabius: one set of operating rules across supported agent harnesses — a plugin, not a platform"
+title: "Fabius: one set of rules above every model"
 message: "If you cite this work, please cite the whitepaper in paper/fabius-as-a-system.pdf."
 type: software
 authors:
@@ -18,7 +18,7 @@ abstract: >-
   and the hundred-task FBS suite. Gains, regressions and missing historical
   artifacts are stated explicitly. Current maintenance checks establish
   the tested behavior and release integrity, not a new benchmark gain.
-version: 2.8.2
+version: 2.8.3
 repository-code: "https://github.com/shear559/fabius"
 url: "https://fabius-landing.vercel.app"
 license-url: "https://github.com/shear559/fabius/blob/main/LICENSE"
