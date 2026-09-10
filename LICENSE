@@ -26,10 +26,11 @@ not by itself prove originality, authorship, ownership, or infringement.
 Copying protected expression may infringe absent permission or an applicable
 exception; that assessment is fact-specific.
 
-Some materials under `skills/**/references/` adapt third-party works that retain
-their own upstream licenses; those works remain governed by their original terms
-and are attributed in `credits/`. This proprietary notice applies to the
-original fabius work, not to such third-party materials.
+Separately identified third-party material, including retained specification test
+vectors, keeps its applicable terms and is attributed in `credits/`. Third-party
+brands and marks remain with their respective owners. This proprietary notice
+applies to original fabius work, not to such material. Earlier releases retain
+their own bundled source and notices; their history is recorded in `credits/`.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS

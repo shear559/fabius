@@ -14,8 +14,12 @@ remain applicable. Copying protected expression may infringe absent permission
 or an applicable exception; that assessment is fact-specific.
 
 Any copy made under the LICENSE permission must retain the copyright notice
-above. Materials under skills/**/references/ that adapt third-party work retain
-their own upstream licenses and are attributed in credits/.
+above. Separately identified third-party material retains its applicable terms.
+The retained BIP-173 test vectors and their BSD-2-Clause notice are recorded in
+credits/retained-test-data.json and credits/licenses/BIP-173-BSD-2-Clause.txt.
+Third-party brands and marks remain with their respective owners. Source bundles
+retired in 3.0.0 remain attributed in credits/retired-upstream.json and their
+original notices remain in the earlier signed releases.
 
 PROVENANCE
 ----------

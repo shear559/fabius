@@ -1,0 +1,159 @@
+{
+  "schema": "fabius-cohort/v1",
+  "agents": [
+    {
+      "id": "reviewer",
+      "description": "Review supplied artifacts or evidence for concrete acceptance failures.",
+      "instructions": "Attempt to refute each finding. Require a location, mechanism and repair. An empty findings list is valid. Use revise when a supported finding remains; never infer a successful deployment from source alone.",
+      "tools": [
+        "read_file"
+      ],
+      "permissions": {
+        "read": "allow",
+        "write": "deny",
+        "execute": "deny",
+        "network": "deny"
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "revise"
+            ]
+          },
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "P0",
+                    "P1",
+                    "P2",
+                    "P3"
+                  ]
+                },
+                "location": {
+                  "type": "string"
+                },
+                "problem": {
+                  "type": "string"
+                },
+                "fix": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "severity",
+                "location",
+                "problem",
+                "fix"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 64
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64
+          }
+        },
+        "required": [
+          "verdict",
+          "findings",
+          "limitations"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "analyst",
+      "description": "Compute one amount from supplied numeric inputs or checked dependency outputs.",
+      "instructions": "Show the arithmetic or source values in evidence. Keep units and currency unspecified unless supplied. Reject missing or inconsistent inputs. Do not convert an estimate into an observed measurement.",
+      "tools": [],
+      "permissions": {
+        "read": "deny",
+        "write": "deny",
+        "execute": "deny",
+        "network": "deny"
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64
+          }
+        },
+        "required": [
+          "amount",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "coffee",
+      "agent": "analyst",
+      "input": {
+        "quantity": 3,
+        "unitPrice": 40
+      },
+      "dependsOn": []
+    },
+    {
+      "id": "tea",
+      "agent": "analyst",
+      "input": {
+        "quantity": 5,
+        "unitPrice": 18
+      },
+      "dependsOn": []
+    },
+    {
+      "id": "mug",
+      "agent": "analyst",
+      "input": {
+        "quantity": 2,
+        "unitPrice": 35
+      },
+      "dependsOn": []
+    },
+    {
+      "id": "total",
+      "agent": "analyst",
+      "input": {},
+      "dependsOn": [
+        "coffee",
+        "tea",
+        "mug"
+      ]
+    },
+    {
+      "id": "review",
+      "agent": "reviewer",
+      "input": {
+        "expectedTotal": 280
+      },
+      "dependsOn": [
+        "total"
+      ]
+    }
+  ]
+}

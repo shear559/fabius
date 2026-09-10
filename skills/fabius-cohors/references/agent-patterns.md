@@ -185,7 +185,7 @@ Generated code passes ORDERED gates, cheapest first: syntax parse → execute ag
 
 ### Lightweight pipeline runtime — three contracts to demand
 
-Do not adopt a bespoke runtime for this — LangGraph already owns the graph/state-machine row in `references/agent-frameworks.md`. These are contracts to demand of whichever runtime you use:
+Fabius now supplies a small [static dependency scheduler](catalogue/scheduler.md) for bounded plans with caller-owned execution. The following broader patterns remain requirements to assess in a host or external framework; the local scheduler does not implement conditional expressions, dynamic graphs, durable checkpoints or cost accounting:
 
 1. **Declarative input expressions.** Nodes declare inputs as a boolean expression over state keys — e.g. `prompt & (chunks | parsed_doc | doc)` — where OR-chains resolve to the FIRST satisfied alternative, so one node definition transparently consumes the best-available upstream artifact and one graph serves many pipeline variants.
 2. **Validated conditionals.** A conditional node has exactly two outgoing edges, checked at graph build; the condition evaluates in a sandboxed expression evaluator — never raw eval; returning a node name not in the graph is a hard error, not a fallthrough.

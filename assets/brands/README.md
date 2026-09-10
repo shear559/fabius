@@ -2,7 +2,7 @@
 
 These marks identify model families, makers, providers and harnesses that fabius — a plugin — runs above or loads into. They do not imply a partnership, sponsorship, or endorsement. Each external mark remains the property of its respective owner and is displayed without recoloring or geometric alteration.
 
-| File | Canonical source |
+| Historical source filename | Canonical source |
 |---|---|
 | `openai.png` | Official OpenAI GitHub organization avatar: `https://github.com/openai.png?size=512`; usage follows `https://openai.com/brand/` |
 | `anthropic.png` | Official Anthropic GitHub organization avatar: `https://github.com/anthropics.png?size=512` |
@@ -48,4 +48,4 @@ These marks identify model families, makers, providers and harnesses that fabius
 | `google-gemini.png` | Official Google Gemini GitHub organization avatar (Gemini CLI): `https://github.com/google-gemini.png?size=160` |
 | `opencode.png` | Official OpenCode GitHub organization avatar: `https://github.com/opencode-ai.png?size=160` |
 
-Initial provider marks fetched 2026-07-29; Ollama and the expanded model-family set fetched 2026-07-30; the wide model-field + harness set (GLM, MiniMax, Phi, Nemotron, Granite, Nova, Sonar, Yi, Hunyuan, ERNIE, Seed, Step, Jamba, Falcon, Reka, OLMo, Hermes, LFM, EXAONE, Solar, MiMo, Sarvam, Apertus, Gemma; Cursor, Cline, Copilot, Gemini CLI, OpenCode) fetched 2026-08-19 at `?size=160`. Two marks unrelated to the plugin were retired on 2026-08-19. The page itself loads the 96 px WebP derivatives in `s/` (generated from these originals with Pillow, `quality=88`; `s/huggingface.webp` comes from the same brand kit's `hf-logo.png`) because no mark renders larger than 46 CSS px — the originals stay here as the provenance source. Keep original aspect ratios and colors. If a provider updates its mark, replace it under a new filename because `/assets/*` is immutable-cached in production.
+Initial provider marks fetched 2026-07-29; Ollama and the expanded model-family set fetched 2026-07-30; the wide model-field + harness set (GLM, MiniMax, Phi, Nemotron, Granite, Nova, Sonar, Yi, Hunyuan, ERNIE, Seed, Step, Jamba, Falcon, Reka, OLMo, Hermes, LFM, EXAONE, Solar, MiMo, Sarvam, Apertus, Gemma; Cursor, Cline, Copilot, Gemini CLI, OpenCode) fetched 2026-08-19 at `?size=160`. Two marks unrelated to the plugin were retired on 2026-08-19. The page itself loads the 96 px WebP derivatives in `s/` (generated from these originals with Pillow, `quality=88`; `s/huggingface.webp` comes from the same brand kit's `hf-logo.png`) because no mark renders larger than 46 CSS px — this checkout carries 40 WebP derivatives in `s/` plus `gemini.svg`; the other original source files are not included. The table records their historical source names and URLs, not a claim that every listed original is shipped. Keep original aspect ratios and colors. If a provider updates its mark, replace it under a new filename because `/assets/*` is immutable-cached in production.

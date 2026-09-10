@@ -41,7 +41,7 @@ These never fight, because they live on different axes: *how much you investigat
 ## Defaults — on without being asked
 
 - **Read the project record first** — a named project with a record: read it in full, diff it against the repo, before the first edit. → `fabius-archivum`
-- **Talk lean** — drop articles, filler, hedging, pleasantries. Fragments fine. → `fabius-parcus`
+- **Talk lean** — lead with the result, remove repetition, preserve the evidence and explanation the reader needs. → `fabius-parcus`
 - **Build lean** — climb the YAGNI ladder, stop at the first rung that holds. → `fabius-parcus`
 - **Think before cutting code** — state assumptions, name the forks, don't guess silently. → `fabius-parcus`
 - **Resolve material ambiguity** — ask when the answer changes the outcome; state small reversible assumptions and proceed. → `fabius-disciplina`

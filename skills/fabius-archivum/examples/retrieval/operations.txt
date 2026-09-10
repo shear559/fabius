@@ -1,0 +1,2 @@
+A failed index rebuild preserves the previous complete index.
+Review changed source files and rebuild before searching again.

@@ -1,0 +1,208 @@
+{
+  "schema": "fabius-retired-sources/v1",
+  "retired_for": "3.0.0",
+  "last_bundled_release": "v2.8.3-sealed",
+  "last_bundled_commit": "b31628684fed2267a58eb7afa530aed0215fc80e",
+  "note": "Historical attribution and original unpinned status are retained. These paths must not exist in the current package. Independent replacements are mapped in capabilities.json; upstream projects, assets and ideas do not become Fabius property.",
+  "entries": [
+    {
+      "id": "google-adk-samples",
+      "repo": "https://github.com/google/adk-samples",
+      "owner": "Google LLC",
+      "license": "Apache-2.0",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agents/android",
+        "skills/fabius-cohors/references/agents/go",
+        "skills/fabius-cohors/references/agents/java",
+        "skills/fabius-cohors/references/agents/kotlin",
+        "skills/fabius-cohors/references/agents/python",
+        "skills/fabius-cohors/references/agents/typescript"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": true,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. Six language trees, each with LICENSE and a changes-stated NOTICE; upstream ships no NOTICE of its own (stated in each tree's NOTICE)."
+    },
+    {
+      "id": "agency-agents",
+      "repo": "https://github.com/msitarzewski/agency-agents",
+      "owner": "AgentLand Contributors",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agents/fabius-agency"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. Carried as fabius-agency; agent definitions kept, upstream scaffolding stripped (tree README)."
+    },
+    {
+      "id": "ruflo",
+      "repo": "https://github.com/ruvnet/ruflo",
+      "owner": "ruvnet",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agents/orchestration"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. Formerly claude-flow (ruvnet/claude-flow redirects here); tree text reads fabius-flow. Orchestration agent definitions only, framework code stripped."
+    },
+    {
+      "id": "superpowers",
+      "repo": "https://github.com/obra/superpowers",
+      "owner": "Jesse Vincent (obra)",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/process/discipline"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. The discipline skill tree (brainstorm, plan, TDD, debug, verification) with fabius naming."
+    },
+    {
+      "id": "mattpocock-skills",
+      "repo": "https://github.com/mattpocock/skills",
+      "owner": "Matt Pocock",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/process/craft"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. The engineering / productivity / writing craft skill tree with fabius naming."
+    },
+    {
+      "id": "open-design",
+      "repo": "https://github.com/nexu-io/open-design",
+      "owner": "Open Design contributors",
+      "license": "Apache-2.0",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/design/fabius-design"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": true,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. Brand-teardown corpus carried as fabius-design; LICENSE plus changes-stated NOTICE in the tree."
+    },
+    {
+      "id": "hyperframes",
+      "repo": "https://github.com/heygen-com/hyperframes",
+      "owner": "HeyGen, Inc.",
+      "license": "Apache-2.0",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/design/fabius-frames"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": true,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. Programmatic-video toolkit carried as fabius-frames; LICENSE plus changes-stated NOTICE in the tree."
+    },
+    {
+      "id": "gsap-skills",
+      "repo": "https://github.com/greensock/gsap-skills",
+      "owner": "GreenSock",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/design/fabius-motion"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. GSAP animation skills carried as fabius-motion."
+    },
+    {
+      "id": "ui-ux-pro-max-skill",
+      "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "owner": "Next Level Builder",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/design/fabius-uiux"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. UI/UX Pro Max carried as fabius-uiux."
+    },
+    {
+      "id": "uiverse-galaxy",
+      "repo": "https://github.com/uiverse-io/galaxy",
+      "owner": "Uiverse.io",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/design/uiverse"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. The Uiverse.io element archive (repo named galaxy; tree README title Galaxy)."
+    },
+    {
+      "id": "turbovec",
+      "repo": "https://github.com/RyanCodrai/turbovec",
+      "owner": "Ryan Codrai",
+      "license": "MIT",
+      "consumed_as": "bundled",
+      "fabius_layer": "fabius-archivum",
+      "fabius_paths": [
+        "skills/fabius-archivum/references/knowledge/fabius-engine"
+      ],
+      "pinned_commit": null,
+      "pinned_version": null,
+      "pinned_at": null,
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Legacy bundle, unpinned. Snapshot taken while the package was named the-vector-engine (PyPI, crates.io); upstream is now turbovec with the same README header and author. Carried as fabius-engine / fabius-vec."
+    }
+  ],
+  "additional_retired_paths": [
+    "skills/fabius-cohors/references/agents",
+    "skills/fabius-archivum/references/knowledge",
+    "skills/fabius-decor/references/design",
+    "skills/fabius-disciplina/references/process",
+    "skills/fabius-parcus/references/lean"
+  ]
+}

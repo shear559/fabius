@@ -204,6 +204,8 @@ test('bech32 round-trips and rejects a corrupted checksum', () => {
   assert.throws(() => bech32Decode(mixed), /mixed-case/);
 });
 
+// Retained public BIP-173 vectors: Pieter Wuille and Greg Maxwell, BSD-2-Clause.
+// Exact source/cases: credits/retained-test-data.json; notice: credits/licenses/BIP-173-BSD-2-Clause.txt.
 test('bech32 matches the reference checksum on the BIP-173 vectors', () => {
   // Independent vectors, so this proves the checksum polynomial rather than merely that
   // our encoder and decoder agree with each other.

@@ -25,13 +25,13 @@ metadata:
 
 # Fabius Decor — what good actually looks like
 
-*Decor* — what is fitting, what becomes the thing. Good design is fitness to purpose, not decoration. Across dozens of teardowns of shipped brands, the same short list of laws holds. Amateur UI breaks them; shipped UI obeys them. Pick one brand as a concrete target from the 69-brand library in `references/design/` (one `DESIGN-<brand>.md` each), then enforce the laws below.
+*Decor* — what is fitting, what becomes the thing. Good design is fitness to purpose, not decoration. Start from the actual content, the task, and the project's identity. Use the original token validator, layout recipes, and deterministic scene kit in `references/design-system.md`; then enforce the rules below.
 
 ## Define the tokens before you style anything
 
 Never inline a raw hex or px. Name a token once, reference it everywhere:
 
-- **Color** — `primary` (the ONE interactive accent — usually exactly one), `ink`/`body` (near-black, not `#000` — e.g. `#1d1d1f`, which reads photographic), `canvas`/`surface` (white plus one off-white for rhythm), `muted` (secondary text), `hairline` (1px borders).
+- **Color** — one `accent`, neutral `text` and `muted`, `canvas`/`surface` backgrounds, and `border`/`focus` roles. Keep functional controls monochrome; use accent for emphasis.
 - **Type scale** — a fixed ladder of sizes and weights (e.g. 300/400/600/700; skip 500 if the brand does). Display sizes carry **negative letter-spacing** for the tight modern feel; body runs 16–17px with generous line-height (~1.5). Set the ragging too — `text-wrap: balance` on headings, never a `<br>`.
 - **Spacing** — one base unit (8px); every structural step snaps to it (8 / 12 / 16 / 24 / 32 / 48 / 80). Section padding runs large (64–80px).
 - **Radius** — a small fixed set (e.g. sm / md / lg / pill). One grammar per element type; don't mix radii at random.
@@ -39,22 +39,22 @@ Never inline a raw hex or px. Name a token once, reference it everywhere:
 
 ## The laws — break these and it reads amateur
 
-1. **One accent color.** Every "click me" is the same `primary`. A second brand accent fragments the eye. Add a color only when it has a job.
+1. **One accent color.** Monochrome controls, consistent focus, one emphasis color. Data colors must carry meaning.
 2. **Tokens, never inline values.** Change a token once and the whole surface follows. Inline hex is where drift begins.
 3. **Type carries the hierarchy, not boxes.** Size + weight + spacing set the rank. Reach for a border or a background only after type has failed.
 4. **Whitespace is a feature.** Crowded reads as cheap. Give headlines air (≥48–64px), keep content off the edges, let the primary thing breathe.
 5. **Rhythm by alternation.** Alternate white / off-white (or light / dark) sections — the color change *is* the divider, no extra chrome required.
 6. **Restraint in motion.** One micro-interaction language (e.g. `scale(0.97)` on press). Calm — no looping pulse or heartbeat. Animate transform and opacity, never layout.
-7. **Consistency over novelty.** One spacing rhythm, one radius grammar, one type ladder across every screen — the same language at different volumes. A card row aligns with `subgrid`, not a fixed height.
+7. **Consistency over novelty.** One spacing rhythm, one radius grammar, one type ladder across every screen — the same language at different volumes.
 8. **Design the states.** Default, hover, focus, active, disabled — don't leave them to the browser. A focus ring is accessibility, not decoration. Style state from the DOM with `:has()` before a JS class toggle.
 
 ## Mobile-first, always
 
-Design and verify the **mobile** layout first — it's the hardest constraint. Desktop tends to fall out right once mobile is right; the reverse fails. Breakpoints that actually matter: ~640 (phone), ~834 (tablet), ~1068 (small desktop), ~1440 (content lock). Touch targets ≥ 44×44px. But breakpoints are a *page* tool — a component landing in more than one slot sizes off its **container** (`container-type: inline-size` + `@container`), not the viewport. The platform floor these laws assume — container queries, `:has()`, subgrid, `text-wrap`, the WCAG 2.2 AA contrast/focus gate → `references/platform-baseline.md`.
+Design and verify the **mobile** layout first — it's the hardest constraint. Desktop tends to fall out right once mobile is right; the reverse fails. Touch targets ≥ 44×44px. But breakpoints are a *page* tool — a component landing in more than one slot sizes off its **container** (`container-type: inline-size` + `@container`), not the viewport. The platform floor these laws assume — container queries, `:has()`, subgrid, `text-wrap`, the WCAG 2.2 AA contrast/focus gate → `references/platform-baseline.md`.
 
 ## Icons · motion · materials · direction
 
-License-verified libraries for what a brand target doesn't — page in the one you need:
+External tools and materials have their own terms; inspect the selected version and asset before use. Page in the reference you need:
 
 - **Icons** — one family, one stroke, `currentColor`→token, static by default; systems, animated icons, brand marks, emoji, flags → `references/icons.md`.
 - **Motion** — climb the native ladder (`@starting-style` · View Transitions · scroll-driven · WAAPI) before a JS engine; reduced-motion default-on → `references/motion-libraries.md`.
@@ -91,22 +91,28 @@ An image prompt is a **structured slot fill** under the same restraint, not a fr
 
 Slot schema, lighting/era tables, conflict rules, palette recipe → `references/generative-imagery.md`.
 
-## Using a brand spec as a target
+## Original design and media kit
 
-1. Pick the closest brand in `references/design/` (69 systems — `DESIGN-apple.md`, `DESIGN-stripe.md` …) as the visual DNA; token contract → `references/design-tokens.md`; the entry doc CORPUS.md designates (vocabulary + three worked brands) → `references/design-system.md`. Bundled libraries there are reference corpora, not public skills.
-2. Lift its **principles**, not its pixels — the type ratios, the accent discipline, the spacing rhythm, the do/don'ts.
-3. Re-map to the project's own brand color and font. Keep the structure, swap the identity.
-4. Substitute fonts honestly: name the closest open-source match (Inter for SF Pro, Manrope for Gilroy) and nudge tracking and leading to match.
+Start with `references/design-system.md`. From a full checkout, run:
+
+```sh
+node skills/fabius-decor/scripts/design.mjs check skills/fabius-decor/examples/tokens.json
+node skills/fabius-decor/scripts/design.mjs scene skills/fabius-decor/examples/storyboard.json --out /tmp/fabius-scene
+```
+
+Use a fresh output directory. The kit checks named color pairs, focus tokens and motion policy; it cannot certify whole-page accessibility. Generated scenes use supplied text, native controls and `window.__seek(seconds)`, with no autoplay. Verify the rendered result. Detailed schema → `references/design-tokens.md`; original composition recipes → `references/layout-recipes.md`; capture contract and external renderers → `references/motion-libraries.md`.
+
+If a user supplies a brand reference, inspect the actual surface and translate its useful principles into the project's own tokens. Do not copy source, logos, fonts, or teardown prose. This kit replaces the decision-use of earlier imported corpora; it does not recreate their component count, effects, templates, or supported frameworks. Historical source identities and the replacement boundary → `references/original-kit-migration.json`.
 
 ## Review before ship — the censor's floor
 
-Review is a vocabulary, not a vibe. Name the surface mode (persuade · operate · read · experience), pick the verb (critique · audit · polish · bolder · quieter · distill · harden · clarify · adapt), run the **deterministic anti-pattern scan first** — the ~60 generated-UI tells (gray on color, nested cards, icon tiles, gradient text, bounce easing …) — then judge: heuristics /40, P0–P3, personas. **Bounded passes:** build fully → one batched desktop + mobile inspection → one fix batch → at most one more round → stop. Refinement preserves, redesign replaces, the brief wins → `references/design-critique.md`.
+Name the surface mode (persuade · operate · read · experience) and the requested change. Scan deterministic anti-patterns first; then assess hierarchy, interactions, evidence and accessibility with P0–P3 severity. Build → inspect mobile and desktop → batch the fixes → verify the changed paths. Refinement preserves, redesign replaces, and the brief wins. Review method and the distinction between automated signals and judgment → `references/design-critique.md`.
 
 ## Ship-quality checklist
 
 Before calling UI done:
 
-- [ ] One accent; every interactive element uses it.
+- [ ] Monochrome functional controls; one accent reserved for emphasis and focus.
 - [ ] All values are tokens — no inline hex or px in components.
 - [ ] Type ladder consistent; display sizes have tight tracking; body ≥16px.
 - [ ] Spacing snaps to the base unit everywhere.

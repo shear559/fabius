@@ -1,6 +1,0 @@
-.venv/
-.index/
-__pycache__/
-*.pyc
-fabius-vec.db
-*.lock

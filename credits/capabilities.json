@@ -1,0 +1,104 @@
+{
+  "schema": "fabius-capabilities/v1",
+  "version": "3.0.0",
+  "families": [
+    {
+      "id": "agent-workflows",
+      "owner": "fabius-cohors",
+      "retired_sources": [
+        "google-adk-samples",
+        "agency-agents",
+        "ruflo"
+      ],
+      "implements": [
+        "explicit agent roles",
+        "tool and permission contracts",
+        "dependency scheduling",
+        "bounded parallel execution",
+        "failure propagation and cooperative cancellation"
+      ],
+      "code": [
+        "scripts/cohort.mjs"
+      ],
+      "tests": [
+        "scripts/cohort.test.mjs",
+        "scripts/catalogue.test.mjs"
+      ],
+      "entry": "references/catalogue/scheduler.md",
+      "limits": "The caller supplies authorized runners and actual host isolation. No provider sessions, SDKs, deployment or autonomous tool execution are included."
+    },
+    {
+      "id": "local-retrieval",
+      "owner": "fabius-archivum",
+      "retired_sources": [
+        "turbovec"
+      ],
+      "implements": [
+        "explicit source selection",
+        "Unicode lexical retrieval",
+        "line citations",
+        "byte-based freshness",
+        "atomic index replacement"
+      ],
+      "code": [
+        "scripts/retrieval.mjs"
+      ],
+      "tests": [
+        "scripts/retrieval.test.mjs"
+      ],
+      "entry": "references/local-retrieval.md",
+      "limits": "Bounded Markdown/text corpus and BM25 only. No neural embeddings, approximate vector search or previous-engine API compatibility."
+    },
+    {
+      "id": "design-and-scenes",
+      "owner": "fabius-decor",
+      "retired_sources": [
+        "open-design",
+        "hyperframes",
+        "gsap-skills",
+        "ui-ux-pro-max-skill",
+        "uiverse-galaxy"
+      ],
+      "implements": [
+        "semantic token validation",
+        "contrast and focus checks",
+        "original layout recipes",
+        "deterministic text storyboards",
+        "reduced-motion controls"
+      ],
+      "code": [
+        "scripts/design.mjs",
+        "templates/timeline.mjs",
+        "templates/scene.css"
+      ],
+      "tests": [
+        "scripts/design.test.mjs"
+      ],
+      "entry": "references/design-system.md",
+      "limits": "Original token and scene kit, not a copy of brand systems, UI archives or a complete video/compositing framework. Rendering needs a browser; encoding needs an external encoder."
+    },
+    {
+      "id": "engineering-evidence",
+      "owner": "fabius-disciplina",
+      "retired_sources": [
+        "superpowers",
+        "mattpocock-skills"
+      ],
+      "implements": [
+        "scope and architecture decisions",
+        "prototype and regression workflows",
+        "source-to-check coverage",
+        "plan/source/log freshness",
+        "explicit failed or skipped evidence"
+      ],
+      "code": [
+        "scripts/evidence.mjs"
+      ],
+      "tests": [
+        "scripts/evidence.test.mjs"
+      ],
+      "entry": "references/engineering-workflows.md",
+      "limits": "Ledger validates supplied evidence and current byte matches. It does not execute or authenticate tests, establish test adequacy, or authorize actions."
+    }
+  ]
+}

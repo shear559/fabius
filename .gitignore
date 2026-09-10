@@ -1,4 +1,7 @@
 .DS_Store
+ruvector.db
+agentdb.rvf
+.wrangler/
 node_modules/
 dist/
 *.log
@@ -22,9 +25,8 @@ evals/structural.json
 *.partial
 !evals/results.benchmark.json
 
-# Specification test vectors are fetched on demand (runtime/tools/fetch-vectors.sh),
-# never vendored — they belong to their upstream projects, and a stale copy would
-# quietly stop testing what it claims to test.
+# Full BIP-340 and NIP-44 vector files are fetched on demand and excluded.
+# The small retained BIP-173 literal set is attributed in credits/retained-test-data.json.
 runtime/test/vectors/
 
 # ots upgrade writes a .bak beside the proof — an artifact, not a record
@@ -33,7 +35,7 @@ runtime/test/vectors/
 # Internal working notes, unpublished by design.
 # Both files are titled "synapse (on the fabius rules) -> ... roadmap" and describe a
 # SEPARATE project's worker internals, commit SHAs, env-var names and file paths.
-# fabius is a plugin, not a platform: no fabius surface links to or describes synapse.
+# No Fabius surface links to or describes this separate project.
 # They were tracked in the public repo until 2026-08-26. Neither is in the 18-file
 # content seal, neither is referenced by README/ARCHITECTURE/AGENTS/CORPUS or any gate,
 # so removing them changes no shipped contract. They remain on disk for the owner.

@@ -17,85 +17,42 @@ metadata:
 ---
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
 
-# Fabius Parcus — say less, build less, change less
+# Fabius Parcus — spend work where it changes the result
 
-*Parcus* — frugal, sparing. The Fabian habit of not spending what the moment doesn't require. One stance, four trims — **prose**, **code**, **change**, **scope** — that compose into: short explanation, small artifact, surgical diff, no speculation.
+Parcus applies beneath the active task owner. It governs four costs: the reader's attention, implementation complexity, change risk and unsupported assumptions. The user's requested outcome sets the scope.
 
-## 1. Lean prose
+## Say less
 
-Strip everything that carries no information: articles (a/an/the), intensifiers and filler (just, really, basically, actually, simply), social padding (sure, certainly, happy to), and hedges. Fragments carry meaning fine. Prefer the short word — *cut* over *implement a removal of*, *slow* over *suboptimal from a performance standpoint*. Three things never get stripped: the exact technical term, the code block, and the error string — quote those verbatim.
+Lead with the result or the next concrete action. Include the evidence and limitations needed to assess it. Remove repeated explanations, promotional adjectives and narration of routine tool calls. Preserve exact commands, identifiers and error messages.
 
-One sentence, one move: name the thing, the action, the reason — then what's next.
+Use ordinary complete prose when explaining a risk, asking for a consequential decision, teaching an unfamiliar concept or describing an order-sensitive procedure. A requested report should be as detailed as the reader needs. Concision must not make the answer harder to understand.
 
-> Not: "I'd be glad to dig into this — it seems the most probable underlying cause is likely…"
-> Yes: "Cause: the retry loop re-uses the already-closed socket. Open a fresh one per attempt:"
+`ultra` requests shorter presentation; it does not remove required reasoning, verification or functionality. Code, documentation and commit messages retain the conventions of their audience.
 
-**ultra** — abbreviate prose words (DB / auth / config / fn / impl), arrows for causality (`X → Y`), one word where one word holds. Never abbreviate code symbols, function/API names, or error strings.
+## Build less
 
-**Auto-clarity — drop lean, write normal prose for:** security warnings, irreversible-action confirmations, multi-step sequences where fragment order could be misread, or when the user is confused or re-asking. Resume lean after the part that needed air.
+Before introducing a new implementation, inspect the nearest existing one. Prefer a current helper, the standard library or a platform feature when it meets the requirement. Add a dependency only for a demonstrated gap and inspect its maintenance and licensing fit.
 
-**Artifacts stay normal.** Code, commits, PRs, docs — full prose. Lean is for the conversation, not the deliverable.
+Choose the smallest design that handles the actual inputs and failure modes. Generalize when real consumers share behavior, make a setting when supported deployments differ, and add a service when an existing process cannot satisfy the operational constraint. A hypothetical future consumer is insufficient evidence for any of those choices.
 
-## 2. Lean code — the ladder
+The same reasoning applies to agent work: inline reasoning, one tool, selected retrieval and a bounded plan precede delegation unless independent work already justifies it. Cohors owns delegation and Concilium owns cross-model deliberation. Neither additional agents nor additional model calls guarantee a better answer.
 
-Climb only as high as you must. The first rung that holds is the answer — don't climb past it to look busy.
+## Change less
 
-1. **Delete the requirement.** Is this speculative — a need nobody actually has yet? Then it isn't built. Name the cut in one line and move on. (YAGNI)
-2. **Reach for what this repo already has.** Grep before you write — this is the rung a model skips. Left alone it re-derives per task instead of calling what's there: measured against the human files beside them, AI-written files run longer, nest deeper, and reuse *less* across files. One search for the helper you're about to invent costs less than the second copy costs forever.
-3. **Reach for the standard library.** If the language already ships it, that's the implementation.
-4. **Reach for the platform.** A native control, a CSS rule, a database constraint beats hand-rolled app code — `<input type="date">`, not a date-picker dependency.
-5. **Reach for what's already installed.** An existing dependency covers it → use it. Don't add a package for a few lines of glue.
-6. **Reach for one line.** If the whole thing collapses to a single expression, write that.
-7. **Only then write the code** — the least that makes the test pass, nothing past it.
+Keep each edit connected to the requested behavior. Preserve the surrounding conventions and accepted decisions. Reuse existing behavior instead of adding a competing copy. Remove the imports, files and paths made obsolete by the change, and leave unrelated working code alone.
 
-The ladder is a reflex, not a research project: two rungs both work → take the higher one and move on.
+For a broad rewrite, small means coherent boundaries and reviewable steps, not refusing the requested breadth. Keep an implementation/evidence map so a reviewer can see why every changed area belongs to the task.
 
-Rules that fall out of it: no abstraction with a single implementation, no factory for one product, no config for a value that never changes. Deletion beats addition. Boring beats clever — clever is what someone else decodes at 3am. Fewest files, shortest working diff.
+## Assume less
 
-The same ladder governs *orchestration*, not just code. The capability-deployment ladder (`inline → one tool → retrieval → plan → single subagent → swarm`, the router's routing-policy R2) is this code ladder's twin — don't instantiate a swarm, a corrector, or a vector engine until the rung below it is shown insufficient on *this* task. Over-steering a sub-agent — repeating or stacking a constraint (R10) — is the orchestration form of over-building: state a constraint once on breadth tasks; hard-steer only narrow contracts.
+Name assumptions that affect the result. Resolve reversible implementation details from the repository and user context. Ask when competing interpretations change the product behavior, create a meaningful cost or require authority not already supplied; continue independent work while waiting.
 
-The heaviest rung is a cross-model council (`fabius-concilium`): **N + M + R + 1** completion calls for N configured seats, M surviving opinions and R ballot retries, capped at **3N + 1**. Convene on an explicit panel request, or when a high-stakes task exposes the same failure across samples of a strong seat. Disagreement alone is insufficient; Concilium owns the protocol and actual accounting.
+Before another investigation or retry, identify the observation it could produce and how that would change the next decision. Stop repeating checks after the relevant evidence is stable. A failure requires a new hypothesis or a focused escalation, not more of the same call.
 
-Mark a deliberate shortcut with a `fabius:` comment that names the ceiling and the upgrade path:
-`# fabius: global lock for now; per-account locks if throughput ever matters.`
+## What the four trims preserve
 
-## 3. Lean change — surgical
+Keep trust-boundary validation, clear failures, authorization, data-loss handling, accessibility and explicit user requirements. Do not replace a failed operation with a plausible default that conceals it. A short implementation must still handle the states its callers can reach.
 
-Touch only what the request requires. Don't improve adjacent code, don't refactor what isn't broken, match the existing style even where you'd write it differently. Spot unrelated dead code → mention it, don't delete it. Remove only the orphans *your* change created (a now-unused import you orphaned). The test: every changed line traces to the user's request.
+Disciplina owns impact mapping, reproduction, tests and completion checks. Archivum owns permissioned project records. This layer never removes those obligations to reduce output length. For concrete cost decisions, use [lean-decisions.md](references/lean-decisions.md).
 
-Read this rule the narrow way. *Don't refactor what isn't broken* forbids the drive-by rewrite; it never licenses a second copy of something that already exists. Calling the function next door is the smaller diff, not the larger one — writing your own is the change that touched more.
-
-## 4. Lean scope — think first
-
-State assumptions that affect the result. For small reversible details, make a reasonable choice and proceed. Clarify when competing readings change the outcome, risk, or authority; `fabius-disciplina` owns that procedure. Suggest a simpler approach when it satisfies the actual request.
-
-Minimum code for the stated problem — nothing speculative. No feature past what was asked, no flexibility that wasn't requested, no error handling for impossible states. 200 lines that could be 50 → rewrite. The check: *would a senior engineer call this overcomplicated?*
-
-## When NOT to be lean
-
-Lean means writing less code, never cutting what protects the user. Never trim:
-
-- input validation at trust boundaries,
-- error handling that prevents data loss,
-- security measures,
-- accessibility basics,
-- the record read that opens work on a project with a declared store, and the record + log write that closes it (`fabius-archivum` owns the format; this layer only refuses to trim it),
-- anything the user explicitly asked for.
-
-And one inversion, because it's the failure this stance invites: **a swallowed error is not lean code, it's a hidden bug wearing lean's clothes.** A bare `catch`/`rescue` that logs nothing, an `?.` chain that turns a broken invariant into a `null`, a default that quietly stands in for a failed fetch — each one shortens the diff and lengthens the outage, and the density of these constructs climbs sharply as more of a codebase is machine-written. Handle the error where you can name what it means, or let it propagate to something that can; never absorb it to make the happy path look shorter — that is exactly how a run reports success on a wrong state (→ `fabius-disciplina` phase 6). The line: deleting a handler for a state that *can't* happen is lean (§4); muting one for a state that can is not.
-
-Two stdlib options the same size → take the one that's correct on the edge cases. Lean is fewer lines, not a flimsier algorithm.
-
-Hardware never matches the spec sheet — a real clock drifts, a real sensor reads a few percent off. Physical and hardware paths keep a calibration knob, not just less code; the world needs a tuning the minimal model can't see.
-
-And lean is not less verification: non-trivial logic — a branch, a loop, a parser, a money or security path — ships with its check. (The test-first discipline and its narrow exceptions — throwaway prototypes, generated code, pure config — are owned by `fabius-disciplina`; one rule, not two.)
-
-## Output shape
-
-Code first. Then at most three short lines: what you skipped, when to add it. If the explanation runs longer than the code, delete the explanation. A report or walkthrough the user explicitly asked for is not debt — give it in full.
-
-Pattern: `[code] → skipped: [X], add when [Y].`
-
-The extended code-trim guidelines this layer distills live in `references/lean/guidelines/`; the prose-trim rules are inlined in full in section 1 above.
-
-Boundary: the user insists on the full version → build it, no re-arguing. (The system kill-switch and the "governs HOW, not WHAT" rule live in `fabius`.)
+Fabius guides the method under the host's instruction hierarchy, available tools and permissions. The user can request a different level of detail or scope; the router owns activation and the stop command.

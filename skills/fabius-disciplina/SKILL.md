@@ -16,97 +16,54 @@ metadata:
 ---
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
 
-# Fabius Disciplina — understand, plan, build proven, finish
+# Fabius Disciplina — connect a change to its proof
 
-*Disciplina* — training, the drilled habit. Discipline beats guessing. Six phases; each leaves something durable behind so the next task starts further along.
+Disciplina owns engineering work from understanding the current system through verifying the requested result. Architecture assessment, implementation and debugging use different entry points into the same evidence loop. A review request produces findings; an implementation request authorizes the necessary reversible edits.
 
-## 1. Scope in proportion to the decision
+## Establish the decision
 
-Start with enough context to make the next safe move; ceremony is not evidence:
+Read the relevant code, callers, recent changes and accepted project decisions. Identify the current behavior, the requested difference and the smallest observation that distinguishes the two. Preserve working strengths and the project's vocabulary.
 
-- **Scout the context first** — read the files, the recent commits, the pattern already in use.
-- **Scope check** — if the request is really several independent subsystems, say so and split it before refining any detail.
-- **Proceed on clear, reversible work.** State any small assumption and implement; never demand a design approval for a trivial edit whose result is easy to inspect and undo.
-- **Ask one question at a time only when the answer materially changes the artifact**, crosses an authorization boundary, or commits to an irreversible/high-risk choice.
-- **Offer alternatives only when a real trade-off exists.** Lead with a recommendation. For a large or genuinely branching design, checkpoint at the decision boundary that changes the implementation.
+For a material architecture choice, compare viable alternatives, including retaining the current design. Support recommendations with inspected source or explicit requirements. Separate a promising design from evidence that it has run in production. Use [architecture-decisions.md](references/architecture-decisions.md) for the decision record and [transactional-updates.md](references/transactional-updates.md) for changes to running code or mutable state.
 
-## 2. Grill the ambiguity
+Ask only for information that changes the implementation or a real authority boundary. Existing authorization remains relevant. State small reversible assumptions and continue; do not require approval of a routine plan merely because the work has several steps.
 
-Resolve a fuzzy term when its meaning changes the design, acceptance check, or authority boundary. Ask one focused question and continue independent work; don't interview over reversible details. Preserve the project's vocabulary. Record durable decisions through `fabius-archivum` when writing is authorized.
+## Build a plan that can fail
 
-For **architecture planning or review**, use [architecture-decisions.md](references/architecture-decisions.md): concrete evidence, alternatives, preserved strengths, and the smallest missing proof. An analysis request does not authorize implementation; an implementation request already does. For updates involving running code or mutable state, use [transactional-updates.md](references/transactional-updates.md).
+For multi-step work, connect each step to a verification observation: `step → verify`. Name inputs that depend on earlier results before scheduling later work. Batch independent reads and revise only the affected portion when evidence changes. Revisit remaining acceptance conditions during long runs so incidental subproblems do not replace the objective.
 
-## 3. Plan — for multi-step work
+Choose an early vertical slice that reaches a useful output. Use [engineering-workflows.md](references/engineering-workflows.md) for ambiguity, prototyping, implementation, review, integration and handoff. Keep a prototype tied to one uncertainty; it does not acquire production guarantees by working once.
 
-Write the plan as `step → verify` lines:
+## Map source to observable behavior
 
-```
-1. [step] → verify: [the check that proves it]
-2. [step] → verify: [the check that proves it]
-3. [step] → verify: [the check that proves it]
-```
+Before changing non-trivial logic, map each affected source unit to a test or executable check that reaches its behavior. Read the assertion. A nearby test or a successful import is insufficient coverage.
 
-Two rules keep a plan working past the first few steps. **Re-state the remaining steps on a short cycle** — a plan written once at the top decays as the run gets long and the agent drifts into sub-goals nobody asked for; periodic re-injection measurably recovers the ground that drift costs. And **a plan with a phase missing is worse than no plan at all** — an incomplete skeleton actively steers the run wrong, where no plan at least leaves the model's own judgment intact. The phase that is never optional is *reproduce* (§5). The corollary is the lean one: don't pad the plan with phases this task doesn't need — a step bolted on early degrades the run instead of insuring it.
+Where the project provides a viable test seam, reproduce the intended failure before the patch. Confirm that it fails for the behavior being changed, not for missing setup. Implement the smallest coherent correction and run every covering check. Broaden validation where the dependency map, an observed failure or an uncovered concern warrants it.
 
-Strong, checkable criteria are what let you run the loop without a human in it. Keep each unit small and single-purpose — you reason better about code you can hold in your head at once, and a file growing fat is the signal it's doing too much.
+If no useful assertion exists, create a small reproduction at the real boundary. Generated output and simple configuration can use a parser, compiler, render or direct read-back. Do not manufacture a unit test that merely restates the implementation.
 
-## 4. Map impact, strengthen the oracle, then patch
+## Diagnose before another edit
 
-A changed source file is protected only by a test that reaches the changed behavior and can fail for the regression. Before editing non-trivial behavior, build a compact **source → covering-test impact map**:
+Reproduce the input and state, reduce the failing path, then choose a discriminating experiment among plausible causes. Read each tool result before using it as a premise for the next action (R5). Dependencies bind to observed outputs (R6).
 
-1. **Map the blast radius** — use imports/build graph, symbol search, test names, and coverage where available to list each touched source unit and its direct covering tests. Read those tests before the patch; proximity is not coverage.
-2. **Audit the oracle** — identify the exact assertion that would catch the requested behavior. If none does, strengthen the nearest behavior-level test or add the smallest executable repro.
-3. **Prove red on the intended behavior** — run the targeted check and observe the expected failure. A failure in setup, fixture, or unrelated code is not red.
-4. **Patch the cause, then prove green** — make the smallest coherent change, run every mapped covering test, and refactor only while the same set remains green.
-5. **Expand by impact** — run the broader suite/build/lint gate justified by the dependency map, not an arbitrary favorite command.
+When repeated attempts do not improve the verification result, reconsider ownership, lifetime, ordering and coupling. A retry should carry the previous failure signal and the changed hypothesis (M4). Roughly three unproductive cycles is a useful review point, not evidence that one more identical call will work. Escalate when the missing input or permission is external.
 
-Cut vertical tracer-bullet slices: one thin end-to-end path that works beats five half-built layers that don't. Pure config, generated artifacts, throwaway prototypes, or a codebase with no viable test seam use the closest executable validator (schema/compiler/render/repro) and say what coverage is absent; they do **not** require approval theater or a boilerplate unit test. A generic “TDD” slogan never substitutes for the concrete impact map and oracle.
+Branch candidate solutions only when a cheap evaluator can distinguish useful partial results and early mistakes are expensive (R7). Refine from an attributable test, compiler error or review finding (R8); unsupported self-criticism is not an oracle. The router's [routing-policy.md](../fabius/references/routing-policy.md) owns these policy identifiers.
 
-## 5. Debug by root cause — never patch the symptom
+Performance work needs a fixed workload, repeated measurements and one isolated variable per comparison. Report measurement conditions and uncertainty. Use [process-playbook.md](references/process-playbook.md) for worked diagnosis and oracle selection, and [testing-toolkit.md](references/testing-toolkit.md) when the current stack lacks a suitable instrument.
 
-When something breaks, before proposing any fix:
+## Verify the combined result
 
-1. **Reproduce** — a reliable, minimal repro. Can't reproduce it → you don't understand it yet.
-2. **Minimize** — strip the case until only the failing essence is left.
-3. **Hypothesize** — list a few ranked, falsifiable causes before you test any one. Anchoring on a single guess fixes the wrong thing.
-4. **Instrument** — add the one log or assert that confirms or kills the top hypothesis. Let the evidence choose.
-5. **Fix the cause** — not the symptom. A fix you can't explain is a coincidence wearing a fix's clothes.
-6. **Regression-test** — the repro from step 1 becomes a permanent test.
+Recheck the accepted scope against the diff and run the affected behaviors on the combined tree. Read back a written record, inspect the rendered DOM, verify a returned artifact or execute the relevant program. Successful transport or exit status alone does not prove the requested state.
 
-After roughly three failed fixes, stop patching: the bug is probably architectural. Question the coupling and the design — don't reach for fix number four.
+For a UI, verify the actual environment and interaction, with console and network failures captured. Query semantic state and computed visibility; inspect screenshots for visual questions. Native app checks use [simulator-verify.md](references/simulator-verify.md). Larger codebase and browser proof workflows use [codebase-and-proof.md](references/codebase-and-proof.md).
 
-A **performance** regression runs the same six steps with a different instrument, because "slow" has no stack trace. Baseline on a fixed throttled profile, then **isolate by blocking one dependency at a time** and read the delta — never rank suspects by file size. **Compare medians of repeated runs, never a single sample** (identical runs swing wide enough to invent a regression), and **A/B the obvious optimization** before shipping it — a preload or a re-encode that measures as a no-op is a change, not an improvement. (Worked loop → `references/process-playbook.md`.)
+Check the strength of the evidence as well as its color: where practical, an old-behavior or mutation control should break the relevant assertion. Investigate suspicious runner output before accepting its verdict. State missing or skipped checks explicitly.
 
-## 6. Prove before "done"
+For a large acceptance map, [evidence.mjs](scripts/evidence.mjs) checks plan coverage, recorded outcomes and current source/log hashes. It does not execute tests or authenticate a supplied report; its complete result is a consistency claim. The schema and CLI are in [engineering-workflows.md](references/engineering-workflows.md#optional-machine-readable-completion-ledger).
 
-A claim of success needs evidence. Before reporting complete:
+## Close the work at the correct boundary
 
-- Re-read the source → covering-test map. Run the mapped tests plus the broader gate justified by the blast radius; name both.
-- **Prove the oracle can catch the defect.** Where safe, make the targeted assertion fail by reverting/mutating the changed behavior, then restore it and show green. A test that stays green under the old behavior is not coverage.
-- Run the thing. Show the passing check, the output, the live behavior — not "should work".
-- Every acceptance criterion from the plan: demonstrably met.
-- Treat suspicious test-runner output as a hypothesis: inspect the runner/config and reproduce the verdict before trusting it.
-- Skipped a mapped test or could not strengthen an oracle? say so. Tests failing? show the output. Report outcomes faithfully.
+Report what changed, what ran and what remains unverified. Distinguish source readiness, a pushed commit, deployment, installation and activation in a fresh session. Perform already-authorized finishing work; request a decision only at the remaining boundary that actually needs one.
 
-"Almost works" and a code-only answer don't count. Hit the real path and watch it.
-
-For a **UI app**, "hit the real path" means **run it on a device/simulator and assert the state** — the same prove rule `fabius-decor` ends on (verify live, not just in the code). Do it the cheap, robust way:
-
-- **Assert via the semantic tree, not pixels.** Query the live UI by *meaning* (text / type / id) to check it reached the expected state — orders of magnitude cheaper than a screenshot and resilient to layout change. Reserve screenshots for visual-diff and bug reports.
-- **Progressive-disclosure build output.** Don't dump the full build log — return a summary line + a result-bundle id, and fetch specific errors on demand. Cap and size everything you send the model.
-- **The loop:** health-check the environment → build + test → boot/launch → assert state via the tree → screenshot only for visual confirmation → capture the full state (screenshot + hierarchy + logs) on failure.
-- **Prove with a number where you can.** A before/after task-success rate beats "it built." (iOS `simctl`/`xcodebuild` workflow, the troubleshooting table, and the test recipes → `references/simulator-verify.md`.)
-
-The full process reference library — prototype, TDD, grill, handoff, writing, debugging, planning, verification, and parallel-agent material — is in `references/process/`; those vendored pages are background patterns, while this root contract decides the active procedure. The worked debug walkthrough, performance-regression loop, and test anti-patterns are in `references/process-playbook.md`. On-demand depth for a large codebase, current-world fact, or browser UI — code graph, live-web checking, plan-as-files, real-browser verification, and test enforcement — is in `references/codebase-and-proof.md`. The tool stack — test frameworks, property/mutation testing, coverage, debuggers/profilers, and correctness linters → `references/testing-toolkit.md`.
-
-## Routing the reasoning — when to branch, when to reflect
-
-From the agent-research canon (full set in the router's [routing-policy.md](../fabius/references/routing-policy.md)):
-
-- **Reason → act → observe (R5).** In tool/sub-agent work, never act on an assumed result — one thought, one action, read the *real* observation, then continue. After ~3 cycles with no progress toward the verify condition, stop and re-plan (the same 3-strike trigger as the debug rule above). *(ReAct)*
-- **Plan dependencies (R6).** When several steps depend on tool results, name the outputs before binding later calls; batch independent reads and revise only the affected step on failure. A routine pair of tool calls needs no separate planning ceremony.
-- **Branch only when partials are scorable (R7).** Keep brainstorm/plan a single pass by default; escalate to a scored tree (generate → score → prune) only when a cheap evaluator can rank half-finished candidates and early mistakes are costly. No evaluator → single path. *(Tree of Thoughts)*
-- **Reflect on a real signal (R8).** Enter a refine loop only on an attributable critique. A hard oracle (test/compiler/schema) earns ~3 iterations; soft self-critique caps at 1–2; no signal → ship once, route to human review. *(Reflexion + Self-Refine)*
-- **Reflect-then-retry, escalate when hypotheses run out (M4).** On a verifiable failure, prepend a one-paragraph reflection (what was tried · the failure signal · inferred cause · one changed action) to the retry; if it repeats the prior cause with no new hypothesis, stop and escalate to a human (hard cap ~3 — the same trigger as the debug rule above). *(Reflexion)*
-
-Pairs with: `fabius-parcus` (every artifact stays minimal), `fabius-archivum` (resolved facts and post-mortems get filed).
+Record durable outcomes through Archivum when writing is authorized. Give a handoff the precise remaining action and current evidence, so continuation can resume rather than reconstruct the task. Parcus keeps the implementation and explanation proportional; Cohors owns any delegated execution.

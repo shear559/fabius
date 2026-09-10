@@ -1,0 +1,44 @@
+{
+  "schema": "fabius-retained-test-data/v1",
+  "entries": [
+    {
+      "id": "bip173-bech32-vectors",
+      "file": "runtime/test/nostr.test.mjs",
+      "test_name": "bech32 matches the reference checksum on the BIP-173 vectors",
+      "source": {
+        "repo": "https://github.com/bitcoin/bips",
+        "path": "bip-0173.mediawiki",
+        "commit": "24e96e870fffaa257b465ce1f0370c14aac588e8",
+        "sha256": "b19eab06b264bbd15ad7f7d640fa34de8f4a8809fba8a6ecc3e165545b27a543",
+        "section": "Appendices / Test vectors / Bech32",
+        "authors": [
+          "Pieter Wuille",
+          "Greg Maxwell"
+        ],
+        "license": "BSD-2-Clause",
+        "copyright_statement": "This BIP is licensed under the 2-clause BSD license.",
+        "copyright_year": null,
+        "checked": "2026-09-10"
+      },
+      "notice": "credits/licenses/BIP-173-BSD-2-Clause.txt",
+      "retained_valid": [
+        "A12UEL5L",
+        "a12uel5l",
+        "abcdef1qpzry9x8gf2tvdw0s3jn54khce6mua7lmqqqxw",
+        "split1checkupstagehandshakeupstreamerranterredcaperred2y9e3w"
+      ],
+      "retained_invalid": [
+        "pzry9x0s0muk",
+        "1pzry9x0s0muk",
+        "x1b4n0q5v",
+        "li1dgmt3"
+      ],
+      "local_invalid_variant": {
+        "value": "A12UEL5X",
+        "derived_from": "A12UEL5L",
+        "change": "Final checksum character changed to form an invalid input."
+      },
+      "scope": "Eight literal public BIP-173 vectors, one invalid variant, and reuse of one valid vector for encode/decode round-trip. Not Fabius-originated test data. No upstream source file or reference implementation is bundled by this record. The BIP-340 and NIP-44 vector files are fetched separately on demand and are not shipped."
+    }
+  ]
+}

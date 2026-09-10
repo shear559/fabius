@@ -5,10 +5,10 @@ description: >
   schema, the permission model, the single-vs-multi-agent decision, and the five orchestration
   patterns (sequential / parallel / hierarchical / human-in-the-loop / swarm). Use when the user wants to
   build an agent, a subagent, a tool-using assistant, a multi-agent system, a swarm, or an
-  orchestration workflow. A copy-from schema and proven agent shapes live in
-  references/agent-patterns.md; the full agent reference catalog (200+ agents across 17 domains
-  + Python/Go/Java/Kotlin/Android/TypeScript packs, with an archived fabius-vec.db artifact) lives in
-  references/agents/, indexed by references/agent-catalog.md. (Deterministic service-to-service
+  orchestration workflow. Six original role definitions and a zero-dependency task scheduler
+  provide explicit tools, permissions, output validation, bounded concurrency, dependency
+  results and cooperative cancellation. Start at references/agent-catalog.md; execution uses
+  a caller-owned authorized runner, not bundled provider SDKs. (Deterministic service-to-service
   wiring — n8n/Zapier-class "build a workflow" — is fabius-machina, not here.)
 when_to_use: >
   "tool-calling assistant", "agent team", "hand this off between agents", "what permissions
@@ -112,7 +112,7 @@ Still lean: if the task list is short and serial, it's a pipeline, not a swarm. 
 
 - **Adversarial verify** — for a finding or a claim, spawn an independent skeptic prompted to *refute* it. Majority-refute kills it. This is what stops plausible-but-wrong output from surviving.
 
-More shapes — grounded/cited RAG, a safety guard that screens for prompt injection before execution, cross-session memory, an eval harness that scores skill-vs-baseline — are in `references/agent-patterns.md`. The full catalog of agent references to copy and adapt (by domain and language) is in `references/agents/`; start from `references/agent-catalog.md`. Grounding and memory lean on `fabius-archivum`. The operational tier — scoring an agent on a ground-truth benchmark, surviving long-horizon runs (checkpoint + dual exit gate), acquiring tools via MCP at least privilege, and sandboxing agent-written code — is in `references/agent-evaluation-and-durability.md`. The framework + tool-caller map — agent frameworks per orchestration pattern, the function-calling eval (BFCL / τ²), and open tool-callers with the Llama-community-license trap flagged → `references/agent-frameworks.md`.
+More shapes — grounded/cited RAG, a safety guard that screens for prompt injection before execution, cross-session memory, an eval harness that scores skill-vs-baseline — are in `references/agent-patterns.md`. Six original role definitions and their input/output/tool contracts are indexed by [agent-catalog.md](references/agent-catalog.md). The [original scheduler](references/catalogue/scheduler.md) validates fixed dependency plans and runs them through caller-owned authorization and execution functions; the host still supplies actual delegation, tools and sandboxing. Grounding and memory lean on `fabius-archivum`. The operational tier — scoring an agent on a ground-truth benchmark, surviving long-horizon runs (checkpoint + dual exit gate), acquiring tools via MCP at least privilege, and sandboxing agent-written code — is in `references/agent-evaluation-and-durability.md`. The framework + tool-caller map — agent frameworks per orchestration pattern, the function-calling eval (BFCL / τ²), and open tool-callers with the Llama-community-license trap flagged → `references/agent-frameworks.md`.
 
 **Running an agent on the user's own machine** requires explicit boundaries around user-process authority. Fabius's optional `runtime/` provides file-tool path and secret-pattern checks, opt-in writes/execution, command approval gates, injectable model calls, an authorized execution oracle, and step/estimated-spend limits. Approved subprocesses are not OS-sandboxed; remote model calls transmit context, and the spend estimate is not a provider billing cap. Encrypted messaging uses public relays with allowed senders. The design guide and current implementation limits are in `references/local-agent-runtime.md`; choose actual isolation and provider controls when the task requires stronger boundaries.
 

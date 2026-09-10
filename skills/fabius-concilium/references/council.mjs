@@ -21,6 +21,7 @@
 //   node council.mjs "Should a 3-person startup use a monolith or microservices?"
 //   node council.mjs --json "..."   > run.json
 
+import { createHash, randomBytes } from "node:crypto";
 import { pathToFileURL } from "node:url"; // node builtin — still zero npm dependencies
 
 const DEFAULT_SEATS = "anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.1-pro-preview"; // fabius roster seats, odd count for tie-breaks; widen via COUNCIL_MODELS (e.g. add mistralai/mistral-large)
@@ -41,14 +42,13 @@ const CHAIR_SYS =
 // --- helpers ----------------------------------------------------------------------
 const assert = (cond, msg) => { if (!cond) throw new Error(msg); };
 
-// deterministic PRNG (seedable) so --selftest reproduces; real runs get a random seed
-function mulberry32(seed) {
-  let a = seed >>> 0;
+// Reproducible ordering for tests; production seeds come from Node's RNG.
+// This generator is for permutation ordering, not for keys or cryptographic nonces.
+function seededOrder(seed) {
+  let counter = 0;
   return () => {
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    const digest = createHash('sha256').update(JSON.stringify(['fabius-order-v1', String(seed), counter++])).digest();
+    return digest.readUInt32BE(0) / 2 ** 32;
   };
 }
 function shuffle(arr, rnd) {
@@ -337,7 +337,7 @@ async function selftest() {
   const trio = [{ model: "prov/a", answer: "A" }, { model: "prov/b", answer: "B" }, { model: "prov/c", answer: "C" }];
 
   // integrated review(): de-anonymization must round-trip to a full distinct permutation of the seats
-  const rev = await review("prov/b", "q?", trio, fake, mulberry32(7));
+  const rev = await review("prov/b", "q?", trio, fake, seededOrder(7));
   assert(rev.order.length === 3 && new Set(rev.order).size === 3, "review: de-shuffle round-trips to a full distinct permutation");
   assert(rev.order.every((m) => ["prov/a", "prov/b", "prov/c"].includes(m)), "review: maps every label back to a real seat (no undefined)");
   const responseSchema = capturedRequest?.response_format?.json_schema;
@@ -367,7 +367,7 @@ async function selftest() {
     const labels = [...new Set([...user.matchAll(/Response \d+/g)].map((m) => m[0]))];
     return JSON.stringify({ ranking: [labels[0], labels[0], labels[2]], reasons: Object.fromEntries(labels.map((l) => [l, "ok"])) });
   };
-  assert(await review("prov/a", "q?", trio, duplicateFake, mulberry32(1)) === null,
+  assert(await review("prov/a", "q?", trio, duplicateFake, seededOrder(1)) === null,
     "review: duplicate ballot is dropped, not repaired");
   assert(invalidCalls === 2, "review: duplicate ballot gets exactly one retry");
 
@@ -377,20 +377,20 @@ async function selftest() {
     const labels = [...new Set([...user.matchAll(/Response \d+/g)].map((m) => m[0]))];
     return JSON.stringify({ ranking: labels.slice(0, 2), reasons: Object.fromEntries(labels.map((l) => [l, "ok"])) });
   };
-  assert(await review("prov/a", "q?", trio, partialFake, mulberry32(1)) === null,
+  assert(await review("prov/a", "q?", trio, partialFake, seededOrder(1)) === null,
     "review: partial ballot is dropped, not completed with invented positions");
   assert(invalidCalls === 2, "review: partial ballot gets exactly one retry");
 
   invalidCalls = 0;
   const malformedFake = async () => { invalidCalls++; return "not json"; };
-  assert(await review("prov/a", "q?", trio, malformedFake, mulberry32(1)) === null,
+  assert(await review("prov/a", "q?", trio, malformedFake, seededOrder(1)) === null,
     "review: malformed ballot is dropped after retry");
   assert(invalidCalls === 2, "review: malformed ballot gets exactly one retry");
 
   // full pipeline: shape + clean-path call accounting (reset the counter — earlier review() probes shared `fake`)
   const seats = ["prov/a", "prov/b", "prov/c"];
   calls = 0;
-  const r = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: fake, rnd: mulberry32(42) });
+  const r = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: fake, rnd: seededOrder(42) });
   assert(r.first_opinions.length === 3, "pipeline: 3 first opinions");
   assert(r.leaderboard.length === 3, "pipeline: 3-row leaderboard");
   assert(r.valid_ballots === 3, "pipeline: reports 3 valid ballots");
@@ -410,7 +410,7 @@ async function selftest() {
     if (system.includes("chairman")) return "SYNTH: survived one reviewer failure.";
     return `[${model}] stub answer.`;
   };
-  const resilient = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: flaky, rnd: mulberry32(8), log: (m) => drops.push(m) });
+  const resilient = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: flaky, rnd: seededOrder(8), log: (m) => drops.push(m) });
   assert(resilient.valid_ballots === 2 && resilient.final.startsWith("SYNTH"), "pipeline: one failed reviewer does not abort the council");
   assert(drops.some((line) => line.includes("prov/b") && line.includes("review unavailable")), "pipeline: failed reviewer is logged");
 
@@ -426,7 +426,7 @@ async function selftest() {
     if (system.includes("chairman")) return "SYNTH: ignored an empty seat.";
     return `[${model}] live opinion.`;
   };
-  const withoutEmpty = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: oneEmpty, rnd: mulberry32(11), log: (m) => emptyDrops.push(m) });
+  const withoutEmpty = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: oneEmpty, rnd: seededOrder(11), log: (m) => emptyDrops.push(m) });
   assert(withoutEmpty.first_opinions.length === 2 && !withoutEmpty.seats.includes("prov/c"),
     "pipeline: fulfilled empty content is dropped instead of becoming a live seat");
   assert(withoutEmpty.call_accounting.live_seats === 2 && withoutEmpty.call_accounting.actual === 6,
@@ -444,7 +444,7 @@ async function selftest() {
     if (system.includes("chairman")) return "SYNTH: dropped one invalid ballot.";
     return `[${model}] stub answer.`;
   };
-  const exactOnly = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: oneInvalid, rnd: mulberry32(9), log: (m) => invalidDrops.push(m) });
+  const exactOnly = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: oneInvalid, rnd: seededOrder(9), log: (m) => invalidDrops.push(m) });
   assert(exactOnly.valid_ballots === 2, "pipeline: invalid ballot is absent from the tally after one retry");
   assert(invalidDrops.some((line) => line.includes("prov/b") && line.includes("invalid ballot after retry")),
     "pipeline: invalid ballot drop is logged");
@@ -465,7 +465,7 @@ async function selftest() {
     if (system.includes("chairman")) return "SYNTH: all retry ballots recovered.";
     return `[${model}] stub answer.`;
   };
-  const atCap = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: retryAll, rnd: mulberry32(10) });
+  const atCap = await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: retryAll, rnd: seededOrder(10) });
   assert(atCap.valid_ballots === 3 && atCap.call_accounting.retries === 3,
     "pipeline: each malformed first ballot retries exactly once and recovers");
   assert(atCap.call_accounting.actual === 10 && atCap.call_accounting.actual === atCap.call_accounting.max,
@@ -478,7 +478,7 @@ async function selftest() {
   for (const invalidSeats of [["same/model", "same/model"], ["prov/a", ""]]) {
     let rejected = false;
     try {
-      await runCouncil({ question: "q?", seats: invalidSeats, chairman: "prov/chair", chat: shouldNotCall, rnd: mulberry32(12) });
+      await runCouncil({ question: "q?", seats: invalidSeats, chairman: "prov/chair", chat: shouldNotCall, rnd: seededOrder(12) });
     } catch (e) {
       rejected = /distinct|non-empty/.test(e.message);
     }
@@ -495,7 +495,7 @@ async function selftest() {
     return `[${model}] live opinion.`;
   };
   let emptyChairRejected = false;
-  try { await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: emptyChair, rnd: mulberry32(13) }); }
+  try { await runCouncil({ question: "q?", seats, chairman: "prov/chair", chat: emptyChair, rnd: seededOrder(13) }); }
   catch (e) { emptyChairRejected = e.message.includes("empty final answer"); }
   assert(emptyChairRejected, "pipeline: an empty chairman completion cannot be reported as a final answer");
 
@@ -532,7 +532,7 @@ async function main() {
   console.error(`convening ${seats.length} seats + chairman → completion-call budget: clean all-live ${accounting.clean_all_live}; retry cap ${accounting.max}`);
   try {
     await preflightOpenRouterRoster({ seats, chairman });
-    const r = await runCouncil({ question, seats, chairman, chat, rnd: mulberry32(Math.floor(Math.random() * 2 ** 32)), log: (m) => console.error(m), accounting });
+    const r = await runCouncil({ question, seats, chairman, chat, rnd: seededOrder(randomBytes(16).toString('hex')), log: (m) => console.error(m), accounting });
     console.error(`completion calls actual: ${accounting.actual} = N ${accounting.configured_seats} + M ${accounting.live_seats} + R ${accounting.retries} + chair 1 (cap ${accounting.max})`);
     jsonOut ? console.log(JSON.stringify(r, null, 2)) : printReport(r);
   } catch (e) {
@@ -545,4 +545,4 @@ async function main() {
 // run the CLI only when invoked as a script — `import`ing this module stays side-effect-free
 if (import.meta.url === pathToFileURL(process.argv[1] || "").href) main();
 
-export { runCouncil, borda, review, chair, extractJSON, exactBallot, ballotSchema, reviewRequest, shuffle, mulberry32, openrouterChat, preflightOpenRouterRoster, resetCallAccounting };
+export { runCouncil, borda, review, chair, extractJSON, exactBallot, ballotSchema, reviewRequest, shuffle, seededOrder, openrouterChat, preflightOpenRouterRoster, resetCallAccounting };

@@ -1,0 +1,53 @@
+{
+  "schema": "fabius-storyboard/v1",
+  "title": "Field notes",
+  "description": "An original storyboard about making a useful change.",
+  "lang": "en",
+  "dir": "ltr",
+  "tokens": {
+    "schema": "fabius-design/v1",
+    "color": {
+      "canvas": "#f7f7f7",
+      "surface": "#ffffff",
+      "text": "#202020",
+      "muted": "#565656",
+      "border": "#707070",
+      "accent": "#394bcd",
+      "onAccent": "#ffffff",
+      "focus": "#394bcd"
+    },
+    "focus": {
+      "widthPx": 2,
+      "offsetPx": 3
+    },
+    "motion": {
+      "durationMs": 240,
+      "distancePx": 16,
+      "reducedMotion": "static",
+      "autoplay": false
+    }
+  },
+  "scenes": [
+    {
+      "id": "observe",
+      "label": "Observe",
+      "title": "Start with what you can see.",
+      "body": "Read the existing work. Name the problem and the evidence that would show it is solved.",
+      "durationSeconds": 4
+    },
+    {
+      "id": "decide",
+      "label": "Decide",
+      "title": "Make one clear decision.",
+      "body": "Choose the smallest useful change. Keep its assumptions beside the work.",
+      "durationSeconds": 4
+    },
+    {
+      "id": "verify",
+      "label": "Verify",
+      "title": "Show what actually happened.",
+      "body": "Run the result. Keep the evidence, explain the limits, and leave the next step clear.",
+      "durationSeconds": 4
+    }
+  ]
+}

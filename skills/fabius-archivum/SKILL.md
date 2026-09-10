@@ -19,7 +19,7 @@ metadata:
 
 # Fabius Archivum — don't re-derive what you already learned
 
-*Archivum* — the record office, where what's settled is kept. An agent that re-researches every session pays full price each time. This layer makes knowledge compound: write it down, link it, retrieve it, keep it true.
+*Archivum* — the record office, where what's settled is kept. This layer makes knowledge compound: write it down, link it, retrieve it, keep it true.
 
 ## Three layers
 
@@ -58,7 +58,7 @@ Index + grep handles a few hundred pages — the lazy default (`fabius-parcus`: 
 ingest (write) → index (catalog/embed) → query (read, cite, file back) → lint (maintain) → ↺
 ```
 
-Inside the write boundary, the agent handles summarizing, cross-referencing, filing, and consistency checks. Schema and line formats → `references/memory-schema.md`. When the corpus outgrows grep, `references/knowledge/` is **design, not dependency**: renamed packages/imports leave its pins unresolved. Take the shape; wire a tested store from `references/retrieval-stack.md`. Meeting capture → `references/meeting-capture.md`.
+Inside the write boundary, the agent handles summarizing, cross-referencing, filing, and consistency checks. Schema and line formats → `references/memory-schema.md`. For ranked local excerpts, use original `scripts/retrieval.mjs`: explicit files, BM25, cited lines, and content-based stale rejection; no packages or model calls. Usage and limits → `references/local-retrieval.md`; larger retrieval choices → `references/retrieval-stack.md`. Meeting capture → `references/meeting-capture.md`.
 
 ## Cross-session memory — the project record
 

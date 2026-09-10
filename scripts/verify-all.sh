@@ -22,6 +22,9 @@ run_gate() {
 run_gate "structural install + seal invariants" node evals/structural.mjs
 run_gate "structural frontmatter adversarial regression" node scripts/test-structural.mjs
 run_gate "nested reference quarantine" node scripts/verify-reference-quarantine.mjs
+run_gate "original capability map and retirement boundary" node scripts/verify-original.mjs
+run_gate "original capability gate adversarial regression" node --test scripts/test-verify-original.mjs
+run_gate "original capability behavior tests" node --test skills/fabius-archivum/scripts/*.test.mjs skills/fabius-cohors/scripts/*.test.mjs skills/fabius-decor/scripts/*.test.mjs skills/fabius-disciplina/scripts/*.test.mjs
 run_gate "FBS suite schema" node evals/suite/validate.mjs
 run_gate "committed benchmark receipt replay" node evals/verify-receipts.mjs
 run_gate "text-eval evidence regression" node --test evals/text-eval.test.mjs
@@ -38,6 +41,7 @@ run_gate "upstream registry adversarial regression" node scripts/test-verify-ups
 run_gate "distribution adversarial regression" python3 -B scripts/test-distribution.py
 run_gate "local upstream content inventory" python3 -B scripts/distribution.py check --include-file credits/content-manifest.json
 run_gate "paper TeX rendering boundary" python3 -B paper/test_rendering.py
+run_gate "chart XML escaping and input boundaries" python3 -B assets/charts/test_svgplot.py
 run_gate "paper artifact oracle" node scripts/verify-paper-artifact.mjs
 run_gate "paper artifact adversarial regression" node scripts/test-verify-paper-artifact.mjs
 run_gate "OpenTimestamps detached-proof binding" node scripts/test-verify-ots-binding.mjs

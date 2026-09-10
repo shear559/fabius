@@ -1,0 +1,441 @@
+{
+  "schema": "fabius-decor-migration/v1",
+  "date": "2026-09-10",
+  "baseline": "b31628684fed2267a58eb7afa530aed0215fc80e",
+  "replacement": "Original Node design validator and deterministic text storyboard, plus original layout recipes. No claim of feature/count/framework parity with the removed collections.",
+  "removed_corpora": [
+    {
+      "former_path": "references/design/fabius-design",
+      "historical_source": "open-design",
+      "upstream": "https://github.com/nexu-io/open-design",
+      "provenance": "Bundled upstream recorded in credits/upstream.json at b316286; revisions were legacy-unpinned.",
+      "files": 891,
+      "bytes": 10619132,
+      "assets_by_extension": {
+        ".png": 2
+      }
+    },
+    {
+      "former_path": "references/design/fabius-frames",
+      "historical_source": "HyperFrames",
+      "upstream": "https://github.com/heygen-com/hyperframes",
+      "provenance": "Bundled upstream recorded in credits/upstream.json at b316286; revisions were legacy-unpinned.",
+      "files": 360,
+      "bytes": 3181272,
+      "assets_by_extension": {
+        ".svg": 5,
+        ".mp3": 19
+      }
+    },
+    {
+      "former_path": "references/design/fabius-motion",
+      "historical_source": "gsap-skills",
+      "upstream": "https://github.com/greensock/gsap-skills",
+      "provenance": "Bundled upstream recorded in credits/upstream.json at b316286; revisions were legacy-unpinned.",
+      "files": 40,
+      "bytes": 130312,
+      "assets_by_extension": {
+        ".svg": 4
+      }
+    },
+    {
+      "former_path": "references/design/fabius-uiux",
+      "historical_source": "ui-ux-pro-max-skill",
+      "upstream": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "provenance": "Bundled upstream recorded in credits/upstream.json at b316286; revisions were legacy-unpinned.",
+      "files": 324,
+      "bytes": 11112010,
+      "assets_by_extension": {
+        ".png": 1,
+        ".ttf": 54
+      }
+    },
+    {
+      "former_path": "references/design/uiverse",
+      "historical_source": "Uiverse Galaxy",
+      "upstream": "https://github.com/uiverse-io/galaxy",
+      "provenance": "Bundled upstream recorded in credits/upstream.json at b316286; revisions were legacy-unpinned.",
+      "files": 3804,
+      "bytes": 10262955,
+      "assets_by_extension": {}
+    }
+  ],
+  "removed_brand_references": {
+    "count": 69,
+    "provenance": "All entered in c5ec08c as a ported 69-brand teardown library. 68 exactly matched the separate local design-md-skills collection at audit time. DESIGN-open-design.md contains renamed upstream identities. Independent original authorship of the bulk prose was not established; removed rather than claimed as Fabius-original.",
+    "files": [
+      {
+        "former_name": "DESIGN-airbnb.md",
+        "sha256": "1403d136972fa854ebfd613d1929d61e279af558b6ab393e4bdede1b08570623",
+        "bytes": 30501
+      },
+      {
+        "former_name": "DESIGN-airtable.md",
+        "sha256": "9d7177378fe35a29e387ccf9255f8d92ea1fb7167dc2fd8b43b02c05fe57c6b9",
+        "bytes": 35250
+      },
+      {
+        "former_name": "DESIGN-apple.md",
+        "sha256": "180ddcdc4d2124fc6d9723236f0d345329e84eed0fea2a2ee4ed34f6752f2fa0",
+        "bytes": 37080
+      },
+      {
+        "former_name": "DESIGN-binance.md",
+        "sha256": "02e3d8f4aa25bb1ce1e51b40c9070f3a619c9583c587751cc77e1f04b82f3072",
+        "bytes": 39902
+      },
+      {
+        "former_name": "DESIGN-bmw-m.md",
+        "sha256": "97263ccae3b6f9eb15b84afb27652a4e5cf37f53841131842fa5a546d9043648",
+        "bytes": 30681
+      },
+      {
+        "former_name": "DESIGN-bmw.md",
+        "sha256": "1231f1076d701afc47d512560c72548540111633990e9d020729b535672f8c3a",
+        "bytes": 27891
+      },
+      {
+        "former_name": "DESIGN-bugatti.md",
+        "sha256": "c52cc8463568ffe3af4fb0c103bcabf992c6a578588b0141435a8a4b0dd44a99",
+        "bytes": 28519
+      },
+      {
+        "former_name": "DESIGN-cal.md",
+        "sha256": "6a50c3a7cdfcf51f2a343b384939c6d7d67552cc0f4d317af06cb7a3327ba54a",
+        "bytes": 31160
+      },
+      {
+        "former_name": "DESIGN-clay.md",
+        "sha256": "0b9d3120577705e5c49ec98d9cb19c02ffce6137ea0aad89877714b8b9a80434",
+        "bytes": 25689
+      },
+      {
+        "former_name": "DESIGN-clickhouse.md",
+        "sha256": "a794638be5d62573ae709e74b06ad510081fa124ece9e37f254c3dcd941faf17",
+        "bytes": 25970
+      },
+      {
+        "former_name": "DESIGN-cohere.md",
+        "sha256": "027ea4d745cfb8f733439b053eae0b0fa9d3a72750f708ed144d256364e04fdc",
+        "bytes": 20004
+      },
+      {
+        "former_name": "DESIGN-coinbase.md",
+        "sha256": "753e37b87b29fb1edce36b74a72d353ef866f992aefdae08a7f5da165c485924",
+        "bytes": 25837
+      },
+      {
+        "former_name": "DESIGN-composio.md",
+        "sha256": "cf5f50875d709a7c47b69051bae6ad35b8dc315a6c90523740909e00269fe2fe",
+        "bytes": 20590
+      },
+      {
+        "former_name": "DESIGN-cursor.md",
+        "sha256": "e113a74498b96bab7a43fe9e3c422063cf7d332c869df508fe67cccb0c814a8f",
+        "bytes": 21755
+      },
+      {
+        "former_name": "DESIGN-elevenlabs.md",
+        "sha256": "fade13e791cb40ff08073a01b354174d3a261ef79c6a4bc0773da140275e0009",
+        "bytes": 20927
+      },
+      {
+        "former_name": "DESIGN-expo.md",
+        "sha256": "6d011ef46401f8943325d95d491eabe61de67b34f1dce15ea273045c43acca38",
+        "bytes": 21644
+      },
+      {
+        "former_name": "DESIGN-ferrari.md",
+        "sha256": "57e2817bc2bc5b433a1d107759246f3fba294d846c3fdd253ea3ffd49b3ba93e",
+        "bytes": 24349
+      },
+      {
+        "former_name": "DESIGN-figma.md",
+        "sha256": "9732337f9c48ba3e1b484d52c031c50893b564906e35190dcce95111ee3ad1f0",
+        "bytes": 32300
+      },
+      {
+        "former_name": "DESIGN-framer.md",
+        "sha256": "846df812b363df5694995961f26b6d7b529d87f95659d5fcacc2e721e95c7828",
+        "bytes": 29103
+      },
+      {
+        "former_name": "DESIGN-hashicorp.md",
+        "sha256": "d72244b8f6d14c134733106141397d3d1a76443e715c16b650afee2d39d335b1",
+        "bytes": 28007
+      },
+      {
+        "former_name": "DESIGN-ibm.md",
+        "sha256": "fb6672e8cb559326df356559f636ff1607287de62abb6fccf8509fed38329592",
+        "bytes": 26465
+      },
+      {
+        "former_name": "DESIGN-intercom.md",
+        "sha256": "1bd4ddddc0ef470faf05b14573d2e66836ed44d4750c872d32884fb78989ebdd",
+        "bytes": 23262
+      },
+      {
+        "former_name": "DESIGN-kraken.md",
+        "sha256": "41bcbd5642c926a549f0d50f1151484c5776b4536233240c8415cfb79bcf1f38",
+        "bytes": 4350
+      },
+      {
+        "former_name": "DESIGN-lamborghini.md",
+        "sha256": "9aa68c53b481a0befdf72859db5625f85454122294509989aa58414aaee04b34",
+        "bytes": 21119
+      },
+      {
+        "former_name": "DESIGN-linear.app.md",
+        "sha256": "6cc606ace1a1d627a4a02f840c1c82cc6decd86e5a0f8bdd8c1fe14630909754",
+        "bytes": 24338
+      },
+      {
+        "former_name": "DESIGN-lovable.md",
+        "sha256": "92790895c833104072643929ba56ebbf42c8f88ffb7bff1926462545d0ace6c7",
+        "bytes": 17384
+      },
+      {
+        "former_name": "DESIGN-mastercard.md",
+        "sha256": "e76ceaa187f43bd24b8338d2b2314e71e9225b36492e40f32a55782281a10437",
+        "bytes": 26995
+      },
+      {
+        "former_name": "DESIGN-meta.md",
+        "sha256": "a7b2e3925016f8abe52da6e9d30122974db1a97b4c994c1c52f97b74f86891c3",
+        "bytes": 37970
+      },
+      {
+        "former_name": "DESIGN-minimax.md",
+        "sha256": "71beb5cead05f8ea8f8e2836acd52f6c0e0afa5245001ee17b3132bb5316571b",
+        "bytes": 37904
+      },
+      {
+        "former_name": "DESIGN-mintlify.md",
+        "sha256": "454ec0a488febc94a2513da32014dd252d2a88997656ca1a66c2de7ec508ce82",
+        "bytes": 44067
+      },
+      {
+        "former_name": "DESIGN-miro.md",
+        "sha256": "292a279acfac78d0995f9b96307b6ebb5e4581f34f328f150dd4e5163583aa7a",
+        "bytes": 36526
+      },
+      {
+        "former_name": "DESIGN-mistral.ai.md",
+        "sha256": "1fc0dd11455277a517176c3a7d69f7032f17baefc6fd64f8287c6ac9cfa39c15",
+        "bytes": 35492
+      },
+      {
+        "former_name": "DESIGN-mongodb.md",
+        "sha256": "0b4ff4eb3260b328b04a9f4764e2c74cf33aa132bed7bc9fad6eddcc5b2ef960",
+        "bytes": 32061
+      },
+      {
+        "former_name": "DESIGN-nike.md",
+        "sha256": "b5da8d046d89d28ad8e84dbc2522eff745ce36ff38545953170e781be600e397",
+        "bytes": 36681
+      },
+      {
+        "former_name": "DESIGN-notion.md",
+        "sha256": "ea0d45f2ac0a1c42bda6d5c1240790e32dfec52455ffda27737e63e9559afe6f",
+        "bytes": 35160
+      },
+      {
+        "former_name": "DESIGN-nvidia.md",
+        "sha256": "1e16ff99df8fc734b74d80e787e22afa39954b372dff127d7b4d91ccde18d74f",
+        "bytes": 35575
+      },
+      {
+        "former_name": "DESIGN-ollama.md",
+        "sha256": "1aab35abb93a43128b1f3d94c5b5ff8718e7c38fdcdc84ffb859191779b92643",
+        "bytes": 32731
+      },
+      {
+        "former_name": "DESIGN-open-design.md",
+        "sha256": "1efa5a816ede2a8ccec3881f1e0962cb21bdbdfdea24794c1f0d3fd594d3597a",
+        "bytes": 8081
+      },
+      {
+        "former_name": "DESIGN-opencode.ai.md",
+        "sha256": "b2b4e1cb465ce43221af95b17e7ad89de2b8faa96d8762997579f9ea157c739d",
+        "bytes": 32631
+      },
+      {
+        "former_name": "DESIGN-pinterest.md",
+        "sha256": "1c2a57d07bcb3eaf1f1eb92949cbe5b166ba6705ed8d55ebc17538c2ccc39042",
+        "bytes": 36376
+      },
+      {
+        "former_name": "DESIGN-playstation.md",
+        "sha256": "2045537c7cbf5e67ab9b6f0ad229b6e6b0e28b3ead6c768956cbd88deab419d4",
+        "bytes": 39750
+      },
+      {
+        "former_name": "DESIGN-posthog.md",
+        "sha256": "11f48a3e48d5e4dc548501e84157c76925a02ff4e970040bb07248082d285b68",
+        "bytes": 40482
+      },
+      {
+        "former_name": "DESIGN-raycast.md",
+        "sha256": "ddaa2ab21193f71ed5fd514f44ba2a2bed406632ea06bcda003b6efa610ac4c7",
+        "bytes": 41259
+      },
+      {
+        "former_name": "DESIGN-renault.md",
+        "sha256": "da07690993d36b504cb2958e3e7e03b22fd74c5993bcb8825434b8ce7c719419",
+        "bytes": 30052
+      },
+      {
+        "former_name": "DESIGN-replicate.md",
+        "sha256": "0acdabc7e6356a3e984d762c2f7dfe9a667c0c0d8ef65d47a2c35d9ee8e7604e",
+        "bytes": 31479
+      },
+      {
+        "former_name": "DESIGN-resend.md",
+        "sha256": "adc5ce75f1f78cd82790633c5a47e4619704c2b90ae4677e4852938307aa3f66",
+        "bytes": 31445
+      },
+      {
+        "former_name": "DESIGN-revolut.md",
+        "sha256": "4307f51490c857d08ba51eb3b1a3c9190b1c0bc4f3c69f8aab220cf776b47203",
+        "bytes": 32018
+      },
+      {
+        "former_name": "DESIGN-runwayml.md",
+        "sha256": "b0e69bf643f89bb57ac0b82a3bf025e59ff1478c244cb0528ad1e38b3f80dac9",
+        "bytes": 14353
+      },
+      {
+        "former_name": "DESIGN-sanity.md",
+        "sha256": "ea1c442de2b23443f79af46524a81f33951606c8ff043ea9c25ba886264fbdd8",
+        "bytes": 21231
+      },
+      {
+        "former_name": "DESIGN-sentry.md",
+        "sha256": "039e58dfc831e97bc52514fba372ee7bd205f5f4a8bfea2720f386b85f1d00f0",
+        "bytes": 14750
+      },
+      {
+        "former_name": "DESIGN-shopify.md",
+        "sha256": "4cdb6d902d5b9c0ef209077bacd602bc2bc9777d594ada42adeb24477982ed77",
+        "bytes": 19983
+      },
+      {
+        "former_name": "DESIGN-spacex.md",
+        "sha256": "4e3e3c2a8202f8d4d09d38301bca94c9653085431132d37b7ad55c4afbfdce07",
+        "bytes": 11320
+      },
+      {
+        "former_name": "DESIGN-spotify.md",
+        "sha256": "72e964a6cf551d0603f9854f2f42ee08e97ad4d9e17e037f50f6233508288295",
+        "bytes": 12955
+      },
+      {
+        "former_name": "DESIGN-starbucks.md",
+        "sha256": "e20338ee10226c63cf2588207288c08e12d60754a53f681657adaf364dfe8fa7",
+        "bytes": 37329
+      },
+      {
+        "former_name": "DESIGN-stripe.md",
+        "sha256": "a1ee8c949bd3893e1b66972379ec3fb5cb1730ac294188cf808035f29e2fdaef",
+        "bytes": 20447
+      },
+      {
+        "former_name": "DESIGN-supabase.md",
+        "sha256": "8c5aba1513d6bf8e6a9a5fafd1b449d644fd05b4159e8671b411909af54be12d",
+        "bytes": 14800
+      },
+      {
+        "former_name": "DESIGN-superhuman.md",
+        "sha256": "7888fd7aafe6a2aa164877d049b0ca65e151ba739a3b8144d914382869a8f83c",
+        "bytes": 18925
+      },
+      {
+        "former_name": "DESIGN-tesla.md",
+        "sha256": "19f2f7e6073d708f46d2512e6bab3c7c417cf2b4d9f57ff6ec6f2e056ea942b0",
+        "bytes": 22212
+      },
+      {
+        "former_name": "DESIGN-theverge.md",
+        "sha256": "5da2c3116e6845826b043ac115a80896a399efda2cebc0188981fba2ef9bb526",
+        "bytes": 28368
+      },
+      {
+        "former_name": "DESIGN-together.ai.md",
+        "sha256": "de73655128f9f7eea5d3bc88c592ddbf5dbde2875ebee7ac058111268d5d2249",
+        "bytes": 14284
+      },
+      {
+        "former_name": "DESIGN-uber.md",
+        "sha256": "e25c644ae3a5edd34834b283ff001b6b0a213c2f9c875387e3d9f4bfbe3e6a4a",
+        "bytes": 18654
+      },
+      {
+        "former_name": "DESIGN-vodafone.md",
+        "sha256": "1da627c5e52cd03a5229905af005d0074c289a552c2e829acf21d4406eacc26b",
+        "bytes": 30098
+      },
+      {
+        "former_name": "DESIGN-voltagent.md",
+        "sha256": "528f2319bbe4d094785fccfb2e91706ccd8c18cb25ba9a0f2f5b539c1d62cbfe",
+        "bytes": 26320
+      },
+      {
+        "former_name": "DESIGN-warp.md",
+        "sha256": "e8132fd3b17684cabc5df2f2cb2119db708c90f4f825a51600aeb3cbca300706",
+        "bytes": 16668
+      },
+      {
+        "former_name": "DESIGN-webflow.md",
+        "sha256": "32c93aac0d780bdda767b4b7c4b8d8d5d417b22a6f4f4fb9161adc0c68c72d0b",
+        "bytes": 4119
+      },
+      {
+        "former_name": "DESIGN-wired.md",
+        "sha256": "8b34eb6fc86d5fd35b4463a88be6f675d9d8767d269c419a6209624df7e69cbf",
+        "bytes": 22487
+      },
+      {
+        "former_name": "DESIGN-wise.md",
+        "sha256": "c6efbcaa4cd1eb27bf7d9da6762afb7ae24142e1de04fae67149ece9f19b0a94",
+        "bytes": 8464
+      },
+      {
+        "former_name": "DESIGN-x.ai.md",
+        "sha256": "093c6bc1a697b1a72526687d20b4b69108dcccfc4649652a3c7eb29f7109de91",
+        "bytes": 16282
+      },
+      {
+        "former_name": "DESIGN-zapier.md",
+        "sha256": "21b745a272a222d354db2f15cf1381ba99a87ff21226dfdcc1c4643ddea9fc44",
+        "bytes": 18740
+      }
+    ]
+  },
+  "removed_derived_indices": [
+    {
+      "former_name": "agentdb.rvf.lock",
+      "bytes": 104
+    },
+    {
+      "former_name": "agentdb.rvf",
+      "bytes": 162
+    },
+    {
+      "former_name": "fabius-vec.db",
+      "bytes": 1589248
+    }
+  ],
+  "retained_authored_references": [
+    "design-critique.md",
+    "visualization.md",
+    "explanatory-diagrams.md",
+    "generative-imagery.md",
+    "rtl-bidi.md",
+    "icons.md",
+    "decks-and-infographics.md",
+    "platform-baseline.md",
+    "israel-localization.md",
+    "design-assets.md"
+  ],
+  "external_boundary": "Remaining reference prose cites external methods/tools/assets without bundling their implementations. Design-critique is informed by Impeccable with existing attribution; not claimed as an invented method. System fonts and browser behavior are external platform facilities. The new kit adds no bundled fonts, icons, audio, imagery, or runtime dependencies."
+}

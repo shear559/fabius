@@ -50,14 +50,11 @@ Read the index before reading any page. Index-based retrieval scales to hundreds
 
 One prefix per operation (INGEST / QUERY / LINT), one line per event. Grep the log to reconstruct what happened and when, with no tooling beyond `grep` and `tail`.
 
-## When symbolic search isn't enough → a dense vector layer
+## Ranked retrieval over explicit source files
 
-Add a quantized vector index (2/3/4-bit embeddings, online ingest with no retrain on add, in-kernel filtered search) only once the corpus outgrows index + grep, or once queries go semantic ("things like X") instead of keyword. Then the retrieval is **hybrid**:
+Use the original [local retrieval tool](local-retrieval.md) when a recurring question benefits from ranked excerpts. It requires an explicit absolute root, selected Markdown/text files, and a local index destination. Its BM25 results carry source paths and line ranges; changed bytes or missing files reject a stale index before results are returned. It installs no dependency and scans no directory automatically.
 
-1. Filter symbolically first — by id or metadata (project, date, layer) — to a narrow slice.
-2. Dense-rerank only that slice.
-
-Symbolic-first keeps the dense search cheap and the results scoped; pure vector search over the whole base is slower and noisier. Drop-in adapters exist for the common frameworks (LangChain, LlamaIndex, Haystack), so the engine is a swap, not a rewrite.
+For semantic misses or larger-scale storage, use the [retrieval decision guide](retrieval-stack.md). The local tool does not implement embeddings, quantized vectors, or external database adapters. Keep the source pages canonical and every retrieval artifact reproducible from the permitted selection.
 
 ## Why maintenance stays near zero
 

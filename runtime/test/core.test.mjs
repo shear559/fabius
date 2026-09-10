@@ -208,12 +208,25 @@ test('a complex landing-page route keeps core, domain, and process contracts', (
   });
   assert.deepEqual(contracts.included, ['fabius-parcus', 'fabius-decor', 'fabius-disciplina']);
   assert.deepEqual(contracts.excluded, []);
-  assert.ok(contracts.bytes > 24000, 'the old 24KB truncation would have omitted the process contract');
+  for (const name of contracts.included) assert.ok(contracts.text.includes(`<<<END CONTRACT ${name}>>>`));
 
-  const constrained = contractsFor({
-    domains: ['fabius-decor', 'missing-contract'],
-    layers: ['fabius-disciplina'],
-  }, { budget: 10000 });
-  assert.deepEqual(constrained.included, ['fabius-parcus']);
-  assert.deepEqual(constrained.excluded, ['fabius-decor', 'missing-contract', 'fabius-disciplina']);
+  // Use stable-sized synthetic contracts: improvements to prose must not erase the
+  // regression for the former 24KB limit, nor change the constrained-budget case.
+  const dir = mkdtempSync(join(tmpdir(), 'fabius-contract-budget-'));
+  try {
+    for (const name of ['fabius-parcus', 'fabius-decor', 'fabius-disciplina']) {
+      mkdirSync(join(dir, name));
+      writeFileSync(join(dir, name, 'SKILL.md'), `---\nname: ${name}\n---\n` + 'x'.repeat(11000));
+    }
+    const large = contractsFor({domains: ['fabius-decor'], layers: ['fabius-disciplina']}, {dir});
+    assert.deepEqual(large.included, ['fabius-parcus', 'fabius-decor', 'fabius-disciplina']);
+    assert.deepEqual(large.excluded, []);
+    assert.ok(large.bytes > 24000);
+    assert.ok(large.text.endsWith('<<<END CONTRACT fabius-disciplina>>>'));
+    const constrained = contractsFor({
+      domains: ['fabius-decor', 'missing-contract'], layers: ['fabius-disciplina'],
+    }, {budget: 12000, dir});
+    assert.deepEqual(constrained.included, ['fabius-parcus']);
+    assert.deepEqual(constrained.excluded, ['fabius-decor', 'missing-contract', 'fabius-disciplina']);
+  } finally { rmSync(dir, {recursive: true, force: true}); }
 });

@@ -30,7 +30,16 @@ const verify = () => spawnSync(process.execPath, [VERIFY], {
   cwd: fixture, env: { ...process.env, FABIUS_VERIFY_ROOT: fixture }, encoding: "utf8", timeout: 30_000,
 });
 const registryPath = join(fixture, "credits/upstream.json");
-const original = readFileSync(join(ROOT, "credits/upstream.json"), "utf8");
+const seed = JSON.parse(readFileSync(join(ROOT, "credits/upstream.json"), "utf8"));
+// Keep licence-closure adversarial controls even when the real package has no bundles.
+for (const [id, license] of [["test-bundled-apache", "Apache-2.0"], ["test-bundled-mit", "MIT"]]) {
+  seed.entries.push({ id, repo: `https://github.com/fixture/${id}`, owner: "Fixture",
+    license, consumed_as: "bundled", fabius_layer: "fabius",
+    fabius_paths: [`skills/fabius/references/${id}`], pinned_commit: null,
+    pinned_version: null, pinned_at: null, notice_required: license === "Apache-2.0",
+    sync: "manual", notes: "Synthetic fixture; no upstream files." });
+}
+const original = `${JSON.stringify(seed, null, 2)}\n`;
 const originalCredits = readFileSync(join(ROOT, "credits/README.md"), "utf8");
 const registry = JSON.parse(original);
 const writeRegistry = (mutate) => {
@@ -69,7 +78,7 @@ const expectFail = (label, ruleName, mutate) => {
 console.log("== fabius upstream registry adversarial tests ==");
 try {
   mkdirSync(join(fixture, "credits"), { recursive: true });
-  copyFileSync(join(ROOT, "credits/upstream.json"), registryPath);
+  writeFileSync(registryPath, original);
   copyFileSync(join(ROOT, "credits/README.md"), join(fixture, "credits/README.md"));
   seedTargets();
 
