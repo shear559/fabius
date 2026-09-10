@@ -1,6 +1,6 @@
 {
   "name": "fabius",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Fabius — one set of rules above every model. Plan the work, choose relevant skills and tools, verify the result, and reuse approved project memory. Fifteen coordinated skills cover engineering, design, research, security, automation and more. Load the rules through a compatible agent app; execution uses your chosen model, available tools and permissions. Scout wide, strike narrow.",
   "author": {
     "name": "shear559",

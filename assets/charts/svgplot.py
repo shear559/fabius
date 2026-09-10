@@ -1,10 +1,9 @@
-"""Minimal numpy->SVG line-plotter for fabius research figures. Stdlib + numpy only.
+"""Minimal SVG line-plotter for Fabius research figures. Python standard library only.
 
 Renders clean, GitHub-friendly line plots (light card, dark ink, violet/green accents).
 Used by render_figures.py to produce the conceptual decision-model diagrams in RESEARCH.md.
 The figures are ILLUSTRATIVE shapes of documented principles, not fabius measurements.
 """
-import numpy as np
 from html import escape
 
 W, H = 660, 410

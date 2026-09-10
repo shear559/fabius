@@ -41,7 +41,7 @@ run_gate "upstream registry adversarial regression" node scripts/test-verify-ups
 run_gate "distribution adversarial regression" python3 -B scripts/test-distribution.py
 run_gate "local upstream content inventory" python3 -B scripts/distribution.py check --include-file credits/content-manifest.json
 run_gate "paper TeX rendering boundary" python3 -B paper/test_rendering.py
-run_gate "chart XML escaping and input boundaries" python3 -B assets/charts/test_svgplot.py
+run_gate "chart XML escaping and input boundaries" python3 -S -B assets/charts/test_svgplot.py
 run_gate "paper artifact oracle" node scripts/verify-paper-artifact.mjs
 run_gate "paper artifact adversarial regression" node scripts/test-verify-paper-artifact.mjs
 run_gate "OpenTimestamps detached-proof binding" node scripts/test-verify-ots-binding.mjs

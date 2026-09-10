@@ -24,6 +24,8 @@ Clean Claude and Grok lifecycle checks used their documented isolated profile co
 
 ## Local 3.0.0 candidate acceptance
 
+The 3.0.1 patch removes an unused NumPy import from the chart renderer so its regression tests run on a clean Python environment. Skill contracts and original helper implementations are unchanged from the candidate tested below.
+
 Fresh disposable Claude Code 2.1.260 and Grok Build 0.2.103 profiles installed the local candidate, reported version 3.0.0 and discovered all fifteen public skills. Both managers completed disable, enable and uninstall; each ended empty and preserved the synthetic user-created record. Grok's listing does not expose enabled state, so command completion is the boundary of that observation.
 
 Each installed copy contained all 110 skill files. The four original helper implementations matched the tested source bytes. Six helper/demo invocations per host passed, including generated scene-template closure; required Markdown resource links resolved. A prose reference changed after those installation snapshots, so these receipts do not certify the final sealed tree byte-for-byte. They test the local-directory installation mechanism, not downloading the future public release. No clean-profile model task was run.
