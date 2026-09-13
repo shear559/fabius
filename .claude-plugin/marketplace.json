@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Fabius — one set of rules above every model: plan, act, verify and remember. Fifteen coordinated skills guide the work through your chosen model and a compatible agent app, using its tools and permissions. Scout wide, strike narrow.",
-    "version": "3.0.1"
+    "version": "3.1.0"
   },
   "plugins": [
     {
       "name": "fabius",
       "source": "./",
       "description": "Fabius — one set of rules above every model: plan, act, verify and remember. Fifteen coordinated skills guide the work through your chosen model and a compatible agent app, using its tools and permissions. Scout wide, strike narrow.",
-      "version": "3.0.1",
+      "version": "3.1.0",
       "author": {
         "name": "shear559",
         "url": "https://github.com/shear559"

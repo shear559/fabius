@@ -46,7 +46,9 @@ mid-run — which is most of what sections 2, 5 and 8 of this document tell you 
 Check who controls execution and who retains state separately. A managed control plane
 can retain conversation history and outputs even when tool execution uses a self-hosted
 sandbox. Verify the current product's retention terms and supported environment before
-handling restricted data; self-hosting execution does not itself keep tool inputs and
+handling restricted data (reading them is step 5 of praesidium's adoption gate —
+[`supply-chain-and-ai-artifacts.md`](../../fabius-praesidium/references/supply-chain-and-ai-artifacts.md)
+§3); self-hosting execution does not itself keep tool inputs and
 outputs away from that control plane.
 
 If material must not leave an environment, verify every transmission path in the chosen
@@ -139,6 +141,49 @@ One trap worth stating because it is easy to get wrong: a pattern like
 space, and space-to-dash is not a word boundary. Anchor flag-shaped alternatives without
 the leading boundary and test every entry in the list against a real command line.
 
+### When the tool is a screen
+
+An agent that acts on the user's applications reaches each one through the most precise
+surface it offers, in this order:
+
+1. **API** — a connected connector or service API for that application. Typed, fast,
+   scoped by its own grant.
+2. **DOM** — a structure-aware browser tool for a web application. It reads the page's
+   structure, so forms, dynamically loaded content and signed-in sites are handled here
+   rather than by pixel work.
+3. **Pixels** — screenshot-and-click control of the desktop: the rung for whatever the
+   first two cannot reach.
+
+Descend only on absence. A rung the host does not offer drops to the next — the
+authorized-equivalent rule in
+[`skill-maintenance.md`](../../fabius/references/skill-maintenance.md). A rung that is
+present and fails stays the rung: diagnose it or report the failure; a lower rung is not
+its retry path.
+
+Grants are per application and per interaction tier — **see · click · full** — and the
+tier is derived, not tabulated. Two derivations. An application already owned by a more
+precise rung gets pixels one tier below what that rung does for it — a web application is
+see-only, because its navigation belongs to the DOM rung; the same derivation makes a
+shell click-only. And what the application can reach sets its ceiling — money, identity,
+other people, the machine itself — so that reach falls under the postures above and §4's
+hand-off refusals, whatever tier the application holds. Act only in the
+application you were granted, and only while it is in front. Demand this of the runtime
+rather than assume it of the model: the tier is checked against the application that
+actually receives the input, not the one the model says it is targeting — fabius's own
+runner enforces no OS sandbox ([`CLAIMS.md`](../../../CLAIMS.md)).
+
+Two foreign objects ride along. A link or a path inside carried content is data under the
+[untrusted-content boundary](../../../AGENTS.md#untrusted-content-boundary), and
+navigation is a consequential tool (praesidium
+[`hardening-guides.md`](../../fabius-praesidium/references/hardening-guides.md) §9): the
+agent opens it only through the DOM rung, only under a user-authorized step, and only after
+resolving where it really points — and a destination outside the domains the task named is
+a question, not a click, because a signed-in browser carries the user's session where the
+`net` tool above carries nothing, so this navigation is not the never-prompt read. And
+the agent's working tree and the user's desktop are two hosts: every path, command or
+state claim is validated against the host it will run or be read on, before it is typed,
+pasted or asserted.
+
 ## 4. The three boundaries that are not negotiable
 
 **A working-directory jail.** Resolve the target through symlinks *before* deciding, and
@@ -151,7 +196,11 @@ resolve that, and re-attach the tail.
 its variants, `.netrc`, `.npmrc`, `*.pem`, `*.key`, `id_rsa`, `.git-credentials`,
 keychains, and the agent's own config. Not a warning — a refusal, in every posture,
 including the most permissive one. The agent has no legitimate need for these, and the
-task that claims otherwise is the task to be suspicious of.
+task that claims otherwise is the task to be suspicious of. The same tier holds a user
+credential handed to the agent — a password, a one-time code, a card — and the screen steps
+that are the user's identity (a credential change, a code consumed, recovery details
+changed): refused in every posture, the site and the step named and handed back — the
+hand-off class in [`agent-patterns.md`](agent-patterns.md), *Confirmation classes*.
 
 Pair it with **outbound redaction**: run every observation through a filter that replaces
 known key values and key-shaped strings before the model ever sees them. The deny-list
@@ -289,12 +338,27 @@ Three rules make a channel safe enough to leave running:
 - **Inbound text is a task, never an instruction to the runtime.** It reaches the model as
   the task string and nothing more. It cannot raise its own permissions, and the gate sits
   upstream of every tool regardless of what the message says.
+- **The principal is the verified allow-listed sender, on every channel.** Channels are
+  transport; one loop holds the state, the grants and the seen-set across all of them, so
+  a grant given in chat governs a send triggered from mail. Each channel verifies the
+  sender by its own means — the transport's sender authentication, the account identity,
+  a caller check — and an unverified sender is not the principal, whatever the text
+  claims. In a CC'd or forwarded thread only the principal's own lines are intent;
+  everyone else's text is carried content, which can describe a task and never grant one
+  (the [untrusted-content boundary](../../../AGENTS.md#untrusted-content-boundary),
+  sharpened). Which embedded instruction halts the loop and which is logged as content is
+  *Injection is the one case where you ask early* in [`agent-patterns.md`](agent-patterns.md).
+
+Outbound is the mirror: the agent may open a thread with its owner inside the contact
+budget of *The standing-job agent* in [`agent-patterns.md`](agent-patterns.md), and never
+with a third party outside the exact-argument approval or the bounded-predicate send grant
+in its *Standing approvals*.
 
 Two implementation notes that cost real debugging time. Metadata-hiding envelopes fuzz the
 outer timestamp *backwards* — up to two days in the NIP-59 design — so a narrow "since the
 last five minutes" relay filter silently drops messages sent seconds ago. Filter wide and
 judge freshness on the inner, unfuzzed timestamp after opening the envelope. And because
-you are then accepting a wide window, keep a seen-set: relays replay history on connect,
+you are then accepting a wide window, keep the one cross-channel seen-set above: relays replay history on connect,
 and re-executing yesterday's instructions is its own kind of incident.
 
 Reviewing the cryptography of such a transport — what the metadata still leaks, where
@@ -401,3 +465,5 @@ Before calling a local runtime finished:
 - [ ] Every permission decision lands in the run's journal.
 - [ ] The seal is reported, and a mode exists that refuses anything outside the sealed set.
 - [ ] The child process dies with its parent — verified by killing the parent, not by reading the code.
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the API → DOM → pixels surface ladder, per-application interaction tiers, link inspection before navigation, the two-hosts path rule, the hand-off of credential steps, and the verified-principal-per-channel rule, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

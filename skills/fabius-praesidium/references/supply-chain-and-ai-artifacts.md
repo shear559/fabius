@@ -39,12 +39,18 @@ The rule:
 
 ## 3. The adoption gate — audit → pin → sandbox → least-privilege
 
-A four-step gate any skill/plugin/MCP/dependency clears **before** it touches real work:
+A gate any skill/plugin/MCP/dependency — or a hosted service you connect an account to — clears **before** it touches real work; four steps for the code, a fifth when a third party holds your data:
 
 1. **Audit** — run §1's exec/data/net/creds read. Read what it execs, trace what it sends, list the creds it touches. If you can't tell, that *is* the finding — opacity is disqualifying for something that runs with your tokens.
 2. **Pin** — lock the exact SHA (§2). No moving targets.
 3. **Sandbox** — run it where it can't reach what it doesn't need: a container, a scratch repo, network egress restricted, filesystem scoped. First run is the riskiest; let it run somewhere it can't hurt you.
 4. **Least-privilege the creds** — default-deny, then grant only the scopes the audit proved it uses. A read-only artifact gets a read-only token. (Same least-privilege contract as the playbook §3 and `fabius-cohors` for agents.)
+5. **Terms** — only when a third party holds the data (a hosted service, a connected account); a first-party or self-hosted artifact stops at step 4. Read three clauses, each written up as a finding:
+   - **What the vendor may keep and do with your material** — breadth of the licence, whether it reaches model training, whether it transfers or sublicenses. A perpetual, irrevocable grant over a connected mailbox lands high under the playbook §5 rubric: revocation cannot retract it.
+   - **How deletion and opt-out actually work** — self-serve, verifiable (read-after-revoke, [hardening-guides.md](hardening-guides.md) §2 grant lifecycle), and retroactive. A refusal to delete *is* the finding; a forward-only opt-out means the retention control is the vendor's goodwill.
+   - **Whether the terms let the service act as your agent or bind you** — an unbounded, non-revocable mandate lands critical under §5 unless the product lets you scope it (what · with whom · up to how much) and revoke it. The wallet instance of the same rule is `fabius-catena`'s smallest mandate ([`onchain-security.md`](../../fabius-catena/references/onchain-security.md)); the retention-terms read that `fabius-cohors`'s [`local-agent-runtime.md`](../../fabius-cohors/references/local-agent-runtime.md) routes here is this step.
+
+   Outcome: adopt · adopt-with-scope (a dedicated mailbox, a spend cap, no primary identity — the quarantine below applied to an account) · decline. Severity runs through the playbook's impact × reachability rubric (§5). This is a security-adoption read, not legal advice; a binding interpretation goes to counsel. Studied (2026-09-13): press reports (2026-08) on a commercial personal-agent product — a perpetual-and-irrevocable licence over user materials, reported to extend to model training; an agency clause authorizing binding agreements on the user's behalf; deletion refused on request with tools added afterwards; an observed product shape, closed product, nothing carried.
 
 Fail any step → don't adopt, or quarantine until it passes. Severity and the fix→proof triple are the playbook's (`security-playbook.md` §5–6); a malicious artifact in your boundary is **critical** by default.
 

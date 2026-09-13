@@ -25,12 +25,18 @@ Scale this *down* for a small base: a flat folder of pages plus `index.md` and `
 ---
 name: stable-kebab-slug          # the id AND the filename: a wikilink resolves by filename, never by this field
 description: one line — this is what index.md shows for retrieval
-type: entity | concept | comparison | synthesis
+type: entity | concept | comparison | synthesis | preference   # preference pages file under concepts/ (cross-project tier), never on a project page
 updated: 2026-06-21              # absolute dates only, never "last week"
+source: stated | inferred        # preference/agreement records only
+consented: 2026-06-21            # protected-category facts only — the date the user asked for the record
 ---
 ```
 
 Body: the fact or synthesis. Link related pages liberally with `[[slug]]` — a link to a page that doesn't exist yet is a valid forward marker, not an error.
+
+A preference or lesson record states what the user holds and why — *migrations land under review before the code that depends on them; one release went the other way and paged everyone* — in the only form M12 can weigh: a witness, not a command. Written as an instruction, the record returns next session with an authority the store never had and pulls against the live request; the write side therefore matches the read side. Record a choice the user let stand as readily as one they reversed — a store fed only by reversals teaches every later session to hedge. `source:` says whether the user stated the fact or fabius inferred it from observed behaviour: a stated record is `[pin]`ned under the [never-drop floor](external-recall.md#the-never-drop-floor); an inferred one is provisional (acting on it, `fabius-parcus` names the assumption), and a stated record beats an inferred one whenever they conflict — recency breaks ties only between records of the same provenance (the newest verified value, per [`../SKILL.md`](../SKILL.md#auto-recall--surface-memory-without-being-asked)).
+
+**What never enters the store without consent.** The write gates ask *may I write* (the authorization above) and *is it worth writing* (M7); one class of fact also needs *did the user ask for this to be kept*. Three classes need it: a fact that can be used to discriminate (a protected personal category — belief, origin, orientation, a status of residence or membership), one that can be used to impersonate or defraud (a state-issued or account identifier), and one that locates or diagnoses the person (where they live, what they are treated for). Each enters only on the user's explicit ask, carries `consented:` with the date of that ask, and is never inferred to round out a profile — verified, reusable and non-obvious still leaves it out uninvited. The ask unlocks a fact, never a credential: secrets stay out even on request, per [`external-recall.md`](external-recall.md#when-memory-must-be-a-tool-use-the-standard-one) and `fabius-praesidium` (*No secret in the artifact* — a memory page is an artifact). The gate is regime-neutral; the local statute's own sensitivity list stays with `fabius-decor` [`israel-localization.md`](../../fabius-decor/references/israel-localization.md).
 
 ## index.md line format
 
@@ -115,3 +121,5 @@ The vault is just the project's memory folder — no migration, no export:
 2. *Open folder as vault* → pick the project's `wiki/` (or the project root).
 3. Enable **Graph view** (see the link structure) and the **Dataview** community plugin (query frontmatter — e.g. list every page by `updated`).
 4. Done. fabius writes the markdown from the conversation; the human browses, follows `[[links]]`, reads the graph. If they'd rather not install anything, the same files work with `grep` + any editor.
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for declarative preference records with a stated-vs-inferred provenance, confirmations recorded like corrections, and the consent gate on protected-category facts, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

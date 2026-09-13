@@ -70,6 +70,8 @@ Company/tech logos are not your icon family and not governed only by a file lice
 - **Font Awesome Brands** (icons `CC BY 4.0`) — ~490 social/brand glyphs with a *font* path Simple Icons lacks; attribution required.
 - **theSVG** (`thesvg.org` · `github.com/glincker/thesvg`) — code `MIT`; ~4,600 brand marks **plus the AWS Architecture pack (739 icons) redistributed unmodified under `CC BY-ND 2.0`**. The live index is the **`.org`** — `thesvg.com` is a parked for-sale listing now, so never cite it. The license split bites per *file*, not per repo: a no-derivatives icon may not be recolored, re-stroked or bound to `currentColor` at all, so it structurally cannot obey law 3 — keep the AWS set on the brand wall exactly as shipped and never let it into a tokenized UI-icon row.
 
+**When the mark is missing.** The trademark line above decides it: a real company's mark exists on a surface only as a file — the product's own, supplied by the user, or a third party's from the licensed layer above. With no such file, the brand name is set in the system's own type in the mark's slot and the gap goes into the hand-off caveats. Recollection, a lookalike text face or a UI-icon glyph never stands in for the mark, and the identity on the surface stays the one the user supplied. Existing marks only: a brand that has none yet may have one authored, and a supplied raster may be vectorized ([`design-assets.md`](design-assets.md), Vectorize row). Icons keep laws 1–2 above: the project's own set first, then one linked family of the same stroke grammar, the swap named in the caveats; [`design-critique.md`](design-critique.md) §4 already refuses emoji or hand-drawn glyphs as icons.
+
 ## Emoji & flags
 
 One emoji set project-wide (they're a family too). Emoji are decorative accents — never carry meaning without a text label.
@@ -106,3 +108,5 @@ One emoji set project-wide (they're a family too). Emoji are decorative accents 
 ## Pairs with
 
 `fabius-decor` (the laws), **Fabius Motus** (the motion engines behind animated/Rive/Lottie icons), **Fabius Bidi** (which directional icons mirror in RTL — chevrons/arrows/send flip, clocks/checks/logos don't), **Fabius Materia** (illustrations/3D/fonts), and `fabius-parcus` (one family, `currentColor`, static-by-default is also the *smallest* icon layer).
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the missing-mark fallback and the reported icon substitution, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

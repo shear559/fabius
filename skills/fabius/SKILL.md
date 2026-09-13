@@ -27,7 +27,7 @@ metadata:
 
 Named for Quintus Fabius Maximus, the Roman general who beat Hannibal by refusing every battle that didn't matter and committing fully to the one that did. That is the whole stance: **investigate everything, fight almost nothing, win the fight you pick.**
 
-This skill is the conductor — the *praetorium*, the command tent where the route is chosen. It reads the job, sets the working stance, picks how much machinery and which model tier to spend, and hands the baton to a specialist when a job needs depth. Fifteen coordinated layers; see [ARCHITECTURE.md](../../ARCHITECTURE.md) and [routing-policy.md](references/routing-policy.md).
+This skill is the conductor — the *praetorium*, where the route is chosen. It reads the job, sets the stance, picks how much machinery and which model tier to spend, and hands the baton to a specialist when a job needs depth. Fifteen coordinated layers; see [ARCHITECTURE.md](../../ARCHITECTURE.md) and [routing-policy.md](references/routing-policy.md).
 
 ## The maxim that always runs
 
@@ -47,7 +47,7 @@ These never fight, because they live on different axes: *how much you investigat
 - **Resolve material ambiguity** — ask when the answer changes the outcome; state small reversible assumptions and proceed. → `fabius-disciplina`
 - **Prove before "done"** — a success claim needs evidence: a passing check, a real run. → `fabius-disciplina`
 
-Lean prose has carve-outs (security · irreversible actions · order-sensitive steps) — those are written normal, and `fabius-parcus` owns the list.
+Lean prose has carve-outs (security · irreversible actions · order-sensitive steps), written normal; `fabius-parcus` owns the list.
 
 ## Dispatch — three decisions per task
 
@@ -77,7 +77,8 @@ UI · landing page · component · brand look · → fabius-decor
 chart · graph · diagram · visualize data     → fabius-decor       (the figura visualization concern)
 "build an agent" · subagent · swarm ·        → fabius-cohors
   orchestration · multi-agent · evaluate
-  an agent · agent benchmark · durability
+  an agent · agent benchmark · durability ·
+  a standing-job · voice · screen-acting agent
 "remember this" · a growing knowledge base · → fabius-archivum
   work on / resume a named project —
     the record is read BEFORE the domain skill
@@ -125,13 +126,13 @@ stock · market · economy · valuation ·       → fabius-fortuna     (analysi
 
 ## Where fabius loads
 
-Check host capabilities: shared rules do not guarantee identical loading, routing, or execution.
+Check host capabilities: shared rules do not guarantee identical loading or execution.
 
-- **A harness** (Claude Code · Codex · Grok Build) — it discovers the plugin skills and loads relevant contracts. Other tools can read the standalone stance from `AGENTS.md` at their supported rules path; that bridge does not install the full specialist corpus. No fabius service or account is required.
-- **Locally, in `runtime/`** — one agent loop, selected contract bodies, keyword routing; zero dependencies, Node 22+. State and tools stay local; prompts and observations reach the model provider. Approved shell execution is not an OS sandbox. Commands: `run` · `chat` · `recon <domain>` (keyless audit) · `listen` (encrypted through public relays) · `doctor` (local manifest report). `--sealed-only` enforces manifest matches; signed-release verification is separate. Details → `../fabius-cohors/references/local-agent-runtime.md`.
+- **A harness** (Claude Code · Codex · Grok Build) — it discovers the plugin skills and loads relevant contracts. Other tools read the standalone stance from `AGENTS.md`; that bridge does not install the specialist corpus. No fabius service or account is required.
+- **Locally, in `runtime/`** — one agent loop, selected contract bodies, keyword routing; zero dependencies, Node 22+. State and tools stay local; prompts and observations reach the model provider. Approved shell execution is not an OS sandbox. Commands: `run` · `chat` · `recon` · `listen` · `doctor`; `--sealed-only` enforces manifest matches, signed-release verification is separate. Details → `../fabius-cohors/references/local-agent-runtime.md`.
 
 ## Boundaries
 
 Never trim trust-boundary validation, data-loss handling, security or accessibility; the full floor is in `fabius-parcus`. `fabius-praesidium` is **defensive only**.
 
-Fabius governs **how** you work, never **what** the user wants. The user's instruction always wins. `stop fabius` / `normal mode` drops the stance.
+Fabius governs **how** you work, never **what** the user wants. The user's instruction always wins: state a concern once; a reaffirmed instruction is the decision. A yes covers the step it named; a new irreversible step earns its own ask. `stop fabius` / `normal mode` drops the stance.

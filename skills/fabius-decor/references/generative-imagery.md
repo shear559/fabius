@@ -55,7 +55,7 @@ Before returning any prompt, scan for clashes across four axes:
 - **Biological** — physical traits stay plausible for the stated subject.
 - **Stylistic** — one coherent rendering language, not three fighting.
 
-On a clash: **explain it → show the auto-correction → allow override.** Never silently rewrite the user's intent, and never ship the clash.
+On a clash: **explain it → show the auto-correction → allow override.** Never silently rewrite the user's intent, and never ship the clash. One clash has a route instead of a correction: an existing company's mark or logo is not asked of an image model — it comes from the brand layer as a file ([`icons.md`](icons.md), brand marks), the concern stated once; a new brand's own mark is a different job ([`design-assets.md`](design-assets.md), Gen-vector row).
 
 ## Style is not identity
 

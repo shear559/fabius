@@ -54,7 +54,7 @@ Design and verify the **mobile** layout first — it's the hardest constraint. D
 
 ## Icons · motion · materials · direction
 
-External tools and materials have their own terms; inspect the selected version and asset before use. Page in the reference you need:
+External tools and materials carry their own terms; inspect before use. Page in the reference you need:
 
 - **Icons** — one family, one stroke, `currentColor`→token, static by default; systems, animated icons, brand marks, emoji, flags → `references/icons.md`.
 - **Motion** — climb the native ladder (`@starting-style` · View Transitions · scroll-driven · WAAPI) before a JS engine; reduced-motion default-on → `references/motion-libraries.md`.
@@ -100,9 +100,9 @@ node skills/fabius-decor/scripts/design.mjs check skills/fabius-decor/examples/t
 node skills/fabius-decor/scripts/design.mjs scene skills/fabius-decor/examples/storyboard.json --out /tmp/fabius-scene
 ```
 
-Use a fresh output directory. The kit checks named color pairs, focus tokens and motion policy; it cannot certify whole-page accessibility. Generated scenes use supplied text, native controls and `window.__seek(seconds)`, with no autoplay. Verify the rendered result. Detailed schema → `references/design-tokens.md`; original composition recipes → `references/layout-recipes.md`; capture contract and external renderers → `references/motion-libraries.md`.
+Use a fresh output directory. The kit checks named color pairs, focus tokens and motion policy; it cannot certify whole-page accessibility. Generated scenes use supplied text, native controls and `window.__seek(seconds)`, with no autoplay. Verify the rendered result. Schema → `references/design-tokens.md`; composition recipes → `references/layout-recipes.md`; capture contract and renderers → `references/motion-libraries.md`.
 
-If a user supplies a brand reference, inspect the actual surface and translate its useful principles into the project's own tokens. Do not copy source, logos, fonts, or teardown prose. This kit replaces the decision-use of earlier imported corpora; it does not recreate their component count, effects, templates, or supported frameworks. Historical source identities and the replacement boundary → `references/original-kit-migration.json`.
+If a user supplies a brand reference, capture it into the visual-system template before building (`references/visual-system-template.md`), then translate its principles into the project's own tokens. Do not copy source, logos, fonts, or teardown prose. This kit replaces the earlier imported corpora without recreating their component count, effects, templates or frameworks. Historical source identities and the replacement boundary → `references/original-kit-migration.json`.
 
 ## Review before ship — the censor's floor
 
@@ -114,7 +114,7 @@ Before calling UI done:
 
 - [ ] Monochrome functional controls; one accent reserved for emphasis and focus.
 - [ ] All values are tokens — no inline hex or px in components.
-- [ ] Type ladder consistent; display sizes have tight tracking; body ≥16px.
+- [ ] Type ladder consistent; display tracking as documented; body ≥16px.
 - [ ] Spacing snaps to the base unit everywhere.
 - [ ] Mobile layout designed first and actually checked at ~375px.
 - [ ] Focus-visible, never obscured; **≥ 4.5:1** body text, **≥ 3:1** UI parts, icons, chart series (WCAG 2.2 AA).

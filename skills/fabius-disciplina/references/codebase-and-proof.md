@@ -1,6 +1,6 @@
-# Fabius Disciplina — scout the codebase, scout reality, prove in a browser
+# Fabius Disciplina — scout the codebase, scout reality, prove at the surface
 
-The on-demand depth for `fabius-disciplina`'s *scout* and *prove* steps when the unknown is a large codebase, a current-world fact, or a UI in a browser. The skill is the contract; this is how you run the loop well. The repository's optional local runner is separate from these ecosystem tools; external connections are documented in ARCHITECTURE.md. Tool names and versions are a point-in-time snapshot (early 2026); re-verify before you depend on one.
+The on-demand depth for `fabius-disciplina`'s *scout* and *prove* steps when the unknown is a large codebase, a current-world fact, or a change that must be observed at its runtime surface. The skill is the contract; this is how you run the loop well. The repository's optional local runner is separate from these ecosystem tools; external connections are documented in ARCHITECTURE.md. Tool names and versions are a point-in-time snapshot (early 2026); re-verify before you depend on one.
 
 Scout wide, strike narrow. Three of these sharpen *how you understand* before an edit; the rest sharpen *how you prove* after it.
 
@@ -36,15 +36,32 @@ For multi-step or long-horizon work, the plan and the spec live **on disk**, not
 
 The plan file is also the handoff artifact and the thing `fabius-archivum` files once the work resolves. Short tasks don't need it; the moment the work outlives one context window, the file is the difference between resuming and restarting.
 
-## 4. Prove with a real browser — for any UI or web change
+## 4. Prove at the surface — every change has one to drive
 
-A passing unit test is **not** proof for a UI change. The law is fabius's own: *verify live, not just code.* Drive a real browser and assert the rendered state.
+A passing unit test is **not** proof that a change works. The law is fabius's own: *verify live, not just code.* Reach the changed code through the surface it is consumed at, drive it there, and keep what it showed. The mapped covering checks still run (R16; SKILL.md "Map source to observable behavior") — the drive at the surface is added on top of them, never substituted for them. A green mapped suite is graded by R15 — PLAUSIBLE and step-closing until the gate is audited; the observation at the surface is CONFIRMED on its own terms and closes the route for the behavior it shows.
+
+The surface is wherever the change is consumed. A library is consumed at its published boundary — install it and call the export, never a path into the source tree. A service is consumed by its caller — a request goes in, the response is kept. A command is consumed in a terminal — run it, keep the pane. A page is consumed in a browser — drive a session (below) and keep a screenshot for the human eye. An agent prompt or configuration is consumed by the agent's run — keep the transcript and the tool calls (§7 for the keyless drive). A pipeline definition is consumed by the pipeline — trigger it and keep the log.
+
+A private function is never the surface; follow its callers outward until one is consumed somewhere a user can stand, and drive that. Take the shortest route that makes the changed lines execute — the entry point that reaches them, with the input that makes them run — then probe beside it through the same surface, choosing only the probes the diff itself points at: the input the diff did not expect (missing, doubled, contradictory, malformed); the error branch next to the one the diff changed; the action repeated, the action over stale state, or the action from two sessions at once where the change touches shared state. A probe that holds is recorded too, since it states what the drive covered.
+
+For a browser surface:
 
 - **Playwright** — deterministic, no-vision: locators, `fill`, `click`, `screenshot`, full e2e. Assert by **locator/role/text** (the semantic handle), the same meaning-first principle as the simulator tree (→ `references/simulator-verify.md`) — not by pixel coordinate, which breaks on every layout shift.
 - **Sandboxed browser** when you must run untrusted page logic — **QuickJS-WASM isolation**, no host file or network access. Reach for it only when isolation is the point; plain Playwright is the default.
 - The check is **state on the real path**, not "the test is green." Navigate, act, read the live DOM, assert the user-visible outcome. Screenshot last — for a human's eyes and visual-diff, never as the primary assertion.
 
-**Decision rule:** the change is anything a user sees in a browser → it isn't done until a browser drove it. "Almost works" and a code-only answer don't count (phase 6).
+**Verdict** — one of four, on the runtime state of the change (review findings are graded separately → `engineering-workflows.md`):
+
+- **PASS** — the surface was driven and showed the requested behavior.
+- **FAIL** — the surface was driven and the change did not do what the diff claims, or something beside it broke.
+- **BLOCKED** — the drive never reached a state in which the change could be observed. This is a fact about the environment, not about the change: name the last step that succeeded and the first that did not.
+- **SKIP** — the diff has no runtime surface: a docs-, changelog- or license-only path (§6). One line, and no suite is run in its place. Configuration is not a SKIP; it takes the parser, compiler or read-back the contract names (SKILL.md "Map source to observable behavior"; §5). A tests-only diff is not a SKIP either; it takes the old-behavior or mutation control the contract asks for where practical.
+
+Ties break closed. A partial result is FAIL, never a smaller PASS — the same accounting `transactional-updates.md` applies to a refresh; a capture you cannot read decisively is FAIL as well, filed with the unedited output so a reader can overrule it. In the ledger (`engineering-workflows.md`, `evidence.mjs`) PASS is a `passed` check and FAIL a `failed` one; SKIP and BLOCKED are both recorded as `skipped` with the reason — for BLOCKED, the last step that succeeded and the first that did not — which leaves the ledger `incomplete`. Neither BLOCKED nor SKIP ever upgrades a claim.
+
+Two guards. Evidence travels with the report: text captures go inline, binary captures are sent as files whenever the reader has no access to your filesystem; a bare path is a pointer, not evidence. And when the only surface sits on the EXECUTE rung of the acting ladder (→ `../../fabius/references/orchestration-doctrine.md` §9), it is never driven as a probe: with no dry-run mode, no throwaway target and no authorization for that rung, prove everything beneath it and name the one action that stayed unexercised; when the action itself is the authorized deliverable, it runs once and its observed result is the evidence.
+
+**Decision rule:** the change has a runtime surface → it isn't done until that surface was driven. "Almost works" and a code-only answer don't count (phase 6).
 
 ## 5. Enforce TDD with a gate, not a hope
 
@@ -102,3 +119,5 @@ is grading. A failing process cannot. (Runtime design → `../../fabius-cohors/r
 The never-trim floor still holds underneath all of this: validation, security, and a11y are not candidates for the YAGNI ladder (→ `fabius-parcus`). These tools change *how you scout and prove*; they never license skipping the floor.
 
 Each capability here is drawn from a named ecosystem tool and re-expressed in fabius's own voice — apply the discipline, credit the tool, ship nothing you haven't proven.
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the surface map, the shortest-path drive with probes beside it, the four-valued PASS / FAIL / BLOCKED / SKIP verdict with fail-closed ties, and evidence that reaches the reader (snapshot fetched 2026-09-13), re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

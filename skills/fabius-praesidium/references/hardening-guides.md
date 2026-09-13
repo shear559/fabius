@@ -54,6 +54,21 @@ Set these on every HTML response (and the API where noted). Verify with `curl -s
 [ ] store a revocation handle so a compromised session can be killed without a redeploy
 ```
 
+**Grant lifecycle — a data-source connection is a lease:**
+```
+[ ] every derived record (summary, index entry, embedding, cached body, screenshot) carries the
+    grant id it came from
+[ ] disconnect cascades — delete or crypto-shred by the per-grant key, and stop the jobs;
+    a summarizer that runs after disconnect is a session that survived logout
+[ ] no plaintext mirror of a connected source; index only what the task needs, encrypted at
+    rest under the grant key
+[ ] retention stated in one sentence the user can act on, and deletable on request
+[ ] proof is read-after-revoke, not a settings toggle: revoke, wait past the longest job
+    cadence, query — any hit or notification that references the revoked source fails
+    (a policy edit is not proof of revocation, applied to stored data)
+```
+A plaintext mirror that outlives its grant is an info-disclosure finding — the proof line above is cohors's "a policy edit is not proof of revocation" ([agent-evaluation-and-durability.md](../../fabius-cohors/references/agent-evaluation-and-durability.md)) applied to stored data — severity and the fix→proof triple per [security-playbook.md](security-playbook.md) §5–6. A stateless fetch tool that keeps nothing gets no lifecycle finding. Studied (2026-09-13): press reports (2026-08) on a commercial personal-agent product — data retained after disconnect, deletion refused on request with deletion tools added afterwards; an observed product shape, closed product, nothing carried.
+
 **Password storage — vetted KDF, never a bare hash:**
 
 | KDF | Use when | Notes |
@@ -286,7 +301,7 @@ Copy the block for the stack you're shipping. Each item is *verify present*.
 
 **Run the triage before you build the containment.** Three capabilities together make an agent *exfiltratable*: **access to private data · exposure to untrusted content · a way to communicate externally.** All three present is the hole, so the first design question is never "how do I filter the injection" — it is *which leg can I delete*. Cut the private data (scope the token to the job; the proxy-held credential below is this leg done properly). Cut the untrusted content (don't feed it web pages, tickets, emails, or tool output you didn't author). Cut the egress (the network boundary below). **Deleting a leg is cheaper than the proxy build and it removes the risk instead of containing it.**
 
-**But two legs is not "safe" — it is only "not exfiltration."** Untrusted content plus one irreversible tool is a complete attack with no private data anywhere in it: delete the inbox, force-push the branch, send the mail, move the money. So run the triage **twice** — once for the data path (all three legs), once for the action path (untrusted content + any consequential tool). The second is what the mid-flight approval gate below exists for.
+**But two legs is not "safe" — it is only "not exfiltration."** Untrusted content plus one irreversible tool is a complete attack with no private data anywhere in it: delete the inbox, force-push the branch, send the mail, move the money. So run the triage **twice** — once for the data path (all three legs), once for the action path (untrusted content + any consequential tool). The second is what the mid-flight approval gate below exists for. When reading the untrusted content *is* the job — a mailbox agent cannot delete that leg — the triage still runs first; then fill the agent rows of [security-playbook.md](security-playbook.md) §1, after it and never instead of it.
 
 **If you cannot delete a leg, buy structure instead of vigilance.** Six known shapes, in rising order of what they cost you: **Action-Selector** (the agent fires tools but never sees their responses) · **Plan-Then-Execute** (the tool calls are fixed *before* untrusted content enters the context) · **LLM Map-Reduce** (isolated sub-agents read the untrusted content, a coordinator aggregates their output as data) · **Dual LLM** (a privileged model drives a quarantined one through symbolic variables it never dereferences) · **Code-Then-Execute** (the privileged model emits sandboxed-DSL code, so the taint is statically analysable) · **Context-Minimization** (drop the original prompt before returning results). **The governing law: once an agent has ingested untrusted input, it must be structurally impossible for that input to trigger a consequential action.**
 

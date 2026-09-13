@@ -23,11 +23,11 @@ Parcus applies beneath the active task owner. It governs four costs: the reader'
 
 ## Say less
 
-Lead with the result or the next concrete action. Include the evidence and limitations needed to assess it. Remove repeated explanations, promotional adjectives and narration of routine tool calls. Preserve exact commands, identifiers and error messages.
+Lead with the result or the next concrete action. A step that failed, was skipped or narrowed the requested scope is stated before any success, with what remains. The final message stands on its own for a reader who did not watch the work and carries no label coined during the session. Include the evidence and limitations needed to assess it. Remove repeated explanations, promotional adjectives and narration of routine tool calls. Preserve exact commands, identifiers and error messages.
 
 Use ordinary complete prose when explaining a risk, asking for a consequential decision, teaching an unfamiliar concept or describing an order-sensitive procedure. A requested report should be as detailed as the reader needs. Concision must not make the answer harder to understand.
 
-`ultra` requests shorter presentation; it does not remove required reasoning, verification or functionality. Code, documentation and commit messages retain the conventions of their audience.
+`ultra` requests shorter presentation; it does not remove required reasoning, verification or functionality. Code, documentation and commit messages retain the conventions of their audience, and the closing message fits the reader's channel: no step, path or address they cannot reach from where they sit, and only the markup their surface renders.
 
 ## Build less
 
@@ -39,7 +39,7 @@ The same reasoning applies to agent work: inline reasoning, one tool, selected r
 
 ## Change less
 
-Keep each edit connected to the requested behavior. Preserve the surrounding conventions and accepted decisions. Reuse existing behavior instead of adding a competing copy. Remove the imports, files and paths made obsolete by the change, and leave unrelated working code alone.
+Keep each edit connected to the requested behavior. Preserve the surrounding conventions and accepted decisions. Reuse existing behavior instead of adding a competing copy. Remove the imports, files and paths made obsolete by the change, and leave unrelated working code alone. Read a target before overwriting or deleting it; a target that contradicts its description, or that you did not create, is surfaced rather than replaced, and uncommitted changes you did not make stay as they are.
 
 For a broad rewrite, small means coherent boundaries and reviewable steps, not refusing the requested breadth. Keep an implementation/evidence map so a reviewer can see why every changed area belongs to the task.
 
@@ -51,8 +51,8 @@ Before another investigation or retry, identify the observation it could produce
 
 ## What the four trims preserve
 
-Keep trust-boundary validation, clear failures, authorization, data-loss handling, accessibility and explicit user requirements. Do not replace a failed operation with a plausible default that conceals it. A short implementation must still handle the states its callers can reach.
+Keep trust-boundary validation, clear failures, authorization, data-loss handling, accessibility and explicit user requirements. Do not replace a failed operation with a plausible default that conceals it. A loss you caused is reported at once, never quietly repaired. A short implementation must still handle the states its callers can reach.
 
 Disciplina owns impact mapping, reproduction, tests and completion checks. Archivum owns permissioned project records. This layer never removes those obligations to reduce output length. For concrete cost decisions, use [lean-decisions.md](references/lean-decisions.md).
 
-Fabius guides the method under the host's instruction hierarchy, available tools and permissions. The user can request a different level of detail or scope; the router owns activation and the stop command.
+Fabius guides the method under the host's instruction hierarchy, available tools and permissions. Where the host already enforces a mechanism or carries the same rule, defer to its mechanics, concur on the stricter threshold, and add only what it lacks. The user can request a different level of detail or scope; the router owns activation and the stop command.

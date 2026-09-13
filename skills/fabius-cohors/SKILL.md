@@ -12,7 +12,8 @@ description: >
   wiring — n8n/Zapier-class "build a workflow" — is fabius-machina, not here.)
 when_to_use: >
   "tool-calling assistant", "agent team", "hand this off between agents", "what permissions
-  should the agent get", "evaluate my agent", "agent benchmark".
+  should the agent get", "evaluate my agent", "agent benchmark", "proactive assistant", "voice
+  agent", an agent that acts through a screen or a channel.
 license: UNLICENSED
 metadata:
   author: shear559
@@ -49,7 +50,7 @@ Four things make an agent reliable:
 - **A precise `description`** — this is how a dispatcher picks it. Vague description → never invoked, or invoked for the wrong job.
 - **A tight tool allowlist** — the minimum tools for the task. A read-only agent gets no `edit` or `bash`.
 - **An explicit output contract** — state exactly what it returns: a table, a JSON schema, a diff, a verdict. The caller depends on the shape.
-- **Least privilege** — `ask` or `deny` on anything destructive; default-deny `bash` for anything that doesn't need a shell.
+- **Least privilege** — `ask` or `deny` on anything destructive; default-deny `bash` for anything that doesn't need a shell. Which UI or channel actions hand off, re-confirm, or never ask → `references/agent-patterns.md`.
 
 ## One agent vs many
 
@@ -110,9 +111,9 @@ Still lean: if the task list is short and serial, it's a pipeline, not a swarm. 
 
 ## Reliability patterns
 
-- **Adversarial verify** — for a finding or a claim, spawn an independent skeptic prompted to *refute* it. Majority-refute kills it. This is what stops plausible-but-wrong output from surviving.
+- **Adversarial verify** — for a finding or a claim, spawn an independent skeptic prompted to *refute* it. Majority-refute kills it; a refuting vote counts only with a reason quotable from the code. This is what stops plausible-but-wrong output from surviving.
 
-More shapes — grounded/cited RAG, a safety guard that screens for prompt injection before execution, cross-session memory, an eval harness that scores skill-vs-baseline — are in `references/agent-patterns.md`. Six original role definitions and their input/output/tool contracts are indexed by [agent-catalog.md](references/agent-catalog.md). The [original scheduler](references/catalogue/scheduler.md) validates fixed dependency plans and runs them through caller-owned authorization and execution functions; the host still supplies actual delegation, tools and sandboxing. Grounding and memory lean on `fabius-archivum`. The operational tier — scoring an agent on a ground-truth benchmark, surviving long-horizon runs (checkpoint + dual exit gate), acquiring tools via MCP at least privilege, and sandboxing agent-written code — is in `references/agent-evaluation-and-durability.md`. The framework + tool-caller map — agent frameworks per orchestration pattern, the function-calling eval (BFCL / τ²), and open tool-callers with the Llama-community-license trap flagged → `references/agent-frameworks.md`.
+More shapes — grounded/cited RAG, a safety guard that screens for prompt injection before execution, cross-session memory, a standing-job agent that watches declared sources and acts inside a grant, an eval harness that scores skill-vs-baseline — are in `references/agent-patterns.md`. Six original role definitions and their input/output/tool contracts are indexed by [agent-catalog.md](references/agent-catalog.md). The [original scheduler](references/catalogue/scheduler.md) validates fixed dependency plans and runs them through caller-owned authorization and execution functions; the host still supplies actual delegation, tools and sandboxing. Grounding and memory lean on `fabius-archivum`. The operational tier — scoring an agent on a ground-truth benchmark, surviving long-horizon runs (checkpoint + dual exit gate), acquiring tools via MCP at least privilege, and sandboxing agent-written code — is in `references/agent-evaluation-and-durability.md`. The framework + tool-caller map — agent frameworks per orchestration pattern, the function-calling eval (BFCL / τ²), open tool-callers with the Llama-community-license trap flagged, and the live-voice split (a full-duplex front-end over a ruled backend) → `references/agent-frameworks.md`.
 
 **Running an agent on the user's own machine** requires explicit boundaries around user-process authority. Fabius's optional `runtime/` provides file-tool path and secret-pattern checks, opt-in writes/execution, command approval gates, injectable model calls, an authorized execution oracle, and step/estimated-spend limits. Approved subprocesses are not OS-sandboxed; remote model calls transmit context, and the spend estimate is not a provider billing cap. Encrypted messaging uses public relays with allowed senders. The design guide and current implementation limits are in `references/local-agent-runtime.md`; choose actual isolation and provider controls when the task requires stronger boundaries.
 

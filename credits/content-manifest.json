@@ -1,8 +1,8 @@
 {
   "schema": "fabius-local-content/v1",
-  "snapshot_date": "2026-09-10",
-  "source_head": "bbaa94669e4f56df608919c628ec19d66614ec67",
-  "registry_sha256": "26b2fa70408cf5199ca4b4e4d24fdf437afa46e356f0b956e1eb7d6ed8cccc59",
+  "snapshot_date": "2026-09-13",
+  "source_head": "64cf9aaa44af8c3997bf82ad96d84489afe1e330",
+  "registry_sha256": "60d897a25ec9d918ce5b7beb3277987431b7f564596c525f18724ac2a2c03bca",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
   "entries": [
@@ -44,11 +44,11 @@
           "path": "skills/fabius-decor/references/design-critique.md",
           "kind": "file",
           "mode": "0644",
-          "size": 23816,
-          "sha256": "2c695d4082e96c5260540401b9e6f95d508ba6409d887d50f40055c77c8641e3"
+          "size": 24731,
+          "sha256": "f6e3ba63e87cd98ab610bf87269c21c9a791d5499681d4dfeb35b9b8a84daf84"
         }
       ],
-      "local_tree_sha256": "e1eabaf2765a06f9deb72e67a984dd988669f99af7fec77dc7486b5b14989906"
+      "local_tree_sha256": "b153e377a4be8bf4c2741fdd5f414c15a087b463c2ce5e26d18a09246ad8826b"
     },
     {
       "id": "nanoclaw-code-architect",
@@ -159,6 +159,192 @@
         }
       ],
       "local_tree_sha256": "ec2240ef0709c0091bc3a58e89904a8c8d731c422185f0c0fc25f3c24bdcb9ee"
+    },
+    {
+      "id": "system-prompts-leaks-archivum",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius-archivum/references/memory-schema.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-archivum/references/memory-schema.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 10147,
+          "sha256": "4b3adcc20d877904e6c26e324246dc39a270ceb9f1fe7145c16627a151a9ba96"
+        }
+      ],
+      "local_tree_sha256": "44c4162cba741afeda8490a5c8132fdf60d8da2de58fd1b269ccf09d7ec8e254"
+    },
+    {
+      "id": "system-prompts-leaks-cohors",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius-cohors/references/agent-patterns.md",
+        "skills/fabius-cohors/references/agent-frameworks.md",
+        "skills/fabius-cohors/references/local-agent-runtime.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-cohors/references/agent-frameworks.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 27365,
+          "sha256": "78bb8e3c97a9a8ad40a7420021443126d1052b0decf759e29cb22b934f484488"
+        },
+        {
+          "path": "skills/fabius-cohors/references/agent-patterns.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 45090,
+          "sha256": "42d6414246cb7848a305bd81e27c52a7695b8d4d9929cc8062b03b008087006a"
+        },
+        {
+          "path": "skills/fabius-cohors/references/local-agent-runtime.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 30471,
+          "sha256": "f34626025064518cf4b824c0248cc926457445286ced7bcf6349a6574ba655df"
+        }
+      ],
+      "local_tree_sha256": "ada5115237c505fcaea3ea2c9b13075001b6a161b41968c8feca0d7856692221"
+    },
+    {
+      "id": "system-prompts-leaks-decor",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius-decor/references/visual-system-template.md",
+        "skills/fabius-decor/references/icons.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-decor/references/icons.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 13826,
+          "sha256": "e9a452a6e392ef48f96bc436922014ce19cb433a1ffa9c420827efab0266fdda"
+        },
+        {
+          "path": "skills/fabius-decor/references/visual-system-template.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 8828,
+          "sha256": "8a87ede85de364bddaef1e5b2f7f8c96181a428e2698fb0cf0b8ea26d7bdeffd"
+        }
+      ],
+      "local_tree_sha256": "03aa9f882a001e0029171e8a95d9f5fb867520634ec39010faabfc9c2807f3bd"
+    },
+    {
+      "id": "system-prompts-leaks-disciplina",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius-disciplina/references/codebase-and-proof.md",
+        "skills/fabius-disciplina/references/engineering-workflows.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 14228,
+          "sha256": "6ee840bae39110fd24cabb5dcc6b7b29e9b55d5ebe853c8a816e51ec56e80703"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 9657,
+          "sha256": "911b49fa9d266bcfcb644a858aae02025e37ebc5b44151f7811d21634333c5ab"
+        }
+      ],
+      "local_tree_sha256": "820d27d64ca3310c4e06ccad8ed6ad2cfd6fe975e2e9ac01eeafe601460d4f86"
+    },
+    {
+      "id": "system-prompts-leaks-fabius",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius/references/orchestration-doctrine.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius/references/orchestration-doctrine.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 9710,
+          "sha256": "fc08e72ee7885160cdc9e7495adf7333b4757c8073d9de60f8a9c5a71ba10223"
+        }
+      ],
+      "local_tree_sha256": "ea3ee52add6558a993e0ddd905769c7c57ddacaf0530060354fd9edccb52d3f6"
+    },
+    {
+      "id": "system-prompts-leaks-parcus",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius-parcus/references/lean-decisions.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-parcus/references/lean-decisions.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 2488,
+          "sha256": "b3bf4e288db28caad4a1d2bd14063845112c5282093f2a38e76e4d2e0015f019"
+        }
+      ],
+      "local_tree_sha256": "0d300f9bc7b5029aea84a091b33ea62c428f31aac5ea635e408884dfb72dfd49"
+    },
+    {
+      "id": "system-prompts-leaks-praesidium",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "local_paths": [
+        "skills/fabius-praesidium/references/security-playbook.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-praesidium/references/security-playbook.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 18275,
+          "sha256": "0e47d1fc8b0d43a17d037e294ea12a140024e0df802cf959238809dc0e926a60"
+        }
+      ],
+      "local_tree_sha256": "96b0b870802748be0732a2811fb40962c803afdb7ca6e8896e0896e8cd3e7d1c"
     }
   ]
 }

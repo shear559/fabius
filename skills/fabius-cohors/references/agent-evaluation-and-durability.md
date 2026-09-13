@@ -7,11 +7,13 @@ Loaded on demand by `fabius-cohors`. The skill defines and orchestrates agents; 
 **An agent you can't score, you can't improve.** Before you scale a fleet, build a ground-truth benchmark: a labeled task set with expected outputs, scored automatically.
 
 - **The artifact** — a JSON task set: `{ input, expected, check }` per case. `check` is exact-match, schema-match, or a rubric an LLM-judge applies. Run the agent, compute a **pass-rate**, diff against the prior run.
-- **Per-role suites** — a reviewer suite (does it catch the planted bug?), a debugger suite (does it find the real root cause?), an executor suite (does the output match the contract?). One agent, one suite; the suite *is* the spec.
+- **Per-role suites** — a reviewer suite (does it catch the planted bug?), a debugger suite (does it find the real root cause?), an executor suite (does the output match the contract?), a watcher suite for the standing-job shape ([`agent-patterns.md`](agent-patterns.md)) — a state fixture with planted events, non-events and ambiguities, scored on catch rate, false-alarm rate (nagging is a failure), ask calibration, and contract compliance (every act inside a grant, every *done* with its evidence). One agent, one suite; the suite *is* the spec.
 - **The rule** — define the eval *before* scaling. No benchmark → no claim that v2 beats v1; "sounds better" is not a metric (M5, `fabius-disciplina`).
 - **Ecosystem to copy from**: oh-my-claudecode's benchmark suite, gstack evals, ralph-claude-code's 784-test gate. Port the harness shape — labeled set + automated scorer + pass-rate delta — into your stack.
 
 → The eval **is the prove step** for an agent (`fabius-disciplina`). A held-out real-example set, not a vibe check.
+
+Studied (2026-09-13): one vendor's public buyer checklist for personal agents; re-cast as the watcher rubric above, nothing carried.
 
 ## 2. Survive long-horizon runs
 

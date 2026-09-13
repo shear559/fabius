@@ -1,6 +1,6 @@
 {
   "schema": "fabius-upstream/v1",
-  "generated": "2026-09-10",
+  "generated": "2026-09-13",
   "entries": [
     {
       "id": "nanoclaw-code-architect",
@@ -120,6 +120,129 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Fabius Notarius: source-grounded notebook connector over Google's Gemini Notebook (unofficial client). Version from pyproject.toml."
+    },
+    {
+      "id": "system-prompts-leaks-cohors",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-patterns.md",
+        "skills/fabius-cohors/references/agent-frameworks.md",
+        "skills/fabius-cohors/references/local-agent-runtime.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Confirmation classes for UI/channel-acting agents, standing approvals over outward sends, the standing-job shape, the live-voice split and spoken-output standard, screen-acting surface ladder, per-channel principal rule. Compilation is CC0-1.0; the vendor prompts remain their owners' text; mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "system-prompts-leaks-disciplina",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/codebase-and-proof.md",
+        "skills/fabius-disciplina/references/engineering-workflows.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Prove-at-the-surface verdict set, explore-then-ask planning questions, review error-bias declaration and constructible refutation. Mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "system-prompts-leaks-archivum",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-archivum",
+      "fabius_paths": [
+        "skills/fabius-archivum/references/memory-schema.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Declarative preference records with source and why, and the consent gate on protected-category personal facts. Mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "system-prompts-leaks-decor",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/visual-system-template.md",
+        "skills/fabius-decor/references/icons.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Design-system extraction procedure behind the visual-system template and the missing-mark rule. Mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "system-prompts-leaks-parcus",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-parcus",
+      "fabius_paths": [
+        "skills/fabius-parcus/references/lean-decisions.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Two change-economy rows: accounts and a database are off until the request names them. Mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "system-prompts-leaks-fabius",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/orchestration-doctrine.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Host layering: name the fabius file when a fabius-only gate pauses work; decision receipts state defer / concur / add against the host. Mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "system-prompts-leaks-praesidium",
+      "repo": "https://github.com/asgeirtj/system_prompts_leaks",
+      "owner": "asgeirtj",
+      "license": "CC0-1.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/security-playbook.md"
+      ],
+      "pinned_commit": "f475e8b2b11ca7540a37234a451e9f085471bd94",
+      "pinned_version": null,
+      "pinned_at": "2026-09-13",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Agent boundary rows in the STRIDE grid and the unowned-rows corollary in the secure-by-default review. Mechanisms re-expressed, no prompt text carried."
     }
   ]
 }

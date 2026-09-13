@@ -111,7 +111,11 @@ Having a capability and being allowed to fire it are different facts, kept separ
 climb a ladder — **READ → ANALYZE → DRAFT → WRITE → EXECUTE** — and each rung is granted
 separately; drafting a message is not sending it. Irreversible or outward-facing actions sit
 behind explicit approval regardless of rung (the runner's gate holds them even in autonomous
-mode). Least privilege is the default posture, per the cohors schema.
+mode). Authorized work is not re-gated by an inference: only a fabius line that states the pause
+outright can stop it. A pause or refusal a fabius gate — not the host, not the user — does cause is
+written up as a receipt (§11): the file, the line verbatim, and the agent's reading marked as
+reading, not as rule.
+Least privilege is the default posture, per the cohors schema.
 
 ## 10 · Shared context — no stage starts from zero
 
@@ -126,7 +130,11 @@ the proof — nothing re-derives what the run already knows. Across sessions thi
 Every significant routing choice is visible in the run itself: which capability fired and why
 · why this provider · roughly what it cost in steps · the signal that kept research going and
 the one that stopped it. A route must be a documented decision, not a mood — that is what makes a bad
-route debuggable and a good one repeatable.
+route debuggable and a good one repeatable. A pause a fabius gate causes (§9) is itself a receipt,
+and so is a rule left to the host: [`../../fabius-parcus/SKILL.md`](../../fabius-parcus/SKILL.md)
+sets that split — host mechanics are deferred to, and where both carry the same rule the more
+conservative threshold on confirmation, evidence and safety holds; stricter never means fewer
+words, and the never-trim floor is never lowered to a host's looser version.
 
 ## 12 · Learning from execution — routes improve
 
@@ -142,3 +150,5 @@ Scout wide — explore broadly enough to truly understand the problem. Strike na
 only the machinery that materially improves the outcome, and stop exactly when additional work
 stops paying for itself. Not maximum reasoning, maximum agents, or maximum tools:
 **maximum decision quality per unit of complexity, cost, and time.**
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for pause attribution (which file and which line stop authorized work) and the layering of a stance over a host that already enforces part of it, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

@@ -88,17 +88,21 @@ doctrina owns the speech *models* two other skills consume: `fabius-archivum`'s 
 
 **The decision rule, plainly:**
 
-| | **Web Speech** (`SpeechRecognition`) | **Whisper** (hosted or local) |
-|---|---|---|
-| Cost | **free** | **metered** ($0.00051/min on Workers AI) |
-| Latency | **instant, live-interim** — partial text while the user is still talking | needs the finished clip |
-| Text quality | **unpunctuated**, lowercase run-on | **punctuated**, cased |
-| Language | must be declared up front | **auto-detected** |
-| Reach | **Chrome in practice** (Firefox doesn't ship it; Safari's is partial) | **everywhere** — it's an HTTP call |
+| | **Web Speech** (`SpeechRecognition`) | **Whisper** (hosted or local) | **Full-duplex live model** |
+|---|---|---|---|
+| Cost | **free** | **metered** ($0.00051/min on Workers AI) | **two meters** — connected seconds, plus the delegated backend's tokens (snapshot 2026-09-13: `gpt-live-1`, $0.05/min billed per second — *listed price, re-check*) |
+| Latency | **instant, live-interim** — partial text while the user is still talking | needs the finished clip | **turn-taking inside the conversation** — tail latency vendor-reported, 2026-09-13; re-check, not a fabius measurement |
+| Text quality | **unpunctuated**, lowercase run-on | **punctuated**, cased | native transcript, cased |
+| Language | must be declared up front | **auto-detected** | the vendor's list, biased per session — confirm before choosing |
+| Reach | **Chrome in practice** (Firefox doesn't ship it; Safari's is partial) | **everywhere** — it's an HTTP call | a vendor session over WebRTC / WebSocket / telephony |
 
 Live-feel dictation in Chrome → **Web Speech + a polish pass** (`fabius-cohors` owns that wiring and the never-lose-words fallback; doctrina owns the fast-tier model behind the pass). Must work on Safari/Firefox, or must handle a language the caller can't predict → **Whisper**, and pay for it.
 
+**When each shape.** Cascaded — STT → the ruled agent → TTS — when the ruled loop must own every turn and the budget is per token: each stage swaps independently, on-device stays possible, and silence costs nothing. Full-duplex when turn-taking itself is the product — overlapping speech, an interruption that must land mid-sentence, a room the model must hear through — and the backend still runs the rules through delegation (`fabius-cohors` [`agent-frameworks.md`](../../fabius-cohors/references/agent-frameworks.md), *Voice as a live agent*): the live model owns the shell, never the decision. Its bill has two meters — connected seconds, charged while nobody speaks and while the backend thinks, plus the backend's tokens — so bound the session (the wall-clock deadline of cohors [`agent-patterns.md`](../../fabius-cohors/references/agent-patterns.md) *Terminate with a report* is also the billing bound; an explicit close and an idle timeout end it sooner), keep delegations on the cheapest tier that holds (R11), and compare the total against the cascaded chain before choosing the shape. Evaluate a duplex shape as the two instruments `fabius-cohors` separates in [`agent-frameworks.md`](../../fabius-cohors/references/agent-frameworks.md) *Match the instrument to the claim* — the axes are named here, once: the live layer on tail turn-taking latency, interruption / noise / side-talk handling, and transcript fidelity on domain terms and alphanumerics; the backend on the transcript, blind against a control arm ([Evaluate](#evaluate)); then the joint voice task set — a joint number alone cannot say which half regressed, and swapping one half must move only that half's numbers.
+
 - **TTS (text→speech):** permissive-weight open engines — **Kokoro** (Apache-2.0, tiny/fast), **Piper** (MIT, the local default OpenMontage uses), **Chatterbox** (MIT, Resemble AI) — but **verify each weight's license** (many voice models are non-commercial or research-only), and treat voice-cloning as a **consent/impersonation risk** to gate (`fabius-praesidium`), sealable for provenance (`fabius-catena`).
+
+Studied (2026-09-13): one vendor's live-voice launch and pricing pages; an observed product shape, closed product, nothing carried.
 
 ## Cut input-token cost
 

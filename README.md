@@ -122,11 +122,11 @@ These are maintainer-prepared demonstrations, not a user study or a performance 
 | `fabius` | the router — selects layers, machinery and model tier; maintains skill ownership and source-backed refinement |
 | `fabius-parcus` | the always-on lean core — terse output, the YAGNI ladder, surgical change |
 | `fabius-disciplina` | architecture planning/review, state-aware updates, impact-mapped implementation and root-cause debugging |
-| `fabius-decor` | ship-grade design — tokens, one accent, data-viz, decks + infographics, RTL, review against the generated-UI tells |
-| `fabius-cohors` | agent engineering — least privilege, orchestration up to a swarm |
+| `fabius-decor` | ship-grade design — tokens, one accent, a visual-system template captured before building, data-viz, decks + infographics, RTL, review against the generated-UI tells |
+| `fabius-cohors` | agent engineering — least privilege, confirmation by action class for agents that act through a screen or channel, standing-job and live-voice shapes, orchestration up to a swarm |
 | `fabius-archivum` | permissioned memory — canonical records, legacy migration, gated recall and history; video and source-grounded notebooks as sources |
 | `fabius-mercatus` | go-to-market — positioning, converting copy, SEO, draft-only outreach |
-| `fabius-praesidium` | defensive security — STRIDE, OWASP, severity → fix → regression test |
+| `fabius-praesidium` | defensive security — STRIDE (personal-agent boundaries included), OWASP, the terms gate for connected services, severity → fix → regression test |
 | `fabius-ludus` | game craft — core loop first, deliberate juice, jam-sized scope |
 | `fabius-catena` | on-chain + sealing — EVM/Solana money-safety, verifiable provenance |
 | `fabius-machina` | automation — deterministic workflow wiring, verify before it runs live |

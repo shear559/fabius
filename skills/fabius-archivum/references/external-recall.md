@@ -12,7 +12,7 @@ Auto-recall runs only for a workspace that opted in, and capture/compress writes
 
 | Stage | Does | Cost discipline | Output |
 |---|---|---|---|
-| **Capture** | Record raw activity (a decision, a fix, a tool result) as it happens | **Non-blocking** — jot the raw fact, move on | raw event |
+| **Capture** | Record raw activity (a decision, a fix, a tool result) as it happens | **Non-blocking** — jot the raw fact (protected categories excluded, [`memory-schema.md`](memory-schema.md#page-frontmatter)), move on | raw event |
 | **Compress** | AI-summarize the raw event into a small *typed + titled* record (~a few hundred tokens) | Async, off the hot path | `{ title, type, body, ts }` |
 | **Re-inject** | When the recall dial permits, prepend a compact index of matching records | Index only — tens of tokens | context block |
 
@@ -65,7 +65,7 @@ Compression is not housekeeping — it is a **write path that silently mutates s
 
 - a safety / permission **constraint** ("prod only after the migration", "never touch the private key"),
 - a **decision** and the reason for it (so it isn't silently re-opened next session),
-- an **agreement** with the human (a preference, a scope line, a "don't do X").
+- an **agreement** with the human (a *stated* preference, a scope line, a "don't do X") — an inferred preference (`source: inferred`) is not an agreement yet and may decay,
 
 Mark these `[pin]` at capture; a compress step that would drop a pinned record fails loud instead of quietly forgetting. And fire **capture *before* the compaction, not after** — a pre-compaction *lifeboat* (current goal · open threads · next action, ≤5 lines written to the top of the working record) is the cheapest insurance against waking up amnesiac. Don't wait for the compaction event to fire it: flush an **LLM summary** of the session so far when context headroom falls to **~4k tokens** — by the time the harness compacts, the lifeboat is already written. Two guards keep the flush from polluting the store: **semantic dedup** (skip any record whose embedding sits within ~**0.92 cosine** of an existing one — near-duplicates rot retrieval) and a **write cap** per flush (a handful of records, never a dump — a runaway session must not flood the archive). Recovery after compaction is symmetric: **re-inject the recall block on the first post-compaction turn** and **re-search memory** for the current task, because compaction just deleted the context the earlier injection lived in. Everything else is free to decay on its TTL — the capture-side mechanism of the single decay story whose retrieval-side scoring, and the principle behind it, live in [`retrieval-stack.md`](retrieval-stack.md): *record only what is non-inferable and will be reused*, and re-read the **index, not the transcript**.
 

@@ -23,6 +23,13 @@ Adversary:        <who · what access they start with · which asset they want>
 | service → service | | | | | | |
 | user → admin | | | | | | |
 | untrusted file/input → parser | | | | | | |
+| owner command channel (phone / chat identity) → agent | a spoofed principal — allow-list, acting opt-in → cohors [local-agent-runtime.md §9](../../fabius-cohors/references/local-agent-runtime.md) | | | | | |
+| connected account (mail / calendar / chat) → agent | | injection through the content it carries → [guides §9](hardening-guides.md) triage, then structure | | a derived plaintext mirror that outlives the grant → [guides §2](hardening-guides.md) grant lifecycle | | |
+| agent → outward action (send / pay / book) | | | an unjournaled send → cohors [agent-patterns.md](../../fabius-cohors/references/agent-patterns.md) confirmation classes | | | a code read from the inbox completes the agent's own second factor → cohors [agent-patterns.md](../../fabius-cohors/references/agent-patterns.md) hand-off class |
+| agent → acting machine (persistent host) | | | | | | cached credentials on the host → [guides §9](hardening-guides.md) proxy-held secrets |
+| user → vendor contract | | | | data licence · agency clause → [supply-chain §3 step 5](supply-chain-and-ai-artifacts.md) | | |
+
+**The last five rows are agent rows.** Fill them only when the system reads a person's accounts and acts in their name, and only after [guides §9](hardening-guides.md)'s delete-a-leg triage has run — a mailbox agent cannot delete the untrusted-content leg, which is why the rows exist. A plain API keeps the first four. The pre-filled cells are pointers, not mitigations; each still ends in ✅/❌.
 
 **Worked example row (filled — copy this depth):**
 
@@ -55,7 +62,8 @@ Run this over the top risks. Each line is a thing to **verify present**, with th
                              route, deny-by-default, not just hidden in the UI. → guides §2
 [ ] authentication      HOW: log in twice — session id must rotate on login + on privilege change;
                              confirm logout/expiry invalidates server-side; no creds/tokens in URLs
-                             or logs; login is rate-limited + lockout/backoff. → guides §2
+                             or logs; login is rate-limited + lockout/backoff; a revoked
+                             connected-source grant purges its derived copies (read-after-revoke). → guides §2
 [ ] ssrf / unsafe fetch HOW: trace every outbound request built from user input; confirm an
                              allowlist of hosts/schemes and that link-local/metadata IPs
                              (169.254.169.254, 127.0.0.0/8, ::1, RFC-1918) are blocked. → guides §7
@@ -119,6 +127,10 @@ The review pass that catches the common holes. Each is *verify present / prove c
 [ ] No secret in the artifact         — §3 holds
 [ ] Safe-by-default config            — debug off, headers on, errors generic, dir-listing off  → guides §1
 [ ] Idempotent + replay-safe          — state-changing requests carry a nonce/idempotency key where it matters
+[ ] Rows nobody owns are public       — without identity there is no per-user access control: anyone who reaches
+                                        the endpoint reads and rewrites every row. No personal or sensitive field
+                                        lives there, and no single route wipes or rewrites the whole table; once
+                                        accounts exist, the §2 access-control item and §6's worked finding apply
 ```
 
 `fabius-parcus` owns the *never-trim* floor (don't cut validation/auth/security to save effort); praesidium names *what* to check and *proves* it closed. Don't add a control no adversary model justifies (parcus: *does it need to exist?*) — but never drop below the floor.
@@ -183,5 +195,9 @@ The proof is the line that separates praesidium from a checklist. Prove-before-d
 | Dependency + supply-chain audit (npm/pip/cargo) | §6 |
 | Secrets + cloud IAM least-privilege | §6–7 |
 | Quick-hardening a Node/Python/static/Worker stack | §8 |
+| Threat-modelling or containing an agent — one that runs code, or one that reads a person's accounts and acts outward | §9 (delete-a-leg triage first), then the agent rows in §1 above |
+| Securing a stateless LLM chat route where the client resends the transcript | §10 |
 
 Query the index for the **one** guide the task needs and page it; never load the library wholesale (`fabius-parcus`; routing-policy R9 · M9). Everything stays defensive — guides to *harden and detect*, never to attack. The never-trim floor is `fabius-parcus`; the test discipline is `fabius-disciplina`; agent least-privilege is `fabius-cohors`.
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the unowned-rows corollary of a store without accounts and the trust edges of an agent acting on a person's accounts, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

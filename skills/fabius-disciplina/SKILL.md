@@ -56,7 +56,7 @@ Performance work needs a fixed workload, repeated measurements and one isolated 
 
 Recheck the accepted scope against the diff and run the affected behaviors on the combined tree. Read back a written record, inspect the rendered DOM, verify a returned artifact or execute the relevant program. Successful transport or exit status alone does not prove the requested state.
 
-For a UI, verify the actual environment and interaction, with console and network failures captured. Query semantic state and computed visibility; inspect screenshots for visual questions. Native app checks use [simulator-verify.md](references/simulator-verify.md). Larger codebase and browser proof workflows use [codebase-and-proof.md](references/codebase-and-proof.md).
+For a UI, verify the actual environment and interaction, with console and network failures captured. Query semantic state and computed visibility; inspect screenshots for visual questions. Native app checks use [simulator-verify.md](references/simulator-verify.md). Larger codebase and surface proof workflows use [codebase-and-proof.md](references/codebase-and-proof.md). Prove at the surface where a user meets the change — terminal, request, driven session or public package boundary — and return one verdict: pass, fail, blocked or skip; a partial or ambiguous result is a fail with its capture attached.
 
 Check the strength of the evidence as well as its color: where practical, an old-behavior or mutation control should break the relevant assertion. Investigate suspicious runner output before accepting its verdict. State missing or skipped checks explicitly.
 

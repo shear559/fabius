@@ -18,7 +18,7 @@
           },
           {
             "name": "fabius-cohors",
-            "description": "Agent engineering: discover actual harness capabilities, define bounded roles and permissions, select single or multi-agent execution, and verify effective permissions after lifecycle changes."
+            "description": "Agent engineering: discover actual harness capabilities, define bounded roles and permissions, confirm by action class when an agent acts through a screen or channel, select single or multi-agent execution, and verify effective permissions after lifecycle changes."
           },
           {
             "name": "fabius-concilium",
@@ -26,7 +26,7 @@
           },
           {
             "name": "fabius-decor",
-            "description": "Ship-grade design: token vocabulary, the laws separating amateur UI from shipped UI, data-viz, diagrams, images, icons, motion, RTL, and design review against the generated-UI tells."
+            "description": "Ship-grade design: token vocabulary, a visual-system template captured before building, the laws separating amateur UI from shipped UI, data-viz, diagrams, images, icons, motion, RTL, and design review against the generated-UI tells."
           },
           {
             "name": "fabius-disciplina",
@@ -58,7 +58,7 @@
           },
           {
             "name": "fabius-praesidium",
-            "description": "Defensive security: threat-model first, OWASP pass, secrets and least-privilege hygiene, supply-chain checks — every finding ships a fix."
+            "description": "Defensive security: threat-model first, OWASP pass, secrets and least-privilege hygiene, supply-chain and connected-service terms checks — every finding ships a fix."
           },
           {
             "name": "fabius-scientia",
