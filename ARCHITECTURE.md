@@ -73,6 +73,12 @@ Each rule has exactly one owning layer; every other layer references it instead 
 | Agent-system evaluation — ground-truth benchmarks, long-run durability (the *model* an agent calls is evaluated one row up) | `fabius-cohors` |
 | Market & economic analysis, valuation, honest backtesting, risk/position sizing | `fabius-fortuna` |
 | Cross-model council — first opinions, blind peer-review, chairman synthesis | `fabius-concilium` |
+| The reporting shape for a reader who must act, and the qualifier keep-test (mercatus applies it to a user's draft by pointer) | `fabius-parcus` |
+| The prose tell lint and verdict-free audit of a draft; the existing-site SEO audit method (its fetch pacing is `fabius-machina`'s) | `fabius-mercatus` |
+| From a judge's score to an action — closed questions, a veto is a condition never a weight, floor → class → bar; eval-arm isolation (the router keeps frozen copy and holdout) | `fabius-doctrina` |
+| The generated-media request — source mode, preflight, cost before run, the provenance row (async paid-job wiring is `fabius-machina`'s) | `fabius-decor` |
+| Audit closure states and the cleared-surface record; the likeness and voice consent gate (decor, cohors and doctrina point to it) | `fabius-praesidium` |
+| A policy refusal is terminal — never resubmitted unchanged, reworded past the filter, or rerouted to a looser provider (decor keeps only the media report) | `fabius` |
 | Agent-shape catalog, wiki schema (the deep references) | `fabius-cohors` / `fabius-archivum` `references/` |
 
 `fabius-parcus` keeps the *never-trim* security floor (don't cut validation/security); `fabius-praesidium` owns the *active* security work (model the threat, name the check, prove it closed) and references that floor instead of restating it — single owner on each side of the line.
@@ -83,19 +89,20 @@ Each rule has exactly one owning layer; every other layer references it instead 
 
 ```
 prompt → fabius (router)   ── classify Memory/Tools/Planning + Domain; choose machinery + tier
-         ├─ any output / any code         → fabius-parcus      → references/lean-decisions.md
+         ├─ any output / any code         → fabius-parcus      → references/lean-decisions.md · references/reader-fit-reporting.md
          ├─ build / fix / refactor / plan  → fabius-disciplina  → references/engineering-workflows.md · scripts/evidence.mjs
          ├─ UI / design / brand            → fabius-decor      → references/design-system.md · scripts/design.mjs
          ├─ chart / graph / diagram        → fabius-decor      → references/visualization.md (figura entry)
+         ├─ generate an image / a video    → fabius-decor      → references/generative-imagery.md · references/generative-media.md
          ├─ build / orchestrate agents     → fabius-cohors     → references/agent-patterns.md · references/agent-catalog.md
          ├─ remember / knowledge base      → fabius-archivum   → references/memory-schema.md · scripts/retrieval.mjs
-         ├─ copy / launch / positioning    → fabius-mercatus   → references/marketing-playbook.md · corpus slot
+         ├─ copy / launch / positioning    → fabius-mercatus   → references/marketing-playbook.md · references/prose-tell-lint.md · references/seo-audit-method.md · corpus slot
          ├─ secure / threat-model / audit  → fabius-praesidium → references/security-playbook.md · references/ai-review.md · corpus slot
          ├─ game / loop / juice / playable → fabius-ludus      → references/game-playbook.md · corpus slot
          ├─ on-chain / smart contract / seal → fabius-catena   → references/onchain-playbook.md · references/sealing.md
          ├─ automation / workflow system / webhook workflow → fabius-machina → references/automation-playbook.md
          ├─ science / bio / hypothesis     → fabius-scientia   → references/science-playbook.md
-         ├─ serve / eval / train a model   → fabius-doctrina   → references/ml-engineering-playbook.md
+         ├─ serve / eval / train a model   → fabius-doctrina   → references/ml-engineering-playbook.md · references/judgment-models.md · references/hosted-model-tier.md
          ├─ stock / market / econ / backtest → fabius-fortuna   → references/markets-and-quant-playbook.md
          └─ council / ask several models     → fabius-concilium → references/council-protocol.md · references/council.mjs
 ```

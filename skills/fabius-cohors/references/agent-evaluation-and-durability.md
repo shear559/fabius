@@ -26,6 +26,7 @@ A loop that exceeds one context window is a different machine. **A long autonomo
 - **Dry-run mode** — a no-write rehearsal that proves the plan before the loop touches anything real.
 - **Dual exit gate** — stop on **done OR no-progress**. A loop that can only exit on "done" never exits when it's stuck. Cap retries (~3), then escalate to a human (M4, `fabius-disciplina`).
 - **Resume must not re-run a completed side effect.** Restarting is the moment a run duplicates the email it already sent, the row it already inserted, the release it already cut. Checkpoint the *effect*, not just the plan.
+- **Cap the tool calls one response may queue.** The harness executes at most N tool calls from a single model response and trims the rest before the turn is recorded — no call is left unanswered (the partial-batch law, [`agent-patterns.md`](agent-patterns.md)) — so the model decides again on fresh observations. Uncapped, one runaway generation scripts a long wait-and-check sequence in advance and the agent acts blind until it ends.
 - **Ecosystem to copy from**: ralph-claude-code (resume, checkpoint, git-backup, log-rotation, dry-run, the done-or-no-progress gate). Take the durability scaffolding; keep your own agent definition.
 
 **Or attach an engine instead of hand-rolling the scaffolding.** Durable execution is a tier you bolt onto an agent now. The engine journals each completed step and replays the journal on restart, so a resumed run *replays* the tool calls it already made instead of re-issuing them — the rule above, enforced by the runtime rather than by the operator's memory. **Temporal, DBOS and Prefect attach directly to a Pydantic-AI agent** (Restate integrates through its own SDK); **DBOS wraps an OpenAI-Agents runner** with `@DBOS.workflow` / `@DBOS.step` and needs only Postgres — SQLite in development — so there is no new infrastructure to stand up; **LangGraph** has the property natively through checkpointers plus an explicit durability setting. Reach for the engine when the run is long, asynchronous, or human-gated. Keep the hand-built checkpoint only when adding a database is genuinely the heavier cost.
@@ -44,6 +45,25 @@ Running agents in bulk over a provider, raw harness/provider failures must be cl
 - **Retry-After arrives in four dialects** — milliseconds, seconds, header dates, and "try again at *date*" phrasing — parse all four, clamped to per-code maxima. With no hint: exponential backoff base·2^(attempt−1), capped, with 0.8–1.2 jitter.
 - **Account-quota exhaustion gets a long fixed resume delay with persistent re-probing** — quota windows often replenish before the advertised deadline; do not trust the provider's clock.
 - **Injection hygiene.** The operator-facing message is a FIXED safe string per code, never echoed provider text — an upstream error body is untrusted input that would otherwise flow into human eyes or a log (`fabius-praesidium`).
+
+**The code also decides what is benched** — the smallest unit the failure is evidence about: the request, the credential, the model, the allowance, the endpoint — never more.
+
+| Code class | Benched |
+|---|---|
+| execution timeout · upstream 5xx | nothing alone — adds to a provider-wide failure count that pauses the provider past a threshold |
+| failed auth | that credential — surfaced to the operator |
+| invalid request: unknown model id | that model id |
+| rate limit · quota | the allowance it names, with every model drawing on it — until the resume time set above (quota: the long fixed resume) |
+| network fault · invalid output | that one target (endpoint + model) |
+
+**Boundary:** a limit is honoured — rotating sibling keys or accounts around a provider's limit is forbidden.
+
+- **Terminal outranks transient.** Revoked, deactivated, credits exhausted: never overwritten by a cooldown, cleared only by a credential change or an operator reset. Oversize, over-context and unsupported input are terminal too — rejected at submission with a typed error, never queued; a never-retry list keyed on exception type is dead code once an inner layer catches the error first — know which layer owns the retry decision.
+- **Recovery** is timer expiry OR successes walking the failure count down; N parallel failures raise the backoff level once.
+- **Re-class before classifying.** A quota message delivered under a non-retryable status is re-classed by a declarative rule applied before classification, with an exclusion list for permanent errors. An error inside a 200 stream needs its own path.
+- **A request may be held across a short cooldown** under max-wait, max-attempts and a total budget — never for quota, auth or an unknown model: those fail now.
+- **Two timeout codes** — queue-wait expiry (our saturation — benches nothing) and execution expiry (upstream slow); the clocks: [`hosted-model-tier.md`](../../fabius-doctrina/references/hosted-model-tier.md).
+- **Chain exhausted → one `{target, code}` per target, in chain order**, auth · request/model · provider classes distinct. A single last-error string is last-writer-wins and pins one target's fault on another. Credential and account identifiers are stripped from the client-facing form.
 
 For the swarm's own durability — shared task list as source of truth, coordinator reassigning stalled work — see SKILL.md and `references/agent-patterns.md`.
 
@@ -97,3 +117,5 @@ A single agent source can target many harnesses — Cursor, Codex, Gemini, Copil
 ---
 
 These four — eval, durability, MCP tooling, sandboxing — apply *on top of* a well-defined agent. They never replace the definition or the orchestration pattern; a fast, durable, well-tooled agent with a vague `description` and no output contract is still a bad agent. Define it first (SKILL.md), then make it measurable and survivable. Deterministic no-code wiring of any of this → `fabius-machina`.
+
+Informed by **OmniRoute** (diegosouzapw, MIT) — studied for failure-scoped benching, status re-classing before classification, split timeout codes and the per-target chain-failure report (that repo's provider-limit evasion, client impersonation and account pooling deliberately not carried); and **open-notebook** (lfnovo, MIT) — studied for submission-time rejection of terminal input and the never-retry list that never fires; and **strix** (usestrix, Apache-2.0) — studied for bounding how many tool calls one model response may queue; re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

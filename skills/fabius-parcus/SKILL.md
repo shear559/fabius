@@ -29,6 +29,8 @@ Use ordinary complete prose when explaining a risk, asking for a consequential d
 
 `ultra` requests shorter presentation; it does not remove required reasoning, verification or functionality. Code, documentation and commit messages retain the conventions of their audience, and the closing message fits the reader's channel: no step, path or address they cannot reach from where they sit, and only the markup their surface renders.
 
+Reports a reader must act on — unknown-cause slot, position line, single closing action, withheld counts, side findings → [reader-fit-reporting.md](references/reader-fit-reporting.md).
+
 ## Build less
 
 Before introducing a new implementation, inspect the nearest existing one. Prefer a current helper, the standard library or a platform feature when it meets the requirement. Add a dependency only for a demonstrated gap and inspect its maintenance and licensing fit.

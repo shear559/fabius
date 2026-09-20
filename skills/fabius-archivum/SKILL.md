@@ -9,7 +9,7 @@ description: >
   routes. Provider changes do not require moving records when the store is already shared.
 when_to_use: >
   "what did we decide last time", "save this for later", "set up project memory", "index the
-  vault", before work on a project that already has a record, "watch this video", "what does this recording show", "ask my sources", or before
+  vault", before work on a project that already has a record, "watch this video", "what does this recording show", "ask my sources", "turn a book or long document into a knowledge pack", or before
   redoing research a past session covered, "migrate memory", "consolidate legacy notes".
 license: UNLICENSED
 metadata:
@@ -50,7 +50,7 @@ Two navigation files keep hundreds of pages tractable:
 
 ## When to add vector retrieval
 
-Index + grep handles a few hundred pages — the lazy default (`fabius-parcus`: *does the vector store need to exist yet?*). Add a dense index only once the corpus outgrows symbolic search, or queries turn semantic rather than keyword. Then retrieval is **hybrid**: narrow symbolically first, dense-rerank only that slice. Detail → `references/memory-schema.md`.
+Index + grep handles a few hundred pages — the lazy default (`fabius-parcus`: *does it need to exist yet?*). Dense index only once the corpus outgrows symbolic search, or queries turn semantic. Then retrieval is **hybrid**: narrow symbolically first, dense-rerank only that slice. Detail → `references/memory-schema.md`.
 
 ## The loop that compounds
 
@@ -58,7 +58,7 @@ Index + grep handles a few hundred pages — the lazy default (`fabius-parcus`: 
 ingest (write) → index (catalog/embed) → query (read, cite, file back) → lint (maintain) → ↺
 ```
 
-Inside the write boundary, the agent handles summarizing, cross-referencing, filing, and consistency checks. Schema and line formats → `references/memory-schema.md`. For ranked local excerpts, use original `scripts/retrieval.mjs`: explicit files, BM25, cited lines, and content-based stale rejection; no packages or model calls. Usage and limits → `references/local-retrieval.md`; larger retrieval choices → `references/retrieval-stack.md`. Meeting capture → `references/meeting-capture.md`.
+Inside the write boundary the agent summarizes, cross-references, files, and checks consistency. Schema/line formats → `references/memory-schema.md`. Ranked local excerpts: original `scripts/retrieval.mjs` (explicit files, BM25, cited lines, content-based stale rejection; no packages or model calls). Usage/limits → `references/local-retrieval.md`; larger choices → `references/retrieval-stack.md`. Meeting capture → `references/meeting-capture.md`. Book-length source → `references/source-distillation.md`.
 
 ## Cross-session memory — the project record
 

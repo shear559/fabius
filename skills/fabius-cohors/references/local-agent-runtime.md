@@ -68,6 +68,13 @@ Three shapes, in order of how much you should want them:
    channel listener, a scheduler, a UI. Bind to `127.0.0.1` on an ephemeral port, and
    require a token even so: `localhost` is not a trust boundary on a shared machine, and a
    browser tab on any origin can reach an unauthenticated local port.
+   A route that installs software, spawns a process, loads plugin code or changes system
+   network state is local-only: the classification is fixed in code, and the locality
+   test runs FIRST — ahead of every credential check — on the connection's peer address,
+   never a header; unknown is remote. A same-host tunnel or reverse proxy makes every
+   request look local: there the control is the bind address plus refusing requests with
+   forwarding headers. A CI gate derives the route list from the filesystem and a scan
+   for process-spawning imports, and fails on an unclassified route.
 3. **A desktop shell wrapping that server** (Tauri or Electron), when non-technical users
    are the point. Now you have signing, notarisation, auto-update, and a supply chain —
    which is to say, you have a product, not a tool. Do not take this step to be impressive.
@@ -240,9 +247,10 @@ cancel each redirect's body, or the sockets stay held.
 
 State the residual rather than hiding it: the name is resolved once for the check and again
 for the connection, so a hostile name on a short TTL can answer public the first time and
-link-local the second. Closing that needs the checked address pinned into the socket, which
-`fetch` does not expose. What is here defeats a static private target and a redirect to one
-— one layer, honestly labelled.
+link-local the second. Closing that needs the checked address pinned into the request, which
+`fetch` does not expose; a client that can pin follows
+[`hardening-guides.md`](../../fabius-praesidium/references/hardening-guides.md) §7. What is
+here defeats a static private target and a redirect to one — one layer, honestly labelled.
 
 ## 5. Non-interactive runs must not hang
 
@@ -466,4 +474,4 @@ Before calling a local runtime finished:
 - [ ] The seal is reported, and a mode exists that refuses anything outside the sealed set.
 - [ ] The child process dies with its parent — verified by killing the parent, not by reading the code.
 
-Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the API → DOM → pixels surface ladder, per-application interaction tiers, link inspection before navigation, the two-hosts path rule, the hand-off of credential steps, and the verified-principal-per-channel rule, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the API → DOM → pixels surface ladder, per-application interaction tiers, link inspection before navigation, the two-hosts path rule, the hand-off of credential steps, and the verified-principal-per-channel rule; and **OmniRoute** (diegosouzapw, MIT) — studied for locality-before-authentication on process-spawning routes and the filesystem-derived route-classification gate; re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

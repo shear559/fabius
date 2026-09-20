@@ -150,6 +150,8 @@ Severity sets order *and* the ship decision. Rate by **impact × reachability** 
 
 **Ship-stopper rule:** a **critical** anywhere, OR a **high** at a trust boundary that crosses a privilege line, blocks the ship. Everything else is scheduled, not blocking. When uncertain between two levels, rate up and say why — under-rating a reachable hole is the expensive mistake.
 
+**Severity is the last call** — set after the weakness is proven and the candidate has survived §7. The rate-up tie-break above covers one doubt only: how far a *proven* weakness reaches. Where the higher level rests on steps nobody demonstrated, rate what was demonstrated. Starting access the adversary must already hold is written into **Risk** and counts against the level; a limit moves the level with its reason (disciplina's *narrowed*) and the finding stays in the report; not knowing a route's exposure belongs in the confidence figure, never in the level.
+
 ---
 
 ## 6. The finding format — severity → fix → proof
@@ -181,9 +183,38 @@ A finding isn't closed until it's **proven** closed. Every issue ships as the tr
 
 The proof is the line that separates praesidium from a checklist. Prove-before-done is `fabius-disciplina`'s discipline; praesidium supplies the security-specific evidence — a test that encodes the bad input and asserts it now lands inert / denied.
 
+**An applyable patch is a stronger claim than a finding — gate it.** In order, stop at the first failure, mark each gate `executed` or `reasoned`:
+
+1. **The property** — before the edit, write the rule the code must keep: who may do what, to which object.
+2. **The broken link** — say which link of input → control → sink no longer holds. "A check was added" names no link.
+3. **Attack your own patch cold** — set the fix's rationale aside and look for what it skipped: other callers, equivalent sinks, a second class of input.
+4. **The legitimate path still works** — run it on the patched build. Always `executed`: a feature broken by hardening is rolled back by whoever owns it, and the weakness ships again.
+
+**A patch clears only if** its control sits ahead of the effect, holds without anyone opting in, fails closed and lowers no neighboring control. Cannot clear a gate → withhold the patch, remedy in prose, name the gate. Clean application, untouched neighbors and repo checks → `fabius-disciplina` ([codebase-and-proof.md](../../fabius-disciplina/references/codebase-and-proof.md)).
+
 ---
 
-## 7. Routing — when to page the deep library
+## 7. Fabius Quaestor — closure, and the cleared-surface record
+
+An audit pass ships a second artifact beside §6's findings: a row for every surface opened × risk class, each carrying one of five states. A candidate nobody finished is **unresolved**, not closed; **no row = unexamined, never clean.**
+
+| State | Valid only with |
+|---|---|
+| **proven** | a §6 finding |
+| **disproved** | a specific candidate AND a named control — where it lives, observed on THIS path, ahead of the effect, failing closed |
+| **unresolved** | the missing evidence, named — also any candidate under [ai-review.md](ai-review.md)'s reporting threshold. Never reached a state to observe it → disciplina's **BLOCKED** |
+| **not applicable** | one line on why the risk class cannot exist here — held to disciplina's **SKIP** strictness, but a closed row: it does not make the record `incomplete` |
+| **examined — nothing arose** | a note of what was looked at — cohors's stub contract ([agent-patterns.md](../../fabius-cohors/references/agent-patterns.md)) |
+
+**Anything less leaves the candidate unresolved** — a guard seen elsewhere, a guard that may not run or runs too late, a gap in what you could learn. Limited exposure moves the level (§5), never the row. Through disciplina's verifier ([engineering-workflows.md](../../fabius-disciplina/references/engineering-workflows.md)): proven = its *confirmed*, disproved = its *discarded* held to this stricter bar; the last two states exist only in this record.
+
+**Paired check** (authorized target only): a refusal counts as evidence only if the same route, at the same time, serves a normal request — otherwise you have measured an outage.
+
+**Two accounts, kept apart.** The reviewer's account is labelled separately from what the harness observed (who ran, how they ended, what they were equipped for). Harness facts only *contradict*, never confirm: equipped for a risk class with no row → not examined (a heuristic match; say so). A run cut short, or any unresolved / BLOCKED row, marks the record `incomplete` — disciplina's ledger word (codebase-and-proof.md, linked in §6) — and never upgrades a claim.
+
+---
+
+## 8. Routing — when to page the deep library
 
 | You're doing… | Page in (one slice) |
 |---|---|
@@ -197,7 +228,10 @@ The proof is the line that separates praesidium from a checklist. Prove-before-d
 | Quick-hardening a Node/Python/static/Worker stack | §8 |
 | Threat-modelling or containing an agent — one that runs code, or one that reads a person's accounts and acts outward | §9 (delete-a-leg triage first), then the agent rows in §1 above |
 | Securing a stateless LLM chat route where the client resends the transcript | §10 |
+| A public route that spends the owner's money upstream (paid API, model call) | §11 |
+| Closing an audit — what disproves a candidate, and the record of what was cleared | §7 above (this file) |
+| Transferring a real person's face, voice or motion | [supply-chain-and-ai-artifacts.md](supply-chain-and-ai-artifacts.md) §8 |
 
 Query the index for the **one** guide the task needs and page it; never load the library wholesale (`fabius-parcus`; routing-policy R9 · M9). Everything stays defensive — guides to *harden and detect*, never to attack. The never-trim floor is `fabius-parcus`; the test discipline is `fabius-disciplina`; agent least-privilege is `fabius-cohors`.
 
-Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the unowned-rows corollary of a store without accounts and the trust edges of an agent acting on a person's accounts, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the unowned-rows corollary of a store without accounts and the trust edges of an agent acting on a person's accounts; and **strix** (usestrix, Apache-2.0) — studied for settling severity after reachability, the gates on an applyable security patch, what may count as disproving a candidate, and a record of examined surfaces kept apart from harness observations; re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

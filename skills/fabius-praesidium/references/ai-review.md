@@ -23,6 +23,8 @@ Report a finding only at **≈0.8+ confidence of *true* exploitability**. This i
 
 The threshold is **tuning, not law** — expose it as a config input per project. The 0.8 default is a point-in-time choice (early 2026); a high-stakes codebase may lower it, a noisy one may raise it.
 
+**Dropped from FINDINGS is not cleared.** In an audit pass the dropped candidate goes to the cleared-surface record as **unresolved**, missing evidence named ([security-playbook.md](security-playbook.md) §7).
+
 ## The exploit_scenario field self-enforces the gate
 
 Every finding **must** carry an `exploit_scenario` — a plausible, concrete path from attacker input to impact. If you can't write one, it is **not a finding**. This single required field does most of the gating work: a model that has to author the exploit path will drop the maybes on its own, because it can't fabricate a path that doesn't exist.
@@ -116,8 +118,18 @@ Ship it as a **customizable review command**, not a frozen binary. Make tunable,
 
 These are inputs, not constants. The technique is the gate + the exclusion rules + the two-stage ordering; the numbers are a point-in-time snapshot (early 2026) you re-tune per codebase. Any false-positive rates or detection numbers cited upstream are **reported by the upstream project**, not measured by fabius.
 
+### Run repeatedly in CI
+
+- **Identity across runs is derived only from facts a re-run reproduces** — what class of weakness, where in the tree, reached how — never from wording the model wrote. Dedupe on that identity first, deterministically; only the residue goes to cohors's clustering pass ([agent-patterns.md](../../fabius-cohors/references/agent-patterns.md)). A line-based identity drifts under unrelated edits; say so. Never carry a dismissal to a different location on class alone.
+- **A malformed location is counted, never silently dropped.** No code location → rejected at the boundary (cohors's Evidence rule, same file) and counted in the run summary; a dependency advisory is keyed by its manifest path instead. An absolute, URL-like or parent-traversing path → refused, counted.
+- **Dependencies match before any model is asked** — on the advisory and the exact declared dependency, manifest included.
+- **Three exits — clean · findings · run failed.** An incomplete run is never reported clean.
+- Optional schema field: which one missing observation would move the rating, and in which direction.
+
 ---
 
 See the owning skill (../SKILL.md) §7 for the contract, and [CORPUS.md](../../../CORPUS.md) for where this library sits in the index.
 
 Adapted from Anthropic's claude-code-security-review (MIT) — re-expressed in fabius's own voice.
+
+Informed by **strix** (usestrix, Apache-2.0) — studied for prose-independent finding identity across repeated runs, counted rejections and the meaning of a review gate's exits; re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

@@ -2,7 +2,7 @@
 
 The on-demand depth for `fabius-decor`'s generative-imagery concern. The skill is the contract; this is how you run it. Scout wide, strike narrow — a prompt is a structured slot fill, not a wish.
 
-This obeys every `fabius-decor` law (one accent of intent, restraint, no padding). It is prompt craft, not a second design owner.
+This obeys every `fabius-decor` law (one accent of intent, restraint, no padding). It is prompt craft and the request around a still, not a second design owner. Video and the paid request → [`generative-media.md`](generative-media.md).
 
 ## The slot model
 
@@ -19,6 +19,12 @@ Model the prompt as **ordered slots**, not a sentence. Order matters — image m
 | technical / quality | optional | camera, lens, bokeh, resolution. Add when it earns its place. |
 
 Rule: fill every **required** slot with an intelligent default even when the user is silent; leave **optional** slots empty rather than padding noise. An empty optional slot is signal — a filler one is drift.
+
+### What the endpoint does to the prompt
+
+- **Server-side prompt rewrite.** Check the live schema for a rewrite flag and its default. Its effect is undocumented: decide on or off deliberately and record which — off when the slot order must reach the model unchanged.
+- **No seed exposed** → never promise a reproducible or near-identical re-render. Record the provenance row ([`generative-media.md`](generative-media.md) §5); choose a seed-bearing endpoint when iterating one composition is the job.
+- Negative-prompt and guidance controls exist on some endpoints only — read the schema, never assume them.
 
 ## Lighting is mandatory
 
@@ -91,6 +97,13 @@ grouped under named moods:  warm/cute · modern/minimalist · …
 
 Pick a mood, draw from its range — recombinable and consistent, never a one-off hex pulled from the air. This is the imagery cousin of the decor token contract ([../SKILL.md](../SKILL.md)): name it once, reference it everywhere.
 
+## Sizing — ratio to pixels
+
+Decide from the schema: a ratio ENUM, or integer width/height each with `{min, max, step, default}`.
+
+- **Enum** — send the ratio only if it is listed. A ratio the user set that is not listed → "not available" ([`generative-media.md`](generative-media.md) §3). An unset ratio falls to the model default — say so.
+- **Dimensions** — reduce the ratio by its gcd to `(rw, rh)`. Each side's scale must be a multiple of its step ÷ gcd(step, its ratio term); the legal scales are the common multiples of the two, so both sides land on their step grid. Aim for the scale whose area matches the schema default's (default width × default height), rounded to that lattice — the reason *(ours)*: a ratio change should not quietly change area and cost. Clamp between the smallest scale meeting both minimums and the largest meeting both maximums. Min > max → remove the ratio from the options; never approximate it.
+
 ## Completeness checklist — before returning a prompt
 
 - [ ] **Subject identity** present and intact (not overwritten by a style word).
@@ -109,3 +122,7 @@ Element counts the repo reports (e.g. ~1,246 elements, early-2026 snapshot) are 
 Pairs with `fabius-parcus` (no padded slots — the smallest prompt that lands the image) and [`visualization.md`](visualization.md) for the tokenized color rules shared with charts. No separate Figura palette library is bundled.
 
 Adapted from huangserva/skill-prompt-generator (MIT) — re-expressed in fabius's own voice.
+
+Studied (2026-09-20): a hosted multi-model image-and-video generation API — its vendor-published interface description (a commercial product; nothing carried) — observed for a prompt-rewrite flag and its default, absent seeds and per-endpoint guidance controls; no value, name or sentence taken.
+
+Informed by **Open-Generative-AI** (Anil-matcha, MIT) — studied for the enum-or-dimensions sizing fork and the step-lattice ratio solver, re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

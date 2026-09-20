@@ -58,6 +58,8 @@ Fail any step → don't adopt, or quarantine until it passes. Severity and the f
 
 The split gates **code execution only**. An enabled-but-untrusted artifact still puts its prompt components in front of the model — skills and commands remain a §1 exec/data/net/creds surface and a prompt-injection vector (`references/ai-review.md`); trust-gating the hooks does not sanitize the text.
 
+**A pack you generated inherits its source's trust.** Distilled from an untrusted document, it stays untrusted until a person has reviewed it; nothing loads or ships it first. Generated frontmatter that grants tools or switches on automatic invocation is a finding: a knowledge pack needs neither. A pattern scan is advisory matching on adversary-controlled text, never the control ([hardening-guides.md](hardening-guides.md) §9); narrow a rule that fires on the whole legitimate category — per rule, after measuring — because an always-tripping gate gets overridden. An incomplete scan (oversize, too many files, undecodable) is its own state — not pass, not findings — naming the files it did not open. Escape untrusted file names before printing. A hit ends the run: the location goes to a person, and the generator does not "repair" its own output. Symlinks → hardening-guides §9(a).
+
 ## 4. MCP servers are a privileged trust grant
 
 An MCP server is not a library — it is a process you hand tools and tokens to, that the model then drives. Audit it as the most privileged thing in the chain:
@@ -106,13 +108,27 @@ Tool names and versions here are a **point-in-time snapshot (early 2026), not la
 
 **Job A — invisible-character hygiene (defensive, always-on).** Its deterministic, stdlib-only pass strips zero-width chars, bidirectional marks, Unicode tag chars, and exotic whitespace. That is **exactly the Trojan-Source / bidi-override / homoglyph class** — invisible codepoints that make source read one way and compile another. Stripping them from code and prose you ship is a **correctness + anti-Trojan-Source hardening gate**, not hygiene theater. **fabius runs this strip on generated code and text before shipping** — a standing output gate under `fabius-disciplina` (verify-before-ship) and `fabius-parcus` (always-on floor). This is the capability to use regularly; it never asks "will a detector fire."
 
-**Job B — metadata/privacy strip on content you own.** Remove C2PA / EXIF / XMP / document-properties across images and docs (PNG/JPEG/WebP/AVIF/HEIC/PDF/DOCX/EPUB/ODT/HTML/MD) via optional `exiftool` / `qpdf` / `c2patool`. Gotcha: **a PDF's metadata is not truly gone until qpdf does a structural rebuild** — a properties wipe leaves it recoverable in the file body. The honest case is your own EXIF GPS/device trail. Owned content only.
+**Job A, input side — strip on INGEST.** Untrusted document text loses its non-rendering code points on the **model-bound copy**, before the model reads it; report the count. Dropping category `Cf` is not enough: blank-rendering filler letters (`Lo`; a whitespace collapse does not touch them, because they are letters) and variation selectors plus the combining grapheme joiner (`Mn`; able to carry a byte payload) sit outside it. Interlinear-annotation, musical-format, deprecated-format, tag-block, zero-width and bidi controls ARE `Cf` — hand-written lists still omit them. Verify every class with `unicodedata` before writing the set; stripper and detector share ONE predicate. Scope: the ingest copy and source code — never the stored raw source, never authored RTL output, where the isolates in decor's [rtl-bidi.md](../../fabius-decor/references/rtl-bidi.md) are intentional. Joiners and directional marks carry meaning in Persian, Indic, emoji and mixed RTL prose: flag and count; never claim RTL is unaffected.
+
+**Job B — metadata/privacy strip on content you own.** Remove C2PA / EXIF / XMP / document-properties across images and docs (PNG/JPEG/WebP/AVIF/HEIC/PDF/DOCX/EPUB/ODT/HTML/MD) via optional `exiftool` / `qpdf` / `c2patool`. Gotcha: **a PDF's metadata is not truly gone until qpdf does a structural rebuild** — a properties wipe leaves it recoverable in the file body. The honest case is your own EXIF GPS/device trail. Owned content only — and generated media from a hosted provider is "owned" only as far as its terms allow: where they forbid removing provider-applied provenance marks, strip only your own capture metadata.
 
 **The boundary — the upstream states it against itself.** Its Layer B (statistical token-watermark removal by paraphrase) **degrades the copy** — flattens tone, voice, precision — and it **"cannot certify vendor detectors will fail after cleaning."** It reports verifiable removals (character counts, metadata actions) separately from best-effort rewrites, and prefers a non-origin model for the rewrite. Hold to **"content you own or are authorized to process."** fabius does **not** frame any of this as defeating content-authenticity or evading AI detection. The `fabius-catena` duality in one line: **catena ADDS verifiable provenance (the seal); this STRIPS vendor marks from content you own — fabius proves its own provenance, it does not erase anyone else's.** (Shape nod: a code-free skill driving a stdlib HTTP service — `/clean` `/inspect` `/health`, base64 payloads, optional bearer — the same keyless "skill drives machinery off the agent host" pattern fabius's own runtime recon uses.)
 
 **⚠️ The supply-chain trap — a second worked instance of `hardening-guides.md` §9.** The MIT core is clean; its *advertised* capability reaches for backends under worse terms — **reverse-SynthID = ⚠️ Non-commercial Research License**, **noai-watermark = ⚠️ no license at all = all-rights-reserved, which GitHub reports as `NOASSERTION`** (MarkLLM / MarkDiffusion are Apache-2.0). This is the exact failure `hardening-guides.md` §9 names: a gate that blocks AGPL and allows the rest **passes non-commercial AND unknown straight through, reporting green.** A tool whose core is MIT but whose advertised pixel-watermark removal *requires* an all-rights-reserved backend is **unshippable via that backend** — the backend is the dependency, not the wrapper. Default-deny on the classification.
 
-## 8. Credit, not bundle
+## 8. Fabius Custos — likeness and voice transfer: the consent gate
+
+The single home of this gate — voice, face, lip and motion transfer alike. **Trigger on the request's SHAPE:** a person-bearing asset (portrait, face image, character image, voice sample) paired with a driver (audio, driving video, a clip to recast).
+
+Before submit, establish and record:
+
+1. **whose** likeness or voice is in the inputs;
+2. that the requester **is that person or holds documented permission** for *this* use — being publicly known does not substitute (policy, not a legal conclusion);
+3. that the output is **labelled synthetic** wherever it is published, and keeps its provenance marks (§7, not restated).
+
+No recorded consent basis → **decline the transfer step**; offer a non-identifying alternative — an invented character, a stylized avatar. The consent basis travels with the asset's lineage. Other layers hold only the trigger and a pointer here.
+
+## 9. Credit, not bundle
 
 These are capabilities fabius **applies**, drawn from named ecosystem tools — Semgrep's rule packs, the per-ecosystem auditors, trailofbits-class breadth in what to look at. fabius bundles **no runtime**: it carries the decision rules and the audit method, not the scanners. The optional live tier is in `ARCHITECTURE.md`. Present every one of these as "how to do X well, crediting tool Y" — never as a fabius-shipped binary.
 
@@ -127,3 +143,7 @@ These are capabilities fabius **applies**, drawn from named ecosystem tools — 
 ---
 
 See the owning skill (`../SKILL.md`) §5 for the supply-chain contract, `references/security-playbook.md` §6 for the package-audit commands, `references/ai-review.md` for the prompt-injection caveat on artifact-returned text, and [CORPUS.md](../../../CORPUS.md) for where this library sits in the index. Cross-links: `fabius-scientia` routes third-party science-skill risk here; `fabius-cohors` routes agent tool/credential scoping here. On-chain audit → `fabius-catena`. Defensive only — audit, pin, sandbox, least-privilege, never weaponize.
+
+Studied (2026-09-20): a hosted media-generation API platform (a commercial product; nothing carried) — observed for terms that forbid removing provider-applied provenance marks from generated output; no value, name or sentence taken.
+
+Informed by **book-to-skill** (virgiliojr94, MIT) — studied for ingest-side stripping of non-rendering code points with one shared predicate, and the review of a pack generated from untrusted material; and **Open-Generative-AI** (Anil-matcha, MIT) — studied for the input shape of likeness-transfer requests only (the consent gate is fabius-original); re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

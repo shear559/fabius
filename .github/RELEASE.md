@@ -1,6 +1,6 @@
 # Release integrity
 
-Repository version: **3.1.0**. The version string alone does not establish release status; the canonical signed tag and GitHub Release do. A release tag does not by itself establish Bitcoin confirmation.
+Repository version: **3.2.0**. The version string alone does not establish release status; the canonical signed tag and GitHub Release do. A release tag does not by itself establish Bitcoin confirmation.
 
 ## Three gates
 

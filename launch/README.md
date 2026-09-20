@@ -25,7 +25,7 @@ From a committed checkout, choose a new output directory outside any Git checkou
 ```sh
 python3 -B scripts/distribution.py check
 python3 -B scripts/distribution.py build --output-dir /tmp/fabius-candidate-package
-python3 -B scripts/distribution.py verify /tmp/fabius-candidate-package/fabius-3.1.0-claude-plugin.zip
+python3 -B scripts/distribution.py verify /tmp/fabius-candidate-package/fabius-3.2.0-claude-plugin.zip
 ```
 
 The builder includes tracked files, required attribution and all fifteen root skills. It rejects missing authored resource links, escaping symlinks, selected secrets and concurrent source changes. Two builds of identical source bytes produce identical ZIP bytes. The embedded manifest records the commit, selected source hashes, archive hashes and any dirty paths; it is not a signature or store approval. Untracked files require explicit `--include-file` arguments. Existing archives are never overwritten.

@@ -129,6 +129,7 @@ Grouped by fabius family; upstream's `skillSection` field groups differently. On
 | `aphoristic-cadence` | sections closing on "X. No Y." | |
 | `theater-slop-phrase` | dismissing something as "theater" | |
 | `repeated-container-text` | one string 3+ times in a card | once |
+| *prose tells past these five* | the words themselves, not the surface | owned by mercatus [`prose-tell-lint.md`](../../fabius-mercatus/references/prose-tell-lint.md) — pointed to, never restated |
 | **Drift & integrity** | | |
 | `design-system-radius` · `design-system-font` · `design-system-font-size` · `design-system-color` | off DESIGN.md's documented step (font size: ±0.5px) | the token or step; adding one is a design decision |
 | `script-error` · `content-hidden-at-rest` | error severity; a large share of the text still at opacity 0 after reveal handlers ran | fix the exception before judging anything; content visible by default, JS enhances the entrance |

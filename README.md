@@ -120,18 +120,18 @@ These are maintainer-prepared demonstrations, not a user study or a performance 
 | Layer | Owns |
 |---|---|
 | `fabius` | the router — selects layers, machinery and model tier; maintains skill ownership and source-backed refinement |
-| `fabius-parcus` | the always-on lean core — terse output, the YAGNI ladder, surgical change |
+| `fabius-parcus` | the always-on lean core — terse output, the YAGNI ladder, surgical change, a reporting shape for a reader who must act |
 | `fabius-disciplina` | architecture planning/review, state-aware updates, impact-mapped implementation and root-cause debugging |
-| `fabius-decor` | ship-grade design — tokens, one accent, a visual-system template captured before building, data-viz, decks + infographics, RTL, review against the generated-UI tells |
+| `fabius-decor` | ship-grade design — tokens, one accent, a visual-system template captured before building, data-viz, decks + infographics, generated video and the paid media request, RTL, review against the generated-UI tells |
 | `fabius-cohors` | agent engineering — least privilege, confirmation by action class for agents that act through a screen or channel, standing-job and live-voice shapes, orchestration up to a swarm |
-| `fabius-archivum` | permissioned memory — canonical records, legacy migration, gated recall and history; video and source-grounded notebooks as sources |
-| `fabius-mercatus` | go-to-market — positioning, converting copy, SEO, draft-only outreach |
-| `fabius-praesidium` | defensive security — STRIDE (personal-agent boundaries included), OWASP, the terms gate for connected services, severity → fix → regression test |
+| `fabius-archivum` | permissioned memory — canonical records, legacy migration, gated recall and history; meetings, video, source-grounded notebooks and book-length sources as inputs, with citation gates |
+| `fabius-mercatus` | go-to-market — positioning, converting copy, SEO and the existing-site audit, a prose tell lint that never issues an authorship verdict, draft-only outreach |
+| `fabius-praesidium` | defensive security — STRIDE (personal-agent boundaries included), OWASP, the terms gate for connected services, audit closure with a record of what was cleared, the likeness and voice consent gate, severity → fix → regression test |
 | `fabius-ludus` | game craft — core loop first, deliberate juice, jam-sized scope |
 | `fabius-catena` | on-chain + sealing — EVM/Solana money-safety, verifiable provenance |
 | `fabius-machina` | automation — deterministic workflow wiring, verify before it runs live |
 | `fabius-scientia` | science — competing hypotheses, grounded lookups, reproducibility |
-| `fabius-doctrina` | AI/ML engineering — train → evaluate → serve → monitor |
+| `fabius-doctrina` | AI/ML engineering — train → evaluate → serve → monitor; wiring a judge's score into software, the hosted-model tier |
 | `fabius-fortuna` | markets & finance — risk-first analysis, honest backtests; never advice |
 | `fabius-concilium` | cross-model council — blind peer-review across N models, chairman synthesis |
 

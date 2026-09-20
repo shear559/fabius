@@ -13,9 +13,14 @@ Use these questions when a solution is expanding without a corresponding require
 | Run another investigation | Its outcome can change the implementation or verdict | Decide from existing evidence |
 | Expand a test run | A changed dependency, a failure or a still-uncovered risk | The mapped regression set |
 | Store a memory | A verified fact will be needed again and storage is authorized | Return the finding in the current answer |
+| Add a header | The section is long enough that the reader will navigate it; no pictographs in it | A paragraph |
+| Add a list | Items are parallel and the reader will scan or count them; a sentence cannot hold them | Prose |
+| Add bold | A label or a term being defined — never mid-sentence emphasis | Plain text |
+
+Dash frequency is decor's [`em-dash-overuse`](../../fabius-decor/references/design-critique.md) id, not a row here.
 
 An example: a user requests a second export format. First inspect the existing serializer boundary and its consumers. If a second formatter fits that boundary, implement it there. A generic export registry, remote rendering service and configurable pipeline require their own demonstrated needs.
 
 An error path is not optional merely because it lengthens the patch. Preserve authentication, input validation, data-loss handling and accessibility. Prefer a clear failure with its cause over a fallback value that looks successful. Concision concerns unnecessary work, never missing evidence or hidden failure.
 
-Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the off-by-default posture of accounts and durable storage in a greenfield build and the evidence that switches each on, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the off-by-default posture of accounts and durable storage in a greenfield build and the evidence that switches each on; and **no-ai-slop** (petergyang, MIT) — studied for the evidence bar a header, a list or bold must meet in a reply; re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

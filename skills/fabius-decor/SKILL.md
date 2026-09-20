@@ -16,7 +16,7 @@ when_to_use: >
   "make it beautiful", "it looks amateur", "match the brand", "make it responsive", "fix the
   focus states", spacing/typography/color calls, dashboards, hero sections, dark mode, mobile
   breakpoints, contrast checks, "critique this UI", "audit the design", "does this look
-  AI-generated", "polish it before ship".
+  AI-generated", "polish it before ship", "generate a video", "animate this still", "image-to-video".
 license: UNLICENSED
 metadata:
   author: shear559
@@ -89,7 +89,7 @@ An image prompt is a **structured slot fill** under the same restraint, not a fr
 4. **Conflict pass before emitting.** Cultural, temporal, biological, stylistic — explain the clash, show the correction, let the user override. *Style* ≠ *identity*: "anime" is a render technique, not an ethnicity.
 5. **Library + free-text.** Curated recipes (lighting, camera/lens, palettes) + the open-set content only the model supplies; end on a completeness check.
 
-Slot schema, lighting/era tables, conflict rules, palette recipe → `references/generative-imagery.md`.
+Slots → `references/generative-imagery.md`; video, paid jobs → `references/generative-media.md`.
 
 ## Original design and media kit
 

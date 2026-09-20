@@ -65,13 +65,13 @@ The user names the outcome — they are never asked to pick tools, tiers, or res
 
 ```
 Task shape                                  → Layer
-──────────────────────────────────────────────────────────────
+──────────────────────────────────────────
 Any output, any code change                 → fabius-parcus      (always-on, underneath)
 "build X" · "fix the bug" · "refactor"       → fabius-disciplina  (impact map/repro/plan/debug)
 architecture plan / review · system design  → fabius-disciplina  (evidence, alternatives, proof)
 capture / improve a skill                  → fabius             (references/skill-maintenance.md)
 UI · landing page · component · brand look · → fabius-decor
-  generate an image · deck / slides ·
+  generate an image/video · deck / slides ·
   infographic · visual report · critique /
   audit / polish a UI
 chart · graph · diagram · visualize data     → fabius-decor       (the figura visualization concern)
@@ -85,9 +85,10 @@ chart · graph · diagram · visualize data     → fabius-decor       (the figu
   "stop re-deriving this" · meeting
   transcript/notes into a filed record ·
   watch a video / recording · ask a
-  source-grounded notebook
+  source-grounded notebook · distill a book
 copy · launch · positioning · ads · funnel · → fabius-mercatus
-  outreach / leads (draft-only)
+  outreach / leads (draft-only) · SEO audit ·
+  de-tell a draft
 "is this secure?" · threat-model · audit ·   → fabius-praesidium  (defensive only)
   harden · review for vulns
 "make a game" · loop · juice · playable      → fabius-ludus

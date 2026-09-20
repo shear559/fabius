@@ -1,6 +1,6 @@
 {
   "schema": "fabius-upstream/v1",
-  "generated": "2026-09-13",
+  "generated": "2026-09-20",
   "entries": [
     {
       "id": "nanoclaw-code-architect",
@@ -243,6 +243,510 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Agent boundary rows in the STRIDE grid and the unowned-rows corollary in the secure-by-default review. Mechanisms re-expressed, no prompt text carried."
+    },
+    {
+      "id": "open-notebook-archivum",
+      "repo": "https://github.com/lfnovo/open-notebook",
+      "owner": "lfnovo",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-archivum",
+      "fabius_paths": [
+        "skills/fabius-archivum/references/external-recall.md",
+        "skills/fabius-archivum/references/retrieval-stack.md"
+      ],
+      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for summary-share packing under a ceiling, closed-id-set citation discipline and success-shaped extractor errors; scope-before-cap filtering, typed scope errors and the vector-ingest failure shapes. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "book-to-skill-archivum",
+      "repo": "https://github.com/virgiliojr94/book-to-skill",
+      "owner": "virgiliojr94",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-archivum",
+      "fabius_paths": [
+        "skills/fabius-archivum/references/retrieval-stack.md",
+        "skills/fabius-archivum/references/source-distillation.md"
+      ],
+      "pinned_commit": "526f362552562d88c1a8bbf8012d2cee93f831d5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for diagnosing a wrong answer after a correct retrieval; a vocabulary routing key, a decision aid ranked by decision value, use-derived depth and occurrence-count grounding. Mechanisms re-expressed, no source text carried. A pack distilled from a copyrighted book is a private derivative and is never bundled."
+    },
+    {
+      "id": "omniroute-cohors",
+      "repo": "https://github.com/diegosouzapw/OmniRoute",
+      "owner": "diegosouzapw",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-evaluation-and-durability.md",
+        "skills/fabius-cohors/references/local-agent-runtime.md"
+      ],
+      "pinned_commit": "7a921299c5b4c28dcf837f56a1c312b61414a646",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for failure-scoped benching, status re-classing before classification, split timeout codes and the per-target chain-failure report (that repo's provider-limit evasion, client impersonation and account pooling deliberately not carried); locality-before-authentication on process-spawning routes and the filesystem-derived route-classification gate. Mechanisms re-expressed, no source text carried. The source's account pooling, key or account rotation around a provider limit, limit-reset automation and client impersonation were deliberately not folded."
+    },
+    {
+      "id": "open-notebook-cohors",
+      "repo": "https://github.com/lfnovo/open-notebook",
+      "owner": "lfnovo",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-evaluation-and-durability.md"
+      ],
+      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for submission-time rejection of terminal input and the never-retry list that never fires. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "strix-cohors",
+      "repo": "https://github.com/usestrix/strix",
+      "owner": "usestrix",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-evaluation-and-durability.md"
+      ],
+      "pinned_commit": "56e9ae982c2fdd00c7c0b9afc49af035470dd310",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for bounding how many tool calls one model response may queue. Mechanisms re-expressed, no source text carried. Defensive mechanisms only: no exploit technique, payload, evasion or offensive prompt text was studied into doctrine."
+    },
+    {
+      "id": "book-to-skill-cohors",
+      "repo": "https://github.com/virgiliojr94/book-to-skill",
+      "owner": "virgiliojr94",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-patterns.md"
+      ],
+      "pinned_commit": "526f362552562d88c1a8bbf8012d2cee93f831d5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for exact-token consent on an irreversible choice. Mechanisms re-expressed, no source text carried. A pack distilled from a copyrighted book is a private derivative and is never bundled."
+    },
+    {
+      "id": "open-generative-ai-decor",
+      "repo": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "owner": "Anil-matcha",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/generative-imagery.md",
+        "skills/fabius-decor/references/generative-media.md"
+      ],
+      "pinned_commit": "69b7fccaa946161473c765facebdb7c5f3f74d5d",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the enum-or-dimensions sizing fork and the step-lattice ratio solver; video source modes and their mandatory media, the disclosed-change plan, schema-derived media capability, the local request preflight and job-keyed continuation lineage. Mechanisms re-expressed, no source text carried. The three git submodules were not read; the consent gate is Fabius-original."
+    },
+    {
+      "id": "omniroute-doctrina",
+      "repo": "https://github.com/diegosouzapw/OmniRoute",
+      "owner": "diegosouzapw",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-doctrina",
+      "fabius_paths": [
+        "skills/fabius-doctrina/references/hosted-model-tier.md",
+        "skills/fabius-doctrina/references/ml-engineering-playbook.md"
+      ],
+      "pinned_commit": "7a921299c5b4c28dcf837f56a1c312b61414a646",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied in it for stream commit and recovery, request portability across models, admission clocks, model-id lifecycle, and which empty replies a stop reason legitimises. Several of these mechanisms are self-declared ports from other projects; that lineage was not verified. Mechanisms re-expressed, no source text carried. The source's account pooling, key or account rotation around a provider limit, limit-reset automation and client impersonation were deliberately not folded, and it is never a recommended gateway."
+    },
+    {
+      "id": "open-notebook-doctrina",
+      "repo": "https://github.com/lfnovo/open-notebook",
+      "owner": "lfnovo",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-doctrina",
+      "fabius_paths": [
+        "skills/fabius-doctrina/references/hosted-model-tier.md"
+      ],
+      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for credential-probe semantics, chunk-safe stream reading and inline-reasoning handling. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "typesafe-skills-doctrina",
+      "repo": "https://github.com/typesafe-ai/skills",
+      "owner": "typesafe-ai",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-doctrina",
+      "fabius_paths": [
+        "skills/fabius-doctrina/references/judgment-models.md"
+      ],
+      "pinned_commit": "65a39f393687675ce170e6094757de20370365b9",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for closed-question decomposition, code-side aggregation, batching and score-reading cautions. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "i-have-adhd-doctrina",
+      "repo": "https://github.com/ayghri/i-have-adhd",
+      "owner": "ayghri",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-doctrina",
+      "fabius_paths": [
+        "skills/fabius-doctrina/references/ml-engineering-playbook.md"
+      ],
+      "pinned_commit": "839872f9d1cd634fed642b4589ce7226199cc15f",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for eval-arm isolation, judge-input partitioning and gate feasibility. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "open-generative-ai-doctrina",
+      "repo": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "owner": "Anil-matcha",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-doctrina",
+      "fabius_paths": [
+        "skills/fabius-doctrina/references/ml-engineering-playbook.md"
+      ],
+      "pinned_commit": "69b7fccaa946161473c765facebdb7c5f3f74d5d",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for proving accelerator use on a local engine. Mechanisms re-expressed, no source text carried. The three git submodules were not read; the consent gate is Fabius-original."
+    },
+    {
+      "id": "open-notebook-machina",
+      "repo": "https://github.com/lfnovo/open-notebook",
+      "owner": "lfnovo",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-machina",
+      "fabius_paths": [
+        "skills/fabius-machina/references/automation-playbook.md"
+      ],
+      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the single-attempt policy on a job that creates records mid-run and its resolve-everything-before-the-run preflight. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "open-generative-ai-machina",
+      "repo": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "owner": "Anil-matcha",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-machina",
+      "fabius_paths": [
+        "skills/fabius-machina/references/automation-playbook.md"
+      ],
+      "pinned_commit": "69b7fccaa946161473c765facebdb7c5f3f74d5d",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the client side of a billed submit-then-poll job: status sets with unknown-means-continue and a distinct timed-out outcome that carries the job id (resume-by-id and clear-only-on-confirmed-terminal are fabius's own). Mechanisms re-expressed, no source text carried. The three git submodules were not read; the consent gate is Fabius-original."
+    },
+    {
+      "id": "open-seo-machina",
+      "repo": "https://github.com/every-app/open-seo",
+      "owner": "every-app",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-machina",
+      "fabius_paths": [
+        "skills/fabius-machina/references/automation-toolkit.md"
+      ],
+      "pinned_commit": "0ffff93101043aad7600a3b6a499a0cd2887ef49",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for origin-wide crawl pacing: a whole-origin pause on any throttled response, a widening interval, explicit stop conditions and pacing state persisted across job steps. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "open-seo-mercatus",
+      "repo": "https://github.com/every-app/open-seo",
+      "owner": "every-app",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-mercatus",
+      "fabius_paths": [
+        "skills/fabius-mercatus/references/marketing-toolkit.md",
+        "skills/fabius-mercatus/references/seo-and-discoverability.md",
+        "skills/fabius-mercatus/references/seo-audit-method.md"
+      ],
+      "pinned_commit": "0ffff93101043aad7600a3b6a499a0cd2887ef49",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the first-party search-performance API traps; the results-overlap page test, pooled-volume caveats, and AI-answer share counting and attribution scope; position-evidence conventions, first-party query analysis, audit shortlisting and sizing, crawl-outcome classification and the local-listing procedure. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "no-ai-slop-mercatus",
+      "repo": "https://github.com/petergyang/no-ai-slop",
+      "owner": "petergyang",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-mercatus",
+      "fabius_paths": [
+        "skills/fabius-mercatus/references/prose-tell-lint.md"
+      ],
+      "pinned_commit": "000650b156983f5159695b441477f4e63b25dc85",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for sentence-shape tells paired with repairs, a voice read taken from the draft, the absent-evidence branch and a verdict-free audit mode. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "no-ai-slop-parcus",
+      "repo": "https://github.com/petergyang/no-ai-slop",
+      "owner": "petergyang",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-parcus",
+      "fabius_paths": [
+        "skills/fabius-parcus/references/lean-decisions.md",
+        "skills/fabius-parcus/references/reader-fit-reporting.md"
+      ],
+      "pinned_commit": "000650b156983f5159695b441477f4e63b25dc85",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the evidence bar a header, a list or bold must meet in a reply; the qualifier keep-condition. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "i-have-adhd-parcus",
+      "repo": "https://github.com/ayghri/i-have-adhd",
+      "owner": "ayghri",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-parcus",
+      "fabius_paths": [
+        "skills/fabius-parcus/references/reader-fit-reporting.md"
+      ],
+      "pinned_commit": "839872f9d1cd634fed642b4589ce7226199cc15f",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for report shape for a reader who must act. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "strix-praesidium",
+      "repo": "https://github.com/usestrix/strix",
+      "owner": "usestrix",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/ai-review.md",
+        "skills/fabius-praesidium/references/hardening-guides.md",
+        "skills/fabius-praesidium/references/security-playbook.md",
+        "skills/fabius-praesidium/references/security-toolkit.md"
+      ],
+      "pinned_commit": "56e9ae982c2fdd00c7c0b9afc49af035470dd310",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for prose-independent finding identity across repeated runs, counted rejections and the meaning of a review gate's exits; ranking an advisory by demonstrated reachability and the limits of a privileged test container; settling severity after reachability, the gates on an applyable security patch, what may count as disproving a candidate, and a record of examined surfaces kept apart from harness observations; the shape of a run's authorized-scope record and the two ways such a record fails to bind. Mechanisms re-expressed, no source text carried. Defensive mechanisms only: no exploit technique, payload, evasion or offensive prompt text was studied into doctrine."
+    },
+    {
+      "id": "open-notebook-praesidium",
+      "repo": "https://github.com/lfnovo/open-notebook",
+      "owner": "lfnovo",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/hardening-guides.md"
+      ],
+      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the template-engine sink, the trailing-separator containment check, pinning a vetted address into an outbound request and the declared per-deployment egress policy. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "open-seo-praesidium",
+      "repo": "https://github.com/every-app/open-seo",
+      "owner": "every-app",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/hardening-guides.md"
+      ],
+      "pinned_commit": "0ffff93101043aad7600a3b6a499a0cd2887ef49",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the fail-closed gate and whole-run budget reservation in front of paid upstream calls. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "omniroute-praesidium",
+      "repo": "https://github.com/diegosouzapw/OmniRoute",
+      "owner": "diegosouzapw",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/hardening-guides.md"
+      ],
+      "pinned_commit": "7a921299c5b4c28dcf837f56a1c312b61414a646",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for principal-scoped keys on shared responses and testing the route that bills. Mechanisms re-expressed, no source text carried. The source's account pooling, key or account rotation around a provider limit, limit-reset automation and client impersonation were deliberately not folded."
+    },
+    {
+      "id": "book-to-skill-praesidium",
+      "repo": "https://github.com/virgiliojr94/book-to-skill",
+      "owner": "virgiliojr94",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
+      ],
+      "pinned_commit": "526f362552562d88c1a8bbf8012d2cee93f831d5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for ingest-side stripping of non-rendering code points with one shared predicate, and the review of a pack generated from untrusted material. Mechanisms re-expressed, no source text carried. A pack distilled from a copyrighted book is a private derivative and is never bundled."
+    },
+    {
+      "id": "open-generative-ai-praesidium",
+      "repo": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "owner": "Anil-matcha",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
+      ],
+      "pinned_commit": "69b7fccaa946161473c765facebdb7c5f3f74d5d",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the input shape of likeness-transfer requests only (the consent gate is fabius-original). Mechanisms re-expressed, no source text carried. The three git submodules were not read; the consent gate is Fabius-original."
+    },
+    {
+      "id": "omniroute-fabius",
+      "repo": "https://github.com/diegosouzapw/OmniRoute",
+      "owner": "diegosouzapw",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/orchestration-doctrine.md"
+      ],
+      "pinned_commit": "7a921299c5b4c28dcf837f56a1c312b61414a646",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for receipts that name the candidates never dispatched, the cached-prefix price of a mid-conversation switch, and a thin outcome history read as unknown rather than as a track record (several of its mechanisms are themselves ports: studied there, not credited as its origin). Mechanisms re-expressed, no source text carried. The source's account pooling, key or account rotation around a provider limit, limit-reset automation and client impersonation were deliberately not folded."
+    },
+    {
+      "id": "i-have-adhd-fabius",
+      "repo": "https://github.com/ayghri/i-have-adhd",
+      "owner": "ayghri",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/routing-policy.md"
+      ],
+      "pinned_commit": "839872f9d1cd634fed642b4589ce7226199cc15f",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for reconciling a standing stance against the context the model actually holds after a rewrite. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "book-to-skill-fabius",
+      "repo": "https://github.com/virgiliojr94/book-to-skill",
+      "owner": "virgiliojr94",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/skill-maintenance.md"
+      ],
+      "pinned_commit": "526f362552562d88c1a8bbf8012d2cee93f831d5",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the private-by-default gate on an artifact distilled from a source the user does not own, and for the link read-back and nested-repository traps. Mechanisms re-expressed, no source text carried. A pack distilled from a copyrighted book is a private derivative and is never bundled."
+    },
+    {
+      "id": "open-seo-fabius",
+      "repo": "https://github.com/every-app/open-seo",
+      "owner": "every-app",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/skill-maintenance.md"
+      ],
+      "pinned_commit": "0ffff93101043aad7600a3b6a499a0cd2887ef49",
+      "pinned_version": null,
+      "pinned_at": "2026-09-20",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the frozen-copy, different-shape-holdout and score-before-trace comparison of an instruction change. Mechanisms re-expressed, no source text carried."
     }
   ]
 }

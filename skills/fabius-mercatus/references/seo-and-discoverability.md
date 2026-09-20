@@ -32,6 +32,8 @@ A keyword is a question with an awareness level baked in. The buyer who types *"
 
 **The decision:** pick ONE primary query per page, matched to the awareness the page is built to convert. Commercial-intent queries convert; informational queries feed the cluster (§5). A page chasing two intents ranks for neither — the same "two asks ≈ no ask" law as the funnel.
 
+**The same-page test.** Two terms share a page when their live results pages show the same intent and substantially the same ranking URLs — word similarity never decides. Check overlap live only for borderline terms that matter. A metric the tool did not return is written *unknown*, never estimated. Mainstream volume figures are ads-derived, bucketed and pooled across close variants: variant rows are one pool, never summed — and an ads-only source yields no difficulty or intent.
+
 ## 3 · On-page — carry the query honestly
 
 One focused intent per page. The query appears where it belongs, never stuffed:
@@ -82,6 +84,8 @@ One thin page can't out-rank a topic. Build a **pillar** (the broad, high-intent
 
 **The decision:** don't spawn 20 thin pages — ship the pillar plus the 3–5 supporting pages that answer the queries a buyer actually asks on the path to the pillar. Each page keeps ONE intent (§2). YAGNI on the long tail until the core cluster ranks (`fabius-parcus`).
 
+Every term group resolves to one of three outcomes: an existing URL, a new page, or an explicit not-now / not-ours. With no URL inventory, label the target *proposed*.
+
 ## 6 · Technical — one absolute floor, one tiebreaker above it
 
 **Split them; they are not the same rule.** Crawlability and indexability are absolute — an unindexed page can't rank, can't earn a snippet, and therefore can't be quoted in an AI answer either (§7). No copy fixes that, so fix it first. Speed and layout stability are *not* absolute: the most relevant content still gets shown when the page experience is sub-par, and Core Web Vitals earn their weight mainly when several equally relevant answers compete for the same query. So never stall content work behind a Lighthouse number — and never ship a page engines can't reach.
@@ -98,6 +102,8 @@ Speed and CLS are *built*, not configured — the implementation (responsive ima
 **Read the floor off the live host in one pass.** `fabius recon <domain>` (in `runtime/`, no key, no account) returns the discoverability half of this table alongside the security half: `<title>`, meta description, `canonical`, `og:image`, the `viewport` tag, `lang` on `<html>`, whether a sitemap exists, and what `robots.txt` actually says — each as a finding with the fix. Two of those are ranking-relevant in a way that is easy to miss: **no `viewport`** means the page is judged as its mobile self and fails, and **no `lang`** breaks both screen readers and right-to-left rendering. The security findings from the same scan are `fabius-praesidium`'s to action (→ `../../fabius-praesidium/references/external-recon.md`); this layer owns the discoverability reading of them.
 
 **`robots.txt` is not the whole gate — read it, then test it.** A CDN or WAF rule can return `403` to a crawler the file explicitly allows, and that rule lives in a dashboard, not in the repo, so it is invisible to every code-side check. The crawl test is therefore a **live fetch carrying the crawler's own user-agent**, not a read of the rules. Which crawlers have to get through, and the edge categories that decide it, are §7.
+
+Auditing a site that already exists — position evidence, the shortlist and choice rule, crawl honesty, local visibility — is [seo-audit-method.md](seo-audit-method.md).
 
 ## 7 · AI-answer visibility — be the cited source (the 2026 layer)
 
@@ -126,6 +132,8 @@ Once the gate is open, the writing:
 
 The decision: optimize the page to *answer*, not just to *rank* — but **price the move**, because most of what circulates as AI-answer tactics does not survive measurement. Only two levers reproduce across the evidence: **topical relevance**, and **position in the context the engine retrieves** — moving a source higher in that context beats almost every rewrite. Rewriting the body to sound quotable is not free: measured citation-oriented rewrites cut top-20 retrieval presence ~9%, post-rerank top-10 presence ~16% and final citation ~6% — you can win the quote and lose the retrieval that would have produced it. Keyword stuffing transfers *negatively* from classic SEO, and any generic tactic decays as competitors adopt it. And treat AI visibility as a **distribution, not a rank**: repeated runs at temperature zero flip 9–28% of decisions, and month-to-month page overlap runs ~18% for AI Overviews against ~45% for organic. So one spot-check proves nothing — measure ~7–8 repetitions across 3–5 paraphrases against an untreated control, or make no claim at all. (The circulating "~40% visibility gain" is a relative maximum on one metric under one configuration; don't quote it, and don't let a client quote it back.)
 
+**Count it honestly.** List every brand asked about up front; one the source is silent on stays in the table as *no data*. No data is not an observed zero: the former leaves the denominator and gets no share, the latter counts. De-duplicate competitor inputs against each other and the target. Under a page or folder scope, credit a prompt only when the answer **cited** an in-scope URL — a mention without a citation speaks for the domain, not the page — and label domain-vs-domain figures as such. Rank cited sources per surface, never pooled — a busy surface otherwise crowds out a sparse one — and filter by scope before the cut. Never add surfaces covering different markets. Aggregates are authoritative; example prompts are a labelled sample. Sampling a reasoning model: the output-ceiling trap is doctrina's ([ml-engineering-playbook.md](../../fabius-doctrina/references/ml-engineering-playbook.md)).
+
 ## 8 · Funnel link — SEO feeds the top, not a competing CTA
 
 Organic search is the top of the one-action funnel (playbook §7): **search → landing → the single CTA.** An SEO page is still a funnel surface, so it keeps the one-action law — don't let "rank for more" sprout a second button, a newsletter box, *and* a demo link competing on one page. The query sets the awareness; the page leads with that awareness and points at the one next step. A page that ranks but offers five exits converts like a page with none.
@@ -147,3 +155,5 @@ the one CTA   → the single next step (signup / buy / book — pick one)
 ---
 
 **Boundary.** This layer owns the *message and its findability* — the query match, the honest on-page claim, the cluster strategy, the funnel link. The page's visual build, Core-Web-Vitals implementation, and RTL/`dir` mechanics are **`fabius-decor`**. Demand-validation and live-verification are **`fabius-disciplina`**. Prose-trim and the YAGNI long-tail call are **`fabius-parcus`**. Named tools (Claude SEO and its sub-skills, Lighthouse, Search Console) are capabilities fabius *applies*, not runtime it bundles — fabius ships no runtime; the optional live tier is in ARCHITECTURE.md. The user's brand and instruction always win; `stop fabius` drops the stance.
+
+Informed by **open-seo** (every-app, MIT; commit 0ffff93) — studied for the results-overlap page test, pooled-volume caveats, and AI-answer share counting and attribution scope, re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

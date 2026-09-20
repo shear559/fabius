@@ -42,7 +42,9 @@ candidate for synthesis is native ability without an extra integration; a tool m
 Choose by measured fit, not familiarity: quality on this task shape · specialization · cost ·
 latency · reliability · privacy (where the data travels) · granted permissions · what the
 current context already holds · track record in the failure log. When the choice is close,
-prefer the one already warm in context — switching has a price too.
+prefer the one already warm in context — switching has a price too. A mid-conversation provider
+or model switch also drops the provider-side cached prompt prefix: the next turn is billed and
+timed cold.
 
 **Fallback must preserve the required capability.** After a bounded retry or a changed
 hypothesis, use an authorized equivalent with the same evidence quality and privacy boundary.
@@ -50,6 +52,11 @@ Native reasoning can replace synthesis, but cannot stand in for fresh retrieval,
 execution, or an authenticated write. If no equivalent exists, complete independent work and
 report the unmet acceptance criterion. Never convert a draft, simulation, or remembered fact
 into a claim that the missing action succeeded.
+
+**A policy refusal is an answer, not a failure.** It is terminal for that request: never
+resubmitted unchanged, never paraphrased past the filter, never rerouted to a provider with a
+looser policy — that switch is a bypass, not a fallback. Report it and offer a compliant
+revision.
 
 ## 3 · Model routing — best model for the step, not one model for everything
 
@@ -129,9 +136,10 @@ the proof — nothing re-derives what the run already knows. Across sessions thi
 
 Every significant routing choice is visible in the run itself: which capability fired and why
 · why this provider · roughly what it cost in steps · the signal that kept research going and
-the one that stopped it. A route must be a documented decision, not a mood — that is what makes a bad
-route debuggable and a good one repeatable. A pause a fabius gate causes (§9) is itself a receipt,
-and so is a rule left to the host: [`../../fabius-parcus/SKILL.md`](../../fabius-parcus/SKILL.md)
+the one that stopped it. A receipt also names the candidates ruled out before dispatch and why
+— skipped options leave no other trace. A route must be a documented decision, not a mood —
+that is what makes a bad route debuggable and a good one repeatable. A pause a fabius gate
+causes (§9) is itself a receipt, and so is a rule left to the host: [`../../fabius-parcus/SKILL.md`](../../fabius-parcus/SKILL.md)
 sets that split — host mechanics are deferred to, and where both carry the same rule the more
 conservative threshold on confirmation, evidence and safety holds; stricter never means fewer
 words, and the never-trim floor is never lowered to a host's looser version.
@@ -141,8 +149,9 @@ words, and the never-trim floor is never lowered to a host's looser version.
 Outcomes feed back: which provider actually delivered on which task shape · which workflow
 shape keeps failing · where extra research genuinely flipped a decision and where retries were
 waste. Verified lessons land in memory (M6 · M7); a route that failed in a way the policy
-didn't prevent goes in [`failures.md`](failures.md). The router the next task meets is
-sharper than the one this task met.
+didn't prevent goes in [`failures.md`](failures.md). A thin history is not a track record: a
+provider never tried is unknown, not bad, and a handful of outcomes does not outrank a live
+measurement. The router the next task meets is sharper than the one this task met.
 
 ## The maxim, priced
 
@@ -151,4 +160,6 @@ only the machinery that materially improves the outcome, and stop exactly when a
 stops paying for itself. Not maximum reasoning, maximum agents, or maximum tools:
 **maximum decision quality per unit of complexity, cost, and time.**
 
-Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for pause attribution (which file and which line stop authorized work) and the layering of a stance over a host that already enforces part of it, re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.
+Studied (2026-09-20): a hosted generative-media API's public developer documentation (a commercial product; nothing carried) — observed for a moderation block as its own terminal job outcome, distinct from a technical failure; no value, name or sentence taken.
+
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for pause attribution (which file and which line stop authorized work) and the layering of a stance over a host that already enforces part of it; and **OmniRoute** (diegosouzapw, MIT) — studied for receipts that name the candidates never dispatched, the cached-prefix price of a mid-conversation switch, and a thin outcome history read as unknown rather than as a track record (several of its mechanisms are themselves ports: studied there, not credited as its origin); re-expressed in fabius's own voice; no prompt text carried, no upstream files bundled. See credits/README.md.

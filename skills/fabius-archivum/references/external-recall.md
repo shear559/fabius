@@ -117,6 +117,8 @@ Never expose a "fetch everything" verb. The ordering *is* the discipline.
 
 **Hybrid index:** lexical / full-text **first**. Add vectors only when recall turns semantic ("things like X") — the existing when-to-add-vector rule from [the skill](../SKILL.md#when-to-add-vector-retrieval). Narrow symbolically (id, type, date), dense-rerank only the narrowed slice.
 
+**Packing under a fixed ceiling.** Derived summaries get a capped slice first; whatever they leave unused returns to the body, and only the body is trimmed — an oversized body cannot crowd summaries out. Size is measured on the rendered payload, labels, ids and the cut marker included, so size is decided in one place. Every packed item carries a status — full · cut · left out for budget · missing — and the answer says a source was not read rather than imply it was; a zero-character item is left out, not sent as a bare notice. Paging → [R9](../../fabius/references/routing-policy.md); truncation as metadata → [cohors](../../fabius-cohors/references/agent-patterns.md).
+
 > Numbers like ~8ms POST, ~10× token savings, ~500-token observations are **reported by claude-mem**, not fabius measurements. Treat as the upstream project's own claims, not as facts about your corpus.
 
 ### Recall hygiene — three production failure modes
@@ -160,6 +162,17 @@ This converts one lookup into iterative, complete retrieval. The diff-against-or
 
 **Session shape:** keep per-question sessions **disposable** — stateless, full context handed in each time. But **persist the source registry** across sessions; it is the only durable state and the part that compounds.
 
+### Citation gates — membership, location, relation
+
+Citation-only answers → [`notebook-connector.md`](notebook-connector.md); evidence field → [cohors](../../fabius-cohors/references/agent-patterns.md). The delta is the check **order** for a cited answer:
+
+1. **Closed id set.** A call cites only ids from the list it was handed, verbatim. Example ids in a prompt are marked placeholders and the allowed list restated. A zero-hit search contributes nothing (cohors' stub contract).
+2. **Membership** (Fabius's own): every cited id ∈ the retrieved set, or the answer fails.
+3. **Location, in code.** Search the cited unit for the quote after folding whitespace and quote glyphs on both sides. A citation naming a unit without a quote goes to 4; an unplaced quote gets one tolerant search, then ends the check — reported absent, not called invented.
+4. **Relation.** One closed question about the CLAIM, not the quote, against the placed text: backs it · goes against it · does not address it.
+
+Outcomes: holds · refuted · not addressed · quote unplaced. A placed quote does not make the claim hold; an unsure relation goes to a human. Inline reasoning text → [`hosted-model-tier.md`](../../fabius-doctrina/references/hosted-model-tier.md).
+
 ### When to reach for an external corpus
 
 | Approach | Token cost | Setup | Hallucination risk | Source-truth quality |
@@ -177,14 +190,17 @@ A corpus arriving as Word / Excel / PowerPoint / ODF / RTF / EPUB / CSV enters t
 
 - **anydoc** (`firecrawl/anydoc`) · **MIT** — the adoptable converter in exactly this class: local, offline, office formats in → GFM Markdown out. The contract below is how the ingester drives any converter of this shape.
 
-Four rules govern the ingest:
+Five rules govern the ingest:
 
 - **Trust byte-level format detection over the extension.** Pass an explicit format flag only for stdin CSV or a known-wrong extension.
 - **Batch-ingest on the typed-error contract.** Exit `0/1/2` = ok / conversion-failed / usage, one stderr line, never a prompt. Stable machine codes (`unsupported` / `malformed` / `encrypted` / `resourceLimit` / `missingPart` / `io`) let the ingester log encrypted and unsupported files and continue, and hard-fail the rest.
 - **Large documents:** write output to a file and read only the needed parts — never stream a whole converted document into context.
 - **Scanned / image-only PDFs fail as `unsupported` by design** — there is no OCR. Route them to an OCR step; don't retry the converter.
+- **A clean exit is not a clean body.** Before a converted record is stored or embedded, check for an error-marker title, an error-message body, empty content; a hit marks the job failed-and-retryable, so an error string never becomes a citable source. A media URL with no transcript gets its own failure. Extraction fills a title only when empty or placeholder — a user-set title survives.
 
 If ever invoked via `npx`, **pin the package version** — a bare `npx -y <pkg>` is the unpinned supply-chain shape hardening-guides.md warns about (→ `fabius-praesidium`). And carry no converter benchmark numbers — vendor speed claims are the vendor's own, not measurements of your corpus.
+
+Book-length source → a knowledge pack: [`source-distillation.md`](source-distillation.md) (Fabius Epitomator).
 
 ### Map-reduce extraction — the shard contract
 
@@ -209,3 +225,7 @@ The corpus shape for a site: crawl to depth *k* (optionally inside-links only) �
 See [`../SKILL.md`](../SKILL.md) for the contract this depth sits behind, and [CORPUS.md](../../../CORPUS.md) for the corpus-level retrieval policy.
 
 Adapted from thedotmack/claude-mem (Apache-2.0) and PleasePrompto/notebooklm-skill (MIT), with later mechanics informed by open agent-harness and scraping work — see credits/README.md — all re-expressed in fabius's own voice.
+
+Studied (2026-09-20): a hosted structured-output API platform's public documentation (a commercial product; nothing carried) — observed for locating a quote deterministically before asking one closed claim-relation question; no value, name or sentence taken.
+
+Informed by **open-notebook** (lfnovo, MIT) — studied for summary-share packing under a ceiling, closed-id-set citation discipline and success-shaped extractor errors, re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

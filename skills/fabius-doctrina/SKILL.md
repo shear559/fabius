@@ -81,6 +81,8 @@ One concern per skill. Keep doctrina to the genuinely ML-engineering core and ro
 
 - The serving recipes (vLLM-class throughput, quantization, OpenAI-compatible endpoints), the MLOps + experiment-tracking contract (runs, registry, reproducibility), the evaluation playbook (held-out sets, blind judges, regression gates), and the train-vs-fine-tune-vs-RAG decision ladder → `references/ml-engineering-playbook.md`.
 - The verified tool + HuggingFace-model stack — serving (vLLM/SGLang), fine-tuning (TRL/PEFT/Unsloth/Axolotl), eval harnesses, MLOps trackers, the LiteLLM gateway, and permissive-vs-non-commercial weight licenses → `references/ml-toolkit.md`.
+- Wiring a probability-returning judge into software — closed questions, policy in code, floor → class → bar gates, question design → `references/judgment-models.md`.
+- The hosted-model tier in depth — stream commit boundary, cross-model request portability, fallback eligibility, admission clocks, model-id lifecycle, credential probes → `references/hosted-model-tier.md`.
 
 **Live tier (optional).** The decision rules, the eval design, and the lifecycle are pure knowledge. *Running* the work needs the user's own compute and services: a **GPU** for serving/training, an MLflow (or equivalent) **tracking server**, a **model registry / hub**, and any hosted **inference API**. fabius bundles none — the full map is in [ARCHITECTURE.md](../../ARCHITECTURE.md) (*External connections*).
 

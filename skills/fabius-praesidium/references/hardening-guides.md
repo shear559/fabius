@@ -1,6 +1,6 @@
 # Fabius Praesidium — hardening & audit guides
 
-The deep, bundled library for `fabius-praesidium`: HTTP headers, auth & session patterns, input-validation cookbook, output-encoding by sink, dependency/supply-chain audits, secrets & cloud least-privilege, per-stack quick-harden checklists, the egress boundary around an agent that runs code, and the stateless-LLM-chat trust boundary. The [security-playbook.md](security-playbook.md) is the operating procedure (STRIDE → OWASP pass → finding format); this file is the *how-to-harden* depth it routes into. Page **one §** at a time (routing-policy R9 · M9). **Defensive only — every item is "verify present / harden / prove closed", never an attack.** Copy the skeletons; fill the `<…>`.
+The deep, bundled library for `fabius-praesidium`: HTTP headers, auth & session patterns, input-validation cookbook, output-encoding by sink, dependency/supply-chain audits, secrets & cloud least-privilege, per-stack quick-harden checklists, the egress boundary around an agent that runs code, the stateless-LLM-chat trust boundary, and the endpoint that spends money upstream. The [security-playbook.md](security-playbook.md) is the operating procedure (STRIDE → OWASP pass → finding format); this file is the *how-to-harden* depth it routes into. Page **one §** at a time (routing-policy R9 · M9). **Defensive only — every item is "verify present / harden / prove closed", never an attack.** Copy the skeletons; fill the `<…>`.
 
 ---
 
@@ -112,6 +112,8 @@ Rule: never let untrusted bytes become a *live object graph*. Parse to plain dat
 [ ] set Content-Disposition: attachment + X-Content-Type-Options: nosniff when serving back
 ```
 
+**Path containment (any user-influenced path).** Canonicalize, then compare against the resolved root **plus a trailing separator** — a bare prefix test admits a sibling directory that shares the prefix. A credential or connection *tester* that opens a user-named file returns one generic error for missing / unparseable / wrong-shape, or it is an existence oracle (§2's same-generic-error rule).
+
 **Resource limits against archive/XML bombs (verify present):** any parser accepting an untrusted archive or XML document needs a fixed cap in *every* one of these classes — the class you skip is the bomb:
 ```
 [ ] per-entry decompressed bytes AND total decompressed bytes per archive
@@ -155,7 +157,8 @@ The same value is safe in one sink and an injection in another. Encode **for the
 | **JavaScript context** | JSON-encode into a data island, read from JS | never interpolate untrusted data into a `<script>` body or `eval` |
 | **URL / query param** | percent-encode each component | `encodeURIComponent` per component; validate scheme (§4) for full URLs |
 | **CSS / style** | avoid untrusted data in CSS; if unavoidable, strict allowlist | never `style="<user>"` or `url(<user>)` |
-| **SQL** | **parameterize — never encode** | bind values as parameters/placeholders; allowlist for identifiers (table/column names can't be bound) |
+| **SQL** | **parameterize — never encode** | bind values as parameters/placeholders; allowlist for identifiers (table/column names can't be bound); a value read back from the store is bound too — stored is not trusted |
+| **Template engine** | untrusted text enters as DATA bound into a template the team wrote | the engine never parses text an outsider supplied — parsing it hands that author the engine's object graph, server-side; a sandboxed environment is the backstop, not the control; audit libraries for any API that compiles a passed string and record the dormant paths |
 | **Shell / OS command** | avoid; pass argv array, never a string | use exec-with-args APIs; never `shell=True`/string-built commands on input |
 | **Log line** | neutralize newlines/control chars | strip `\r\n` to stop log-forging; never log the secret/PII itself |
 | **Markdown** | context-sensitive escape (rules below) | untrusted text written into Markdown is an injection surface like any other sink — structure corruption, table breakage, link smuggling; don't blanket-escape |
@@ -189,6 +192,8 @@ assert col in {"created_at", "name"}; cur.execute(f"ORDER BY {col}")
 | Rust | `cargo audit` (+ `cargo deny`) | `Cargo.lock` | `cargo deny` also enforces license + source allowlists |
 | Go | `govulncheck ./...` | `go.sum` | checks *reachable* vulns, lower noise |
 | Containers | `trivy image <img>` / `grype <img>` | pinned base by digest | scan base + app layers |
+
+**Rank an advisory by the strongest link you actually demonstrated** between your code and the affected function — the package merely sitting in the lockfile ranks lowest, a traced path from your own entry point highest — and keep "could not tell" as a separate answer, never as the lowest rank. Keep the published score as reference beside a context-adjusted priority with written reasoning, and bind the finding to the exact manifest / lockfile path. The ranking schedules work; it is no verdict on exploitability or on safety.
 
 **Supply-chain hygiene:**
 ```
@@ -246,6 +251,10 @@ Fewer, audited, pinned. (Same minimize-dependencies principle the rest of fabius
 [ ] timeout + response-size cap; no following arbitrary redirect chains
 [ ] fetch from a network segment with no access to internal services / metadata endpoint
 ```
+
+**Closing the check-to-connect window.** The client looks the name up a second time when it connects (the residual, and the extra non-routable ranges: cohors [local-agent-runtime.md](../../fabius-cohors/references/local-agent-runtime.md) §4). Where the HTTP client exposes a TLS server-name override, connect to the **one vetted literal address**; the original name stays in `Host` and the TLS server-name (IDNA-encode, bracket IPv6, port in both). No override → state the residual in the finding: the name is resolved twice, so it can still flip between check and connect. Redirect hops are NOT covered; re-validate each.
+
+**The blocklist is a declared per-deployment policy.** A self-hosted tool that must reach local model servers may allow loopback / private ranges; it then lists cloud metadata addresses explicitly (incl. the unique-local IPv6 one, zone id stripped) and says which policy is in force. An unresolvable name may pass at save time; the connect path refuses it.
 
 ---
 
@@ -313,6 +322,7 @@ Note what none of this buys you: a **detector**. An injection classifier belongs
 - **A request classifier is a HEURISTIC ON TOP — say which is which.** Inspecting outbound requests for exfiltration shape (a secret-shaped blob in a POST body, an unexpected host, a burst of DNS labels) is worth shipping and is **not** a boundary: it is pattern-matching on adversary-controlled bytes, and pattern-matching has a false-negative rate the adversary is free to search for. Name the two roles explicitly in any design doc — the network rule is the **control**, the classifier is **defense-in-depth** that shrinks the blast radius *inside* an allow-list you already accepted. The failure to avoid is architectural, not technical: a classifier cited as the reason the allow-list can stay loose has converted the only real control into a formality.
 - **Secrets are injected by the proxy — never present in the sandbox.** The credential lives in the proxy; the sandboxed process holds a placeholder or nothing. On the way out to an allow-listed host, the proxy attaches the real `Authorization` header. Then a **total** compromise of the sandbox — arbitrary code, arbitrary reads, the whole environment — yields no key, because the key was never inside the blast radius. Note what this replaces: a secret in the sandbox's env is a secret you have already handed over, since the agent's own code can read its own env by design. There is no permission to set that changes that.
 - **Approval is a MID-FLIGHT RENDEZVOUS, not a pre-flight prompt.** A pre-flight "may I?" is answered against the agent's *narration* of what it intends — and the agent can rephrase, re-scope, or reach the same effect by a path that never triggered the prompt. Put the gate **in the request path**: the proxy **parks** the outbound request, raises the decision to a human with the **actual bytes**, and blocks until answered — approve and the parked request resumes, deny and it fails at the boundary. The agent isn't asked; it's **stopped**. And the thing approved is the thing sent, which a pre-flight prompt can never guarantee.
+- **A grant can delete the wall.** A container given raw-socket or mount capabilities, an unconfined profile or a host route is no longer a boundary — rely on the egress allowlist. Cap container log size by default (unbounded output exhausts the host's disk); in a writable tree, mount version-control metadata and agent-config dirs read-only.
 
 **Why this § is in fabius's own file:** every harness that loads these rules can hand the model an `exec` capability — the local runner in `runtime/` gates one behind `--act`, and the separate synapse project (not part of fabius) runs an exec capability routed to a sandbox at `CODE_SANDBOX_URL` — agents that run code, in production, today. And fabius **packages skill directories**, where a stray `.env` would ship. Both concretes below are its own attack surface, not an illustration.
 
@@ -362,7 +372,7 @@ Note what none of this buys you: a **detector**. An injection classifier belongs
 
 **An `Origin` / `Sec-Fetch-Site` check is a speed bump, not a gate.** Both are forbidden header names *for browsers only* — the spec binds user agents, not a script holding an HTTP client — so any non-browser caller sets them to whatever you check for. Signing is what actually binds a conversation to your server.
 
-**Signing is the CORRECTNESS control, not the COST control.** It stops a forged turn; it does nothing about an honest caller burning your key one legitimate turn at a time. Pair it with the abuse controls already on this page — §8's `rate-limit / turnstile on abuse-prone routes; fail closed on a verify error`, and §2's per-account + per-IP limits.
+**Signing is the CORRECTNESS control, not the COST control.** It stops a forged turn; it does nothing about an honest caller burning your key one legitimate turn at a time. Pair it with the abuse controls already on this page — §8's `rate-limit / turnstile on abuse-prone routes; fail closed on a verify error`, and §2's per-account + per-IP limits; the full pattern for a route that spends upstream is §11.
 
 **Prove it closed** (the finding format — security-playbook §6):
 ```
@@ -376,4 +386,29 @@ Note what none of this buys you: a **detector**. An injection classifier belongs
 
 ---
 
+## §11 — An endpoint that spends money upstream
+
+**A design pattern, not a generic rate-limit finding** ([ai-review.md](ai-review.md) suppresses those). It IS a finding when a public route can spend the owner's money with no fail-closed gate in front; not when the caller is authenticated and billed. Held elsewhere, not restated: §2 · §8 · §10 · per-call reservation → cohors [local-agent-runtime.md](../../fabius-cohors/references/local-agent-runtime.md) §8.
+
+**(A) The gate and the budget — fail closed when UNCONFIGURED.**
+```
+[ ] GATE    a missing challenge secret, known test key, limiter binding or trusted
+    client-address source = route unavailable, never open; the cheap limiter sits ahead
+    of the costly verification, which is bound to THIS host and THIS action and times
+    out closed
+[ ] BUDGET  the whole job's worst-case spend is claimed in ONE indivisible step before any
+    upstream call, against layered ceilings (caller · feature · total); a failed job
+    keeps its claim; an answer served from cache claims nothing
+[ ] RECORD  rotating hashed visitor keys are still personal data — say so; logs keep
+    counts only; the written residual includes that nothing pages anyone
+```
+
+**(B) Sharing a response is an authorization decision.** Coalescing and response / semantic caches hand one result to several callers: scope the key to the authenticated principal; build it from every field that changes output and none that do not, over every body shape the pipeline can hold. Coalesce only non-streaming near-deterministic requests. Diagnosis → disciplina [process-playbook.md](../../fabius-disciplina/references/process-playbook.md).
+
+**(C) Test the route that bills — on your OWN deployment** (often gated apart from the catalogue route). Call it with no credential at all: any answer other than an auth refusal — a routing or model error included — shows the gate is open. A made-up credential proves nothing where a bad key is treated as no key. A listener reachable off-host with key enforcement disabled logs that fact on start.
+
+---
+
 Every guide above is for **hardening and detection** only. A sample malicious *input* inside a defensive validation or regression test (security-playbook §6) is the only "attack-shaped" thing here — and it exists to **prove a hole closed**. No working exploits, no attack tooling, ever. If in doubt, leave it out. Routes back: [security-playbook.md](security-playbook.md) · index: [CORPUS.md](../../../CORPUS.md) (R9 · M9).
+
+Informed by **open-notebook** (lfnovo, MIT) — studied for the template-engine sink, the trailing-separator containment check, pinning a vetted address into an outbound request and the declared per-deployment egress policy; and **strix** (usestrix, Apache-2.0) — studied for ranking an advisory by demonstrated reachability and the limits of a privileged test container; and **open-seo** (every-app, MIT) — studied for the fail-closed gate and whole-run budget reservation in front of paid upstream calls; and **OmniRoute** (diegosouzapw, MIT) — studied for principal-scoped keys on shared responses and testing the route that bills; re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

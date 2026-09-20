@@ -97,6 +97,8 @@ Laws: **one accent**, **ink ≠ `#000`** (near-black reads photographic), **two 
 
 Generating imagery is a *design* act under the same restraint (the slot-fill prompt method is in `references/generative-imagery.md`). These models are the machinery; chain them: **generate → constrain to layout → cut out → relight → upscale → vectorize → score.** License is the first question — ship only `Apache/MIT/BSD` output; anything `non-commercial` is **preview/internal only** and the sealed skill must say so.
 
+**Hosted generator — the provider's terms replace the weights licence.** Six clauses, checked and dated by the terms' own date; re-read at each release. Five output-side: ownership and any plan-tier condition on commercial use · any ban on training or distilling a model from outputs, exceptions included (→ `fabius-doctrina`) · non-exclusivity — a raw output is no basis for a brand mark · likeness-consent duty + user-side indemnity ([praesidium §8](../../fabius-praesidium/references/supply-chain-and-ai-artifacts.md)) · synthetic-media disclosure + keeping provider-applied provenance marks (same file, §7 Job B). The sixth — input licence, training use, deletion — is that file's adoption gate (§3, step 5), not restated; confidential client inputs stay off a train-by-default endpoint. A record of the terms, not legal advice. The paid request → [`generative-media.md`](generative-media.md).
+
 | Stage · model (HF id) | License | Role |
 |---|---|---|
 | **T2I + Edit** · `black-forest-labs/FLUX.2-klein-4B` | Apache-2.0 | *Default shippable* generator — 4B, **unifies text-to-image and multi-reference editing**, end-to-end inference under a second, runs on ~13GB VRAM (RTX 3090/4070 class). **The family splits by size, not by name:** `FLUX.2-klein-9B` and `FLUX.2-dev` ship under the **FLUX non-commercial** license. Read the card per checkpoint; never infer the license from the family. |
@@ -133,3 +135,5 @@ Generating imagery is a *design* act under the same restraint (the slot-fill pro
 ## Pairs with
 
 `fabius-decor` (the laws these serve), **Fabius Iconarium** (icons, brand marks, emoji), **Fabius Motus** (Lottie/Rive/3D motion, entrance-only), **Fabius Bidi** (script-covering fonts, the missing-glyph rule), `references/generative-imagery.md` (the slot-fill prompt method for the HF T2I stage), `fabius-praesidium` (a `non-commercial` model shipping in a paid product is a licensing risk to flag), and `fabius-parcus` (CSS/SVG you can tokenize beats a baked raster — the least-weight material).
+
+Studied (2026-09-20): a hosted multi-model image-and-video generation service — its public terms of use (a commercial product; nothing carried) — observed for which output-side clauses a hosted generator's terms carry; no value, name or sentence taken.

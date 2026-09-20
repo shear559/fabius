@@ -12,7 +12,7 @@ description: >
   channel playbooks and swipe library live in references/channel-swipe-library.md, bundled and indexed by CORPUS.md, paged in on demand.
 when_to_use: >
   "launch post", "headline for this", "pitch it", "get more signups", "make the value obvious",
-  pricing-page or announcement copy.
+  pricing-page or announcement copy, "SEO audit", "edit my draft", "does this read as AI-written".
 license: UNLICENSED
 metadata:
   author: shear559
@@ -91,6 +91,8 @@ Don't build the funnel; test the message. Ship the smallest asset that puts the 
 - Positioning canvas, awareness table, the converting structures (PAS · AIDA · BAB · the 4-U headline test), and the metric-per-stage map → `references/marketing-playbook.md`.
 - Channel playbooks (landing · email · social · cold outreach · launch) and the swipe library → `references/channel-swipe-library.md`, bundled and indexed by [CORPUS.md](../../CORPUS.md); page in the one slice the task needs (R9 · M9).
 - SEO & the organic-discovery channel — keyword/intent match, honest on-page + JSON-LD, the technical floor, content clusters, the AI-crawler access gate + AI-answer visibility, and the SEO→funnel link → `references/seo-and-discoverability.md`.
+- Editing or auditing a draft for generated-prose tells — shape → repair table, voice inventory, no-invention branch, audit-only mode (findings, never an authorship verdict) → `references/prose-tell-lint.md`.
+- Auditing an existing site — position evidence, first-party query data, page-family shortlist and choice rule, honest sizing, crawl honesty, local/map visibility → `references/seo-audit-method.md`.
 - The verified tool + HuggingFace-model stack — privacy-first analytics, SEO/discoverability tooling (Lighthouse, schema.org, GSC), copy/readability utilities, and sentiment/summarization models (incl. a multilingual one) → `references/marketing-toolkit.md`.
 - The outbound lane (`sales.gtm`) — ICP-first lead research (public, sourced, ToS-respecting), honest qualification scoring, personalization-must-be-true drafts (**draft ≠ send** — sending is the user's act), the spam-law floor, won/lost feedback into the ICP → `references/gtm-outreach.md`.
 

@@ -37,6 +37,8 @@ The core machina rule is *no step silently half-completes.* Durable-execution fr
 
 **Emit the Standard Webhooks shape whether or not you use a vendor** (spec Apache-2.0; it is the convention receivers now expect — OpenAI, Anthropic, Google, Twilio, Kong, PagerDuty, Supabase, Clerk, ngrok and Resend among the implementers). Three fixed headers — `webhook-id`, `webhook-timestamp`, `webhook-signature` — over a signed `id.timestamp.payload`: HMAC-SHA256 under a `v1` prefix, or ed25519 under `v1a` when the receiver must verify without holding the shared secret, and multiple space-delimited signatures so a key can be rotated without dropping deliveries. Two receiver-side rules fall straight out of it and make machina's abstract Day-2 advice concrete: **reject any delivery whose `webhook-timestamp` is outside your tolerance window** — that is the replay defence — and **use `webhook-id` as the idempotency key**, held for a few minutes, which is exactly the stable dedupe key the re-fire rule asks for. Nothing rival is pending: the IETF `Idempotency-Key` header draft expired without ever becoming an RFC, so this convention is the contract.
 
+**An unsigned or thin completion signal is a wake-up hint, never state.** When a delivery documents no verifiable signature, or carries only an id: take the job id, discard the rest, drop any id not among your own intent rows (playbook, *Day-2*), and read state from the authenticated endpoint before acting — a not-found right after the signal means retry later. Ack 2xx inside the provider's deadline; work after the ack. Read the provider's retry rule: where a 4xx ends retries, answer a fault of your own with 5xx, never 4xx. Dedupe on (job id, terminal status). Retry windows are finite, so a sweep over jobs open past their expected deadline is the guarantee and the callback only the fast path. Staged readiness events: act on the stage you need. Revised stream segments: upsert by segment id, never append. A per-job unguessable URL segment is a single-use noise filter — not auth, never the API credential; it lands in provider logs (`fabius-praesidium`: no credentials in URLs).
+
 ## Fetching JS-rendered and bot-protected pages — the decision ladder
 
 Config-selected per target, with exactly one automatic fallback (headless → undetected-driver):
@@ -56,6 +58,8 @@ Every rung retry-wrapped with a hard timeout; **empty content counts as failure*
 
 **Hard gate, fail closed:** a deterministic robots.txt check (`urllib.robotparser`-class) before *any* fetch — never an LLM interpretation of robots, never a force-scrape override. This is fabius's own hardening rule (→ `fabius-praesidium`).
 
+**Pace per origin.** One pacing clock per origin. ANY throttled response pauses the whole origin, honours the server's stated wait and widens the interval up to a cap; a normal response resets the count. Stop at the job deadline, on a spent cooldown budget, or after a few throttled responses in a row — and report the crawl **incomplete**. Persist pacing state across job steps. Wait-hint parsing → [cohors §2](../../fabius-cohors/references/agent-evaluation-and-durability.md); findings → [mercatus §5](../../fabius-mercatus/references/seo-audit-method.md).
+
 **PDF links poison a browser-fetch pipeline** — filter them out of URL lists by pattern before fetching. And when a scrape recurs, don't keep an LLM in the fetch loop — compile it once into a deterministic extractor (the playbook's *Compile the scrape once*).
 
 ## Web-search wiring — hygiene and two silent failures
@@ -74,3 +78,9 @@ Honest note: there is **no cross-engine fallback ladder to copy** here; if you n
 ## Pairs with
 
 `fabius-machina` (the build-and-verify discipline + silent-failure catalog), `fabius-cohors` (the line: machina wires *deterministic* steps; cohors orchestrates *generative* agents), `fabius-praesidium` (webhook signing, least-privilege credentials, the fail-closed robots gate), and `fabius-parcus` (a fair-code/AGPL/SSPL dependency in a sealed product is a real constraint — pick the permissive option the task allows).
+
+Studied (2026-09-20): a hosted media-generation API's public developer documentation (a commercial product; nothing carried) — observed for a completion callback with no documented signature, a finite retry window and a status read as the fallback; no value, name or sentence taken.
+
+Studied (2026-09-20): a hosted meeting-capture service's public API documentation (a commercial product; nothing carried) — observed for id-only ready signals, staged readiness events and stream segments revised in place; no value, name or sentence taken.
+
+Informed by **open-seo** (every-app, MIT) — studied for origin-wide crawl pacing: a whole-origin pause on any throttled response, a widening interval, explicit stop conditions and pacing state persisted across job steps, re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.
