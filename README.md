@@ -1,16 +1,11 @@
 <div align="center">
 
-<img src="assets/fabius-pixel.svg" alt="fabius" width="440" />
+<img src="assets/fabius-contour.webp" alt="fabius" width="100%" />
 
 #### scout wide · strike narrow
 
 *one set of rules above every model*
 
-<br/>
-
-<img src="assets/hero-rules.webp" alt="fabius — one set of rules above every model: plan, act, verify and remember" width="100%" />
-
-<br/>
 <br/>
 
 [![Get started](https://img.shields.io/badge/get_started-Claude_Code_%C2%B7_Codex_%C2%B7_Grok_Build-76b900?style=for-the-badge)](#install-in-your-agent-app)
