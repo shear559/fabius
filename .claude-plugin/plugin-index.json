@@ -22,7 +22,7 @@
           },
           {
             "name": "fabius-concilium",
-            "description": "Cross-model council: heterogeneous models answer independently, rank each other blind, a chairman synthesizes one better answer."
+            "description": "Cross-model council: heterogeneous models answer independently, rank each other's anonymized answers, and a chairman synthesizes one answer with the full audit trail. It does not guarantee beating the best single model."
           },
           {
             "name": "fabius-decor",

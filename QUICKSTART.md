@@ -1,37 +1,76 @@
-# Start with one checkable task
+# Quickstart: install Fabius, then run one task you can check by hand
 
-Fabius supplies reusable operating rules for the model you use through a compatible agent app. Model access, connected services and compute are provided separately. The current license permits personal, non-commercial installation and use through the published marketplace command. See [LICENSE](LICENSE) before professional or client work.
+Install Fabius into the agent app you already use, open a fresh session, and give it a task whose right answer you know.
 
-1. Follow the [installation commands](README.md#install-in-your-agent-app) for your host. Claude Code commands run inside Claude Code; Codex and Grok commands shown as shell commands run in a terminal.
-2. Check the plugin manager shows **fabius**, its version and enabled state. Open a fresh session after installing or updating. A downloaded repository or marketplace entry alone is insufficient.
-3. Pick one [example](examples/README.md), supply its input and ask the task in ordinary language. You do not need to name every specialist. Save only where you have granted permission.
-4. Inspect the result and its evidence. Ask for the missing file or actual test output if a completion claim has no artifact. A plan for an image, video or integration is not that finished artifact.
+## 1 · Install
 
-## A first prompt
+**Claude Code** (type these inside Claude Code)
 
-> Summarize this CSV: product,quantity,unit_price; coffee,3,40; tea,5,18; mug,2,35. Show each line total, the sum, and the largest product by revenue. Do not assume a currency. Show the arithmetic.
+```
+/plugin marketplace add shear559/fabius
+/plugin install fabius@fabius
+/reload-plugins
+```
 
-Expected arithmetic: coffee 120, tea 90, mug 70; total 280; ten items; coffee has the largest line revenue. This is a synthetic arithmetic example, not market or financial advice.
+**Codex** (in a terminal, then restart Codex)
 
-## When something is missing
+```text
+codex plugin marketplace add shear559/fabius
+codex plugin add fabius@fabius
+codex plugin list --marketplace fabius
+```
 
-| Symptom | Next check |
+**Grok Build** (in a terminal)
+
+```
+grok plugin install shear559/fabius --trust
+grok plugin enable fabius
+```
+
+It worked when your plugin manager lists **fabius** as installed. Claude Code and Grok Build also show its fifteen skills; in Codex, restart and look for the Fabius skills in a fresh task.
+
+## 2 · Run a task with a known answer
+
+Paste this into a fresh session:
+
+```
+fabius: summarize this CSV. Show each line total, the sum, and the largest product by revenue.
+Do not assume a currency. Show the arithmetic.
+
+product,quantity,unit_price
+coffee,3,40
+tea,5,18
+mug,2,35
+```
+
+The right answer: coffee 120, tea 90, mug 70; total 280; ten items; coffee is the largest line. The currency stays unspecified, because the file never names one.
+
+Starting a prompt with `fabius:` calls the router by name. Agent apps differ in how readily they pick up skills from a plain sentence.
+
+## 3 · Try three more
+
+[Meeting notes into next steps, a 30-second video shot list, and a Python bug fix with boundary tests](examples/README.md). Each one ships with its input, the result, and the check.
+
+## If something is missing
+
+| You see | Do this |
 |---|---|
-| No plugin commands | Run your host's help/version command and update through its supported channel |
-| Plugin listed but skills absent | Confirm enabled state; restart; check the selected workspace and host surface |
-| Old behavior after update | Check installed version and start a fresh session; marketplace refresh alone does not activate new files |
-| Copy button fails | Use the selected manual-copy text field or select the visible command directly |
-| No file, browser or renderer | Ask for a clearly labelled draft, or grant/configure the required tool; never infer execution |
-| Unexpected memory write | Stop the task, inspect the declared record store and follow the host's data controls |
+| No plugin commands | Update your agent app through its normal channel, then check its help or version command |
+| Fabius is listed but no skills appear | Confirm it is enabled, restart, and check you are in the workspace you installed it for |
+| Old behavior after an update | Check the installed version and open a fresh session; a running session keeps the version it loaded |
+| The task needed a file, browser or renderer you have not connected | Fabius is built to report a missing tool, never to fake the result. Connect the tool, or ask for a clearly labeled draft |
+| A record was saved that you did not expect | Stop the task and check the project-memory folder you set up (one page per project). Fabius writes there only with your permission |
 
-## Update, disable and remove
+## Update, turn off, remove
 
-Claude Code: use `/plugin` to inspect and disable; `/plugin update fabius@fabius` updates the plugin and `/reload-plugins` reloads it. `/plugin uninstall fabius@fabius` removes it. Read [host documentation](https://code.claude.com/docs/en/discover-plugins).
+**Claude Code:** `/plugin update fabius@fabius`, then `/reload-plugins`. Disable it from `/plugin`. Remove it with `/plugin uninstall fabius@fabius`. [Claude Code plugin docs](https://code.claude.com/docs/en/discover-plugins).
 
-Codex CLI: `codex plugin marketplace upgrade fabius`, then `codex plugin add fabius@fabius`; inspect with `codex plugin list --marketplace fabius`. Use the host's plugin controls to disable, or `codex plugin remove fabius@fabius` to uninstall. Restart and verify. CLI, desktop and IDE are separate acceptance targets.
+**Codex:** `codex plugin marketplace upgrade fabius`, then `codex plugin add fabius@fabius`, then restart. To turn it off without removing it, use Codex's own plugin controls. Remove it with `codex plugin remove fabius@fabius`.
 
-Grok Build: `grok plugin update fabius` updates an unpinned install; `grok plugin disable fabius` and `grok plugin uninstall fabius` manage activation/removal. Version 0.2.103 skips pinned refs on update: review the intended new release before transitioning a pin. Start a fresh session.
+**Grok Build:** `grok plugin update fabius` updates an install that is not pinned to a release tag (a pinned install is moved to the new tag by hand). `grok plugin disable fabius` turns it off; `grok plugin uninstall fabius` removes it.
 
-`stop fabius` asks the model to drop the stance for the conversation. It does not uninstall the plugin, erase host chat history or revoke connected-account permissions. Host controls remain authoritative. Removing a plugin is not a promise to erase records you asked it to save.
+In any session, say `stop fabius` and Fabius stops applying its rules for the rest of that conversation. It does not disable or uninstall the plugin; your plugin manager does that.
 
-[Compatibility evidence](COMPATIBILITY.md) · [Help](SUPPORT.md)
+Fabius is free to install for personal, non-commercial use. Your model, connected services and compute are your own costs. Professional or client work needs permission: see [LICENSE](LICENSE).
+
+[Which app versions were tested](COMPATIBILITY.md) · [Get help](SUPPORT.md)

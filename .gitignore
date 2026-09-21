@@ -41,3 +41,7 @@ runtime/test/vectors/
 # so removing them changes no shipped contract. They remain on disk for the owner.
 FRONTIER-ROADMAP.md
 VOICE-ROADMAP.md
+
+# Maintainer-private go-to-market preparation (pilot ledger, acceptance cases, launch drafts).
+# scripts/verify-all.sh fails if any launch/ path is tracked and validates a local copy when present.
+launch/

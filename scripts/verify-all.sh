@@ -12,6 +12,7 @@ esac
 
 passed=0
 failed=0
+skipped=0
 run_gate() {
   label=$1
   shift
@@ -30,7 +31,21 @@ run_gate "committed benchmark receipt replay" node evals/verify-receipts.mjs
 run_gate "text-eval evidence regression" node --test evals/text-eval.test.mjs
 run_gate "focused proof boundary regressions" node evals/proof-boundaries.mjs
 run_gate "starter artifact checks" python3 -B examples/verify.py
-run_gate "prepared launch cases and evidence boundaries" node launch/validate-tasks.mjs --self-test
+# launch/ is maintainer-private go-to-market preparation: gitignored, never published.
+# Fail closed: a tracked launch/ path (or an unreadable index) fails; a local copy is always
+# validated in full; only a checkout with no launch/ at all reports an explicit, counted skip.
+launch_untracked() {
+  tracked=$(git ls-files -- launch) || { echo "FAIL cannot read the git index"; return 1; }
+  [ -z "$tracked" ] || { printf 'FAIL launch/ is tracked in the public tree:\n%s\n' "$tracked"; return 1; }
+  echo "PASS no launch/ path is tracked"
+}
+run_gate "private launch material stays untracked" launch_untracked
+if [ -e launch ]; then
+  run_gate "prepared launch cases and evidence boundaries" node launch/validate-tasks.mjs --self-test
+else
+  printf '\n===== prepared launch cases and evidence boundaries =====\nSKIP launch/ is maintainer-private and absent from this checkout\n'
+  skipped=$((skipped+1))
+fi
 run_gate "base eval harness selftest" node evals/eval.mjs --selftest
 run_gate "portable eval harness selftest" python3 evals/portable_eval.py --selftest
 run_gate "runtime unit/integration tests" node --test runtime/test/*.test.mjs
@@ -55,5 +70,5 @@ run_gate "release-state adversarial regression" node scripts/test-verify-release
 run_gate "$mode release integrity" node scripts/verify-release.mjs "--mode=$mode"
 
 printf '\n===== aggregate =====\n'
-printf '%s gate groups passed · %s failed\n' "$passed" "$failed"
+printf '%s gate groups passed · %s failed · %s skipped\n' "$passed" "$failed" "$skipped"
 [ "$failed" -eq 0 ]
