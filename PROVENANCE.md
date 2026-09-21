@@ -2,11 +2,29 @@
 
 # Provenance & release attribution of fabius
 
-### How the repository records what was sealed, when it existed, and which key signed it — with the limits up front.
+### What was sealed, which key signed it, and what that does and does not prove.
 
 </div>
 
-This document is the apparatus that lets anyone inspect **what was sealed**, **which key signed it**, and whether its detached OpenTimestamps proof is merely calendar-attested or trusted-verified against Bitcoin. It records release provenance and attribution; it is not by itself proof of originality, exclusive ownership, first creation, or a legal entitlement. Six mechanisms support the record: three repository facts — the fingerprint (§3), copyright notice (§4), and public git objects (§4); one recomputable content-bound seal (§3·b); and two release artifacts — the digest-bound OpenTimestamps proof (§1) and signed tag (§2). `bash provenance/verify.sh` reports the live state. A pending proof is not called Bitcoin-confirmed.
+## In short
+
+Fabius seals 18 files: the fifteen skill contracts plus `AGENTS.md`, `ARCHITECTURE.md` and `CORPUS.md`.
+
+- **Every sealed file** gets a SHA-256 hash, and one Merkle root covers the whole set. Change one word in a sealed file and its hash changes.
+- **Every release** is a git tag signed with a dedicated Ed25519 key.
+- **An OpenTimestamps proof** covers a small record that names the release commit (`provenance/sealed-commit.txt`). At this release it is pending Bitcoin confirmation; `verify.sh` reports the live status.
+
+What that proves: these exact bytes, released under that key. Once Bitcoin confirms the proof, it also proves a date by which they existed.
+
+What it does not prove: originality, ownership, first creation, a legal right, safety or better model quality.
+
+Check it yourself, in a full copy of the repository with its tags (Node.js needed):
+
+```bash
+bash provenance/verify.sh
+```
+
+It recomputes every hash and the Merkle root, checks the signed release tags against the pinned key, and, with the OpenTimestamps `ots` client installed, tells you whether the timestamp is pending or confirmed.
 
 **The honesty stance, up front.** A public git repository **cannot be made uncloneable.** That is not a missing setting — it is how git works: anyone who can read the repo can `git clone` it in full, history included. Disabling forks does not stop it. No code, license, or watermark changes this. Anyone who promises a "clone-proof" public repo is selling a fiction.
 

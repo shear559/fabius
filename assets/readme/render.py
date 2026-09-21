@@ -3,10 +3,13 @@
 
     python3 -B assets/readme/render.py
 
-Writes fabius-loop.svg, fabius-system.svg, fabius-ladder.svg and cta-install.svg beside this file.
-Every label comes from the tables below, which mirror skills/fabius/SKILL.md (the loop, the routing table)
-and skills/fabius/references/routing-policy.md (rule R2). These are diagrams of how Fabius works,
-not measurements. They are separate from assets/charts/, whose outputs are whitepaper sources.
+Writes fabius-loop.svg, fabius-system.svg, fabius-ladder.svg and cta-install.svg (README) and
+benchmark-panel-a.svg (BENCHMARKS.md) beside this file. The diagram labels come from the tables below,
+which mirror skills/fabius/SKILL.md (the loop, the routing table) and skills/fabius/references/
+routing-policy.md (rule R2): they show how Fabius works and are not measurements. The one chart of
+measured data reads every number from the committed receipts (evals/results.v5.json, checked against
+evals/results.benchmark.json) and fails if the two disagree. All of this is separate from
+assets/charts/, whose outputs are whitepaper sources.
 
 The cards are self-contained dark surfaces so they read on GitHub's light and dark themes. Text uses
 system font stacks (an SVG shown through <img> cannot load a web font) and is sized on an 840-unit
@@ -274,9 +277,124 @@ def cta_svg():
             + "</svg>\n")
 
 
+# -- 5 · benchmark Panel A (BENCHMARKS.md) ------------------------------------------------------
+# The only chart of measured data. Every number is read from the committed receipts at render time:
+# evals/results.v5.json (per-arm score and answer length) and evals/results.benchmark.json (the
+# published aggregate, which must agree). Nothing below is typed by hand.
+REPO = OUT.parent.parent
+PANEL_A_ORDER = [("fable", "Fable 5"), ("sonnet", "Sonnet 5"), ("opus", "Opus 4.8"), ("haiku", "Haiku 4.5")]
+ARMS = [  # (receipt key, legend label, mark)
+    ("baseline", "the task alone", "dot-grey"),
+    ("terse", "+ a “be concise” line", "ring"),
+    ("fabius", "+ the Fabius rules", "dot-green"),
+]
+GREY = "#8d9a8f"
+
+
+def panel_a_data():
+    import json
+    import re
+    raw = json.loads((REPO / "evals/results.v5.json").read_text(encoding="utf-8"))
+    pub = json.loads((REPO / "evals/results.benchmark.json").read_text(encoding="utf-8"))["panelA_quality_newest_claude"]
+    rows = []
+    for key, name in PANEL_A_ORDER:
+        arm = {a: raw["byModelArm"][f"{key}/{a}"] for a, _, _ in ARMS}
+        pubm = pub["byModel"][key]
+        for a, _, _ in ARMS:  # the chart must show exactly what the published table shows
+            assert abs(arm[a]["total"] - pubm[a]) < 1e-9, (key, a, arm[a]["total"], pubm[a])
+        assert arm["baseline"]["chars"] == pubm["baseline_chars"] and arm["fabius"]["chars"] == pubm["fabius_chars"], key
+        rows.append({"key": key, "name": name,
+                     "score": {a: arm[a]["total"] for a, _, _ in ARMS},
+                     "chars": {a: arm[a]["chars"] for a, _, _ in ARMS},
+                     "n": arm["fabius"]["n"]})
+    date = re.search(r"\d{4}-\d{2}-\d{2}", pub["method"]).group(0)
+    gap = pub["judgeAgreement"]["mean_abs_total_diff"]
+    return rows, date, gap
+
+
+def mark(kind, x, y, r=7.5):
+    if kind == "ring":
+        return f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:g}" fill="{GROUND}" stroke="{BODY}" stroke-width="2.4"/>'
+    fill = ACCENT if kind == "dot-green" else GREY
+    return f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:g}" fill="{fill}" stroke="{GROUND}" stroke-width="2"/>'
+
+
+def benchmark_svg():
+    rows, date, gap = panel_a_data()
+    mx, x0, x1 = 24, 214, 704
+    rh, dodge = 72, 15
+    b = []
+    better = [r for r in rows if r["score"]["fabius"] > r["score"]["baseline"]]
+    lower = [r for r in rows if r["score"]["fabius"] < r["score"]["baseline"]]
+    cuts = [100 * (1 - r["chars"]["fabius"] / r["chars"]["baseline"]) for r in rows]
+    terse_shorter = sum(r["chars"]["terse"] < r["chars"]["fabius"] for r in rows)
+    words = {1: "one", 2: "two", 3: "three", 4: "four"}
+    b.append(text(mx, 44, f"PANEL A · RUN OF {date} · FOUR CLAUDE TIERS", 18, ACCENT_LITE, MONO, 600, spacing="2"))
+    b.append(text(mx, 84, f"Shorter answers on all {words[len(rows)]} tiers, a higher score on {words[len(better)]}", 25.5, TEXT, SANS, 700))
+    b.append(text(mx, 116, f"Same model, same {rows[0]['n']} tasks, three ways. Two judges scored every answer blind.", 19.5, BODY))
+    lx = mx
+    for _, label, kind in ARMS:
+        b.append(mark(kind, lx + 8, 154))
+        b.append(text(lx + 24, 161, label, 19.5, BODY))
+        lx += 24 + len(label) * 9.6 + 34
+
+    def panel(top, title, note, lo, hi, ticks, fmt, value, right):
+        out = [text(mx, top, title, 21, TEXT, SANS, 600), text(W - mx, top, note, 17.5, MUTED, SANS, 400, "end")]
+        gy0, gy1 = top + 18, top + 18 + len(rows) * rh
+        sx = lambda v: x0 + (v - lo) / (hi - lo) * (x1 - x0)
+        for t in ticks:
+            out.append(f'<path d="M{sx(t):.1f} {gy0} V{gy1}" stroke="{NODE_EDGE}" stroke-opacity=".12" stroke-width="1"/>')
+            out.append(text(sx(t), gy1 + 24, fmt(t), 18, MUTED, MONO, 400, "middle"))
+        for i, r in enumerate(rows):
+            cy = gy0 + i * rh + rh / 2
+            out.append(rect(mx - 6, gy0 + i * rh + 4, W - 2 * mx + 12, rh - 8, 10, fill=NODE, fo=".55"))
+            out.append(text(mx + 8, cy + 7, r["name"], 21, TEXT, SANS, 600))
+            for j, (a, _, kind) in enumerate(ARMS):
+                out.append(mark(kind, sx(value(r, a)), cy + (j - 1) * dodge))
+            out.append(text(W - mx - 8, cy + 7, right(r), 20, BODY, MONO, 600, "end"))
+        return out, gy1 + 24
+
+    top = 222
+    p1, end = panel(top, "Score out of 15", "Fabius vs the task alone", 11, 15, [11, 12, 13, 14, 15],
+                    lambda t: f"{t}", lambda r, a: r["score"][a],
+                    lambda r: f'{r["score"]["fabius"] - r["score"]["baseline"]:+.2f}'.replace("-", "−"))
+    b += p1
+    top = end + 62
+    p2, end = panel(top, "Average answer length, characters", "Fabius vs the task alone", 0, 4500,
+                    [0, 1000, 2000, 3000, 4000], lambda t: "0" if t == 0 else f"{t // 1000}k",
+                    lambda r, a: r["chars"][a],
+                    lambda r: f'−{100 * (1 - r["chars"]["fabius"] / r["chars"]["baseline"]):.1f}%')
+    b += p2
+    y = end + 44
+    import datetime
+    month = datetime.date.fromisoformat(date).strftime("%B %Y")
+    shorter = "every tier" if terse_shorter == len(rows) else f"{words[terse_shorter]} of {words[len(rows)]} tiers"
+    notes = [
+        f"The plain “be concise” line wrote shorter still, on {shorter}.",
+        f"{', '.join(r['name'] for r in lower)} scored lower with Fabius."
+        if lower else "No tier scored lower with Fabius.",
+        f"The two judges differ by {gap:g} of 15 on average: read the score gaps as small.",
+        f"Measured in {month} before Fabius 3.x existed. Data: evals/results.v5.json.",
+    ]
+    for i, n in enumerate(notes):
+        b.append(text(mx, y + i * 30, n, 19, BODY if i < 2 else MUTED))
+    height = y + (len(notes) - 1) * 30 + 34
+    desc = (f"Panel A, run of {date}: the same four Claude models answered the same {rows[0]['n']} tasks three ways, "
+            "the task alone, the task plus a be-concise line, and the task plus the Fabius rules, scored blind out of 15 "
+            "by two judges. " + " ".join(
+                f"{r['name']}: score {r['score']['baseline']:.2f}, {r['score']['terse']:.2f}, {r['score']['fabius']:.2f}; "
+                f"average length {r['chars']['baseline']}, {r['chars']['terse']}, {r['chars']['fabius']} characters."
+                for r in rows)
+            + f" Fabius answers were {min(cuts):.1f} to {max(cuts):.1f} percent shorter than the task alone on every tier; "
+            f"the be-concise line was shorter still on {shorter}. " + notes[1] + " " + notes[2] + " " + notes[3])
+    return card(height, "Benchmark Panel A: score and answer length for four Claude tiers, three ways", desc, b,
+                contours(720, 260, 360, 7, 4))
+
+
 def main():
     for name, svg in (("fabius-loop.svg", loop_svg()), ("fabius-system.svg", system_svg()),
-                      ("fabius-ladder.svg", ladder_svg()), ("cta-install.svg", cta_svg())):
+                      ("fabius-ladder.svg", ladder_svg()), ("cta-install.svg", cta_svg()),
+                      ("benchmark-panel-a.svg", benchmark_svg())):
         (OUT / name).write_text(svg, encoding="utf-8")
         print("wrote", name, len(svg), "bytes")
 

@@ -2,9 +2,28 @@
 <!-- fabius-release: 3.2.0 -->
 # The fabius benchmark
 
-One dated benchmark, with its misses intact: **Panel A improved three of four measured Claude tiers while shortening all four; Panel B's historical model-operated executed-code score records tied at ceiling and its model-graded factual-check track improved; Panel C recorded positive blind-judge demos across four external families; Panel D contains both gains and regressions.**
+In Panel A, four Claude models answered the same 15 tasks three ways: the task alone, the task plus a plain "be concise" line, and the task plus Fabius's shipped rules. Two judges scored every answer blind. They never saw the model, the arm or the rules.
 
-One test, four panels, one canonical aggregate: [`evals/results.benchmark.json`](evals/results.benchmark.json). Every published number came from a named run, but the historical evidence is not complete: v5/v6/v7 retain scores rather than candidate answers; v6 omits generated files and raw stdout/stderr; Panel C's raw portable receipt was never committed. A rerun creates a new measurement on moving endpoints — it cannot reconstruct those missing artifacts. `node evals/verify-receipts.mjs` deterministically replays every aggregate the committed score receipts can support and refuses silent drift. Panel D tests the text-output portion of the evaluation contract of [IDENTITY.md](IDENTITY.md) on the versioned **Fabius Benchmark Suite** (`evals/suite/`, FBS v1.0) with **BASE → FAB → FAB_MEMORY**.
+<img src="assets/readme/benchmark-panel-a.svg" alt="Panel A, measured 2026-07-01. Score out of 15 for the bare model, the be-concise control and Fabius: Fable 5 14.50, 14.60, 14.73; Opus 4.8 14.40, 14.43, 14.60; Sonnet 5 14.07, 14.07, 14.50; Haiku 4.5 11.73, 12.43, 11.40. Average answer length in characters, same order: Fable 5 3,087, 1,649, 2,307; Opus 4.8 3,570, 1,274, 2,855; Sonnet 5 3,699, 1,606, 2,452; Haiku 4.5 4,111, 2,454, 2,653." width="100%" />
+
+Panel A, four Claude models, measured 2026-07-01:
+
+- **Shorter on every tier.** Output fell 20.0% to 35.5% versus the bare model on all four Claude models.
+- **Higher on three of four.** On Fable 5, Opus 4.8 and Sonnet 5, Fabius scored above both the bare model and the "be concise" control.
+- **Lower on Haiku 4.5.** It scored 11.40 with Fabius against 11.73 bare. The miss is broken down below.
+- **"Be concise" is shorter still.** It averaged 1,274 to 2,454 characters per model; Fabius averaged 2,307 to 2,855.
+- **Read the score gains as small.** The two judges differ by 0.72 of 15 on average, larger than any Fabius gain over the bare model.
+
+Every panel was run in June–July 2026 on the Fabius rules of that time, before Fabius 3.x. None of it is a claim about the current release.
+
+Scores were kept; original answers were not. Panel C's raw run was never committed; only its published scores remain. `node evals/verify-receipts.mjs` replays every total the committed score files support; the combined totals are in [`evals/results.benchmark.json`](evals/results.benchmark.json).
+
+What each panel is:
+
+- **A.** Quality: four Claude tiers, 15 tasks, two blind judges.
+- **B.** Code scored on hidden tests (reported tied at 100% in every arm), plus domain work that two model graders checked against fixed factual checklists.
+- **C.** The same three arms across four model families, six tasks, judged blind.
+- **D.** The Fabius Benchmark Suite (100 tasks on Sonnet 5, a 20-task smoke tier on Haiku 4.5): bare, with Fabius, and with Fabius plus project memory. It shows gains and regressions.
 
 ## Arms in Panels A, B and C
 
@@ -20,7 +39,7 @@ The honest miss is printed, not hidden: Panel B's mixed score rises on every mod
 
 ## Panel A — Quality, blind, four Claude tiers
 
-15 tasks × 3 arms on each of the four Claude models current at the **2026-07-01** run — **Fable 5 · Opus 4.8 · Sonnet 5 · Haiku 4.5**. Date the roster; never claim it is the newest. A superlative about a model line is a claim that expires with no one editing the file: Anthropic shipped **Claude Opus 5** on 2026-07-24 and moved Opus 4.8 to the legacy shelf, so this panel now names one legacy model and omits the current default. The cells below stand exactly as measured — the honest repair is to re-run the panel on the new roster, not to relabel the old numbers. Every answer is scored /15 (correctness, minimality, best-practice) by **two blind judges** (Opus + Fable, averaged, so no model grades only its own work; inter-judge gap 0.72/15). Judges are never told the model, the arm, or the stance.
+15 tasks × 3 arms on each of the four Claude models current at the **2026-07-01** run — **Fable 5 · Opus 4.8 · Sonnet 5 · Haiku 4.5**. This roster is dated: Anthropic shipped **Claude Opus 5** on 2026-07-24 and moved Opus 4.8 to the legacy shelf, so this panel names one legacy model and omits the current default. The cells below stand exactly as measured — the honest repair is to re-run the panel on the new roster, not to relabel the old numbers. Every answer is scored /15 (correctness, minimality, best-practice) by **two blind judges** (Opus + Fable, averaged, so no model grades only its own work; inter-judge gap 0.72/15). Judges are never told the model, the arm, or the stance.
 
 Totals out of 15, and the output cut vs the bare model:
 

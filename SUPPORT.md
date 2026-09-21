@@ -1,9 +1,24 @@
-# Support
+# Get help
 
-For installation and usage questions, use [GitHub Discussions](https://github.com/shear559/fabius/discussions). For a reproducible defect, use the [issue form](https://github.com/shear559/fabius/issues/new/choose). For suspected vulnerabilities or exposed secrets, use the private channel in [SECURITY.md](SECURITY.md).
+- **A question about installing or using Fabius.** Ask in [Discussions](https://github.com/shear559/fabius/discussions).
+- **Something broke.** Open a [Bug report](https://github.com/shear559/fabius/issues/new/choose).
+- **A figure, count or claim in the docs is wrong.** Open a [Documentation correction](https://github.com/shear559/fabius/issues/new/choose) with where it appears and what you ran or read that contradicts it.
+- **A security problem or an exposed secret.** Report it privately through [SECURITY.md](SECURITY.md), never in a public issue.
 
-Include the host name/version, plugin version shown by its manager, operating system, exact reproduction steps, expected result and actual result. If using the optional runner from a full checkout, run `node runtime/fabius.mjs --version`. Do not assume a global `fabius` executable exists.
+## What to include
 
-Read and redact shared logs yourself. Never post credentials, private transcripts, customer records or full personal paths. Automatic redaction may miss private content. General support has no guaranteed response time; the security policy describes vulnerability handling separately.
+- Your agent app and its version.
+- The Fabius version your plugin manager shows.
+- Your operating system.
+- The exact steps: the prompt or command you ran.
+- What you expected, and what happened.
 
-Start with [QUICKSTART.md](QUICKSTART.md) and the [compatibility matrix](COMPATIBILITY.md). Use your host provider for account, model access, billing and host-level data deletion. Fabius does not operate those services.
+Before you paste output or a transcript, remove secrets, private transcripts, customer records and full personal paths yourself.
+
+## Before you ask
+
+Most install problems are covered in [QUICKSTART.md](QUICKSTART.md) and the [list of tested apps](COMPATIBILITY.md).
+
+Account access, model access, billing and data deletion belong to your agent app's provider. Fabius runs no service of its own.
+
+General support has no guaranteed response time. Security reports follow the timeline in [SECURITY.md](SECURITY.md).

@@ -1,4 +1,19 @@
-# Compatibility and acceptance evidence
+# Which agent apps Fabius was tested in
+
+Does it work in your app? Here is what was run, and what was not.
+
+| App (version tested) | What was checked | Not checked yet |
+|---|---|---|
+| Claude Code 2.1.260 | Clean install, update, disable, enable and remove; all fifteen skills found | A model task in a clean profile; loading from a plain sentence |
+| Codex CLI 0.153.4 | Install; asked by name, Fabius loaded and fixed a bug with six tests passing; asked in a plain sentence, the bug was fixed with no sign of Fabius loading | Clean-profile install and removal |
+| Codex desktop | Installed skills show in the maintainer's sessions | A new user's first run |
+| Codex IDE | Nothing yet | Everything |
+| Grok Build 0.2.103 | Clean install, update and remove; all fifteen skills found; disable and enable ran, but its list does not show whether Fabius is off | A model task; its updater skips an install pinned to a release tag |
+| Other tools that read `AGENTS.md` | Nothing run yet (the portable core is in `AGENTS.md`) | Everything; use outside the marketplace install needs separate permission |
+
+These app checks ran on Fabius 2.8.3 (the published release) and a local 3.0.0 build. Versions 3.1.0 and 3.2.0 changed skill text but not the install format or the helper code, and were not re-run in these apps.
+
+## Full test record
 
 Checked 2026-09-10. The published host baseline is **2.8.3**, commit `b31628684fed2267a58eb7afa530aed0215fc80e`. Version **3.0.0** replaces the imported capability trees with original local implementations. A package test, a fresh-session task and a model-quality comparison are separate evidence.
 
@@ -32,7 +47,7 @@ Version **3.2.0** adds reference doctrine under the existing fifteen owners — 
 
 Fresh disposable Claude Code 2.1.260 and Grok Build 0.2.103 profiles installed the local candidate, reported version 3.0.0 and discovered all fifteen public skills. Both managers completed disable, enable and uninstall; each ended empty and preserved the synthetic user-created record. Grok's listing does not expose enabled state, so command completion is the boundary of that observation.
 
-Each installed copy contained all 110 skill files. The four original helper implementations matched the tested source bytes. Six helper/demo invocations per host passed, including generated scene-template closure; required Markdown resource links resolved. A prose reference changed after those installation snapshots, so these receipts do not certify the final sealed tree byte-for-byte. They test the local-directory installation mechanism, not downloading the future public release. No clean-profile model task was run.
+Each installed copy contained all 110 skill files of the 3.0.0 build (3.2.0 ships 118). The four original helper implementations matched the tested source bytes. Six helper/demo invocations per host passed, including generated scene-template closure; required Markdown resource links resolved. A prose reference changed after those installation snapshots, so these receipts do not certify the final sealed tree byte-for-byte. They test the local-directory installation mechanism, not downloading the future public release. No clean-profile model task was run.
 
 A separate fresh existing-account Codex CLI session explicitly read the local 3.0.0 router, Parcus and Disciplina contracts before repairing a seeded Python average function. The retained trace contains all three complete file reads and matching SHA-256 values. Six tests passed in the task and in an independent rerun. This is one explicitly routed local-candidate task, not automatic skill discovery or a clean-profile model trial. The host reported shortening some skill descriptions to fit its context budget; full contract reads were still observed.
 
