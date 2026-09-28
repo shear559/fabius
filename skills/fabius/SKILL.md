@@ -1,22 +1,11 @@
 ---
 name: fabius
 description: >
-  Load at the start of any non-trivial task — the router that sets HOW to work before any
-  specialist fires. fabius supplies one set of operating rules for different AI models
-  (Claude · GPT · Gemini · DeepSeek · GLM · Qwen · Llama · Mistral · Kimi · Grok), loaded
-  through a compatible agent app. One stance, end to end: code, prose, agents, UI, data
-  visualization, debugging, marketing, defensive security, games, on-chain work and sealing,
-  automations, scientific research, ML/LLM engineering, market analysis, cross-model
-  deliberation, and memory. Scout wide, strike narrow — talk lean, build lean, run a
-  disciplined process, design at ship quality — then route to the specialists fabius-parcus,
-  fabius-disciplina, fabius-decor, fabius-cohors, fabius-archivum, fabius-mercatus,
-  fabius-praesidium, fabius-ludus, fabius-catena, fabius-machina, fabius-scientia,
-  fabius-doctrina, fabius-fortuna, and fabius-concilium. Use when the user says "fabius" or
-  wants end-to-end capability from one place.
+  fabius router: load at the start of any non-trivial task; sets HOW to work before any specialist
+  fires. One set of operating rules above every model: scout wide, strike narrow, route to the
+  layer that owns the concern. Use on "fabius" or for end-to-end work.
 when_to_use: >
-  "how should we approach this", "set up the way of working", "which layer handles this", "work on
-  <project>", "continue where we left off", or at the start of any multi-step build before a
-  specialist fires.
+  "how should we approach this", "which layer handles this"
 license: UNLICENSED
 metadata:
   author: shear559

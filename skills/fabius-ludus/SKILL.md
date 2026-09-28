@@ -1,17 +1,11 @@
 ---
 name: fabius-ludus
 description: >
-  fabius's game-craft layer — how to make a small game that's actually fun and actually ships:
-  find the core loop first, add game feel (juice) deliberately, model state as an explicit machine,
-  hold the pixel-art lane, balance one knob at a time, and scope to a jam-sized cut. Use when
-  building a game, a game prototype, a game mechanic, a game loop, a playable, an interactive toy,
-  a sticker/character game, or anything with win/lose/score state — or when the user says "make a
-  game", "the loop isn't fun", "add juice", "balance this", or "make it feel good to play". The
-  core-loop template, the juice checklist, the state-machine skeleton, and the pixel-art constants
-  live in references/game-playbook.md; the engine recipes and feel patterns live in references/engine-recipes.md, bundled and indexed by CORPUS.md, paged in on demand.
+  fabius's game-craft layer: small games that are fun and ship. Core loop first, juice, explicit
+  state machine, pixel-art lane, one balance knob at a time, jam-sized scope. For any game,
+  mechanic, playable, toy or win/lose/score state.
 when_to_use: >
-  "playable prototype", "arcade feel", "high-score loop", "screen shake", "why isn't it fun
-  yet".
+  "make a game", "the loop isn't fun", "add juice", "screen shake"
 license: UNLICENSED
 metadata:
   author: shear559

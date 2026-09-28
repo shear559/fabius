@@ -1,19 +1,11 @@
 ---
 name: fabius-catena
 description: >
-  fabius's on-chain layer — build trustless systems on a blockchain and prove provenance with one.
-  Two jobs under one concern: (1) write and review on-chain code — EVM (Solidity / Foundry / EIP-712)
-  and Solana (Anchor / Pinocchio) programs, wallets, transactions, on-chain reads — account-validation
-  first, money-safe by default; (2) cryptographically SEAL artifacts with independently checkable
-  provenance — a content-bound hash, a signature, and a timestamp whose pending or confirmed
-  status and trust assumptions are reported. Use when the task touches a smart contract, a program, a wallet, a
-  transaction, a token/mint, an on-chain read, or when the user says "seal this", "sign this file",
-  "prove provenance", "anchor it", or "verify authenticity". Boring-cryptography only; defensive — it
-  hardens and proves, never weaponizes: no exploit tooling, no wallet-draining, no rug mechanics,
-  no market-manipulation code — hardening and verification only.
+  fabius's on-chain layer: write and review EVM and Solana programs, transactions, on-chain reads,
+  money-safe; SEAL artifacts with content-bound hash, signature, timestamp, pending or confirmed.
+  Defensive only: hardens and proves, never weaponizes.
 when_to_use: >
-  "smart contract review", "deploy a token", "timestamp this work", "notarize this artifact",
-  wallet flows, reading state from a chain.
+  "smart contract", "deploy a token", "seal this", "prove provenance"
 license: UNLICENSED
 metadata:
   author: shear559

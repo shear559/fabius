@@ -6,63 +6,63 @@
         "skills": [
           {
             "name": "fabius",
-            "description": "Router and stance-setter: classify the task, select an available execution path and model tier, and refine existing skills from verified sources."
+            "description": "fabius router: load at the start of any non-trivial task; sets HOW to work before any specialist fires. One set of operating rules above every model: scout wide, strike narrow, route to the layer that owns the concern. Use on \"fabius\" or for end-to-end work."
           },
           {
             "name": "fabius-archivum",
-            "description": "Persistent memory: use the canonical project record, check staleness, retrieve and sync durable facts, and consolidate legacy notes without duplicating shared stores."
+            "description": "fabius's memory layer: maintain and retrieve project memory in the workspace's declared record store. Read a project's record before work; preserve decisions, provenance, history; gated writes. Ingests meetings, videos, books."
           },
           {
             "name": "fabius-catena",
-            "description": "On-chain: money-safe EVM and Solana code, plus cryptographic sealing — hash, signature, and digest-bound OpenTimestamps proof with explicit pending/confirmed state."
+            "description": "fabius's on-chain layer: write and review EVM and Solana programs, transactions, on-chain reads, money-safe; SEAL artifacts with content-bound hash, signature, timestamp, pending or confirmed. Defensive only: hardens and proves, never weaponizes."
           },
           {
             "name": "fabius-cohors",
-            "description": "Agent engineering: discover actual harness capabilities, define bounded roles and permissions, confirm by action class when an agent acts through a screen or channel, select single or multi-agent execution, and verify effective permissions after lifecycle changes."
+            "description": "fabius's agent-engineering layer: define and orchestrate agents, tool-using assistants, multi-agent systems: schema, permissions, single-vs-multi decision, orchestration patterns. Deterministic service wiring (n8n/Zapier-class) is fabius-machina."
           },
           {
             "name": "fabius-concilium",
-            "description": "Cross-model council: heterogeneous models answer independently, rank each other's anonymized answers, and a chairman synthesizes one answer with the full audit trail. It does not guarantee beating the best single model."
+            "description": "fabius's cross-model council: several models on ONE question: first opinions, blind peer ranking, synthesis. Costs up to 3N+1 calls, earned only when one strong model keeps failing the SAME way. Splitting WORK across agents is fabius-cohors."
           },
           {
             "name": "fabius-decor",
-            "description": "Ship-grade design: token vocabulary, a visual-system template captured before building, the laws separating amateur UI from shipped UI, data-viz, diagrams, images, icons, motion, RTL, and design review against the generated-UI tells."
+            "description": "fabius's ship-grade design layer: build or review any UI, email, slide, chart, diagram, data visualization; generate images; responsive layout, focus states, contrast, ARIA-only a11y, RTL. Production-quality polish; copy is fabius-mercatus."
           },
           {
             "name": "fabius-disciplina",
-            "description": "Engineering discipline: resolve material ambiguity, plan and review architecture against evidence, preserve working invariants, test and prove changes, and recover incomplete updates."
+            "description": "fabius's engineering process: architecture, build, refactor, migrate; debug what is broken, flaky or CI-only, root-cause before any change; verify by evidence. UI craft is fabius-decor; agents are fabius-cohors; restraint briefs are fabius-parcus."
           },
           {
             "name": "fabius-doctrina",
-            "description": "ML/LLM engineering: train, fine-tune, serve, and evaluate models as production software — inference, MLOps tracking, rigorous eval gates."
+            "description": "fabius's ML/LLM-engineering layer: train, fine-tune, evaluate, serve and monitor models; inference endpoints, quantization, MLOps tracking, eval gates. Owns the MODEL an agent calls, not the agent (fabius-cohors); lab science is fabius-scientia."
           },
           {
             "name": "fabius-fortuna",
-            "description": "Markets and economics: fundamental, technical, and quant analysis, honest backtesting, risk-first sizing — falsifiable, never a prophecy."
+            "description": "fabius's markets and economics layer: equity, market and macro analysis, valuation, honest backtesting, portfolio construction, risk-first sizing. Sourced, risk-bounded, falsifiable: analysis, never a prediction, never personalized advice."
           },
           {
             "name": "fabius-ludus",
-            "description": "Game craft: find the core loop first, add juice deliberately, explicit state machines, pixel-art discipline, jam-sized scope that ships."
+            "description": "fabius's game-craft layer: small games that are fun and ship. Core loop first, juice, explicit state machine, pixel-art lane, one balance knob at a time, jam-sized scope. For any game, mechanic, playable, toy or win/lose/score state."
           },
           {
             "name": "fabius-machina",
-            "description": "Deterministic automation: n8n-class workflows, triggers, webhooks, crons, API-to-API glue — the wiring proven before it runs live."
+            "description": "fabius's automation layer: wire deterministic service-to-service workflows (n8n-class) and prove the wiring before it runs live: triggers, webhooks, crons, API glue. Fixed-behavior steps route here; generative LLM agents are fabius-cohors."
           },
           {
             "name": "fabius-mercatus",
-            "description": "Go-to-market: positioning, awareness-matched messaging, proof over adjectives, one-action funnels, converting copy, channel fit, SEO."
+            "description": "fabius's go-to-market layer: positioning, one-action funnels, copy that converts for landing pages, launches, ads, emails, posts, outreach, pricing; also SEO and AI-answer visibility. Owns the message; the visual build is fabius-decor."
           },
           {
             "name": "fabius-parcus",
-            "description": "Always-on lean core: say less, build less, change less, assume less — terse output, a YAGNI code ladder, surgical assumption-checked edits."
+            "description": "fabius's always-on lean core: say less, build less, change less, assume less. Restraint briefs (no over-engineering, no future-proofing, YAGNI) route here, even on a refactor. ALWAYS-ON: sits under whatever task layer is active, never instead of one."
           },
           {
             "name": "fabius-praesidium",
-            "description": "Defensive security: threat-model first, OWASP pass, secrets and least-privilege hygiene, supply-chain and connected-service terms checks — every finding ships a fix."
+            "description": "fabius's defensive-security layer: threat-model first, OWASP pass, least-privilege hygiene, supply chain; every finding ships with severity, fix, test; for auth, input, payments, uploads, deps. Defensive only: hardens, never weaponizes."
           },
           {
             "name": "fabius-scientia",
-            "description": "Scientific research: a real hypothesis loop, database-grounded claims, bioinformatics pipelines as routers, reproducibility enforced."
+            "description": "fabius's scientific-research layer: empirical method for biology and data-heavy sciences: falsifiable hypotheses, experiment design, database-grounded facts, bioinformatics, chemistry and omics pipelines. Model training is fabius-doctrina."
           }
         ]
       }

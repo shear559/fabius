@@ -1,20 +1,11 @@
 ---
 name: fabius-scientia
 description: >
-  fabius's scientific-research layer — the empirical method made executable, for biology and the
-  data-heavy sciences. It runs a real hypothesis loop (clarify → literature → competing, falsifiable
-  hypotheses → experiment design → predictions → report), grounds every factual claim in an
-  authoritative database with cross-identifier mapping instead of guessing, sequences bioinformatics /
-  cheminformatics / omics pipelines as routers over field-standard tools, and enforces the
-  reproducibility gotchas an LLM otherwise gets confidently wrong. Use for biology, genomics / RNA-seq,
-  proteins, chemistry / molecules, clinical and multi-omics data, scientific-database lookups
-  (gene / compound / variant / disease), "generate a hypothesis", "design an experiment", "analyze
-  this dataset scientifically", or a literature-grounded research question. The method loop, the
-  unified database-lookup contract, the pipeline-as-router pattern, and the reproducibility checklist
-  live in references/science-playbook.md.
+  fabius's scientific-research layer: empirical method for biology and data-heavy sciences:
+  falsifiable hypotheses, experiment design, database-grounded facts, bioinformatics, chemistry
+  and omics pipelines. Model training is fabius-doctrina.
 when_to_use: >
-  "search PubMed", "differential expression", "protein structure", "map this identifier", "is
-  this finding supported by the literature".
+  "search PubMed", "differential expression", "protein structure"
 license: UNLICENSED
 metadata:
   author: shear559

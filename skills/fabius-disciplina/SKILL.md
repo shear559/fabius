@@ -1,15 +1,11 @@
 ---
 name: fabius-disciplina
 description: >
-  Plan and review software architecture; build, debug, refactor, and verify non-trivial changes.
-  Fabius's engineering process connects scope, evidence, alternatives, source/test impact, and
-  observed results. Architecture analysis separates design direction from production proof;
-  implementation follows the user's existing authorization. Use for system design, architecture
-  assessment, technology choices, migrations, root-cause debugging, and completion checks.
-  UI craft belongs to fabius-decor; agent engineering belongs to fabius-cohors.
+  fabius's engineering process: architecture, build, refactor, migrate; debug what is broken,
+  flaky or CI-only, root-cause before any change; verify by evidence. UI craft is fabius-decor;
+  agents are fabius-cohors; restraint briefs are fabius-parcus.
 when_to_use: >
-  "where do we start", "write the tests first", "it keeps regressing", "why is it slow",
-  "why does it still fail", "walk me through the fix before coding".
+  "fails only in CI", "why does it still fail", "walk me through it"
 license: UNLICENSED
 metadata:
   author: shear559

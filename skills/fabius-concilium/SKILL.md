@@ -1,19 +1,11 @@
 ---
 name: fabius-concilium
 description: >
-  fabius's cross-model deliberation layer — convene a COUNCIL of heterogeneous models on ONE
-  question, then aggregate their answers into one evidence-aware synthesis: each model answers
-  independently (first opinions) → each ranks ALL anonymized answers blind, its own included, while
-  the backend removes its self-score (anonymized peer-review) → a chairman synthesizes the field.
-  This is ensemble epistemics — it uses model diversity to expose possible single-model error and
-  bias; whether it improves an answer must be measured for the task. Use when the user says "council" / "llm-council" / "ask several models" /
-  "panel of models", or when a high-stakes question has already survived N samples of the single
-  strongest model and they failed the SAME way — correlated error, not mere disagreement, is what
-  earns at most 3N+1 completion calls including retries (M10). Distinct from fabius-cohors (which splits the WORK across
-  task-specialist agents); concilium aggregates one ANSWER across whole models.
+  fabius's cross-model council: several models on ONE question: first opinions, blind peer
+  ranking, synthesis. Costs up to 3N+1 calls, earned only when one strong model keeps failing the
+  SAME way. Splitting WORK across agents is fabius-cohors.
 when_to_use: >
-  "get a second opinion from other models", "cross-check this answer", "have the models vote",
-  a high-stakes question where repeated samples of one strong model fail the same way.
+  "council", "panel of models", "have the models vote"
 license: UNLICENSED
 metadata:
   author: shear559

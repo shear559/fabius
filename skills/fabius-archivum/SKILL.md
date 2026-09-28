@@ -1,16 +1,11 @@
 ---
 name: fabius-archivum
 description: >
-  Maintain and retrieve permissioned project memory in the workspace's declared record store.
-  Read a named project's record before work; preserve decisions, provenance, indexes, and history.
-  Use for cross-session continuation, recording verified lessons, knowledge-base maintenance,
-  legacy memory migration, meeting or video source ingest, and source-grounded notebook questions.
-  One canonical store, gated writes, and fresh evidence before recalled conclusions on incident
-  routes. Provider changes do not require moving records when the store is already shared.
+  fabius's memory layer: maintain and retrieve project memory in the workspace's declared record
+  store. Read a project's record before work; preserve decisions, provenance, history; gated
+  writes. Ingests meetings, videos, books.
 when_to_use: >
-  "what did we decide last time", "save this for later", "set up project memory", "index the
-  vault", before work on a project that already has a record, "watch this video", "what does this recording show", "ask my sources", "turn a book or long document into a knowledge pack", or before
-  redoing research a past session covered, "migrate memory", "consolidate legacy notes".
+  "what did we decide last time", "save this", "ask my sources"
 license: UNLICENSED
 metadata:
   author: shear559

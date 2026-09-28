@@ -1,17 +1,11 @@
 ---
 name: fabius-machina
 description: >
-  fabius's automation layer — wire deterministic service-to-service workflows and prove the wiring
-  before it runs live. This is no/low-code integration glue (n8n-class): triggers, nodes, webhooks,
-  scheduled jobs, API-to-API connections, branching, and error paths. It is NOT agent orchestration —
-  that's fabius-cohors. The line: machina wires deterministic steps across SaaS/APIs where each step's
-  behavior is fixed; cohors orchestrates LLM agents whose behavior is generative. Use when the user
-  says "automate X", "build a workflow", "connect A to B", "when X happens do Y", "set up a webhook /
-  a cron / an integration", or names n8n / Zapier / Make. The build discipline, the tool-per-intent
-  map, the silent-failure gotcha catalog, and the deployment gate live in references/automation-playbook.md.
+  fabius's automation layer: wire deterministic service-to-service workflows (n8n-class) and prove
+  the wiring before it runs live: triggers, webhooks, crons, API glue. Fixed-behavior steps route
+  here; generative LLM agents are fabius-cohors.
 when_to_use: >
-  "sync these two apps", "nightly job", "when a form is submitted send an email", "glue these
-  APIs together", scheduled or event-driven pipelines.
+  "automate this", "connect A to B", "when X happens do Y", Zapier/Make
 license: UNLICENSED
 metadata:
   author: shear559

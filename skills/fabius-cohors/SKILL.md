@@ -1,19 +1,11 @@
 ---
 name: fabius-cohors
 description: >
-  fabius's agent-engineering layer — how to DEFINE and ORCHESTRATE other agents: the definition
-  schema, the permission model, the single-vs-multi-agent decision, and the five orchestration
-  patterns (sequential / parallel / hierarchical / human-in-the-loop / swarm). Use when the user wants to
-  build an agent, a subagent, a tool-using assistant, a multi-agent system, a swarm, or an
-  orchestration workflow. Six original role definitions and a zero-dependency task scheduler
-  provide explicit tools, permissions, output validation, bounded concurrency, dependency
-  results and cooperative cancellation. Start at references/agent-catalog.md; execution uses
-  a caller-owned authorized runner, not bundled provider SDKs. (Deterministic service-to-service
-  wiring — n8n/Zapier-class "build a workflow" — is fabius-machina, not here.)
+  fabius's agent-engineering layer: define and orchestrate agents, tool-using assistants,
+  multi-agent systems: schema, permissions, single-vs-multi decision, orchestration patterns.
+  Deterministic service wiring (n8n/Zapier-class) is fabius-machina.
 when_to_use: >
-  "tool-calling assistant", "agent team", "hand this off between agents", "what permissions
-  should the agent get", "evaluate my agent", "agent benchmark", "proactive assistant", "voice
-  agent", an agent that acts through a screen or a channel.
+  "build an agent", "agent team", "what permissions should it get"
 license: UNLICENSED
 metadata:
   author: shear559

@@ -1,20 +1,11 @@
 ---
 name: fabius-fortuna
 description: >
-  fabius's markets and economics layer — bring method to money: equity and market analysis
-  (fundamental + technical + quantitative), economic data and indicators, financial modeling,
-  backtesting with honest statistics, portfolio construction, and risk-first position sizing. It
-  turns "is this a good stock / what will the economy do / does this strategy work" into a sourced,
-  risk-bounded, falsifiable analysis — never a confident prediction. Use when the task touches a
-  stock / equity / ticker, a market or index, an economic indicator (GDP, CPI, rates, employment),
-  a trading or investment strategy, a backtest, valuation, a portfolio, risk/volatility, or when
-  the user says "analyze this stock", "is this a buy", "what's the market doing", "backtest this",
-  "value this company", or "model the economy". Defensive and honest — it analyzes and manages
-  risk, never manipulates a market and never gives personalized financial advice. (Go-to-market
-  copy → fabius-mercatus; the chart render → fabius-decor.)
+  fabius's markets and economics layer: equity, market and macro analysis, valuation, honest
+  backtesting, portfolio construction, risk-first sizing. Sourced, risk-bounded, falsifiable:
+  analysis, never a prediction, never personalized advice.
 when_to_use: >
-  "DCF this", "position size", "max drawdown", "Sharpe ratio", "read this earnings report",
-  portfolio allocation questions.
+  "analyze this stock", "is this a buy", "backtest this", "DCF this"
 license: UNLICENSED
 metadata:
   author: shear559

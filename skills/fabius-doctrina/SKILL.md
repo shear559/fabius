@@ -1,19 +1,11 @@
 ---
 name: fabius-doctrina
 description: >
-  fabius's AI/ML-engineering layer — train, serve, evaluate, and operate machine-learning and LLM
-  systems as production software. The model lifecycle: dataset → train / fine-tune → EVALUATE →
-  serve / infer → monitor. It owns model serving and inference (vLLM-class, OpenAI-compatible
-  endpoints, batching, quantization), MLOps and experiment tracking (MLflow-class), and rigorous
-  model/LLM evaluation (eval harnesses, blind judges, regression gates). It is NOT agent
-  orchestration — that's fabius-cohors (doctrina owns the MODEL an agent calls, not the agent).
-  Use when the task is to train / fine-tune a model, serve or deploy a model, evaluate a model or
-  prompt, track ML experiments, set up an inference endpoint, build a RAG/LLM-app's model tier, or
-  when the user says "serve this model", "fine-tune", "eval my prompts", "track these runs",
-  "MLOps", "why is inference slow", or names vLLM / MLflow / an eval harness.
+  fabius's ML/LLM-engineering layer: train, fine-tune, evaluate, serve and monitor models;
+  inference endpoints, quantization, MLOps tracking, eval gates. Owns the MODEL an agent calls,
+  not the agent (fabius-cohors); lab science is fabius-scientia.
 when_to_use: >
-  "quantize this model", "LoRA it", "GPU serving is slow or expensive", "compare model
-  versions", "gate releases on eval scores".
+  "serve this model", "eval my prompts", "inference is slow"
 license: UNLICENSED
 metadata:
   author: shear559

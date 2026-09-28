@@ -1,17 +1,11 @@
 ---
 name: fabius-praesidium
 description: >
-  fabius's defensive-security layer — how to find and fix what an attacker would exploit, before
-  they do: threat-model first (STRIDE per trust boundary), run the OWASP pass, enforce secrets and
-  least-privilege hygiene, review secure-by-default, check the supply chain, and ship every finding
-  with a severity, a fix, and a regression test. Use when building or reviewing anything that
-  touches auth, user input, secrets, payments, file upload, external requests, or dependencies — or
-  when the user says "is this secure?", "threat-model this", "audit this", "harden this", "review
-  for vulnerabilities", or "security review". Defensive only — it hardens, never weaponizes.
+  fabius's defensive-security layer: threat-model first, OWASP pass, least-privilege hygiene,
+  supply chain; every finding ships with severity, fix, test; for auth, input, payments, uploads,
+  deps. Defensive only: hardens, never weaponizes.
 when_to_use: >
-  "can this be hacked", "check the dependencies", "we leaked a key", "lock this down", reviewing
-  an AI-generated diff or a third-party skill/plugin before adoption, a face-swap / lip-sync /
-  voice clone of a real person.
+  "is this secure", "security review", "harden this", "we leaked a key"
 license: UNLICENSED
 metadata:
   author: shear559

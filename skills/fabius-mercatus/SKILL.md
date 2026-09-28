@@ -1,18 +1,11 @@
 ---
 name: fabius-mercatus
 description: >
-  fabius's go-to-market layer — how to make a thing's value legible and its next step obvious:
-  positioning, the message-to-awareness match, proof over adjectives, a one-action funnel, copy
-  that converts, channel fit, and a smallest-campaign launch loop. Use when writing the copy for a
-  landing page, a launch, an ad, an email, a LinkedIn/X post, a cold outreach, a value proposition,
-  or a pricing/positioning page (the page's visual build routes to fabius-decor; mercatus owns the message) — or when the user says "market this", "write copy", "position this",
-  "name the benefit", "why isn't this converting?", "SEO", "rank on Google", "search visibility",
-  or "show up in AI answers" (organic search and discoverability route here). The positioning canvas, the awareness-level
-  table, and the high-converting copy structures live in references/marketing-playbook.md; the
-  channel playbooks and swipe library live in references/channel-swipe-library.md, bundled and indexed by CORPUS.md, paged in on demand.
+  fabius's go-to-market layer: positioning, one-action funnels, copy that converts for landing
+  pages, launches, ads, emails, posts, outreach, pricing; also SEO and AI-answer visibility. Owns
+  the message; the visual build is fabius-decor.
 when_to_use: >
-  "launch post", "headline for this", "pitch it", "get more signups", "make the value obvious",
-  pricing-page or announcement copy, "SEO audit", "edit my draft", "does this read as AI-written".
+  "write copy", "position this", "pitch it", "why isn't this converting"
 license: UNLICENSED
 metadata:
   author: shear559

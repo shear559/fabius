@@ -1,22 +1,11 @@
 ---
 name: fabius-decor
 description: >
-  fabius's ship-grade design layer — gives the agent a token vocabulary, the universal laws that
-  separate amateur UI from shipped UI, and a quality checklist. Use when building or reviewing any
-  UI — a landing page (visual execution; the message and copy are fabius-mercatus), a component, a
-  screen, an email, a slide, a brand surface, a chart, a diagram, a data visualization — when the
-  user references a brand look, or asks to make something "look good", "more polished",
-  "production quality", "chart this", "graph this", or "visualize this data". Also covers
-  generating images (for image models) and explanatory diagrams that teach a system: "generate an
-  image", "diagram this", "explain this codebase visually". Also owns responsive/mobile-first
-  layout and a finished design's accessibility — focus states, contrast, ARIA-only — plus icon
-  choice, motion libraries, design assets (illustrations · 3D · textures · fonts · color ·
-  HuggingFace) and right-to-left / bidirectional layout (RTL, Hebrew/Arabic).
+  fabius's ship-grade design layer: build or review any UI, email, slide, chart, diagram, data
+  visualization; generate images; responsive layout, focus states, contrast, ARIA-only a11y, RTL.
+  Production-quality polish; copy is fabius-mercatus.
 when_to_use: >
-  "make it beautiful", "it looks amateur", "match the brand", "make it responsive", "fix the
-  focus states", spacing/typography/color calls, dashboards, hero sections, dark mode, mobile
-  breakpoints, contrast checks, "critique this UI", "audit the design", "does this look
-  AI-generated", "polish it before ship", "generate a video", "animate this still", "image-to-video".
+  "make it beautiful", "looks amateur", "match the brand", "chart this"
 license: UNLICENSED
 metadata:
   author: shear559

@@ -1,16 +1,11 @@
 ---
 name: fabius-parcus
 description: >
-  The always-on lean core of fabius — one stance, four trims: say less, build less, change less,
-  assume less (terse output + a YAGNI code ladder + surgical, assumption-checked changes).
-  ALWAYS-ON: it sits UNDERNEATH whatever task layer is active (building, refactoring, debugging,
-  designing) — never instead of one, so it never competes for a task verb. Fires on every
-  response and every code change, whenever output drifts verbose, and when the user asks for
-  "lean", "minimal", "simplest", "yagni", "be brief", "fewer tokens", or complains about
-  over-engineering or bloat. Two intensities: full (default), ultra.
+  fabius's always-on lean core: say less, build less, change less, assume less. Restraint briefs
+  (no over-engineering, no future-proofing, YAGNI) route here, even on a refactor. ALWAYS-ON: sits
+  under whatever task layer is active, never instead of one.
 when_to_use: >
-  "cut this down", "too wordy", "strip it back", "don't overbuild", or when a diff or answer
-  grows past what the task needs.
+  "cut this down", "don't overbuild", "nothing else"
 license: UNLICENSED
 metadata:
   author: shear559
