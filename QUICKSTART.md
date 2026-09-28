@@ -69,7 +69,7 @@ Starting a prompt with `fabius:` calls the router by name. Agent apps differ in 
 
 **Grok Build:** `grok plugin update fabius` updates an install that is not pinned to a release tag (a pinned install is moved to the new tag by hand). `grok plugin disable fabius` turns it off; `grok plugin uninstall fabius` removes it.
 
-In any session, say `stop fabius` and Fabius stops applying its rules for the rest of that conversation. It does not disable or uninstall the plugin; your plugin manager does that.
+In any session, say `stop fabius` and Fabius stops applying its rules until you invoke it again; it does not disable or uninstall the plugin — your plugin manager does that.
 
 Fabius is free to install for personal, non-commercial use. Your model, connected services and compute are your own costs. Professional or client work needs permission: see [LICENSE](LICENSE).
 

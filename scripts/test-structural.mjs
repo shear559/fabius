@@ -29,6 +29,16 @@ const cases = [
   ['unknown key', s => s.replace('license: UNLICENSED', 'model: unavailable\nlicense: UNLICENSED'), /FAIL\s+frontmatter: keys canonical/],
   ['license mismatch', s => s.replace('license: UNLICENSED', 'license: MIT'), /FAIL\s+frontmatter: license matches/],
   ['description exceeds byte budget', s => s.replace(/description: >\n(?:  [^\n]*\n)+/, `description: >\n  ${'界'.repeat(350)}\n`), /FAIL\s+frontmatter: every flattened description/],
+  // 400 ASCII bytes sat inside the old 1024-byte budget; the gate must now reject it at 250.
+  ['description at old 1024 budget must now fail', s => s.replace(/description: >\n(?:  [^\n]*\n)+/, `description: >\n  ${'a'.repeat(400)}\n`), /FAIL\s+frontmatter: every flattened description ≤ 250/],
+  ['trigger exceeds byte budget', s => s.replace(/when_to_use: >\n(?:  [^\n]*\n)+/, `when_to_use: >\n  ${'b'.repeat(81)}\n`), /FAIL\s+frontmatter: every flattened when_to_use ≤ 80/],
+  // one oversized trigger trips the per-skill combined cap AND the whole-plugin listing cap
+  ['aggregate listing over budget', s => s.replace(/when_to_use: >\n(?:  [^\n]*\n)+/, `when_to_use: >\n  ${'b'.repeat(1100)}\n`), /FAIL\s+frontmatter: description \+ when_to_use ≤ 330[\s\S]*FAIL\s+frontmatter: whole-plugin skill listing/],
+  ['trigger restates description', s => s.replace(/when_to_use: >\n(?:  [^\n]*\n)+/, 'when_to_use: >\n' + s.match(/description: >\n((?:  [^\n]*\n)+)/)[1]), /FAIL\s+frontmatter: keys canonical[^\n]*restates description/],
+  ['trigger quotes a description phrase', s => s.replace(/when_to_use: >\n(?:  [^\n]*\n)+/, `when_to_use: >\n  "${s.match(/description: >\n  (\S+ \S+)/)[1]}"\n`), /FAIL\s+frontmatter: when_to_use does not restate description/],
+  ['BOM before delimiter', s => '﻿' + s, /FAIL\s+frontmatter: opens with[^\n]*BOM/],
+  ['CRLF line endings', s => s.replace(/\n/g, '\r\n'), /FAIL\s+frontmatter: opens with[^\n]*CRLF/],
+  ['literal-block description', s => s.replace('description: >\n', 'description: |\n'), /FAIL\s+frontmatter: every contract declares name[^\n]*not a `>` folded block/],
 ];
 
 const run = () => {

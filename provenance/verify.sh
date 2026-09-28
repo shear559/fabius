@@ -182,6 +182,10 @@ bad = 0
 # The sealed set is exactly: every skills/*/SKILL.md plus the three canonical docs.
 on_disk = set(glob.glob("skills/*/SKILL.md")) | {"ARCHITECTURE.md", "CORPUS.md", "AGENTS.md"}
 listed = set(m["files"])
+# The printed "all N sealed files" number is the manifest's own count field: assert it
+# against the list it describes before the PASS line quotes it.
+if m.get("count") != len(listed):
+    print("    count field", m.get("count"), "!= files listed", len(listed)); bad += 1
 for p in sorted(on_disk - listed):
     print("    UNSEALED file present:", p); bad += 1
 for p in sorted(listed - on_disk):

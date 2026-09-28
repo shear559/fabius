@@ -747,6 +747,93 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Studied for the frozen-copy, different-shape-holdout and score-before-trace comparison of an instruction change. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "ax-fabius-cohors",
+      "repo": "https://github.com/google/ax",
+      "owner": "google",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-workloads.md"
+      ],
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for running an agent as a workload: the shape-blind unit and its lifecycle, brief immutability with successor units, ordered teardown with durable intent, alive-vs-ready with per-step verified outcomes, the outcome record over the exit code, the idempotence marker and second-boot probe, per-phase credentials at the hand-off, process-group supervision, declared files travelling with the environment, the runner as a swappable seam, waiting as a checkpoint with a declared wake condition, and the harness keeping the record. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "ax-fabius-praesidium",
+      "repo": "https://github.com/google/ax",
+      "owner": "google",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-praesidium",
+      "fabius_paths": [
+        "skills/fabius-praesidium/references/hardening-guides.md",
+        "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
+      ],
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the fail-closed credential resolver and secret-bearing artifacts, the launch spec as a copied carrier in the leak grep, debug attach treated as a remote shell (off by default), named-entry grants with no admin rung in production, a sandbox counting as a boundary only under a proven deny-by-default egress policy, and the unreadable-change-does-not-merge rule with a binary allowlist and lockfile regeneration. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "ax-fabius-disciplina",
+      "repo": "https://github.com/google/ax",
+      "owner": "google",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/architecture-decisions.md",
+        "skills/fabius-disciplina/references/codebase-and-proof.md"
+      ],
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for storing by record shape with count, lifetime and write-rate as decision-changing unknowns; lock discipline where contention is observed; strict decode at the edge with legacy shapes named; emit-site plus consuming-branch in the impact map; the launcher as an injected second seam with a laptop-testable boot contract; restore-then-boot as the resume surface; readiness that can say not-attempted; and reporting the shapes not driven. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "ax-fabius-doctrina",
+      "repo": "https://github.com/google/ax",
+      "owner": "google",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-doctrina",
+      "fabius_paths": [
+        "skills/fabius-doctrina/references/hosted-model-tier.md"
+      ],
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the typed failure over a manufactured body (synthetic marker; usage is provider accounting or empty) and the single roster keyed by provider and tier with consumers asking by tier and a grep gate on literal ids outside it. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "ax-fabius",
+      "repo": "https://github.com/google/ax",
+      "owner": "google",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius",
+      "fabius_paths": [
+        "skills/fabius/references/skill-maintenance.md"
+      ],
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for recording a pre-stable source's revision and its self-declared breaking-change status beside the mechanisms folded, so a later re-read can separate what shipped from what was only planned. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
     }
   ]
 }

@@ -35,7 +35,7 @@ Two navigation files keep hundreds of pages tractable:
 
 **Query (READ).** Narrow through the index and symbolic filters → read the matching slice → synthesize a **cited** answer. File it back only under the write boundary above.
 
-**Lint (MAINTAIN).** Periodically self-heal: contradictions, stale claims, orphan pages, missing cross-references, data gaps. Post-mortems and architecture write-ups become new pages.
+**Lint (MAINTAIN).** On every ingest that touches an existing page, and on request, self-heal: contradictions, stale claims, orphan pages, missing cross-references, data gaps. Post-mortems and architecture write-ups become new pages.
 
 ## Page hygiene
 
@@ -76,7 +76,7 @@ Plain markdown, best browsed in Obsidian (backlinks · graph · Dataview). Offer
 
 ## Auto-recall — surface memory without being asked
 
-Auto-recall is a dial, not a universal prepend. **Off** for trivial work; **off or dampened** for security, incident, debugging, and error-recovery fresh-eyes routes; index-only for ordinary continuation; deeper only when the task truly matches. The dial governs prior *conclusions*, never a named project's own page — that read is a precondition, not a dial position. On fresh-eyes routes, inspect current evidence first and compare memory afterward. Every retrieved record is a suspect candidate: verify that its situation matches and its outcome was proven before using it; prefer the newest verified value when records conflict.
+Auto-recall is a dial, not a universal prepend. **Off** for trivial work; **off or dampened** for security, incident, debugging, and error-recovery fresh-eyes routes; index-only for ordinary continuation; deeper only when the task names an entity or decision the index lists. The gate in § Cross-session memory is not a dial position. On fresh-eyes routes, inspect current evidence first and compare memory afterward. Every retrieved record is a suspect candidate: verify that its situation matches and its outcome was proven before using it; prefer the newest verified value when records conflict.
 
 When recall is enabled, keep its three stages separate:
 
@@ -94,7 +94,7 @@ When an answer must be **source-true** (a spec, a contract, a curated body of do
 
 The memory rules from the routing policy (MemGPT, Voyager, the memory surveys; full set in [routing-policy.md](../fabius/references/routing-policy.md)):
 
-- **Retrieve on demand (R9).** Read the index, then the matched page fully when exact evidence requires it; never load an unrelated whole page or directory "just in case" — the page of the project in hand is not a candidate hit, it is the brief, and it is read whole. If the matched set exceeds budget, summarize-then-link. *(MemGPT)*
+- **Retrieve on demand (R9).** Read the index, then the matched page fully when exact evidence requires it; never load an unrelated whole page or directory "just in case". If the matched set exceeds budget, summarize-then-link. *(MemGPT)*
 - **Write only decision-changing facts (M7).** Authorized `write = EVICT` (durable fact → page + log); `read = RECALL` (index→page on a miss, logged as QUERY). Everything addressable by `[[slug]]`.
 - **Promote verified solutions to skills (M6).** When skill writes are authorized, file a solved-and-verified sub-problem as a named reusable page; supersede, don't duplicate, and retain failed approaches as anti-pattern history. *(Voyager)*
 - **Tie-break by recency + load-bearingness (M8).** When index entries tie on relevance, surface the freshest decision-bearing pages first; fold a grown batch of log lines up into a synthesis page. *(Generative Agents, analogy)*

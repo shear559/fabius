@@ -131,6 +131,10 @@ function fileHash(root, path) {
   requireValue(relative(root, realpathSync(current)) === path, 'evidence path escapes its selected root');
   return sha(readBounded(current, 16 * JSON_LIMIT, 'evidence'));
 }
+// The contract's verdict words and their past-tense spellings; blocked = the surface could not be
+// reached for a reason outside the change (never a pass, aggregates like failed).
+const VERDICTS = Object.freeze(Object.assign(Object.create(null), { pass: 'passed', passed: 'passed', fail: 'failed', failed: 'failed',
+  skip: 'skipped', skipped: 'skipped', blocked: 'blocked' }));
 function digestRecord(value, name) {
   object(value, ['path', 'sha256'], name); safePath(value.path);
   requireValue(typeof value.sha256 === 'string' && /^[0-9a-f]{64}$/.test(value.sha256), `${name}.sha256 must be a full lowercase SHA256`);
@@ -163,10 +167,10 @@ export function assessEvidence(plan, report, { root } = {}) {
   for (const result of report.checks) {
     object(result, ['id', 'status', 'exitCode', 'observation', 'log', 'reason'], 'check result'); id(result.id);
     requireValue(plan.checks.some(c => c.id === result.id), `unplanned check: ${result.id}`);
-    requireValue(['passed', 'failed', 'skipped'].includes(result.status), 'unknown check status');
-    if (result.status === 'skipped') {
-      text(result.reason, 'skip reason');
-      requireValue(result.exitCode === undefined && result.log === undefined && result.observation === undefined, 'skipped check cannot carry execution evidence');
+    result.status = VERDICTS[result.status]; requireValue(result.status, 'unknown check status');
+    if (result.status === 'skipped' || result.status === 'blocked') {
+      text(result.reason, result.status === 'blocked' ? 'blocked precondition' : 'skip reason');
+      requireValue(result.exitCode === undefined && result.log === undefined && result.observation === undefined, `${result.status} check cannot carry execution evidence`);
     } else {
       requireValue(Number.isInteger(result.exitCode) && result.exitCode >= 0 && result.exitCode <= 255, 'exitCode must be an integer from 0 to 255');
       requireValue(result.status !== 'passed' || result.exitCode === 0, 'passed check must have exitCode zero');
@@ -177,7 +181,7 @@ export function assessEvidence(plan, report, { root } = {}) {
   for (const check of plan.checks) if (!report.checks.some(c => c.id === check.id)) issues.push(`missing check: ${check.id}`);
   const criteria = plan.criteria.map(criterion => {
     const states = criterion.checks.map(id => report.checks.find(c => c.id === id)?.status ?? 'missing');
-    const status = states.includes('failed') ? 'failed' : states.every(s => s === 'passed') && issues.length === 0 ? 'complete' : 'incomplete';
+    const status = states.some(s => s === 'failed' || s === 'blocked') ? 'failed' : states.every(s => s === 'passed') && issues.length === 0 ? 'complete' : 'incomplete';
     return { id: criterion.id, status };
   });
   return { status: criteria.some(c => c.status === 'failed') ? 'failed' : criteria.every(c => c.status === 'complete') ? 'complete' : 'incomplete',

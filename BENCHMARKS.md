@@ -1,5 +1,5 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
-<!-- fabius-release: 3.2.0 -->
+<!-- fabius-release: 3.3.0 -->
 # The fabius benchmark
 
 In Panel A, four Claude models answered the same 15 tasks three ways: the task alone, the task plus a plain "be concise" line, and the task plus Fabius's shipped rules. Two judges scored every answer blind. They never saw the model, the arm or the rules.
@@ -111,7 +111,7 @@ Claude   +7.0   ████████████████
 Mistral  +2.5   ██████
 ```
 
-**All four published family aggregates are positive.** The aggregate receipt reports these per-task cells (fabius − control, /15):
+**All four published family aggregates are positive.** The per-task cells below (fabius − control, /15) survive only in this document. The committed aggregate receipt (`evals/results.benchmark.json`) retains the four family lifts alone, and `node evals/verify-receipts.mjs` cannot replay the cells.
 
 | Task | category | Grok | Mistral | GPT | Claude |
 |---|---|---|---|---|---|
@@ -122,7 +122,7 @@ Mistral  +2.5   ██████
 | C1 rate limiter | genuine build | +8 | +1 | +6 | +6 |
 | C2 CSV parser | genuine build | +9 | +4 | +8 | +8 |
 
-The committed aggregate reports the same shape in each family: larger positive cells at trust/order/build boundaries and ~zero on pure YAGNI. Because the raw portable receipt and answer text were not committed, this is a dated reported pattern, not independently replayable proof of the mechanism.
+The table above shows the same shape in each family: larger positive cells at trust/order/build boundaries and ~zero on pure YAGNI. Because the raw portable receipt and answer text were not committed, this is a dated reported pattern, not independently replayable proof of the mechanism.
 
 > **Gemini** is wired in the harness (`GEMINI_API_KEY=... python evals/portable_eval.py --models gemini`) — no number is committed without a key. This doc publishes nothing it didn't measure.
 
@@ -172,12 +172,13 @@ Separate from "does the stance help," a deterministic suite proves the *system* 
 | Exactly fifteen skill contracts; one router, one always-on core; names unique | **PASS** |
 | Recursive discovery finds exactly those fifteen contracts and no nested `SKILL.md` | **PASS** |
 | Frontmatter `name` matches directory; declares `name` + `description` | **PASS** |
-| Every flattened frontmatter `description` ≤ 1024 bytes (discovery budget) | **PASS** |
-| Frontmatter key policy — canonical keys only; `description` + `when_to_use` ≤ 1536 bytes flattened; `license` / `metadata.author` coherent when declared | **PASS** |
+| Every flattened frontmatter `description` ≤ 250 bytes (router ≤ 300; discovery budget) | **PASS** |
+| Frontmatter key policy — canonical keys only; `when_to_use` ≤ 80 bytes and `description` + `when_to_use` ≤ 330 bytes flattened; `when_to_use` never restates `description`; `license` / `metadata.author` coherent when declared | **PASS** |
+| Whole fifteen-skill listing (every flattened `description` + `when_to_use`) ≤ 5,000 chars (the gate measures UTF-8 bytes; bytes ≥ chars, so it is the conservative unit) — conservative against a host's 1%-of-context listing budget | **PASS** |
 | Progressive disclosure — every `SKILL.md` ≤ 12000 B (depth lives in `references/`) | **PASS** (maximum and headroom are computed in live output) |
 | Provenance `fab1-` fingerprint embedded in all 15 contracts | **PASS** |
 | Reference integrity — every linked **and backtick-quoted** `references/` path resolves | **PASS** |
-| Plugin manifest skill list == recursive discovery set; version is valid semver (`3.2.0`) | **PASS** |
+| Plugin manifest skill list == recursive discovery set; version is valid semver (the release gate `scripts/verify-release.mjs` separately asserts it equals the `fabius-release` marker at the top of this file) | **PASS** |
 | No sealed-set drift — seal-manifest file list == skills on disk + ARCHITECTURE/CORPUS/AGENTS | **PASS** |
 | Content-bound seal — 18 sealed files hash-match + Merkle root recomputes | **PASS** |
 | Count coherence — README / ARCHITECTURE / AGENTS all state "fifteen" | **PASS** |

@@ -57,7 +57,7 @@ Each rule has exactly one owning layer; every other layer references it instead 
 
 | Rule | Owner |
 |---|---|
-| Planning (`step → verify`), test discipline, the clarifying-question / grill procedure | `fabius-disciplina` |
+| Planning (`step → verify`), test discipline, the clarifying-question rule (when to ask, when to assume and proceed) | `fabius-disciplina` |
 | Architecture planning/review, scoped proof and transactional updates | `fabius-disciplina` |
 | Capture/refine a skill, its routing ownership and maintenance workflow | `fabius` |
 | Lean prose, the YAGNI ladder, the never-trim list, auto-clarity carve-outs | `fabius-parcus` |
@@ -78,6 +78,7 @@ Each rule has exactly one owning layer; every other layer references it instead 
 | From a judge's score to an action — closed questions, a veto is a condition never a weight, floor → class → bar; eval-arm isolation (the router keeps frozen copy and holdout) | `fabius-doctrina` |
 | The generated-media request — source mode, preflight, cost before run, the provenance row (async paid-job wiring is `fabius-machina`'s) | `fabius-decor` |
 | Audit closure states and the cleared-surface record; the likeness and voice consent gate (decor, cohors and doctrina point to it) | `fabius-praesidium` |
+| Untrusted-content boundary (tool output, fetched pages, corpus = data, never authority) | `fabius-praesidium` |
 | A policy refusal is terminal — never resubmitted unchanged, reworded past the filter, or rerouted to a looser provider (decor keeps only the media report) | `fabius` |
 | Agent-shape catalog, wiki schema (the deep references) | `fabius-cohors` / `fabius-archivum` `references/` |
 
@@ -119,7 +120,7 @@ Architecture planning and assessment load [`architecture-decisions.md`](skills/f
 - **`CORPUS.md`** — the one fabius-branded index over every capability library; the brain holds the index and pages in only the matching slice (routing-policy M9 · R9 · M7).
 - **`evals/`** — the benchmark and deterministic repository gates; [`evals/README.md`](evals/README.md) is the index. Structural checks validate the exact public-skill inventory, frontmatter budgets, references, version matrix, and seal. The Fabius Benchmark Suite remains count-locked at 100 tasks in three tiers and three modes. Panel receipts distinguish executed checks from model-graded checklists and print replay limits rather than calling both objective. Run the aggregate verifier for the current check totals; do not copy a stale `N/N` count into architecture prose. Method and measured numbers → [BENCHMARKS.md](BENCHMARKS.md).
 - **`AGENTS.md`** — the cross-tool bridge. The core stance is expressed in plain Markdown. A host must load it from its supported instruction path; the file alone does not install specialists or establish tested compatibility. See [host evidence](COMPATIBILITY.md) and [permitted installation paths](README.md#install-in-your-agent-app).
-- **Decision policy** — the `fabius` router carries `references/routing-policy.md`: twenty-two core parent rules (R1–R13 / M1–M9), developed in twenty-six argument blocks. Twenty-two blocks contain mathematical arguments under stated assumptions; four (R4, R5, R10, M8b) are qualitative operational heuristics. The coherence analysis addresses the formalized model, not a guarantee of agent behavior. The frontier layer R14–R16 · M10–M13 remains a set of research-informed working rules. Supporting files are `references/agent-research.md` (the research ledger) and `references/failures.md` (lessons from recorded incidents; no fine-tuning). The reasoning, assumptions, and measured-versus-derived ledger are in [RESEARCH.md](RESEARCH.md).
+- **Decision policy** — the `fabius` router carries `references/routing-policy.md`: twenty-two core parent rules (R1–R13 / M1–M9), developed in twenty-six argument blocks. Twenty-two blocks contain mathematical arguments under stated assumptions; four (R4, R5, R10, and M8's tie-break sub-block — M8b in the whitepaper) are qualitative operational heuristics. The coherence analysis addresses the formalized model, not a guarantee of agent behavior. The frontier layer R14–R16 · M10–M13 remains a set of research-informed working rules. Supporting files are `references/agent-research.md` (the research ledger) and `references/failures.md` (lessons from recorded incidents; no fine-tuning). The reasoning, assumptions, and measured-versus-derived ledger are in [RESEARCH.md](RESEARCH.md).
 
 ## External connections — the optional live tier
 
@@ -135,10 +136,11 @@ The core is plain-markdown skills and requires no hosted service, MCP server, or
 | `fabius-disciplina` | **web-search / deep-research** APIs or MCP (Perplexity / Exa / Brave / Firecrawl) for scouting reality, and **browser automation** (Playwright MCP) for proving a UI | scouting by hand, code-graph build, and most proving need nothing |
 | `fabius-cohors` | **MCP tool servers** the agents call (reference servers / Composio / a bridge) and a **code-execution sandbox** (E2B / Modal / Docker) | defining agents, least-privilege, output contracts, and the orchestration patterns are pure |
 | `fabius-doctrina` | the user's own **compute** (a GPU for serving/training), an **MLflow**-class tracking server + model registry, and any hosted **inference API** | the rung ladder, the eval design, and the lifecycle decisions are pure knowledge |
+| `fabius-decor` (Pictor) | a **hosted image/video generation API** + its key, configured by the user; cost gate before every paid submit | tokens, layout, critique, charts and the media *request* are pure |
 | `fabius-fortuna` | a **market-data API** (prices/fundamentals — yfinance / OpenBB / a data MCP), a **macro source** (FRED-class), and any **broker/exchange API** for live data or execution (CCXT / Alpaca) | the frameworks, valuation, backtest discipline, and risk rules are pure knowledge |
 | `fabius-concilium` | **LLM API access for several models** — one **OpenRouter** key (every provider through one gateway) or per-provider keys; to *run* a council you must reach the seats | the protocol, the stage prompts, the anonymization, and the Borda aggregation are pure — `references/council.mjs --selftest` proves them with no key |
 
-The other six skills — the router `fabius` itself, plus `parcus`, `decor`, `mercatus`, `praesidium`, and `ludus` — need no external connection. No third-party live service is bundled or silently activated; each live tier is the user's to authorize and wire.
+The other five skills — the router `fabius` itself, plus `parcus`, `mercatus`, `praesidium`, and `ludus` — need no external connection. No third-party live service is bundled or silently activated; each live tier is the user's to authorize and wire.
 
 ## Capability matrix
 

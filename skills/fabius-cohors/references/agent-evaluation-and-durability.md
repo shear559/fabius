@@ -37,6 +37,8 @@ A loop that exceeds one context window is a different machine. **A long autonomo
 - **Two orthogonal recovery flags, strict precedence.** Hard wipe (user stop / escalation — always a fresh session id) beats soft resume (preserve id + transcript, cleared only after the NEXT successful turn completes, so a re-crash retries) beats policy expiry beats normal return.
 - **A restart counter detects crash-resume loops.** A session still active across 3+ consecutive process restarts is auto-suspended — the user gets a clean slate instead of an infinite crash-resume cycle.
 
+The lifecycle around these statuses — a unit born held, pause and resume as verbs, mark-then-release teardown, the outcome record the orchestrator reads instead of an exit code, a setup marker on the durable volume proven on the second boot, and waiting as a checkpoint with a wake condition — is [`agent-workloads.md`](agent-workloads.md).
+
 ### The typed failure taxonomy — and the retry policy it drives
 
 Running agents in bulk over a provider, raw harness/provider failures must be classified into a **closed set of typed codes** covering at least these classes — failed auth, model capacity, provider throttling, a per-key rate limit vs an exhausted account quota vs a child-agent ceiling, denied access, network faults, upstream 5xx, bad config, an invalid request, a safety block, invalid output — and **the CODE, never the raw text, decides retry vs terminal**. Two parsing traps and two policy rules:
@@ -102,6 +104,7 @@ Agents get capabilities through **MCP servers** — the standard for tool acquis
 | **QuickJS-WASM** | in-process JS with **no host file/network access** — the tightest, for pure compute |
 
 - **Default deny** — no host filesystem, no host network, no host credentials reach the sandbox.
+- **Scoped per phase, not per job** — the credential that built the workspace is gone before the agent's first instruction, proven by dumping the run-phase environment ([`agent-workloads.md`](agent-workloads.md) §7).
 - **Ecosystem to copy from**: smolagents — a ~1000-line code-agent that runs generated code in a sandbox by default. Adopt the *posture* (sandbox is the default execution path), not just the library.
 
 **CodeAct: the sandbox's tool registry is owned, never inferred.** When the model writes code that calls tools from *inside* the sandbox, the set of reachable tools is an **explicit registry owned by the code-execution provider** — never inferred from the agent's direct tool surface. Inference is fragile and silently widens the sandbox. Exposure is decided purely by placement: a sandbox-only tool is registered on the provider only; a direct-only tool on the agent only; a tool meant for both is registered in both — and re-registering a name replaces it. Keep the sandbox's capabilities as **portable config, not backend wiring**: file mounts and an outbound domain allowlist live as CRUD-managed registry entries, so execution backends stay swappable behind the same contract.

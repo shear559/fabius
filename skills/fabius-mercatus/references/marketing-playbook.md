@@ -211,4 +211,4 @@ RTL surfaces (Hebrew, Arabic) keep their own reading direction and rhythm: the e
 
 ---
 
-**Boundary.** Prose-trim is `fabius-parcus`; demand-validation and the clarifying grill are `fabius-disciplina`; visual execution is `fabius-decor`. This layer owns the message and the path. The DEEP channel + swipe library is [channel-swipe-library.md](channel-swipe-library.md) — page in the one slice the task needs, never the whole file (R9 · M9).
+**Boundary.** Prose-trim is `fabius-parcus`; demand-validation and the clarifying-question rule are `fabius-disciplina`; visual execution is `fabius-decor`. This layer owns the message and the path. The DEEP channel + swipe library is [channel-swipe-library.md](channel-swipe-library.md) — page in the one slice the task needs, never the whole file (R9 · M9).

@@ -30,7 +30,7 @@ Reports a reader must act on — unknown-cause slot, position line, single closi
 
 Before introducing a new implementation, inspect the nearest existing one. Prefer a current helper, the standard library or a platform feature when it meets the requirement. Add a dependency only for a demonstrated gap and inspect its maintenance and licensing fit.
 
-Choose the smallest design that handles the actual inputs and failure modes. Generalize when real consumers share behavior, make a setting when supported deployments differ, and add a service when an existing process cannot satisfy the operational constraint. A hypothetical future consumer is insufficient evidence for any of those choices.
+Choose the smallest design that handles the actual inputs and failure modes. Generalize when real consumers share behavior, make a setting when supported deployments differ, and add a service when an existing process cannot satisfy the operational constraint. A hypothetical future consumer is insufficient evidence for any of those choices, and a rule or guard that no observed failure has demanded does not exist yet.
 
 The same reasoning applies to agent work: inline reasoning, one tool, selected retrieval and a bounded plan precede delegation unless independent work already justifies it. Cohors owns delegation and Concilium owns cross-model deliberation. Neither additional agents nor additional model calls guarantee a better answer.
 
@@ -42,9 +42,9 @@ For a broad rewrite, small means coherent boundaries and reviewable steps, not r
 
 ## Assume less
 
-Name assumptions that affect the result. Resolve reversible implementation details from the repository and user context. Ask when competing interpretations change the product behavior, create a meaningful cost or require authority not already supplied; continue independent work while waiting.
+Name assumptions that affect the result. Resolve reversible implementation details from the repository and user context. When to ask is Disciplina's clarifying-question rule; while an ask is open, continue the work it does not touch. A fact you have not observed this session — a version, a signature, a path, a number, a date, a quote — is read from its source before it is stated, or carried as unverified in the sentence that states it.
 
-Before another investigation or retry, identify the observation it could produce and how that would change the next decision. Stop repeating checks after the relevant evidence is stable. A failure requires a new hypothesis or a focused escalation, not more of the same call.
+Before another investigation or retry, identify the observation it could produce and how that would change the next decision. Stop repeating a check once two consecutive runs return the same observation with nothing changed between them. A failure requires a new hypothesis or a focused escalation, not more of the same call.
 
 ## What the four trims preserve
 

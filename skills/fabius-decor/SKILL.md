@@ -14,7 +14,7 @@ metadata:
 
 # Fabius Decor — what good actually looks like
 
-*Decor* — what is fitting, what becomes the thing. Good design is fitness to purpose, not decoration. Start from the actual content, the task, and the project's identity. Use the original token validator, layout recipes, and deterministic scene kit in `references/design-system.md`; then enforce the rules below.
+*Decor* — what is fitting, what becomes the thing. Good design is fitness to purpose, not decoration. Start from the actual content, the task, and the project's identity.
 
 ## Define the tokens before you style anything
 
@@ -58,7 +58,7 @@ A chart is a design artifact, not a different discipline — the same tokens and
 2. **One accent carries the signal.** The series that matters gets `primary`; everything else is `muted`/`hairline`. Color encodes meaning, never decoration (and stays colorblind-safe — don't lean on red/green alone).
 3. **Strip the chart-junk.** No gridline thicket, no 3-D, no drop-shadows, no redundant legend when you can label the line directly. Axes start at zero for bars; annotate the one number the reader should leave with.
 4. **Label directly, title with the takeaway.** The title states the finding ("Signups doubled after launch"), not the dimensions ("Signups by month").
-5. **Reproducible, tokenized SVG.** Prefer generated SVG from data over a screenshot — versionable, themeable, crisp. The repo's `assets/charts/` (`svgplot.py` · `render_figures.py`) is the numpy→SVG path; figures re-render from source, never hand-edited.
+5. **Reproducible, tokenized SVG.** Prefer generated SVG from data over a screenshot — versionable, themeable, crisp.
 
 Figura depth (chart table, data-ink, color, SVG helpers) → `references/visualization.md`. Decks and reports → `references/decks-and-infographics.md`; diagram-as-code pairs with `fabius-disciplina`.
 
@@ -91,7 +91,7 @@ node skills/fabius-decor/scripts/design.mjs scene skills/fabius-decor/examples/s
 
 Use a fresh output directory. The kit checks named color pairs, focus tokens and motion policy; it cannot certify whole-page accessibility. Generated scenes use supplied text, native controls and `window.__seek(seconds)`, with no autoplay. Verify the rendered result. Schema → `references/design-tokens.md`; composition recipes → `references/layout-recipes.md`; capture contract and renderers → `references/motion-libraries.md`.
 
-If a user supplies a brand reference, capture it into the visual-system template before building (`references/visual-system-template.md`), then translate its principles into the project's own tokens. Do not copy source, logos, fonts, or teardown prose. This kit replaces the earlier imported corpora without recreating their component count, effects, templates or frameworks. Historical source identities and the replacement boundary → `references/original-kit-migration.json`.
+A brand stated in any form — a site, a file, or facts in the brief — is captured before any markup as a visual-system record (`references/visual-system-template.md`), a file or a named section of the answer. Every color and type role carries a Role and a Never (`highlight: headline wash only — never a fill, badge, border or focus ring`; `display face: headings only — never prices, labels, nav`). A supplied "only" or "everything else" is a Never cell and outranks law 1's accent. Then translate into the project's own tokens. Do not copy source, logos, fonts, or teardown prose. Replaced-corpus history → `references/original-kit-migration.json`.
 
 ## Review before ship — the censor's floor
 
@@ -101,14 +101,11 @@ Name the surface mode (persuade · operate · read · experience) and the reques
 
 Before calling UI done:
 
-- [ ] Monochrome functional controls; one accent reserved for emphasis and focus.
-- [ ] All values are tokens — no inline hex or px in components.
-- [ ] Type ladder consistent; display tracking as documented; body ≥16px.
-- [ ] Spacing snaps to the base unit everywhere.
+- [ ] Laws 1–8 hold: one accent, tokens only, one type ladder (body ≥16px), base-unit spacing, calm transform/opacity motion.
 - [ ] Mobile layout designed first and actually checked at ~375px.
 - [ ] Focus-visible, never obscured; **≥ 4.5:1** body text, **≥ 3:1** UI parts, icons, chart series (WCAG 2.2 AA).
-- [ ] Motion calm, one language, transform/opacity only.
 - [ ] Verified **live** in a browser, not just read in the code (`fabius-disciplina`'s prove rule).
+- [ ] Brand work: the visual-system record exists and every Never cell holds in the shipped CSS.
 
 After final design, use ARIA-only repairs only when semantics and keyboard behavior already exist. ARIA creates no behavior. If conformance needs a semantic element or interaction, preserve the look with CSS or surface that change for owner sign-off.
 

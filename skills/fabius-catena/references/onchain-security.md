@@ -2,7 +2,7 @@
 
 The on-demand depth for hardening `fabius-catena`'s on-chain surface — the audit toolchain you run *before* a contract ships, and how to hand an AI agent a wallet without handing it the keys to drain. The skill is the contract; this is how you prove it before it's irreversible. Scout wide, strike narrow. Defensive only — audit and harden, never weaponize.
 
-> Tool names and versions below are a **point-in-time snapshot**: a claim carrying an explicit date was verified on that date; the rest are early-2026. Encode the decision rule — *static + fuzz before deploy* — and re-verify the tool. Third-party claims are flagged "reported by"; none are fabius's own measurements.
+> Tool names and versions below are a **point-in-time snapshot**: a claim carrying an explicit date was verified on that date; the rest are early-2026 and must be re-checked before use. Encode the decision rule — *static + fuzz before deploy* — and re-verify the tool. Third-party claims are flagged "reported by"; none are fabius's own measurements.
 
 ## The rule: unit tests prove the happy path; static analysis and fuzzing find the money-draining edge
 

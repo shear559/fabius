@@ -16,16 +16,19 @@
 // Usage:
 //   node council.mjs --selftest                     # wiring + Borda check — no key, no network, no cost
 //   export OPENROUTER_API_KEY=sk-or-...
-//   export COUNCIL_MODELS=anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.1-pro-preview,mistralai/mistral-large
-//   export COUNCIL_CHAIRMAN=anthropic/claude-opus-5
+//   export COUNCIL_MODELS=anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.8-flash,mistralai/mistral-large
+//   export COUNCIL_CHAIRMAN=anthropic/claude-opus-5.5
 //   node council.mjs "Should a 3-person startup use a monolith or microservices?"
 //   node council.mjs --json "..."   > run.json
 
 import { createHash, randomBytes } from "node:crypto";
 import { pathToFileURL } from "node:url"; // node builtin — still zero npm dependencies
 
-const DEFAULT_SEATS = "anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.1-pro-preview"; // fabius roster seats, odd count for tie-breaks; widen via COUNCIL_MODELS (e.g. add mistralai/mistral-large)
-const DEFAULT_CHAIR = "anthropic/claude-opus-5";
+// A GA-only default you override via COUNCIL_MODELS / COUNCIL_CHAIRMAN — odd seat count for
+// tie-breaks; no preview-tier seat (preview ids churn under a pinned roster). Ids read from
+// openrouter.ai/api/v1/models on 2026-09-28; preflight re-checks them against the live list.
+const DEFAULT_SEATS = "anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.8-flash";
+const DEFAULT_CHAIR = "anthropic/claude-opus-5.5";
 
 const REVIEW_SYS =
   "You are a strict, impartial judge on a council of AI models. You are NOT told which model " +

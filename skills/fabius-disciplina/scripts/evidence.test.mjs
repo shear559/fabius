@@ -43,6 +43,21 @@ test('skipped and absent checks leave criteria incomplete', t => {
   f.report.checks = [];
   assert.match(assessEvidence(f.plan, f.report, { root: f.root }).issues.join(' '), /missing check/);
 });
+test('verdict words accept the contract spelling and the past tense; blocked aggregates like failed', t => {
+  const f = fixture(t);
+  const assess = report => assessEvidence(f.plan, report, { root: f.root });
+  const withStatus = (status, patch = {}) => ({ ...f.report, checks: [{ ...f.report.checks[0], status, ...patch }] });
+  assert.equal(assess(withStatus('pass')).status, 'complete');
+  assert.equal(assess(withStatus('fail', { exitCode: 1 })).status, 'failed');
+  const skipped = { id: 'unit', status: 'skip', reason: 'chosen not to run: docs-only path' };
+  assert.equal(assess({ ...f.report, checks: [skipped] }).status, 'incomplete');
+  const blocked = { id: 'unit', status: 'blocked', reason: 'staging host unreachable; missing STAGING_TOKEN' };
+  const result = assess({ ...f.report, checks: [blocked] });
+  assert.equal(result.status, 'failed'); assert.deepEqual(result.criteria, [{ id: 'answer', status: 'failed' }]);
+  assert.throws(() => assess({ ...f.report, checks: [{ id: 'unit', status: 'blocked' }] }), /blocked precondition/);
+  assert.throws(() => assess({ ...f.report, checks: [{ ...blocked, exitCode: 1 }] }), /blocked check cannot carry execution evidence/);
+  for (const status of ['BLOCKED', 'Passed', 'ok', '__proto__', 'constructor']) assert.throws(() => assess(withStatus(status)), /unknown check status/);
+});
 test('failed and inconsistent exit status cannot be called complete', t => {
   const f = fixture(t); f.report.checks[0].status = 'failed'; f.report.checks[0].exitCode = 1;
   assert.equal(assessEvidence(f.plan, f.report, { root: f.root }).status, 'failed');

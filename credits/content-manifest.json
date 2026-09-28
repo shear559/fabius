@@ -1,11 +1,137 @@
 {
   "schema": "fabius-local-content/v1",
-  "snapshot_date": "2026-09-20",
-  "source_head": "f197d6c7285d1a9361b1a4c5279bd0f6ead4bdd0",
-  "registry_sha256": "38764ceaee88e2871d5b18842914733501365d0c467e2390c2d46229e06f0dc3",
+  "snapshot_date": "2026-09-28",
+  "source_head": "7faa31dcfa5818b7377aaea3fcc0953a4eeb8439",
+  "registry_sha256": "3d9f64c30ea48941d1433c61a9998678fac873750067d08e5a04fdc01cf7ab55",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
   "entries": [
+    {
+      "id": "ax-fabius",
+      "repo": "https://github.com/google/ax",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "local_paths": [
+        "skills/fabius/references/skill-maintenance.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius/references/skill-maintenance.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 9717,
+          "sha256": "84fde637b187da30d013e657123e8af0590013d24c27f7a1e7cc042e54475d21"
+        }
+      ],
+      "local_tree_sha256": "37950338f71707f7732c41efe2ceb7b5d5cc5bcce57d34eb50806a87e800263d"
+    },
+    {
+      "id": "ax-fabius-cohors",
+      "repo": "https://github.com/google/ax",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "local_paths": [
+        "skills/fabius-cohors/references/agent-workloads.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-cohors/references/agent-workloads.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 16867,
+          "sha256": "28f022497f93b274ed8be98ce14e5bdd7ad8c0b100d5c94989047aaa34058e24"
+        }
+      ],
+      "local_tree_sha256": "0498c89dedba4523d5562389a9ea2bbfb6a4df0d4c5ef2a86d341957d4a2ef5f"
+    },
+    {
+      "id": "ax-fabius-disciplina",
+      "repo": "https://github.com/google/ax",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "local_paths": [
+        "skills/fabius-disciplina/references/architecture-decisions.md",
+        "skills/fabius-disciplina/references/codebase-and-proof.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-disciplina/references/architecture-decisions.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 8237,
+          "sha256": "09160d1b9dff03ed79a14d5d50da46ddd6cbecbb2645d4921117be217484780e"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 19496,
+          "sha256": "0e920fbbad7a673da48e7e698141b060b2b76ef7fb7c560b249fd205de50813b"
+        }
+      ],
+      "local_tree_sha256": "465e6ab6334ae6b7e5fea2d50210253b51f73eebf3059117927c9f767ea00ea8"
+    },
+    {
+      "id": "ax-fabius-doctrina",
+      "repo": "https://github.com/google/ax",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "local_paths": [
+        "skills/fabius-doctrina/references/hosted-model-tier.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-doctrina/references/hosted-model-tier.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 9922,
+          "sha256": "8ca13aa398291cc91d327b7d370e49f29f1bd7e3d072e2b073264a96241739a5"
+        }
+      ],
+      "local_tree_sha256": "cc62fc7c0e0894e5847ded0434e2e232df2084c11964db5c7756b796c71927a8"
+    },
+    {
+      "id": "ax-fabius-praesidium",
+      "repo": "https://github.com/google/ax",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_version": null,
+      "pinned_at": "2026-09-28",
+      "local_paths": [
+        "skills/fabius-praesidium/references/hardening-guides.md",
+        "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-praesidium/references/hardening-guides.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 46803,
+          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
+        },
+        {
+          "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 29229,
+          "sha256": "340937d5207a573e64e0ceaafc67afbed2435cc2d969c9f11a04fe9ac2750f19"
+        }
+      ],
+      "local_tree_sha256": "d122f272b5b9b4ea310296452303289f315b2c15553b33429a11fe7a46466ba1"
+    },
     {
       "id": "book-to-skill-archivum",
       "repo": "https://github.com/virgiliojr94/book-to-skill",
@@ -52,11 +178,11 @@
           "path": "skills/fabius-cohors/references/agent-patterns.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47266,
-          "sha256": "95e7f3a933c269556db134acf55cfede239ba0d75d3087ab0de204104bac442b"
+          "size": 47798,
+          "sha256": "87620ed16db105b322eae88e447dc94c935ba5bfd7d26e01f091fe7d1a1ab721"
         }
       ],
-      "local_tree_sha256": "ec03a6473b26a04c3ac4968173d48b1cc53670f373087564e33efedf5932bc55"
+      "local_tree_sha256": "b85780df11dc8527f4e2f9ddb8d91980379227ff907a612608cc9c971b2031e8"
     },
     {
       "id": "book-to-skill-fabius",
@@ -74,11 +200,11 @@
           "path": "skills/fabius/references/skill-maintenance.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8458,
-          "sha256": "9afa1939372b1287b5ce88c0e20fd2c31aea17881eea5d8e086cd7a9a389e5a6"
+          "size": 9717,
+          "sha256": "84fde637b187da30d013e657123e8af0590013d24c27f7a1e7cc042e54475d21"
         }
       ],
-      "local_tree_sha256": "eb4fd523e773a387896982cfa5a7c198cae0108971d788fdef8d90502ccc191f"
+      "local_tree_sha256": "37950338f71707f7732c41efe2ceb7b5d5cc5bcce57d34eb50806a87e800263d"
     },
     {
       "id": "book-to-skill-praesidium",
@@ -96,11 +222,11 @@
           "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
           "kind": "file",
           "mode": "0644",
-          "size": 27186,
-          "sha256": "30d19df0f0e39e0f6b9789105fd3b5e2cef57ec7c67de84dc2c9d8305b0a4277"
+          "size": 29229,
+          "sha256": "340937d5207a573e64e0ceaafc67afbed2435cc2d969c9f11a04fe9ac2750f19"
         }
       ],
-      "local_tree_sha256": "87429a9c2ada2d929f275f35b504c43470f524274736f83fef7c71f612b86076"
+      "local_tree_sha256": "542e3fca68554eb05167680f916f267f32be7175170461ae0480fa3e096d80bf"
     },
     {
       "id": "claude-video",
@@ -162,11 +288,11 @@
           "path": "skills/fabius/references/routing-policy.md",
           "kind": "file",
           "mode": "0644",
-          "size": 51733,
-          "sha256": "3a78e5476dd9e18d26be18e0a6d81c5cc4e9c97d0f62b993ee9debf8cea27cfd"
+          "size": 51857,
+          "sha256": "fa5b9c986132fd26e1270a5843dbc0ea54775431e7251e752745c98c05a6353d"
         }
       ],
-      "local_tree_sha256": "aaa9b8138c02731dca8776e1a7f3b62343def1e4fac91dd2fb1f294e02df8955"
+      "local_tree_sha256": "32206807602f82b8e4d10fa51fa83a2fb8b70e5666c9ff5bb94e96db8ca59dba"
     },
     {
       "id": "i-have-adhd-parcus",
@@ -228,11 +354,11 @@
           "path": "skills/fabius-disciplina/references/architecture-decisions.md",
           "kind": "file",
           "mode": "0644",
-          "size": 6948,
-          "sha256": "6c906203d0a2852609aa8bb71a08ad344767fe80bf16efc8a5bee832b48237d0"
+          "size": 8237,
+          "sha256": "09160d1b9dff03ed79a14d5d50da46ddd6cbecbb2645d4921117be217484780e"
         }
       ],
-      "local_tree_sha256": "f0930926e336d7dab88a35acefd821d5692d2e24f3551f15fd4cf5f7662e9ba1"
+      "local_tree_sha256": "4c177c7e73549c1d4e41af3a062a2db8df5f24c9bb04c6589e805a2ccb382423"
     },
     {
       "id": "nanoclaw-memory-migration",
@@ -272,11 +398,11 @@
           "path": "skills/fabius/references/skill-maintenance.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8458,
-          "sha256": "9afa1939372b1287b5ce88c0e20fd2c31aea17881eea5d8e086cd7a9a389e5a6"
+          "size": 9717,
+          "sha256": "84fde637b187da30d013e657123e8af0590013d24c27f7a1e7cc042e54475d21"
         }
       ],
-      "local_tree_sha256": "eb4fd523e773a387896982cfa5a7c198cae0108971d788fdef8d90502ccc191f"
+      "local_tree_sha256": "37950338f71707f7732c41efe2ceb7b5d5cc5bcce57d34eb50806a87e800263d"
     },
     {
       "id": "nanoclaw-transactional-updates",
@@ -391,18 +517,18 @@
           "path": "skills/fabius-cohors/references/agent-evaluation-and-durability.md",
           "kind": "file",
           "mode": "0644",
-          "size": 16892,
-          "sha256": "ffb31fa7cb88229e7b8505647ccb15a6fcd2ddbea8799fabd18ddc6b8d653bed"
+          "size": 17458,
+          "sha256": "32b779dcc83a015a36f298114379402bfc7245da789bf25ed0e4e0afc4235816"
         },
         {
           "path": "skills/fabius-cohors/references/local-agent-runtime.md",
           "kind": "file",
           "mode": "0644",
-          "size": 31352,
-          "sha256": "7de7ecfe0a676895df93d3dcc64bf6a118e066ca5b1a1c4c39dfc8e5787f9359"
+          "size": 32025,
+          "sha256": "8fa0d236b46c3c9a6ffd60d5ee38f116fbbdc51c6653ad10ee1544d0674627b2"
         }
       ],
-      "local_tree_sha256": "5b5d3d975dcb706eec7a2a84d54c6edd18fc0b93f2d93cc7ed58d0bf14c4652e"
+      "local_tree_sha256": "1677ecd38e73fabc012cf15f8d39a62b22822ccc10acf72c62ecfca4c60d3117"
     },
     {
       "id": "omniroute-doctrina",
@@ -421,8 +547,8 @@
           "path": "skills/fabius-doctrina/references/hosted-model-tier.md",
           "kind": "file",
           "mode": "0644",
-          "size": 7364,
-          "sha256": "e6350117028f0e4fdcceb98d2a8715248e060256f20a1cbe0004293ef78be919"
+          "size": 9922,
+          "sha256": "8ca13aa398291cc91d327b7d370e49f29f1bd7e3d072e2b073264a96241739a5"
         },
         {
           "path": "skills/fabius-doctrina/references/ml-engineering-playbook.md",
@@ -432,7 +558,7 @@
           "sha256": "5f67286a693215e224f83e9bdd1a9c6ec460f80e0e357370f969939a6c4c4f17"
         }
       ],
-      "local_tree_sha256": "e57dc93882bd5735e6e9568a5833b8b657ae35312c1246cf3fef7496cb3c4251"
+      "local_tree_sha256": "b2f8073b62534b591f248966408bee8f519e969edacb16be6dbfbad5a1b82ea4"
     },
     {
       "id": "omniroute-fabius",
@@ -450,11 +576,11 @@
           "path": "skills/fabius/references/orchestration-doctrine.md",
           "kind": "file",
           "mode": "0644",
-          "size": 10987,
-          "sha256": "2ac17719f0b223c733cb990ea5220644872e7bd1f503a48f13cc0d7012196fc2"
+          "size": 11268,
+          "sha256": "e8442f71e3d38fbd7ea2744b8ab75128aa40afc0f5152cb7a1b118e71954830b"
         }
       ],
-      "local_tree_sha256": "5383db6290521de2dd1f90a59cdaec7569d46af5a493ac3b4d8cc841ceab37e8"
+      "local_tree_sha256": "b3c0fba34646e1212822d82fd7da5f6403abd7a21a18265c78a67358daca742b"
     },
     {
       "id": "omniroute-praesidium",
@@ -472,11 +598,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 41049,
-          "sha256": "6cdcc174270dfb10045016c4d4ab22bbeff7bcdf3d8af651cfe6a37992d515b0"
+          "size": 46803,
+          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
         }
       ],
-      "local_tree_sha256": "4f45b3a07f5f336c46d47c3879f5a101560940caceb02cafe638385b1884affc"
+      "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
     },
     {
       "id": "open-generative-ai-decor",
@@ -568,11 +694,11 @@
           "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
           "kind": "file",
           "mode": "0644",
-          "size": 27186,
-          "sha256": "30d19df0f0e39e0f6b9789105fd3b5e2cef57ec7c67de84dc2c9d8305b0a4277"
+          "size": 29229,
+          "sha256": "340937d5207a573e64e0ceaafc67afbed2435cc2d969c9f11a04fe9ac2750f19"
         }
       ],
-      "local_tree_sha256": "87429a9c2ada2d929f275f35b504c43470f524274736f83fef7c71f612b86076"
+      "local_tree_sha256": "542e3fca68554eb05167680f916f267f32be7175170461ae0480fa3e096d80bf"
     },
     {
       "id": "open-notebook-archivum",
@@ -620,11 +746,11 @@
           "path": "skills/fabius-cohors/references/agent-evaluation-and-durability.md",
           "kind": "file",
           "mode": "0644",
-          "size": 16892,
-          "sha256": "ffb31fa7cb88229e7b8505647ccb15a6fcd2ddbea8799fabd18ddc6b8d653bed"
+          "size": 17458,
+          "sha256": "32b779dcc83a015a36f298114379402bfc7245da789bf25ed0e4e0afc4235816"
         }
       ],
-      "local_tree_sha256": "bc38458c55945bb94e8fa741697b49635203115af2f518cdedd53ea60fbd75ee"
+      "local_tree_sha256": "51598b301a2f4783e001a7e1b250134fa452ba92ccc777583de5d74980c9854d"
     },
     {
       "id": "open-notebook-doctrina",
@@ -642,11 +768,11 @@
           "path": "skills/fabius-doctrina/references/hosted-model-tier.md",
           "kind": "file",
           "mode": "0644",
-          "size": 7364,
-          "sha256": "e6350117028f0e4fdcceb98d2a8715248e060256f20a1cbe0004293ef78be919"
+          "size": 9922,
+          "sha256": "8ca13aa398291cc91d327b7d370e49f29f1bd7e3d072e2b073264a96241739a5"
         }
       ],
-      "local_tree_sha256": "4b69a06ce49ac4ce77b50c2d6061547048bb8f75a51e33309535d3653116b203"
+      "local_tree_sha256": "cc62fc7c0e0894e5847ded0434e2e232df2084c11964db5c7756b796c71927a8"
     },
     {
       "id": "open-notebook-machina",
@@ -686,11 +812,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 41049,
-          "sha256": "6cdcc174270dfb10045016c4d4ab22bbeff7bcdf3d8af651cfe6a37992d515b0"
+          "size": 46803,
+          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
         }
       ],
-      "local_tree_sha256": "4f45b3a07f5f336c46d47c3879f5a101560940caceb02cafe638385b1884affc"
+      "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
     },
     {
       "id": "open-seo-fabius",
@@ -708,11 +834,11 @@
           "path": "skills/fabius/references/skill-maintenance.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8458,
-          "sha256": "9afa1939372b1287b5ce88c0e20fd2c31aea17881eea5d8e086cd7a9a389e5a6"
+          "size": 9717,
+          "sha256": "84fde637b187da30d013e657123e8af0590013d24c27f7a1e7cc042e54475d21"
         }
       ],
-      "local_tree_sha256": "eb4fd523e773a387896982cfa5a7c198cae0108971d788fdef8d90502ccc191f"
+      "local_tree_sha256": "37950338f71707f7732c41efe2ceb7b5d5cc5bcce57d34eb50806a87e800263d"
     },
     {
       "id": "open-seo-machina",
@@ -790,11 +916,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 41049,
-          "sha256": "6cdcc174270dfb10045016c4d4ab22bbeff7bcdf3d8af651cfe6a37992d515b0"
+          "size": 46803,
+          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
         }
       ],
-      "local_tree_sha256": "4f45b3a07f5f336c46d47c3879f5a101560940caceb02cafe638385b1884affc"
+      "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
     },
     {
       "id": "strix-cohors",
@@ -812,11 +938,11 @@
           "path": "skills/fabius-cohors/references/agent-evaluation-and-durability.md",
           "kind": "file",
           "mode": "0644",
-          "size": 16892,
-          "sha256": "ffb31fa7cb88229e7b8505647ccb15a6fcd2ddbea8799fabd18ddc6b8d653bed"
+          "size": 17458,
+          "sha256": "32b779dcc83a015a36f298114379402bfc7245da789bf25ed0e4e0afc4235816"
         }
       ],
-      "local_tree_sha256": "bc38458c55945bb94e8fa741697b49635203115af2f518cdedd53ea60fbd75ee"
+      "local_tree_sha256": "51598b301a2f4783e001a7e1b250134fa452ba92ccc777583de5d74980c9854d"
     },
     {
       "id": "strix-praesidium",
@@ -844,15 +970,15 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 41049,
-          "sha256": "6cdcc174270dfb10045016c4d4ab22bbeff7bcdf3d8af651cfe6a37992d515b0"
+          "size": 46803,
+          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
         },
         {
           "path": "skills/fabius-praesidium/references/security-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 22710,
-          "sha256": "c1278930bc766679f359ae35d5fcbfebb2d4b24d83a89ac6e7b4e2c334dd5d0c"
+          "size": 22740,
+          "sha256": "05c5ef6729530b76c2529b143c0fb5b9b124df5d417fa92991d14b14d9e9d915"
         },
         {
           "path": "skills/fabius-praesidium/references/security-toolkit.md",
@@ -862,7 +988,7 @@
           "sha256": "cfb0728a439a817010564bdf0d301f5321beb06890b1851b555589f3a1f629f0"
         }
       ],
-      "local_tree_sha256": "3f3b4d9fe63d10caf031e968db875c4956d5528ae56769205f7a1651f5be0795"
+      "local_tree_sha256": "a01065e32b42da8bd592bd443dfea04aca31d5bd587d4f97753df1228090a73d"
     },
     {
       "id": "system-prompts-leaks-archivum",
@@ -911,18 +1037,18 @@
           "path": "skills/fabius-cohors/references/agent-patterns.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47266,
-          "sha256": "95e7f3a933c269556db134acf55cfede239ba0d75d3087ab0de204104bac442b"
+          "size": 47798,
+          "sha256": "87620ed16db105b322eae88e447dc94c935ba5bfd7d26e01f091fe7d1a1ab721"
         },
         {
           "path": "skills/fabius-cohors/references/local-agent-runtime.md",
           "kind": "file",
           "mode": "0644",
-          "size": 31352,
-          "sha256": "7de7ecfe0a676895df93d3dcc64bf6a118e066ca5b1a1c4c39dfc8e5787f9359"
+          "size": 32025,
+          "sha256": "8fa0d236b46c3c9a6ffd60d5ee38f116fbbdc51c6653ad10ee1544d0674627b2"
         }
       ],
-      "local_tree_sha256": "1c622b523ac79a5abfffd4dfae91c029d6af0eafafdaeb311d7ed1f051355828"
+      "local_tree_sha256": "fc136ae6765ecd297f9da519881e0a838e688904d8411419e5a8d9ad39d912c4"
     },
     {
       "id": "system-prompts-leaks-decor",
@@ -948,11 +1074,11 @@
           "path": "skills/fabius-decor/references/visual-system-template.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8828,
-          "sha256": "8a87ede85de364bddaef1e5b2f7f8c96181a428e2698fb0cf0b8ea26d7bdeffd"
+          "size": 9118,
+          "sha256": "2dc87811ac87a821f87c15214f0e4d83349fc515b711f9e046dd4ec6f6768f8e"
         }
       ],
-      "local_tree_sha256": "03aa9f882a001e0029171e8a95d9f5fb867520634ec39010faabfc9c2807f3bd"
+      "local_tree_sha256": "edb2423fd58a6caab0465f31ec9783ed86cd59c525b62cbb3f0f8bac952bf800"
     },
     {
       "id": "system-prompts-leaks-disciplina",
@@ -971,18 +1097,18 @@
           "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
           "kind": "file",
           "mode": "0644",
-          "size": 14228,
-          "sha256": "6ee840bae39110fd24cabb5dcc6b7b29e9b55d5ebe853c8a816e51ec56e80703"
+          "size": 19496,
+          "sha256": "0e920fbbad7a673da48e7e698141b060b2b76ef7fb7c560b249fd205de50813b"
         },
         {
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 9657,
-          "sha256": "911b49fa9d266bcfcb644a858aae02025e37ebc5b44151f7811d21634333c5ab"
+          "size": 9938,
+          "sha256": "7604e0c36209ebbc2ca58786409863d10060f49b1b0bd6e9a3e83a0c5ee4b7e4"
         }
       ],
-      "local_tree_sha256": "820d27d64ca3310c4e06ccad8ed6ad2cfd6fe975e2e9ac01eeafe601460d4f86"
+      "local_tree_sha256": "1741f420710f619b956069508e87a3951d5222466a890911652ee709998bbe63"
     },
     {
       "id": "system-prompts-leaks-fabius",
@@ -1000,11 +1126,11 @@
           "path": "skills/fabius/references/orchestration-doctrine.md",
           "kind": "file",
           "mode": "0644",
-          "size": 10987,
-          "sha256": "2ac17719f0b223c733cb990ea5220644872e7bd1f503a48f13cc0d7012196fc2"
+          "size": 11268,
+          "sha256": "e8442f71e3d38fbd7ea2744b8ab75128aa40afc0f5152cb7a1b118e71954830b"
         }
       ],
-      "local_tree_sha256": "5383db6290521de2dd1f90a59cdaec7569d46af5a493ac3b4d8cc841ceab37e8"
+      "local_tree_sha256": "b3c0fba34646e1212822d82fd7da5f6403abd7a21a18265c78a67358daca742b"
     },
     {
       "id": "system-prompts-leaks-parcus",
@@ -1044,11 +1170,11 @@
           "path": "skills/fabius-praesidium/references/security-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 22710,
-          "sha256": "c1278930bc766679f359ae35d5fcbfebb2d4b24d83a89ac6e7b4e2c334dd5d0c"
+          "size": 22740,
+          "sha256": "05c5ef6729530b76c2529b143c0fb5b9b124df5d417fa92991d14b14d9e9d915"
         }
       ],
-      "local_tree_sha256": "d12b05de5503a43977fb4119203d9e3d5a6c32880057aeafad0b09d3c7a3f2c9"
+      "local_tree_sha256": "63ae597e24efdd3edce09445fa86d98ac7058362e7751e8aecbf22f772324ccd"
     },
     {
       "id": "typesafe-skills-doctrina",

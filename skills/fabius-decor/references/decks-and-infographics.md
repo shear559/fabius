@@ -16,7 +16,7 @@ the PDF/PNG export — a vendor format is never the working medium.
 ## 1 · Decks — the narrative comes before the pixels
 
 - **Outline first.** Write the argument as a one-line-per-slide outline and get it agreed
-  before designing anything (ambiguity → grill one question at a time, disciplina's job). A
+  before designing anything (ambiguity → disciplina's clarifying-question rule, one question at a time). A
   deck whose outline doesn't stand is not rescued by design.
 - **One idea per slide.** The slide headline states the idea as a claim ("Retention doubled
   after onboarding v2"), never a category label ("Retention"). If a slide needs two claims,

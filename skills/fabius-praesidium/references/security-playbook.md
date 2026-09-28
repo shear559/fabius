@@ -210,7 +210,7 @@ An audit pass ships a second artifact beside §6's findings: a row for every sur
 
 **Paired check** (authorized target only): a refusal counts as evidence only if the same route, at the same time, serves a normal request — otherwise you have measured an outage.
 
-**Two accounts, kept apart.** The reviewer's account is labelled separately from what the harness observed (who ran, how they ended, what they were equipped for). Harness facts only *contradict*, never confirm: equipped for a risk class with no row → not examined (a heuristic match; say so). A run cut short, or any unresolved / BLOCKED row, marks the record `incomplete` — disciplina's ledger word (codebase-and-proof.md, linked in §6) — and never upgrades a claim.
+**Two accounts, kept apart.** The reviewer's account is labelled separately from what the harness observed (who ran, how they ended, what they were equipped for). Harness facts only *contradict*, never confirm: equipped for a risk class with no row → not examined (a heuristic match; say so). A run cut short or any unresolved row marks the record `incomplete`, and a BLOCKED row marks it `failed` — disciplina's ledger words (codebase-and-proof.md §4, linked in §6); neither ever upgrades a claim.
 
 ---
 

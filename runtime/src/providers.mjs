@@ -7,22 +7,32 @@
 
 import { ENV_KEY, providerKey, loadConfig, redact } from './config.mjs';
 
+// Every id and rate below was read from the provider's OWN page on the date in its comment —
+// never from memory, never from a reseller's list. Re-read the page before changing a row.
 export const PROVIDERS = {
-  anthropic: { label: 'Anthropic', tiers: { frontier: 'claude-fable-5', mid: 'claude-sonnet-5', fast: 'claude-haiku-4-5' } },
+  // platform.claude.com/docs/en/models/overview (read 2026-09-28): current lineup Fable 5.1 ·
+  // Opus 5.5 · Sonnet 5 · Haiku 4.5; Fable 5 and Opus 5 moved to the legacy list. Fable 5.1 bills
+  // the same rate Fable 5 did, so the top rung moves at no cost.
+  anthropic: { label: 'Anthropic', tiers: { frontier: 'claude-fable-5-1', mid: 'claude-sonnet-5', fast: 'claude-haiku-4-5' } },
   // `gpt-5.6` is an alias for sol — pin the explicit id so a rung can't be re-pointed under the
   // ledger. gpt-5/-mini/-nano still answer, but their dated snapshots (`gpt-5-2025-08-07` and
   // siblings) shut down 2026-12-11 with sol / terra / luna named as the replacements.
+  // platform.openai.com/docs/pricing (read 2026-09-28) also lists a GPT-6 line (astra / sol /
+  // luna); its rows are in PRICES so an explicit override bills honestly, but the tier defaults
+  // stay on 5.6 until the maintainer re-pins — a roster move is a decision, not a price fix.
   openai: { label: 'OpenAI', tiers: { frontier: 'gpt-5.6-sol', mid: 'gpt-5.6-terra', fast: 'gpt-5.6-luna' } },
-  // Google ships two GA flashes and the choice is genuinely close, so the tie breaks on Google's
-  // own words plus the price: 3.5 Flash is listed as the "most intelligent model for sustained
-  // frontier performance" and bills the higher output rate ($9 vs $7.50), so it takes `frontier`;
-  // 3.6 Flash is the newer speed/intelligence balance and takes `mid` — which keeps the ladder
-  // monotone in cost as well as capability AND makes it the default rung, matching the model
-  // Google's own deprecation page points retired ids at. There is no GA Gemini 3 Pro — the only
+  // ai.google.dev/gemini-api/docs/models + /pricing + /deprecations (read 2026-09-28). Four GA
+  // Flash generations answer; Google's own words break the tie: 3.8 Flash is "our most intelligent
+  // Flash model, engineered for long-horizon software engineering" and takes `frontier`; 3.7 and
+  // 3.6 are "previous-generation" — 3.6 Flash, "balancing speed and multimodal capabilities across
+  // general agentic and everyday tasks", is the everyday rung and takes `mid` at the same list
+  // price as 3.8; 3.5 Flash is now the "legacy Flash model" and is no longer a default. 3.5
+  // Flash-Lite stays `fast`: still stable, no shutdown date announced (it is the named replacement
+  // for 3.1 Flash-Lite, which shuts down 2027-05-07). There is no GA Gemini 3 Pro — the only
   // Pro-tier option is `gemini-3.1-pro-preview`, PREVIEW, so it is not a default here; name it
   // explicitly if wanted and accept preview-tier churn in exchange for Pro reasoning. The 2.5
   // line still answers and carries no announced shutdown date — a safe pin, a stale default.
-  google: { label: 'Google Gemini', tiers: { frontier: 'gemini-3.5-flash', mid: 'gemini-3.6-flash', fast: 'gemini-3.5-flash-lite' } },
+  google: { label: 'Google Gemini', tiers: { frontier: 'gemini-3.8-flash', mid: 'gemini-3.6-flash', fast: 'gemini-3.5-flash-lite' } },
   // Pinned by version, never by `-latest`. An alias re-points under the ledger while the price
   // table keeps quoting the old rate — under-counting, the failure that spends the owner's money
   // instead of stopping the run: `mistral-medium-latest` moved from Medium 3 ($0.4/$2) to
@@ -36,12 +46,21 @@ export const PROVIDERS = {
   groq: { label: 'Groq', tiers: { frontier: 'openai/gpt-oss-120b', mid: 'openai/gpt-oss-120b', fast: 'openai/gpt-oss-20b' } },
   // One token, hundreds of open models across every partner. Any `org/name` repo id
   // passed as a custom model overrides the tier default — that is the "run any open
-  // model" path.
-  huggingface: { label: 'HuggingFace', router: true, tiers: { frontier: 'openai/gpt-oss-120b', mid: 'meta-llama/Llama-3.3-70B-Instruct', fast: 'meta-llama/Llama-3.1-8B-Instruct' } },
-  openrouter: { label: 'OpenRouter', router: true, tiers: { frontier: 'anthropic/claude-sonnet-4.5', mid: 'openai/gpt-4.1-mini', fast: 'meta-llama/llama-3.3-70b-instruct' } },
-  // Local inference. No key, no network, no cost — and no frontier tier: an 8–14B
-  // local model is a `fast` model wherever it is pointed. Honest by construction.
-  ollama: { label: 'Ollama (local)', local: true, tiers: { frontier: 'qwen2.5-coder:14b', mid: 'qwen2.5-coder:7b', fast: 'llama3.2:3b' } },
+  // model" path. Ids are case-sensitive repo ids, read from router.huggingface.co/v1/models
+  // (2026-09-28). The open rungs are the Qwen 3.5/3.6 line — Apache-2.0 across the whole
+  // family, which is the doctrine's default open backbone; Llama ships under a community
+  // licence with its own acceptable-use terms, so it stays an explicit override, not a default.
+  huggingface: { label: 'HuggingFace', router: true, tiers: { frontier: 'openai/gpt-oss-120b', mid: 'Qwen/Qwen3.6-27B', fast: 'Qwen/Qwen3.5-9B' } },
+  // openrouter.ai/api/v1/models (read 2026-09-28) — the gateway spells Anthropic ids with a dot
+  // (`claude-fable-5.1`), the native API with a dash. Same generation as the first-party rungs
+  // above, so a fallback through the gateway does not silently drop a generation.
+  openrouter: { label: 'OpenRouter', router: true, tiers: { frontier: 'anthropic/claude-fable-5.1', mid: 'anthropic/claude-sonnet-5', fast: 'openai/gpt-5.6-luna' } },
+  // Local inference. No key, no network, no cost — and no true frontier tier: whatever fits on
+  // one machine is a `fast`-class model against a hosted frontier, so the local ladder is by
+  // size: a 27B dense coder on top, a 35B mixture with 3B active in the middle, a 4B at the
+  // bottom. Tags read from ollama.com/library (2026-09-28); same Apache-2.0 reason as the
+  // HuggingFace rungs.
+  ollama: { label: 'Ollama (local)', local: true, tiers: { frontier: 'qwen3.6:27b-coding', mid: 'qwen3.6:35b-a3b-coding', fast: 'qwen3.5:4b' } },
 };
 
 export const PROVIDER_ORDER = ['anthropic', 'openai', 'google', 'mistral', 'groq', 'huggingface', 'openrouter', 'ollama'];
@@ -49,14 +68,21 @@ export const TIERS = ['frontier', 'mid', 'fast'];
 
 // [usd_in, usd_out] per 1M tokens ≡ micro-USD per token, so the ledger stays integer.
 const PRICES = {
-  anthropic: { 'claude-fable-5': [10, 50], 'claude-sonnet-5': [3, 15], 'claude-haiku-4-5': [1, 5] },
-  // Superseded-but-still-live ids keep their row so an explicit override still bills honestly.
-  // Rates are the PROVIDER's own list price, not a gateway's resale price — the runtime calls
-  // OpenAI directly, and a reseller's discounted row would under-bill every native call.
-  openai: { 'gpt-5.6-sol': [5, 30], 'gpt-5.6-terra': [2, 12], 'gpt-5.6-luna': [0.2, 1.2], 'gpt-5': [1.25, 10], 'gpt-5-mini': [0.25, 2], 'gpt-5-nano': [0.05, 0.4] },
-  // Google tiers the Pro rate by prompt length; the ledger carries the >200k rung so a long
-  // prompt can't under-bill — and that rung is what an unknown Google model falls back to.
-  google: { 'gemini-3.5-flash': [1.5, 9], 'gemini-3.6-flash': [1.5, 7.5], 'gemini-3.5-flash-lite': [0.3, 2.5], 'gemini-3.1-pro-preview': [4, 18], 'gemini-2.5-pro': [1.25, 10], 'gemini-2.5-flash': [0.3, 2.5], 'gemini-2.5-flash-lite': [0.1, 0.4] },
+  // platform.claude.com/docs/en/about-claude/pricing (read 2026-09-28). Fable 5 and Opus 5 are
+  // legacy but still answer — their rows stay so an explicit override bills honestly.
+  anthropic: { 'claude-fable-5-1': [10, 50], 'claude-opus-5-5': [4, 20], 'claude-sonnet-5': [2, 10], 'claude-haiku-4-5': [1, 5], 'claude-fable-5': [10, 50], 'claude-opus-5': [5, 25] },
+  // platform.openai.com/docs/pricing, Standard tier (read 2026-09-28). Superseded-but-still-live
+  // ids keep their row so an explicit override still bills honestly. Rates are the PROVIDER's own
+  // list price, not a gateway's resale price — the runtime calls OpenAI directly, and a reseller's
+  // discounted row would under-bill every native call. Where the page prices a long-context rung
+  // (sol: $4/$20 short, $8/$30 long; the GPT-6 line likewise) the ledger carries the LONG rung —
+  // same policy as Google — so a long prompt can't under-bill. terra and luna carry one rate.
+  openai: { 'gpt-5.6-sol': [8, 30], 'gpt-5.6-terra': [2, 12], 'gpt-5.6-luna': [0.2, 1.2], 'gpt-6-astra': [20, 75], 'gpt-6-sol': [4, 15], 'gpt-6-luna': [0.2, 0.75], 'gpt-5': [1.25, 10], 'gpt-5-mini': [0.25, 2], 'gpt-5-nano': [0.05, 0.4] },
+  // ai.google.dev/gemini-api/docs/pricing (read 2026-09-28). Google tiers the Pro rate by prompt
+  // length and the 3.6–3.8 Flash rate by date ($0.75/$3.75 through 2026-12-31, $1.50/$7.50 from
+  // 2027-01-01); the ledger carries the HIGHER rung in both cases so a long prompt or a new year
+  // can't under-bill — and that rung is what an unknown Google model falls back to.
+  google: { 'gemini-3.8-flash': [1.5, 7.5], 'gemini-3.7-flash': [1.5, 7.5], 'gemini-3.6-flash': [1.5, 7.5], 'gemini-3.5-flash': [1.5, 9], 'gemini-3.5-flash-lite': [0.3, 2.5], 'gemini-3.1-pro-preview': [4, 18], 'gemini-2.5-pro': [1.25, 10], 'gemini-2.5-flash': [0.3, 2.5], 'gemini-2.5-flash-lite': [0.1, 0.4] },
   // No `-latest` row on purpose: a moving alias must MISS this table and fall to maxRate.
   mistral: { 'mistral-medium-3-5': [1.5, 7.5], 'mistral-large-2512': [0.5, 1.5], 'mistral-small-2603': [0.15, 0.6] },
   // The Llama rows stay until they stop answering: shutdown is 2026-08-16 for free and developer
@@ -64,8 +90,13 @@ const PRICES = {
   // `llama-3.3-70b-versatile` falls to maxRate [0.15, 0.6] against a real [0.59, 0.79] — a 46%
   // under-count on the run, which is the direction that spends the owner's money.
   groq: { 'openai/gpt-oss-120b': [0.15, 0.6], 'openai/gpt-oss-20b': [0.075, 0.3], 'llama-3.3-70b-versatile': [0.59, 0.79], 'llama-3.1-8b-instant': [0.05, 0.08] },
-  huggingface: { 'openai/gpt-oss-120b': [0.15, 0.6], 'meta-llama/Llama-3.3-70B-Instruct': [0.6, 0.7], 'meta-llama/Llama-3.1-8B-Instruct': [0.05, 0.08] },
-  openrouter: { 'anthropic/claude-sonnet-4.5': [3, 15], 'openai/gpt-4.1-mini': [0.4, 1.6], 'meta-llama/llama-3.3-70b-instruct': [0.12, 0.3] },
+  // router.huggingface.co/v1/models (read 2026-09-28) prices each repo PER PARTNER and the router
+  // picks the partner, so a row carries the MAX over the live partners — a single partner's rate
+  // would under-bill whenever the router lands elsewhere.
+  huggingface: { 'openai/gpt-oss-120b': [0.35, 0.75], 'Qwen/Qwen3.6-27B': [0.47, 3.2], 'Qwen/Qwen3.5-9B': [0.17, 0.25], 'meta-llama/Llama-3.3-70B-Instruct': [1.04, 1.04], 'meta-llama/Llama-3.1-8B-Instruct': [0.06, 0.06] },
+  // openrouter.ai/api/v1/models (read 2026-09-28) — the gateway's own resale rate IS the billed
+  // rate here, because the runtime calls the gateway. Prior-generation rows stay for overrides.
+  openrouter: { 'anthropic/claude-fable-5.1': [10, 50], 'anthropic/claude-sonnet-5': [2, 10], 'openai/gpt-5.6-luna': [0.2, 1.2], 'anthropic/claude-sonnet-4.5': [3, 15], 'openai/gpt-4.1-mini': [0.4, 1.6], 'meta-llama/llama-3.3-70b-instruct': [0.1, 0.32] },
   ollama: {},   // local inference costs no money
 };
 

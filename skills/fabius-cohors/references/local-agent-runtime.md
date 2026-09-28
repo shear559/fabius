@@ -83,7 +83,9 @@ Whatever the shape, the child process must die with its parent. An orphaned agen
 an API key and a shell is the worst failure mode in this document, and it is the one that
 actually happens — a crash, a force-quit, a terminal closed. Watch the owning PID
 explicitly rather than trusting `getppid()`, which lies the moment a launcher or a bundler
-inserts an intermediate process.
+inserts an intermediate process. The same law runs downward: signal the agent's process
+group, not its pid, with a bounded grace before the kill, and decide on purpose whether the
+supervisor outlives the agent — [`agent-workloads.md`](agent-workloads.md) §8.
 
 ## 3. Capability, not configuration
 
@@ -455,6 +457,10 @@ ceiling when memory info is unavailable. The pool cannot over-commit RAM while e
 keeps its own hard cap. Label the sandbox containers, and reap stale ones on startup — an
 orphaned container is §2's orphaned process wearing a namespace.
 
+The container is the unit's boundary; the unit's lifecycle — born held, an immutable brief,
+mark-then-release teardown the reaper finishes, and a prepare phase whose credentials are
+gone before the run phase starts — is [`agent-workloads.md`](agent-workloads.md).
+
 ## 14. The checklist
 
 Before calling a local runtime finished:
@@ -473,5 +479,6 @@ Before calling a local runtime finished:
 - [ ] Every permission decision lands in the run's journal.
 - [ ] The seal is reported, and a mode exists that refuses anything outside the sealed set.
 - [ ] The child process dies with its parent — verified by killing the parent, not by reading the code.
+- [ ] The agent runs in its own process group; stopping it leaves nothing it spawned alive — verified by listing survivors ([`agent-workloads.md`](agent-workloads.md) §8).
 
 Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the API → DOM → pixels surface ladder, per-application interaction tiers, link inspection before navigation, the two-hosts path rule, the hand-off of credential steps, and the verified-principal-per-channel rule; and **OmniRoute** (diegosouzapw, MIT) — studied for locality-before-authentication on process-spawning routes and the filesystem-derived route-classification gate; re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.

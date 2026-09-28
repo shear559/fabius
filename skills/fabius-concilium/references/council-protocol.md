@@ -3,13 +3,13 @@
 
 The runnable reference is [`council.mjs`](council.mjs) (Node ≥18, zero dependencies). This doc is the spec it implements: the exact stage prompts, the anonymization scheme, and the aggregation math, so the protocol is reproducible by hand or in any other runtime (a harness, a Worker, a notebook). `SKILL.md` is the lean contract; this is the playbook.
 
-## Roster — env-configured, never hardcoded
+## Roster — env-configured; the reference ships a GA-only default you override
 
 ```
 OPENROUTER_API_KEY   one key, every model (the live tier — you configure it)
 COUNCIL_MODELS       comma-separated seats, e.g.
-                     anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.1-pro-preview,mistralai/mistral-large
-COUNCIL_CHAIRMAN     the synthesizing model, e.g. anthropic/claude-opus-5
+                     anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.8-flash,mistralai/mistral-large
+COUNCIL_CHAIRMAN     the synthesizing model, e.g. anthropic/claude-opus-5.5
 ```
 
 **Resolve every seat and chairman id against the gateway's live model list before the run** (`GET /api/v1/models`). The reference fails this preflight before spending any completion calls when an id is absent; a transport failure after a valid preflight is logged and dropped. Without preflight, the council can complete looking healthy while using a narrower field than configured. Model ids churn faster than this document — treat the roster above as an example, not a guarantee.
@@ -112,7 +112,7 @@ The chairman's output is the council's synthesized answer. Then — for anything
 {
   "question": "...",
   "seats": ["anthropic/claude-sonnet-5", "openai/gpt-5.6-terra", "..."],
-  "chairman": "anthropic/claude-opus-5",
+  "chairman": "anthropic/claude-opus-5.5",
   "call_accounting": {
     "configured_seats": 3,
     "live_seats": 3,
@@ -138,8 +138,8 @@ node references/council.mjs --selftest
 
 # a real council
 export OPENROUTER_API_KEY=sk-or-...
-export COUNCIL_MODELS=anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.1-pro-preview,mistralai/mistral-large
-export COUNCIL_CHAIRMAN=anthropic/claude-opus-5
+export COUNCIL_MODELS=anthropic/claude-sonnet-5,openai/gpt-5.6-terra,google/gemini-3.8-flash,mistralai/mistral-large
+export COUNCIL_CHAIRMAN=anthropic/claude-opus-5.5
 node references/council.mjs "Should a 3-person startup use a monolith or microservices?"
 
 # JSON out (pipe the full record)

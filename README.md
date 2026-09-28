@@ -19,7 +19,7 @@ You keep your agent app and the model you already pay for. Fabius adds fifteen s
 - **Proves before it says done.** It runs the change and shows you the evidence. The verdicts are pass, fail, blocked and skip. "Should work" is none of them.
 - **Remembers, with your permission.** The project record is one page per project: the brief, the decisions and the open items. It is read in full before the first edit and updated before "done".
 
-<img src="assets/readme/fabius-loop.svg" alt="The six-step Fabius loop. Sense: read the project record and the ground first. Classify: name the load and ask only what changes the outcome. Route: pick the skills, the machinery rung and the model tier. Strike: make the smallest correct change. Prove: run it and show the evidence. Compound: file the verified lesson with your permission." width="100%" />
+<img src="assets/readme/fabius-loop.svg" alt="The six-step Fabius loop. Sense: read the project record and the code first. Classify: name the load and ask only what changes the outcome. Route: pick the skills, the machinery rung and the model tier. Strike: make the smallest correct change. Prove: run it and show the evidence. Compound: file the verified lesson with your permission." width="100%" />
 
 <img src="assets/readme/fabius-ladder.svg" alt="The machinery ladder, climbed one rung at a time: answer inline, one tool call, retrieval, a written plan, a single subagent, a swarm. In the example one tool call holds, so the four rungs above it are never started." width="100%" />
 
@@ -107,7 +107,7 @@ The saved result is `examples/sales-output.json`:
 - **Turn meeting notes into next steps.** [Three dated actions](examples/meeting-output.md). The launch-decision owner reads "Unspecified" because the notes never name one, and the result is an unsent draft: nothing was scheduled or sent.
 - **Plan a 30-second vertical video.** [Five shots](examples/video-output.md) from the supplied props only, 5 + 6 + 7 + 7 + 5 = 30 seconds, headed "This is a shot list, not a rendered video."
 
-These are demonstrations prepared by the maintainer, not a benchmark. Three larger builds made with Fabius 3.1.0 are live on the [site](https://fabius-landing.vercel.app/#trials): the Lattice product site (28/28 browser scenarios), the Fieldnote task workspace (68/68) and a six-regime math explorer (1,233/1,233 numerical probes). They are worked refinements, not a controlled comparison, and the paired study is published beside them with its ties and misses.
+These are demonstrations prepared by the maintainer, not a benchmark. Six builds are live on the [site](https://fabius-landing.vercel.app/#trials): three made with Fabius 3.1.0 — the Lattice product site (28/28 browser scenarios), the Fieldnote task workspace (68/68) and a six-regime math explorer (1,233/1,233 numerical probes) — and three made with 3.2.0 (a film, a key visual and an RNA-seq study), each batch with its verification page. They are worked refinements, not a controlled comparison, and the paired study is published beside them with its ties and misses.
 
 ## Install in your agent app
 
@@ -139,5 +139,5 @@ It worked when your app lists fabius as installed. Claude Code and Grok Build al
 Other instruction-reading tools: [AGENTS.md](AGENTS.md) carries the portable core, without the specialists. Using it outside the marketplace install needs permission.
 
 - **Cost and license.** Proprietary, and free to install for personal, non-commercial use through the marketplace command. Your model, connected services and compute are your own costs. Professional or client work needs permission: [LICENSE](LICENSE).
-- **What it touches.** Only the tools and permissions your agent app already grants. No Fabius server, no account, and your model's weights stay as they are. Say `stop fabius` to turn it off for the rest of a conversation.
-- **Measured and sealed.** Benchmarks are dated and printed with every miss, including the model tier that scored lower: [BENCHMARKS.md](BENCHMARKS.md). The fifteen skill contracts are content-sealed (SHA-256 and a Merkle root) and releases are signed: [PROVENANCE.md](PROVENANCE.md).
+- **What it touches.** Only the tools and permissions your agent app already grants. No Fabius server, no account, and your model's weights stay as they are. Say `stop fabius` and Fabius stops applying its rules until you invoke it again; it does not disable or uninstall the plugin.
+- **Measured and sealed.** Benchmarks are dated and printed with every miss, including the model tier that scored lower: [BENCHMARKS.md](BENCHMARKS.md). The fifteen skill contracts and three core documents (18 files) are content-sealed (SHA-256 and a Merkle root) and releases are signed: [PROVENANCE.md](PROVENANCE.md).

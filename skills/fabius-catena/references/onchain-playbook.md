@@ -2,7 +2,7 @@
 
 The on-demand depth for `fabius-catena`'s on-chain surface — building contracts, programs, wallets, transactions, and on-chain reads. The skill is the contract; this is how you run it. Scout wide, strike narrow.
 
-> Versions and stack defaults below are a **point-in-time snapshot**: a row carrying an explicit date was verified on that date; the rest are early-2026. Encode the decision rule, re-verify the number. Third-party benchmarks are flagged "reported by"; none are fabius's own measurements.
+> Versions and stack defaults below are a **point-in-time snapshot**: a row carrying an explicit date was verified on that date; the rest are early-2026 and must be re-checked before use. Encode the decision rule, re-verify the number. Third-party benchmarks are flagged "reported by"; none are fabius's own measurements.
 
 ## The first fork: EVM or Solana
 

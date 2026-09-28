@@ -43,6 +43,7 @@ Type-role fields are read literally. Letter-spacing is recorded per size, and a 
 On a brand-match job, or an extension with no DESIGN.md-class file yet, the first artifact is a capture in the shape above, produced before any markup is written (design-critique.md §2 law 3: a coherent identity already in code is inherited and documented).
 
 - **Read sources, not impressions.** The stylesheet, computed styles, a design file's variables and components. A screenshot orients the reading; it is not where a value comes from.
+- **A brief that states the brand as facts is a source.** Each fact becomes a row; every field the facts leave unstated reads `none recorded`. Seven facts still produce the full shape, not a comment block in the stylesheet.
 - **Every field filled.** `none recorded` is an answer; a blank is not.
 - **Collapse extractor noise.** One family listed once with its weights, not once per weight; a generic row the capture cannot describe is dropped, not padded.
 - **Source values are copied unrounded.** The base-unit snap in SKILL.md applies only to values the source does not set; a captured value that misses the grid stays as captured.
@@ -55,7 +56,7 @@ Then translate. The reference decides what is allowed — rationing, type roles,
 
 ## 3 · Never-clauses — mandatory, and drift when broken
 
-Every color row and every type role carries a `Never`; `none recorded` when there is none. The clause is what survives refinement: with it, a later edit that puts a documented value in a forbidden role is a violation resolved against the document, not an opinion. Examples drawn from decor's own laws: the accent never as a control fill (law 1); the focus color never as decoration (law 8); the display face never below body size; `muted` never as body text; ink never pure black (design-assets.md, Color tooling).
+Every color row and every type role carries a `Never`; `none recorded` when there is none. The clause is what survives refinement: with it, a later edit that puts a documented value in a forbidden role is a violation resolved against the document, not an opinion. Examples drawn from decor's own laws: the accent never as a control fill (law 1); the focus color never as decoration (law 8); the display face never outside heading roles (a price, a badge or a nav item is `ui`, whatever its size); `muted` never as body text; ink never pure black (design-assets.md, Color tooling).
 
 A refinement that breaks a never-clause is a drift finding in the class of design-critique.md §5's `design-system-*` ids — found by judgment, since the scanner matches values and not roles — with the row cited and severity on its §6 scale. The DO / DON'T section is generated from the Never cells plus the cross-token rules (law 1's one accent, law 7's one radius grammar, the elevation ceiling in [`../SKILL.md`](../SKILL.md)).
 

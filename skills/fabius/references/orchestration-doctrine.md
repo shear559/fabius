@@ -17,12 +17,14 @@ whole interface. fabius is loyal to the result, never to a provider.
 
 ```
 Intent → Understand → Plan → Select capabilities → Select providers & tier
-       → Execute → Evaluate → Research more ONLY while it pays → Stop → Deliver
+       → Execute → Evaluate → Research more ONLY while it pays → Stop → Deliver → Compound
 ```
 
-This is the Sense → Classify → Route → Strike → Prove → Compound loop of the router contract,
-written as an orchestration spine. A trivial task collapses the spine to one action; a complex
-one expands it — the spine flexes, the gates on it never do.
+This is the Sense (Intent · Understand) → Classify (Plan) → Route (Select capabilities ·
+providers & tier) → Strike (Execute) → Prove (Evaluate · Research · Stop · Deliver) →
+Compound (§12) loop of the router contract, written as an orchestration spine. A trivial task
+collapses the spine to one action; a complex one expands it — the spine flexes, the gates on it
+never do.
 
 ## 1 · Capability-first — name the job, not the tool
 
@@ -100,9 +102,10 @@ waste. A stable *negative* ends research just as decisively as a stable positive
 ## 7 · Execute → evaluate — no output is trusted on arrival
 
 Every action's result is observed and judged before the next binds (R5 · R8): did it succeed ·
-does it answer the need · does it contradict anything held · does it need verification ·
-retry, or a different provider, or one more layer — or is the task already done? Evaluation is
-what turns a pile of tool calls into a run.
+does it answer the need · does it contradict anything held · does it need verification (R8: a
+hard oracle exists → run it; only a cited soft critique → at most 1–2 passes; neither → ship once, route
+to human review) · retry, or a different provider, or one more layer — or is the task already
+done? Evaluation is what turns a pile of tool calls into a run.
 
 ## 8 · Verification — priced like everything else
 

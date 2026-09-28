@@ -28,6 +28,8 @@ run_gate "original capability gate adversarial regression" node --test scripts/t
 run_gate "original capability behavior tests" node --test skills/fabius-archivum/scripts/*.test.mjs skills/fabius-cohors/scripts/*.test.mjs skills/fabius-decor/scripts/*.test.mjs skills/fabius-disciplina/scripts/*.test.mjs
 run_gate "FBS suite schema" node evals/suite/validate.mjs
 run_gate "committed benchmark receipt replay" node evals/verify-receipts.mjs
+# stale smoke receipts are a NOTE in dev and a FAIL in release / proof-upgrade
+run_gate "maintenance-smoke receipt coverage and freshness" node evals/verify-maintenance-smoke.mjs "--mode=$mode"
 run_gate "text-eval evidence regression" node --test evals/text-eval.test.mjs
 run_gate "focused proof boundary regressions" node evals/proof-boundaries.mjs
 run_gate "starter artifact checks" python3 -B examples/verify.py

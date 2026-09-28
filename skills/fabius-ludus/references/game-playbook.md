@@ -6,7 +6,7 @@ The on-demand depth for `fabius-ludus`. This file is the full playbook: the core
 
 ## 1. Core-loop template
 
-Fill this before any art, menu, or content exists. A game is the ~10-second cycle **act → feedback → reward → again** — build only that, with grey boxes and placeholder sound, and answer one question: is it fun yet?
+Fill this before any art, menu, or content exists. A game is the ~10-second cycle **act → feedback → reward → again** — build only that, with grey boxes and placeholder sound, and pass the gate SKILL.md §1 sets: a tester who did not build it restarts the grey-box loop unprompted at least three times in one sitting — record the count.
 
 ```
 Verb (what the player does):        ________
@@ -14,10 +14,10 @@ Feedback (the instant response):    ________   (sound + visual, every time)
 Reward (why they do it again):      ________
 Failure (the cost / the stakes):    ________
 Loop length:                        ~__ seconds
-Fun unpainted? (grey-box test):     yes / not yet → fix the LOOP, not the art
+Unprompted restarts (grey-box test): __ of 3 → under 3: fix the LOOP, not the art
 ```
 
-If "not yet" — the fix is a loop change, never more content. A beautiful game on a dead loop is a dead game (`fabius-parcus`: the content doesn't need to exist until the loop holds).
+Under three — the fix is a loop change, never more content. A beautiful game on a dead loop is a dead game (`fabius-parcus`: the content doesn't need to exist until the loop holds).
 
 **Worked example** — a one-button dodge-and-grab:
 
@@ -27,7 +27,7 @@ Feedback:    snap-flip with a 60ms ease, a "tick" SFX, coin pops + chime
 Reward:      coin count ticks up; a near-miss with a spike pulses the score
 Failure:     touch a spike → hit-stop, shake, run ends; score is the stake
 Loop length: ~3 seconds (flip, thread a gap, grab, repeat)
-Fun unpainted? yes — flipping through grey rectangles already reads as tense
+Unprompted restarts: 4 of 3 — a tester kept flipping through grey rectangles unasked
 ```
 
 The verb is the whole game. Everything below is in service of making *that one verb* feel good.

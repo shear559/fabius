@@ -18,7 +18,7 @@ metadata:
 
 ## 1. Find the core loop first
 
-Name the ~10-second cycle in one line: **act → feedback → reward → again.** *(Move → land hit → number pops + enemy dies → do it again.)* Build *only* that, with grey boxes and placeholder sound, and answer one question: **is it fun yet?** No art, no menu, no progression, no content until the loop is fun unpainted. A beautiful game on a dead loop is a dead game (`fabius-parcus`: the content doesn't need to exist until the loop holds).
+Name the ~10-second cycle in one line: **act → feedback → reward → again.** *(Move → land hit → number pops + enemy dies → do it again.)* Build *only* that, with grey boxes and placeholder sound, and pass one observable gate, not a feeling: **a tester who did not build it restarts the grey-box loop unprompted at least three times in one sitting — record the count.** No art, no menu, no progression, no content until the loop is fun unpainted. A beautiful game on a dead loop is a dead game (`fabius-parcus`: the content doesn't need to exist until the loop holds).
 
 ## 2. Game feel (juice) — deliberate, not decorative
 

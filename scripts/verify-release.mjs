@@ -113,7 +113,18 @@ check("every canonical sealed tag preserves and verifies against the pinned hist
   chainValid, chainFailures.join(", ") || `${canonicalTags.length} tags / ${TRUST_BOOTSTRAP_TAG}`);
 
 const citationVersion = text("CITATION.cff").match(/^version:\s*([^\s]+)\s*$/m)?.[1] || "";
-const benchmarkVersion = text("BENCHMARKS.md").match(/<!--\s*fabius-release:\s*([^\s]+)\s*-->/)?.[1] || "";
+const releaseMarker = /<!--\s*fabius-release:\s*([^\s]+)\s*-->/;
+const benchmarks = text("BENCHMARKS.md");
+const benchmarkVersion = benchmarks.match(releaseMarker)?.[1] || "";
+// COMPATIBILITY.md carries release-specific facts (which versions were re-run, the shipped
+// skill-file count) and joined the version matrix at 3.3.0 through the same marker. A tree
+// at an older release has no marker and is not required to; from 3.3.0 on, or as soon as the
+// marker exists, the row is mandatory so the file cannot go stale silently.
+const COMPATIBILITY_MARKER_SINCE = [3, 3, 0];
+const compatibilityVersion = text("COMPATIBILITY.md").match(releaseMarker)?.[1] || "";
+const atLeast = (a, b) => { for (let i = 0; i < 3; i += 1) { if (a[i] !== b[i]) return a[i] > b[i]; } return true; };
+const compatibilityRequired = !!compatibilityVersion
+  || (parsed && atLeast([1, 2, 3].map((i) => Number(parsed[i])), COMPATIBILITY_MARKER_SINCE));
 const issueVersion = text(".github/ISSUE_TEMPLATE/bug_report.yml").match(/fabius v(\d+\.\d+\.\d+)/)?.[1] || "";
 const paperReadmeVersion = text("paper/README.md").match(/\(v(\d+\.\d+\.\d+)\)/)?.[1] || "";
 const template = text("paper/template.html");
@@ -131,13 +142,23 @@ const matrix = {
   "runtime CLI": runtimeCliVersion,
   "CITATION.cff": citationVersion,
   "BENCHMARKS.md": benchmarkVersion,
+  ...(compatibilityRequired ? { "COMPATIBILITY.md": compatibilityVersion } : {}),
   "bug template": issueVersion,
   "paper README": paperReadmeVersion,
   "paper artifact": artifact.version,
 };
 for (const [name, got] of Object.entries(matrix)) check(`version matrix: ${name}`, got === version, `${got || "missing"} / ${version}`);
+if (!compatibilityRequired) {
+  check("version matrix: COMPATIBILITY.md", true, `marker not required before ${COMPATIBILITY_MARKER_SINCE.join(".")} (tree at ${version})`);
+}
 check("version matrix: every paper template marker matches", templateVersions.length >= 3 && templateVersions.every((v) => v === version),
   templateVersions.join(", ") || "none");
+// The BENCHMARKS.md structural table once hard-coded the version beside "valid semver"; the
+// marker is the single source now. A literal there, if one returns, must equal the marker.
+const benchmarkLiteral = benchmarks.match(/version is valid semver \(`(\d+\.\d+\.\d+)`\)/)?.[1] || "";
+check("BENCHMARKS.md structural table carries no stale version literal beside the release marker",
+  !benchmarkLiteral || benchmarkLiteral === benchmarkVersion,
+  benchmarkLiteral ? `${benchmarkLiteral} / marker ${benchmarkVersion || "missing"}` : "no literal; the marker is the single source");
 
 check("paper artifact schema and path are canonical",
   artifact.schema === "fabius-paper-artifact/v1" && artifact.file === "paper/fabius-as-a-system.pdf",
