@@ -18,7 +18,7 @@ Ask the intended use once — lookup or study — and derive depth from it. A lo
 
 ## 4 · Ground before writing
 
-- Before writing that the source contains a named concept, count its occurrences in the extracted text. Zero → drop it or mark it `unverified` (memory of the book is not the file) — the mechanical form of disciplina's [source-support rule](../../fabius-disciplina/references/architecture-decisions.md).
+- Before writing that the source contains a named concept, count its occurrences in the extracted text. Zero → it stays out of the pack; at most it goes on a separate *not located* list handed to the user (memory of the book is not the file, and an `unverified` tag inside the pack still reads as a claim) — the mechanical form of disciplina's [source-support rule](../../fabius-disciplina/references/architecture-decisions.md).
 - Splitting by headings: a heading string repeats (contents list, running heads) — split at the match followed by the most text, not the earliest.
 - Media the extractor could not read is disclosed before distilling and on the pack's index page.
 

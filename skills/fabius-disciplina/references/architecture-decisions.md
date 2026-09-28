@@ -28,7 +28,7 @@ Search, imports, and tests often suffice. Add a graph, tool, or external search 
 
 One agent can inspect several concerns. Select lenses from evidence: transaction ownership, recovery, trust boundaries, migration compatibility, or semantics affecting a concrete failure. A dependency's presence does not require its own specialist.
 
-Delegate only when permitted and independence or parallel coverage prevents a named error. Supply a bounded question, artifacts, exclusions, authority, and expected result. No fixed headcount, required role, or orchestration runtime. Verify conclusions rather than counting votes. `fabius-cohors` owns agent engineering when itself in scope.
+Delegate only when permitted and independence or parallel coverage prevents a named error. Supply a bounded question, artifacts, exclusions, authority, and expected result. No fixed headcount, required role, or orchestration runtime. Verify conclusions rather than counting votes. When delegation or an independent reviewer is unavailable, the assessment says so in its evidence state — single-author reasoning, not independently reviewed — instead of implying a review that did not happen. `fabius-cohors` owns agent engineering when itself in scope.
 
 ## Compare options without manufacturing work
 

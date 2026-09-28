@@ -12,7 +12,7 @@
     "skills/fabius-catena/SKILL.md": "e37b127caf6b36cc54bba66c5fc49d8b567468fbbb378efc13815ed8bb3c9a58",
     "skills/fabius-cohors/SKILL.md": "d439ed70ec288bae3550b9b74722e0b908c58f421ee06f868b64b165bebc201b",
     "skills/fabius-concilium/SKILL.md": "bc3e045588d86db1f071660398039de61b95b31a3b5e600bef7b15586e71d34b",
-    "skills/fabius-decor/SKILL.md": "1bec84c5d1812c8a588cdb8fd18fd3cdb3c9a03e460ef744872706d72aa10d5c",
+    "skills/fabius-decor/SKILL.md": "ae4e30b91bbaad82eb4c86cd253cb1d0370f051f9117950d553998cb6bb75fe1",
     "skills/fabius-disciplina/SKILL.md": "b8587ec51764c521e980f0bd8fc32cc6c31f0758ea03152ede9adc2b8ce5a1fd",
     "skills/fabius-doctrina/SKILL.md": "89f7d976cb08882b6aec1f11766aab185810d46d61d2b05b923323d254bab91d",
     "skills/fabius-fortuna/SKILL.md": "b62d048a418427333d95ed2eaf24aa87059777c99d69c7c11ca975432a218bda",
@@ -24,5 +24,5 @@
     "skills/fabius-scientia/SKILL.md": "762292ae34c5cee93aa215c7084f3b6952e03540edaeabaa76f4444b811f7292",
     "skills/fabius/SKILL.md": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
   },
-  "merkle_root": "8d39f6e5ff738d7b9ca97604840950436441e8907ddeeef84b69dd285eb9b712"
+  "merkle_root": "e1958cb5f9e8f36cef0e3f61a7b71b152281cbd0f7c14ae7a6ce370a68c1309d"
 }

@@ -1,7 +1,7 @@
 {
   "schema": "fabius-local-content/v1",
   "snapshot_date": "2026-09-28",
-  "source_head": "7faa31dcfa5818b7377aaea3fcc0953a4eeb8439",
+  "source_head": "ac89f65dea0c2c67f7a3addccc915321abeacd81",
   "registry_sha256": "3d9f64c30ea48941d1433c61a9998678fac873750067d08e5a04fdc01cf7ab55",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
@@ -67,8 +67,8 @@
           "path": "skills/fabius-disciplina/references/architecture-decisions.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8237,
-          "sha256": "09160d1b9dff03ed79a14d5d50da46ddd6cbecbb2645d4921117be217484780e"
+          "size": 8451,
+          "sha256": "bb7e141b932fa7b1e894b0c19a0a6f99af3b21970697a2679adecb4b62f365ec"
         },
         {
           "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
@@ -78,7 +78,7 @@
           "sha256": "0e920fbbad7a673da48e7e698141b060b2b76ef7fb7c560b249fd205de50813b"
         }
       ],
-      "local_tree_sha256": "465e6ab6334ae6b7e5fea2d50210253b51f73eebf3059117927c9f767ea00ea8"
+      "local_tree_sha256": "a2b3498eda99235237b6b8001e8c83f9862632f49ed287467c12ad7cbccda109"
     },
     {
       "id": "ax-fabius-doctrina",
@@ -156,11 +156,11 @@
           "path": "skills/fabius-archivum/references/source-distillation.md",
           "kind": "file",
           "mode": "0644",
-          "size": 2972,
-          "sha256": "95a680d846e86599c193e8478293f358fd045b3ab7fc11ea3dfde372b833f79b"
+          "size": 3098,
+          "sha256": "76489f7cd2c74cd73f885f0e614f657c8e3575b9350619db3f6b9828e07d981c"
         }
       ],
-      "local_tree_sha256": "f2e524b7f5c3e128328a1c21e972ae80655458cfbd41e228a748fb5fe9639d09"
+      "local_tree_sha256": "d730e639abe2ad4df18c1522cd8344fa72a86f4c6dd164d1e2dbb7928405e3c1"
     },
     {
       "id": "book-to-skill-cohors",
@@ -178,11 +178,11 @@
           "path": "skills/fabius-cohors/references/agent-patterns.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47798,
-          "sha256": "87620ed16db105b322eae88e447dc94c935ba5bfd7d26e01f091fe7d1a1ab721"
+          "size": 47922,
+          "sha256": "b94372eb7b8311f5957040139aa9caf800a869021e4bb45df8bae27e72a18af6"
         }
       ],
-      "local_tree_sha256": "b85780df11dc8527f4e2f9ddb8d91980379227ff907a612608cc9c971b2031e8"
+      "local_tree_sha256": "0d41c254f51b5f5dcfc30f7e2a2b668e62191434c0250f2a646c4db846d9e528"
     },
     {
       "id": "book-to-skill-fabius",
@@ -354,11 +354,11 @@
           "path": "skills/fabius-disciplina/references/architecture-decisions.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8237,
-          "sha256": "09160d1b9dff03ed79a14d5d50da46ddd6cbecbb2645d4921117be217484780e"
+          "size": 8451,
+          "sha256": "bb7e141b932fa7b1e894b0c19a0a6f99af3b21970697a2679adecb4b62f365ec"
         }
       ],
-      "local_tree_sha256": "4c177c7e73549c1d4e41af3a062a2db8df5f24c9bb04c6589e805a2ccb382423"
+      "local_tree_sha256": "830fd2dec4ffe1de4dc819ff5426133af1b585a6931ca9828d4855fec892edc0"
     },
     {
       "id": "nanoclaw-memory-migration",
@@ -1037,8 +1037,8 @@
           "path": "skills/fabius-cohors/references/agent-patterns.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47798,
-          "sha256": "87620ed16db105b322eae88e447dc94c935ba5bfd7d26e01f091fe7d1a1ab721"
+          "size": 47922,
+          "sha256": "b94372eb7b8311f5957040139aa9caf800a869021e4bb45df8bae27e72a18af6"
         },
         {
           "path": "skills/fabius-cohors/references/local-agent-runtime.md",
@@ -1048,7 +1048,7 @@
           "sha256": "8fa0d236b46c3c9a6ffd60d5ee38f116fbbdc51c6653ad10ee1544d0674627b2"
         }
       ],
-      "local_tree_sha256": "fc136ae6765ecd297f9da519881e0a838e688904d8411419e5a8d9ad39d912c4"
+      "local_tree_sha256": "863047ff10da1346314f10aa6be27fb9aaa5d3cddb6437dc6fa06890bee7b260"
     },
     {
       "id": "system-prompts-leaks-decor",
