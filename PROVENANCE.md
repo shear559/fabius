@@ -12,7 +12,7 @@ Fabius seals 18 files: the fifteen skill contracts plus `AGENTS.md`, `ARCHITECTU
 
 - **Every sealed file** gets a SHA-256 hash, and one Merkle root covers the whole set. Change one word in a sealed file and its hash changes.
 - **Every release** is a git tag signed with a dedicated Ed25519 key.
-- **An OpenTimestamps proof** covers a small record that names the release commit (`provenance/sealed-commit.txt`). At this release it is pending Bitcoin confirmation; `verify.sh` reports the live status.
+- **An OpenTimestamps proof** covers a small record that names the release commit (`provenance/sealed-commit.txt`). It starts out pending at each release and is upgraded once Bitcoin confirms it; `verify.sh` reports the live status.
 
 What that proves: these exact bytes, released under that key. Once Bitcoin confirms the proof, it also proves a date by which they existed.
 
