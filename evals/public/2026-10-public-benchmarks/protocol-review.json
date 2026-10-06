@@ -1,0 +1,662 @@
+{
+ "reviews": [
+  {
+   "lens": "CLAIMS AND REPORTING: what each outcome may and may not license on the README, landing page, whitepaper and release notes, and what the receipts must hold so a stranger can recompute every number",
+   "findings": [
+    {
+     "severity": "blocker",
+     "issue": "The protocol fixes the statistics but not how results turn into words. Nothing says when a result counts as a gain, a loss or a tie. Line 66 promises to publish 'gains, ties, and losses alike', so 'tie' is already a planned label. But n=50 cannot show equivalence: the SWE-bench CI half-width is about 14 points. HumanEval+ is probably near ceiling for Sonnet 5.5, so a null there tells us almost nothing. The repo already has a precedent of turning a null into a claim: Panel D in BENCHMARKS.md says 'quality held, -10.5% output'.",
+     "why": "Without verdict rules fixed before the runs, a null primary can be published as 'tie' or 'quality held', which implies equivalence the data cannot show. A favourable benchmark can also be headlined while the others go unmentioned.",
+     "fix": "Add a section before any scored run: 'Verdicts and permitted wording (fixed now)'. GAIN = the Holm-adjusted McNemar p is below 0.05 AND the bootstrap CI lower bound is above 0. LOSS is the mirror image. NON-INFERIOR = the CI lower bound is above -5 points; this applies only to IFEval and HumanEval+, and no margin is declared for SWE-bench at n=50. Every other result is 'NO DETECTABLE DIFFERENCE (95% CI a to b; this study detects only differences of roughly X points)'. The words 'tie', 'matches', 'quality held' and 'no regression' are banned unless the result is NON-INFERIOR. State that the CIs are unadjusted while the verdicts use Holm-adjusted p. Every public sentence must carry this scope string: 'Fabius 3.3.0 (sealed root <hash>), claude-sonnet-5-5, Claude Code 2.1.289 headless, <invocation>, one sample per item, n=<n>, measured <dates>'. Permitted wording by outcome:\n\n(1) GAIN in fabius-loaded. README and landing may say: 'With the /fabius router contract, Sonnet 5.5's <metric> on <benchmark> went from x% to y% (delta, CI, Holm p)'. The same sentence or table must give the other two benchmarks. They may not say 'Fabius improves SWE-bench', compare to any leaderboard or published Verified number, name another model or another invocation, or attach the number to the 'fabius:' prefix. Release notes may cite the number only for a release whose sealed files are byte-identical to the tested root.\n\n(2) NO DETECTABLE DIFFERENCE. Permitted: 'no detectable difference at this sample size' with the CI. Banned: 'Fabius does not hurt', 'same quality, fewer tokens', and IDENTITY.md's 'better outcomes with less waste'.\n\n(3) LOSS. The loss goes in the same table, in the same type size, as any gain. If the landing page shows any number from this study, it must show the loss too. Release notes list it under known regressions. Only the pre-declared repeat_prompt sensitivity may sit beside it, and it is reported second, never as the headline.\n\n(4) MIXED. One table holds all six comparisons. The headline must take the form 'gained on X, no detectable difference on Y, lost on Z'. No surface may quote only the favourable row.\n\n(5) THE DOCUMENTED INVOCATION NEVER LOADS. Define 'loads' now as at least one Skill call to fabius:fabius or a specialist; report k/N with a Wilson CI per benchmark. Permitted: 'With the README's fabius: prefix, the router loaded in k/N runs; that arm measures the installed skill listing (~1.9k tokens), not the Fabius rules.' Banned: labelling the fabius-doc number 'Fabius', or saying 'Fabius had no effect'. README line 34 and the session-loading row in COMPATIBILITY.md must be corrected as a factual finding. The fabius-loaded number may appear next to the invocation only once the README tells users to use /fabius, and that wording change must be disclosed as post-result documentation that does not touch the contracts."
+    },
+    {
+     "severity": "blocker",
+     "issue": "In harness/bench_single.py, infra_failed() returns False whenever is_error is true but final_text is non-empty. Claude Code's usage-limit and API-error results ('Claude AI usage limit reached\u2026', 'API Error: 529 \u2026') have exactly that shape, so they get scored as model answers. The opposite case is also wrong: a run that hits the 8-turn cap ends with subtype error_max_turns and, as far as I know, no 'result' field. That makes final_text None, infra_failed returns True, and the item is rerun up to twice. Hitting the cap is a quality outcome, so this is a rerun for quality, and the Fabius arms are the ones that spend turns on Skill calls.",
+     "why": "The 5-hour meter is at 35%, so limit hits during 541 x 3 IFEval runs are close to certain. Error strings would be scored as failed answers, and they would cluster in whichever arm ran when the meter tripped. Rerunning error_max_turns gives the Fabius arms extra attempts. Both errors move the primary numbers, and in opposite directions.",
+     "fix": "Classify an outcome as infra when: result_subtype is missing, OR is_error is true and the subtype is not error_max_turns, OR any rate_limit_event, api_error or 'usage limit' text appears in the stream. Classify error_max_turns, and timeouts, as outcomes: score the last assistant text from parse_stream's texts, or an empty answer if there is none, and never retry them. Check this against one captured usage-limit stream and one max-turns stream before the first scored run. Record the rule in PROTOCOL.md."
+    },
+    {
+     "severity": "major",
+     "issue": "Retries erase their own evidence. bench_single.run_item reuses one out directory for every attempt, and claude_run.run opens stream.jsonl, stderr.txt and cmd.json with mode 'w'. Each retry overwrites the previous attempt; only the subtype, is_error and exit code survive in summary.attempts. That contradicts line 62's 'Every run is kept'.",
+     "why": "A stranger cannot check that every retry was an infra failure rather than a weak answer. The retry rule is the one place where arm-dependent selection could get in, and its receipt is destroyed.",
+     "fix": "Write each attempt to out/attempt-<n>/ with its own cmd.json, stream.jsonl and stderr.txt. Write summary.json at the item level, naming the scored attempt and the infra reason for every discarded one. Apply the same layout to the SWE-bench runner, which must also restore a fresh copy of the repo before a retry."
+    },
+    {
+     "severity": "major",
+     "issue": "Nothing proves the protocol was fixed before the runs. The benchmark folder is not a git repository, and PROTOCOL.md, the harness and the analysis plan have no hash, commit or timestamp. The phrase 'fixed before any scored run' therefore rests on the author's word.",
+     "why": "Any claim that the analysis was pre-specified, and the owner's rule that checks never change after results, cannot be checked by a stranger. That weakens every headline built on this study.",
+     "fix": "Before the first scored run: copy PROTOCOL.md, harness/*.py and the analysis script into the fabius repo (for example evals/public/). Commit and push them, record their SHA-256 values, and stamp the commit with the OpenTimestamps flow the project already uses. The report cites that commit and hash. Any later change becomes PROTOCOL v2 with a diff, the original kept, applied to every arm."
+    },
+    {
+     "severity": "major",
+     "issue": "The order of runs and the scale-down rule can bias the comparison. Arms appear to run one after another, scale-down is decided 'if the usage budget allows', and fabius-doc on SWE-bench falls back to 'the first 10 in instance order'. Verified Mini lists 25 Django tasks and then 25 Sphinx tasks, so those 10 are all Django 3.1. The fabius-doc decision is made after the baseline and fabius-loaded results have been seen.",
+     "why": "A reported 'fabius-doc vs baseline' result would describe only Django while reading as the benchmark. Running arms on different days mixes in server-side model drift. Truncating for budget after seeing other arms' results lets those results influence the comparison set.",
+     "fix": "Fix the scope now. Run fabius-doc on SWE-bench on 10 tasks (5 Django, 5 Sphinx) chosen by a seeded permutation (seed 20261006) and listed in PROTOCOL.md. On every benchmark, interleave arms per item: all arms on item i before item i+1, with the arm order rotated. Any budget truncation cuts the same seeded order for all arms. Report the fabius-doc comparison against the baseline on the same 10 items, never against the 50-item baseline rate."
+    },
+    {
+     "severity": "major",
+     "issue": "The secondary efficiency metrics invite a 'less waste' headline under IDENTITY.md's rule that 'outcomes improve while waste decreases'. The Fabius arms add about 1.9k tokens (doc) or about 5.7k tokens (loaded) of input on every turn. Claude Code's total_cost_usd is an API-price estimate, not what a subscription user pays.",
+     "why": "Panel A and Panel D led with output length. Repeating 'output fell X%' while total tokens or cost rose would be a misleading waste claim, and CLAIMS.md line 23 bans invented savings.",
+     "fix": "Report efficiency as descriptive paired differences with bootstrap CIs and no verdict words. Report output tokens, total tokens (input + cache_creation + cache_read + output), cost labelled 'Claude Code reported API-equivalent cost', and wall time. No surface may cite an efficiency number unless the primary result for that benchmark is in the same sentence. 'Less waste' may be said only when the result is NON-INFERIOR or a GAIN AND total tokens or cost also fell."
+    },
+    {
+     "severity": "major",
+     "issue": "Line 32 asserts as fact that Verified Mini is 'built to match SWE-bench Verified's difficulty and per-model pass-rate distribution'. That is the subset author's claim. The harness also departs from standard agent setups: Bash only through a container wrapper, no web, no subagents, a 150-turn cap and a 40-minute limit.",
+     "why": "Read that way, it invites 'Sonnet 5.5 + Fabius scores y% on SWE-bench Verified' and comparisons with Anthropic's published numbers or the leaderboard, which this harness and n cannot support.",
+     "fix": "Rewrite as 'a 50-task subset published by its author as matched to Verified's difficulty distribution (not verified here)'. Add one line: 'Absolute resolved rates are specific to this harness and must not be compared with SWE-bench Verified leaderboard or vendor-reported numbers; only the paired within-study difference is the result.' Every public surface names the benchmark 'SWE-bench Verified Mini (50 tasks)'."
+    },
+    {
+     "severity": "major",
+     "issue": "The arm name 'fabius-loaded' and the Question ('Does Fabius 3.3.0 change\u2026') credit the whole 15-skill system. The /fabius arm deterministically injects only the router contract. In the pilot it made no specialist Skill calls, and nothing guarantees fabius-parcus or any specialist enters context.",
+     "why": "A gain or loss would be attributed to 'Fabius' (15 skills, a lean core, specialists) when what was measured is the router contract plus the skill listing.",
+     "fix": "Rename the arm in the report to 'fabius-router (/fabius)'. Put the per-benchmark load rate of each Fabius skill (router, parcus, each specialist) in the primary results table. Claims say 'the Fabius router contract' unless specialists loaded in a majority of that arm's runs, and specialist credit is never claimed from a rate below that."
+    },
+    {
+     "severity": "major",
+     "issue": "The receipts as specified cannot be recomputed or traced to what ran. cmd.json records PLUGIN_DIR as a path, not a content hash. images.txt pins swebench images to the mutable :latest tag. The claude binary lives under a user-specific IDE path with no recorded hash. The harness and analysis code live outside the repo. No per-item outcome table or analysis script is listed as a receipt. Nothing defines what happens when init_model differs from the requested model.",
+     "why": "A stranger cannot confirm the tested tree is the sealed v3.3.0 root, or that the images and binary match. They also cannot recompute the bootstrap, McNemar and Holm results without re-running the models, which defeats line 66.",
+     "fix": "Each benchmark's receipt bundle should contain:\n- the plugin tree's SHA-256 manifest and Merkle root, checked equal to the v3.3.0-sealed root at the start and end of each benchmark\n- the claude binary's SHA-256 and the version from init\n- `docker image inspect` RepoDigests for all 50 images\n- swebench, evalplus and IFEval versions or commits\n- per arm: predictions.jsonl (instance_id, arm, model_patch) and the run_evaluation report JSON with per-instance logs\n- the IFEval input_response_data jsonl and evaluation_main output\n- evalplus samples, sanitized output and eval_results.json\n- items.csv with item, arm, scored attempt, pass/fail, skill calls, tokens, cost, wall time, turns and exclusion reason\n- analyze.py, which takes only items.csv and prints every published number (seed 20261006)\n- usage-meter readings before and after each benchmark\n\nAdd the rule that a run whose init model is not claude-sonnet-5-5 counts as an infra failure and is retried. Commit the bundle, or attach it to a GitHub release if it is too large, and hash it."
+    },
+    {
+     "severity": "minor",
+     "issue": "CLAIMS.md has no row for public-benchmark results. The 'Improved results' row points only to BENCHMARKS.md's dated panels. BENCHMARKS.md opens with Panel A's 'Shorter on every tier / Higher on three of four'. The whitepaper (paper/README.md line 31; fabius-system.html section 6, 'Does it work?') says 'one benchmark, four panels'.",
+     "why": "A 3.3.0 README that links 'Benchmarks' would land readers on pre-3.x gains first. A null or loss from the only 3.x measurement could end up under older favourable headlines, which breaks the equal-weight rule.",
+     "fix": "Add a CLAIMS.md row. Claim: 'Public benchmarks'. Supported wording: the verdict-and-scope template above. Boundary: one model, one host version, one invocation per arm, n, sealed root; valid only for releases with byte-identical sealed files. In BENCHMARKS.md, add the study as a dated section placed FIRST and labelled 'the only measurement of 3.x', and move the Panel A\u2013D opening bullets below it. Update the 'one benchmark, four panels' framing in the whitepaper section and its README to include the new study with the same verdict wording."
+    }
+   ],
+   "keep": [
+    "Keep two separate Fabius arms, the documented 'fabius:' prefix and the /fabius injection, with the pilot reason written down before scoring. This is what separates 'does the documented invocation load?' from 'do the rules change outcomes?'.",
+    "Keep the identical clean-context recipe in every arm, with the --plugin-dir tree and the prefix as the only differences, and the per-run check that the baseline init lists no Fabius plugin or skill.",
+    "Keep the official, unmodified scorers: swebench==5.0.2 run_evaluation with the dataset's eval scripts and log parsers, IFEval evaluation_main pinned at e6890f85, and evalplus sanitize then evaluate. Keep EvalPlus's own chat instruction as the prompt.",
+    "Keep the gold-resolves and empty-does-not checks per instance, with exclusions applied to both arms and reported.",
+    "Keep the paired analysis: discordant counts, exact McNemar, a 10,000-resample bootstrap with fixed seed 20261006, and Holm correction across all six primary comparisons, with the family size fixed at six even if an arm is scaled down.",
+    "Keep the power statement written in advance (only differences of about 15 points are detectable on SWE-bench) and the commitment not to read a trend into a non-significant result.",
+    "Keep the two-sided question ('change', not 'improve').",
+    "Keep the repeat_prompt exclusion as a pre-declared sensitivity analysis reported alongside the full-set primary result, never in place of it.",
+    "Keep treating a timeout as an outcome, never as an infra failure. Keep 'quality is never a reason to rerun', and an item still missing after retries dropped from both arms.",
+    "Keep the same tool set in every arm (Skill is available to the baseline too), so the only difference is the plugin and the prefix.",
+    "Keep logging Skill calls and which Fabius skills loaded on every run, which is the evidence behind any load-rate claim.",
+    "Keep publishing losses and nulls with the same weight as gains, and the rule that any forced change is applied to every arm with the original kept.",
+    "Keep scale-down decisions on budget grounds only, made before the affected results are seen, and keep reading the usage meter before and after each benchmark."
+   ]
+  },
+  {
+   "lens": "Treatment validity and fairness between arms (baseline / fabius-doc / fabius-loaded)",
+   "findings": [
+    {
+     "severity": "blocker",
+     "issue": "Git history can leak the fix. The SWE-bench working copy is \"copied out of the image\" with its .git, and the agent may run \"read-only git/listing commands\" on the host. SWE-bench images clone the full repo and then reset to base_commit. The upstream fix commits can therefore stay reachable through the reflog, the original branch tip or tags (`git reflog`, `git log --all`, `git show <tip>`). Fabius tells the model to do exactly this kind of reading: disciplina says \"Read the relevant code, callers, recent changes\", and the router's archivum gate says \"diff it against ... the newest commits\".",
+     "why": "The leak is open to every arm, but Fabius pushes the model toward git history, so the fabius-loaded arm (and possibly fabius-doc) is more likely to find the gold fix. That would inflate the resolved rate in Fabius's favour, and the inflation would look like a treatment effect.",
+     "fix": "Before any agent run, rebuild each host working copy as a single-commit repo at base: `rm -rf .git && git init && git add -A && git commit -m base` (or delete every ref except HEAD, expire the reflog and run `git gc --prune=now`). Assert that `git rev-list --all --count` == 1 and that `git reflog` has one entry. Do this identically for all arms. Grading is unaffected because the official harness uses the image's own /testbed. Also grep every stream for `git log --all`, `reflog`, `show` of a non-base hash, and report any hits per arm."
+    },
+    {
+     "severity": "blocker",
+     "issue": "The host filesystem holds the answers, and Fabius rules tell the model to go looking for records. Read, Glob and Grep run on the host, not in the container. ~/Documents/fabius-benchmark contains sample-django-50.json and swebench-mini-official-rows.json (gold patches and test patches), plus repos/django (a full clone with future history). The plugin tree itself also sits under that folder. Other places on the host hold the owner's vault and ~/.claude memory. The router's Sense step is a gate: \"no edit until the project record is read (or its absence stated)\". It and archivum push the model to search for a record store outside the repo.",
+     "why": "If any arm reaches a gold file, that arm's score is contaminated. The Fabius arms are the ones told to scout for records, so the bias favours Fabius. Even without a leak, unbounded host searches cost turns and wall time in the Fabius arms only.",
+     "fix": "Put each run's working copy under a neutral path that has no benchmark data above it, such as /private/tmp/fbswe/<uuid>/testbed. Move the plugin copy out to its own neutral directory, such as /private/tmp/fbplugin/fabius, and point PLUGIN_DIR there. Write one identical project .claude/settings.json into every arm's working copy. It should deny Read/Glob/Grep on ~/Documents/**, ~/Desktop/** and ~/.claude/** and allow the workdir and the plugin directory. In a one-item pilot, verify two things: a fabius-loaded run can still Read skills/fabius/references/*.md, and the baseline cannot read outside. After each run, flag any tool input path outside the workdir and plugin directory, and report those runs per arm as contaminated."
+    },
+    {
+     "severity": "major",
+     "issue": "`infra_failed` in harness/bench_single.py sorts failures the wrong way in both directions. (a) A run that hits --max-turns ends with subtype error_max_turns, is_error true and no result text. The rule `is_error and not final_text` then calls it infrastructure, so it is rerun up to twice. That is a rerun based on quality, and loops of Skill loading happen only in the Fabius arms. (b) A usage-limit or API error that ends with text (e.g. \"Claude AI usage limit reached\u2026\", \"API Error: 529\u2026\") has non-empty final_text. It is treated as a real answer and scored as a failure.",
+     "why": "Case (a) gives the Fabius arms extra attempts, which breaks \"Quality is never a reason to rerun\". Case (b) counts rate-limit and API failures as wrong answers. The 5-hour meter (35% now) is likely to be hit during 3\u00d7705 single-turn runs plus SWE-bench, and the arms run at different times, so whichever arm runs later absorbs those failures.",
+     "fix": "Treat a run as infrastructure-failed only when one of these holds: there is no result record; subtype is not in {success, error_max_turns}; or is_error is true and the text matches /usage limit|hit your limit|API Error|overloaded|rate.?limit/i; or the last rate_limit_event has status \"rejected\". Treat error_max_turns and timeouts as outcomes, scored with the empty or partial answer, and count cap hits per arm. Use the same function for the SWE-bench runner. Do this before the first scored run, so it is not a later change to the checks."
+    },
+    {
+     "severity": "major",
+     "issue": "Arms run one after another. bench_single.py takes a single arm per invocation, and the protocol does not state an order for SWE-bench. The wall-clock caps (300 s single-turn, 40 min SWE-bench) count as outcomes. Their hit rate depends on API latency, rate-limit pauses and Docker load (8 GB, shared across parallel containers), and all of these change over the ~4.7 days the budget covers. The protocol also does not say what is scored when a SWE-bench run hits 40 min.",
+     "why": "Running arms in sequence ties the arm to time of day, meter state and machine load. The arm that runs the tests that Fabius's Prove step asks for reaches the cap more often, and machine load changes how often that happens. Leaving the timeout rule open lets an unresolved-or-partial-patch decision be made after results are seen.",
+     "fix": "Use one worker pool that runs every arm for each item. For every item, randomise the arm order with seed 20261006 and run that item's arms back to back at a fixed concurrency (for SWE-bench, both arms of an instance before the next instance). State now that a timed-out SWE-bench run is scored on its working tree at kill time, after the container exec is stopped. Report turn-cap and time-cap hits per arm as a secondary measure."
+    },
+    {
+     "severity": "major",
+     "issue": "In a run with no user, a question or permission request ends the run, and Fabius has explicit rules for asking. The router's Classify step says \"clarify decision-changing unknowns\". Disciplina says to \"request a decision only at the remaining boundary that actually needs one\" and to \"Escalate when the missing input or permission is external\". In `claude -p`, a final turn that asks a question or waits for permission leaves whatever partial patch exists. The SWE-bench prompt does not say the run is non-interactive.",
+     "why": "A Fabius arm that stops to ask, as Fabius is meant to, scores as unresolved. That measures a missing user, not code quality, and the effect falls on the Fabius arms only.",
+     "fix": "SWE-bench only, where the prompt is already custom: add one identical sentence to the task paragraph in every arm, e.g. \"This run is non-interactive: nobody can answer questions or grant permissions; state any assumption and finish the task.\" Leave the IFEval and HumanEval+ prompts verbatim. For every run in every benchmark, record the end state (answered or patched / ended on a question / cap hit) and report the counts per arm."
+    },
+    {
+     "severity": "major",
+     "issue": "The patch extraction (`git add -A`) can penalise an arm for following Fabius. Disciplina requires the reproduction to be \"persisted as a covering check in the project's suite\". Sphinx test patches often add new files, for example under tests/roots/test-*/. If the agent creates a file at the same path, the official eval script's `git apply` of the test patch fails and the instance counts as unresolved. `git add -A` also picks up untracked repro scripts and any non-ignored build or binary artefacts from running tests in the mounted /testbed. A binary hunk without --binary makes the whole patch fail to apply.",
+     "why": "The Fabius arms write tests and run checks more often, so a fault in evaluation mechanics turns into resolved-rate losses for those arms only.",
+     "fix": "Fix this in the protocol now. The primary scored patch is the diff restricted to non-test paths, which is what the prompt already asks for: exclude tests/, testing/, test_*.py, *_tests.py and conftest.py, and exclude binary and gitignored files. The unfiltered patch through the same official harness becomes a declared secondary. Before scoring, run `git apply --check` of each patch on a clean base and report apply failures per arm. Compute patch size on the filtered patch."
+    },
+    {
+     "severity": "minor",
+     "issue": "Auto-memory is on in every arm. The pilot init shows memory_paths.auto under ~/.claude/projects/<cwd-slug>/memory. In SWE-bench the agent has Write, and Fabius's Compound and archivum steps encourage filing lessons. If a working-copy path is ever reused across arms or retries, a memory written in a Fabius run would load into a baseline run.",
+     "why": "Fabius content would reach the baseline (contamination), or the Fabius arm's own earlier run would act as a hint on its retry.",
+     "fix": "Give every run, retries included, a unique mkdtemp path. bench_single already does this, and the SWE-bench runner must too. Before each run, assert that the memory directory does not exist. After each run, record whether one was created, then delete it. Report any memory writes per arm."
+    },
+    {
+     "severity": "minor",
+     "issue": "The measure of whether Fabius was invoked is wrong for both Fabius arms. In fabius-loaded, the router arrives through slash expansion, not a Skill call, so `skill_calls` and `fabius_skills_loaded` will show the router as not loaded. In fabius-doc, the 15 skill descriptions alone (\u22481.9k tokens, which include rules such as \"say less, build less\") can change behaviour with zero Skill calls.",
+     "why": "A secondary result such as \"the router was loaded in 0% of runs\", or a claim that fabius-doc \"did not load Fabius\", would be wrong as stated.",
+     "fix": "Add a per-run field `router_injected`, set from the slash expansion (verified by the input-token delta against baseline for that item), separate from Skill calls. In the report, describe fabius-doc as \"skill listing present, router invoked in X% of runs\", never as \"Fabius not loaded\"."
+    },
+    {
+     "severity": "minor",
+     "issue": "The study has no context-length placebo. The Fabius arms add \u22481.9k and \u22485.7k tokens of instructions, so any difference could come from extra instruction text in general rather than from Fabius's specific rules.",
+     "why": "This affects only how results are attributed. \"Fabius's rules improved or hurt X\" goes beyond what the design can show, while \"loading Fabius 3.3.0 as shipped changed X\" is supported.",
+     "fix": "Do not add an arm, since the budget cannot cover one. Pre-declare the claim wording: effects belong to the shipped package plus its invocation, not to individual rules. Say this explicitly next to the CLAIMS.md \"Improved results\" row."
+    },
+    {
+     "severity": "minor",
+     "issue": "The fallback fabius-doc subset (\"the first 10 in instance order\") is 10 Django instances, because Django IDs sort first. It contains no Sphinx tasks.",
+     "why": "A fabius-doc result on that subset reflects only Django difficulty, yet a reader would read it as covering Verified Mini.",
+     "fix": "Fix the fallback now as a stratified subset: the first 5 Django and the first 5 Sphinx valid instances in ID order. Label every fabius-doc SWE-bench number as n=10 and stratified."
+    },
+    {
+     "severity": "minor",
+     "issue": "`final_text` is result.result, which is the last assistant message only. run() discards the per-turn `texts` it parses. In the Fabius arms, an answer can be split around a Skill call, for example answer text, then a Skill call, then a short closing line such as \"not verified: \u2026\". The scored IFEval or HumanEval+ response would then be just the closing line.",
+     "why": "Only the arms that call Skill mid-answer lose their answer, which biases against Fabius in a way that has nothing to do with quality.",
+     "fix": "Save every assistant text block per turn in summary.json. Pre-declare that the primary response stays the final message, which is what a headless user receives. Report how many items per arm have substantive text before the last Skill call, and give a sensitivity score that uses the concatenated text. Also state that the repeat_prompt exclusion applies to both Fabius comparisons, because /fabius passes the prompt as skill arguments."
+    }
+   ],
+   "keep": [
+    "Three arms, so the documented invocation (`fabius: `) and the deterministically loaded router (`/fabius`) are measured as separate treatments against the same baseline, and the pilot finding is recorded before any scored run",
+    "The same model, harness binary, tool set and clean recipe in every arm (--setting-sources project, --strict-mcp-config, --no-session-persistence, fresh cwd), with the init model, tools, skills and plugins checked per run",
+    "The Skill tool is present in every arm, the baseline included, so the only difference between arms is the plugin and its invocation, not the tool surface",
+    "Plugin under test = the exact signed-tag tree loaded with --plugin-dir, not a dev checkout",
+    "IFEval and HumanEval+ prompts stay verbatim (the EvalPlus instruction exactly as published), with no added scaffolding",
+    "The SWE-bench prompt has no step-by-step process scaffolding, so any process the agent follows comes from the model or from Fabius",
+    "Command execution only through the in-container wrapper, while Edit and Write stay on the mounted copy",
+    "Official scoring (swebench 5.0.2 run_evaluation with the dataset's eval scripts and log parsers, plus EvalPlus and the IFEval evaluation_main pinned to a commit), with the gold-resolves / empty-fails validity check applied to both arms and exclusions reported",
+    "Paired analysis by item: McNemar exact test, 10k-resample bootstrap with a fixed seed, Holm across the six primary comparisons, and the low power stated before any run",
+    "Quality is never a reason to rerun; items still missing after retries are dropped from both arms; budget scale-downs are decided before results are seen",
+    "Per-run receipts (full stream, cmd, stderr, patch, scorer output) and recording of Skill calls, tokens, cost, turns and wall time",
+    "The pre-declared repeat_prompt sensitivity analysis on IFEval",
+    "A unique mkdtemp working directory per run in bench_single.py"
+   ]
+  },
+  {
+   "lens": "Fidelity to official SWE-bench / IFEval / EvalPlus practice, and leakage channels (incl. runner-code bugs in harness/claude_run.py and harness/bench_single.py)",
+   "findings": [
+    {
+     "severity": "blocker",
+     "issue": "The /testbed repo copied out of the official image keeps its .git, and the protocol lets the agent run read-only git commands on the host. Clones made by SWE-bench keep their tags, and Django/Sphinx release tags (3.2, 4.0, \u2026) point at commits made after the fix. Whether the Docker Hub `:latest` images were built before or after SWE-bench's later change that prunes future tags and gc's the repo is not verified. If they were built before it, `git log --all`, `git show 4.0:django/http/response.py` or `git tag` expose the gold change. Nothing in the protocol checks this.",
+     "why": "An agent that reads the upstream fix produces a resolved instance that is not a real solve. It inflates both arms, and probably the Fabius arm more, because its router tells the agent to inspect history and reproduce, which means more git use. A difference built on this would be invalid.",
+     "fix": "Add a sanitize-and-assert step to the copy procedure: in the copied repo run `git tag -l | xargs -r git tag -d`; delete every ref except HEAD's branch; `git reflog expire --expire=now --all && git gc --prune=now`; then assert that `git rev-list --all | sort` equals `git rev-list HEAD | sort`, that `git fsck --unreachable` is empty and that HEAD == base_commit. Abort the instance if any assert fails. Store the assert output per instance. Past history stays, as in the official setup."
+    },
+    {
+     "severity": "blocker",
+     "issue": "Answer keys and the other arm's outputs can be reached from the agent's sandbox. ~/Documents/fabius-benchmark holds swebench-mini-official-rows.json and sample-django-50.json (gold patch, test_patch, FAIL_TO_PASS), plus repos/django, a full clone whose HEAD is a 2026 commit (34,981 commits, every fix included). runs/ will hold the other arm's patch for the same instance, and ~/.cache/huggingface holds the dataset. The protocol allows host 'read-only git/listing commands'. Rules like Bash(ls:*), Bash(cat:*) or Bash(git log:*) accept any path argument, so `cat ../../swebench-mini-official-rows.json` or `git -C ~/Documents/fabius-benchmark/repos/django log -S...` would be allowed.",
+     "why": "One agent that greps its way into the dataset file or the other arm's patch contaminates the resolved count. Cross-arm reading also breaks independence of the paired design.",
+     "fix": "(1) Remove all host Bash. git, ls and cat go through the container wrapper, since git exists in the image. The agent's only host access is Read/Edit/Write/Glob/Grep. (2) Create each worktree with mkdtemp under /private/tmp, outside the benchmark tree, and pass deny rules `--disallowedTools 'Read(//Users/**)' 'Edit(//Users/**)'`. Read deny rules also cover Grep/Glob. (3) Pre-declare a symmetric post-hoc audit over every stream.jsonl: flag any tool input whose path falls outside the worktree, or that contains `fabius-benchmark`, `.cache/huggingface`, `swebench`, `test_patch` or `FAIL_TO_PASS`. Report flagged runs per arm and score them both with and without the flagged instances."
+    },
+    {
+     "severity": "blocker",
+     "issue": "The agent container has network access by default. Through the wrapper the agent can run `pip download django==3.1.x`, `curl` GitHub or PyPI sdists, or `git clone` upstream, and get the released fix.",
+     "why": "This is the same contamination as reading future history, through another channel. Official SWE-bench agent scaffolds report 'no internet', and the protocol's 'no web tools' claim would be false.",
+     "fix": "Start every agent container with `docker run --network none` (Claude Code's own API traffic runs on the host and is unaffected). Use a fresh container per run and `docker rm -f` it afterwards. Never reuse a container across arms. Record the docker run command in the run directory."
+    },
+    {
+     "severity": "blocker",
+     "issue": "bench_single.infra_failed misclassifies two common result types. (a) When the 5-hour or weekly limit is hit, or an API error occurs, Claude Code returns is_error=true with a non-empty result string (the limit/error message). Because final_text is non-empty, the run counts as a valid answer and is scored as a wrong IFEval/HumanEval response. (b) A run that hits --max-turns 8 ends with subtype error_max_turns and no `result`. It is classified as an infra failure, rerun up to twice ('quality is never a reason to rerun' is broken), and then dropped from BOTH arms. Fabius arms use turns on Skill calls, so (b) hits them more. Each retry also overwrites the same out_dir, which deletes the earlier attempts' streams ('every run is kept' is broken).",
+     "why": "(a) turns quota exhaustion into model errors, concentrated in whichever arm runs when the meter fills. At 35%/55% with about 2,100 single-turn runs and 6 workers, that is likely to happen. (b) removes exactly the items where Fabius loops, which biases the paired difference in Fabius's favour.",
+     "fix": "Rewrite infra_failed from the result record's own fields. Infra = no result record; or api_error_status is not null; or is_error and the subtype is not error_max_turns and the result text matches /usage limit|rate limit|overloaded|API Error|hit your limit/i; or a crash before the first assistant turn. error_max_turns and timeouts are outcomes: score the last assistant text (or empty), never retry. On a usage-limit hit, stop the pool, sleep until the reset time in the rate_limit_event, then resume, without spending retries. Write each attempt to out/attempt-N/ and keep all of them. Record subtype, terminal_reason, api_error_status and permission_denials in summary.json."
+    },
+    {
+     "severity": "major",
+     "issue": "Each arm runs to completion before the next one starts (bench_single takes one arm per invocation). If the usage meter or the owner's other work forces a stop, the arms end up with different item sets or different days and server conditions. The 'scale-down decided before results' rule cannot fix an imbalance that the run order itself created.",
+     "why": "A stop partway through leaves fewer completed pairs, and any time-varying failure such as overload or limit errors lands on one arm only. That biases a paired difference.",
+     "fix": "Schedule by item. Each worker takes one item and runs all arms for it in an order randomized with a fixed seed, then moves to the next item. The SWE-bench driver follows the same rule. Any stopping point then leaves complete pairs, and the analysis uses only items complete in every compared arm. The existing resume/cache logic supports this unchanged."
+    },
+    {
+     "severity": "major",
+     "issue": "How the patch is extracted ('git add -A, .claude/ excluded', on the macOS host copy) can corrupt scoring in three ways. (1) The Fabius router explicitly says 'confirm or write a failing reproduction test'. If the agent creates a new file at a path the official test_patch also creates (common in Sphinx: tests/roots/test-*/...), the eval script's `git apply` of the test patch fails, FAIL_TO_PASS tests are missing, and the instance is unresolved. (2) Junk the container writes into the bind mount while the agent runs tests (caches, build outputs not covered by .gitignore, binary files) enters the patch, and a binary diff without --binary makes git apply fail. (3) The host copy sits on case-insensitive APFS with core.fileMode semantics, so mode or case artifacts can show up as spurious diffs. The gold/empty validity check runs only inside the official harness, so it never exercises this extraction path.",
+     "why": "Apply failures count as unresolved. All three mechanisms grow with how much testing the agent does, which is exactly what Fabius changes, so the bias is asymmetric and runs against Fabius.",
+     "fix": "Pre-declare now, before any scored run: model_patch = `git diff --binary <base>` over tracked and new files, excluding .claude/ and any path under the repo's test directories (tests/, testing/, test_*.py), consistent with the prompt's 'non-test source files'. Report the unfiltered patch as a secondary. Run `git status --porcelain` right after copying and abort if it is not empty (use a case-sensitive APFS sparse image via hdiutil if it is). Extend the validity check to the full pipeline: (a) apply the gold patch to a fresh host copy, extract it with the production code and score it, which must resolve; (b) start the container, run one test command through the wrapper, extract, which must give an empty patch. Report apply failures per arm."
+    },
+    {
+     "severity": "major",
+     "issue": "Claude Code auto-memory is active even with --setting-sources project: the pilot init record shows memory_paths.auto = ~/.claude/projects/<cwd-slug>/memory/. The memory directory is keyed by the cwd path. The SWE-bench runner is not written yet. If it uses deterministic worktree paths (e.g. one per instance), the baseline run's memory notes would load into the Fabius run for the same instance, or the other way round. A path that contains the instance id or 'swebench' would also put a recall cue into the system prompt.",
+     "why": "Information would leak across arms and break the paired independence. The direction is unpredictable.",
+     "fix": "Each SWE run's cwd is a fresh mkdtemp with a neutral name (e.g. /private/tmp/fbw-XXXX/repo), as bench_single already does. After every run, assert that no new ~/.claude/projects/*fbw*/memory file exists, or delete those directories, and record it."
+    },
+    {
+     "severity": "major",
+     "issue": "The SWE-bench denominator and error handling are not specified. swebench 5.0.2's report separates resolved / unresolved / empty_patch / error instances and submitted/completed counts. An arm with more empty patches, timeouts or harness errors looks better if the rate is resolved/completed. A Docker/OOM error during scoring (8 GB RAM) is not an agent outcome. The protocol does not say whether a patch left at the 40-minute / 150-turn cutoff is scored. It also does not say what happens on a mid-trajectory usage-limit/API failure: its retry rule covers only 'crash before the first model turn'.",
+     "why": "Choosing the denominator after seeing results, or by default, can move the primary endpoint by several points on n=50. Scoring partial patches from runs cut off by the quota penalizes whichever arm uses more tokens, which is the Fabius arm.",
+     "fix": "Declare the following. Resolved rate = resolved / all valid instances, the same denominator for both arms; empty and apply-failed patches count as unresolved and are reported per arm. Harness errors (status 'error' not caused by patch apply) are re-scored up to twice with max_workers 1, then reported. A patch left at the turn or wall-clock cutoff is scored as is. A run that ends on a usage-limit or API error mid-trajectory is an infra failure: reset the worktree to base and rerun from scratch, up to twice."
+    },
+    {
+     "severity": "major",
+     "issue": "The prompt says only 'the issue text'. 28 of the 50 official rows carry non-empty hints_text, which may hold maintainer comments posted after the issue, sometimes describing the fix. Official SWE-bench Verified results use problem_statement only.",
+     "why": "Including hints in one place or the other, or inconsistently, changes absolute resolution and makes numbers non-comparable to the official setting.",
+     "fix": "State in the protocol: the prompt uses `problem_statement` verbatim; `hints_text` is never shown. Store the exact rendered prompt per run and assert byte equality across arms apart from the prefix."
+    },
+    {
+     "severity": "major",
+     "issue": "IFEval's official scorer calls langdetect.detect without seeding (instructions.py lines 158, 1416, 1448). This affects language:response_language and change_case:english_capital/english_lowercase, and langdetect is nondeterministic on short or mixed texts.",
+     "why": "Scoring the same responses twice can flip items, so paired discordant counts and the McNemar result can change between scorer runs. Arms scored in separate processes get independent noise.",
+     "fix": "Score through a 3-line wrapper that sets `langdetect.DetectorFactory.seed = 0` before importing evaluation_main, and apply it to every arm. Declare it now as a documented deviation that leaves the official code files unchanged. Score each arm's responses once and archive the output."
+    },
+    {
+     "severity": "major",
+     "issue": "The SWE-bench dataset and environment are pinned only by name. images are `:latest` (mutable tags), and run_evaluation with dataset_name SWE-bench/SWE-bench_Verified fetches whatever HF revision is current at scoring time.",
+     "why": "If an image or row is updated between agent runs and scoring, or between arms, the environment the agent worked in is no longer the one it is graded in, and the receipts cannot be recomputed.",
+     "fix": "Pass the local swebench-mini-official-rows.json (record its sha256 and the HF revision it came from) as run_evaluation's dataset_name. After the pull completes, record `docker image inspect --format '{{.RepoDigests}}'` for all 50 images, and verify the digests are unchanged before scoring, with no re-pull in between."
+    },
+    {
+     "severity": "minor",
+     "issue": "HumanEval+ plus-test time limits come from ground-truth timings cached on this machine, and samples run on macOS without the Docker sandbox that EvalPlus recommends. Running evaluate while SWE-bench containers occupy Docker's CPUs can cause spurious timeouts.",
+     "why": "Load-dependent timeouts flip plus-pass@1 items. The effect is asymmetric if the arms are evaluated at different times.",
+     "fix": "Run evalplus.evaluate for all arms in one session after generation is finished, with no containers running. Gate it on the existing selfcheck (canonical must pass 164/164 base and plus in the same session). Evaluate twice and report the items that flip."
+    },
+    {
+     "severity": "minor",
+     "issue": "Using 'the first 10 in instance order' as the fallback subset for fabius-doc gives 10 Django tasks and no Sphinx tasks.",
+     "why": "The comparison would cover a different task mix than the primary one, and the report would read as SWE-bench Verified Mini when it is not.",
+     "fix": "Pre-declare the fallback as the first 5 Django and the first 5 Sphinx in instance-id order, and report it as a subset."
+    },
+    {
+     "severity": "minor",
+     "issue": "The skill-load metric counts only Skill tool calls. In the fabius-loaded arm the router arrives through slash-command expansion, so it is not counted. parse_stream also stores meters as a function attribute that is shared across the 6 worker threads (a race on rate_limit).",
+     "why": "The secondary 'skill-load rate' would understate fabius-loaded. The meter readings that drive scale-down decisions can belong to another item.",
+     "fix": "Record slash-expansion (the command/user record in the stream) as a load event. Return meters from parse_stream instead of setting a function attribute."
+    },
+    {
+     "severity": "minor",
+     "issue": "The repeat_prompt sensitivity analysis covers only the 'fabius: ' prefix. In the /fabius arm the prompt arrives as slash-command ARGUMENTS inside the router message, and nothing checks that multi-line IFEval prompts survive argument expansion byte for byte.",
+     "why": "If the arguments are altered, the fabius-loaded arm is answering a different prompt than the one being scored.",
+     "fix": "Apply the repeat_prompt-excluded sensitivity analysis to both Fabius arms. Before scoring, check from the streams that every fabius-loaded run's user/command record contains the original prompt verbatim, and report any mismatches."
+    },
+    {
+     "severity": "minor",
+     "issue": "Absolute numbers are not comparable to leaderboards or model cards. Claude Code's system prompt and tools are present in every arm, there is no temperature control (the EvalPlus Anthropic provider uses greedy), Verified Mini is a 50-task subset, and the scaffold is custom.",
+     "why": "A reader may compare the absolute resolved or IFEval rates with published Sonnet scores.",
+     "fix": "State in the report that the claim is the paired difference under this harness only, list these deviations, and give no comparison with leaderboard numbers. These deviations are acceptable once disclosed."
+    }
+   ],
+   "keep": [
+    "Paired design: same items, same model id (checked from init per run), same harness binary, and arms that differ only by --plugin-dir and the prefix.",
+    "Three arms that separate the README invocation (fabius:) from the loaded router (/fabius), with the pilot finding recorded before any scored run.",
+    "Official prebuilt SWE-bench images used both for the agent environment and for scoring, graded by swebench==5.0.2 run_evaluation with the dataset rows' own eval_script and log_parser (FAIL_TO_PASS and PASS_TO_PASS all required).",
+    "Verified Mini rows checked identical to the official SWE-bench_Verified rows.",
+    "The test_patch and FAIL_TO_PASS names never reach the agent (they exist only at scoring time); no web tools, no subagents.",
+    "Gold-patch-must-resolve and empty-patch-must-fail validity checks, with exclusions applied to both arms and reported.",
+    "HumanEval+ prompt string, which matches the EvalPlus 0.3.1 Anthropic provider exactly (instruction_prefix + ```python fence); HumanEval+ v0.1.10 via evalplus 0.3.1; sanitize then evaluate; selfcheck canonical/wrong files.",
+    "IFEval pinned at commit e6890f8, scored by the official evaluation_main, with responses keyed by the original unprefixed prompt (bench_single writes the original prompt, not the prefixed one).",
+    "Pre-declared repeat_prompt sensitivity analysis.",
+    "Timeouts treated as outcomes, not infra failures.",
+    "Fresh mkdtemp cwd per single-turn run, tools limited to Skill, --setting-sources project, --strict-mcp-config, --no-session-persistence, full stream-json kept.",
+    "McNemar exact plus paired bootstrap (fixed seed) plus Holm, with the power limit stated up front and losses and ties published with equal weight."
+   ]
+  },
+  {
+   "lens": "Statistics and power (endpoints, pairing, CIs, McNemar/Holm, run-to-run noise, sample size, budget allocation)",
+   "findings": [
+    {
+     "severity": "major",
+     "issue": "The power statement in 'Endpoints and statistics' (\"only a large difference, on the order of 15 points, is detectable\" with 50 pairs) is optimistic and ignores both Holm and run-to-run noise. Exact McNemar power at n=50 (I computed it exactly) when the two arms disagree on 20% of items: a 15-point lift is detected 59% of the time at alpha .05, 40% at .05/3 and 31% at .05/6 (Holm's first step). 80% power at .05/6 needs about 20 points. At 30% disagreement, a 20-point lift is detected only 43% of the time at .05/6. HumanEval+ (n=164) and IFEval (n=541) reach 80% power at about 10 and about 5 points respectively.",
+     "why": "The published 'what this design can detect' sentence would understate the minimum detectable effect by roughly a third. Readers would then treat a non-significant 10-15 point SWE-bench gap as weak evidence of no effect, when the design had worse than coin-flip odds of detecting it.",
+     "fix": "Replace the sentence with a pre-declared table: the minimum detectable effect (MDE) at 80% power under exact McNemar for each benchmark, at the alpha the Holm family actually uses, as a function of the observed discordance \u03c8 (\u03c8 = 0.1, 0.2, 0.3). For the 50-pair primary, n=50: about 17-20 points at .05/6 for \u03c8 = 0.12-0.2. Add one sentence saying the realised \u03c8 is reported and the MDE is recomputed from it with the same formula. That is a deterministic re-statement, not a change to the test."
+    },
+    {
+     "severity": "major",
+     "issue": "There is no pre-declared rule for when a result may be called a 'tie'. The owner's rules publish ties with equal weight, but the protocol only says a small effect 'will appear as no significant difference'. A non-significant McNemar is not a tie. With one sample per item, the SWE-bench 95% CI half-width is about \u00b112 points (simulated with a realistic mix: half the items solved almost always, a fifth almost never, the rest flaky). Even a true zero effect therefore can never be shown to be a tie at any useful margin.",
+     "why": "Without a pre-declared margin, the report's tie / no-effect / inconclusive wording would be chosen after the results are seen. 'Fabius ties baseline on SWE-bench' would be a claim the data cannot support.",
+     "fix": "Add an equivalence rule now. Call a comparison a TIE only if the 90% CI of the paired difference lies inside \u00b1m (two one-sided tests, alpha .05 each). Margins: m = 3 points for IFEval prompt-strict, 4 for HumanEval+ plus, 10 for SWE-bench. Call it GAIN or LOSS only if the Holm-adjusted p \u2264 .05. Call everything else INCONCLUSIVE and print the CI. State up front that with k=1, SWE-bench at n=50 can only come out GAIN, LOSS or INCONCLUSIVE."
+    },
+    {
+     "severity": "major",
+     "issue": "Budget allocation buys almost no information on the primary benchmark. The pilot already shows that `fabius-doc` makes zero Skill calls: it adds only the \u22481.9k-token skill listing. Running it on all 50 SWE-bench tasks (the protocol's preferred option) costs as much as a full extra SWE-bench pass, but it tests a treatment that is close to a no-op. Meanwhile the main comparison (`fabius-loaded` vs `baseline`) stays at about \u00b112 points. Because SWE-bench Verified Mini has a fixed 50 items (no more images can be downloaded at about 1 MB/s), extra samples per item are the only way to tighten it. In simulation, k=2 samples per arm per item cut the 95% CI half-width from 0.12 to 0.085 (\u221229%); k=3 cuts it to 0.07 (\u221241%). Power for a nominal 15-point lift at .05/6 goes 0.07 \u2192 0.25 \u2192 0.44.",
+     "why": "As planned, the most expensive benchmark produces a primary number that cannot separate a real effect of under ~18 points from noise, while about a third of its budget goes to an arm the pilot already characterised.",
+     "fix": "(1) Run `fabius-doc` on IFEval and HumanEval+ in full: these runs are cheap and give a tight skill-load rate. With 0 loads in 705 runs, the Clopper-Pearson upper bound is 0.5%. (2) On SWE-bench, run `fabius-doc` only on a pre-drawn stratified random 10 (5 Django, 5 Sphinx, seed 20261006). Treat it as descriptive (skill-load rate and resolved count) and keep it out of the Holm family. (3) Spend the saved budget on a second sample per item for `baseline` and `fabius-loaded` on all 50 tasks (k=2). Pre-declare a rule decided only from the usage meter: replicate 2 runs if the weekly meter after replicate 1 is \u2264 X%. Do not score replicate 1 SWE-bench comparisons until that decision is logged."
+    },
+    {
+     "severity": "major",
+     "issue": "The fallback 'otherwise on the first 10 in instance order' selects django__django-11790 \u2026 the first 10 lines of swebench-mini-ids.txt. All 10 are Django 3.1 and none are Sphinx, so the subset is non-random and confounded with repository.",
+     "why": "Any `fabius-doc` SWE-bench number on that subset estimates a Django-only quantity. Comparing it with the 50-task baseline, or presenting it as 'SWE-bench', would be biased by repository difficulty.",
+     "fix": "Replace 'first 10 in instance order' with a seeded stratified random draw (5 per repo, numpy default_rng(20261006).choice without replacement inside each repo). Write the 10 IDs into the protocol before any scored run, and compare `fabius-doc` only with baseline on those same 10 IDs."
+    },
+    {
+     "severity": "major",
+     "issue": "Run order and truncation are not blocked by item. Nothing requires the arms of an item to run close together or in a random order. The budget scale-down can stop a run midway through a benchmark, and only crashes before the first turn are named as retryable infrastructure failures. Timeouts (40 min / 300 s), hitting max turns, and rate limits that arrive mid-run are not assigned a scoring rule. The Fabius arms carry 6-10k more context tokens per call, so they reach the 5-hour usage meter and the time limits sooner.",
+     "why": "If arms run in sequence, server drift, rate-limit throttling, Docker load on 8 GB, and a budget stop all line up with the arm. Missing items then differ by arm and the pairing breaks. If time-outs are handled per arm, or retried only in some cases, the resolved rate shifts in a direction that depends on the outcome.",
+     "fix": "Pre-declare four things. (a) Item order is a seeded random permutation, alternating between repos. Within each item, all arms and replicates run back to back in a seeded random order at the same concurrency, so a budget stop removes whole items, never single arms. (b) A run is retried only if its record shows no model turn, or an API/rate-limit error event (decided from stream.jsonl and stderr before any scoring), whatever the arm. (c) Timeouts, max-turns and context-overflow endings are scored as they are: SWE-bench scores the diff at the moment the run was killed, IFEval and HumanEval+ score the final text, or a fail if there is none. Each arm's rate of such endings is reported. (d) An item missing after retries is dropped from every arm, as the protocol already states."
+    },
+    {
+     "severity": "major",
+     "issue": "The protocol gives a 95% bootstrap percentile CI (10,000 item resamples) for every paired difference. For binary pairs with few discordant items (n=50 on SWE-bench, an expected 3-10 discordant pairs on HumanEval+), the percentile bootstrap under-covers, and it collapses to [0,0] when there are no discordant pairs. The CIs are also unadjusted while significance is Holm-adjusted, so a CI can exclude 0 while the Holm p is above .05.",
+     "why": "The CI is the number readers will quote, especially for null results. Here it would be too narrow, and it could contradict the significance verdict printed beside it.",
+     "fix": "For k=1 binary endpoints, use the Newcombe hybrid-score interval for paired proportions (Newcombe 1998, method 10). Write a/b/c/d for the counts: both pass / only Fabius passes / only baseline passes / neither. Then \u03b4\u0302=(b\u2212c)/n, with treated rate p1=(a+b)/n and baseline rate p2=(a+c)/n, and Wilson 95% limits (l1,u1) and (l2,u2). \u03c6=(ad\u2212bc)/\u221a((a+b)(c+d)(a+c)(b+d)), set to 0 if the denominator is 0. L = \u03b4\u0302 \u2212 \u221a((p1\u2212l1)\u00b2 \u2212 2\u03c6(p1\u2212l1)(u2\u2212p2) + (u2\u2212p2)\u00b2) and U = \u03b4\u0302 + \u221a((u1\u2212p1)\u00b2 \u2212 2\u03c6(u1\u2212p1)(p2\u2212l2) + (p2\u2212l2)\u00b2). Use the item bootstrap only for k\u22652 and for continuous secondary endpoints, stratified by repo on SWE-bench (fixed 25/25 design), with BCa intervals. Label the CIs as unadjusted 95% intervals, and let GAIN/LOSS come only from the Holm-adjusted exact test."
+    },
+    {
+     "severity": "major",
+     "issue": "The test procedure does not cover replicates. Exact McNemar is defined only for one binary sample per item per arm, so if k\u22652 is adopted (or any item gets a retry that yields two scored runs), the protocol has no valid test.",
+     "why": "An ad hoc test chosen afterwards would be an analysis change made after the results.",
+     "fix": "Declare one test that works for any k: the exact paired sign-flip permutation test on per-item differences d_i = mean_k(Fabius_i) \u2212 mean_k(baseline_i). The statistic is |\u03a3d_i|, the p-value is (1 + #{sign vectors with |\u03a3 s_i d_i| \u2265 observed}) / (1 + N). Enumerate exactly when the number of nonzero d_i is \u2264 20, otherwise use 100,000 Monte Carlo flips with seed 20261006. At k=1 this is exactly McNemar's exact test, so nothing changes for the single-sample benchmarks. With k=2, also report the baseline-vs-baseline (A/A) disagreement rate between its two replicates as the noise floor next to the Fabius-vs-baseline disagreement."
+    },
+    {
+     "severity": "major",
+     "issue": "The Holm family mixes the two research questions and includes underpowered comparisons. The six comparisons in the family include `fabius-doc` vs `baseline` (possibly n=10 on SWE-bench, where even 10/0 discordant pairs give p = 0.002, and realistically about 2 discordant pairs give p = 0.5). Every member of the family lowers the first-step threshold to .05/6 for the main question.",
+     "why": "Including comparisons that cannot reach significance costs `fabius-loaded` power: the first-step threshold falls from .0167 to .0083. In the n=50, \u03c8=0.2 case, power for a 15-point effect drops from 40% to 31%.",
+     "fix": "Declare two families now, before any results: Family 1 = `fabius-loaded` vs `baseline` on three benchmarks, Holm over 3. Family 2 = `fabius-doc` vs `baseline` on IFEval and HumanEval+, Holm over 2. The `fabius-doc` SWE-bench subset is descriptive only. Keep alpha .05 per question and say so."
+    },
+    {
+     "severity": "major",
+     "issue": "Secondary endpoints (output tokens, cost, wall time, turns, patch size, solution length) are described as 'descriptive' with no paired summary specified. BENCHMARKS.md's headline history ('Shorter on every tier. Output fell 20.0% to 35.5%') shows these are the numbers most likely to be headlined.",
+     "why": "An efficiency headline of the form 'X% shorter' built from unpaired arm totals is dominated by a few long SWE-bench runs. Without an interval it can show a 'reduction' that is noise, or that comes from failed runs ending early.",
+     "fix": "Pre-declare the summary: per item, r_i = log(Fabius_i / baseline_i) on the metric (add 1 to token counts). Report exp(mean r_i), the geometric-mean ratio, with a stratified BCa bootstrap 95% CI. On SWE-bench, also report it within items both arms resolved, so that 'shorter' is not driven by early failures. No p-values, no Holm, and no headline unless the CI excludes 1, labelled secondary."
+    },
+    {
+     "severity": "minor",
+     "issue": "The runner (harness/claude_run.py) implements only one treatment arm, named \"fabius\", with the prefix \"fabius: \". It has no `fabius-loaded` (\"/fabius \") arm and no arm label matching the protocol.",
+     "why": "If `fabius-loaded` is run through this runner unchanged, its numbers are really `fabius-doc` numbers. That would silently invert the main comparison.",
+     "fix": "Add an arm-to-prefix map {baseline: '', fabius-doc: 'fabius: ', fabius-loaded: '/fabius '} with --plugin-dir for both Fabius arms. Write the arm and exact prompt prefix into summary.json, and assert per run that the init lists 15 fabius:* skills (Fabius arms) or none (baseline)."
+    },
+    {
+     "severity": "minor",
+     "issue": "Instruction-level IFEval accuracy is listed with the same item bootstrap and McNemar. Instructions are clustered within prompts (1-3 per prompt), so tests at the instruction level are not independent.",
+     "why": "Treating instructions as independent makes the instruction-level CI too narrow.",
+     "fix": "Resample prompts (the cluster) for every IFEval CI, including the instruction-level ones. No McNemar at instruction level. Report the `combination:repeat_prompt` sensitivity for both Fabius arms, not only the `fabius:` prefix."
+    },
+    {
+     "severity": "minor",
+     "issue": "For IFEval and HumanEval+, 'the response is the run's final text' is the `result` field, which is only the last assistant message. In the Fabius arms, a Skill call splits a turn, so text produced before the call is dropped. Baseline never calls a skill, so this can only happen in one arm.",
+     "why": "This creates a measurement asymmetry that can move prompt-strict accuracy or pass@1 in either direction for the arm that loads skills.",
+     "fix": "Keep `result` as the primary response (declared now), and add a pre-declared sensitivity using all assistant text blocks concatenated. Report how many runs in each arm had more than one text-bearing assistant message."
+    }
+   ],
+   "keep": [
+    "Pairing by item, with the same tasks, harness, model and clean context in every arm and only the plugin and prefix differing.",
+    "Splitting `fabius-doc` from `fabius-loaded` on the basis of a pilot recorded before any scored run. It separates 'does the documented invocation load anything' from 'do the rules change outcomes'.",
+    "An exact paired test (McNemar exact) rather than unpaired proportion tests. Keep it as the k=1 case of the sign-flip test.",
+    "A fixed bootstrap seed (20261006) and 10,000 resamples. Keep the seed for every random step: item order, the stratified subset, Monte Carlo flips.",
+    "Multiplicity control with Holm. Keep it, with the families narrowed as above.",
+    "Gold-patch and empty-patch validity checks before any agent run, with exclusions applied to all arms and reported.",
+    "Infrastructure-only retries; quality never a reason to rerun; missing items dropped from every arm; all receipts kept.",
+    "Scale-downs decided from the usage meter before results are seen, and the 'no check changed after results except a documented symmetric correction with the original kept' rule.",
+    "The official scorers: swebench 5.0.2 run_evaluation, IFEval evaluation_main at a pinned commit, evalplus sanitize and evaluate. No model judges anywhere.",
+    "IFEval prompt-level strict and HumanEval+ plus pass@1 as primaries. They are deterministic, and their sample sizes (541, 164) give the tightest intervals available, so they are the right place to detect harm from Fabius's 'say less' rules.",
+    "The pre-declared repeat_prompt sensitivity analysis on IFEval.",
+    "Publishing gains, ties and losses with equal weight, with ties defined by the equivalence margins above."
+   ]
+  }
+ ],
+ "synthesis": {
+  "required_changes": [
+   {
+    "severity": "blocker",
+    "where": "PROTOCOL.md \u00a71 Agent setup + new harness/swe_prepare.py (worktree creation)",
+    "change": "Remove future git history from every SWE-bench worktree before the agent sees it. Steps: (1) `docker cp` /testbed from a fresh container of the pinned image into a new mkdtemp dir /private/tmp/fbw/<uuid4>/repo, with a neutral name that holds no instance id. (2) In the copy run `git tag -l | xargs git tag -d`, then delete every ref except the current branch (`git for-each-ref --format='%(refname)' | grep -v \"^$(git symbolic-ref HEAD)$\" | xargs -n1 git update-ref -d`), then `git reflog expire --expire=now --all && git gc --prune=now --aggressive`. (3) Assert all four: HEAD == base_commit; `git rev-list --all | sort` == `git rev-list HEAD | sort`; `git fsck --unreachable --no-reflogs` is empty; `git status --porcelain` is empty. If `git status` is not empty, rebuild the copy on a case-sensitive APFS sparse image (`hdiutil create -fs 'Case-sensitive APFS'`). If any assert still fails, abort that instance in all arms. (4) Save the assert output to the run directory. Past history stays, as in the official image. Do not use `rm -rf .git && git init`. Run this once per run, retries included, so no arm or retry ever reuses a worktree.",
+    "from_lenses": [
+     "fidelity",
+     "treatment"
+    ],
+    "budget_effect": "None. Local git and disk only, about 1 minute per run."
+   },
+   {
+    "severity": "blocker",
+    "where": "PROTOCOL.md \u00a71 Agent setup + SWE runner command line + new harness/audit_paths.py",
+    "change": "Keep the agent away from answer keys, other arms' outputs and the owner's files. (1) Drop the 'read-only git/listing commands' host Bash allowance. The only Bash rule is `Bash(<wrapper>:*)`, and git, ls and cat run inside the container, where git is installed. (2) Move the plugin tree out of ~/Documents to /private/tmp/fbplugin/fabius and point PLUGIN_DIR there. Hash it per the pinning change. (3) Pass identical CLI denies in every arm: `--disallowedTools 'Read(//Users/**)' 'Edit(//Users/**)' 'Write(//Users/**)' 'Read(//private/var/folders/**)'`. Use CLI flags, not a .claude/settings.json inside the worktree. (4) Before scoring, run audit_paths.py over every stream.jsonl in all arms. It flags any tool input whose path falls outside the run's worktree and the plugin dir, or that contains 'fabius-benchmark', '.cache/huggingface', 'swebench', 'test_patch' or 'FAIL_TO_PASS', and any wrapper command that runs `git log --all`, `reflog`, or `show` on a hash other than the base. Report flagged runs per arm. Score the primary endpoint with and without flagged items, removing those items from every arm. (5) Memory: assert before each run that ~/.claude/projects/*fbw*/memory does not exist. After each run, record whether it was created, then delete it.",
+    "from_lenses": [
+     "fidelity",
+     "treatment"
+    ],
+    "budget_effect": "Two to three non-scored canary runs (see the budget plan). Each run moves the meter by well under 0.1 point."
+   },
+   {
+    "severity": "blocker",
+    "where": "PROTOCOL.md \u00a71 Agent setup + wrapper script",
+    "change": "Start every agent container with `docker run -d --rm --network none --memory 3g -v <worktree>:/testbed <image@digest> sleep infinity`, one fresh container per run. The wrapper does `docker exec <cid> bash -lc \"$*\"`. After the run ends, whether it finished, timed out or failed, run `docker kill <cid>` before extracting the patch, so no exec keeps writing. Save the exact docker run line in cmd.json. Never reuse a container across arms or retries.",
+    "from_lenses": [
+     "fidelity"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "blocker",
+    "where": "harness/bench_single.py infra_failed() and run_item(), shared by the SWE runner; PROTOCOL.md 'Runs, failures, and integrity'",
+    "change": "Replace infra_failed with one shared classify(summary, stream) that returns OUTCOME or INFRA(reason). INFRA if any of: there is no result record; result.api_error_status is not null; subtype is not in {success, error_max_turns}; is_error is true and the result text matches /usage limit|hit your limit|rate.?limit|overloaded|API Error/i; the last rate_limit_event has status 'rejected'; init model != claude-sonnet-5-5; the init skills do not match the arm (exactly 15 fabius:* skills in the Fabius arms, none in baseline). OUTCOME for success, error_max_turns and timeouts. These are never retried. For error_max_turns and timeouts, the scored text is the last assistant text block, or empty if there is none. SWE-bench uses the worktree at the kill point. INFRA gets at most 2 retries with the same inputs, and a SWE retry starts from a fresh worktree. A usage-limit INFRA pauses the whole pool until resetsAt and does not use up a retry. Write each attempt to <item>/attempt-<n>/ (cmd.json, stream.jsonl, stderr.txt) and never overwrite. The item-level summary.json names the scored attempt and the INFRA reason for each discarded attempt, and records subtype, terminal_reason, api_error_status and permission_denials. Unit-test classify on a real max-turns stream (from a canary run with --max-turns 1) and on a synthetic usage-limit result record before the first scored run.",
+    "from_lenses": [
+     "fidelity",
+     "treatment",
+     "claims",
+     "statistics"
+    ],
+    "budget_effect": "About 1 canary run. Also saves the usage that wrong-arm reruns of max-turns items would have spent."
+   },
+   {
+    "severity": "blocker",
+    "where": "PROTOCOL.md new section 'Verdicts and permitted wording (fixed now)'",
+    "change": "Each comparison gets exactly one verdict. GAIN or LOSS: the Holm-adjusted exact paired p is \u2264 .05, with the sign of the difference. TIE: IFEval and HumanEval+ only, when the 90% paired CI lies inside \u00b15 points (TOST). NON-INFERIOR: IFEval and HumanEval+ only, when the result is not a GAIN and the 95% CI lower bound is above \u22125 points. INCONCLUSIVE: everything else, printed as 'no detectable difference at this sample size (95% CI a to b; MDE \u2248 X points)'. SWE-bench can only come out GAIN, LOSS or INCONCLUSIVE, and the protocol says so. The words 'tie', 'matches', 'quality held' and 'no regression' are allowed only with a TIE or NON-INFERIOR verdict. Every public sentence carries this scope string: 'Fabius 3.3.0 (sealed root <hash>), claude-sonnet-5-5, Claude Code 2.1.289 headless, <arm and invocation>, k=<k>, n=<n>, <dates>'. All Family-1 results go in one table at equal type size, and a headline must name every benchmark (form: 'gained on X, no detectable difference on Y, lost on Z'). A fabius-doc number is never labelled 'Fabius'. It is described as 'skill listing present, router loaded in k/N runs'. Effects are attributed to 'the shipped package plus its invocation', never to individual rules (there is no context-length placebo arm). Absolute rates are never compared with leaderboard or vendor numbers.",
+    "from_lenses": [
+     "claims",
+     "statistics",
+     "treatment"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "New harness/schedule.py, replacing per-arm invocation of bench_single.py; PROTOCOL.md 'Runs'",
+    "change": "Schedule by item, never by arm. Item order is a seeded permutation (numpy default_rng(20261006)). For SWE-bench, alternate Django and Sphinx starting with Django, using the per-repo permutations. Each worker takes one item and runs all of that item's arms back to back, in an arm order drawn from the same rng and stored in a schedule.json written before the first run. Concurrency is fixed: 6 workers for IFEval and HumanEval+, 2 for SWE-bench, each arm sequential within its item. A budget stop or interruption therefore removes whole items. The analysis uses only items complete in every compared arm and reports n per comparison. The existing resume/cache logic stays, keyed by item and arm.",
+    "from_lenses": [
+     "statistics",
+     "fidelity",
+     "treatment",
+     "claims"
+    ],
+    "budget_effect": "Neutral. Order changes, total does not."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md \u00a71 Scoring + harness/swe_extract.py + validity check",
+    "change": "Fix the scored patch now. After `docker kill`, run `git add -A` in the worktree, then `git -c core.fileMode=false diff --cached --binary <base_commit> -- . ':(exclude).claude' ':(exclude)tests' ':(exclude)testing' ':(glob,exclude)**/test_*.py' ':(glob,exclude)**/*_tests.py' ':(glob,exclude)**/conftest.py'`. Verified on 2026-10-06 that no gold-patch file in the 50 rows matches these exclusions and every test_patch file does. The unfiltered patch, put through the same official harness, is a declared secondary. Report `git apply --check` failures on a clean base per arm. Patch size is measured on the filtered patch. Extend the validity check to cover the full production pipeline: (a) apply the gold patch to a prepared worktree, extract it with swe_extract.py, score it with run_evaluation; it must resolve. (b) Start the network-none container, run one wrapper test command, extract; the patch must be empty and must not resolve. Instances that fail are excluded from every arm and reported.",
+    "from_lenses": [
+     "fidelity",
+     "treatment"
+    ],
+    "budget_effect": "None in model usage. Docker CPU during the image download."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md 'Endpoints and statistics' + harness/analyze.py",
+    "change": "Replace the test and CI rules. Test: at k=1, the exact two-sided binomial test on the discordant counts (b, c), which is McNemar's exact test. At k\u22652, the paired sign-flip test on d_i = mean_k(Fabius_i) \u2212 mean_k(baseline_i) with statistic |\u03a3d_i|: exact enumeration when there are \u226420 nonzero d_i (p = count/2^m), otherwise 100,000 Monte Carlo flips with seed 20261006 (p = (1+count)/(1+N)). CI at k=1: the Newcombe hybrid-score interval for paired proportions (Newcombe 1998, method 10, with phi set to 0 when its denominator is 0), at 95% and also at 90% for TOST. At k\u22652 and for continuous endpoints: a BCa item bootstrap (10,000 resamples, seed 20261006), stratified by repo on SWE-bench and resampled by prompt on IFEval. CIs are labelled 'unadjusted 95%'. Verdicts come only from Holm-adjusted p. Families: Family 1 = fabius-loaded vs baseline on the 3 benchmarks (Holm over 3). Family 2 = fabius-doc vs baseline on IFEval and HumanEval+ (Holm over 2). The fabius-doc SWE subset is descriptive only. Replace the '15 points' power sentence with a table from analyze.py: the MDE at 80% power under exact McNemar for each benchmark's n, at \u03b1 = .05/3 and \u03b1 = .05, for discordance \u03c8 = 0.1, 0.2 and 0.3 (SWE-bench n=50 is roughly 17\u201320 points). For k=2 the MDE comes from 10,000 seeded simulations. After the runs, the report recomputes the MDE from the realised \u03c8 with the same code. With k=2, also report the baseline A/A disagreement rate.",
+    "from_lenses": [
+     "statistics",
+     "claims"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md \u00a71 Arms; schedule.py",
+    "change": "Replace 'fabius-doc \u2026 otherwise on the first 10 in instance order' with a fixed subset. fabius-doc runs on SWE-bench only on a seeded stratified 10, built as follows: rng = numpy.random.default_rng(20261006); permute the sorted Django IDs, then the sorted Sphinx IDs; take the first 5 VALID instances from each. Current permutation heads: Django 12276, 11815, 12155, 12308, 12774 (then 9296, 12039); Sphinx 10466, 9698, 10673, 8035, 7985 (then 9281, 9367). Write the final 10 IDs into PROTOCOL.md after the validity check and before any scored run. fabius-doc is compared only with baseline on those same 10 items, as a descriptive result (load rate and resolved count), labelled n=10, stratified. fabius-doc runs in full on IFEval and HumanEval+, unless the budget gate below drops it. Replicate rule: baseline and fabius-loaded get a second SWE-bench sample (k=2) on all valid items only if the meter projection in the budget plan allows it. That decision is logged before any SWE-bench run is scored.",
+    "from_lenses": [
+     "statistics",
+     "fidelity",
+     "treatment",
+     "claims"
+    ],
+    "budget_effect": "Saves about 40 SWE-bench runs compared with fabius-doc on all 50. Replicate 2 adds about 100, only if the meter allows."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md \u00a71 Scoring",
+    "change": "Declare the denominator and the error rules. Resolved rate = resolved / all valid instances, with the same denominator for every arm. Empty, apply-failed, timed-out and max-turns patches count as unresolved and are reported per arm. A run_evaluation 'error' not caused by patch apply (Docker or OOM) is re-scored up to twice with max_workers 1, then reported. A mid-trajectory INFRA ending (usage limit or API error) gets a fresh worktree and a rerun from scratch under the retry rule. Report turn-cap and wall-cap hits, and runs that ended on a question, per arm.",
+    "from_lenses": [
+     "fidelity",
+     "treatment",
+     "statistics"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md \u00a71 Prompt + SWE runner",
+    "change": "The prompt is built from `problem_statement` verbatim. `hints_text` (non-empty in 28 of the 50 rows) is never shown. Add one identical sentence to the task paragraph in every arm: 'This run is non-interactive: nobody can answer questions or grant permissions; state any assumption and finish the task.' Save the rendered prompt per run, and assert before launch that the prompts are byte-identical across arms apart from the prefix. IFEval and HumanEval+ prompts stay verbatim.",
+    "from_lenses": [
+     "fidelity",
+     "treatment"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md 'What is held constant' + receipts",
+    "change": "Pin every input by content. (1) Pass the local swebench-mini-official-rows.json to run_evaluation as dataset_name, and record its sha256 and the HF revision. (2) After the pull, record `docker image inspect --format '{{.RepoDigests}}'` for all 50 images, use image@digest in docker run, and re-check the digests before scoring with no re-pull in between. (3) Record the SHA-256 manifest and Merkle root of /private/tmp/fbplugin/fabius, check it against the v3.3.0-sealed root, and re-check it at the start and end of each benchmark. (4) Record the claude binary's sha256 and the version from init. (5) Record the swebench, evalplus and IFEval versions and commits.",
+    "from_lenses": [
+     "fidelity",
+     "claims"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "IFEval scoring step",
+    "change": "Score through a 3-line wrapper that sets `langdetect.DetectorFactory.seed = 0` and then calls the official evaluation_main, with the official files unchanged. Declare this now as a documented deviation. Score all arms once, in one process, and archive the output.",
+    "from_lenses": [
+     "fidelity"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "Before the first scored run (pre-registration)",
+    "change": "Freeze the protocol in a form a stranger can check. Copy PROTOCOL.md (v1 with these changes), harness/*.py, analyze.py and schedule.json into the fabius repo under evals/public/2026-10-public-benchmarks/. Commit them, record their SHA-256 values, and stamp the commit hash with the project's existing OpenTimestamps flow. Push under the owner's standing push rule. The report cites this commit. Any later change becomes PROTOCOL v2 with a diff, keeps the original, and applies to every arm.",
+    "from_lenses": [
+     "claims"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "PROTOCOL.md 'Secondary' + analyze.py",
+    "change": "Pre-declare the efficiency summaries. Per item, r_i = log((Fabius_i+1)/(baseline_i+1)) for output tokens, total tokens (input + cache_creation + cache_read + output), 'Claude Code reported API-equivalent cost', wall time and turns. Report exp(mean r_i) with a stratified BCa 95% CI. On SWE-bench, also report it within the items both arms resolved. No p-values, no Holm. An efficiency number may appear publicly only in the same sentence as that benchmark's primary verdict. 'Less waste' may be said only with a GAIN, TIE or NON-INFERIOR verdict AND a total-token or cost CI that lies entirely below 1.",
+    "from_lenses": [
+     "statistics",
+     "claims"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "claude_run.py summary fields + PROTOCOL.md 'Arms' and report",
+    "change": "Measure loading correctly. Add first_turn_prompt_tokens (input + cache_creation + cache_read of the first assistant message's usage). Set router_injected = true when this exceeds the same item's baseline value by \u22654,500 tokens (pilot: doc \u2248 +1.9k, /fabius \u2248 +5.7k). This replaces the 'user/command record' idea, because the pilot streams contain no user record for the slash expansion. Report per arm and benchmark: router_injected rate, and the Skill-call load rate for each Fabius skill (router, parcus, each specialist) with Wilson CIs. In the report, label the arm 'fabius-router (/fabius)'. Credit a specialist only if it loaded in more than 50% of that arm's runs.",
+    "from_lenses": [
+     "treatment",
+     "claims",
+     "fidelity",
+     "statistics"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "major",
+    "where": "Receipts specification (PROTOCOL.md 'Runs')",
+    "change": "Each benchmark's receipt bundle contains: items.csv (item, arm, replicate, scored attempt, outcome class, pass/fail, router_injected, skill calls, all token fields, cost, wall time, turns, exclusion reason); predictions.jsonl and the run_evaluation report with per-instance logs; the IFEval input_response_data and evaluation output; the evalplus samples, sanitized output and eval_results.json; the pin records; meter readings before and after each block; the audit_paths output; and analyze.py, which reads only items.csv and prints every published number. Hash the bundle. Commit it, or attach it to a GitHub release if it is too large.",
+    "from_lenses": [
+     "claims"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "minor",
+    "where": "PROTOCOL.md \u00a72/\u00a73 Generation + analyze.py",
+    "change": "The primary response stays `result` (the last assistant message), or the last text block when there is no result. Declared sensitivity: score all assistant text blocks concatenated. Report per arm how many runs had more than one text-bearing assistant message. Store every text block in summary.json; claude_run already parses them and currently drops them.",
+    "from_lenses": [
+     "statistics",
+     "treatment"
+    ],
+    "budget_effect": "None. Extra scoring pass only."
+   },
+   {
+    "severity": "minor",
+    "where": "PROTOCOL.md \u00a72 IFEval",
+    "change": "Resample by prompt for every IFEval CI, instruction-level ones included. No exact test at instruction level. Apply the repeat_prompt-excluded sensitivity to both Fabius arms. Verify slash-argument fidelity with 3 non-scored canary runs: `/fabius` plus a multi-line IFEval prompt, with session persistence ON in a scratch cwd. Check that the stored transcript's expanded user message contains the prompt byte for byte, then delete the transcript.",
+    "from_lenses": [
+     "statistics",
+     "fidelity",
+     "treatment"
+    ],
+    "budget_effect": "3 canary single-turn runs, negligible."
+   },
+   {
+    "severity": "minor",
+    "where": "HumanEval+ scoring step",
+    "change": "Run evalplus.evaluate for all arms in one session after all generation has finished, with no Docker containers running. Gate it on the selfcheck (canonical 164/164 base and plus in the same session). Evaluate twice and report the items that flip.",
+    "from_lenses": [
+     "fidelity"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "minor",
+    "where": "harness/claude_run.py parse_stream/run",
+    "change": "Return the meters list from parse_stream instead of setting parse_stream.meters, a function attribute that races across the 6 worker threads. Update the stale module docstring, which says only the 'fabius: ' prefix, to describe the three-arm ARMS map. Write the arm's exact prefix into summary.json.",
+    "from_lenses": [
+     "fidelity",
+     "statistics"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "minor",
+    "where": "PROTOCOL.md \u00a71 Tasks + report",
+    "change": "Reword the Verified Mini description to: 'a 50-task subset published by its author as matched to Verified's difficulty distribution (not verified here)'. Add a line saying absolute rates are specific to this harness (Claude Code system prompt, no temperature control, wrapper-only Bash, no network, 150 turns / 40 min) and are not comparable with leaderboard or model-card numbers. Always name the benchmark 'SWE-bench Verified Mini (50 tasks)'.",
+    "from_lenses": [
+     "claims",
+     "fidelity"
+    ],
+    "budget_effect": "None."
+   },
+   {
+    "severity": "minor",
+    "where": "Report time: CLAIMS.md and BENCHMARKS.md (declared now, executed after results)",
+    "change": "Add a CLAIMS.md row 'Public benchmarks' whose supported wording is the verdict-and-scope template, valid only for releases whose sealed files are byte-identical to the tested root. Add the study to BENCHMARKS.md as the first dated section, labelled 'the only measurement of 3.x', above the Panel A\u2013D headlines. Update the 'one benchmark, four panels' line in the whitepaper and in paper/README.md.",
+    "from_lenses": [
+     "claims"
+    ],
+    "budget_effect": "None."
+   }
+  ],
+  "rejected": [
+   {
+    "finding": "Statistics lens: the runner implements only one arm, 'fabius', with the 'fabius: ' prefix, and has no fabius-loaded arm.",
+    "reason": "Wrong for the current code. claude_run.ARMS already maps baseline:'', fabius-doc:'fabius: ', fabius-loaded:'/fabius ' with --plugin-dir for both Fabius arms, and bench_single takes its arm choices from ARMS. Only the module docstring is stale; that fix is in the minor claude_run change. The per-run init-skill assertion moved into classify()."
+   },
+   {
+    "finding": "Fidelity lens: record the slash expansion from 'the command/user record in the stream' as a load event, and check from the streams that every fabius-loaded prompt survived verbatim.",
+    "reason": "Not possible with this harness. The pilot slash-fabius stream contains only system/init, assistant, rate_limit_event and result records, with no user record. It is replaced by the first-turn token-delta router_injected field and a transcript canary with session persistence on."
+   },
+   {
+    "finding": "Statistics lens: equivalence margins of \u00b13 (IFEval), \u00b14 (HumanEval+) and \u00b110 (SWE-bench).",
+    "reason": "Changed. \u00b110 on n=50 would let a 'tie' cover a difference larger than most plausible effects, which goes against the claims rule. SWE-bench gets no tie verdict. \u00b13/\u00b14 would almost never be met at the expected discordance (IFEval 90% half-width \u2248 2.5 points), so the claims lens's \u00b15 is used for both, as TIE (TOST) and NON-INFERIOR."
+   },
+   {
+    "finding": "Claims lens: GAIN requires Holm p < .05 AND a bootstrap CI lower bound above 0.",
+    "reason": "The two conditions can disagree (the CI is unadjusted, the test is Holm-adjusted), and the percentile bootstrap under-covers sparse binary pairs. The verdict comes from the Holm-adjusted exact test alone, and the Newcombe CI is reported as unadjusted."
+   },
+   {
+    "finding": "Claims lens (keep list): Holm across all six primary comparisons, with the family fixed at six.",
+    "reason": "Replaced by two families declared before any result (Family 1 = loaded vs baseline \u00d7 3, Family 2 = doc vs baseline \u00d7 2). The two arms answer the protocol's two separate questions, and an underpowered doc-on-SWE subset in Family 1 would cut the main comparison's first-step \u03b1 from .0167 to .0083."
+   },
+   {
+    "finding": "Statistics lens: sign-flip p-value '(1 + count)/(1 + N)' for exact enumeration as well.",
+    "reason": "Corrected. The +1 form applies only to Monte Carlo. Exact enumeration uses count/2^m, which at k=1 is exactly McNemar's exact test."
+   },
+   {
+    "finding": "Treatment lens: rebuild each worktree as a single-commit repo (`rm -rf .git && git init`).",
+    "reason": "It removes legitimate past history (git log/blame) that the official environment keeps, which changes the task. Pruning refs, tags and reflog, then asserting that rev-list --all equals rev-list HEAD, closes the leak and keeps fidelity."
+   },
+   {
+    "finding": "Fidelity and treatment lenses: fabius-doc fallback = the first 5 Django plus the first 5 Sphinx in ID order.",
+    "reason": "Superseded by a seeded per-repo permutation (taking the first 5 valid of each). Sorted IDs cluster by version, so 'first 5' is not random within a repo. The seeded draw is just as pre-declared and is listed in the changes."
+   },
+   {
+    "finding": "Treatment lens: write an identical .claude/settings.json deny file into every worktree.",
+    "reason": "Under --setting-sources project, the agent could read or edit that file inside its own worktree. The same denies go in as CLI --disallowedTools, recorded in cmd.json and outside the agent's reach."
+   },
+   {
+    "finding": "Claims lens: README line 34 and COMPATIBILITY.md 'must be corrected' as part of the study, and the fabius-loaded number may appear only once the README tells users to use /fabius.",
+    "reason": "These are product-documentation decisions for the owner after the results, not protocol rules. The protocol only fixes how the fabius-doc result may be worded (never 'Fabius', always 'skill listing present, router loaded in k/N')."
+   },
+   {
+    "finding": "Treatment lens: a context-length placebo arm (implied by the attribution concern).",
+    "reason": "The budget cannot cover another arm, and the lens agreed. It is handled through claim wording only ('shipped package plus its invocation')."
+   }
+  ],
+  "budget_plan": "Hard limits. The study stops when the weekly meter reaches 75%. That spends at most 20 of the remaining 45 points and leaves at least 25 for the owner's other work until the reset in about 4.7 days. A new run starts only while the 5-hour meter is below 60%; otherwise the pool pauses until resetsAt. The scheduler reads both meters from each run's last rate_limit_event and never lets a 'rejected' status occur. Scale-downs are computed only from meter readings and are logged in budget-log.md before the block they affect. No benchmark is scored until all generation is finished and every budget decision has been logged.\n\nCost anchors. In the pilot, single-turn runs cost $0.022\u20130.044 API-equivalent with about 6\u201312k input tokens, and the meter did not move off 55% or 35% across 5 runs, because it reports in 1-point steps. SWE-bench agent runs are likely 30\u2013100\u00d7 a single-turn run, so they dominate the spend and must be calibrated, not assumed.\n\nOrder:\n0. Zero usage, now, while the 9.67 GB image pull runs (about 2.7 h at 1 MB/s). Implement the required changes. Freeze and OpenTimestamps-stamp the protocol commit. Run the HumanEval+ selfcheck. Write schedule.json. As images land, record their digests and run the gold/empty validity check through the full pipeline (Docker CPU only). Then write the final fabius-doc SWE subset IDs into PROTOCOL.md.\n1. Canaries, about 8 non-scored runs, well under 0.5 point: a path-deny canary in baseline and in fabius-loaded, plus a plugin-reference Read in fabius-loaded; a max-turns stream (--max-turns 1) for the classify() test; 3 slash multi-line argument canaries with persistence on. These are kept as receipts and never scored.\n2. HumanEval+: 164 items \u00d7 3 arms, interleaved (492 runs, \u2248$15 API-equivalent). The meter before and after gives c1 = points per single-turn run. It runs during the image download.\n3. IFEval: 541 \u00d7 3 arms, interleaved (1,623 runs). Gate, logged first: if 1,623\u00b7c1 > 5 points, drop the fabius-doc arm (Family 2 becomes HumanEval+ only). If 1,082\u00b7c1 is still > 5 points, run baseline and fabius-loaded on the first N items of the seeded IFEval permutation, N = floor(5/(2\u00b7c1)), never below 271. Steps 2\u20133 run the main comparison (fabius-loaded vs baseline) on its two high-power benchmarks during the download, and the 5-point cap protects the SWE-bench budget.\n4. SWE-bench replicate 1, calibration: run the first 2 items of the seeded alternating order (one Django, one Sphinx; arms per schedule; fabius-doc only if the item is in the subset) and measure c_swe = points per agent run. These runs are part of replicate 1. Projection: P1 = (100 + 10 \u2212 runs done)\u00b7c_swe. If meter + P1 > 75%, keep going in seeded order and stop when the meter reaches 75%. Only whole items count; report the realised n and the recomputed MDE.\n5. SWE-bench replicate 1, the remaining items, 2 workers, arms back to back per item.\n6. SWE-bench replicate 2 (baseline and fabius-loaded only, 100 runs, same seeded order): run only if meter_after_rep1 + 100\u00b7c_swe \u2264 75%. Otherwise run it on whole items up to the cap only if at least 25 items fit, and else skip it. Log the decision before any SWE-bench scoring. fabius-doc is never replicated.\n7. Scoring, zero model usage: evalplus with no containers, evaluated twice; IFEval through the seeded-langdetect wrapper; run_evaluation from the local rows JSON with pinned digests, max_workers 2 on 8 GB; then audit_paths and analyze.py.\n\nOrder of cuts if the meter binds: SWE replicate 2 first, then fabius-doc on IFEval, then the IFEval item count (seeded prefix, at least 271), then SWE replicate 1 items (whole items, seeded order). fabius-loaded vs baseline on HumanEval+ is never cut. Family 1, the main comparison, is present in every block, so any stopping point still leaves complete, publishable pairs for it."
+ }
+}

@@ -1,0 +1,4606 @@
+{
+ "seed": 20261006,
+ "written_before_first_scored_run": true,
+ "humaneval": {
+  "items": [
+   "HumanEval_75",
+   "HumanEval_100",
+   "HumanEval_146",
+   "HumanEval_154",
+   "HumanEval_45",
+   "HumanEval_56",
+   "HumanEval_93",
+   "HumanEval_141",
+   "HumanEval_143",
+   "HumanEval_0",
+   "HumanEval_9",
+   "HumanEval_83",
+   "HumanEval_131",
+   "HumanEval_149",
+   "HumanEval_151",
+   "HumanEval_120",
+   "HumanEval_85",
+   "HumanEval_23",
+   "HumanEval_43",
+   "HumanEval_153",
+   "HumanEval_114",
+   "HumanEval_41",
+   "HumanEval_76",
+   "HumanEval_1",
+   "HumanEval_108",
+   "HumanEval_19",
+   "HumanEval_87",
+   "HumanEval_65",
+   "HumanEval_97",
+   "HumanEval_13",
+   "HumanEval_63",
+   "HumanEval_54",
+   "HumanEval_29",
+   "HumanEval_111",
+   "HumanEval_39",
+   "HumanEval_110",
+   "HumanEval_53",
+   "HumanEval_96",
+   "HumanEval_16",
+   "HumanEval_37",
+   "HumanEval_11",
+   "HumanEval_137",
+   "HumanEval_77",
+   "HumanEval_107",
+   "HumanEval_139",
+   "HumanEval_3",
+   "HumanEval_55",
+   "HumanEval_132",
+   "HumanEval_60",
+   "HumanEval_112",
+   "HumanEval_86",
+   "HumanEval_4",
+   "HumanEval_144",
+   "HumanEval_48",
+   "HumanEval_58",
+   "HumanEval_91",
+   "HumanEval_10",
+   "HumanEval_49",
+   "HumanEval_128",
+   "HumanEval_103",
+   "HumanEval_102",
+   "HumanEval_161",
+   "HumanEval_72",
+   "HumanEval_68",
+   "HumanEval_138",
+   "HumanEval_89",
+   "HumanEval_145",
+   "HumanEval_124",
+   "HumanEval_155",
+   "HumanEval_135",
+   "HumanEval_136",
+   "HumanEval_82",
+   "HumanEval_25",
+   "HumanEval_14",
+   "HumanEval_105",
+   "HumanEval_7",
+   "HumanEval_106",
+   "HumanEval_101",
+   "HumanEval_2",
+   "HumanEval_125",
+   "HumanEval_95",
+   "HumanEval_126",
+   "HumanEval_90",
+   "HumanEval_47",
+   "HumanEval_127",
+   "HumanEval_156",
+   "HumanEval_8",
+   "HumanEval_24",
+   "HumanEval_36",
+   "HumanEval_74",
+   "HumanEval_40",
+   "HumanEval_44",
+   "HumanEval_115",
+   "HumanEval_129",
+   "HumanEval_116",
+   "HumanEval_78",
+   "HumanEval_140",
+   "HumanEval_61",
+   "HumanEval_26",
+   "HumanEval_22",
+   "HumanEval_118",
+   "HumanEval_159",
+   "HumanEval_70",
+   "HumanEval_147",
+   "HumanEval_42",
+   "HumanEval_34",
+   "HumanEval_81",
+   "HumanEval_148",
+   "HumanEval_113",
+   "HumanEval_150",
+   "HumanEval_66",
+   "HumanEval_18",
+   "HumanEval_99",
+   "HumanEval_50",
+   "HumanEval_12",
+   "HumanEval_52",
+   "HumanEval_142",
+   "HumanEval_5",
+   "HumanEval_15",
+   "HumanEval_17",
+   "HumanEval_134",
+   "HumanEval_98",
+   "HumanEval_119",
+   "HumanEval_69",
+   "HumanEval_38",
+   "HumanEval_79",
+   "HumanEval_73",
+   "HumanEval_157",
+   "HumanEval_6",
+   "HumanEval_133",
+   "HumanEval_31",
+   "HumanEval_27",
+   "HumanEval_130",
+   "HumanEval_109",
+   "HumanEval_92",
+   "HumanEval_163",
+   "HumanEval_30",
+   "HumanEval_62",
+   "HumanEval_122",
+   "HumanEval_20",
+   "HumanEval_88",
+   "HumanEval_67",
+   "HumanEval_123",
+   "HumanEval_59",
+   "HumanEval_117",
+   "HumanEval_35",
+   "HumanEval_94",
+   "HumanEval_84",
+   "HumanEval_71",
+   "HumanEval_80",
+   "HumanEval_160",
+   "HumanEval_33",
+   "HumanEval_46",
+   "HumanEval_51",
+   "HumanEval_152",
+   "HumanEval_162",
+   "HumanEval_57",
+   "HumanEval_104",
+   "HumanEval_158",
+   "HumanEval_21",
+   "HumanEval_28",
+   "HumanEval_121",
+   "HumanEval_64"
+  ],
+  "arm_order": {
+   "HumanEval_75": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_100": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_146": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_154": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_45": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_56": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_93": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_141": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_143": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_0": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_9": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_83": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_131": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_149": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_151": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_120": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_85": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_23": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_43": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_153": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_114": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_41": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_76": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_1": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_108": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_19": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_87": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_65": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_97": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_13": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_63": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_54": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_29": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_111": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_39": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_110": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_53": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_96": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_16": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_37": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_11": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_137": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_77": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_107": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_139": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_3": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_55": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_132": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_60": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_112": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_86": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_4": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_144": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_48": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_58": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_91": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_10": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_49": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_128": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_103": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_102": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_161": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_72": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_68": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_138": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_89": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_145": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_124": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_155": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_135": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_136": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_82": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_25": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_14": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_105": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_7": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_106": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_101": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_2": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_125": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_95": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_126": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_90": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_47": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_127": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_156": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_8": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_24": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_36": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_74": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_40": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_44": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_115": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_129": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_116": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_78": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_140": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_61": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_26": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_22": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_118": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_159": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_70": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_147": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_42": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_34": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_81": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_148": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_113": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_150": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_66": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_18": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_99": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_50": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_12": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_52": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_142": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_5": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_15": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_17": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_134": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_98": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_119": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_69": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_38": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_79": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_73": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_157": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_6": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_133": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_31": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_27": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_130": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_109": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_92": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_163": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_30": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_62": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "HumanEval_122": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_20": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_88": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_67": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_123": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_59": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_117": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_35": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_94": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_84": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_71": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_80": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_160": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_33": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_46": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_51": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_152": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "HumanEval_162": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_57": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_104": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "HumanEval_158": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "HumanEval_21": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_28": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "HumanEval_121": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "HumanEval_64": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ]
+  },
+  "excluded": {
+   "HumanEval_32": "canonical solution fails EvalPlus 0.3.1's own sandboxed check in the Linux scoring container before any input is evaluated (verified 2026-10-06)"
+  }
+ },
+ "ifeval": {
+  "items": [
+   "1129",
+   "1217",
+   "1268",
+   "3025",
+   "3754",
+   "2392",
+   "2372",
+   "1367",
+   "2324",
+   "2887",
+   "3329",
+   "1800",
+   "3617",
+   "2355",
+   "2617",
+   "3680",
+   "1934",
+   "3455",
+   "1476",
+   "3166",
+   "3263",
+   "2464",
+   "3572",
+   "1667",
+   "3079",
+   "1936",
+   "2532",
+   "3478",
+   "2169",
+   "1922",
+   "2215",
+   "2416",
+   "3380",
+   "3287",
+   "2097",
+   "1281",
+   "1512",
+   "1813",
+   "1996",
+   "3557",
+   "2857",
+   "3084",
+   "374",
+   "3221",
+   "1242",
+   "1082",
+   "3631",
+   "2359",
+   "1481",
+   "2596",
+   "3703",
+   "2417",
+   "1147",
+   "3690",
+   "13",
+   "3442",
+   "1466",
+   "3281",
+   "2309",
+   "2683",
+   "179",
+   "3534",
+   "3191",
+   "357",
+   "2779",
+   "3644",
+   "2637",
+   "2162",
+   "3732",
+   "1377",
+   "1019",
+   "1634",
+   "218",
+   "240",
+   "2628",
+   "3326",
+   "1939",
+   "1645",
+   "1845",
+   "2243",
+   "2078",
+   "1259",
+   "3739",
+   "1883",
+   "2209",
+   "2929",
+   "3434",
+   "1561",
+   "2432",
+   "2253",
+   "2010",
+   "1999",
+   "2653",
+   "2828",
+   "3001",
+   "3131",
+   "2207",
+   "1246",
+   "3429",
+   "1825",
+   "1108",
+   "1531",
+   "3756",
+   "3672",
+   "2216",
+   "1092",
+   "3345",
+   "1713",
+   "2577",
+   "2616",
+   "343",
+   "3243",
+   "2820",
+   "3091",
+   "2844",
+   "1174",
+   "209",
+   "3126",
+   "2739",
+   "3114",
+   "2139",
+   "3057",
+   "1012",
+   "2925",
+   "2677",
+   "2591",
+   "2957",
+   "1902",
+   "3035",
+   "2084",
+   "1619",
+   "2292",
+   "24",
+   "1251",
+   "2350",
+   "2449",
+   "2912",
+   "2192",
+   "1127",
+   "122",
+   "3565",
+   "251",
+   "2904",
+   "1480",
+   "2749",
+   "1098",
+   "1518",
+   "3305",
+   "3502",
+   "2909",
+   "2063",
+   "2649",
+   "1944",
+   "2247",
+   "142",
+   "1248",
+   "3456",
+   "3311",
+   "2889",
+   "3109",
+   "1348",
+   "1739",
+   "16",
+   "3195",
+   "202",
+   "1381",
+   "3414",
+   "1332",
+   "3371",
+   "2015",
+   "2768",
+   "1880",
+   "2164",
+   "3445",
+   "2143",
+   "1627",
+   "3425",
+   "1670",
+   "3484",
+   "2752",
+   "296",
+   "3669",
+   "286",
+   "1537",
+   "2943",
+   "1620",
+   "337",
+   "1964",
+   "167",
+   "1738",
+   "3753",
+   "2997",
+   "3376",
+   "2517",
+   "2691",
+   "3709",
+   "2549",
+   "2482",
+   "332",
+   "331",
+   "3112",
+   "2667",
+   "1571",
+   "1187",
+   "2396",
+   "1967",
+   "2374",
+   "3718",
+   "3324",
+   "2759",
+   "2475",
+   "201",
+   "1122",
+   "1779",
+   "1262",
+   "1980",
+   "1392",
+   "2798",
+   "1389",
+   "3608",
+   "1219",
+   "1857",
+   "2567",
+   "1300",
+   "2180",
+   "1508",
+   "1287",
+   "2849",
+   "2225",
+   "3606",
+   "1069",
+   "2871",
+   "3063",
+   "322",
+   "1094",
+   "3089",
+   "2265",
+   "2589",
+   "2880",
+   "3071",
+   "152",
+   "2790",
+   "2563",
+   "2465",
+   "1551",
+   "1837",
+   "3323",
+   "2357",
+   "2395",
+   "2070",
+   "2825",
+   "2107",
+   "1237",
+   "2069",
+   "168",
+   "295",
+   "1000",
+   "1705",
+   "2447",
+   "2870",
+   "1546",
+   "1305",
+   "292",
+   "1314",
+   "2439",
+   "2785",
+   "2585",
+   "2284",
+   "3188",
+   "2787",
+   "3315",
+   "1897",
+   "2921",
+   "2807",
+   "2404",
+   "3156",
+   "1498",
+   "334",
+   "127",
+   "3569",
+   "1375",
+   "3563",
+   "288",
+   "1132",
+   "3276",
+   "2299",
+   "2829",
+   "2028",
+   "3682",
+   "3540",
+   "1582",
+   "3428",
+   "2314",
+   "2275",
+   "2534",
+   "2239",
+   "2969",
+   "3513",
+   "1265",
+   "1372",
+   "2436",
+   "3724",
+   "1886",
+   "2457",
+   "3691",
+   "1656",
+   "1927",
+   "3518",
+   "3744",
+   "2118",
+   "3335",
+   "1548",
+   "1233",
+   "2605",
+   "164",
+   "1379",
+   "2246",
+   "1130",
+   "3069",
+   "2268",
+   "1601",
+   "2985",
+   "3245",
+   "2229",
+   "3081",
+   "279",
+   "3401",
+   "3743",
+   "3505",
+   "2303",
+   "3536",
+   "3567",
+   "3415",
+   "2398",
+   "1823",
+   "143",
+   "1659",
+   "1580",
+   "2918",
+   "2583",
+   "3224",
+   "3350",
+   "2751",
+   "1843",
+   "2622",
+   "1040",
+   "247",
+   "1446",
+   "1258",
+   "2035",
+   "2977",
+   "1001",
+   "1325",
+   "1730",
+   "1591",
+   "1154",
+   "2713",
+   "2230",
+   "1746",
+   "3367",
+   "301",
+   "2381",
+   "2602",
+   "1535",
+   "1361",
+   "3041",
+   "2305",
+   "3595",
+   "2724",
+   "2853",
+   "3697",
+   "1793",
+   "1087",
+   "371",
+   "1148",
+   "2071",
+   "1908",
+   "1776",
+   "1644",
+   "2941",
+   "2386",
+   "3098",
+   "2422",
+   "1203",
+   "2328",
+   "1075",
+   "1322",
+   "3280",
+   "2383",
+   "1691",
+   "1675",
+   "2662",
+   "1834",
+   "321",
+   "2780",
+   "281",
+   "2704",
+   "1733",
+   "2905",
+   "1653",
+   "2908",
+   "19",
+   "1072",
+   "1658",
+   "2590",
+   "3748",
+   "3203",
+   "3549",
+   "2471",
+   "3241",
+   "3198",
+   "1402",
+   "2817",
+   "2515",
+   "3362",
+   "349",
+   "1162",
+   "1858",
+   "2571",
+   "2323",
+   "2273",
+   "3633",
+   "2801",
+   "2195",
+   "1609",
+   "1005",
+   "3150",
+   "3653",
+   "1906",
+   "2304",
+   "1593",
+   "3048",
+   "2505",
+   "2859",
+   "3424",
+   "102",
+   "2380",
+   "3710",
+   "227",
+   "3750",
+   "1216",
+   "260",
+   "1393",
+   "3351",
+   "3757",
+   "3538",
+   "2467",
+   "1051",
+   "1131",
+   "3204",
+   "2736",
+   "3223",
+   "1646",
+   "1236",
+   "3751",
+   "3479",
+   "1021",
+   "3752",
+   "2136",
+   "2266",
+   "2441",
+   "3327",
+   "1137",
+   "1802",
+   "3494",
+   "163",
+   "3369",
+   "3719",
+   "1220",
+   "32",
+   "1418",
+   "1436",
+   "2245",
+   "2142",
+   "2041",
+   "1781",
+   "1943",
+   "2311",
+   "3073",
+   "1954",
+   "2685",
+   "1686",
+   "1773",
+   "1107",
+   "3623",
+   "2832",
+   "136",
+   "2531",
+   "3409",
+   "2728",
+   "1286",
+   "2391",
+   "1928",
+   "2337",
+   "3629",
+   "3749",
+   "3256",
+   "2362",
+   "2250",
+   "3619",
+   "2485",
+   "1139",
+   "2034",
+   "3615",
+   "30",
+   "1592",
+   "340",
+   "3506",
+   "2811",
+   "2674",
+   "2100",
+   "1759",
+   "1153",
+   "1307",
+   "3453",
+   "1879",
+   "2341",
+   "3407",
+   "3624",
+   "3130",
+   "1477",
+   "1342",
+   "1629",
+   "1180",
+   "1516",
+   "2716",
+   "2765",
+   "3186",
+   "2023",
+   "2497",
+   "181",
+   "3755",
+   "219",
+   "3439",
+   "1566",
+   "3294",
+   "1128",
+   "1893",
+   "1643",
+   "3386",
+   "3272"
+  ],
+  "arm_order": {
+   "1129": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1217": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1268": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3025": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3754": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2392": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2372": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1367": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2324": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2887": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3329": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1800": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3617": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2355": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2617": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3680": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1934": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3455": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1476": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3166": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3263": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2464": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3572": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1667": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3079": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1936": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2532": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3478": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2169": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1922": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2215": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2416": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3380": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3287": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2097": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1281": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1512": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1813": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1996": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3557": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2857": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3084": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "374": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3221": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1242": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1082": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3631": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2359": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1481": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2596": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3703": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2417": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1147": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3690": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "13": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3442": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1466": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3281": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2309": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2683": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "179": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3534": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3191": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "357": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2779": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3644": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2637": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2162": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3732": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1377": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1019": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1634": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "218": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "240": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2628": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3326": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1939": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1645": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1845": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2243": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2078": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1259": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3739": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1883": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2209": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2929": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3434": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1561": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2432": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2253": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2010": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1999": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2653": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2828": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3001": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3131": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2207": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1246": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3429": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1825": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1108": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1531": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3756": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3672": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2216": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1092": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3345": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1713": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2577": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2616": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "343": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3243": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2820": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3091": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2844": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1174": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "209": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3126": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2739": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3114": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2139": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3057": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1012": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2925": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2677": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2591": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2957": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1902": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3035": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2084": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1619": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2292": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "24": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1251": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2350": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2449": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2912": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2192": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1127": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "122": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3565": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "251": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2904": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1480": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2749": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1098": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1518": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3305": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3502": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2909": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2063": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2649": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1944": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2247": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "142": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1248": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3456": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3311": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2889": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3109": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1348": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1739": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "16": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3195": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "202": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1381": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3414": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1332": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3371": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2015": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2768": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1880": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2164": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3445": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2143": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1627": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3425": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1670": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3484": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2752": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "296": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3669": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "286": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1537": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2943": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1620": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "337": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1964": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "167": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1738": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3753": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2997": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3376": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2517": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2691": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3709": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2549": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2482": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "332": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "331": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3112": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2667": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1571": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1187": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2396": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1967": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2374": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3718": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3324": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2759": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2475": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "201": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1122": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1779": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1262": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1980": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1392": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2798": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1389": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3608": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1219": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1857": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2567": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1300": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2180": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1508": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1287": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2849": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2225": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3606": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1069": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2871": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3063": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "322": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1094": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3089": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2265": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2589": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2880": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3071": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "152": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2790": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2563": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2465": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1551": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1837": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3323": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2357": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2395": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2070": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2825": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2107": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1237": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2069": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "168": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "295": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1000": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1705": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2447": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2870": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1546": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1305": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "292": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1314": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2439": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2785": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2585": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2284": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3188": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2787": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3315": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1897": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2921": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2807": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2404": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3156": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1498": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "334": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "127": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3569": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1375": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3563": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "288": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1132": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3276": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2299": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2829": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2028": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3682": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3540": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1582": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3428": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2314": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2275": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2534": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2239": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2969": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3513": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1265": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1372": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2436": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3724": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1886": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2457": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3691": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1656": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1927": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3518": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3744": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2118": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3335": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1548": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1233": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2605": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "164": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1379": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2246": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1130": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3069": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2268": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1601": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2985": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3245": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2229": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3081": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "279": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3401": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3743": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3505": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2303": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3536": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3567": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3415": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2398": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1823": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "143": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1659": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1580": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2918": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2583": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3224": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3350": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2751": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1843": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2622": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1040": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "247": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1446": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1258": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2035": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2977": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1001": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1325": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1730": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1591": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1154": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2713": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2230": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1746": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3367": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "301": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2381": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2602": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1535": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1361": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3041": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2305": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3595": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2724": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2853": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3697": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1793": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1087": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "371": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1148": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2071": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1908": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1776": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1644": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2941": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2386": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3098": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2422": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1203": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2328": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1075": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1322": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3280": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2383": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1691": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1675": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2662": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1834": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "321": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2780": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "281": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2704": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1733": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2905": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1653": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2908": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "19": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1072": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1658": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2590": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3748": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3203": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3549": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2471": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3241": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3198": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1402": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2817": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2515": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3362": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "349": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1162": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1858": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2571": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2323": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2273": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3633": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2801": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2195": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1609": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1005": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3150": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3653": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1906": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2304": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1593": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3048": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2505": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2859": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3424": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "102": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2380": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3710": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "227": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3750": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1216": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "260": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1393": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3351": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3757": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3538": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2467": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1051": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1131": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3204": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2736": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3223": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1646": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1236": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3751": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3479": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1021": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3752": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2136": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2266": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2441": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3327": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1137": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1802": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3494": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "163": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3369": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3719": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1220": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "32": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1418": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1436": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2245": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2142": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2041": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "1781": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1943": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2311": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3073": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1954": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2685": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1686": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1773": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1107": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3623": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2832": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "136": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "2531": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3409": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2728": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1286": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2391": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1928": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2337": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3629": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3749": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3256": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2362": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "2250": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3619": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2485": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1139": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "2034": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "3615": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "30": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "1592": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "340": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3506": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2811": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2674": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2100": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1759": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1153": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1307": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3453": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1879": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2341": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3407": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "3624": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3130": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1477": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1342": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1629": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1180": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1516": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "2716": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "2765": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3186": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2023": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "2497": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "181": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "3755": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "219": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3439": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "1566": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "3294": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "1128": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "1893": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "1643": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "3386": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "3272": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ]
+  },
+  "excluded": {}
+ },
+ "swebench": {
+  "items": [
+   "django__django-12276",
+   "sphinx-doc__sphinx-10466",
+   "django__django-11815",
+   "sphinx-doc__sphinx-9698",
+   "django__django-12155",
+   "sphinx-doc__sphinx-10673",
+   "django__django-12308",
+   "sphinx-doc__sphinx-8035",
+   "django__django-12774",
+   "sphinx-doc__sphinx-7985",
+   "django__django-9296",
+   "sphinx-doc__sphinx-9281",
+   "django__django-12039",
+   "sphinx-doc__sphinx-9367",
+   "django__django-11885",
+   "sphinx-doc__sphinx-7757",
+   "django__django-11848",
+   "sphinx-doc__sphinx-7590",
+   "django__django-11880",
+   "sphinx-doc__sphinx-8269",
+   "django__django-11964",
+   "sphinx-doc__sphinx-7748",
+   "django__django-12050",
+   "sphinx-doc__sphinx-9320",
+   "django__django-12193",
+   "sphinx-doc__sphinx-8721",
+   "django__django-12273",
+   "sphinx-doc__sphinx-9229",
+   "django__django-12304",
+   "sphinx-doc__sphinx-8265",
+   "django__django-12406",
+   "sphinx-doc__sphinx-8551",
+   "django__django-11790",
+   "sphinx-doc__sphinx-8056",
+   "django__django-12209",
+   "sphinx-doc__sphinx-9230",
+   "django__django-11999",
+   "sphinx-doc__sphinx-11510",
+   "django__django-12713",
+   "sphinx-doc__sphinx-8548",
+   "django__django-12325",
+   "sphinx-doc__sphinx-8638",
+   "django__django-12708",
+   "sphinx-doc__sphinx-10435",
+   "django__django-11951",
+   "sphinx-doc__sphinx-8475",
+   "django__django-12143",
+   "sphinx-doc__sphinx-10323",
+   "django__django-12262",
+   "sphinx-doc__sphinx-9461"
+  ],
+  "arm_order": {
+   "django__django-12276": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-10466": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "django__django-11815": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-9698": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "django__django-12155": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-10673": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "django__django-12308": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-8035": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "django__django-12774": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-7985": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "django__django-9296": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-9281": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "django__django-12039": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-9367": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "django__django-11885": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-7757": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "django__django-11848": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-7590": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "django__django-11880": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-8269": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "django__django-11964": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-7748": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "django__django-12050": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-9320": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "django__django-12193": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-8721": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "django__django-12273": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-9229": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "django__django-12304": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-8265": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "django__django-12406": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-8551": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "django__django-11790": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-8056": [
+    "baseline",
+    "fabius-loaded",
+    "fabius-doc"
+   ],
+   "django__django-12209": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-9230": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "django__django-11999": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-11510": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "django__django-12713": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-8548": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "django__django-12325": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-8638": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "django__django-12708": [
+    "fabius-loaded",
+    "fabius-doc",
+    "baseline"
+   ],
+   "sphinx-doc__sphinx-10435": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "django__django-11951": [
+    "fabius-doc",
+    "baseline",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-8475": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "django__django-12143": [
+    "fabius-loaded",
+    "baseline",
+    "fabius-doc"
+   ],
+   "sphinx-doc__sphinx-10323": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ],
+   "django__django-12262": [
+    "baseline",
+    "fabius-doc",
+    "fabius-loaded"
+   ],
+   "sphinx-doc__sphinx-9461": [
+    "fabius-doc",
+    "fabius-loaded",
+    "baseline"
+   ]
+  },
+  "django_permutation": [
+   "django__django-12276",
+   "django__django-11815",
+   "django__django-12155",
+   "django__django-12308",
+   "django__django-12774",
+   "django__django-9296",
+   "django__django-12039",
+   "django__django-11885",
+   "django__django-11848",
+   "django__django-11880",
+   "django__django-11964",
+   "django__django-12050",
+   "django__django-12193",
+   "django__django-12273",
+   "django__django-12304",
+   "django__django-12406",
+   "django__django-11790",
+   "django__django-12209",
+   "django__django-11999",
+   "django__django-12713",
+   "django__django-12325",
+   "django__django-12708",
+   "django__django-11951",
+   "django__django-12143",
+   "django__django-12262"
+  ],
+  "sphinx_permutation": [
+   "sphinx-doc__sphinx-10466",
+   "sphinx-doc__sphinx-9698",
+   "sphinx-doc__sphinx-10673",
+   "sphinx-doc__sphinx-8035",
+   "sphinx-doc__sphinx-7985",
+   "sphinx-doc__sphinx-9281",
+   "sphinx-doc__sphinx-9367",
+   "sphinx-doc__sphinx-7757",
+   "sphinx-doc__sphinx-7590",
+   "sphinx-doc__sphinx-8269",
+   "sphinx-doc__sphinx-7748",
+   "sphinx-doc__sphinx-9320",
+   "sphinx-doc__sphinx-8721",
+   "sphinx-doc__sphinx-9229",
+   "sphinx-doc__sphinx-8265",
+   "sphinx-doc__sphinx-8551",
+   "sphinx-doc__sphinx-8056",
+   "sphinx-doc__sphinx-9230",
+   "sphinx-doc__sphinx-11510",
+   "sphinx-doc__sphinx-8548",
+   "sphinx-doc__sphinx-8638",
+   "sphinx-doc__sphinx-10435",
+   "sphinx-doc__sphinx-8475",
+   "sphinx-doc__sphinx-10323",
+   "sphinx-doc__sphinx-9461"
+  ],
+  "fabius_doc_rule": "first 5 valid instances of django_permutation and of sphinx_permutation",
+  "excluded": {}
+ }
+}
