@@ -7,4 +7,4 @@ This folder fixes how Fabius 3.3.0 is measured on three established public bench
 - `schedule.json` — the seeded item order and per-item arm order, written once.
 - `harness/` — the runner, the infrastructure-vs-outcome classifier and its tests, the schedule builder, and the item loader.
 
-The SWE-bench harness and the analysis script are added in a later commit, before any SWE-bench run and before any result is scored. The results, with every receipt needed to recompute them, are published beside this folder when the runs finish — whatever they show.
+Version 1.2 of the protocol (SWE-bench patch reference, prompt identity, run order) and the SWE-bench harness, the scorers, the path audit and the analysis script were added in a second commit, before any SWE-bench run and before any result was scored; HumanEval+ generation had started under version 1.1. The results, with every receipt needed to recompute them, are published beside this folder when the runs finish — whatever they show.
