@@ -2,7 +2,7 @@
 
 This folder fixes how Fabius 3.3.0 is measured on three established public benchmarks — **SWE-bench Verified Mini** (50 real GitHub issues, official harness and images), **IFEval** (541 prompts, Google's official scorer) and **HumanEval+** (EvalPlus) — before any scored run. It was committed before the first scored run, so the questions, arms, statistics and the wording allowed for each possible result cannot be adjusted after the results are known.
 
-- `PROTOCOL.md` — the protocol, version 1.1.
+- `PROTOCOL.md` — the protocol (version 1.3; each version's changes are listed at its end).
 - `protocol-review.json` — the four independent methodology reviews of version 1 and the merged list of changes that produced version 1.1.
 - `schedule.json` — the seeded item order and per-item arm order, written once.
 - `harness/` — the runner, the infrastructure-vs-outcome classifier and its tests, the schedule builder, and the item loader.

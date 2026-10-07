@@ -34,7 +34,8 @@ def main():
     digests_path, valid_path = ROOT / "swebench-image-digests.json", ROOT / "swebench-validity.json"
     digests = json.load(open(digests_path)) if digests_path.exists() else {}
     validity = json.load(open(valid_path)) if valid_path.exists() else {}
-    todo = [r for r in present_images(rows) if r["instance_id"] not in validity]
+    todo = [r for r in present_images(rows) if r["instance_id"] not in validity or
+            not (ROOT / "validity-gold-patches" / f"{r['instance_id']}.diff").exists()]
     print(f"{len(todo)} instances to validate", flush=True)
     for r in todo:
         digests[r["instance_id"]] = sp.image_digest(r["image"])
@@ -42,20 +43,18 @@ def main():
     pinned = [{**r, "image": digests.get(r["instance_id"], r["image"])} for r in rows]
     pinned_path = ROOT / "swebench-mini-rows-pinned.json"
     pinned_path.write_text(json.dumps(pinned))
-    preds, empties = [], {}
-    for r in todo:
+    def prepare_one(r):
         iid, ref = r["instance_id"], digests[r["instance_id"]]
         log = {}
         # (a) gold through the pipeline
         root, repo, ok_a = sp.prepare_workspace(ref, r["base_commit"], log)
-        gold_ok_apply = False
+        gold_ok_apply, gold_patch = False, ""
         if ok_a:
             ap = subprocess.run(["git", "-C", str(repo), "apply", "-"], input=r["patch"], text=True, capture_output=True)
             gold_ok_apply = ap.returncode == 0
-            filtered, _ = sp.extract_patch(repo, log["workspace_asserts"]["head"])
-            preds.append({"instance_id": iid, "model_name_or_path": "gold-pipeline", "model_patch": filtered})
+            gold_patch, _ = sp.extract_patch(repo, log["workspace_asserts"]["head"])
             log["gold_extracted_equals_gold_files"] = sorted(
-                l.split(" b/")[-1] for l in filtered.splitlines() if l.startswith("diff --git")) == sorted(
+                l.split(" b/")[-1] for l in gold_patch.splitlines() if l.startswith("diff --git")) == sorted(
                 l.split(" b/")[-1] for l in r["patch"].splitlines() if l.startswith("diff --git"))
         sp.cleanup(root)
         # (b) untouched workspace through the production container and wrapper
@@ -70,16 +69,29 @@ def main():
             sp.kill_container(cname)
             empty_patch, _ = sp.extract_patch(repo, log_b["workspace_asserts"]["head"])
         sp.cleanup(root)
-        empties[iid] = empty_patch == ""
-        validity[iid] = {"workspace_ok": ok_a and ok_b, "gold_applied": gold_ok_apply, "empty_patch_is_empty": empties[iid],
-                         **log, "valid": None}
-        print(iid, "workspace", ok_a and ok_b, "gold applied", gold_ok_apply, "empty", empties[iid], flush=True)
-        valid_path.write_text(json.dumps(validity, indent=1))
+        (ROOT / "validity-gold-patches").mkdir(exist_ok=True)
+        (ROOT / "validity-gold-patches" / f"{iid}.diff").write_text(gold_patch)
+        return iid, {"workspace_ok": ok_a and ok_b, "gold_applied": gold_ok_apply, "empty_patch_is_empty": empty_patch == "",
+                     **log, "valid": None}
+
+    import concurrent.futures as cf
+    with cf.ThreadPoolExecutor(4) as ex:
+        for iid, v in ex.map(prepare_one, todo):
+            validity[iid] = v
+            print(iid, "workspace", v["workspace_ok"], "gold applied", v["gold_applied"], "empty", v["empty_patch_is_empty"],
+                  flush=True)
+            valid_path.write_text(json.dumps(validity, indent=1))
+    pending = [iid for iid, v in validity.items() if v.get("valid") is None]
+    preds = []
+    for iid in pending:
+        gp = ROOT / "validity-gold-patches" / f"{iid}.diff"
+        if gp.exists() and gp.read_text().strip():
+            preds.append({"instance_id": iid, "model_name_or_path": "gold-pipeline", "model_patch": gp.read_text()})
     if not preds:
         return
     ppath = ROOT / "validity-gold-preds.jsonl"
     ppath.write_text("".join(json.dumps(p) + "\n" for p in preds))
-    ids = [p["instance_id"] for p in preds]
+    ids = pending
     run_id = "validity-gold"
     subprocess.run([PY, "-m", "swebench.harness.run_evaluation", "-d", str(pinned_path), "-p", str(ppath),
                     "-id", run_id, "--max_workers", "2", "-i", *ids], cwd=ROOT / "eval", check=False)

@@ -20,6 +20,9 @@ DOCKER = "/usr/local/bin/docker"
 EXCLUDES = [":(exclude).claude", ":(exclude)tests", ":(exclude)testing", ":(glob,exclude)**/test_*.py",
             ":(glob,exclude)**/*_tests.py", ":(glob,exclude)**/conftest.py"]
 CONDA = "source /opt/miniconda3/bin/activate testbed >/dev/null 2>&1"
+# The official images commit their environment setup on top of the base commit ("SWE-bench"):
+# file modes everywhere, and for Sphinx the tox.ini / setup.py edits of the official spec.
+ENV_FILES = {"tox.ini", "setup.py", "setup.cfg", "pyproject.toml"}
 
 
 def sh(args, cwd=None, check=True, timeout=1800):
@@ -42,12 +45,24 @@ def image_digest(image):
 def prepare_workspace(image_ref, base_commit, log):
     root = Path(tempfile.mkdtemp(prefix="fbw-", dir="/private/tmp"))
     repo = root / "repo"
-    cname = f"fbcp-{uuid.uuid4().hex[:12]}"
-    sh([DOCKER, "create", "--name", cname, image_ref, "true"])
-    try:
-        sh([DOCKER, "cp", f"{cname}:/testbed", str(repo)], timeout=1800)
-    finally:
-        sh([DOCKER, "rm", "-f", cname], check=False)
+    # Stream /testbed out of a fresh, network-less container as a tar archive (docker cp proved
+    # unreliable on macOS: "chtimes ... no such file or directory"). Up to three attempts.
+    for attempt in range(3):
+        shutil.rmtree(repo, ignore_errors=True)
+        repo.mkdir()
+        cname = f"fbcp-{uuid.uuid4().hex[:12]}"
+        producer = subprocess.Popen([DOCKER, "run", "--rm", "--network", "none", "--name", cname, image_ref,
+                                     "tar", "-C", "/testbed", "-cf", "-", "."], stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE)
+        consumer = subprocess.run(["tar", "-C", str(repo), "-xf", "-"], stdin=producer.stdout, capture_output=True)
+        producer.stdout.close()
+        perr = producer.communicate(timeout=1800)[1]
+        if producer.returncode == 0 and consumer.returncode == 0 and (repo / ".git").exists():
+            break
+        log.setdefault("copy_retries", []).append((producer.returncode, consumer.returncode,
+                                                   (perr or b"").decode()[-300:], consumer.stderr.decode()[-300:]))
+    else:
+        raise RuntimeError(f"could not copy /testbed out of {image_ref}: {log.get('copy_retries')}")
     git(repo, "config", "core.fileMode", "false")
     for tag in git(repo, "tag", "-l").stdout.split():
         git(repo, "tag", "-d", tag)
@@ -64,26 +79,26 @@ def prepare_workspace(image_ref, base_commit, log):
     raw = git(repo, "diff", "--raw", "--no-renames", "--abbrev=40", base_commit, head, check=False).stdout.strip() \
         if head != base_commit else ""
     # ":<old mode> <new mode> <old blob> <new blob> <status>\t<path>" — same blob means same content
-    entries = [l.split()[:5] for l in raw.splitlines() if l.startswith(":")]
-    content_changes = sum(1 for e in entries if e[2] != e[3])
-    content_lines = content_changes
-    binary_changes = 0
+    entries = [(l.split("\t")[0].split(), l.split("\t", 1)[1]) for l in raw.splitlines() if l.startswith(":")]
+    changed_paths = sorted(path for meta, path in entries if meta[2] != meta[3])
+    content_changes = len(changed_paths)
+    env_only = all(p in ENV_FILES for p in changed_paths)
     all_revs = sorted(git(repo, "rev-list", "--all").stdout.split())
     head_revs = sorted(git(repo, "rev-list", "HEAD").stdout.split())
     unreachable = git(repo, "fsck", "--unreachable", "--no-reflogs", "--no-progress", check=False).stdout.strip()
     status = git(repo, "status", "--porcelain").stdout.strip()
     asserts = {
-        "head_is_base_or_mode_only_child": head == base_commit or (
-            parent == base_commit and content_lines == 0 and binary_changes == 0),
+        "head_is_base_or_env_child": head == base_commit or (parent == base_commit and env_only),
         "no_commit_beyond_head": all_revs == head_revs,
         "no_unreachable_objects": unreachable == "",
         "status_clean": status == "",
         "head": head, "head_parent": parent, "head_ref": head_ref, "commits_reachable": len(head_revs),
-        "head_vs_base_content_changes": content_changes, "head_vs_base_mode_changes": len(entries),
+        "head_vs_base_content_changes": content_changes, "head_vs_base_changed_paths": changed_paths,
+        "head_vs_base_entries": len(entries),
         "status_sample": status[:400], "unreachable_sample": unreachable[:400],
     }
     log["workspace_asserts"] = asserts
-    ok = all(asserts[k] for k in ("head_is_base_or_mode_only_child", "no_commit_beyond_head",
+    ok = all(asserts[k] for k in ("head_is_base_or_env_child", "no_commit_beyond_head",
                                   "no_unreachable_objects", "status_clean"))
     return root, repo, ok
 
