@@ -64,6 +64,11 @@ def prepare_workspace(image_ref, base_commit, log):
     else:
         raise RuntimeError(f"could not copy /testbed out of {image_ref}: {log.get('copy_retries')}")
     git(repo, "config", "core.fileMode", "false")
+    # The index was written inside Linux; through the bind mount inode/dev/ctime differ, which makes every
+    # git status re-hash all files (over 120 s on Django). Compare size and mtime only, and refresh once.
+    git(repo, "config", "core.checkStat", "minimal")
+    git(repo, "config", "core.trustctime", "false")
+    git(repo, "update-index", "-q", "--refresh", check=False)
     for tag in git(repo, "tag", "-l").stdout.split():
         git(repo, "tag", "-d", tag)
     head_ref = git(repo, "symbolic-ref", "-q", "HEAD", check=False).stdout.strip()
