@@ -26,6 +26,10 @@ ARMS = {
     "fabius-doc": ("fabius: ", True),
     "fabius-loaded": ("/fabius ", True),
 }
+# Part B: each skill invoked directly by its own slash command (its contract enters the context).
+SKILLS = ["parcus", "disciplina", "decor", "cohors", "archivum", "mercatus", "praesidium", "ludus", "catena",
+          "machina", "scientia", "doctrina", "fortuna", "concilium"]
+ARMS.update({f"fabius-{k}": (f"/fabius:fabius-{k} ", True) for k in SKILLS})
 DENY = ["Read(//Users/**)", "Edit(//Users/**)", "Write(//Users/**)", "Read(//private/var/folders/**)"]
 
 

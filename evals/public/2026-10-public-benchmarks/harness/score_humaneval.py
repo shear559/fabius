@@ -44,6 +44,8 @@ def main():
     work = OUT / "evalplus"
     work.mkdir(exist_ok=True)
     recs = records("humaneval")
+    global ARMS
+    ARMS = sorted({r["arm"] for r in recs})
     all_ids = [json.loads(l)["task_id"] for l in open(ROOT / "humanevalplus/cache/HumanEvalPlus-v0.1.10.jsonl")]
     results = {}
     for arm in ARMS:

@@ -27,7 +27,7 @@ from bench_items import load_items  # noqa: E402
 from classify import classify  # noqa: E402
 
 ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
-STOP_7D, PAUSE_5H = 0.75, 0.60
+STOP_7D, PAUSE_5H = 0.90, 0.60
 LOCK = threading.Lock()
 STATE = {"meter": None, "stop": False}
 
@@ -77,6 +77,10 @@ def run_arm(bench, item, prompt, arm):
         return json.loads(res_path.read_text())
     arm_dir.mkdir(parents=True, exist_ok=True)
     discarded, n, retries = [], 0, 0
+    for old in sorted(arm_dir.glob("attempt-*"), key=lambda d: int(d.name.split("-")[1])):
+        n = max(n, int(old.name.split("-")[1]))  # an attempt cut short by a stop is kept and discarded
+        if not (old / "summary.json").exists():
+            discarded.append({"attempt": n, "kind": "INTERRUPTED", "reason": "runner stopped mid-attempt"})
     while True:
         n += 1
         cwd = tempfile.mkdtemp(prefix="fbr-", dir="/private/tmp")
@@ -130,7 +134,9 @@ def main():
     log_budget(f"{a.bench}: start, {len(items)} items × arms {sorted(wanted)}, {a.workers} workers")
     done = 0
     with cf.ThreadPoolExecutor(a.workers) as ex:
-        futs = [ex.submit(run_item, a.bench, i, prompts[i], [x for x in sched["arm_order"][i] if x in wanted])
+        futs = [ex.submit(run_item, a.bench, i, prompts[i],
+                          [x for x in sched["arm_order"][i] if x in wanted] +
+                          sorted(x for x in wanted if x not in sched["arm_order"][i]))
                 for i in items]
         for f in cf.as_completed(futs):
             item, res = f.result()

@@ -39,6 +39,10 @@ def run_arm(item, row, image_ref, arm, rep):
         return json.loads(res_path.read_text())
     arm_dir.mkdir(parents=True, exist_ok=True)
     discarded, n, retries = [], 0, 0
+    for old in sorted(arm_dir.glob("attempt-*"), key=lambda d: int(d.name.split("-")[1])):
+        n = max(n, int(old.name.split("-")[1]))  # an attempt cut short by a stop is kept and discarded
+        if not (old / "summary.json").exists():
+            discarded.append({"attempt": n, "kind": "INTERRUPTED", "reason": "runner stopped mid-attempt"})
     while True:
         n += 1
         adir = arm_dir / f"attempt-{n}"
@@ -105,6 +109,7 @@ def main():
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--items", default="")
+    ap.add_argument("--arms", default="", help="Part B: run only these arms (the replicate's baseline is reused)")
     a = ap.parse_args()
     sched = json.load(open(ROOT / "schedule.json"))["swebench"]
     valid = json.load(open(ROOT / "swebench-validity.json"))
@@ -118,6 +123,8 @@ def main():
         items = items[: a.limit]
 
     def arms_for(i):
+        if a.arms:
+            return a.arms.split(",")
         keep = {"baseline", "fabius-loaded"} | ({"fabius-doc"} if a.replicate == 1 and i in doc_subset else set())
         return [x for x in sched["arm_order"][i] if x in keep]
 
