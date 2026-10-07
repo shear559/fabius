@@ -1,0 +1,90 @@
+{
+  "benchmark": "LAB-Bench (Laurent et al. 2024, arXiv:2407.10362), subsets ProtocolQA + SeqQA, multiple choice",
+  "dataset": {
+    "hf_repo": "futurehouse/lab-bench",
+    "hf_revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+    "split": "train (= public MC release)",
+    "files": {
+      "ProtocolQA": {
+        "hf_path": "ProtocolQA/train-00000-of-00001.parquet",
+        "sha256": "d48d455638ff49b0c02ae96135703f239ea865a5936233045ee010a5d819239a",
+        "rows": 108
+      },
+      "SeqQA": {
+        "hf_path": "SeqQA/train-00000-of-00001.parquet",
+        "sha256": "5864776d3d85774f91d82432e30ac31e9222f1670621e8ea141414173c5e9b46",
+        "rows": 600
+      }
+    },
+    "licence": "CC-BY-SA-4.0"
+  },
+  "official_harness": {
+    "repo": "https://github.com/Future-House/LAB-Bench",
+    "commit": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838",
+    "files": "labbench/utils.py, labbench/zero_shot.py, labbench/evaluator.py, ProtocolQA/task.py, SeqQA/task.py",
+    "parser": "chembench==0.3.0 (pinned in LAB-Bench uv.lock)",
+    "chembench_wheel_sha256": "bf8bb8ec91c12e8b10ba2db26b88d0228ac464d425ac6729a6e12b7dae2d71ee",
+    "github_jsonl_identical_to_hf": true
+  },
+  "eligible": {
+    "ProtocolQA": 108,
+    "SeqQA": 599
+  },
+  "excluded": [
+    {
+      "item": "SeqQA/ded3f6ac-c54c-4626-86b4-cc607a44334f",
+      "subtask": "PCR-geneprimers-enz-v1-public",
+      "reason": "ideal answer text also appears as a distractor option (two identical options, only one scored correct)"
+    }
+  ],
+  "sampling": "ProtocolQA: all eligible ids. SeqQA: sorted eligible ids, numpy.random.default_rng(20261006).permutation, first N-108. Each list keeps its permuted order; ProtocolQA first. N=220.",
+  "choice_shuffle": "official randomize_choices after random.seed('20261006:<uuid>') per item (Python 3.11.15)",
+  "n_items": 220,
+  "per_subset": {
+    "ProtocolQA": 108,
+    "SeqQA": 112
+  },
+  "per_subtask": {
+    "ORF-seq-AAid-v1-public": 6,
+    "ORF-seq-AAseq-v1-public": 9,
+    "ORF-seq-numlen-v1-public": 4,
+    "ORF-transeff-v1-public": 8,
+    "PCR-gene-enzprimers-v1-public": 7,
+    "PCR-gene-gibshindprimers-v1-public": 8,
+    "PCR-gene-gibssmaprimers-v1-public": 8,
+    "PCR-geneprimers-enz-v1-public": 5,
+    "PCR-len-primers-v1-public": 10,
+    "PCR-primers-len-v1-public": 7,
+    "PCR-seq-enzprimers-v1-public": 6,
+    "PCR-seq-primers-v1-public": 9,
+    "Prop-seq-gcpercent-v1-public": 10,
+    "RE-seq-lenfrags-v1-public": 7,
+    "RE-seq-numfrags-v1-public": 8,
+    "protocolqa-v1-public": 108
+  },
+  "n_choices": {
+    "5": 180,
+    "6": 30,
+    "7": 9,
+    "8": 1
+  },
+  "answer_letter": {
+    "A": 32,
+    "B": 45,
+    "C": 43,
+    "D": 42,
+    "E": 50,
+    "F": 8
+  },
+  "insufficient_letter": {
+    "A": 48,
+    "B": 44,
+    "C": 47,
+    "D": 44,
+    "E": 32,
+    "F": 5
+  },
+  "avg_prompt_chars": 4265,
+  "max_prompt_chars": 15398,
+  "items_jsonl_sha256": "c0b1c6965155bfefc7d9856b189e9f7ae77a1708f853f118152af4f2cda49ada"
+}

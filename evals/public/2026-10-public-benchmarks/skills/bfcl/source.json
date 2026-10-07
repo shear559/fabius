@@ -1,0 +1,99 @@
+{
+  "benchmark": "Berkeley Function Calling Leaderboard (BFCL v4), non-live AST categories",
+  "categories": [
+    "simple_python",
+    "multiple",
+    "parallel",
+    "parallel_multiple",
+    "irrelevance"
+  ],
+  "upstream": {
+    "repo": "https://github.com/ShishirPatil/gorilla",
+    "subdir": "berkeley-function-call-leaderboard",
+    "commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+    "pypi": "bfcl-eval==2026.3.23",
+    "wheel": "bfcl_eval-2026.3.23-py3-none-any.whl",
+    "wheel_sha256": "3bb6dfa5f0c68ad403c9ec50b00db2bb3b4cc9b38ab1ff33f48fe30d853d3a0a",
+    "wheel_files_verified_against_RECORD": 187,
+    "files_byte_identical_to_git_commit": [
+      "bfcl_eval/data/BFCL_v4_simple_python.json",
+      "bfcl_eval/data/BFCL_v4_multiple.json",
+      "bfcl_eval/data/BFCL_v4_parallel.json",
+      "bfcl_eval/data/BFCL_v4_parallel_multiple.json",
+      "bfcl_eval/data/BFCL_v4_irrelevance.json",
+      "bfcl_eval/data/possible_answer/BFCL_v4_simple_python.json",
+      "bfcl_eval/data/possible_answer/BFCL_v4_multiple.json",
+      "bfcl_eval/data/possible_answer/BFCL_v4_parallel.json",
+      "bfcl_eval/data/possible_answer/BFCL_v4_parallel_multiple.json",
+      "bfcl_eval/eval_checker/ast_eval/ast_checker.py",
+      "bfcl_eval/eval_checker/eval_runner.py",
+      "bfcl_eval/model_handler/utils.py",
+      "bfcl_eval/utils.py",
+      "bfcl_eval/constants/default_prompts.py",
+      "bfcl_eval/constants/model_config.py",
+      "bfcl_eval/model_handler/api_inference/claude.py"
+    ]
+  },
+  "licence": "Apache-2.0 (gorilla repo licence; bfcl_eval/data/README.md front matter: license: apache-2.0)",
+  "data_files_sha256": {
+    "bfcl_eval/data/BFCL_v4_simple_python.json": "82dd63ba502eb2520c6b5d1d9a5c4b590e03ff261565175561f6228a367d1991",
+    "bfcl_eval/data/BFCL_v4_multiple.json": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+    "bfcl_eval/data/BFCL_v4_parallel.json": "19f51a82eff42e5d62541aa500115a056eb78f437c2ba1f10415fd7c8e5dda84",
+    "bfcl_eval/data/BFCL_v4_parallel_multiple.json": "8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579",
+    "bfcl_eval/data/BFCL_v4_irrelevance.json": "2b6ed4c2e992cdcf5f1678a701851f944bef7550ee026ed1ddb89efed5be01a6",
+    "bfcl_eval/data/possible_answer/BFCL_v4_simple_python.json": "90cd5bc653690ee8e459b5b3f3fc9458606f7f3fcbf795bb51b7dc581f8c86dc",
+    "bfcl_eval/data/possible_answer/BFCL_v4_multiple.json": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047",
+    "bfcl_eval/data/possible_answer/BFCL_v4_parallel.json": "8a6aa19c1adddc6a5a2f7e40f9dbf30cc7e95815e7b830c90589ab318229e0f0",
+    "bfcl_eval/data/possible_answer/BFCL_v4_parallel_multiple.json": "5ebf24f458c1f16300c05505d83d6f0a1b68b79be273a033febd0d4f840507e3"
+  },
+  "code_files_sha256": {
+    "bfcl_eval/eval_checker/ast_eval/ast_checker.py": "2aae7a68461a8f76c0be3894c8901b66b56967a1989d3ab066051e3fb97f1538",
+    "bfcl_eval/eval_checker/eval_runner.py": "b1033684908819ccb312d4d0e2c563359d69247412f00206013b2292b0e3ce81",
+    "bfcl_eval/model_handler/utils.py": "f78fd3edce603b333dc9a88ee2c041dc547d51f71aa449ffebc044c4b1e353f3",
+    "bfcl_eval/utils.py": "3703b9bb63f83581c60b8e0b82aac74c360c9ca781e99e7d4eb28b0cce2285dd",
+    "bfcl_eval/constants/default_prompts.py": "4cc033be99ae2b10bbde30e7751ddcac5468cb45841b6dc7b3a97b92adf38205",
+    "bfcl_eval/constants/model_config.py": "ec72b8499f140c9d870cebc909c895facb3cb26febc2d9146c8f1dfdea7bdcbc",
+    "bfcl_eval/model_handler/api_inference/claude.py": "b72a0a329f9a37658f7431801a2ebee53b20893f4040142b935cb40291f6ebef"
+  },
+  "sampling": {
+    "N": 200,
+    "per_category": 40,
+    "seed": 20261006,
+    "eligible": {
+      "simple_python": 400,
+      "multiple": 200,
+      "parallel": 200,
+      "parallel_multiple": 200,
+      "irrelevance": 240
+    },
+    "method": "per category: sorted(ids) (string order) -> numpy.random.default_rng(seed).permutation(len) with a fresh generator per category -> first 40",
+    "numpy": "2.4.6"
+  },
+  "container": {
+    "image": "python@sha256:0dd364ba7e10242f07755449e3a3d0e35f9efd987952737b90def6709ab0c5ce",
+    "tag_when_pinned": "python:3.11-slim",
+    "python": "3.11.17",
+    "machine": "x86_64",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "3.0.1",
+      "tree-sitter": "0.21.3",
+      "tree-sitter-java": "0.21.0",
+      "tree-sitter-javascript": "0.21.4",
+      "filelock": "3.20.0",
+      "tenacity": "9.1.4",
+      "python-dotenv": "1.2.2",
+      "overrides": "7.7.0",
+      "tqdm": "4.67.3"
+    },
+    "registry_entry": {
+      "claude-sonnet-4-5-20250929": {
+        "model_name": "claude-sonnet-4-5-20250929",
+        "is_fc_model": false,
+        "underscore_to_dot": false
+      }
+    }
+  },
+  "deps_lock_sha256": "4d18c872bfc698f8300db8ee58d557d6bb427c0e9abb9eeaad34f7b3b0dcdd27",
+  "items_jsonl_sha256": "4347d4e62c77d2463122dfabee535da3584f0f8973645778a9c115e6e7a013cf"
+}

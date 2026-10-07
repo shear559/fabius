@@ -27,7 +27,7 @@ from bench_items import load_items  # noqa: E402
 from classify import classify  # noqa: E402
 
 ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
-STOP_7D, PAUSE_5H = 0.90, 0.60
+STOP_7D, PAUSE_5H = 0.97, 0.90
 LOCK = threading.Lock()
 STATE = {"meter": None, "stop": False}
 
@@ -122,12 +122,15 @@ def run_item(bench, item, prompt, arms):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("bench", choices=["humaneval", "ifeval"])
+    ap.add_argument("bench")
     ap.add_argument("--arms", default="baseline,fabius-doc,fabius-loaded")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
-    sched = json.load(open(ROOT / "schedule.json"))[a.bench]
+    full = json.load(open(ROOT / "schedule.json"))
+    if a.bench not in full:  # Part B benchmarks have their own seeded schedule
+        full.update(json.load(open(ROOT / "schedule-skills.json")))
+    sched = full[a.bench]
     prompts = dict(load_items(a.bench))
     wanted = set(a.arms.split(","))
     items = sched["items"][: a.limit] if a.limit else sched["items"]

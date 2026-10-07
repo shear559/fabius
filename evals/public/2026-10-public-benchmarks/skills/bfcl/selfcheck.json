@@ -1,0 +1,326 @@
+{
+  "items": 200,
+  "scorer": "score.py (official bfcl-eval 2026.3.23 eval_runner path, in container)",
+  "sets": {
+    "gold_first": {
+      "expectation": "pass all",
+      "n": 200,
+      "passed": 200,
+      "passed_lenient": 200,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        }
+      }
+    },
+    "gold_minimal": {
+      "expectation": "pass all",
+      "n": 200,
+      "passed": 200,
+      "passed_lenient": 200,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        }
+      }
+    },
+    "gold_reorder": {
+      "expectation": "pass all",
+      "n": 200,
+      "passed": 200,
+      "passed_lenient": 200,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        }
+      }
+    },
+    "wrong_other_item": {
+      "expectation": "fail all",
+      "n": 200,
+      "passed": 0,
+      "passed_lenient": 0,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        }
+      }
+    },
+    "wrong_value": {
+      "expectation": "fail all",
+      "n": 200,
+      "passed": 0,
+      "passed_lenient": 0,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        }
+      }
+    },
+    "info_refusal": {
+      "expectation": "AST categories fail; irrelevance passes (no call is the right answer there)",
+      "n": 200,
+      "passed": 40,
+      "passed_lenient": 40,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 0
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        }
+      }
+    },
+    "info_fenced": {
+      "expectation": "official: AST categories fail (decoder does not strip a ```python fence), irrelevance passes; passed_lenient: pass all",
+      "n": 200,
+      "passed": 40,
+      "passed_lenient": 200,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 40
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 40
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 40
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 0,
+          "passed_lenient": 40
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        }
+      }
+    },
+    "info_no_brackets": {
+      "expectation": "pass all (the official decoder adds the missing outer brackets)",
+      "n": 200,
+      "passed": 200,
+      "passed_lenient": 200,
+      "per_category": {
+        "simple_python": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "parallel_multiple": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        },
+        "irrelevance": {
+          "n": 40,
+          "passed": 40,
+          "passed_lenient": 40
+        }
+      }
+    }
+  },
+  "gold_failures": [],
+  "wrong_passes": [],
+  "sandbox_checks": [
+    {
+      "check": "write_to_harness_dir",
+      "passed": 0,
+      "error_type": "ast_decoder:decoder_failed",
+      "error": "[\"Invalid syntax. Failed to decode AST. [Errno 30] Read-only file system: '/harness/SANDBOX_ESCAPE_PROBE'\"]"
+    },
+    {
+      "check": "open_network_socket",
+      "passed": 0,
+      "error_type": "ast_decoder:decoder_failed",
+      "error": "[\"Invalid syntax. Failed to decode AST. [Errno 101] Network is unreachable\"]"
+    },
+    {
+      "check": "runaway_arithmetic",
+      "passed": 0,
+      "error_type": "harness:timeout",
+      "error": "exceeded 10s"
+    },
+    {
+      "check": "probe_file_absent_on_host",
+      "ok": true
+    }
+  ],
+  "data_notes": [
+    "Official data quirk (5 cases in the full non-live data, 2 sampled: parallel_multiple_87 kinematics.distance.initial_velocity, parallel_multiple_119 league_stats.get_top_scorer.league_name): possible_answer marks a parameter omittable (\"\") that the function schema lists as required. The official checker enforces `required` first, so omitting it fails; gold_minimal therefore keeps schema-required parameters (an earlier run that dropped them failed exactly these 2 items with simple_function_checker:missing_required).",
+    "Official data quirk outside the sample (full-data check only): parallel_multiple_12 and parallel_multiple_26 list a parameter in possible_answer that the function schema does not define (permeability for calculate_voltage_difference; type for bank.calculate_balance), marked omittable. Passing it is rejected by the official checker (simple_function_checker:unexpected_param), so gold_first fails exactly these 2 of 1,240 entries while gold_minimal passes all 1,240."
+  ],
+  "full_data_gold": {
+    "gold_first": {
+      "n": 1240,
+      "passed": 1238,
+      "failures": [
+        {
+          "item": "parallel_multiple_12",
+          "error_type": "parallel_function_checker_no_order:cannot_find_match",
+          "error": "[\"Could not find a matching function among index [1] of model output for index 1 of possible answers.\", {\"Model Result Index 1\": {\"sub_error\": [\"Unexpected parameter: 'permeability'.\"], \"sub_error_type\": \"simple_function_checker:unexpected_param\", \"model_output_item\": {\"calculate_voltage_difference\": {\"electric_field\": 5.0, \"distance\": 3.0, \"charge\": 0.0, \"permeability\": 0.1}}, \"possible_answer_item\": {\"calculate_voltage_difference\": {\"electric_field\": [5.0], \"distance\": [3.0], \"charge\": [0.0, \"\"], \"permeability\": [\"\", 0.1]}}}}]",
+          "explanation": "possible_answer lists 'permeability' (omittable) for calculate_voltage_difference, whose schema has no such parameter; official checker: unexpected_param"
+        },
+        {
+          "item": "parallel_multiple_26",
+          "error_type": "parallel_function_checker_no_order:cannot_find_match",
+          "error": "[\"Could not find a matching function among index [1] of model output for index 1 of possible answers.\", {\"Model Result Index 1\": {\"sub_error\": [\"Unexpected parameter: 'type'.\"], \"sub_error_type\": \"simple_function_checker:unexpected_param\", \"model_output_item\": {\"bank.calculate_balance\": {\"account\": \"00125648\", \"transactions\": [], \"type\": \"credit\", \"starting_balance\": 0.0}}, \"possible_answer_item\": {\"bank.calculate_balance\": {\"account\": [\"00125648\"], \"transactions\": [[], \"\"], \"type\": [\"credit\", \"\"], \"starting_balance\": [\"\", 0.0]}}}}]",
+          "explanation": "possible_answer lists 'type' (omittable) for bank.calculate_balance, whose schema has no such top-level parameter; official checker: unexpected_param"
+        }
+      ]
+    },
+    "gold_minimal": {
+      "n": 1240,
+      "passed": 1240,
+      "failures": []
+    }
+  },
+  "unexplained_gold_failures": 0
+}

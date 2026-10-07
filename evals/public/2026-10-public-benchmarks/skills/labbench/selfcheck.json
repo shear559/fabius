@@ -1,0 +1,344 @@
+{
+  "ok": true,
+  "summary": {
+    "gold_pass_rate": 1.0,
+    "wrong_pass_rate": 0.0,
+    "gold_variants": 6,
+    "wrong_variants": 6,
+    "items": 220,
+    "differential_mismatches_vs_upstream": 0
+  },
+  "provenance": {
+    "parquet_ProtocolQA_sha256_ok": true,
+    "parquet_SeqQA_sha256_ok": true,
+    "chembench_wheel_sha256_ok": true,
+    "chembench_unpacked_equals_wheel": true,
+    "labbench_files_equal_pinned_git_blobs": {
+      "labbench/utils.py": true,
+      "labbench/zero_shot.py": true,
+      "labbench/evaluator.py": true,
+      "ProtocolQA/task.py": true,
+      "SeqQA/task.py": true,
+      "ProtocolQA/protocolqa-v1-public.jsonl": true,
+      "LICENSE": true
+    }
+  },
+  "verbatim_identity": {
+    "definitions": 17,
+    "identical": 17,
+    "mismatches": []
+  },
+  "differential_vs_upstream": {
+    "eligible_items_checked": 707,
+    "mismatches_on_eligible": {
+      "prompt": 0,
+      "choices": 0,
+      "letters": 0
+    },
+    "items_jsonl_rows_differing_from_upstream": 0,
+    "variant_x_item_checks": 3960,
+    "mismatches_on_variants": {
+      "answer": 0,
+      "correct": 0,
+      "sure": 0
+    },
+    "examples": []
+  },
+  "variants": {
+    "gold_tag": {
+      "kind": "gold",
+      "example (t=C,u=B,w=A)": "[ANSWER]C[/ANSWER]",
+      "n": 220,
+      "passed": 220,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        220,
+        220
+      ],
+      "ok": true
+    },
+    "gold_cot": {
+      "kind": "gold",
+      "example (t=C,u=B,w=A)": "Let me think step by step.\nOption (A) does not fit the protocol/sequence.\nOption (B) is not needed: the question gives e",
+      "n": 220,
+      "passed": 220,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        220,
+        220
+      ],
+      "ok": true
+    },
+    "gold_bold_line": {
+      "kind": "gold",
+      "example (t=C,u=B,w=A)": "Reasoning...\n\n**Final answer:** [ANSWER]C[/ANSWER]",
+      "n": 220,
+      "passed": 220,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        220,
+        220
+      ],
+      "ok": true
+    },
+    "gold_tag_spaces": {
+      "kind": "gold",
+      "example (t=C,u=B,w=A)": "[ANSWER] C [/ANSWER]",
+      "n": 220,
+      "passed": 220,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        220,
+        220
+      ],
+      "ok": true
+    },
+    "gold_tag_with_text": {
+      "kind": "gold",
+      "example (t=C,u=B,w=A)": "[ANSWER]C. <ideal option text>[/ANSWER]",
+      "n": 220,
+      "passed": 220,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        220,
+        220
+      ],
+      "ok": true
+    },
+    "gold_bare_letter": {
+      "kind": "gold",
+      "example (t=C,u=B,w=A)": "C",
+      "n": 220,
+      "passed": 220,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        220,
+        220
+      ],
+      "ok": true
+    },
+    "wrong_tag": {
+      "kind": "wrong",
+      "example (t=C,u=B,w=A)": "[ANSWER]A[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 0,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        0,
+        0
+      ],
+      "ok": true
+    },
+    "wrong_cot_praises_gold": {
+      "kind": "wrong",
+      "example (t=C,u=B,w=A)": "Option (C) looks tempting: <ideal option text>\nBut on balance I pick (A).\n[ANSWER]A[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 0,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        0,
+        0
+      ],
+      "ok": true
+    },
+    "insufficient_tag": {
+      "kind": "wrong",
+      "example (t=C,u=B,w=A)": "[ANSWER]B[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 0,
+      "chose_insufficient": 220,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        0,
+        0
+      ],
+      "ok": true
+    },
+    "out_of_range_letter": {
+      "kind": "wrong",
+      "example (t=C,u=B,w=A)": "[ANSWER]Z[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 0,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        0,
+        0
+      ],
+      "ok": true
+    },
+    "untagged_prose": {
+      "kind": "unparsed",
+      "example (t=C,u=B,w=A)": "The correct answer is (C).",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 0,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        0,
+        0
+      ],
+      "ok": true
+    },
+    "empty": {
+      "kind": "unparsed",
+      "example (t=C,u=B,w=A)": "",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 0,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 220,
+      "expected_passed/passed_lenient": [
+        0,
+        0
+      ],
+      "ok": true
+    },
+    "bold_inside_tag": {
+      "kind": "format",
+      "example (t=C,u=B,w=A)": "[ANSWER]**C**[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 220,
+      "expected_passed/passed_lenient": [
+        0,
+        220
+      ],
+      "ok": true
+    },
+    "paren_inside_tag": {
+      "kind": "format",
+      "example (t=C,u=B,w=A)": "[ANSWER](C)[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 220,
+      "expected_passed/passed_lenient": [
+        0,
+        220
+      ],
+      "ok": true
+    },
+    "lowercase_tags": {
+      "kind": "format",
+      "example (t=C,u=B,w=A)": "[answer]C[/answer]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 220,
+      "expected_passed/passed_lenient": [
+        0,
+        220
+      ],
+      "ok": true
+    },
+    "lowercase_letter": {
+      "kind": "format",
+      "example (t=C,u=B,w=A)": "[ANSWER]c[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 220,
+      "expected_passed/passed_lenient": [
+        0,
+        220
+      ],
+      "ok": true
+    },
+    "option_word_inside_tag": {
+      "kind": "format",
+      "example (t=C,u=B,w=A)": "[ANSWER]Option C[/ANSWER]",
+      "n": 220,
+      "passed": 0,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 0,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        0,
+        220
+      ],
+      "ok": true
+    },
+    "two_tags_wrong_then_gold": {
+      "kind": "quirk",
+      "example (t=C,u=B,w=A)": "First guess: [ANSWER]A[/ANSWER]. On reflection the answer is [ANSWER]C[/ANSWER].",
+      "n": 220,
+      "passed": 43,
+      "passed_lenient": 220,
+      "chose_insufficient": 0,
+      "parsed": 220,
+      "upstream_would_crash": 0,
+      "expected_passed/passed_lenient": [
+        43,
+        220
+      ],
+      "ok": true
+    }
+  },
+  "chance_level": {
+    "observed_accuracy": 0.2318,
+    "expected_accuracy_mean_1_over_k": 0.1928
+  },
+  "score_py_cli": {
+    "gold": {
+      "exit_code": 0,
+      "rows": 220,
+      "passed": 220,
+      "ok": true
+    },
+    "wrong": {
+      "exit_code": 0,
+      "rows": 220,
+      "passed": 0,
+      "ok": true
+    }
+  },
+  "problems": [],
+  "explained_failures": [
+    "No gold-answer failures: every gold variant passes on all items.",
+    "format variants (bold/parenthesised/lowercase letter, lowercase tags, 'Option X' inside the tag) FAIL the official parser by design: chembench MCQ_REGEX_TEMPLATE_1 needs an uppercase letter directly inside [ANSWER]...[/ANSWER]; passed_lenient (secondary, not official) accepts them.",
+    "upstream_would_crash counts outputs for which upstream prepare_mcq_answer returns None (untagged, no comma, no space, not one capital letter) and run_regex then raises TypeError, aborting the upstream run; score.py scores them as unparsed (answer null, passed 0, sure 1), the same way upstream scores every other unparsed output.",
+    "two_tags_wrong_then_gold passes officially only when the correct letter sorts first (43/220): upstream sorts the set of tagged letters and keeps the first; multi_tag_conflict flags it."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+ "official_code_pinned": {
+  "repo": "https://github.com/xiaowu0162/LongMemEval",
+  "commit": "9e0b455f4ef0e2ab8f2e582289761153549043fc",
+  "git_blobs_match": true,
+  "files": [
+   "LICENSE",
+   "evaluate_qa.py",
+   "print_qa_metrics.py",
+   "run_generation.py"
+  ]
+ },
+ "reader_prompts": {
+  "sample_reproduced": true,
+  "items_byte_identical_to_official_prepare_prompt": "120/120",
+  "all_500_built_untruncated_without_has_answer": true,
+  "all_500_sessions_in_date_order": "500/500",
+  "all_500_end_with_date_question_answer_cue": "500/500"
+ },
+ "judge_prompts": {
+  "byte_identical_to_official_get_anscheck_prompt": "360/360",
+  "abstention_template_used": "8 (= *_abs items in sample: 8)"
+ },
+ "verdict_to_passed": {
+  "rule": "passed = int('yes' in judgement.strip().lower())  (evaluate_qa.py lines 112-113)",
+  "verdict_vectors": {
+   "ok": true,
+   "cases": 12,
+   "note": "incl. 'No. It never says yes.' -> 1 by the official rule, flagged verdict_ambiguous"
+  },
+  "mixed_set_exact": true,
+  "unknown_item_rejected": true,
+  "missing_judgement_rejected": true
+ },
+ "string_match_secondary": {
+  "gold": {
+   "pass_rate": 1.0,
+   "n": 103
+  },
+  "gold_failures": [],
+  "wrong": {
+   "pass_rate": 0.0,
+   "n": 103
+  },
+  "wrong_passes": [],
+  "not_applicable": "abstention and single-session-preference items (judge-only)",
+  "wrong_set": "per item, another question's gold answer of the same type (abstention items: a confident answer), chosen with numpy default_rng(0), never overlapping the gold and no number within +-1 of it"
+ },
+ "llm_judge_leg": {
+  "gold": {
+   "status": "pending: needs the study's judge model",
+   "judge_prompts": "selfcheck/gold.judge_prompts.jsonl",
+   "save_replies_to": "selfcheck/gold.judgements.jsonl",
+   "expected": "nearly all passed"
+  },
+  "wrong": {
+   "status": "pending: needs the study's judge model",
+   "judge_prompts": "selfcheck/wrong.judge_prompts.jsonl",
+   "save_replies_to": "selfcheck/wrong.judgements.jsonl",
+   "expected": "nearly all failed"
+  }
+ }
+}

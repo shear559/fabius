@@ -1,0 +1,18 @@
+{
+  "benchmark": "FinQA (Chen et al., EMNLP 2021, arXiv:2109.00122)",
+  "repo": "https://github.com/czyssrs/FinQA",
+  "commit": "0f16e2867befa6840783e58be38c9efb9229d742",
+  "file": "dataset/test.json",
+  "file_sha256": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+  "split": "public test (with references)",
+  "licence": "MIT (repository LICENSE, covers code and data)",
+  "n_total": 1147,
+  "n_eligible": 1147,
+  "eligibility": "every test example whose qa.exe_ans is a finite number or yes/no, with a question and a table",
+  "n_sampled": 200,
+  "sampling": "sorted(eligible ids); numpy.random.default_rng(20261006).permutation(len(ids)); first 200",
+  "numpy_version": "2.4.6",
+  "gold_numeric": 197,
+  "gold_yes_no": 3,
+  "items_sha256": "24451aa22ee1a2851f9a8589d5bfadf4ced3456a159bf92b89eeceb83d0ee196"
+}

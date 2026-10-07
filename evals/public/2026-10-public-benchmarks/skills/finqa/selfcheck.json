@@ -1,0 +1,305 @@
+{
+ "n_items": 200,
+ "rule": "pass if any of v, v/100, v*100 is within max(1% of |gold|, 0.01) of qa.exe_ans; yes/no exact",
+ "official_program_replay": {
+  "reproduces_exe_ans": 200,
+  "of": 200,
+  "note": "gold program executed with FinQA code/evaluate/evaluate.py eval_program"
+ },
+ "gold_renderings": {
+  "passed": 1600,
+  "of": 1600,
+  "by_style": {
+   "plain": 200,
+   "styled": 200,
+   "units_or_accounting": 197,
+   "equation": 197,
+   "next_line": 200,
+   "buried": 200,
+   "weak_only": 200,
+   "boxed_only": 200,
+   "true_false": 3,
+   "with_reason": 3
+  },
+  "failures": []
+ },
+ "human_reference": {
+  "what": "the dataset's human-written qa.answer string scored as 'Answer: <qa.answer>'",
+  "passed": 182,
+  "of": 200,
+  "failure_reasons": {
+   "label noise": 11,
+   "sign": 2,
+   "empty": 5
+  },
+  "failures": [
+   {
+    "item": "L/2009/page_84.pdf-3",
+    "question": "what was the growth rate of the s&p 500 index from december 31 , 2004 to 2007",
+    "qa.answer": "28.16%",
+    "exe_ans": 1.2816,
+    "program": "divide(128.16, const_100)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: divide(128.16, 100) is the index ratio 1.2816; growth asked is 28.16% (qa.answer right)"
+   },
+   {
+    "item": "LMT/2014/page_77.pdf-1",
+    "question": "what was the average weighted average common shares outstanding for diluted computations from 2012 to 2014",
+    "qa.answer": "325.7",
+    "exe_ans": 980.3,
+    "program": "add(326.5, 328.4), add(#0, 322.4), add(#1, const_3)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: program adds const_3 instead of dividing by 3; average is 325.7 (qa.answer right)"
+   },
+   {
+    "item": "SNA/2007/page_69.pdf-3",
+    "question": "what was the percentage change in the minority interest from 2005 to 2006",
+    "qa.answer": "-32.4%",
+    "exe_ans": -1.32432,
+    "program": "multiply(4.9, const_m1), subtract(#0, -3.7), divide(#0, 3.7)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: last step divides #0 (-4.9) not #1 (-1.2) by 3.7; change is -32.4% (qa.answer right)"
+   },
+   {
+    "item": "ETR/2004/page_212.pdf-2",
+    "question": "what are the deferred fuel cost revisions as a percentage of 2004 net revenue?",
+    "qa.answer": "3.16%",
+    "exe_ans": -0.03157,
+    "program": "divide(-29.4, 931.3)",
+    "reason": "sign: qa.answer gives the magnitude with the opposite sign of exe_ans",
+    "manual_review": "sign: revisions are -29.4 so exe_ans is -3.16%; qa.answer gives the magnitude"
+   },
+   {
+    "item": "AES/2001/page_85.pdf-2",
+    "question": "prior to the first remarketing date , what is the annual interest cost on the remarketable or redeemable securities ( 2018 2018roars 2019 2019 ) ?",
+    "qa.answer": "18525000",
+    "exe_ans": 14750000.0,
+    "program": "multiply(200, const_1000000), multiply(#0, 7.375%)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "qa.answer wrong: 200 million x 7.375% = 14,750,000 = exe_ans"
+   },
+   {
+    "item": "DRE/2007/page_56.pdf-1",
+    "question": "what is the percent change in basic net income available for common shareholders from 2006 to 2007?",
+    "qa.answer": "50.0%",
+    "exe_ans": -99.49966,
+    "program": "subtract(217692, 145095), divide(#0, 145095), subtract(#1, const_100)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: subtracts const_100 from the ratio 0.50034; change is +50.0% (qa.answer right)"
+   },
+   {
+    "item": "V/2014/page_126.pdf-2",
+    "question": "what is the percentage increase in the fair value of option granted from 2013 to 2014?",
+    "qa.answer": "13.0%",
+    "exe_ans": 5.08,
+    "program": "subtract(44.11, 39.03)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: program stops at the difference 5.08; increase is 5.08/39.03 = 13.0% (qa.answer right)"
+   },
+   {
+    "item": "ETR/2016/page_23.pdf-4",
+    "question": "assuming there would not have been a sale of the 583 mw rhode island state energy center in 2015 . what would have net revenue be without this gain on sale?",
+    "qa.answer": "",
+    "exe_ans": 5729.0,
+    "program": "subtract(5829, 100)",
+    "reason": "empty: qa.answer is blank in the dataset",
+    "manual_review": "qa.answer empty; exe_ans 5829 - 100 (net-of-tax gain) answers the question"
+   },
+   {
+    "item": "BLK/2014/page_120.pdf-2",
+    "question": "what percent of future notes are due by 2017?",
+    "qa.answer": "29.63%",
+    "exe_ans": 349.0,
+    "program": "add(126, 111), add(#0, 112)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: program stops at 349 due by 2017; 349/1178 = 29.63% (qa.answer right)"
+   },
+   {
+    "item": "AWK/2018/page_146.pdf-4",
+    "question": "the company repurchased how many million shares of common stock in the open market for the years ended december 31 , 2018 and 2017?",
+    "qa.answer": "",
+    "exe_ans": 1.3,
+    "program": "add(0.6, 0.7)",
+    "reason": "empty: qa.answer is blank in the dataset",
+    "manual_review": "qa.answer empty; exe_ans 0.6 + 0.7 = 1.3 million shares answers the question"
+   },
+   {
+    "item": "BLL/2006/page_67.pdf-1",
+    "question": "current assets were what percent of net assets acquired for the can and alcan transactions?",
+    "qa.answer": "32.2%",
+    "exe_ans": 259.7,
+    "program": "add(259.5, 0.2)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: program stops at current assets 259.7 and omits /802.6 (= 32.4%); qa.answer 32.2% is close"
+   },
+   {
+    "item": "RSG/2018/page_135.pdf-2",
+    "question": "what was the percentage decline in the equity from 2017 to 2018 actual",
+    "qa.answer": "",
+    "exe_ans": -0.43333,
+    "program": "subtract(17, 30), divide(#0, 30)",
+    "reason": "empty: qa.answer is blank in the dataset",
+    "manual_review": "qa.answer empty; exe_ans (17 - 30)/30 = -43.3% answers the question"
+   },
+   {
+    "item": "RSG/2015/page_98.pdf-2",
+    "question": "in december 2015 what was the ratio of the restricted cash and marketable securities to the allowance for doubtful accounts",
+    "qa.answer": "",
+    "exe_ans": 2.14775,
+    "program": "divide(100.3, 46.7)",
+    "reason": "empty: qa.answer is blank in the dataset",
+    "manual_review": "qa.answer empty; exe_ans 100.3/46.7 = 2.148 answers the question"
+   },
+   {
+    "item": "JKHY/2019/page_18.pdf-1",
+    "question": "what was the percentage growth of the 5 year- cumulative total return for the 2018 peer group from 2016 to 2017",
+    "qa.answer": "17.3%",
+    "exe_ans": -125.06,
+    "program": "subtract(177.26, 151.16), subtract(#0, 151.16)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: 2nd step subtracts 151.16 again instead of dividing; growth is 17.3% (qa.answer right)"
+   },
+   {
+    "item": "SNA/2007/page_49.pdf-4",
+    "question": "what was the percentage change in the cash dividends paid per common share from 2006 to 2007",
+    "qa.answer": "2.7%",
+    "exe_ans": 2.02778,
+    "program": "add(1.11, 1.08), divide(#0, 1.08)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "exe_ans wrong: adds 1.11 + 1.08 instead of subtracting; change is 2.78% (qa.answer 2.7% truncated)"
+   },
+   {
+    "item": "PNC/2012/page_100.pdf-3",
+    "question": "how many total private investor repurchase claims were there in 2011 and 2012 combined , in millions?",
+    "qa.answer": "",
+    "exe_ans": 184.0,
+    "program": "add(74, 110)",
+    "reason": "empty: qa.answer is blank in the dataset",
+    "manual_review": "qa.answer empty; exe_ans 74 + 110 = 184 answers the question"
+   },
+   {
+    "item": "MRK/2013/page_125.pdf-4",
+    "question": "what was the percentual decrease observed in the liabilities for accrued interest and penalties during 2012 and 2013?",
+    "qa.answer": "44.59%",
+    "exe_ans": -0.44583,
+    "program": "multiply(1.2, const_1000), subtract(665, #0), divide(#1, #0)",
+    "reason": "sign: qa.answer gives the magnitude with the opposite sign of exe_ans",
+    "manual_review": "sign: question asks for a decrease; exe_ans is the signed change -44.58%, qa.answer the magnitude"
+   },
+   {
+    "item": "ETR/2017/page_143.pdf-3",
+    "question": "what is the amount of interest applied to the annual long-term debt maturities in 2018?",
+    "qa.answer": "566808000",
+    "exe_ans": 56680800.0,
+    "program": "multiply(760000, const_1000), multiply(#0, 7.458%)",
+    "reason": "label noise: qa.answer disagrees with exe_ans beyond rounding (exe_ans is the official program result)",
+    "manual_review": "qa.answer wrong by 10x (typo): 760,000 thousand x 7.458% = 56,680,800 = exe_ans"
+   }
+  ],
+  "full_test_set": {
+   "passed": 1049,
+   "of": 1147,
+   "failure_reasons": {
+    "empty": 14,
+    "label noise": 61,
+    "text": 3,
+    "sign": 11,
+    "rounding": 7,
+    "type": 2
+   }
+  }
+ },
+ "wrong_sets": {
+  "other_item_gold": {
+   "passed": 5,
+   "of": 200,
+   "coincidental_passes": [
+    {
+     "item": "MRO/2017/page_96.pdf-2",
+     "gold": 0.033,
+     "response": "Answer: 0.03825",
+     "why": "admitted only by the 0.01 absolute floor (|gold| < 1)"
+    },
+    {
+     "item": "ABMD/2005/page_29.pdf-1",
+     "gold": 0.0585,
+     "response": "Answer: 5.0",
+     "why": "admitted only by the 0.01 absolute floor (|gold| < 1)"
+    },
+    {
+     "item": "ECL/2017/page_69.pdf-1",
+     "gold": 0.10419,
+     "response": "Answer: 10.6",
+     "why": "admitted only by the 0.01 absolute floor (|gold| < 1)"
+    },
+    {
+     "item": "MMM/2007/page_23.pdf-1",
+     "gold": 0.88834,
+     "response": "Answer: 0.88928",
+     "why": "numeric coincidence within 1% relative"
+    },
+    {
+     "item": "BLL/2010/page_37.pdf-2",
+     "gold": 0.07951,
+     "response": "Answer: 0.07667",
+     "why": "admitted only by the 0.01 absolute floor (|gold| < 1)"
+    }
+   ]
+  },
+  "no_answer_line": {
+   "passed": 0,
+   "of": 200,
+   "coincidental_passes": []
+  },
+  "unparseable_answer": {
+   "passed": 0,
+   "of": 200,
+   "coincidental_passes": []
+  },
+  "type_or_polarity_swap": {
+   "passed": 0,
+   "of": 200,
+   "coincidental_passes": []
+  }
+ },
+ "near_miss_diagnostics": {
+  "note": "informational: shows what the 0.01 absolute floor admits; passed_rel1pct drops it",
+  "sign_flipped": {
+   "passed": 2,
+   "passed_rel1pct": 0,
+   "of": 200
+  },
+  "times_1.10": {
+   "passed": 28,
+   "passed_rel1pct": 0,
+   "of": 200
+  },
+  "times_1.05": {
+   "passed": 53,
+   "passed_rel1pct": 0,
+   "of": 200
+  },
+  "times_1000": {
+   "passed": 1,
+   "passed_rel1pct": 0,
+   "of": 200
+  }
+ },
+ "parser_unit_cases": {
+  "passed": 29,
+  "of": 29,
+  "failures": []
+ },
+ "summary": {
+  "official_program_replay": "200/200",
+  "gold_renderings_pass": "1600/1600",
+  "human_reference_pass": "182/200",
+  "wrong_sets_pass": {
+   "other_item_gold": "5/200",
+   "no_answer_line": "0/200",
+   "unparseable_answer": "0/200",
+   "type_or_polarity_swap": "0/200"
+  },
+  "parser_unit_cases": "29/29"
+ }
+}

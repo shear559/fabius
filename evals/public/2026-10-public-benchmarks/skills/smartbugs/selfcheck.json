@@ -1,0 +1,78 @@
+{
+ "n_items": 143,
+ "prompt_integrity": {
+  "sampling_order_reproduces": true,
+  "items_jsonl_sha256_matches_source_json": true,
+  "prompts_with_markup_or_dataset_name": [],
+  "gold_lines_checked": 224,
+  "gold_line_text_mismatches_vs_annotated_file": [],
+  "items_match_fresh_prepare_run": true,
+  "readme_contains_exact_template": true
+ },
+ "sets": {
+  "gold_vulnerabilities_json": {
+   "expect_passed": 1,
+   "expect_line_hit": 1,
+   "n": 143,
+   "passed": 143,
+   "line_hit": 143,
+   "cat_line_hit": 143,
+   "unexpected": []
+  },
+  "gold_inline_markers_verbatim": {
+   "expect_passed": 1,
+   "expect_line_hit": 1,
+   "n": 143,
+   "passed": 143,
+   "line_hit": 143,
+   "cat_line_hit": 143,
+   "unexpected": []
+  },
+  "gold_dasp_names_markdown_range": {
+   "expect_passed": 1,
+   "expect_line_hit": 1,
+   "n": 143,
+   "passed": 143,
+   "line_hit": 143,
+   "cat_line_hit": 143,
+   "unexpected": []
+  },
+  "every_wrong_label_after_gold_in_prose": {
+   "expect_passed": 0,
+   "expect_line_hit": 0,
+   "n": 1285,
+   "passed": 0,
+   "line_hit": 0,
+   "cat_line_hit": 0,
+   "unexpected": []
+  },
+  "hedged_two_labels": {
+   "expect_passed": 0,
+   "expect_line_hit": 1,
+   "n": 143,
+   "passed": 0,
+   "line_hit": 143,
+   "cat_line_hit": 0,
+   "unexpected": []
+  },
+  "gold_in_prose_no_answer_lines": {
+   "expect_passed": 0,
+   "expect_line_hit": 0,
+   "n": 143,
+   "passed": 0,
+   "line_hit": 0,
+   "cat_line_hit": 0,
+   "unexpected": []
+  },
+  "empty_response": {
+   "expect_passed": 0,
+   "expect_line_hit": 0,
+   "n": 143,
+   "passed": 0,
+   "line_hit": 0,
+   "cat_line_hit": 0,
+   "unexpected": []
+  }
+ },
+ "all_expectations_met": true
+}

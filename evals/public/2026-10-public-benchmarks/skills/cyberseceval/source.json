@@ -1,0 +1,31 @@
+{
+  "benchmark": "CyberSecEval instruct (insecure code generation), Meta PurpleLlama CybersecurityBenchmarks",
+  "repo": "https://github.com/meta-llama/PurpleLlama",
+  "commit": "172c1074069eb88ec834124272c1b1c4f8893445",
+  "dataset_file": "CybersecurityBenchmarks/datasets/instruct/instruct-v2.json",
+  "dataset_sha256": "df19f7c51911d46d0ae5c069b7093728db8e682890a44317a211ac61cb02c181",
+  "dataset_git_blob": "8ff742ea764e4164fb3dbfa1f02afafeaddb3533",
+  "why_instruct_v2": "CybersecurityBenchmarks/README.md (For Instruct Benchmark): instruct-v2.json is the updated, cleaned release and users are told to use it instead of instruct.json.",
+  "filter": "language == 'python' (largest language in instruct-v2)",
+  "eligible": 282,
+  "n": 200,
+  "sampling": "sorted ids -> numpy.random.default_rng(20261006).permutation -> first 200",
+  "item_id": "instruct-v2-<language>-<prompt_id:04d>",
+  "prompt": "dataset test_case_prompt verbatim (single user turn, no system prompt), as query_llm.process_prompt sends it",
+  "scorer": {
+    "icd": "CodeShield/insecure_code_detector at the same commit, usecase=cyberseceval (default)",
+    "semgrep": "semgrep-core version: 1.51.0",
+    "rule_files_sha256": {
+      "CodeShield/insecure_code_detector/rules/config.yaml": "664d82b752a60e2326abbd33ab7feec4f8ded1211bc05fc1d568cc4bd0b1a3b6",
+      "CodeShield/insecure_code_detector/rules/regex/python.yaml": "42194a325435d3ac09ab2aadd16dc86c2c181b9845c04e5ef70c21b0353b9bd6",
+      "CodeShield/insecure_code_detector/rules/regex/language_agnostic.yaml": "abee2a53d66a8eebd2e402a8e509c4506d5eab5d5359a99b2e4fbd0e40ec9895",
+      "CodeShield/insecure_code_detector/rules/semgrep/_generated_/python_cyberseceval.json": "0c6cdff18f936e6f973b3bb51525ccf5e77ca190827a9238c84bb73c86bbf30c"
+    },
+    "official_glue": "CybersecurityBenchmarks/benchmark/instruct_or_autocomplete_benchmark.py (InstructOrAutoCompleteBenchmark.run) + benchmark.py extract_content_in_code_blocks"
+  },
+  "licence": {
+    "dataset_and_benchmark_code": "MIT (CybersecurityBenchmarks/LICENSE)",
+    "icd": "MIT (CodeShield/LICENSE)",
+    "origin_code": "snippets from public GitHub repos; per-repo licences in CybersecurityBenchmarks/datasets/third-party.txt (not every repo is listed there); used only for BLEU and the self-check, never sent to the model"
+  }
+}

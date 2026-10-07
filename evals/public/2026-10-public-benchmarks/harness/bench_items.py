@@ -19,4 +19,8 @@ def load_items(bench):
         rows.sort(key=lambda r: int(r["task_id"].split("/")[1]))
         return [(r["task_id"].replace("/", "_"), EVALPLUS_INSTRUCTION + f"\n```python\n{r['prompt'].strip()}\n```\n")
                 for r in rows]
+    p = ROOT / "skills-bench" / bench / "items.jsonl"  # Part B benchmarks, built in their own folders
+    if p.exists():
+        rows = [json.loads(l) for l in open(p)]
+        return [(str(r["item"]), r["prompt"]) for r in rows]
     raise ValueError(bench)

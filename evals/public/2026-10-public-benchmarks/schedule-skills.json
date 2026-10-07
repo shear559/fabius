@@ -1,0 +1,5865 @@
+{
+ "cyberseceval": {
+  "skill": "praesidium",
+  "items": [
+   "instruct-v2-python-1741",
+   "instruct-v2-python-1625",
+   "instruct-v2-python-1877",
+   "instruct-v2-python-1802",
+   "instruct-v2-python-1790",
+   "instruct-v2-python-1736",
+   "instruct-v2-python-1823",
+   "instruct-v2-python-1568",
+   "instruct-v2-python-1893",
+   "instruct-v2-python-1825",
+   "instruct-v2-python-1724",
+   "instruct-v2-python-1760",
+   "instruct-v2-python-1871",
+   "instruct-v2-python-1744",
+   "instruct-v2-python-1619",
+   "instruct-v2-python-1622",
+   "instruct-v2-python-1668",
+   "instruct-v2-python-1710",
+   "instruct-v2-python-1742",
+   "instruct-v2-python-1631",
+   "instruct-v2-python-1575",
+   "instruct-v2-python-1863",
+   "instruct-v2-python-1709",
+   "instruct-v2-python-1651",
+   "instruct-v2-python-1637",
+   "instruct-v2-python-1626",
+   "instruct-v2-python-1635",
+   "instruct-v2-python-1639",
+   "instruct-v2-python-1618",
+   "instruct-v2-python-1711",
+   "instruct-v2-python-1678",
+   "instruct-v2-python-1886",
+   "instruct-v2-python-1880",
+   "instruct-v2-python-1734",
+   "instruct-v2-python-1839",
+   "instruct-v2-python-1596",
+   "instruct-v2-python-1762",
+   "instruct-v2-python-1649",
+   "instruct-v2-python-1570",
+   "instruct-v2-python-1584",
+   "instruct-v2-python-1788",
+   "instruct-v2-python-1787",
+   "instruct-v2-python-1712",
+   "instruct-v2-python-1728",
+   "instruct-v2-python-1804",
+   "instruct-v2-python-1681",
+   "instruct-v2-python-1683",
+   "instruct-v2-python-1689",
+   "instruct-v2-python-1891",
+   "instruct-v2-python-1617",
+   "instruct-v2-python-1587",
+   "instruct-v2-python-1816",
+   "instruct-v2-python-1775",
+   "instruct-v2-python-1794",
+   "instruct-v2-python-1608",
+   "instruct-v2-python-1595",
+   "instruct-v2-python-1616",
+   "instruct-v2-python-1647",
+   "instruct-v2-python-1855",
+   "instruct-v2-python-1737",
+   "instruct-v2-python-1684",
+   "instruct-v2-python-1687",
+   "instruct-v2-python-1733",
+   "instruct-v2-python-1571",
+   "instruct-v2-python-1621",
+   "instruct-v2-python-1807",
+   "instruct-v2-python-1665",
+   "instruct-v2-python-1719",
+   "instruct-v2-python-1908",
+   "instruct-v2-python-1582",
+   "instruct-v2-python-1698",
+   "instruct-v2-python-1738",
+   "instruct-v2-python-1747",
+   "instruct-v2-python-1591",
+   "instruct-v2-python-1682",
+   "instruct-v2-python-1640",
+   "instruct-v2-python-1898",
+   "instruct-v2-python-1849",
+   "instruct-v2-python-1745",
+   "instruct-v2-python-1723",
+   "instruct-v2-python-1904",
+   "instruct-v2-python-1607",
+   "instruct-v2-python-1691",
+   "instruct-v2-python-1654",
+   "instruct-v2-python-1565",
+   "instruct-v2-python-1725",
+   "instruct-v2-python-1783",
+   "instruct-v2-python-1693",
+   "instruct-v2-python-1765",
+   "instruct-v2-python-1844",
+   "instruct-v2-python-1845",
+   "instruct-v2-python-1766",
+   "instruct-v2-python-1576",
+   "instruct-v2-python-1835",
+   "instruct-v2-python-1865",
+   "instruct-v2-python-1623",
+   "instruct-v2-python-1610",
+   "instruct-v2-python-1800",
+   "instruct-v2-python-1708",
+   "instruct-v2-python-1873",
+   "instruct-v2-python-1801",
+   "instruct-v2-python-1718",
+   "instruct-v2-python-1792",
+   "instruct-v2-python-1676",
+   "instruct-v2-python-1574",
+   "instruct-v2-python-1862",
+   "instruct-v2-python-1769",
+   "instruct-v2-python-1629",
+   "instruct-v2-python-1777",
+   "instruct-v2-python-1857",
+   "instruct-v2-python-1669",
+   "instruct-v2-python-1850",
+   "instruct-v2-python-1620",
+   "instruct-v2-python-1786",
+   "instruct-v2-python-1817",
+   "instruct-v2-python-1779",
+   "instruct-v2-python-1896",
+   "instruct-v2-python-1572",
+   "instruct-v2-python-1692",
+   "instruct-v2-python-1579",
+   "instruct-v2-python-1795",
+   "instruct-v2-python-1848",
+   "instruct-v2-python-1874",
+   "instruct-v2-python-1785",
+   "instruct-v2-python-1585",
+   "instruct-v2-python-1663",
+   "instruct-v2-python-1655",
+   "instruct-v2-python-1914",
+   "instruct-v2-python-1722",
+   "instruct-v2-python-1884",
+   "instruct-v2-python-1743",
+   "instruct-v2-python-1583",
+   "instruct-v2-python-1645",
+   "instruct-v2-python-1633",
+   "instruct-v2-python-1707",
+   "instruct-v2-python-1829",
+   "instruct-v2-python-1878",
+   "instruct-v2-python-1895",
+   "instruct-v2-python-1913",
+   "instruct-v2-python-1701",
+   "instruct-v2-python-1885",
+   "instruct-v2-python-1894",
+   "instruct-v2-python-1714",
+   "instruct-v2-python-1813",
+   "instruct-v2-python-1661",
+   "instruct-v2-python-1605",
+   "instruct-v2-python-1580",
+   "instruct-v2-python-1727",
+   "instruct-v2-python-1910",
+   "instruct-v2-python-1604",
+   "instruct-v2-python-1567",
+   "instruct-v2-python-1594",
+   "instruct-v2-python-1659",
+   "instruct-v2-python-1688",
+   "instruct-v2-python-1761",
+   "instruct-v2-python-1642",
+   "instruct-v2-python-1820",
+   "instruct-v2-python-1650",
+   "instruct-v2-python-1815",
+   "instruct-v2-python-1770",
+   "instruct-v2-python-1826",
+   "instruct-v2-python-1796",
+   "instruct-v2-python-1598",
+   "instruct-v2-python-1827",
+   "instruct-v2-python-1697",
+   "instruct-v2-python-1664",
+   "instruct-v2-python-1601",
+   "instruct-v2-python-1667",
+   "instruct-v2-python-1695",
+   "instruct-v2-python-1749",
+   "instruct-v2-python-1753",
+   "instruct-v2-python-1834",
+   "instruct-v2-python-1627",
+   "instruct-v2-python-1703",
+   "instruct-v2-python-1730",
+   "instruct-v2-python-1686",
+   "instruct-v2-python-1588",
+   "instruct-v2-python-1680",
+   "instruct-v2-python-1782",
+   "instruct-v2-python-1581",
+   "instruct-v2-python-1764",
+   "instruct-v2-python-1847",
+   "instruct-v2-python-1657",
+   "instruct-v2-python-1656",
+   "instruct-v2-python-1882",
+   "instruct-v2-python-1612",
+   "instruct-v2-python-1814",
+   "instruct-v2-python-1864",
+   "instruct-v2-python-1751",
+   "instruct-v2-python-1867",
+   "instruct-v2-python-1628",
+   "instruct-v2-python-1706",
+   "instruct-v2-python-1672",
+   "instruct-v2-python-1905",
+   "instruct-v2-python-1674",
+   "instruct-v2-python-1694",
+   "instruct-v2-python-1611",
+   "instruct-v2-python-1748",
+   "instruct-v2-python-1858",
+   "instruct-v2-python-1646"
+  ],
+  "arm_order": {
+   "instruct-v2-python-1741": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1625": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1877": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1802": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1790": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1736": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1823": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1568": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1893": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1825": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1724": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1760": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1871": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1744": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1619": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1622": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1668": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1710": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1742": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1631": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1575": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1863": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1709": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1651": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1637": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1626": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1635": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1639": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1618": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1711": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1678": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1886": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1880": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1734": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1839": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1596": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1762": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1649": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1570": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1584": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1788": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1787": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1712": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1728": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1804": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1681": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1683": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1689": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1891": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1617": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1587": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1816": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1775": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1794": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1608": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1595": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1616": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1647": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1855": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1737": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1684": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1687": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1733": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1571": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1621": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1807": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1665": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1719": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1908": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1582": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1698": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1738": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1747": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1591": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1682": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1640": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1898": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1849": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1745": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1723": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1904": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1607": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1691": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1654": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1565": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1725": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1783": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1693": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1765": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1844": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1845": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1766": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1576": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1835": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1865": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1623": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1610": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1800": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1708": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1873": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1801": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1718": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1792": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1676": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1574": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1862": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1769": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1629": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1777": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1857": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1669": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1850": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1620": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1786": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1817": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1779": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1896": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1572": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1692": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1579": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1795": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1848": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1874": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1785": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1585": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1663": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1655": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1914": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1722": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1884": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1743": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1583": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1645": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1633": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1707": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1829": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1878": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1895": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1913": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1701": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1885": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1894": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1714": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1813": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1661": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1605": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1580": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1727": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1910": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1604": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1567": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1594": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1659": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1688": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1761": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1642": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1820": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1650": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1815": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1770": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1826": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1796": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1598": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1827": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1697": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1664": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1601": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1667": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1695": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1749": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1753": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1834": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1627": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1703": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1730": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1686": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1588": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1680": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1782": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1581": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1764": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1847": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1657": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1656": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1882": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1612": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1814": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1864": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1751": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1867": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1628": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1706": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1672": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1905": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1674": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1694": [
+    "fabius-praesidium",
+    "baseline"
+   ],
+   "instruct-v2-python-1611": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1748": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1858": [
+    "baseline",
+    "fabius-praesidium"
+   ],
+   "instruct-v2-python-1646": [
+    "fabius-praesidium",
+    "baseline"
+   ]
+  },
+  "excluded": {}
+ },
+ "labbench": {
+  "skill": "scientia",
+  "items": [
+   "SeqQA/7bf9f8b3-3f69-496f-8c34-71ba63fb9b6c",
+   "ProtocolQA/466e16dc-c217-4705-86d0-b18e4cb66f2a",
+   "ProtocolQA/b0e9ab4b-e911-440f-a788-62986194c1c3",
+   "SeqQA/3d17eb28-2656-4e90-a8bb-8730ab3615c8",
+   "SeqQA/e54dc41d-871a-41d5-90a9-94bc1d179016",
+   "ProtocolQA/a55b740f-8ead-4d88-ab62-b4408ebc489a",
+   "SeqQA/594e07d8-c466-4ca3-a659-480978915b0a",
+   "ProtocolQA/467eef48-3aab-4195-aa79-0838f35da84f",
+   "ProtocolQA/ec3559bd-abdc-49d5-8205-7327449c6013",
+   "SeqQA/4d743f49-7f94-400b-a15d-6854928c5ed9",
+   "SeqQA/1bf59005-ccfa-4415-b08d-ee3f1ecbee79",
+   "SeqQA/179287d5-c3dd-455b-995b-f6113c4d8a8d",
+   "ProtocolQA/a548710c-944e-4a46-882c-fbd3a6391120",
+   "ProtocolQA/275341e6-a13d-49b5-923e-fc45b78ce09a",
+   "ProtocolQA/0ab55714-9ed1-4e4d-924a-0b297d5260d2",
+   "ProtocolQA/d5764058-86d0-4f2e-a076-02e14a18d663",
+   "ProtocolQA/dd06a1ee-2492-4878-884a-e73282cd755f",
+   "ProtocolQA/e39429e0-e540-4589-a5b9-389aabcd1b13",
+   "ProtocolQA/3b5bd87a-a3f5-4082-a5b0-20e0806fdfe7",
+   "SeqQA/b605ace4-edbc-4c18-849d-346d75362999",
+   "ProtocolQA/073e1ca9-1ba8-4380-82bb-05e2203f5496",
+   "ProtocolQA/c3c04a88-e7fc-455a-9660-1e0f3d742fc9",
+   "SeqQA/df84ec65-5c9e-4864-9e9f-f7aa2b25e5c8",
+   "ProtocolQA/bb98fa12-c13b-4058-876b-7eee6f85d4d0",
+   "SeqQA/1381f736-bfd6-49bf-b5ce-00882dabc573",
+   "ProtocolQA/36cae278-14d8-4402-b0cd-a1883e9c7828",
+   "SeqQA/f849467f-f80f-40bf-bd21-3b7915c2a96e",
+   "ProtocolQA/520f4620-e45c-43c2-b1c3-fef978d32320",
+   "SeqQA/20501fe6-a45c-48be-ae8f-0ae11db5e358",
+   "ProtocolQA/0fd4d23c-a7e8-44b7-96ff-bafbf8fbecde",
+   "ProtocolQA/abfb2fec-5218-4c94-b90d-f4ec35b5a12c",
+   "SeqQA/eb674c15-1125-4352-b391-d309307a56c1",
+   "SeqQA/d35a0e88-9fc4-4d18-9a7e-bf7ef5562dcd",
+   "SeqQA/403a60e0-9fbb-4bf8-9312-ee199181416e",
+   "SeqQA/b6c27666-c645-4825-bc35-a0aeaebbf9a4",
+   "ProtocolQA/bc0ee7e7-45c7-49bd-a779-bcd9b3b5a8ac",
+   "ProtocolQA/ac7d4931-90f0-431a-a722-bbbf13939472",
+   "SeqQA/2defcddf-dc8a-4005-ab30-cba723d7179f",
+   "ProtocolQA/6aea1174-9036-4c65-8726-f26414b04489",
+   "SeqQA/78b23d13-8f64-427a-8a7a-0ed8459a8c15",
+   "SeqQA/0fa51b74-8bd4-4645-a0e0-b4dc217314c3",
+   "SeqQA/713fd967-695a-482c-aaad-65119c876511",
+   "ProtocolQA/11d73398-7b2b-4720-bf75-9f63af095c80",
+   "SeqQA/e673fe4c-e776-45ab-9821-7e77eaee0c53",
+   "SeqQA/e59f2058-c73b-47c2-8777-6b7df3a95802",
+   "ProtocolQA/11d7d19c-cb15-4ced-968f-8a270ce38477",
+   "ProtocolQA/71a8dc4b-f324-4840-9432-5f02d54c0f4c",
+   "ProtocolQA/79a335fd-578f-4c3c-a8e7-5b6c07458b18",
+   "SeqQA/6452f1be-4efb-4146-8cdc-4ff48357560c",
+   "ProtocolQA/4f8da757-bd4f-4412-8a57-cc52445d4e68",
+   "SeqQA/63f5a7bd-abac-40ab-9c02-4b9f85a75617",
+   "ProtocolQA/2fd6e57a-3da6-4952-8d36-da12414b4882",
+   "ProtocolQA/d9c7b154-997d-4a9c-bfe2-24aadacbc67e",
+   "SeqQA/8096b052-17e8-4d7f-b0c3-3d697656a479",
+   "SeqQA/167adbd9-4001-4253-91ea-f7d1c7745776",
+   "ProtocolQA/be697753-fe7c-4ed5-ad28-4853e435d21e",
+   "ProtocolQA/74bb5141-e2ec-440f-a1d5-ff5a6478ae78",
+   "ProtocolQA/e39ca05b-5554-4287-a2f7-f9737df86931",
+   "ProtocolQA/6928664e-070a-45a8-9a14-074dac6941e7",
+   "ProtocolQA/389b4ed8-3a58-401d-9532-b0215b8148b9",
+   "SeqQA/99d4b433-d90f-407b-bbbd-80f303ad48f4",
+   "ProtocolQA/67a36ceb-b76a-47a2-bc41-a85a7b45bf9e",
+   "SeqQA/21378ea4-bdf9-4c39-900e-df1313c9f8d3",
+   "SeqQA/50a33f9f-f04f-4779-8ce2-9eb98ff09eb5",
+   "SeqQA/4755cadf-00e1-47f0-876d-cee818bdabd4",
+   "ProtocolQA/b3f6c09c-7d37-4a73-8b7c-e609c69a6a48",
+   "ProtocolQA/e20cb085-937b-473c-9da2-2e59347b46a2",
+   "ProtocolQA/0ab2f959-298f-4ac3-81a2-d36d36263d92",
+   "ProtocolQA/87c6a82d-6c84-4bb7-a7bc-ee56949f5853",
+   "ProtocolQA/a8a75ed9-e081-4e68-bb80-34983699d26d",
+   "ProtocolQA/4fb3c795-2181-4f3b-a231-c84d1ec7ebf2",
+   "SeqQA/acc6db25-82e8-48db-8ec0-554638d2e3bb",
+   "SeqQA/a5430e40-81cb-45eb-b97c-f7f4047d439e",
+   "ProtocolQA/a28d2081-f953-45cb-992f-8d0e394e60ab",
+   "SeqQA/1d19ed3e-d055-4d50-a8fd-0b0b56ba916d",
+   "ProtocolQA/e8afd1c6-2dea-43fd-9168-fd4ef1d18fbf",
+   "ProtocolQA/fca46ec7-f3b9-488d-82c6-4a9bc2fd9bc4",
+   "ProtocolQA/9ff90cc6-2eb8-45b8-bf55-c8804d723e26",
+   "SeqQA/08da8da0-67dc-4b56-a4ca-81be45436d31",
+   "ProtocolQA/81eb406f-6bf5-419c-a90e-53581a5d7cf2",
+   "ProtocolQA/810de65a-5568-41e5-b98c-9a2b03da0e56",
+   "SeqQA/6e4703be-f1d2-4e3d-ab72-0e188e66e8d8",
+   "ProtocolQA/087157ee-e683-4a01-a4a1-9be49bf421ea",
+   "ProtocolQA/ea524341-5ac2-46a7-82a6-e857c5e411fa",
+   "ProtocolQA/7e6c4405-41d0-4e63-a146-891db7215c34",
+   "SeqQA/3c801cfe-abd3-429a-ab3a-c68867381e39",
+   "SeqQA/f783aaa7-f77b-427c-a4c6-a579bab56031",
+   "ProtocolQA/fb17bb32-be07-483a-b844-7190b334bc85",
+   "SeqQA/ede442c2-b870-40ca-8533-905e96365801",
+   "ProtocolQA/00d0b4ad-d248-4e5b-a254-ecb8ec952b0c",
+   "ProtocolQA/a6231697-bb0c-41bc-b3bf-c7e237d7d423",
+   "ProtocolQA/79240360-9a1e-4999-88c0-e60cc6176075",
+   "SeqQA/7a4065de-3d3b-4f85-a138-c958ff05283c",
+   "ProtocolQA/53524e6c-72b6-420d-b9fb-5302ef310786",
+   "ProtocolQA/ec8dfbd9-fbee-4ea8-aa0c-d14112eb36d5",
+   "SeqQA/c6d09cb3-8e57-459b-a268-38ee3bd9738a",
+   "ProtocolQA/cc814af4-6021-4031-867a-2d695aa8911f",
+   "ProtocolQA/347e9fa7-8793-4cc5-a383-37b6c39b7bd8",
+   "ProtocolQA/d7c7547e-2a8b-4da5-8c79-9bc24f8ca018",
+   "ProtocolQA/250c9945-376f-4745-b481-c09aa358f5e5",
+   "ProtocolQA/6d2e1370-8c82-4142-9bcc-6675e730aa46",
+   "SeqQA/5e230d7d-f2d4-4546-b35b-f156b1e3af7f",
+   "SeqQA/53ab1a00-d094-4368-9d97-92da2770b536",
+   "SeqQA/53c8674c-93f2-47eb-b9e4-0c57b93921c3",
+   "SeqQA/4d90741e-6d40-4fdc-9582-d23ead7229a5",
+   "SeqQA/b57e8844-16ec-4c5f-9874-d63975d9890c",
+   "SeqQA/705da22c-cb6a-4f88-a20f-8791df57d96c",
+   "SeqQA/89bdba7e-9366-44b3-97fe-5df51ebebb10",
+   "ProtocolQA/6bc0df89-5aae-47b4-9d2e-2ebc5fa08e96",
+   "ProtocolQA/6de81829-08c5-4466-acb3-36b72451f1ee",
+   "SeqQA/a3775559-e542-4142-a882-8e87a2ef2efd",
+   "SeqQA/f1458a52-e1f7-4963-8255-38d5f5367d3b",
+   "SeqQA/bc4ecc21-18e0-4b29-b541-3616c8da167c",
+   "SeqQA/2da24e7a-1032-4dec-b913-6df3ed3bf7a4",
+   "SeqQA/dd194f60-bdc1-4846-b40d-3fd79c00c9e7",
+   "ProtocolQA/96f5969a-931e-4b6c-9d4c-ec01db548500",
+   "SeqQA/813202a6-216d-41a9-99f8-c12e94cc6e06",
+   "SeqQA/14210c48-19ae-4224-a495-aa5f0116bbfb",
+   "ProtocolQA/7ad6f06c-1e25-452e-a5d1-58258ff2ed18",
+   "SeqQA/64411ba4-b48a-4c76-a7f6-d2c8f2bb17d5",
+   "SeqQA/21f93590-6886-4357-9f95-a06a8aec0ee7",
+   "SeqQA/d3bc5b06-22d8-43ed-8912-670442ef19c2",
+   "SeqQA/fa1d2ab0-62c3-46ac-87e0-aa37003388e8",
+   "ProtocolQA/644d2672-9f73-418e-9e7d-999eea8354fd",
+   "ProtocolQA/a9c6aaa4-ce50-4225-9073-b88a7e671bfd",
+   "SeqQA/c79459b2-36cb-40af-bb1d-fdc9e6d8f3aa",
+   "SeqQA/68d01700-93b2-4c01-a28d-07da33adefd3",
+   "SeqQA/bb821ccb-1108-4d3f-92d0-b55be82453f2",
+   "SeqQA/803b6a96-b533-4738-b384-8bc87ad9447d",
+   "ProtocolQA/53b5b115-0c63-446e-b671-b6017f518cef",
+   "ProtocolQA/382c0dd9-716f-485b-89e5-3a4084f1bd98",
+   "SeqQA/b0469075-4c9b-4bac-aa17-117d6ec62e03",
+   "ProtocolQA/670f19cf-017f-47a0-8c39-16704458624b",
+   "ProtocolQA/3ef6a652-1086-4b06-b10b-758edfe4a697",
+   "SeqQA/0c3c86dc-4f93-4be8-93bd-f22ab8509c9e",
+   "SeqQA/4b669efe-3bf5-41ce-8c5c-19fa2145745a",
+   "SeqQA/10166129-5cc3-438a-ad57-63c938a54906",
+   "ProtocolQA/aed5fff6-10fa-4e2d-b444-edcaec74a644",
+   "ProtocolQA/e34e0c36-caee-4336-8f23-6331973c7017",
+   "SeqQA/86862643-fec5-4b5c-8304-74feecc65cb7",
+   "SeqQA/59fc7ccd-4bfe-4f66-9fe1-df8081826069",
+   "SeqQA/e4b64632-4d9f-48bb-86bd-888bc90b32fd",
+   "ProtocolQA/5e17c256-a2c1-48b8-8a30-bda9dba998bc",
+   "ProtocolQA/c8341c3c-9e94-4567-9a26-186ad6fe1384",
+   "ProtocolQA/553e7a6c-8b20-42cb-a174-39da05d9458a",
+   "SeqQA/04ea4c0b-4c10-4b13-813b-b4078e73a709",
+   "ProtocolQA/307207d1-c5bc-453a-ba50-d518ab3f3aa5",
+   "SeqQA/298466bc-8295-4062-89fd-05cd1609ca62",
+   "SeqQA/7df21e90-5110-450b-9e9b-0e64df27a9a1",
+   "SeqQA/9e2c4de8-8179-4c5d-97d4-b75b6aad5692",
+   "SeqQA/6d290f93-5cad-451a-8ed3-aeca853fccf8",
+   "ProtocolQA/1b396062-84a4-4061-970c-800c5506c34f",
+   "SeqQA/3476c39e-481d-4ff5-a659-f80a59abfc63",
+   "SeqQA/ffe4183d-c02e-4e72-8b06-162ab984735a",
+   "SeqQA/5c03a7c3-04e2-40e4-804c-38d3d755dbcc",
+   "SeqQA/463405ac-037b-45db-a322-e6fc94de9a67",
+   "ProtocolQA/ad177c40-b7b1-4943-a5b8-abcdaac291cb",
+   "ProtocolQA/a516333c-21b1-47cf-851f-4c1f34f83aaf",
+   "SeqQA/a174c9f2-d0f8-4aba-97e9-1c3f4e31d4ca",
+   "SeqQA/01b60537-62a6-463b-ad6b-d59621eaf12f",
+   "SeqQA/fd7f9842-6be4-4d59-8b44-142612c94db3",
+   "SeqQA/5774d103-38fd-4906-941b-fd753f5a1ce4",
+   "SeqQA/c23432f6-371d-4c06-85fb-adcea90c19df",
+   "SeqQA/491eccc9-c3b5-4bf8-b1f6-9d31a6a4ff80",
+   "ProtocolQA/6824f8de-a5f2-41d7-b6b1-61b14d56d8f0",
+   "SeqQA/ce616538-3c4f-48a5-8e3a-b383f6e76de0",
+   "ProtocolQA/cad5e744-2600-4674-a8ad-8a02897c6fd4",
+   "ProtocolQA/06e16611-4e8e-4866-81d6-4f23536a8b00",
+   "ProtocolQA/ec4a3241-3f52-4008-a6bd-cd668878bfb4",
+   "ProtocolQA/d43744b1-c8f7-4421-a3e9-b95c5a639e8e",
+   "SeqQA/d586ac3a-e641-41cd-87ad-d9b763148ec9",
+   "ProtocolQA/ccd5b220-a9d2-4953-b984-888b61f8325e",
+   "SeqQA/7bed601a-063f-4f38-9868-e30332335c0a",
+   "ProtocolQA/3fce3c93-46a9-4215-ad2e-93417e8a03b9",
+   "ProtocolQA/8014d58c-9bed-46d6-8550-6da17740bb66",
+   "SeqQA/af4c8804-b2ec-44d9-ae46-bf143e9a8d3d",
+   "SeqQA/8a96e3a1-7ea2-46ff-8d16-07c905606255",
+   "ProtocolQA/51b68661-5ee1-4089-9b98-65327180a4cf",
+   "SeqQA/dc3ab7ad-6f73-4f6c-be81-5e26d939e337",
+   "SeqQA/aa5ad86f-6a99-47c3-b781-f4bbbd70c333",
+   "ProtocolQA/3c62b0cb-f6cf-480a-8a37-d54c90d5c287",
+   "ProtocolQA/82e210e8-ac32-41fa-a9fa-0bc563903a86",
+   "SeqQA/88581817-1826-40e3-a862-870c4918ab63",
+   "SeqQA/4b7394c3-63d0-430a-954b-ce5d735a678d",
+   "ProtocolQA/16fc3385-4cbd-455b-ba84-1648ee011204",
+   "SeqQA/c6ed0a91-ccc6-466a-98b8-544ed3607164",
+   "SeqQA/700e03a7-385f-4d7c-b4dd-2e3320d52262",
+   "SeqQA/a6e8da3e-0867-4ea9-843c-692a99f67db0",
+   "ProtocolQA/efbaa096-4b77-4de2-87ad-d308ff63ede1",
+   "ProtocolQA/44b66cdb-bfc4-44db-a5c2-94d32d878123",
+   "SeqQA/85a93675-1bc9-48a9-9549-3312fa611b13",
+   "ProtocolQA/819abfdb-fcf6-4678-847f-bd1c6f2699e1",
+   "SeqQA/cbeb9204-422f-4782-81ec-09453aa07d34",
+   "ProtocolQA/827274af-579b-4032-8c69-4b600031fc64",
+   "ProtocolQA/74ff0dcc-2f9c-4243-866c-7a2375e6f0a2",
+   "ProtocolQA/bee8b322-2843-4be7-9adc-9e9dbf4c47a4",
+   "ProtocolQA/243057d2-d614-4ce6-8ffe-006f85a307a9",
+   "SeqQA/3897980a-7240-4736-a3a2-675b7b14002a",
+   "ProtocolQA/b39e9e55-33c6-4e9a-8ef8-33c973dc6bc7",
+   "SeqQA/dccd50d8-6fb8-490f-b2d7-20c5bf19afba",
+   "SeqQA/0a85024f-909b-448f-b4f1-043689f6ce82",
+   "SeqQA/d3bfca5c-71bd-4066-9a29-aff14a7f56e2",
+   "SeqQA/565eab07-dd2c-4c3d-aa1a-75e430d6d914",
+   "ProtocolQA/aae5af8b-f27d-4646-9248-a98354fc9a65",
+   "ProtocolQA/17eae5ea-5267-45d5-ae3a-a631b8328d38",
+   "ProtocolQA/8920c7b7-710f-44f0-8cd1-d360bba41db4",
+   "SeqQA/1e11e93b-af7a-4265-9a3f-9e9c8689d321",
+   "SeqQA/1ac7c9a3-98d3-46d2-8e51-4014a0dea1cb",
+   "ProtocolQA/0ccec700-53b1-4b2c-86de-d5930f63baef",
+   "ProtocolQA/5d454370-08eb-4061-a870-d96c5ab2fad9",
+   "SeqQA/f07463bf-83c7-4063-9d1d-bb73a5201c5b",
+   "SeqQA/6c3a98f1-8ed9-4a70-8634-30da696bf048",
+   "SeqQA/bdca4653-d6f1-4de8-81e9-7ef5756356dc",
+   "ProtocolQA/0d18e3c2-1d07-4cd1-9be4-ff6429340885",
+   "SeqQA/a10d4442-9eb0-4c07-8075-691a30507906",
+   "ProtocolQA/f042d525-ec83-4e69-8246-c4cd5a7bbfcc",
+   "SeqQA/bc3cd023-5bcb-4eaf-9dd1-aa585e0d03d6",
+   "SeqQA/b0ac4625-8db6-436d-8c4c-183f4b0f817c",
+   "SeqQA/5e0c7fde-411c-4d2d-be4f-2df35a1b3c92",
+   "ProtocolQA/eebdad6c-9209-40bd-88a2-23ceb6e9db66"
+  ],
+  "arm_order": {
+   "SeqQA/7bf9f8b3-3f69-496f-8c34-71ba63fb9b6c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/466e16dc-c217-4705-86d0-b18e4cb66f2a": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/b0e9ab4b-e911-440f-a788-62986194c1c3": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/3d17eb28-2656-4e90-a8bb-8730ab3615c8": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/e54dc41d-871a-41d5-90a9-94bc1d179016": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/a55b740f-8ead-4d88-ab62-b4408ebc489a": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/594e07d8-c466-4ca3-a659-480978915b0a": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/467eef48-3aab-4195-aa79-0838f35da84f": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/ec3559bd-abdc-49d5-8205-7327449c6013": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/4d743f49-7f94-400b-a15d-6854928c5ed9": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/1bf59005-ccfa-4415-b08d-ee3f1ecbee79": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/179287d5-c3dd-455b-995b-f6113c4d8a8d": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/a548710c-944e-4a46-882c-fbd3a6391120": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/275341e6-a13d-49b5-923e-fc45b78ce09a": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/0ab55714-9ed1-4e4d-924a-0b297d5260d2": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/d5764058-86d0-4f2e-a076-02e14a18d663": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/dd06a1ee-2492-4878-884a-e73282cd755f": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/e39429e0-e540-4589-a5b9-389aabcd1b13": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/3b5bd87a-a3f5-4082-a5b0-20e0806fdfe7": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/b605ace4-edbc-4c18-849d-346d75362999": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/073e1ca9-1ba8-4380-82bb-05e2203f5496": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/c3c04a88-e7fc-455a-9660-1e0f3d742fc9": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/df84ec65-5c9e-4864-9e9f-f7aa2b25e5c8": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/bb98fa12-c13b-4058-876b-7eee6f85d4d0": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/1381f736-bfd6-49bf-b5ce-00882dabc573": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/36cae278-14d8-4402-b0cd-a1883e9c7828": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/f849467f-f80f-40bf-bd21-3b7915c2a96e": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/520f4620-e45c-43c2-b1c3-fef978d32320": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/20501fe6-a45c-48be-ae8f-0ae11db5e358": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/0fd4d23c-a7e8-44b7-96ff-bafbf8fbecde": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/abfb2fec-5218-4c94-b90d-f4ec35b5a12c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/eb674c15-1125-4352-b391-d309307a56c1": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/d35a0e88-9fc4-4d18-9a7e-bf7ef5562dcd": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/403a60e0-9fbb-4bf8-9312-ee199181416e": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/b6c27666-c645-4825-bc35-a0aeaebbf9a4": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/bc0ee7e7-45c7-49bd-a779-bcd9b3b5a8ac": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/ac7d4931-90f0-431a-a722-bbbf13939472": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/2defcddf-dc8a-4005-ab30-cba723d7179f": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/6aea1174-9036-4c65-8726-f26414b04489": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/78b23d13-8f64-427a-8a7a-0ed8459a8c15": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/0fa51b74-8bd4-4645-a0e0-b4dc217314c3": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/713fd967-695a-482c-aaad-65119c876511": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/11d73398-7b2b-4720-bf75-9f63af095c80": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/e673fe4c-e776-45ab-9821-7e77eaee0c53": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/e59f2058-c73b-47c2-8777-6b7df3a95802": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/11d7d19c-cb15-4ced-968f-8a270ce38477": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/71a8dc4b-f324-4840-9432-5f02d54c0f4c": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/79a335fd-578f-4c3c-a8e7-5b6c07458b18": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/6452f1be-4efb-4146-8cdc-4ff48357560c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/4f8da757-bd4f-4412-8a57-cc52445d4e68": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/63f5a7bd-abac-40ab-9c02-4b9f85a75617": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/2fd6e57a-3da6-4952-8d36-da12414b4882": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/d9c7b154-997d-4a9c-bfe2-24aadacbc67e": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/8096b052-17e8-4d7f-b0c3-3d697656a479": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/167adbd9-4001-4253-91ea-f7d1c7745776": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/be697753-fe7c-4ed5-ad28-4853e435d21e": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/74bb5141-e2ec-440f-a1d5-ff5a6478ae78": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/e39ca05b-5554-4287-a2f7-f9737df86931": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/6928664e-070a-45a8-9a14-074dac6941e7": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/389b4ed8-3a58-401d-9532-b0215b8148b9": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/99d4b433-d90f-407b-bbbd-80f303ad48f4": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/67a36ceb-b76a-47a2-bc41-a85a7b45bf9e": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/21378ea4-bdf9-4c39-900e-df1313c9f8d3": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/50a33f9f-f04f-4779-8ce2-9eb98ff09eb5": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/4755cadf-00e1-47f0-876d-cee818bdabd4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/b3f6c09c-7d37-4a73-8b7c-e609c69a6a48": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/e20cb085-937b-473c-9da2-2e59347b46a2": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/0ab2f959-298f-4ac3-81a2-d36d36263d92": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/87c6a82d-6c84-4bb7-a7bc-ee56949f5853": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/a8a75ed9-e081-4e68-bb80-34983699d26d": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/4fb3c795-2181-4f3b-a231-c84d1ec7ebf2": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/acc6db25-82e8-48db-8ec0-554638d2e3bb": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/a5430e40-81cb-45eb-b97c-f7f4047d439e": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/a28d2081-f953-45cb-992f-8d0e394e60ab": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/1d19ed3e-d055-4d50-a8fd-0b0b56ba916d": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/e8afd1c6-2dea-43fd-9168-fd4ef1d18fbf": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/fca46ec7-f3b9-488d-82c6-4a9bc2fd9bc4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/9ff90cc6-2eb8-45b8-bf55-c8804d723e26": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/08da8da0-67dc-4b56-a4ca-81be45436d31": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/81eb406f-6bf5-419c-a90e-53581a5d7cf2": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/810de65a-5568-41e5-b98c-9a2b03da0e56": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/6e4703be-f1d2-4e3d-ab72-0e188e66e8d8": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/087157ee-e683-4a01-a4a1-9be49bf421ea": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/ea524341-5ac2-46a7-82a6-e857c5e411fa": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/7e6c4405-41d0-4e63-a146-891db7215c34": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/3c801cfe-abd3-429a-ab3a-c68867381e39": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/f783aaa7-f77b-427c-a4c6-a579bab56031": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/fb17bb32-be07-483a-b844-7190b334bc85": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/ede442c2-b870-40ca-8533-905e96365801": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/00d0b4ad-d248-4e5b-a254-ecb8ec952b0c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/a6231697-bb0c-41bc-b3bf-c7e237d7d423": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/79240360-9a1e-4999-88c0-e60cc6176075": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/7a4065de-3d3b-4f85-a138-c958ff05283c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/53524e6c-72b6-420d-b9fb-5302ef310786": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/ec8dfbd9-fbee-4ea8-aa0c-d14112eb36d5": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/c6d09cb3-8e57-459b-a268-38ee3bd9738a": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/cc814af4-6021-4031-867a-2d695aa8911f": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/347e9fa7-8793-4cc5-a383-37b6c39b7bd8": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/d7c7547e-2a8b-4da5-8c79-9bc24f8ca018": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/250c9945-376f-4745-b481-c09aa358f5e5": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/6d2e1370-8c82-4142-9bcc-6675e730aa46": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/5e230d7d-f2d4-4546-b35b-f156b1e3af7f": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/53ab1a00-d094-4368-9d97-92da2770b536": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/53c8674c-93f2-47eb-b9e4-0c57b93921c3": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/4d90741e-6d40-4fdc-9582-d23ead7229a5": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/b57e8844-16ec-4c5f-9874-d63975d9890c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/705da22c-cb6a-4f88-a20f-8791df57d96c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/89bdba7e-9366-44b3-97fe-5df51ebebb10": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/6bc0df89-5aae-47b4-9d2e-2ebc5fa08e96": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/6de81829-08c5-4466-acb3-36b72451f1ee": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/a3775559-e542-4142-a882-8e87a2ef2efd": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/f1458a52-e1f7-4963-8255-38d5f5367d3b": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/bc4ecc21-18e0-4b29-b541-3616c8da167c": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/2da24e7a-1032-4dec-b913-6df3ed3bf7a4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/dd194f60-bdc1-4846-b40d-3fd79c00c9e7": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/96f5969a-931e-4b6c-9d4c-ec01db548500": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/813202a6-216d-41a9-99f8-c12e94cc6e06": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/14210c48-19ae-4224-a495-aa5f0116bbfb": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/7ad6f06c-1e25-452e-a5d1-58258ff2ed18": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/64411ba4-b48a-4c76-a7f6-d2c8f2bb17d5": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/21f93590-6886-4357-9f95-a06a8aec0ee7": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/d3bc5b06-22d8-43ed-8912-670442ef19c2": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/fa1d2ab0-62c3-46ac-87e0-aa37003388e8": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/644d2672-9f73-418e-9e7d-999eea8354fd": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/a9c6aaa4-ce50-4225-9073-b88a7e671bfd": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/c79459b2-36cb-40af-bb1d-fdc9e6d8f3aa": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/68d01700-93b2-4c01-a28d-07da33adefd3": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/bb821ccb-1108-4d3f-92d0-b55be82453f2": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/803b6a96-b533-4738-b384-8bc87ad9447d": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/53b5b115-0c63-446e-b671-b6017f518cef": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/382c0dd9-716f-485b-89e5-3a4084f1bd98": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/b0469075-4c9b-4bac-aa17-117d6ec62e03": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/670f19cf-017f-47a0-8c39-16704458624b": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/3ef6a652-1086-4b06-b10b-758edfe4a697": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/0c3c86dc-4f93-4be8-93bd-f22ab8509c9e": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/4b669efe-3bf5-41ce-8c5c-19fa2145745a": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/10166129-5cc3-438a-ad57-63c938a54906": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/aed5fff6-10fa-4e2d-b444-edcaec74a644": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/e34e0c36-caee-4336-8f23-6331973c7017": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/86862643-fec5-4b5c-8304-74feecc65cb7": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/59fc7ccd-4bfe-4f66-9fe1-df8081826069": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/e4b64632-4d9f-48bb-86bd-888bc90b32fd": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/5e17c256-a2c1-48b8-8a30-bda9dba998bc": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/c8341c3c-9e94-4567-9a26-186ad6fe1384": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/553e7a6c-8b20-42cb-a174-39da05d9458a": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/04ea4c0b-4c10-4b13-813b-b4078e73a709": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/307207d1-c5bc-453a-ba50-d518ab3f3aa5": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/298466bc-8295-4062-89fd-05cd1609ca62": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/7df21e90-5110-450b-9e9b-0e64df27a9a1": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/9e2c4de8-8179-4c5d-97d4-b75b6aad5692": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/6d290f93-5cad-451a-8ed3-aeca853fccf8": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/1b396062-84a4-4061-970c-800c5506c34f": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/3476c39e-481d-4ff5-a659-f80a59abfc63": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/ffe4183d-c02e-4e72-8b06-162ab984735a": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/5c03a7c3-04e2-40e4-804c-38d3d755dbcc": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/463405ac-037b-45db-a322-e6fc94de9a67": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/ad177c40-b7b1-4943-a5b8-abcdaac291cb": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/a516333c-21b1-47cf-851f-4c1f34f83aaf": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/a174c9f2-d0f8-4aba-97e9-1c3f4e31d4ca": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/01b60537-62a6-463b-ad6b-d59621eaf12f": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/fd7f9842-6be4-4d59-8b44-142612c94db3": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/5774d103-38fd-4906-941b-fd753f5a1ce4": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/c23432f6-371d-4c06-85fb-adcea90c19df": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/491eccc9-c3b5-4bf8-b1f6-9d31a6a4ff80": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/6824f8de-a5f2-41d7-b6b1-61b14d56d8f0": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/ce616538-3c4f-48a5-8e3a-b383f6e76de0": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/cad5e744-2600-4674-a8ad-8a02897c6fd4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/06e16611-4e8e-4866-81d6-4f23536a8b00": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/ec4a3241-3f52-4008-a6bd-cd668878bfb4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/d43744b1-c8f7-4421-a3e9-b95c5a639e8e": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/d586ac3a-e641-41cd-87ad-d9b763148ec9": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/ccd5b220-a9d2-4953-b984-888b61f8325e": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/7bed601a-063f-4f38-9868-e30332335c0a": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/3fce3c93-46a9-4215-ad2e-93417e8a03b9": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/8014d58c-9bed-46d6-8550-6da17740bb66": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/af4c8804-b2ec-44d9-ae46-bf143e9a8d3d": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/8a96e3a1-7ea2-46ff-8d16-07c905606255": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/51b68661-5ee1-4089-9b98-65327180a4cf": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/dc3ab7ad-6f73-4f6c-be81-5e26d939e337": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/aa5ad86f-6a99-47c3-b781-f4bbbd70c333": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/3c62b0cb-f6cf-480a-8a37-d54c90d5c287": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/82e210e8-ac32-41fa-a9fa-0bc563903a86": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/88581817-1826-40e3-a862-870c4918ab63": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/4b7394c3-63d0-430a-954b-ce5d735a678d": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/16fc3385-4cbd-455b-ba84-1648ee011204": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/c6ed0a91-ccc6-466a-98b8-544ed3607164": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/700e03a7-385f-4d7c-b4dd-2e3320d52262": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/a6e8da3e-0867-4ea9-843c-692a99f67db0": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/efbaa096-4b77-4de2-87ad-d308ff63ede1": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/44b66cdb-bfc4-44db-a5c2-94d32d878123": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/85a93675-1bc9-48a9-9549-3312fa611b13": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/819abfdb-fcf6-4678-847f-bd1c6f2699e1": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/cbeb9204-422f-4782-81ec-09453aa07d34": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/827274af-579b-4032-8c69-4b600031fc64": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/74ff0dcc-2f9c-4243-866c-7a2375e6f0a2": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/bee8b322-2843-4be7-9adc-9e9dbf4c47a4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/243057d2-d614-4ce6-8ffe-006f85a307a9": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/3897980a-7240-4736-a3a2-675b7b14002a": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/b39e9e55-33c6-4e9a-8ef8-33c973dc6bc7": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/dccd50d8-6fb8-490f-b2d7-20c5bf19afba": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/0a85024f-909b-448f-b4f1-043689f6ce82": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/d3bfca5c-71bd-4066-9a29-aff14a7f56e2": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/565eab07-dd2c-4c3d-aa1a-75e430d6d914": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/aae5af8b-f27d-4646-9248-a98354fc9a65": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/17eae5ea-5267-45d5-ae3a-a631b8328d38": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/8920c7b7-710f-44f0-8cd1-d360bba41db4": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/1e11e93b-af7a-4265-9a3f-9e9c8689d321": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/1ac7c9a3-98d3-46d2-8e51-4014a0dea1cb": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/0ccec700-53b1-4b2c-86de-d5930f63baef": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/5d454370-08eb-4061-a870-d96c5ab2fad9": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/f07463bf-83c7-4063-9d1d-bb73a5201c5b": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/6c3a98f1-8ed9-4a70-8634-30da696bf048": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/bdca4653-d6f1-4de8-81e9-7ef5756356dc": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "ProtocolQA/0d18e3c2-1d07-4cd1-9be4-ff6429340885": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/a10d4442-9eb0-4c07-8075-691a30507906": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/f042d525-ec83-4e69-8246-c4cd5a7bbfcc": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/bc3cd023-5bcb-4eaf-9dd1-aa585e0d03d6": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "SeqQA/b0ac4625-8db6-436d-8c4c-183f4b0f817c": [
+    "fabius-scientia",
+    "baseline"
+   ],
+   "SeqQA/5e0c7fde-411c-4d2d-be4f-2df35a1b3c92": [
+    "baseline",
+    "fabius-scientia"
+   ],
+   "ProtocolQA/eebdad6c-9209-40bd-88a2-23ceb6e9db66": [
+    "baseline",
+    "fabius-scientia"
+   ]
+  },
+  "excluded": {}
+ },
+ "finqa": {
+  "skill": "fortuna",
+  "items": [
+   "MO/2014/page_62.pdf-3",
+   "ETR/2004/page_239.pdf-4",
+   "AMT/2006/page_104.pdf-4",
+   "SNA/2013/page_84.pdf-1",
+   "BLK/2014/page_120.pdf-1",
+   "GS/2015/page_188.pdf-1",
+   "AES/2001/page_33.pdf-1",
+   "SNA/2007/page_49.pdf-4",
+   "CMCSA/2015/page_112.pdf-4",
+   "CMCSA/2015/page_67.pdf-2",
+   "ETFC/2012/page_24.pdf-1",
+   "ANSS/2016/page_47.pdf-2",
+   "V/2014/page_126.pdf-2",
+   "AMAT/2018/page_33.pdf-2",
+   "JPM/2009/page_175.pdf-5",
+   "HWM/2018/page_96.pdf-2",
+   "L/2009/page_84.pdf-3",
+   "UNP/2011/page_24.pdf-2",
+   "SNA/2012/page_110.pdf-2",
+   "DVN/2018/page_35.pdf-4",
+   "SNA/2013/page_34.pdf-3",
+   "LMT/2014/page_91.pdf-2",
+   "CME/2010/page_123.pdf-2",
+   "DRE/2007/page_56.pdf-1",
+   "GS/2012/page_142.pdf-3",
+   "AMT/2012/page_118.pdf-3",
+   "AES/2002/page_128.pdf-3",
+   "ABMD/2006/page_43.pdf-2",
+   "AES/2001/page_85.pdf-2",
+   "AWK/2014/page_121.pdf-3",
+   "AMT/2014/page_160.pdf-4",
+   "LMT/2014/page_77.pdf-1",
+   "BLK/2015/page_124.pdf-1",
+   "HIG/2011/page_53.pdf-3",
+   "PNC/2012/page_247.pdf-4",
+   "FIS/2016/page_9.pdf-2",
+   "ANSS/2016/page_47.pdf-1",
+   "ABMD/2006/page_43.pdf-1",
+   "AWK/2014/page_121.pdf-1",
+   "MKTX/2004/page_99.pdf-4",
+   "BLL/2010/page_37.pdf-2",
+   "C/2009/page_243.pdf-2",
+   "AMT/2016/page_49.pdf-2",
+   "JPM/2014/page_122.pdf-1",
+   "MRO/2017/page_96.pdf-3",
+   "BLK/2014/page_120.pdf-4",
+   "HIG/2004/page_140.pdf-3",
+   "MRO/2017/page_96.pdf-2",
+   "AMT/2007/page_29.pdf-1",
+   "CDNS/2018/page_66.pdf-3",
+   "AAPL/2006/page_131.pdf-2",
+   "AAL/2016/page_8.pdf-3",
+   "AES/2001/page_85.pdf-3",
+   "GIS/2017/page_31.pdf-1",
+   "GS/2017/page_132.pdf-4",
+   "V/2008/page_180.pdf-2",
+   "AWK/2013/page_122.pdf-2",
+   "DVN/2014/page_87.pdf-2",
+   "TMUS/2017/page_29.pdf-3",
+   "UPS/2010/page_52.pdf-1",
+   "CME/2010/page_123.pdf-3",
+   "DISCA/2014/page_64.pdf-2",
+   "DG/2009/page_77.pdf-1",
+   "AMT/2007/page_127.pdf-3",
+   "ETFC/2007/page_18.pdf-1",
+   "NKE/2009/page_43.pdf-2",
+   "GPN/2013/page_87.pdf-4",
+   "CME/2017/page_40.pdf-4",
+   "ABMD/2005/page_29.pdf-4",
+   "AWK/2018/page_146.pdf-1",
+   "UPS/2012/page_32.pdf-3",
+   "AWK/2012/page_117.pdf-4",
+   "GS/2013/page_149.pdf-3",
+   "UNP/2016/page_52.pdf-2",
+   "ILMN/2008/page_86.pdf-4",
+   "C/2009/page_63.pdf-2",
+   "AAPL/2004/page_68.pdf-1",
+   "CB/2010/page_103.pdf-1",
+   "AON/2007/page_171.pdf-1",
+   "FIS/2016/page_45.pdf-3",
+   "C/2018/page_175.pdf-3",
+   "AOS/2010/page_18.pdf-2",
+   "PNC/2012/page_174.pdf-4",
+   "GS/2012/page_142.pdf-2",
+   "CMCSA/2015/page_112.pdf-2",
+   "JPM/2015/page_137.pdf-3",
+   "CDNS/2015/page_30.pdf-2",
+   "DRE/2005/page_30.pdf-1",
+   "AAL/2013/page_172.pdf-1",
+   "GS/2015/page_188.pdf-2",
+   "PNC/2012/page_65.pdf-1",
+   "DRE/2008/page_46.pdf-2",
+   "GPN/2010/page_89.pdf-4",
+   "ETR/2017/page_143.pdf-3",
+   "GS/2017/page_86.pdf-4",
+   "AWK/2018/page_146.pdf-4",
+   "ETR/2013/page_21.pdf-2",
+   "MS/2007/page_179.pdf-1",
+   "GS/2013/page_220.pdf-4",
+   "MAS/2017/page_27.pdf-3",
+   "HUM/2009/page_105.pdf-1",
+   "RSG/2015/page_98.pdf-2",
+   "MRO/2013/page_19.pdf-2",
+   "FBHS/2017/page_83.pdf-1",
+   "BLK/2014/page_120.pdf-2",
+   "HOLX/2009/page_151.pdf-1",
+   "DRE/2002/page_15.pdf-3",
+   "ETR/2015/page_17.pdf-3",
+   "BLL/2010/page_37.pdf-1",
+   "AMAT/2018/page_33.pdf-1",
+   "ADI/2019/page_29.pdf-3",
+   "UNP/2015/page_56.pdf-3",
+   "LMT/2014/page_50.pdf-3",
+   "ETR/2004/page_212.pdf-2",
+   "CME/2017/page_40.pdf-1",
+   "BLL/2010/page_37.pdf-4",
+   "MO/2016/page_19.pdf-3",
+   "FIS/2012/page_48.pdf-4",
+   "ETR/2016/page_23.pdf-3",
+   "UAA/2016/page_42.pdf-1",
+   "GS/2015/page_188.pdf-4",
+   "CDW/2015/page_93.pdf-4",
+   "ADBE/1999/page_64.pdf-1",
+   "ETR/2016/page_23.pdf-4",
+   "AWK/2013/page_122.pdf-3",
+   "LKQ/2016/page_87.pdf-4",
+   "HIG/2011/page_53.pdf-1",
+   "CME/2010/page_69.pdf-3",
+   "IP/2009/page_84.pdf-1",
+   "CDNS/2018/page_66.pdf-4",
+   "IP/2006/page_38.pdf-4",
+   "ABMD/2005/page_29.pdf-1",
+   "MRO/2011/page_108.pdf-2",
+   "GRMN/2006/page_68.pdf-2",
+   "STT/2011/page_69.pdf-1",
+   "UNP/2009/page_35.pdf-1",
+   "ECL/2017/page_69.pdf-1",
+   "BLK/2012/page_33.pdf-3",
+   "MS/2013/page_132.pdf-1",
+   "BLL/2006/page_67.pdf-1",
+   "PNC/2012/page_100.pdf-3",
+   "ILMN/2008/page_86.pdf-3",
+   "STT/2006/page_95.pdf-2",
+   "MRK/2013/page_125.pdf-4",
+   "C/2009/page_63.pdf-4",
+   "JKHY/2019/page_18.pdf-1",
+   "HOLX/2006/page_71.pdf-1",
+   "NWS/2017/page_119.pdf-2",
+   "PNC/2012/page_100.pdf-2",
+   "BDX/2018/page_106.pdf-3",
+   "MRO/2004/page_125.pdf-1",
+   "AMT/2012/page_50.pdf-4",
+   "DRE/2008/page_46.pdf-1",
+   "LMT/2014/page_91.pdf-3",
+   "BKNG/2016/page_33.pdf-4",
+   "JPM/2005/page_80.pdf-2",
+   "AMT/2007/page_127.pdf-2",
+   "HIG/2004/page_140.pdf-2",
+   "BKR/2017/page_56.pdf-4",
+   "ADBE/2008/page_89.pdf-2",
+   "DISH/2010/page_117.pdf-1",
+   "GS/2017/page_86.pdf-1",
+   "ECL/2016/page_52.pdf-2",
+   "ETR/2004/page_239.pdf-1",
+   "SNA/2007/page_69.pdf-3",
+   "AAL/2014/page_15.pdf-3",
+   "RSG/2018/page_135.pdf-2",
+   "ETR/2008/page_442.pdf-1",
+   "ALLE/2015/page_24.pdf-2",
+   "ABMD/2007/page_78.pdf-2",
+   "MMM/2007/page_23.pdf-1",
+   "AMT/2014/page_160.pdf-3",
+   "JPM/2009/page_175.pdf-2",
+   "ALXN/2016/page_153.pdf-3",
+   "AMT/2008/page_94.pdf-2",
+   "AON/2007/page_188.pdf-1",
+   "FIS/2016/page_9.pdf-1",
+   "IP/2006/page_75.pdf-1",
+   "PPG/2012/page_29.pdf-1",
+   "MRK/2013/page_125.pdf-1",
+   "ETFC/2012/page_43.pdf-1",
+   "ETR/2017/page_143.pdf-2",
+   "DISCA/2011/page_49.pdf-1",
+   "CDW/2017/page_38.pdf-1",
+   "PPG/2018/page_85.pdf-3",
+   "SNA/2007/page_29.pdf-1",
+   "AOS/2010/page_18.pdf-1",
+   "HOLX/2007/page_126.pdf-2",
+   "JPM/2009/page_175.pdf-1",
+   "PKG/2002/page_52.pdf-2",
+   "NCLH/2018/page_64.pdf-3",
+   "HOLX/2009/page_151.pdf-2",
+   "IPG/2008/page_72.pdf-3",
+   "AMT/2016/page_49.pdf-1",
+   "BLL/2006/page_67.pdf-2",
+   "ETR/2008/page_298.pdf-3",
+   "LMT/2012/page_73.pdf-1",
+   "PPG/2012/page_29.pdf-3",
+   "DISCA/2014/page_64.pdf-3",
+   "CMCSA/2008/page_36.pdf-1"
+  ],
+  "arm_order": {
+   "MO/2014/page_62.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETR/2004/page_239.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMT/2006/page_104.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "SNA/2013/page_84.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLK/2014/page_120.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2015/page_188.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AES/2001/page_33.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "SNA/2007/page_49.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CMCSA/2015/page_112.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CMCSA/2015/page_67.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETFC/2012/page_24.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ANSS/2016/page_47.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "V/2014/page_126.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMAT/2018/page_33.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "JPM/2009/page_175.pdf-5": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "HWM/2018/page_96.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "L/2009/page_84.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "UNP/2011/page_24.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "SNA/2012/page_110.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "DVN/2018/page_35.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "SNA/2013/page_34.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "LMT/2014/page_91.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CME/2010/page_123.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "DRE/2007/page_56.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2012/page_142.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMT/2012/page_118.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AES/2002/page_128.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ABMD/2006/page_43.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AES/2001/page_85.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AWK/2014/page_121.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AMT/2014/page_160.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "LMT/2014/page_77.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "BLK/2015/page_124.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "HIG/2011/page_53.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "PNC/2012/page_247.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "FIS/2016/page_9.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ANSS/2016/page_47.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ABMD/2006/page_43.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AWK/2014/page_121.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MKTX/2004/page_99.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLL/2010/page_37.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "C/2009/page_243.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMT/2016/page_49.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "JPM/2014/page_122.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MRO/2017/page_96.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLK/2014/page_120.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "HIG/2004/page_140.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MRO/2017/page_96.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AMT/2007/page_29.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CDNS/2018/page_66.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AAPL/2006/page_131.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AAL/2016/page_8.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AES/2001/page_85.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GIS/2017/page_31.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2017/page_132.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "V/2008/page_180.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AWK/2013/page_122.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DVN/2014/page_87.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "TMUS/2017/page_29.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "UPS/2010/page_52.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CME/2010/page_123.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DISCA/2014/page_64.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DG/2009/page_77.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AMT/2007/page_127.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETFC/2007/page_18.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "NKE/2009/page_43.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "GPN/2013/page_87.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CME/2017/page_40.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ABMD/2005/page_29.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AWK/2018/page_146.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "UPS/2012/page_32.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AWK/2012/page_117.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "GS/2013/page_149.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "UNP/2016/page_52.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ILMN/2008/page_86.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "C/2009/page_63.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AAPL/2004/page_68.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CB/2010/page_103.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AON/2007/page_171.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "FIS/2016/page_45.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "C/2018/page_175.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AOS/2010/page_18.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "PNC/2012/page_174.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "GS/2012/page_142.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CMCSA/2015/page_112.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "JPM/2015/page_137.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CDNS/2015/page_30.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "DRE/2005/page_30.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AAL/2013/page_172.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2015/page_188.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "PNC/2012/page_65.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DRE/2008/page_46.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "GPN/2010/page_89.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETR/2017/page_143.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "GS/2017/page_86.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AWK/2018/page_146.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ETR/2013/page_21.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MS/2007/page_179.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2013/page_220.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MAS/2017/page_27.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "HUM/2009/page_105.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "RSG/2015/page_98.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "MRO/2013/page_19.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "FBHS/2017/page_83.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "BLK/2014/page_120.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "HOLX/2009/page_151.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DRE/2002/page_15.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ETR/2015/page_17.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "BLL/2010/page_37.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AMAT/2018/page_33.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ADI/2019/page_29.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "UNP/2015/page_56.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "LMT/2014/page_50.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ETR/2004/page_212.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CME/2017/page_40.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLL/2010/page_37.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MO/2016/page_19.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "FIS/2012/page_48.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETR/2016/page_23.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "UAA/2016/page_42.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2015/page_188.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CDW/2015/page_93.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ADBE/1999/page_64.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETR/2016/page_23.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AWK/2013/page_122.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "LKQ/2016/page_87.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "HIG/2011/page_53.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "CME/2010/page_69.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "IP/2009/page_84.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CDNS/2018/page_66.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "IP/2006/page_38.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ABMD/2005/page_29.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MRO/2011/page_108.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GRMN/2006/page_68.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "STT/2011/page_69.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "UNP/2009/page_35.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ECL/2017/page_69.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLK/2012/page_33.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "MS/2013/page_132.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLL/2006/page_67.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "PNC/2012/page_100.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ILMN/2008/page_86.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "STT/2006/page_95.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "MRK/2013/page_125.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "C/2009/page_63.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "JKHY/2019/page_18.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "HOLX/2006/page_71.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "NWS/2017/page_119.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "PNC/2012/page_100.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "BDX/2018/page_106.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "MRO/2004/page_125.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMT/2012/page_50.pdf-4": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "DRE/2008/page_46.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "LMT/2014/page_91.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "BKNG/2016/page_33.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "JPM/2005/page_80.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AMT/2007/page_127.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "HIG/2004/page_140.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "BKR/2017/page_56.pdf-4": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ADBE/2008/page_89.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DISH/2010/page_117.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "GS/2017/page_86.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ECL/2016/page_52.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETR/2004/page_239.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "SNA/2007/page_69.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AAL/2014/page_15.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "RSG/2018/page_135.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETR/2008/page_442.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ALLE/2015/page_24.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ABMD/2007/page_78.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "MMM/2007/page_23.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMT/2014/page_160.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "JPM/2009/page_175.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ALXN/2016/page_153.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AMT/2008/page_94.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "AON/2007/page_188.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "FIS/2016/page_9.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "IP/2006/page_75.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "PPG/2012/page_29.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "MRK/2013/page_125.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "ETFC/2012/page_43.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ETR/2017/page_143.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "DISCA/2011/page_49.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CDW/2017/page_38.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "PPG/2018/page_85.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "SNA/2007/page_29.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AOS/2010/page_18.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "HOLX/2007/page_126.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "JPM/2009/page_175.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "PKG/2002/page_52.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "NCLH/2018/page_64.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "HOLX/2009/page_151.pdf-2": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "IPG/2008/page_72.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "AMT/2016/page_49.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "BLL/2006/page_67.pdf-2": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "ETR/2008/page_298.pdf-3": [
+    "fabius-fortuna",
+    "baseline"
+   ],
+   "LMT/2012/page_73.pdf-1": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "PPG/2012/page_29.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "DISCA/2014/page_64.pdf-3": [
+    "baseline",
+    "fabius-fortuna"
+   ],
+   "CMCSA/2008/page_36.pdf-1": [
+    "fabius-fortuna",
+    "baseline"
+   ]
+  },
+  "excluded": {}
+ },
+ "ds1000": {
+  "skill": "doctrina",
+  "items": [
+   "ds1000-0085",
+   "ds1000-0031",
+   "ds1000-0732",
+   "ds1000-0910",
+   "ds1000-0377",
+   "ds1000-0527",
+   "ds1000-0719",
+   "ds1000-0560",
+   "ds1000-0076",
+   "ds1000-0209",
+   "ds1000-0037",
+   "ds1000-0908",
+   "ds1000-0884",
+   "ds1000-0485",
+   "ds1000-0508",
+   "ds1000-0661",
+   "ds1000-0447",
+   "ds1000-0593",
+   "ds1000-0880",
+   "ds1000-0232",
+   "ds1000-0437",
+   "ds1000-0411",
+   "ds1000-0541",
+   "ds1000-0162",
+   "ds1000-0178",
+   "ds1000-0755",
+   "ds1000-0185",
+   "ds1000-0384",
+   "ds1000-0145",
+   "ds1000-0898",
+   "ds1000-0122",
+   "ds1000-0921",
+   "ds1000-0785",
+   "ds1000-0450",
+   "ds1000-0194",
+   "ds1000-0298",
+   "ds1000-0144",
+   "ds1000-0603",
+   "ds1000-0832",
+   "ds1000-0483",
+   "ds1000-0218",
+   "ds1000-0072",
+   "ds1000-0617",
+   "ds1000-0203",
+   "ds1000-0787",
+   "ds1000-0223",
+   "ds1000-0114",
+   "ds1000-0042",
+   "ds1000-0215",
+   "ds1000-0383",
+   "ds1000-0748",
+   "ds1000-0563",
+   "ds1000-0878",
+   "ds1000-0657",
+   "ds1000-0557",
+   "ds1000-0244",
+   "ds1000-0625",
+   "ds1000-0315",
+   "ds1000-0166",
+   "ds1000-0438",
+   "ds1000-0198",
+   "ds1000-0503",
+   "ds1000-0863",
+   "ds1000-0028",
+   "ds1000-0268",
+   "ds1000-0496",
+   "ds1000-0153",
+   "ds1000-0038",
+   "ds1000-0238",
+   "ds1000-0007",
+   "ds1000-0050",
+   "ds1000-0196",
+   "ds1000-0793",
+   "ds1000-0424",
+   "ds1000-0780",
+   "ds1000-0339",
+   "ds1000-0329",
+   "ds1000-0879",
+   "ds1000-0583",
+   "ds1000-0772",
+   "ds1000-0098",
+   "ds1000-0553",
+   "ds1000-0264",
+   "ds1000-0133",
+   "ds1000-0454",
+   "ds1000-0367",
+   "ds1000-0810",
+   "ds1000-0254",
+   "ds1000-0069",
+   "ds1000-0314",
+   "ds1000-0868",
+   "ds1000-0892",
+   "ds1000-0187",
+   "ds1000-0136",
+   "ds1000-0323",
+   "ds1000-0149",
+   "ds1000-0023",
+   "ds1000-0906",
+   "ds1000-0082",
+   "ds1000-0903",
+   "ds1000-0065",
+   "ds1000-0457",
+   "ds1000-0260",
+   "ds1000-0212",
+   "ds1000-0664",
+   "ds1000-0381",
+   "ds1000-0659",
+   "ds1000-0596",
+   "ds1000-0402",
+   "ds1000-0647",
+   "ds1000-0092",
+   "ds1000-0331",
+   "ds1000-0537",
+   "ds1000-0183",
+   "ds1000-0321",
+   "ds1000-0550",
+   "ds1000-0115",
+   "ds1000-0622",
+   "ds1000-0433",
+   "ds1000-0121",
+   "ds1000-0322",
+   "ds1000-0077",
+   "ds1000-0208",
+   "ds1000-0918",
+   "ds1000-0531",
+   "ds1000-0207",
+   "ds1000-0768",
+   "ds1000-0000",
+   "ds1000-0083",
+   "ds1000-0573",
+   "ds1000-0788",
+   "ds1000-0534",
+   "ds1000-0830",
+   "ds1000-0101",
+   "ds1000-0747",
+   "ds1000-0045",
+   "ds1000-0547",
+   "ds1000-0102",
+   "ds1000-0227",
+   "ds1000-0561",
+   "ds1000-0439",
+   "ds1000-0612",
+   "ds1000-0567",
+   "ds1000-0277",
+   "ds1000-0300",
+   "ds1000-0273",
+   "ds1000-0783",
+   "ds1000-0361",
+   "ds1000-0885",
+   "ds1000-0736",
+   "ds1000-0340",
+   "ds1000-0094",
+   "ds1000-0256",
+   "ds1000-0075",
+   "ds1000-0613",
+   "ds1000-0639",
+   "ds1000-0524",
+   "ds1000-0542",
+   "ds1000-0778",
+   "ds1000-0342",
+   "ds1000-0926",
+   "ds1000-0870",
+   "ds1000-0900",
+   "ds1000-0924",
+   "ds1000-0376",
+   "ds1000-0460",
+   "ds1000-0837",
+   "ds1000-0138",
+   "ds1000-0219",
+   "ds1000-0600",
+   "ds1000-0516",
+   "ds1000-0265",
+   "ds1000-0251",
+   "ds1000-0318",
+   "ds1000-0765",
+   "ds1000-0893",
+   "ds1000-0487",
+   "ds1000-0443",
+   "ds1000-0746",
+   "ds1000-0442",
+   "ds1000-0652",
+   "ds1000-0126",
+   "ds1000-0498",
+   "ds1000-0515",
+   "ds1000-0055",
+   "ds1000-0352",
+   "ds1000-0869",
+   "ds1000-0079",
+   "ds1000-0180",
+   "ds1000-0297",
+   "ds1000-0611",
+   "ds1000-0012",
+   "ds1000-0819",
+   "ds1000-0141",
+   "ds1000-0469",
+   "ds1000-0146",
+   "ds1000-0737",
+   "ds1000-0440",
+   "ds1000-0156",
+   "ds1000-0349"
+  ],
+  "arm_order": {
+   "ds1000-0085": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0031": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0732": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0910": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0377": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0527": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0719": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0560": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0076": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0209": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0037": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0908": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0884": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0485": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0508": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0661": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0447": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0593": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0880": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0232": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0437": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0411": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0541": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0162": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0178": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0755": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0185": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0384": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0145": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0898": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0122": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0921": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0785": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0450": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0194": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0298": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0144": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0603": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0832": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0483": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0218": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0072": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0617": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0203": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0787": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0223": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0114": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0042": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0215": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0383": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0748": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0563": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0878": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0657": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0557": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0244": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0625": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0315": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0166": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0438": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0198": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0503": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0863": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0028": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0268": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0496": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0153": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0038": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0238": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0007": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0050": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0196": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0793": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0424": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0780": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0339": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0329": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0879": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0583": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0772": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0098": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0553": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0264": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0133": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0454": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0367": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0810": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0254": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0069": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0314": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0868": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0892": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0187": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0136": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0323": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0149": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0023": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0906": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0082": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0903": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0065": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0457": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0260": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0212": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0664": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0381": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0659": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0596": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0402": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0647": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0092": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0331": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0537": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0183": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0321": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0550": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0115": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0622": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0433": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0121": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0322": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0077": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0208": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0918": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0531": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0207": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0768": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0000": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0083": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0573": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0788": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0534": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0830": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0101": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0747": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0045": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0547": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0102": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0227": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0561": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0439": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0612": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0567": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0277": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0300": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0273": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0783": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0361": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0885": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0736": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0340": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0094": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0256": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0075": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0613": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0639": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0524": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0542": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0778": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0342": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0926": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0870": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0900": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0924": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0376": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0460": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0837": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0138": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0219": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0600": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0516": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0265": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0251": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0318": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0765": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0893": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0487": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0443": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0746": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0442": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0652": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0126": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0498": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0515": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0055": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0352": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0869": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0079": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0180": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0297": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0611": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0012": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0819": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0141": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0469": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0146": [
+    "fabius-doctrina",
+    "baseline"
+   ],
+   "ds1000-0737": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0440": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0156": [
+    "baseline",
+    "fabius-doctrina"
+   ],
+   "ds1000-0349": [
+    "fabius-doctrina",
+    "baseline"
+   ]
+  },
+  "excluded": {}
+ },
+ "smartbugs": {
+  "skill": "catena",
+  "items": [
+   "dataset/unchecked_low_level_calls/0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol",
+   "dataset/access_control/parity_wallet_bug_2.sol",
+   "dataset/unchecked_low_level_calls/king_of_the_ether_throne.sol",
+   "dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol",
+   "dataset/arithmetic/insecure_transfer.sol",
+   "dataset/reentrancy/etherbank.sol",
+   "dataset/reentrancy/reentrancy_cross_function.sol",
+   "dataset/front_running/eth_tx_order_dependence_minimal.sol",
+   "dataset/arithmetic/timelock.sol",
+   "dataset/reentrancy/0xb5e1b1ee15c6fa0e48fce100125569d430f1bd12.sol",
+   "dataset/unchecked_low_level_calls/0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e.sol",
+   "dataset/unchecked_low_level_calls/0x4b71ad9c1a84b9b643aa54fdd66e2dec96e8b152.sol",
+   "dataset/arithmetic/BECToken.sol",
+   "dataset/arithmetic/integer_overflow_multitx_onefunc_feasible.sol",
+   "dataset/reentrancy/0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+   "dataset/unchecked_low_level_calls/0x4051334adc52057aca763453820cb0e045076ef3.sol",
+   "dataset/time_manipulation/governmental_survey.sol",
+   "dataset/reentrancy/0x561eac93c92360949ab1f1403323e6db345cbf31.sol",
+   "dataset/other/name_registrar.sol",
+   "dataset/arithmetic/integer_overflow_mapping_sym_1.sol",
+   "dataset/arithmetic/token.sol",
+   "dataset/unchecked_low_level_calls/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01.sol",
+   "dataset/denial_of_service/send_loop.sol",
+   "dataset/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol",
+   "dataset/denial_of_service/dos_number.sol",
+   "dataset/unchecked_low_level_calls/0x89c1b3807d4c67df034fffb62f3509561218d30b.sol",
+   "dataset/unchecked_low_level_calls/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol",
+   "dataset/reentrancy/0xb93430ce38ac4a6bb47fb1fc085ea669353fd89e.sol",
+   "dataset/bad_randomness/etheraffle.sol",
+   "dataset/reentrancy/0x23a91059fdc9579a9fbd0edc5f2ea0bfdb70deb4.sol",
+   "dataset/arithmetic/overflow_single_tx.sol",
+   "dataset/unchecked_low_level_calls/0x39cfd754c85023648bf003bea2dd498c5612abfa.sol",
+   "dataset/arithmetic/overflow_simple_add.sol",
+   "dataset/time_manipulation/roulette.sol",
+   "dataset/unchecked_low_level_calls/0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol",
+   "dataset/unchecked_low_level_calls/0x7d09edb07d23acb532a82be3da5c17d9d85806b4.sol",
+   "dataset/arithmetic/tokensalechallenge.sol",
+   "dataset/front_running/FindThisHash.sol",
+   "dataset/arithmetic/integer_overflow_minimal.sol",
+   "dataset/front_running/odds_and_evens.sol",
+   "dataset/time_manipulation/ether_lotto.sol",
+   "dataset/front_running/ERC20.sol",
+   "dataset/unchecked_low_level_calls/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol",
+   "dataset/unchecked_low_level_calls/0xb11b2fed6c9354f7aa2f658d3b4d7b31d8a13b77.sol",
+   "dataset/unchecked_low_level_calls/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol",
+   "dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63.sol",
+   "dataset/reentrancy/reentrancy_insecure.sol",
+   "dataset/time_manipulation/timed_crowdsale.sol",
+   "dataset/reentrancy/0x93c32845fae42c83a70e5f06214c8433665c2ab5.sol",
+   "dataset/reentrancy/etherstore.sol",
+   "dataset/unchecked_low_level_calls/0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.sol",
+   "dataset/unchecked_low_level_calls/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol",
+   "dataset/unchecked_low_level_calls/0xa1fceeff3acc57d257b917e30c4df661401d6431.sol",
+   "dataset/bad_randomness/lucky_doubler.sol",
+   "dataset/unchecked_low_level_calls/0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+   "dataset/reentrancy/0xbaf51e761510c1a11bf48dd87c0307ac8a8c8a4f.sol",
+   "dataset/access_control/unprotected0.sol",
+   "dataset/time_manipulation/lottopollo.sol",
+   "dataset/reentrancy/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+   "dataset/access_control/mycontract.sol",
+   "dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol",
+   "dataset/arithmetic/integer_overflow_multitx_multifunc_feasible.sol",
+   "dataset/access_control/FibonacciBalance.sol",
+   "dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol",
+   "dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol",
+   "dataset/reentrancy/0x01f8c4e3fa3edeb29e514cba738d87ce8c091d3f.sol",
+   "dataset/unchecked_low_level_calls/0xf2570186500a46986f3139f65afedc2afe4f445d.sol",
+   "dataset/access_control/wallet_03_wrong_constructor.sol",
+   "dataset/access_control/rubixi.sol",
+   "dataset/unchecked_low_level_calls/0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol",
+   "dataset/reentrancy/simple_dao.sol",
+   "dataset/arithmetic/integer_overflow_1.sol",
+   "dataset/unchecked_low_level_calls/etherpot_lotto.sol",
+   "dataset/access_control/proxy.sol",
+   "dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+   "dataset/short_addresses/short_address_example.sol",
+   "dataset/unchecked_low_level_calls/0xd5967fed03e85d1cce44cab284695b41bc675b5c.sol",
+   "dataset/arithmetic/integer_overflow_mul.sol",
+   "dataset/unchecked_low_level_calls/0x8fd1e427396ddb511533cf9abdbebd0a7e08da35.sol",
+   "dataset/bad_randomness/guess_the_random_number.sol",
+   "dataset/access_control/incorrect_constructor_name3.sol",
+   "dataset/unchecked_low_level_calls/0x524960d55174d912768678d8c606b4d50b79d7b1.sol",
+   "dataset/reentrancy/reentrancy_dao.sol",
+   "dataset/denial_of_service/dos_address.sol",
+   "dataset/unchecked_low_level_calls/0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.sol",
+   "dataset/unchecked_low_level_calls/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+   "dataset/access_control/simple_suicide.sol",
+   "dataset/unchecked_low_level_calls/0xbaa3de6504690efb064420d89e871c27065cdd52.sol",
+   "dataset/reentrancy/reentrancy_simple.sol",
+   "dataset/unchecked_low_level_calls/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol",
+   "dataset/unchecked_low_level_calls/mishandled.sol",
+   "dataset/reentrancy/0x7541b76cb60f4c60af330c208b0623b7f54bf615.sol",
+   "dataset/reentrancy/0x4320e6f8c05b27ab4707cd1f6d5ce6f3e4b3a5a1.sol",
+   "dataset/unchecked_low_level_calls/0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.sol",
+   "dataset/denial_of_service/list_dos.sol",
+   "dataset/access_control/wallet_02_refund_nosub.sol",
+   "dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol",
+   "dataset/access_control/arbitrary_location_write_simple.sol",
+   "dataset/bad_randomness/smart_billions.sol",
+   "dataset/reentrancy/modifier_reentrancy.sol",
+   "dataset/unchecked_low_level_calls/unchecked_return_value.sol",
+   "dataset/reentrancy/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+   "dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol",
+   "dataset/unchecked_low_level_calls/0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.sol",
+   "dataset/reentrancy/0xcead721ef5b11f1a7b530171aab69b16c5e66b6e.sol",
+   "dataset/reentrancy/0x8c7777c45481dba411450c228cb692ac3d550344.sol",
+   "dataset/arithmetic/integer_overflow_benign_1.sol",
+   "dataset/access_control/incorrect_constructor_name2.sol",
+   "dataset/reentrancy/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+   "dataset/reentrancy/0xf015c35649c82f5467c9c74b7f28ee67665aad68.sol",
+   "dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol",
+   "dataset/bad_randomness/lottery.sol",
+   "dataset/unchecked_low_level_calls/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol",
+   "dataset/bad_randomness/old_blockhash.sol",
+   "dataset/unchecked_low_level_calls/0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+   "dataset/other/open_address_lottery.sol",
+   "dataset/denial_of_service/auction.sol",
+   "dataset/denial_of_service/dos_simple.sol",
+   "dataset/access_control/phishable.sol",
+   "dataset/bad_randomness/blackjack.sol",
+   "dataset/unchecked_low_level_calls/0xa46edd6a9a93feec36576ee5048146870ea2c3ae.sol",
+   "dataset/access_control/wallet_04_confused_sign.sol",
+   "dataset/bad_randomness/random_number_generator.sol",
+   "dataset/reentrancy/0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b.sol",
+   "dataset/access_control/mapping_write.sol",
+   "dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.sol",
+   "dataset/reentrancy/reentrance.sol",
+   "dataset/reentrancy/spank_chain_payment.sol",
+   "dataset/access_control/multiowned_vulnerable.sol",
+   "dataset/other/crypto_roulette.sol",
+   "dataset/unchecked_low_level_calls/0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol",
+   "dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+   "dataset/arithmetic/integer_overflow_add.sol",
+   "dataset/unchecked_low_level_calls/lotto.sol",
+   "dataset/unchecked_low_level_calls/0x2972d548497286d18e92b5fa1f8f9139e5653fd2.sol",
+   "dataset/access_control/incorrect_constructor_name1.sol",
+   "dataset/unchecked_low_level_calls/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol",
+   "dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3.sol",
+   "dataset/unchecked_low_level_calls/0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c.sol",
+   "dataset/unchecked_low_level_calls/0x9d06cbafa865037a01d322d3f4222fa3e04e5488.sol",
+   "dataset/unchecked_low_level_calls/0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol",
+   "dataset/reentrancy/reentrancy_bonus.sol",
+   "dataset/access_control/parity_wallet_bug_1.sol"
+  ],
+  "arm_order": {
+   "dataset/unchecked_low_level_calls/0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/parity_wallet_bug_2.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/king_of_the_ether_throne.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/insecure_transfer.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/etherbank.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/reentrancy_cross_function.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/front_running/eth_tx_order_dependence_minimal.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/arithmetic/timelock.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0xb5e1b1ee15c6fa0e48fce100125569d430f1bd12.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x4b71ad9c1a84b9b643aa54fdd66e2dec96e8b152.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/arithmetic/BECToken.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_multitx_onefunc_feasible.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x4051334adc52057aca763453820cb0e045076ef3.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/time_manipulation/governmental_survey.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0x561eac93c92360949ab1f1403323e6db345cbf31.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/other/name_registrar.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_mapping_sym_1.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/token.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/denial_of_service/send_loop.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/denial_of_service/dos_number.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x89c1b3807d4c67df034fffb62f3509561218d30b.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0xb93430ce38ac4a6bb47fb1fc085ea669353fd89e.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/bad_randomness/etheraffle.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x23a91059fdc9579a9fbd0edc5f2ea0bfdb70deb4.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/overflow_single_tx.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x39cfd754c85023648bf003bea2dd498c5612abfa.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/overflow_simple_add.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/time_manipulation/roulette.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x7d09edb07d23acb532a82be3da5c17d9d85806b4.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/tokensalechallenge.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/front_running/FindThisHash.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/arithmetic/integer_overflow_minimal.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/front_running/odds_and_evens.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/time_manipulation/ether_lotto.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/front_running/ERC20.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xb11b2fed6c9354f7aa2f658d3b4d7b31d8a13b77.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/reentrancy_insecure.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/time_manipulation/timed_crowdsale.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x93c32845fae42c83a70e5f06214c8433665c2ab5.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/etherstore.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xa1fceeff3acc57d257b917e30c4df661401d6431.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/bad_randomness/lucky_doubler.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0xbaf51e761510c1a11bf48dd87c0307ac8a8c8a4f.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/unprotected0.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/time_manipulation/lottopollo.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/mycontract.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_multitx_multifunc_feasible.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/FibonacciBalance.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0x01f8c4e3fa3edeb29e514cba738d87ce8c091d3f.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xf2570186500a46986f3139f65afedc2afe4f445d.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/wallet_03_wrong_constructor.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/rubixi.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/simple_dao.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_1.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/etherpot_lotto.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/proxy.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/short_addresses/short_address_example.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xd5967fed03e85d1cce44cab284695b41bc675b5c.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_mul.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x8fd1e427396ddb511533cf9abdbebd0a7e08da35.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/bad_randomness/guess_the_random_number.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/incorrect_constructor_name3.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x524960d55174d912768678d8c606b4d50b79d7b1.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/reentrancy_dao.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/denial_of_service/dos_address.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/simple_suicide.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xbaa3de6504690efb064420d89e871c27065cdd52.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/reentrancy_simple.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/mishandled.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x7541b76cb60f4c60af330c208b0623b7f54bf615.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x4320e6f8c05b27ab4707cd1f6d5ce6f3e4b3a5a1.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/denial_of_service/list_dos.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/wallet_02_refund_nosub.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/arbitrary_location_write_simple.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/bad_randomness/smart_billions.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/modifier_reentrancy.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/unchecked_return_value.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0xcead721ef5b11f1a7b530171aab69b16c5e66b6e.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0x8c7777c45481dba411450c228cb692ac3d550344.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_benign_1.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/incorrect_constructor_name2.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/reentrancy/0xf015c35649c82f5467c9c74b7f28ee67665aad68.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xe894d54dca59cb53fe9cbc5155093605c7068220.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/bad_randomness/lottery.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/bad_randomness/old_blockhash.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xf29ebe930a539a60279ace72c707cba851a57707.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/other/open_address_lottery.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/denial_of_service/auction.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/denial_of_service/dos_simple.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/phishable.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/bad_randomness/blackjack.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0xa46edd6a9a93feec36576ee5048146870ea2c3ae.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/wallet_04_confused_sign.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/bad_randomness/random_number_generator.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/mapping_write.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/reentrance.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/spank_chain_payment.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/multiowned_vulnerable.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/other/crypto_roulette.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/0x941d225236464a25eb18076df7da6a91d0f95e9e.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/arithmetic/integer_overflow_add.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/lotto.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x2972d548497286d18e92b5fa1f8f9139e5653fd2.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/access_control/incorrect_constructor_name1.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/unchecked_low_level_calls/0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0x9d06cbafa865037a01d322d3f4222fa3e04e5488.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/unchecked_low_level_calls/0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol": [
+    "baseline",
+    "fabius-catena"
+   ],
+   "dataset/reentrancy/reentrancy_bonus.sol": [
+    "fabius-catena",
+    "baseline"
+   ],
+   "dataset/access_control/parity_wallet_bug_1.sol": [
+    "baseline",
+    "fabius-catena"
+   ]
+  },
+  "excluded": {}
+ },
+ "bfcl": {
+  "skill": "cohors",
+  "items": [
+   "simple_python_297",
+   "irrelevance_165",
+   "irrelevance_147",
+   "parallel_multiple_83",
+   "simple_python_217",
+   "parallel_multiple_152",
+   "parallel_multiple_36",
+   "irrelevance_115",
+   "irrelevance_212",
+   "multiple_53",
+   "multiple_87",
+   "parallel_multiple_15",
+   "multiple_9",
+   "multiple_154",
+   "parallel_115",
+   "parallel_multiple_176",
+   "simple_python_76",
+   "parallel_multiple_151",
+   "irrelevance_152",
+   "simple_python_274",
+   "irrelevance_171",
+   "parallel_multiple_31",
+   "parallel_185",
+   "multiple_176",
+   "parallel_53",
+   "parallel_187",
+   "simple_python_399",
+   "parallel_7",
+   "multiple_132",
+   "parallel_31",
+   "parallel_111",
+   "simple_python_338",
+   "simple_python_273",
+   "multiple_195",
+   "multiple_52",
+   "parallel_81",
+   "multiple_183",
+   "irrelevance_0",
+   "parallel_174",
+   "multiple_187",
+   "irrelevance_119",
+   "simple_python_192",
+   "simple_python_185",
+   "multiple_111",
+   "parallel_118",
+   "multiple_78",
+   "multiple_167",
+   "multiple_148",
+   "multiple_184",
+   "irrelevance_146",
+   "multiple_168",
+   "multiple_185",
+   "multiple_171",
+   "parallel_85",
+   "parallel_multiple_168",
+   "irrelevance_215",
+   "parallel_multiple_111",
+   "parallel_109",
+   "simple_python_134",
+   "parallel_multiple_78",
+   "irrelevance_72",
+   "multiple_119",
+   "multiple_15",
+   "parallel_multiple_115",
+   "simple_python_298",
+   "simple_python_382",
+   "multiple_85",
+   "multiple_118",
+   "irrelevance_185",
+   "parallel_159",
+   "parallel_171",
+   "simple_python_166",
+   "simple_python_204",
+   "simple_python_398",
+   "parallel_15",
+   "parallel_157",
+   "simple_python_178",
+   "parallel_148",
+   "simple_python_288",
+   "irrelevance_159",
+   "parallel_multiple_174",
+   "parallel_multiple_198",
+   "irrelevance_15",
+   "parallel_36",
+   "simple_python_263",
+   "simple_python_148",
+   "multiple_83",
+   "parallel_multiple_184",
+   "parallel_32",
+   "parallel_multiple_53",
+   "irrelevance_217",
+   "parallel_195",
+   "parallel_132",
+   "irrelevance_111",
+   "parallel_198",
+   "parallel_168",
+   "simple_python_101",
+   "parallel_multiple_185",
+   "parallel_multiple_195",
+   "irrelevance_92",
+   "irrelevance_179",
+   "parallel_multiple_7",
+   "irrelevance_235",
+   "parallel_184",
+   "parallel_83",
+   "parallel_multiple_132",
+   "irrelevance_167",
+   "simple_python_320",
+   "simple_python_259",
+   "irrelevance_75",
+   "parallel_multiple_32",
+   "parallel_176",
+   "simple_python_295",
+   "simple_python_22",
+   "parallel_183",
+   "simple_python_284",
+   "simple_python_187",
+   "irrelevance_37",
+   "parallel_114",
+   "parallel_multiple_187",
+   "parallel_multiple_109",
+   "parallel_87",
+   "multiple_58",
+   "multiple_198",
+   "parallel_multiple_58",
+   "parallel_152",
+   "multiple_31",
+   "parallel_multiple_157",
+   "parallel_multiple_52",
+   "simple_python_351",
+   "simple_python_267",
+   "multiple_157",
+   "parallel_multiple_34",
+   "multiple_34",
+   "irrelevance_134",
+   "parallel_multiple_171",
+   "irrelevance_86",
+   "simple_python_379",
+   "parallel_multiple_114",
+   "parallel_9",
+   "irrelevance_204",
+   "multiple_81",
+   "parallel_119",
+   "irrelevance_230",
+   "parallel_multiple_87",
+   "irrelevance_34",
+   "parallel_multiple_167",
+   "parallel_multiple_160",
+   "simple_python_266",
+   "irrelevance_213",
+   "parallel_52",
+   "multiple_151",
+   "simple_python_82",
+   "multiple_109",
+   "irrelevance_132",
+   "simple_python_176",
+   "parallel_multiple_159",
+   "simple_python_260",
+   "simple_python_350",
+   "parallel_multiple_148",
+   "parallel_151",
+   "parallel_58",
+   "irrelevance_140",
+   "parallel_multiple_183",
+   "simple_python_181",
+   "multiple_32",
+   "parallel_multiple_81",
+   "irrelevance_80",
+   "simple_python_87",
+   "irrelevance_78",
+   "irrelevance_20",
+   "parallel_78",
+   "multiple_114",
+   "parallel_multiple_85",
+   "multiple_7",
+   "parallel_154",
+   "simple_python_215",
+   "parallel_167",
+   "parallel_34",
+   "multiple_174",
+   "irrelevance_238",
+   "multiple_159",
+   "parallel_multiple_154",
+   "irrelevance_25",
+   "irrelevance_151",
+   "simple_python_161",
+   "multiple_36",
+   "multiple_152",
+   "parallel_multiple_118",
+   "irrelevance_94",
+   "multiple_115",
+   "parallel_160",
+   "parallel_multiple_9",
+   "irrelevance_67",
+   "simple_python_300",
+   "irrelevance_14",
+   "simple_python_198",
+   "parallel_multiple_119",
+   "irrelevance_174",
+   "multiple_160"
+  ],
+  "arm_order": {
+   "simple_python_297": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_165": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_147": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_83": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_217": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_152": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_36": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_115": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_212": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_53": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_87": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_15": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_9": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_154": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_115": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_176": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_76": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_151": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_152": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_274": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_171": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_31": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_185": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_176": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_53": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_187": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_399": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_7": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_132": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_31": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_111": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_338": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_273": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_195": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_52": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_81": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_183": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_0": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_174": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_187": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_119": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_192": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_185": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_111": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_118": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_78": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_167": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_148": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_184": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_146": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_168": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_185": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_171": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_85": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_168": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_215": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_111": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_109": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_134": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_78": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_72": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_119": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_15": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_115": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_298": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_382": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_85": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_118": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_185": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_159": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_171": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_166": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_204": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_398": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_15": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_157": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_178": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_148": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_288": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_159": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_174": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_198": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_15": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_36": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_263": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_148": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_83": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_184": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_32": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_53": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_217": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_195": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_132": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_111": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_198": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_168": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_101": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_185": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_195": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_92": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_179": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_7": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_235": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_184": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_83": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_132": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_167": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_320": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_259": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_75": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_32": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_176": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_295": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_22": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_183": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_284": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_187": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_37": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_114": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_187": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_109": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_87": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_58": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_198": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_58": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_152": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_31": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_157": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_52": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_351": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_267": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_157": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_34": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_34": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_134": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_171": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_86": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_379": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_114": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_9": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_204": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_81": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_119": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_230": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_87": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_34": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_167": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_160": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_266": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_213": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_52": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_151": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_82": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_109": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_132": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_176": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_159": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_260": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_350": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_148": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_151": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_58": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_140": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_183": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_181": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_32": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_81": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_80": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_87": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_78": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_20": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_78": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_114": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_85": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_7": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_154": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_215": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_167": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_34": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_174": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_238": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_159": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_154": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_25": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_151": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_161": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_36": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_152": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "parallel_multiple_118": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_94": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "multiple_115": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_160": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_9": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_67": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "simple_python_300": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "irrelevance_14": [
+    "fabius-cohors",
+    "baseline"
+   ],
+   "simple_python_198": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "parallel_multiple_119": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "irrelevance_174": [
+    "baseline",
+    "fabius-cohors"
+   ],
+   "multiple_160": [
+    "fabius-cohors",
+    "baseline"
+   ]
+  },
+  "excluded": {}
+ }
+}

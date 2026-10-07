@@ -1,0 +1,138 @@
+{
+  "created": "2026-10-07",
+  "image": "fabius-ds1000:4e78db902af3",
+  "n_items": 200,
+  "workers": 6,
+  "extraction_unit_checks": {
+    "n": 12,
+    "failures": []
+  },
+  "sets": {
+    "gold_fenced": {
+      "expect": "pass",
+      "description": "reference_code inside a chat-style ```python block with prose around it",
+      "n": 200,
+      "passed": 200,
+      "pass_rate": 1.0,
+      "reindented": 0,
+      "sandbox_errors": 0,
+      "seconds": 117,
+      "top_results": [
+        [
+          "passed",
+          200
+        ]
+      ],
+      "unexpected": []
+    },
+    "gold_raw": {
+      "expect": "pass",
+      "description": "reference_code as the bare response (no block: whole-response path)",
+      "n": 200,
+      "passed": 200,
+      "pass_rate": 1.0,
+      "reindented": 0,
+      "sandbox_errors": 0,
+      "seconds": 115,
+      "top_results": [
+        [
+          "passed",
+          200
+        ]
+      ],
+      "unexpected": []
+    },
+    "gold_dedented": {
+      "expect": "pass",
+      "description": "function-body items: reference with 4 leading spaces removed (re-indent rule)",
+      "n": 12,
+      "passed": 12,
+      "pass_rate": 1.0,
+      "reindented": 12,
+      "sandbox_errors": 0,
+      "seconds": 7,
+      "top_results": [
+        [
+          "passed",
+          12
+        ]
+      ],
+      "unexpected": []
+    },
+    "empty": {
+      "expect": "fail",
+      "description": "empty response",
+      "n": 200,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "reindented": 0,
+      "sandbox_errors": 0,
+      "seconds": 111,
+      "top_results": [
+        [
+          "failed: 'result'",
+          73
+        ],
+        [
+          "failed: ",
+          57
+        ],
+        [
+          "failed: expected an indented block after function definition on line #",
+          12
+        ],
+        [
+          "failed: list index out of range",
+          4
+        ],
+        [
+          "failed: name 'cluster_labels' is not defined",
+          3
+        ],
+        [
+          "failed: name 'predict' is not defined",
+          3
+        ]
+      ],
+      "unexpected": []
+    },
+    "wrong": {
+      "expect": "fail",
+      "description": "reference_code of the next sampled item (cyclic shift), in a ```python block",
+      "n": 200,
+      "passed": 0,
+      "pass_rate": 0.0,
+      "reindented": 11,
+      "sandbox_errors": 0,
+      "seconds": 114,
+      "top_results": [
+        [
+          "failed: name 'df' is not defined",
+          40
+        ],
+        [
+          "failed: name 'plt' is not defined",
+          19
+        ],
+        [
+          "failed: name 'a' is not defined",
+          18
+        ],
+        [
+          "failed: unexpected indent (<string>, line #)",
+          11
+        ],
+        [
+          "failed: name 'X' is not defined",
+          9
+        ],
+        [
+          "failed: ",
+          8
+        ]
+      ],
+      "unexpected": []
+    }
+  },
+  "gold_fenced_vs_gold_raw_disagreements": []
+}

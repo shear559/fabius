@@ -1,0 +1,61 @@
+{
+  "benchmark": "DS-1000 (Lai et al., 2022), simplified format (04/2024)",
+  "dataset": {
+    "hf_repo": "xlangai/DS-1000",
+    "hf_revision": "4416080ac5cb80bdf7576aefb8f9a0b4d5426a44",
+    "file": "test.jsonl",
+    "sha256": "26a492838b05f9d030b2f08a5715c6bafecafb601c157da912bf417fd8b0d363",
+    "url": "https://huggingface.co/datasets/xlangai/DS-1000/blob/4416080ac5cb80bdf7576aefb8f9a0b4d5426a44/test.jsonl",
+    "license": "CC-BY-SA-4.0"
+  },
+  "official_repo": {
+    "url": "https://github.com/xlang-ai/DS-1000",
+    "commit": "b39aab71da6d23ef8d3cac59a7c5f834516ab334",
+    "license": "CC-BY-SA-4.0",
+    "data_file": "data/ds1000.jsonl.gz",
+    "data_sha256": "e8c6daa9d7223976bce0296644f3933f78d7f47830669ff05cd61da62c6ba9b3",
+    "data_note": "all 1000 records identical to the HF file above",
+    "execution.py": {
+      "sha256": "fab0beb2a5c3300f4540c2225ffc013881e5770fed388ad20d4620ae040cd311",
+      "use": "vendored verbatim, runs every test"
+    },
+    "test_ds1000.py": {
+      "sha256": "32ebe279eefa2d3cb1d633a82b43954ea813567e2fca28a9f6d777ce7f04d50c",
+      "use": "test-program assembly, postprocess(), timeout=120 reproduced in score.py"
+    },
+    "run_openai.py": {
+      "sha256": "a30c13ac66397eec077dd3996c3cc08f50a19a24b39d3e4fa0ce535b2a63891f",
+      "use": "wording of the chat instruction appended to each prompt"
+    },
+    "environment.yml": {
+      "sha256": "61575788abe7cd77d26921ba2043efb652d2e1a9fe569378e9405a8469bb76aa",
+      "use": "library pins of the execution image (docker/requirements.in)"
+    }
+  },
+  "execution_image": {
+    "tag": "fabius-ds1000:4e78db902af3",
+    "build_context": "docker/ (tag = hash of its files; score.py builds it on first use)",
+    "base": "python:3.10-slim@sha256:6ff506466f8b1e981719b468cc0023b8ef000b983cdec0eafe119d01f379e31d",
+    "lock_file": "docker/requirements.lock.txt",
+    "lock_sha256": "d4278855f5651c9ed9b0fb29a398f7186ca24ca45e0f0502a33156524c3b3dc7",
+    "lock_rule": "official pins + every transitive dependency resolved with uv --exclude-newer 2024-04-27",
+    "offline_data": "seaborn-data@71e2436a (tips, planets, penguins, exercise) + sklearn California housing"
+  },
+  "sampling": {
+    "eligible": "metadata.library not in ['Pytorch', 'Tensorflow']",
+    "n_eligible": 887,
+    "id_format": "ds1000-{problem_id:04d}",
+    "seed": 20261006,
+    "N": 200,
+    "method": "sorted eligible ids -> numpy.random.default_rng(seed).permutation -> first N",
+    "numpy_version": "2.4.6",
+    "libraries_in_sample": {
+      "Matplotlib": 36,
+      "Numpy": 46,
+      "Pandas": 74,
+      "Scipy": 19,
+      "Sklearn": 25
+    }
+  },
+  "prompt_instruction": "Only provide the code completion needed. Don't repeat the context code. Follow the given format and indentation, and put the completion in a single ```python code block."
+}
