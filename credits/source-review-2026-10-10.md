@@ -1,0 +1,30 @@
+# Source review — 10 October 2026
+
+The supplied list contained twelve links and eleven distinct sources. This record preserves their order and distinguishes refreshed references, new doctrine, commercial observation and exclusion. Every addition stays with an existing owner; the fifteen public skills and their discovery metadata are unchanged. No upstream runtime, hook, model, asset or source tree is installed or bundled.
+
+| Order | Supplied source | Disposition and owning reference |
+|---|---|---|
+| 1 | [claude-video](https://github.com/bradautomates/claude-video) | Refresh Archivum's [video evidence workflow](../skills/fabius-archivum/references/video-ingest.md): caption provenance, modality gaps, decoded timestamps and explicit local/hosted boundaries. |
+| 2 | [notebooklm-py](https://github.com/teng-lin/notebooklm-py) | Refresh Archivum's [notebook connector](../skills/fabius-archivum/references/notebook-connector.md): ready sources, exact research/job/artifact identity, passive diagnosis, usage availability and citation resolution. |
+| 3 | [Impeccable](https://github.com/pbakaus/impeccable) | Extend Decor's [design critique](../skills/fabius-decor/references/design-critique.md): composition decomposition and findings bound to the artifact reviewed. Historical detector examples are not a promise about the current upstream engine. |
+| 4 | [Agent Skills](https://github.com/addyosmani/agent-skills) | Extend Disciplina's [engineering workflows](../skills/fabius-disciplina/references/engineering-workflows.md): measured quality constraints and review of weakened checks. |
+| 5 | [Archify](https://github.com/tt-a1i/archify) | Extend Decor's [explanatory diagrams](../skills/fabius-decor/references/explanatory-diagrams.md): diagram semantics, source evidence and layout repair that preserves meaning. |
+| 6 | [Storytold](https://github.com/storytold) | Organization link resolved specifically to its pinned [ArtCraft repository](https://github.com/storytold/artcraft). Decor's [media composition](../skills/fabius-decor/references/media-composition.md) covers editable scene state and shot continuity. Other organization repositories are not implicitly included. |
+| 7 | [Project NOMAD](https://www.projectnomad.us) | Site resolved to [Crosstalk-Solutions/project-nomad](https://github.com/Crosstalk-Solutions/project-nomad). Archivum's [offline knowledge](../skills/fabius-archivum/references/offline-knowledge.md) distinguishes corpus, index and model readiness and proves disconnected retrieval and recovery. |
+| 8 | [God's Eye View](https://github.com/bilawalsidhu/gods-eye-view) | Decor's [geospatial evidence](../skills/fabius-decor/references/geospatial-evidence.md): dated observations, modeled positions, feed health, coordinate meaning and export attribution. Exploratory source; no production or safety-critical suitability claim. |
+| 9 | [YOLO v1](https://github.com/dahanyosi/yolo-v1) | Reviewed and excluded from capability claims: the [pinned README](https://github.com/dahanyosi/yolo-v1/blob/c79639d0649ac6f3e52651bb3584f8f941f1710d/README.md) describes satire, random output and fictional measurements. This is not the object detector and contributes no skill or model. MIT at that revision does not make its benchmark claims evidence. |
+| 10 | [Fish Audio](https://fish.audio) | Commercial documentation observed on this date; Decor's [media composition](../skills/fabius-decor/references/media-composition.md) contains original narration production guidance. No voice, service access or output rights supplied by Fabius. |
+| 11 | [Storytold](https://github.com/storytold) | Duplicate of item 6; no second import or attribution entry. |
+| 12 | [Buzz](https://github.com/block/buzz) | Cohors' [shared-channel agents](../skills/fabius-cohors/references/shared-channel-agents.md): admission before model invocation, separate identities and membership, delegation evidence and outcome reconciliation. Unfinished upstream features remain plans. |
+
+## Evidence and licensing boundary
+
+The [upstream registry](upstream.json) records immutable revisions and inspected software licences for the nine open-source projects informing active references: three refreshed records and six new records. Source inspection used READMEs, licence files and the implementation or detailed reference responsible for each adopted mechanism. The [credit table](README.md) preserves authorship. ArtCraft's MIT option was read in `LICENSE-MIT`; its NOTICE excludes third-party assets. Map datasets, models, voices, fonts and imagery retain separate terms. A repository licence is not an asset licence.
+
+Fish Audio observations came from its [capabilities](https://docs.fish.audio/overview/capabilities), [speech synthesis](https://docs.fish.audio/features/text-to-speech), [voice reference guidance](https://docs.fish.audio/developer-guide/best-practices/voice-cloning), [versioned pronunciation dictionaries](https://docs.fish.audio/developer-guide/core-features/fine-grained-control/pronunciation-dictionaries) and [terms](https://fish.audio/terms/). This commercial study is outside the GitHub/SPDX registry. No documentation prose or service implementation is carried.
+
+These are independently written decision procedures informed by inspected mechanisms. Inspection is not execution of the upstream products; structural checks and qualitative supplied-facts smoke responses do not establish performance improvement across models. New providers and services remain optional external dependencies with their own capabilities, permissions, hardware needs and costs.
+
+## Packaging state
+
+This is a development change prepared separately from the concurrent benchmark/release work. Existing signed releases, historical benchmark receipts and installed copies do not acquire these references merely because a branch contains them. The next content release must use the repository's version, artifact, signature and installation procedure. The evaluation cases and actual response receipts live in [maintenance-smoke](../evals/maintenance-smoke/README.md).

@@ -17,6 +17,8 @@ The shipped depth for `fabius-decor`'s visualization concern. This page is the c
 
 When unsure: the boring, labelled bar beats the clever novel chart. Specific beats clever (the mercatus rule, applied to pixels).
 
+For maps and globes, temporal truth comes before render polish: coordinate/altitude contracts, observation versus simulation, stale/empty/partial feeds and attribution → [geospatial-evidence.md](geospatial-evidence.md).
+
 ## The data-ink checklist
 
 ```

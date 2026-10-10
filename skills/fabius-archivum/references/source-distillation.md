@@ -6,7 +6,7 @@ A book-length source lands in the wiki shape of any other ingest ([`memory-schem
 
 ## 1 · Two routing keys, head first
 
-Beside the page catalog keep a second key — the source's own vocabulary → page ids — so a question in the author's terms routes to its page without reading bodies. The pages loaded first — the two keys and the decision aid — run most load-bearing first (any partial read favours the head) and, under a size cap, are reserved before page bodies: the reserve-against-the-cap pattern of [`video-ingest.md`](video-ingest.md) §5.
+Beside the page catalog keep a second key — the source's own vocabulary → page ids — so a question in the author's terms routes to its page without reading bodies. The pages loaded first — the two keys and the decision aid — run most load-bearing first (any partial read favours the head) and, under a size cap, are reserved before page bodies: the reserve-against-the-cap pattern of [`video-ingest.md`](video-ingest.md) §3.
 
 ## 2 · The capped decision aid
 
