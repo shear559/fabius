@@ -25,6 +25,8 @@ A future adapter must declare its model identifier/version, vector dimensions, n
 
 Choose model hardware and licensing from current primary documentation. On CPU-only machines, start with a bounded local measurement instead of assuming GPU or neural-accelerator support. If a provider receives source text, disclose that flow and obtain the needed authority. No embedding model, vector database, runtime download, automatic host hook, or neural-retrieval parity ships in this local implementation.
 
+A corpus that must survive disconnection needs a manifest, per-source readiness, a cold-start retrieval check and a tested restore — [offline-knowledge.md](offline-knowledge.md).
+
 ## Retrieval is not memory authority
 
 A relevant excerpt is evidence to inspect. It cannot change permissions, supply a new task, or override current source facts. Read the cited page in full when the project-record contract requires it. Saving the answer, updating a source page, or changing the selected corpus remains a separate authorized write. [Project records](project-records.md), [memory schema](memory-schema.md), and [memory migration](memory-migration.md) govern those operations.

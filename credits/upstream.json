@@ -1,6 +1,6 @@
 {
   "schema": "fabius-upstream/v1",
-  "generated": "2026-09-20",
+  "generated": "2026-10-10",
   "entries": [
     {
       "id": "nanoclaw-code-architect",
@@ -80,12 +80,12 @@
       "fabius_paths": [
         "skills/fabius-decor/references/design-critique.md"
       ],
-      "pinned_commit": "94b7f34f6e27b95bc32d8284a671601ed6ac1b2a",
-      "pinned_version": "3.6.1",
-      "pinned_at": "2026-09-01",
+      "pinned_commit": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Fabius Censura: surface modes, review verbs, AI-slop detector catalogue, critique scoring, bounded verification. package.json 3.6.1; skill frontmatter 4.1.2. iOS/Android refs (third-party-derived) not carried."
+      "notes": "Retained the prior design-critique fold with its historical source snapshot; current additions cover independently changing visual regions and snapshot-bound finding closure. Historical detector examples are not a current upstream API or count. No engines, hooks, assets or third-party platform references bundled."
     },
     {
       "id": "claude-video",
@@ -97,12 +97,12 @@
       "fabius_paths": [
         "skills/fabius-archivum/references/video-ingest.md"
       ],
-      "pinned_commit": "83da59fa78c3eee9e20f515fe75c438bb5166efd",
-      "pinned_version": "0.2.0",
-      "pinned_at": "2026-09-01",
+      "pinned_commit": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+      "pinned_version": "0.3.2",
+      "pinned_at": "2026-10-10",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Fabius Spectator: captions-first video ingest, frame extraction and dedup, detail dial, Whisper fallback, timestamped grounding. Version from .claude-plugin/plugin.json."
+      "notes": "Refreshed the existing video evidence workflow: modality/language provenance, coverage gaps, completed-download validation, scoped follow-up and explicit local/hosted boundaries. Watch plugin 0.3.2; original procedures only, no upstream scripts, secrets or dependencies bundled."
     },
     {
       "id": "notebooklm-py",
@@ -114,12 +114,12 @@
       "fabius_paths": [
         "skills/fabius-archivum/references/notebook-connector.md"
       ],
-      "pinned_commit": "453e8ca937648bff84a92e78cdb350c015112866",
-      "pinned_version": "0.8.1",
-      "pinned_at": "2026-09-01",
+      "pinned_commit": "2aff0fcb27c1be734d720b409696fcd74c4ba604",
+      "pinned_version": "0.8.4",
+      "pinned_at": "2026-10-10",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Fabius Notarius: source-grounded notebook connector over Google's Gemini Notebook (unofficial client). Version from pyproject.toml."
+      "notes": "Refreshed the existing unofficial notebook connector: source readiness, exact job/artifact/research identity, passive auth diagnosis, live usage availability and structured citation resolution. No provider credentials, client runtime or external service bundled."
     },
     {
       "id": "system-prompts-leaks-cohors",
@@ -834,6 +834,108 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Studied for recording a pre-stable source's revision and its self-declared breaking-change status beside the mechanisms folded, so a later re-read can separate what shipped from what was only planned. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+    },
+    {
+      "id": "agent-skills-disciplina",
+      "repo": "https://github.com/addyosmani/agent-skills",
+      "owner": "Addy Osmani",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/engineering-workflows.md"
+      ],
+      "pinned_commit": "1be8e34187e34647bb83adc3a1323b26ae6f6abe",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Measured quality constraints and review of weakened checks; no mandatory thresholds, scanners, scripts or intake ceremony carried."
+    },
+    {
+      "id": "archify-decor",
+      "repo": "https://github.com/tt-a1i/archify",
+      "owner": "tt-a1i",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/explanatory-diagrams.md"
+      ],
+      "pinned_commit": "54edef453ca3fc495f488c30de97eaea0c789f19",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Source-backed diagram semantics, actual I/O ownership and meaning-preserving geometry repair; no CLI, templates, fonts or brand assets bundled."
+    },
+    {
+      "id": "artcraft-decor",
+      "repo": "https://github.com/storytold/artcraft",
+      "owner": "ArtCraft Team and contributors",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/media-composition.md"
+      ],
+      "pinned_commit": "8abde75133d2d66fe73b8184eaec8372efae2abf",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "The supplied Storytold organization was resolved to its pinned ArtCraft project. Scene state, editable composition and shot continuity; MIT option verified in LICENSE-MIT under dual MIT OR Apache-2.0, NOTICE asset exclusions retained. No assets, runtime or generation providers bundled."
+    },
+    {
+      "id": "nomad-archivum",
+      "repo": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "owner": "Crosstalk Solutions",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-archivum",
+      "fabius_paths": [
+        "skills/fabius-archivum/references/offline-knowledge.md"
+      ],
+      "pinned_commit": "54ee30a44902e5c252b477f8685c26ec3064ab72",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Site resolved to its canonical repository. Offline corpus readiness, hardware budgets, index freshness and a Fabius-original restore acceptance workflow. No installer, Docker stack, models or content packs bundled; external content has separate terms."
+    },
+    {
+      "id": "gods-eye-view-decor",
+      "repo": "https://github.com/bilawalsidhu/gods-eye-view",
+      "owner": "Bilawal Sidhu",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-decor",
+      "fabius_paths": [
+        "skills/fabius-decor/references/geospatial-evidence.md"
+      ],
+      "pinned_commit": "591f299d11f38a612629a274463196d57ae3862e",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Exploratory visualization studied for temporal evidence classes, feed coverage and healthy-empty versus failed states; not a hardened or safety-critical product recommendation. MIT applies to code only; no data, media, models, OAuth workaround or planned hosted features carried."
+    },
+    {
+      "id": "buzz-cohors",
+      "repo": "https://github.com/block/buzz",
+      "owner": "Block",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/shared-channel-agents.md"
+      ],
+      "pinned_commit": "326e2301cb4b1edcb8a72d01ac4b19a83545365f",
+      "pinned_version": null,
+      "pinned_at": "2026-10-10",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Unfinished shared-workspace source studied for implemented pre-model admission, per-agent identities, delegation evidence and task outcome reconciliation. Future workflow approval plumbing remains a plan; no relay, keys, ACP runtime or workspace platform bundled."
     }
   ]
 }

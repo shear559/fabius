@@ -99,6 +99,16 @@ A structured knowledge base: an `index.md` plus many `.md` files using `[[wikili
 
 **Out of scope — encode the method, not the runtime.** The heavy code-analysis machinery from upstream (tree-sitter grammar packs, Louvain community detection, the live dashboard) is *not* fabius's runtime. We take the four-stage technique; we do not vendor the engine.
 
+## Explain the right relationship, preserve it through layout
+
+Choose what the reader needs to understand before placing boxes: components and responsibility, ordered work and branches, messages between participants, movement of data, or states and triggering events. Those are different claims. An import graph alone does not establish a runtime call, trust boundary or durable write. Keep parser-derived facts fixed; inspect the relevant execution or configuration site for a claim the parser cannot establish.
+
+For a repository-backed diagram, bind evidence to a credential-free repository identity and exact revision. Keep source paths and line ranges beside components and meaningful relationships. Distinguish the caller requesting an operation, the implementation executing it and the store receiving bytes. Trace direct I/O to its actual reader or writer and conditions; an unused adapter is optional, not a mandatory service. Uncommitted bytes cannot be cited as evidence for a committed revision. Preserve unresolved durability, deployment or ownership questions beside the affected claim.
+
+Freeze that meaning before repairing geometry. Compare node identities, edge endpoints, branch conditions, labels and source references before and after a layout edit. Move or resize the connected neighborhood; do not delete the awkward retry, reverse an arrow or relabel a boundary to make it fit. If it cannot remain readable at the chosen level, split the view while preserving the relationship in the appropriate detail view. Report a remaining layout limitation instead of changing the system's story.
+
+**Proof has separate layers:** validate the typed graph; check its claims against the pinned source; exercise focus, links and other shipped interactions in a browser; inspect the actual rendered artifact. A parser or browser receipt is not visual review, and an authored route is not a measured runtime trace. Rebind evidence after changing the graph or output bytes. Verify both the main path and one material exception; a beautiful happy path with its failure branch missing is incomplete.
+
 ---
 
-Adapted from Understand-Anything by Yuxiang Lin / Infinite Universe (Egonex-AI) (MIT) — re-expressed in fabius's own voice.
+Informed by **Understand-Anything** (Yuxiang Lin / Infinite Universe / Egonex-AI, MIT) — the existing extraction, typed-graph and narrative method; and **Archify** (tt-a1i/archify, MIT), read at revision 54edef453ca3fc495f488c30de97eaea0c789f19 (2026-10-10) — studied for diagram semantics, revision-bound source evidence, actual I/O ownership and meaning-preserving geometry repair. Mechanisms re-expressed in fabius's own voice; no renderer, template, font or brand asset carried. See credits/README.md.

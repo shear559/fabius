@@ -70,6 +70,8 @@ Per provider, check: credit reserved at submit? · cancel only while queued? · 
 
 ## Pairs with
 
+[`media-composition.md`](media-composition.md) adds editable scene blocking, camera/identity continuity and auditioned speech production before the final render.
+
 [`design-assets.md`](design-assets.md) (output rights, hosted-generator terms), [`motion-libraries.md`](motion-libraries.md) (the deterministic storyboard — authored, not generated) and `fabius-parcus` (the cheapest render that answers the question).
 
 Studied (2026-09-20): a hosted multi-model image-and-video generation API — its public developer docs and vendor-published interface description (a commercial product; nothing carried) — observed for per-endpoint parameter contracts, start-image endpoints, moderation and billing outcomes, result retention and upload handling; no value, name or sentence taken.

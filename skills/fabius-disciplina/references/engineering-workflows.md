@@ -40,6 +40,16 @@ One angle is mandatory in every correctness review: each guard the diff removes 
 
 For parallel work, assign disjoint files and a shared interface, then delegate orchestration mechanics to Cohors. Review each result against its acceptance condition before integrating. Run the aggregate tests on the combined tree; several green isolated branches do not establish that their combination works.
 
+## Preserve the quality bar while changing the code
+
+Read the existing checks and accepted standards before proposing another gate. Keep each adopted constraint with its scope, measured baseline or chosen limit, direction of improvement, exact check and execution stage. A number without a check is an aspiration; a baseline without its workload and environment is not comparable. When no target was chosen, measure first and prevent regression rather than inventing a percentage. Existing deficits remain visible beside new regressions.
+
+Place checks where their evidence becomes available: cheap local checks near the edit, related behavior checks at completion, environmental checks against the actual running surface. Reuse an existing coverage report or trace. A missing tool or unavailable environment is missing evidence, never a pass; do not install another checker merely because a template names one.
+
+Review changes to the checks themselves: a lower threshold, new suppression, skipped or deleted test, removed assertion, unfinished stub or broader exception can manufacture green. Compare against the correct base and include staged, unstaged and relevant untracked work. A scan flags candidates; it cannot decide whether a replacement assertion preserves the invariant. For every justified weakening, name the old protection, the replacement or accepted exception, its owner and any expiry. Keep that decision reviewable under the existing authorization; a failing check is not permission to weaken it.
+
+**Proof:** execute the adopted check on the changed behavior and, where practical, an input that violates its constraint. Keep the command, relevant output and exit status. A checker unable to obtain its comparison base must report failure or unavailable evidence distinctly from clean. A test renamed with equivalent coverage is different from one deleted to conceal the regression; inspect the actual assertion before accepting either verdict.
+
 ## Finish and hand off
 
 Compare the final diff with the accepted scope. Record what changed, what was executed, where its evidence lives and what remains unverified. Distinguish a local commit, remote push, deployed build, successful installation and a newly active session. Each is a separate observation.
@@ -61,4 +71,4 @@ The report uses `schema: "fabius-evidence/v1"`, the `planSha256` returned by `pl
 
 Generate hashes from the actual files after executing the checks. Keep logs inside the selected root, review them for sensitive content and retain their full output outside the model context when appropriate. The checker accepts up to 200 sources, checks and criteria, files up to 16 MiB, and JSON input up to 1 MiB. Hidden paths, secret-bearing filenames and symlinks are rejected. It is a local consistency check, not an OS sandbox.
 
-Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the explore-then-ask question shape, the assumed-default versus pending-authority split, the declared review bias, the forward-every-stateable-candidate rule, the removed-guard angle and the quotable-refutation bar (snapshot fetched 2026-09-13), re-expressed in fabius's own voice; no prompt text carried, nothing bundled. See credits/README.md.
+Informed by **system_prompts_leaks** (asgeirtj, CC0-1.0 compilation; the collected vendor prompts remain their vendors' text) — studied for the explore-then-ask question shape, the assumed-default versus pending-authority split, the declared review bias, the forward-every-stateable-candidate rule, the removed-guard angle and the quotable-refutation bar (snapshot fetched 2026-09-13); and **Agent Skills** (addyosmani/agent-skills, MIT), read at revision 1be8e34187e34647bb83adc3a1323b26ae6f6abe (2026-10-10) — studied for measured quality constraints, checks placed by evidence and cost, and diff review for a lowered verification bar. Mechanisms re-expressed in fabius's own voice; no prompt text or checker code carried, nothing bundled. See credits/README.md.
