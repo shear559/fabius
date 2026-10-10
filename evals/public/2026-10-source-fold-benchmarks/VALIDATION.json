@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-10",
+  "stage": "offline_preparation",
+  "provider_calls": 0,
+  "scored_participant_outputs": 0,
+  "unit_tests": {
+    "passed": 82,
+    "failed": 0,
+    "command": "python -B -m unittest discover -s evals/public/2026-10-source-fold-benchmarks -p 'test_*.py'"
+  },
+  "repository_gates": {
+    "passed": 31,
+    "failed": 0,
+    "expected_private_launch_skips": 1,
+    "initial_environment_failure": "npm dry-run could not write the default cache inside the filesystem sandbox",
+    "resolution": "The package gate passed all 16 checks with a fresh task-local npm cache; other 30 gate groups were already passing."
+  },
+  "controls": {
+    "swebench": {
+      "gold_patch_resolved": true,
+      "infrastructure_failure": false,
+      "real_workspace_and_container_cleanup_verified": true
+    },
+    "humaneval": {
+      "canonical_solutions_evaluated": 164,
+      "eligible_canonical_passes": 163,
+      "excluded_canonical_failure": "HumanEval/32"
+    },
+    "design2code": {
+      "offline_renderer_and_visual_metric_verified": true,
+      "identical_reference_control_score": 0.9999999761581422
+    },
+    "cyberseceval": {
+      "positive_control": 1,
+      "detector_error": null,
+      "existing_certificate_bundle_required": true
+    },
+    "finqa": {
+      "positive_control": 1
+    },
+    "labbench": {
+      "positive_control": 1
+    },
+    "smartbugs": {
+      "positive_control": 1
+    },
+    "bfcl": {
+      "negative_control": 0
+    },
+    "ds1000": {
+      "negative_control": 0
+    },
+    "ifeval": {
+      "negative_control": 0
+    },
+    "longmemeval": {
+      "official_prompt_generation_verified": true,
+      "judge_executed": false,
+      "score": null
+    }
+  },
+  "preservation": {
+    "head_unchanged": true,
+    "staged_patch_unchanged": true,
+    "status_unchanged": true,
+    "canonical_files_match": true,
+    "preserved_copy_files_match": true
+  },
+  "pending": [
+    "New quota authorization and a current provider usage meter",
+    "Actual read-only CLI canary in all three arms",
+    "Actual SWE repository-profile CLI canary in all three arms",
+    "Available frozen LongMemEval judge and gold/wrong calibration",
+    "Scored participant generation and analysis"
+  ],
+  "scope_note": "Deterministic controls validate scorer infrastructure only. They are not Fabius performance results."
+}
