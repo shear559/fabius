@@ -1,0 +1,22 @@
+{
+ "candidate": {
+  "commit": "6fb0ab0af9104166db1b59e04b3f0471a58898b3",
+  "files": 128,
+  "file_mismatches": [],
+  "skills": 15,
+  "manifest_sha256_inputs": "ca6e22a5015be5e256071049d70252865b1fc589f96fd92a86b4013407b2f626",
+  "manifest_sha256_recomputed": "ca6e22a5015be5e256071049d70252865b1fc589f96fd92a86b4013407b2f626",
+  "manifest_digest_matches": true,
+  "dir": "/private/tmp/fbpkg/candidate/fabius"
+ },
+ "old": {
+  "commit": "ce34f26b2149860ea63df2446852d077206d6c52",
+  "files": 124,
+  "file_mismatches": [],
+  "skills": 15,
+  "manifest_sha256_inputs": "a927c158f9011db9e9af3e119e79c12fcdeb58d4506c0157ca7f7bbb7d42a74a",
+  "manifest_sha256_recomputed": "a927c158f9011db9e9af3e119e79c12fcdeb58d4506c0157ca7f7bbb7d42a74a",
+  "manifest_digest_matches": true,
+  "dir": "/private/tmp/fbpkg/old/fabius"
+ }
+}
