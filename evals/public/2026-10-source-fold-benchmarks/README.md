@@ -1,45 +1,14 @@
-# Source-fold benchmark continuation
+# The source-fold continuation, October 2026
 
-An isolated continuation comparing no Fabius, the old signed package and source candidate `6fb0ab0`. [The protocol](PROTOCOL.md) covers eleven public benchmarks and preserves the earlier study unchanged.
+A second pre-registered study, run after the [first](../2026-10-public-benchmarks/REPORT.md): three contemporary arms — no package, the frozen Fabius 3.3.0 package and the frozen source-fold candidate `6fb0ab0` (3.3.0 plus four new and ten refined reference files) — on eleven public benchmarks, with the reference files readable by the model. `REPORT.md` has the results; in one line, no gain and no loss anywhere, and the fold's reference files were opened in 6 of 4,328 package-arm runs, so the two packages behaved as one.
 
-Status: preparation; no model generations or results yet. Provider execution is disabled pending a new quota authorization, a bounded loading/access canary and per-benchmark scorer readiness. Historical usage-limit exceptions do not authorize this cohort.
+- `REPORT.md` — results, method, every deviation, limitations, receipts.
+- `PROTOCOL.md` — the registered design (Codex, 2026-10-10, `d077cef`): arms, benchmarks, frozen samples, the confined-`Read` variant, the 33-contrast family and its statistics.
+- `ADDENDUM.md` — v1.1 (2026-10-11, `f2972a5` and `b91338e`, pushed before the first scored run): the budget record, the executing harness, the package builds, the exact confined-Read rule and its canaries, the LongMemEval judge substitute and its calibration, every departure from the protocol.
+- `INPUTS.json`, `schedule.jsonl` — the two filtered packages (every file's hash), the frozen samples and the seeded order of every block; `build-report.json` — both packages rebuilt and verified against it.
+- `canaries/` — the three-arm confined-read canary and the SWE-bench canary.
+- `harness/` — the harness that ran, scored and analysed the study (the earlier study's, extended; final state).
+- `results/` — every per-item outcome (`items/<benchmark>.csv`), the analysis (`fold-analysis.json`), the run descriptives, every table in the report (`fold-tables.md`), the path audit, the judge calibration and the budget log.
+- `controller.py`, `runtime.py`, `scoring.py`, `items.py`, `analysis.py`, `swe_*.py`, `test_*.py`, `VALIDATION.json` — Codex's preparation, kept as committed and not executed.
 
-The new references need readable files to enter the model context. This is a declared tool-access variant with the same capabilities in all three arms. It measures packages under these conditions, not an automatic claim of improved or unique behavior across all models.
-
-Execution paths, copied data, filtered package snapshots and raw receipts belong in an explicit private experiment root. No code in this directory may default to writing the original study. Machine-specific configuration and identity-bearing transcripts are not public artifacts.
-
-## Frozen inputs and verification
-
-[`INPUTS.json`](INPUTS.json) records both filtered package inventories, scorer/input file hashes, fixed image identities, exclusions and the private manifest digest. [`schedule.jsonl`](schedule.jsonl) fixes all 2,167 item/sample blocks and 6,501 scheduled invocations. These counts describe the plan, not completed calls.
-
-[`VALIDATION.json`](VALIDATION.json) records offline control checks. Synthetic CLI tests are not model evaluations. The real scorer controls use known correct or incorrect answers solely to verify scoring infrastructure; they are not participant results.
-
-Python 3.11 with the existing NumPy/SciPy environment runs the offline harness suite:
-
-```sh
-python -B -m unittest discover -s evals/public/2026-10-source-fold-benchmarks -p 'test_*.py'
-```
-
-## Private execution
-
-Build the private manifest with `items.py --data-root ... --legacy-public-root ... --out ...`. Supply an explicit private JSON configuration with `runtime`, `scoring`, `manifest`, `authorization` and `judge_acceptance` fields. `RuntimeConfig` defines required paths, model, limits, authorization flags and old/candidate package sources. Scoring additionally requires every copied file hash, fixed Docker image IDs, interpreter paths and existing certificate/tokenizer resources. None is installed automatically.
-
-Before model use, resolve the pending quota choice and freeze the protocol, harness, configuration and input manifest at a committed revision. The private `freeze` record contains `commit`, `input_manifest_sha256`, `configuration_sha256` and `files` (each file in this directory with a Python, Markdown, JSON or JSONL extension). Configuration hashing uses `runtime.binding()` and excludes the freeze record itself; only explicit authorization booleans are exempt from runtime identity. Changing frozen bytes requires a new registration, not relabelling existing outputs.
-
-The controller takes `--config /absolute/private/config.json` plus one command:
-
-| Command | Effect |
-|---|---|
-| `preflight` | Verify frozen source bytes and actual local scoring prerequisites; no provider call |
-| `status` | Read counts and the last observed quota; no provider call |
-| `probe` | One explicitly authorized, non-scored, no-tools quota probe |
-| `canary` | Bound three-arm read/reference/denial check |
-| `canary-swe` | Separate real repository editing/execution/denial check |
-| `run --benchmark NAME --max-blocks 1` | Resume one complete three-arm block in the frozen order, subject to quota and readiness |
-| `close --benchmark NAME` | Close generation only after every condition terminates or exhausts its infrastructure retries |
-| `score --benchmark NAME` | Score closed, receipt-verified outputs; resume completed scoring batches without rerunning them |
-| `analyze` | Keep all 33 planned contrasts, missing observations and descriptive execution cost |
-
-Run long authorized batches under the operating system's sleep inhibitor. The controller never spins waiting for quota and never launches another account/model/key. An absent or stale usage meter pauses it. Refresh after the one-call probe has been used still requires a separately authorized, documented meter observation; this preparation does not implement unattended quota resets.
-
-LongMemEval remains blocked until the official judge is available, its settings are frozen and gold/wrong controls pass. The current harness prepares official judge prompts only. Both live CLI canaries also remain unexecuted while provider authorization is pending. Do not mark the study complete or use it as a performance claim at this stage.
+The full receipts — every attempt's command, prompt, event stream and summary, the SWE-bench patches and evaluation logs, every scorer's inputs and outputs, the judge prompts and judgements — are in `fabius-source-fold-benchmarks-2026-10.tar.gz`, attached to the GitHub Release `v3.4.0-sealed`; `REPORT.md` gives its size and SHA-256.

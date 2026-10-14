@@ -27,7 +27,8 @@ def audit_stream(stream, cwd):
     flags = []
     root = str(Path(cwd).parent) if cwd else ""
     wrapper = root + "/run"
-    allowed = (str(cwd), root, PLUGIN, "/private/tmp/fbplugin", "/private/tmp/claude-501", "/tmp/claude-501")
+    allowed = (str(cwd), root, PLUGIN, "/private/tmp/fbplugin", "/private/tmp/fbpkg", "/private/tmp/claude-501",
+               "/tmp/claude-501")  # /private/tmp/fbpkg: the continuation's package directories (cohort.PKG)
     for line in open(stream):
         try:
             ev = json.loads(line)

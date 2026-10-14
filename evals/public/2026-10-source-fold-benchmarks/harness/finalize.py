@@ -10,7 +10,7 @@ sensitivities, and clearly labelled exploratory descriptions.
 3. Declared sensitivities: SWE-bench per replicate (k = 1 each); the baseline's replicate-to-replicate
    disagreement; the primary endpoints without audit-flagged items; IFEval loose / no repeat_prompt /
    all text blocks; HumanEval+ base tests; the unfiltered SWE-bench patches when scored.
-4. Exploratory (not pre-registered): how often the SWE-bench agent ran anything in the test container.
+4. Exploratory (not pre-registered): how often the SWE-bench agent attempted a command in the test container, and how often one executed.
 """
 import csv
 import json
@@ -119,27 +119,21 @@ def main():
     for arm in ("fabius-loaded", "fabius-doc"):
         sens[f"humaneval · {arm} vs baseline · base tests"] = short(cmp_rows(he, arm, col="base_passed"))
     analysis["sensitivities"] = sens
-    # exploratory: did the SWE-bench agent run anything in the test container?
+    # exploratory: did the SWE-bench agent attempt a command in the test container, and did one execute?
+    from descriptives import container_calls
     expl = {}
     for rep in (1, 2):
-        for arm in ("baseline", "fabius-loaded", "fabius-doc"):
-            n = ran = 0
+        for arm in ("baseline", "fabius-loaded", "fabius-doc", "fabius-disciplina"):
+            calls = []
             for res in (ROOT / "runs" / "swebench" / f"r{rep}").glob(f"*/{arm}/result.json"):
                 rj = json.loads(res.read_text())
-                if not rj.get("scored_attempt"):
-                    continue
-                adir = res.parent / f"attempt-{rj['scored_attempt']}"
-                root = str(Path(json.loads((adir / "cmd.json").read_text())["cwd"]).parent)
-                used = False
-                for line in open(adir / "stream.jsonl"):
-                    if '"tool_use"' in line and (root + "/run") in line:
-                        used = True
-                        break
-                n += 1
-                ran += used
-            if n:
-                expl[f"swebench r{rep} · {arm} · runs that used the test container"] = {"runs": n, "used": ran,
-                                                                                      "rate": ran / n}
+                if rj.get("scored_attempt"):
+                    calls.append(container_calls(res.parent / f"attempt-{rj['scored_attempt']}"))
+            if calls:
+                n = len(calls)
+                expl[f"swebench r{rep} · {arm} · test container"] = {
+                    "runs": n, "attempted": sum(1 for a, _ in calls if a), "executed": sum(1 for _, e in calls if e),
+                    "executed_rate": sum(1 for _, e in calls if e) / n}
     analysis["exploratory"] = expl
     out.write_text(json.dumps(analysis, indent=1, default=float))
     print(json.dumps({"comparisons": {k: {kk: v.get(kk) for kk in ("n", "k", "rate_treated", "rate_baseline", "delta",

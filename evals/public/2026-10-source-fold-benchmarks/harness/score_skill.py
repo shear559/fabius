@@ -32,7 +32,17 @@ def main():
         rp.write_text("".join(json.dumps({"item": r["item"], "response": r.get("final_text") or ""}) + "\n"
                               for r in recs if r["arm"] == arm and r.get("scored_attempt")))
         sp = out / f"scored-{arm}.jsonl"
-        subprocess.run([PY, "score.py", str(rp), str(sp)], cwd=ROOT / "skills-bench" / bench, check=True)
+        if bench != "longmemeval":
+            subprocess.run([PY, "score.py", str(rp), str(sp)], cwd=ROOT / "skills-bench" / bench, check=True)
+        else:  # two stages: official judge prompts -> the calibrated judge -> the official rule
+            jp = out / f"judge-prompts-{arm}.jsonl"
+            subprocess.run([PY, "score.py", str(rp), str(sp), "--judge-prompts", str(jp)],
+                           cwd=ROOT / "skills-bench" / bench, check=True)
+            jd = out / f"judgements-{arm}.jsonl"
+            subprocess.run([PY, str(Path(__file__).resolve().parent / "judge_longmemeval.py"), str(jp), str(jd),
+                            "--workers", "6"], check=True)
+            subprocess.run([PY, "score_from_judgements.py", str(jp), str(jd), str(sp)],
+                           cwd=ROOT / "skills-bench" / bench, check=True)
         for line in open(sp):
             row = json.loads(line)
             scored[(str(row["item"]), arm)] = row

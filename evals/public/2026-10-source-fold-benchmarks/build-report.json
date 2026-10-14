@@ -18,5 +18,6 @@
   "manifest_sha256_recomputed": "a927c158f9011db9e9af3e119e79c12fcdeb58d4506c0157ca7f7bbb7d42a74a",
   "manifest_digest_matches": true,
   "dir": "/private/tmp/fbpkg/old/fabius"
- }
+ },
+ "note": "Both packages were built at /private/tmp/fbpkg/<arm>/fabius on 2026-10-11 before the runs and rebuilt on 2026-10-13 after a machine restart cleared that directory; the rebuild reproduced every file hash and both manifest digests, and this record is the rebuild's output with the directory field restored to the location the runs used."
 }

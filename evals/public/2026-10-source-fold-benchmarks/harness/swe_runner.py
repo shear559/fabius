@@ -22,7 +22,7 @@ import claude_run as cr  # noqa: E402
 import cohort  # noqa: E402
 import swe_prepare as sp  # noqa: E402
 from classify import classify  # noqa: E402
-from runner import gate, log_budget, STATE, LOCK, windows  # noqa: E402
+from runner import gate, log_budget, STATE, LOCK, windows, seed_meter  # noqa: E402
 
 ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 TOOLS = "Read,Edit,Write,Glob,Grep,TodoWrite,Skill,Bash"
@@ -137,6 +137,7 @@ def main():
         keep = {"baseline", "fabius-loaded"} | ({"fabius-doc"} if a.replicate == 1 and i in doc_subset else set())
         return [x for x in sched["arm_order"][i] if x in keep]
 
+    seed_meter()
     log_budget(f"swebench r{a.replicate}: start, {len(items)} valid items, {a.workers} workers")
     done = 0
     with cf.ThreadPoolExecutor(a.workers) as ex:

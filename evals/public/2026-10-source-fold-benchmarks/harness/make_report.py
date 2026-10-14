@@ -98,12 +98,13 @@ def main():
             print(f"| {key} | {v['runs']} | {v['no_scored_attempt']} | {v['infra_retries']} | {v['turn_cap']} | "
                   f"{v['timeouts']} | {v['ended_on_question']} |")
         print("\n### Exploratory, SWE-bench (not pre-registered)\n")
-        print("| Replicate · arm | Runs that ran anything in the test container | Runs with at least one permission "
-              "denial |\n|---|---|---|")
+        print("| Replicate · arm | Runs that attempted a command in the test container | Runs where one executed | "
+              "Runs with at least one permission denial |\n|---|---|---|---|")
         for key, v in d.items():
-            if "used_test_container" in v:
-                print(f"| {key.replace('swebench ', '')} | {v['used_test_container']} / {v['runs']} "
-                      f"({pct(v['used_test_container'] / v['runs'])}) | {v['runs_with_permission_denial']} / {v['runs']} |")
+            if "container_executed" in v:
+                print(f"| {key.replace('swebench ', '')} | {v['container_attempted']} / {v['runs']} | "
+                      f"{v['container_executed']} / {v['runs']} ({pct(v['container_executed'] / v['runs'])}) | "
+                      f"{v['runs_with_permission_denial']} / {v['runs']} |")
 
 
 if __name__ == "__main__":

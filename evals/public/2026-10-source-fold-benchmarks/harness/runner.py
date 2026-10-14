@@ -45,6 +45,25 @@ def windows(meter):
     return (w.get("five_hour") or {}), (w.get("seven_day") or {})
 
 
+def seed_meter():
+    """A fresh runner process knows no meter and would start items into a pause: seed it from the newest
+    attempt summary under ROOT/runs whose five-hour window has not reset yet."""
+    newest, best = None, 0
+    for s in ROOT.glob("runs/**/attempt-*/summary.json"):
+        m = s.stat().st_mtime
+        if m > best:
+            newest, best = s, m
+    if newest is None:
+        return
+    meter = json.loads(newest.read_text()).get("meter")
+    five, _ = windows(meter)
+    if meter and (five.get("resetsAt") or 0) > time.time():
+        with LOCK:
+            STATE["meter"] = meter
+        log_budget(f"meter seeded from {newest.parent.parent.name}/{newest.parent.name}: 5h {five.get('utilization')} "
+                   f"(resets {dt.datetime.fromtimestamp(five['resetsAt']).strftime('%H:%M')})")
+
+
 def gate(tag):
     """Block until a new item may start; return False if the study must stop."""
     while True:
@@ -148,6 +167,7 @@ def main():
     prompts = dict(load_items(a.bench))
     wanted = set(a.arms.split(","))
     items = sched["items"][: a.limit] if a.limit else sched["items"]
+    seed_meter()
     log_budget(f"{a.bench}: start, {len(items)} items × arms {sorted(wanted)}, {a.workers} workers"
                + (" · cohort fold" if cohort.ACTIVE else ""))
     done = 0

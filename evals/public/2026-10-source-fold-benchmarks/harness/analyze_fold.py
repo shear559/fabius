@@ -38,9 +38,18 @@ TIE = 0.05
 def load(bench):
     p = ROOT / "results" / bench / "items.csv" if bench in ("swebench", "ifeval", "humaneval") \
         else ROOT / "results" / "skills" / bench / "items.csv"
-    if not p.exists():
+    if bench == "swebench":  # one file per replicate from score_swe.py; both samples of an item pair together
+        rows = []
+        for rep in (1, 2):
+            q = ROOT / "results" / "swebench" / f"items-r{rep}.csv"
+            if q.exists():
+                rows += list(csv.DictReader(open(q)))
+        if not rows:
+            return []
+    elif not p.exists():
         return []
-    rows = list(csv.DictReader(open(p)))
+    else:
+        rows = list(csv.DictReader(open(p)))
     for r in rows:
         r["replicate"] = int(r.get("replicate") or 1)
         r["passed"] = None if r.get("passed") in ("", None) else int(float(r["passed"]))

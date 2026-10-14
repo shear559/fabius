@@ -15,7 +15,7 @@ and word-count checks score as before. The first name is matched as a word, and 
 (\\n, \\t, \\r, \\uXXXX) before it counts as a word boundary. __pycache__ and .DS_Store are not
 copied. The check after copying is stricter than
 the rules: any remaining occurrence of the username, the surname, the first name as a
-substring, or any address at the email's domain fails the run, unless the word containing it is listed in
+substring, or any address at the email's domain with an unmasked local part fails the run, unless the word containing it is listed in
 ALLOWED_WORDS (none are listed). Re-scoring IFEval on the masked text with the random state
 held equal reproduced all 2,164 outcomes (check_ifeval_public.py re-scores the archive).
 """
@@ -25,7 +25,10 @@ import shutil
 import sys
 from pathlib import Path
 
-ALLOWED_WORDS = set()  # fail closed: a benign word containing the first name is added only after reading it
+ALLOWED_WORDS = {"shielaariel", "uarielbf"}  # fail closed: a benign word containing the first name is added only after
+# reading it. "shielaariel": the letter run of "shielaariel888", a third-party username inside a Design2Code benchmark
+# page (refs/16873.html) that the model reproduced; "uarielbf": a letter run inside a base64 blob in one FinQA stream.
+# The check matches letter runs, so digits are not part of the word.
 
 
 def _mask(m):
@@ -50,9 +53,36 @@ def rules(email, user, first, last):
             re.compile(rf"{word_start}{re.escape(first)}(?![A-Za-z])", re.I)]
 
 
+LOCAL_CHARS = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._%+-")
+
+
 def forbidden(email, user, first, last):
-    domain = re.escape("@" + email.split("@")[1])
-    return re.compile(rf"[A-Za-z]*(?:{re.escape(user)}|{re.escape(last)}|{re.escape(first)})[A-Za-z]*|{domain}", re.I)
+    """Literal, case-insensitive alternation of the username, the surname, the first name and the email's domain:
+    a plain alternation scans in linear time, which matters because event streams carry base64 runs of hundreds
+    of thousands of letters (a quantified class before a literal backtracks quadratically on those)."""
+    domain = "@" + email.split("@")[1]
+    return re.compile("|".join(re.escape(x) for x in (user, last, first, domain)), re.I)
+
+
+def _word(text, start, end):
+    """The letter run around a name match (the check is on whole words, so digits are not part of it)."""
+    a, b = start, end
+    while a > 0 and text[a - 1].isalpha():
+        a -= 1
+    while b < len(text) and text[b].isalpha():
+        b += 1
+    return text[a:b]
+
+
+def _benign(text, m):
+    """An allow-listed word, or an address at the domain whose local part is absent or fully masked (a bare
+    "@gmail.com" left by a benchmark page's own redaction has no local part)."""
+    if m.group(0).startswith("@"):
+        a = m.start()
+        while a > 0 and text[a - 1] in LOCAL_CHARS:
+            a -= 1
+        return re.search(r"[a-wyzA-WYZ]", text[a:m.start()]) is None
+    return _word(text, m.start(), m.end()).lower() in ALLOWED_WORDS
 
 
 def scrub(text, rx_list):
@@ -88,7 +118,7 @@ def verify(dst, rx_forbidden):
             except UnicodeDecodeError:
                 t = p.read_bytes().decode("latin-1")  # binary files are copied unchanged; check them too
             for m in rx_forbidden.finditer(t):
-                if m.group(0).lower() not in ALLOWED_WORDS:
+                if not _benign(t, m):
                     hits.append((str(p), t[max(0, m.start() - 40):m.end() + 40]))
     return hits
 

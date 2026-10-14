@@ -1,1 +1,110 @@
 - 2026-10-11 20:39:30 · cohort fold (source-fold continuation): budget record per ADDENDUM.md §1 — owner instructions 2026-10-07 and 2026-10-11; weekly stop 0.97, 5-hour pause 0.90; meters at launch 7d 0.03 · 5h 0.14 (read from the canary runs' usage events); 6,501 scheduled invocations + ≤2 INFRA retries each.
+- 2026-10-11 20:39:53 · design2code: start, 80 items × arms ['baseline', 'candidate', 'old'], 3 workers · cohort fold
+- 2026-10-11 20:39:53 · ifeval: start, 541 items × arms ['baseline', 'candidate', 'old'], 4 workers · cohort fold
+- 2026-10-11 20:39:53 · swebench r1: start, 50 valid items, 2 workers
+- 2026-10-11 20:39:53 · bfcl: start, 200 items × arms ['baseline', 'candidate', 'old'], 3 workers · cohort fold
+- 2026-10-11 20:39:53 · longmemeval: start, 120 items × arms ['baseline', 'candidate', 'old'], 3 workers · cohort fold
+- 2026-10-11 20:42:19 · cyberseceval: start, 200 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-11 20:42:19 · finqa: start, 200 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-11 20:42:19 · smartbugs: start, 143 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-11 20:42:19 · ds1000: start, 200 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-11 20:42:19 · labbench: start, 220 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-11 20:42:20 · humaneval: start, 163 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-11 20:55:24 · bfcl/parallel_85: 5-hour meter 0.9 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:24 · labbench/ProtocolQA/d5764058-86d0-4f2e-a076-02e14a18d663: 5-hour meter 0.9 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:31 · ds1000/ds1000-0384: 5-hour meter 0.9 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:32 · ds1000/ds1000-0145: 5-hour meter 0.91 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:36 · labbench/ProtocolQA/dd06a1ee-2492-4878-884a-e73282cd755f: 5-hour meter 0.91 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:36 · ifeval/2359: 5-hour meter 0.91 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:38 · cyberseceval/instruct-v2-python-1631: 5-hour meter 0.91 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:40 · cyberseceval/instruct-v2-python-1575: 5-hour meter 0.91 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:41 · bfcl/parallel_multiple_168: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:42 · finqa/AES/2001/page_85.pdf-2: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:42 · humaneval/HumanEval_13: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:44 · bfcl/irrelevance_215: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:44 · humaneval/HumanEval_63: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:45 · finqa/AWK/2014/page_121.pdf-3: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:48 · smartbugs/dataset/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:52 · longmemeval/89941a94: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:52 · design2code/2282: 5-hour meter 0.92 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:53 · longmemeval/80ec1f4f: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:54 · smartbugs/dataset/denial_of_service/dos_number.sol: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:55 · ifeval/1481: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:55:58 · ifeval/2596: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:56:00 · design2code/16903: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:56:03 · longmemeval/41698283: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:56:04 · ifeval/3703: 5-hour meter 0.93 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:56:28 · swebench-r1/django__django-12308: 5-hour meter 0.94 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:56:49 · design2code/1352: 5-hour meter 0.94 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:57:05 · swebench-r1/sphinx-doc__sphinx-8035: 5-hour meter 0.95 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:57:42 · scheduling: after the first five-hour window (937 results, weekly 0.03 -> 0.14) the six replication benchmarks (humaneval, cyberseceval, labbench, finqa, ds1000, smartbugs) were stopped between items, with no attempt in flight, so the benchmarks whose owner's references the fold changed (swebench, bfcl, longmemeval, design2code) and ifeval use the next windows first; the six resume afterwards from their next item in the same schedule. Decided from meter readings and the projection (~0.012 weekly points per run), before any result was scored.
+- 2026-10-11 20:57:56 · swebench r1: start, 50 valid items, 4 workers
+- 2026-10-11 20:57:59 · swebench r1 runner restarted with 4 workers between items (no attempt in flight); resumes from result.json
+- 2026-10-11 20:58:56 · meter seeded from candidate/attempt-1: 5h 0.95 (resets 01:10)
+- 2026-10-11 20:58:56 · swebench r1: start, 50 valid items, 4 workers
+- 2026-10-11 20:58:56 · swebench-r1/django__django-12276: 5-hour meter 0.95 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:58:56 · swebench-r1/sphinx-doc__sphinx-10466: 5-hour meter 0.95 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:58:56 · swebench-r1/django__django-11815: 5-hour meter 0.95 ≥ 0.9 — pausing until 01:10
+- 2026-10-11 20:58:56 · swebench-r1/sphinx-doc__sphinx-9698: 5-hour meter 0.95 ≥ 0.9 — pausing until 01:10
+- 2026-10-12 01:19:52 · longmemeval: end · meters 5h 0.64 · 7d 0.23
+- 2026-10-12 01:21:41 · bfcl: end · meters 5h 0.73 · 7d 0.24
+- 2026-10-12 01:24:27 · design2code: end · meters 5h 0.79 · 7d 0.25
+- 2026-10-12 01:30:23 · swebench-r1/django__django-12209: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:30:26 · ifeval/2691: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:30:33 · ifeval/3709: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:30:39 · ifeval/2549: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:30:44 · ifeval/2482: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:30:56 · swebench-r1/sphinx-doc__sphinx-9230: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:31:02 · swebench-r1/django__django-11999: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 01:31:16 · swebench-r1/sphinx-doc__sphinx-11510: 5-hour meter 0.9 ≥ 0.9 — pausing until 06:10
+- 2026-10-12 06:22:49 · swebench r1: end · meters 5h 0.19 · 7d 0.29
+- 2026-10-12 06:56:15 · ifeval: end · meters 5h 0.58 · 7d 0.34
+- 2026-10-12 08:46:43 · phase 1 complete (ifeval 1623, bfcl 600, longmemeval 360, design2code 240, swebench r1 150 results); meters 5h 0.58 · 7d 0.34; launching the six replication benchmarks and swebench r2
+- 2026-10-12 08:46:46 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:46 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:46 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:46 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:46 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:46 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:46 · cyberseceval: start, 200 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-12 08:46:46 · finqa: start, 200 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-12 08:46:46 · labbench: start, 220 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-12 08:46:46 · swebench r2: start, 50 valid items, 2 workers
+- 2026-10-12 08:46:46 · ds1000: start, 200 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-12 08:46:46 · smartbugs: start, 143 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-12 08:46:47 · meter seeded from baseline/attempt-1: 5h 0.58 (resets 11:10)
+- 2026-10-12 08:46:47 · humaneval: start, 163 items × arms ['baseline', 'candidate', 'old'], 2 workers · cohort fold
+- 2026-10-12 08:52:28 · humaneval/HumanEval_10: 5-hour meter 0.9 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:32 · cyberseceval/instruct-v2-python-1570: 5-hour meter 0.9 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:35 · ds1000/ds1000-0625: 5-hour meter 0.9 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:38 · labbench/SeqQA/b6c27666-c645-4825-bc35-a0aeaebbf9a4: 5-hour meter 0.9 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:47 · humaneval/HumanEval_49: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:49 · labbench/ProtocolQA/bc0ee7e7-45c7-49bd-a779-bcd9b3b5a8ac: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:49 · finqa/TMUS/2017/page_29.pdf-3: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:49 · ds1000/ds1000-0315: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:51 · finqa/UPS/2010/page_52.pdf-1: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:52 · cyberseceval/instruct-v2-python-1584: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:52:59 · smartbugs/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63.sol: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:53:06 · smartbugs/dataset/reentrancy/reentrancy_insecure.sol: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:53:20 · swebench-r2/django__django-11815: 5-hour meter 0.91 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 08:54:46 · swebench-r2/sphinx-doc__sphinx-9698: 5-hour meter 0.93 ≥ 0.9 — pausing until 11:10
+- 2026-10-12 09:05:05 · observation (no decision): in 2,296 package-arm runs completed so far, one run read a package reference (praesidium's security-playbook.md, unchanged by the fold); the registered plan continues unchanged
+- 2026-10-12 11:25:26 · humaneval: end · meters 5h 0.8 · 7d 0.5
+- 2026-10-12 11:27:21 · finqa: end · meters 5h 0.89 · 7d 0.51
+- 2026-10-12 11:27:27 · ds1000/ds1000-0349: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:27:37 · smartbugs/dataset/unchecked_low_level_calls/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:27:38 · smartbugs/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3.sol: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:27:47 · cyberseceval/instruct-v2-python-1817: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:27:47 · labbench/ProtocolQA/a6231697-bb0c-41bc-b3bf-c7e237d7d423: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:28:04 · cyberseceval/instruct-v2-python-1779: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:28:16 · labbench/ProtocolQA/79240360-9a1e-4999-88c0-e60cc6176075: 5-hour meter 0.9 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:28:26 · swebench-r2/django__django-11848: 5-hour meter 0.91 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 11:37:04 · swebench-r2/sphinx-doc__sphinx-7590: 5-hour meter 0.91 ≥ 0.9 — pausing until 16:10
+- 2026-10-12 16:11:13 · ds1000: end · meters 5h 0.01 · 7d 0.51
+- 2026-10-12 16:12:45 · smartbugs: end · meters 5h 0.07 · 7d 0.52
+- 2026-10-12 16:31:20 · cyberseceval: end · meters 5h 0.47 · 7d 0.55
+- 2026-10-12 16:44:11 · scoring started for the closed benchmarks humaneval, cyberseceval, finqa, smartbugs, ds1000 (labbench and swebench r2 still generating)
+- 2026-10-12 17:00:46 · labbench: end · meters 5h 0.89 · 7d 0.6
+- 2026-10-12 17:09:32 · swebench r2: end · meters 5h 0.9 · 7d 0.6
+- 2026-10-12 17:10:41 · generation closed for every benchmark (2,167 blocks); scoring labbench and swebench r2
+- 2026-10-12 17:51:18 · all eleven benchmarks scored; running analyze_fold.py (the registered analysis) and make_report_fold.py
