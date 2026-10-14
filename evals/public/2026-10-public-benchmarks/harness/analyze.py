@@ -17,7 +17,7 @@ from pathlib import Path
 import numpy as np
 from scipy import stats
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 SEED = 20261006
 PRIMARY = {"swebench": "resolved", "ifeval": "prompt-level strict", "humaneval": "plus pass@1"}
 FAMILY1 = [("fabius-loaded", b) for b in ("swebench", "ifeval", "humaneval")]
@@ -226,8 +226,8 @@ def load_rates(rows, arm):
 
 
 def main():
-    benches = [b for b in sys.argv[1:] if not b.startswith("--")]
     out_json = sys.argv[sys.argv.index("--json") + 1] if "--json" in sys.argv else None
+    benches = [b for b in sys.argv[1:] if not b.startswith("--") and b != out_json]
     data = {b: load(b) for b in benches}
     report = {"comparisons": {}, "efficiency": {}, "load": {}, "mde": {}}
     for fam_name, fam in (("family1", FAMILY1), ("family2", FAMILY2)):

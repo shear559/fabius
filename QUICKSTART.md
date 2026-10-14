@@ -31,10 +31,10 @@ It worked when your plugin manager lists **fabius** as installed. Claude Code an
 
 ## 2 · Run a task with a known answer
 
-Paste this into a fresh session:
+Paste this into a fresh Claude Code session (in Codex or Grok Build, start with "Use Fabius to" instead of `/fabius`):
 
 ```
-fabius: summarize this CSV. Show each line total, the sum, and the largest product by revenue.
+/fabius summarize this CSV. Show each line total, the sum, and the largest product by revenue.
 Do not assume a currency. Show the arithmetic.
 
 product,quantity,unit_price
@@ -45,7 +45,7 @@ mug,2,35
 
 The right answer: coffee 120, tea 90, mug 70; total 280; ten items; coffee is the largest line. The currency stays unspecified, because the file never names one.
 
-Starting a prompt with `fabius:` calls the router by name. Agent apps differ in how readily they pick up skills from a plain sentence.
+In Claude Code, `/fabius` at the start of a prompt loads the router, and `/fabius:fabius-<skill>` loads one skill, for example `/fabius:fabius-disciplina` (short form `/fabius-disciplina`). Measured on Claude Code 2.1.289: `/fabius` loaded the router in 803 of 803 runs and each skill's command loaded that skill in 1,271 of 1,271, while a prompt that only began with the word `fabius:` loaded the router in 1 of 186. The router seldom loads a specialist on its own, so call the one you want. In Codex and Grok Build, name Fabius or the skill in the request.
 
 ## 3 · Try three more
 

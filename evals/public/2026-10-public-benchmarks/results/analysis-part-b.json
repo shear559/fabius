@@ -1,0 +1,629 @@
+{
+ "comparisons": {
+  "fabius-disciplina vs baseline \u00b7 swebench": {
+   "arm": "fabius-disciplina",
+   "n": 50,
+   "k": 2,
+   "rate_treated": 0.87,
+   "rate_baseline": 0.84,
+   "delta": 0.03,
+   "ci95": [
+    -0.02,
+    0.1
+   ],
+   "ci90": [
+    -0.01,
+    0.09
+   ],
+   "p": 0.53125,
+   "test": "paired sign-flip",
+   "interval": "BCa bootstrap (stratified)",
+   "p_holm": 1.0,
+   "family": "B",
+   "verdict": "INCONCLUSIVE"
+  },
+  "fabius-parcus vs baseline \u00b7 humaneval": {
+   "arm": "fabius-parcus",
+   "n": 163,
+   "k": 1,
+   "a": 154,
+   "b": 1,
+   "c": 1,
+   "d": 7,
+   "rate_treated": 0.950920245398773,
+   "rate_baseline": 0.950920245398773,
+   "delta": 0.0,
+   "ci95": [
+    -0.02671471253948027,
+    0.02671471253948027
+   ],
+   "ci90": [
+    -0.020424346775267048,
+    0.020424346775267048
+   ],
+   "p": 1.0,
+   "discordance": 0.012269938650306749,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 1.0,
+   "family": "B",
+   "verdict": "TIE"
+  },
+  "fabius-praesidium vs baseline \u00b7 cyberseceval": {
+   "arm": "fabius-praesidium",
+   "n": 137,
+   "k": 1,
+   "a": 110,
+   "b": 9,
+   "c": 3,
+   "d": 15,
+   "rate_treated": 0.8686131386861314,
+   "rate_baseline": 0.8248175182481752,
+   "delta": 0.04379562043795626,
+   "ci95": [
+    -0.006472444563903605,
+    0.09725461947315069
+   ],
+   "ci90": [
+    0.002108614632694336,
+    0.08783018684916052
+   ],
+   "p": 0.14599609375,
+   "discordance": 0.08759124087591241,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 0.8759765625,
+   "family": "B",
+   "verdict": "NON-INFERIOR"
+  },
+  "fabius-scientia vs baseline \u00b7 labbench": {
+   "arm": "fabius-scientia",
+   "n": 128,
+   "k": 1,
+   "a": 107,
+   "b": 2,
+   "c": 3,
+   "d": 16,
+   "rate_treated": 0.8515625,
+   "rate_baseline": 0.859375,
+   "delta": -0.0078125,
+   "ci95": [
+    -0.0479400358942361,
+    0.03118097720033451
+   ],
+   "ci90": [
+    -0.040232699883270516,
+    0.023755777195733033
+   ],
+   "p": 1.0,
+   "discordance": 0.0390625,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 1.0,
+   "family": "B",
+   "verdict": "TIE"
+  },
+  "fabius-fortuna vs baseline \u00b7 finqa": {
+   "arm": "fabius-fortuna",
+   "n": 200,
+   "k": 1,
+   "a": 165,
+   "b": 2,
+   "c": 5,
+   "d": 28,
+   "rate_treated": 0.835,
+   "rate_baseline": 0.85,
+   "delta": -0.015000000000000013,
+   "ci95": [
+    -0.0443870011394534,
+    0.012929514287138216
+   ],
+   "ci90": [
+    -0.03893271880825487,
+    0.007859070523662973
+   ],
+   "p": 0.453125,
+   "discordance": 0.035,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 1.0,
+   "family": "B",
+   "verdict": "TIE"
+  },
+  "fabius-doctrina vs baseline \u00b7 ds1000": {
+   "arm": "fabius-doctrina",
+   "n": 200,
+   "k": 1,
+   "a": 163,
+   "b": 12,
+   "c": 4,
+   "d": 21,
+   "rate_treated": 0.875,
+   "rate_baseline": 0.835,
+   "delta": 0.040000000000000036,
+   "ci95": [
+    0.0005465780155309921,
+    0.08188583251312938
+   ],
+   "ci90": [
+    0.00719605752114838,
+    0.07457349297445671
+   ],
+   "p": 0.076812744140625,
+   "discordance": 0.08,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 0.537689208984375,
+   "family": "B",
+   "verdict": "NON-INFERIOR"
+  },
+  "fabius-catena vs baseline \u00b7 smartbugs": {
+   "arm": "fabius-catena",
+   "n": 143,
+   "k": 1,
+   "a": 102,
+   "b": 8,
+   "c": 1,
+   "d": 32,
+   "rate_treated": 0.7692307692307693,
+   "rate_baseline": 0.7202797202797203,
+   "delta": 0.04895104895104896,
+   "ci95": [
+    0.008039344874371732,
+    0.09161615829274394
+   ],
+   "ci90": [
+    0.014862686354730793,
+    0.08431754819431828
+   ],
+   "p": 0.0390625,
+   "discordance": 0.06293706293706294,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 0.3125,
+   "family": "B",
+   "verdict": "NON-INFERIOR"
+  },
+  "fabius-cohors vs baseline \u00b7 bfcl": {
+   "arm": "fabius-cohors",
+   "n": 200,
+   "k": 1,
+   "a": 182,
+   "b": 2,
+   "c": 3,
+   "d": 13,
+   "rate_treated": 0.92,
+   "rate_baseline": 0.925,
+   "delta": -0.0050000000000000044,
+   "ci95": [
+    -0.032444006817813786,
+    0.021365956872484413
+   ],
+   "ci90": [
+    -0.026863703880970983,
+    0.01604740701699258
+   ],
+   "p": 1.0,
+   "discordance": 0.025,
+   "test": "exact McNemar",
+   "interval": "Newcombe hybrid score",
+   "p_holm": 1.0,
+   "family": "B",
+   "verdict": "TIE"
+  }
+ },
+ "load": {
+  "fabius-disciplina \u00b7 swebench": {
+   "n": 100,
+   "skill_injected": 100,
+   "skill_tool_loads": {}
+  },
+  "fabius-parcus \u00b7 humaneval": {
+   "n": 163,
+   "skill_injected": 163,
+   "skill_tool_loads": {}
+  },
+  "fabius-praesidium \u00b7 cyberseceval": {
+   "n": 137,
+   "skill_injected": 137,
+   "skill_tool_loads": {}
+  },
+  "fabius-scientia \u00b7 labbench": {
+   "n": 128,
+   "skill_injected": 128,
+   "skill_tool_loads": {}
+  },
+  "fabius-fortuna \u00b7 finqa": {
+   "n": 200,
+   "skill_injected": 200,
+   "skill_tool_loads": {}
+  },
+  "fabius-doctrina \u00b7 ds1000": {
+   "n": 200,
+   "skill_injected": 200,
+   "skill_tool_loads": {}
+  },
+  "fabius-catena \u00b7 smartbugs": {
+   "n": 143,
+   "skill_injected": 143,
+   "skill_tool_loads": {}
+  },
+  "fabius-cohors \u00b7 bfcl": {
+   "n": 200,
+   "skill_injected": 200,
+   "skill_tool_loads": {}
+  }
+ },
+ "efficiency": {
+  "fabius-disciplina \u00b7 swebench \u00b7 output_tokens": {
+   "n": 100,
+   "ratio": 1.9197514602620598,
+   "ci95": [
+    1.741351053125839,
+    2.122948431100733
+   ]
+  },
+  "fabius-disciplina \u00b7 swebench \u00b7 total_tokens": {
+   "n": 100,
+   "ratio": 2.068379381805947,
+   "ci95": [
+    1.8817351345717572,
+    2.258602876031079
+   ]
+  },
+  "fabius-disciplina \u00b7 swebench \u00b7 cost_microusd": {
+   "n": 100,
+   "ratio": 1.8433767112154715,
+   "ci95": [
+    1.7284393326181566,
+    1.9584230905897586
+   ]
+  },
+  "fabius-disciplina \u00b7 swebench \u00b7 elapsed_s": {
+   "n": 100,
+   "ratio": 1.8307109742972207,
+   "ci95": [
+    1.6464511125113306,
+    2.053255652179748
+   ]
+  },
+  "fabius-disciplina \u00b7 swebench \u00b7 num_turns": {
+   "n": 100,
+   "ratio": 1.5082345633695597,
+   "ci95": [
+    1.392901501621251,
+    1.6309892600011167
+   ]
+  },
+  "fabius-disciplina \u00b7 swebench \u00b7 patch_lines": {
+   "n": 100,
+   "ratio": 1.0411642019175151,
+   "ci95": [
+    0.9663263363394997,
+    1.1241786559455975
+   ]
+  },
+  "fabius-parcus \u00b7 humaneval \u00b7 output_tokens": {
+   "n": 163,
+   "ratio": 1.038756116414362,
+   "ci95": [
+    0.9933598337371111,
+    1.089157010551643
+   ]
+  },
+  "fabius-parcus \u00b7 humaneval \u00b7 total_tokens": {
+   "n": 163,
+   "ratio": 1.5869209490865654,
+   "ci95": [
+    1.5837920341657774,
+    1.5903604866698282
+   ]
+  },
+  "fabius-parcus \u00b7 humaneval \u00b7 cost_microusd": {
+   "n": 163,
+   "ratio": 1.60655315611691,
+   "ci95": [
+    1.5975489129373168,
+    1.6161398591181788
+   ]
+  },
+  "fabius-parcus \u00b7 humaneval \u00b7 elapsed_s": {
+   "n": 163,
+   "ratio": 0.9403744669250075,
+   "ci95": [
+    0.9108270902304908,
+    0.9697944293661332
+   ]
+  },
+  "fabius-parcus \u00b7 humaneval \u00b7 num_turns": {
+   "n": 163,
+   "ratio": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  },
+  "fabius-praesidium \u00b7 cyberseceval \u00b7 output_tokens": {
+   "n": 137,
+   "ratio": 1.372076810146775,
+   "ci95": [
+    1.2842221792508535,
+    1.484012671249655
+   ]
+  },
+  "fabius-praesidium \u00b7 cyberseceval \u00b7 total_tokens": {
+   "n": 137,
+   "ratio": 1.5926720026976844,
+   "ci95": [
+    1.4351245711671172,
+    1.7124255864290028
+   ]
+  },
+  "fabius-praesidium \u00b7 cyberseceval \u00b7 cost_microusd": {
+   "n": 137,
+   "ratio": 1.6880989876256884,
+   "ci95": [
+    1.5346731084152847,
+    1.8024958948415952
+   ]
+  },
+  "fabius-praesidium \u00b7 cyberseceval \u00b7 elapsed_s": {
+   "n": 137,
+   "ratio": 1.188585179777288,
+   "ci95": [
+    1.1103286094137808,
+    1.2750717011823516
+   ]
+  },
+  "fabius-praesidium \u00b7 cyberseceval \u00b7 num_turns": {
+   "n": 137,
+   "ratio": 0.9072127632837583,
+   "ci95": [
+    0.861378437824678,
+    0.9407041015655849
+   ]
+  },
+  "fabius-scientia \u00b7 labbench \u00b7 output_tokens": {
+   "n": 128,
+   "ratio": 1.4756003689628563,
+   "ci95": [
+    1.3626234204478036,
+    1.6441841569498126
+   ]
+  },
+  "fabius-scientia \u00b7 labbench \u00b7 total_tokens": {
+   "n": 128,
+   "ratio": 1.7636927699257259,
+   "ci95": [
+    1.742556522794044,
+    1.7967113172427402
+   ]
+  },
+  "fabius-scientia \u00b7 labbench \u00b7 cost_microusd": {
+   "n": 128,
+   "ratio": 1.7376670719630904,
+   "ci95": [
+    1.6987194302257576,
+    1.8035993765439065
+   ]
+  },
+  "fabius-scientia \u00b7 labbench \u00b7 elapsed_s": {
+   "n": 128,
+   "ratio": 1.2036362337271191,
+   "ci95": [
+    1.1297990820288863,
+    1.2904020959000864
+   ]
+  },
+  "fabius-scientia \u00b7 labbench \u00b7 num_turns": {
+   "n": 128,
+   "ratio": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  },
+  "fabius-fortuna \u00b7 finqa \u00b7 output_tokens": {
+   "n": 200,
+   "ratio": 1.6525801485859672,
+   "ci95": [
+    1.540101911274268,
+    1.7797277206025246
+   ]
+  },
+  "fabius-fortuna \u00b7 finqa \u00b7 total_tokens": {
+   "n": 200,
+   "ratio": 1.905304744187046,
+   "ci95": [
+    1.9034923287241436,
+    1.9073072645073952
+   ]
+  },
+  "fabius-fortuna \u00b7 finqa \u00b7 cost_microusd": {
+   "n": 200,
+   "ratio": 1.9572682939311008,
+   "ci95": [
+    1.9510376263787137,
+    1.9641059684017639
+   ]
+  },
+  "fabius-fortuna \u00b7 finqa \u00b7 elapsed_s": {
+   "n": 200,
+   "ratio": 1.1518413830439616,
+   "ci95": [
+    1.1112494359613145,
+    1.1974161230403186
+   ]
+  },
+  "fabius-fortuna \u00b7 finqa \u00b7 num_turns": {
+   "n": 200,
+   "ratio": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  },
+  "fabius-doctrina \u00b7 ds1000 \u00b7 output_tokens": {
+   "n": 200,
+   "ratio": 1.2673754540114075,
+   "ci95": [
+    1.1620169692759408,
+    1.3973758297320484
+   ]
+  },
+  "fabius-doctrina \u00b7 ds1000 \u00b7 total_tokens": {
+   "n": 200,
+   "ratio": 1.9131554260210106,
+   "ci95": [
+    1.9084362260133156,
+    1.9169099517133064
+   ]
+  },
+  "fabius-doctrina \u00b7 ds1000 \u00b7 cost_microusd": {
+   "n": 200,
+   "ratio": 2.020577073321357,
+   "ci95": [
+    2.006852271370763,
+    2.0317106730920487
+   ]
+  },
+  "fabius-doctrina \u00b7 ds1000 \u00b7 elapsed_s": {
+   "n": 200,
+   "ratio": 1.0932277452411163,
+   "ci95": [
+    1.0350716742459711,
+    1.1575361815328513
+   ]
+  },
+  "fabius-doctrina \u00b7 ds1000 \u00b7 num_turns": {
+   "n": 200,
+   "ratio": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  },
+  "fabius-catena \u00b7 smartbugs \u00b7 output_tokens": {
+   "n": 143,
+   "ratio": 1.889368209001142,
+   "ci95": [
+    1.8049534696949456,
+    1.9818659988516152
+   ]
+  },
+  "fabius-catena \u00b7 smartbugs \u00b7 total_tokens": {
+   "n": 143,
+   "ratio": 1.8353942388024083,
+   "ci95": [
+    1.829786423019181,
+    1.8416173849770459
+   ]
+  },
+  "fabius-catena \u00b7 smartbugs \u00b7 cost_microusd": {
+   "n": 143,
+   "ratio": 1.885340622438662,
+   "ci95": [
+    1.8717700584247727,
+    1.8993502171698167
+   ]
+  },
+  "fabius-catena \u00b7 smartbugs \u00b7 elapsed_s": {
+   "n": 143,
+   "ratio": 1.3437367492340861,
+   "ci95": [
+    1.2348096237124147,
+    1.4641134824549538
+   ]
+  },
+  "fabius-catena \u00b7 smartbugs \u00b7 num_turns": {
+   "n": 143,
+   "ratio": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  },
+  "fabius-cohors \u00b7 bfcl \u00b7 output_tokens": {
+   "n": 200,
+   "ratio": 1.3406530608178715,
+   "ci95": [
+    1.255186741007456,
+    1.4429949618103544
+   ]
+  },
+  "fabius-cohors \u00b7 bfcl \u00b7 total_tokens": {
+   "n": 200,
+   "ratio": 1.9515452668581124,
+   "ci95": [
+    1.9495082739517549,
+    1.953205541874508
+   ]
+  },
+  "fabius-cohors \u00b7 bfcl \u00b7 cost_microusd": {
+   "n": 200,
+   "ratio": 2.0348268779301604,
+   "ci95": [
+    2.0284757883936018,
+    2.0413467318558434
+   ]
+  },
+  "fabius-cohors \u00b7 bfcl \u00b7 elapsed_s": {
+   "n": 200,
+   "ratio": 1.0817729087957366,
+   "ci95": [
+    1.0270113714848046,
+    1.1445477516264486
+   ]
+  },
+  "fabius-cohors \u00b7 bfcl \u00b7 num_turns": {
+   "n": 200,
+   "ratio": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "mde": {
+  "swebench": {
+   "psi=0.1": null,
+   "psi=0.2": null,
+   "psi=0.3": 0.26634546154973565
+  },
+  "humaneval": {
+   "psi=0.1": 0.08638502046451321,
+   "psi=0.2": 0.12476359795109604,
+   "psi=0.3": 0.1546593270602898
+  },
+  "cyberseceval": {
+   "psi=0.1": 0.09275072052969334,
+   "psi=0.2": 0.1356852238313877,
+   "psi=0.3": 0.16795620578905074
+  },
+  "labbench": {
+   "psi=0.1": 0.09517039722977641,
+   "psi=0.2": 0.14026332149314835,
+   "psi=0.3": 0.17324664312209276
+  },
+  "finqa": {
+   "psi=0.1": 0.07888420672325083,
+   "psi=0.2": 0.11350772419773422,
+   "psi=0.3": 0.13952019213193123
+  },
+  "ds1000": {
+   "psi=0.1": 0.07888420672325083,
+   "psi=0.2": 0.11350772419773422,
+   "psi=0.3": 0.13952019213193123
+  },
+  "smartbugs": {
+   "psi=0.1": 0.09120731961929776,
+   "psi=0.2": 0.13286924910626113,
+   "psi=0.3": 0.16465438043032918
+  },
+  "bfcl": {
+   "psi=0.1": 0.07888420672325083,
+   "psi=0.2": 0.11350772419773422,
+   "psi=0.3": 0.13952019213193123
+  }
+ }
+}

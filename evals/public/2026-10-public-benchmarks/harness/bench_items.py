@@ -4,7 +4,7 @@ import json
 import os
 from pathlib import Path
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 EVALPLUS_INSTRUCTION = ("Please provide a self-contained Python script that solves the following "
                         "problem in a markdown code block:")
 

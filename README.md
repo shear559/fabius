@@ -31,51 +31,53 @@ Fabius governs how the work is done, never what you want. It states a concern on
 
 One router, one always-on lean core, thirteen specialists. Twenty-two core routing rules decide which of them a task loads, how much machinery it gets, and which model tier does the work.
 
-Start a prompt with `fabius:` to call the router by name. Agent apps differ in how readily they pick up skills from a plain sentence.
+**Claude Code:** start a prompt with `/fabius` to load the router, or with one skill's own command, `/fabius:fabius-<skill>` (short form `/fabius-<skill>`). On Claude Code 2.1.289, `/fabius` loaded the router's rules in 803 of 803 measured runs and each skill's command loaded that skill in 1,271 of 1,271. A prompt that only began with the word `fabius:` loaded the router in 1 of 186. The router loaded a specialist on its own in 1 of its 803 runs, so call the specialist you want by its command.
+
+**Codex and Grok Build:** name Fabius or the skill in the request. Codex loaded Fabius when it was named, in both tasks where that was checked; in Grok Build it has not been checked yet.
 
 **Build and fix**
 
-- `fabius: we're moving billing from cron scripts to a queue. How should we approach it?`<br/>
-  **`fabius`**, the router, reads this as an architecture call: it loads `fabius-disciplina` for the plan, starts at a written plan instead of a swarm, and puts the decision on a strong model tier.
-- `fabius: the export endpoint keeps regressing. Walk me through the fix before coding.`<br/>
+- `/fabius we're moving billing from cron scripts to a queue. How should we approach it?`<br/>
+  **`fabius`**, the router, reads this as an architecture call: its rules start at a written plan instead of a swarm and put the decision on a strong model tier. For the planning method itself, call `/fabius:fabius-disciplina`.
+- `/fabius:fabius-disciplina the export endpoint keeps regressing. Walk me through the fix before coding.`<br/>
   **`fabius-disciplina`** reproduces the bug before the patch, maps the change to a test that really reaches it, and ends on one verdict: pass, fail, blocked or skip.
-- `fabius: this diff is bigger than the task. Strip it back.`<br/>
+- `/fabius:fabius-parcus this diff is bigger than the task. Strip it back.`<br/>
   **`fabius-parcus`**, the lean core, ties the diff to the request and reuses your code and the standard library before adding anything. Validation, authorization and accessibility are never trimmed.
-- `fabius: make a small arcade shooter with a high-score loop.`<br/>
+- `/fabius:fabius-ludus make a small arcade shooter with a high-score loop.`<br/>
   **`fabius-ludus`** grey-boxes the ten-second core loop first, then adds juice on purpose, on an explicit state machine, at jam-sized scope.
 
 **Design and copy**
 
-- `fabius: the pricing page looks amateur. Polish it, fix the focus states, and chart signups by month.`<br/>
+- `/fabius:fabius-decor the pricing page looks amateur. Polish it, fix the focus states, and chart signups by month.`<br/>
   **`fabius-decor`** works from named tokens and one accent color, holds WCAG 2.2 AA contrast, titles the chart with its takeaway, and checks the page live in a browser.
-- `fabius: write the launch post for this release.`<br/>
+- `/fabius:fabius-mercatus write the launch post for this release.`<br/>
   **`fabius-mercatus`** fills a positioning sentence before any copy, swaps claims for evidence, and leaves one next action. Outreach stays a draft. Sending is your act.
 
 **Security and on-chain**
 
-- `fabius: threat-model the file upload endpoint.`<br/>
+- `/fabius:fabius-praesidium threat-model the file upload endpoint.`<br/>
   **`fabius-praesidium`** runs STRIDE per trust boundary, then an OWASP pass. Every finding ships as severity, fix, regression test. Defensive only.
-- `fabius: review this Solidity vault before we deploy, then seal the release.`<br/>
+- `/fabius:fabius-catena review this Solidity vault before we deploy, then seal the release.`<br/>
   **`fabius-catena`** checks account validation first, simulates before signing, and never touches a private key. A seal is a hash, a signature and a timestamp reported as pending or confirmed. Defensive only.
 
 **Data, models and research**
 
-- `fabius: is this knockout result supported by the literature? Search PubMed.`<br/>
+- `/fabius:fabius-scientia is this knockout result supported by the literature? Search PubMed.`<br/>
   **`fabius-scientia`** writes three to five competing, falsifiable hypotheses and traces every fact to a named database.
-- `fabius: should we fine-tune, or is RAG enough?`<br/>
+- `/fabius:fabius-doctrina should we fine-tune, or is RAG enough?`<br/>
   **`fabius-doctrina`** climbs prompt, then RAG, then fine-tune, and decides on a held-out eval against a control.
-- `fabius: backtest this moving-average strategy and show the max drawdown.`<br/>
+- `/fabius:fabius-fortuna backtest this moving-average strategy and show the max drawdown.`<br/>
   **`fabius-fortuna`** leads with the risk, states every assumption, sources and dates every figure, and keeps the backtest out-of-sample. Analysis, never personalized advice.
-- `fabius: three runs gave the same wrong answer. Convene a council.`<br/>
+- `/fabius:fabius-concilium three runs gave the same wrong answer. Convene a council.`<br/>
   **`fabius-concilium`** has several models answer independently and rank each other's anonymized answers, then a chairman model synthesizes, with the full audit trail. It needs your own multi-model API access and does not guarantee beating the best single model.
 
 **Agents, automation and memory**
 
-- `fabius: build a support-ticket triage agent. What permissions should it get?`<br/>
+- `/fabius:fabius-cohors build a support-ticket triage agent. What permissions should it get?`<br/>
   **`fabius-cohors`** writes the agent spec: a minimum tool allowlist, least privilege, a checkable output contract. One agent unless the work provably splits.
-- `fabius: when the form is submitted, email the lead and add a row to the sheet.`<br/>
+- `/fabius:fabius-machina when the form is submitted, email the lead and add a row to the sheet.`<br/>
   **`fabius-machina`** builds the workflow from the automation tool's live schema and tests it on safe sample data before it goes live.
-- `fabius: what did we decide last time about the auth flow?`<br/>
+- `/fabius:fabius-archivum what did we decide last time about the auth flow?`<br/>
   **`fabius-archivum`** answers from the project's page, reads it in full before the first edit, and writes to it only with your permission.
 
 The specialists bring method and knowledge. Live services such as market data, RPC endpoints, GPUs, n8n or database keys are yours to connect.
@@ -85,7 +87,7 @@ The specialists bring method and knowledge. Live services such as market data, R
 Four starter examples ship with their inputs, results and checks in [examples](examples/README.md). Here is the first, small enough to check by hand:
 
 ```text
-fabius: summarize this CSV. Show each line total, the sum, and the largest product by revenue.
+/fabius summarize this CSV. Show each line total, the sum, and the largest product by revenue.
 Do not assume a currency.
 
 product,quantity,unit_price
@@ -140,4 +142,4 @@ Other instruction-reading tools: [AGENTS.md](AGENTS.md) carries the portable cor
 
 - **Cost and license.** Proprietary, and free to install for personal, non-commercial use through the marketplace command. Your model, connected services and compute are your own costs. Professional or client work needs permission: [LICENSE](LICENSE).
 - **What it touches.** Only the tools and permissions your agent app already grants. No Fabius server, no account, and your model's weights stay as they are. Say `stop fabius` and Fabius stops applying its rules until you invoke it again; it does not disable or uninstall the plugin.
-- **Measured and sealed.** Benchmarks are dated and printed with every miss, including the model tier that scored lower: [BENCHMARKS.md](BENCHMARKS.md). The fifteen skill contracts and three core documents (18 files) are content-sealed (SHA-256 and a Merkle root) and releases are signed: [PROVENANCE.md](PROVENANCE.md).
+- **Measured and sealed.** On nine public benchmarks, neither `/fabius` nor any measured skill's own command showed a gain or a loss after correction for multiple comparisons: ties on IFEval, HumanEval+, LAB-Bench, FinQA and BFCL, non-inferior results on CyberSecEval, DS-1000 and SmartBugs-curated, and no detectable difference on SWE-bench Verified Mini, at 1.60 to 2.03 times the baseline's cost (Fabius 3.3.0, `claude-sonnet-5-5`, Claude Code 2.1.289 headless, 2026-10-06 to 10-08, 50 to 540 tasks per benchmark). A second study then compared the 3.3.0 package, the reference files this release adds and no package, on eleven benchmarks with the references readable: no gain and no loss in any of its 33 contrasts, and the reference files were opened in 6 of 4,328 runs. Every result and miss: [BENCHMARKS.md](BENCHMARKS.md). The fifteen skill contracts and three core documents (18 files) are content-sealed (SHA-256 and a Merkle root) and releases are signed: [PROVENANCE.md](PROVENANCE.md).

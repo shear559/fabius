@@ -4,7 +4,7 @@ import json
 import os
 from pathlib import Path
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 ROUTER_DELTA = 4500
 
 
@@ -20,13 +20,14 @@ def records(bench, rep=None):
     out = []
     if not base.exists():
         return out
-    for item_dir in sorted(p for p in base.iterdir() if p.is_dir()):
-        for arm_dir in sorted(p for p in item_dir.iterdir() if p.is_dir()):
-            res = arm_dir / "result.json"
-            if not res.exists():
+    # item ids may contain "/" (e.g. LAB-Bench "SeqQA/<uuid>"), so the item is the path between base and the arm
+    for res in sorted(base.rglob("result.json")):
+            arm_dir = res.parent
+            if arm_dir.parent == base or (not rep and arm_dir.relative_to(base).parts[0] in ("r1", "r2")):
                 continue
+            item_rel = str(arm_dir.parent.relative_to(base))
             r = json.loads(res.read_text())
-            rec = {"item": item_dir.name, "arm": arm_dir.name, "replicate": rep or 1,
+            rec = {"item": item_rel, "arm": arm_dir.name, "replicate": rep or 1,
                    "scored_attempt": r.get("scored_attempt"), "outcome_reason": r.get("outcome_reason"),
                    "discarded_attempts": len(r.get("discarded") or []),
                    "discarded_reasons": ";".join(d.get("reason", "") for d in (r.get("discarded") or []))}
@@ -45,6 +46,12 @@ def records(bench, rep=None):
                     "total_tokens": sum(tu.values()), "timed_out": s.get("timed_out"),
                     "result_subtype": s.get("result_subtype"),
                     "permission_denials": len(s.get("permission_denials") or []),
+                    "package_reads_delivered": sum(1 for x in (s.get("reads") or [])
+                                                   if "/fbpkg/" in (x.get("path") or "") and x.get("delivered")),
+                    "package_reads_denied": sum(1 for x in (s.get("reads") or [])
+                                                if "/fbpkg/" in (x.get("path") or "") and x.get("delivered") is False),
+                    "package_files_read": sorted({(x.get("path") or "").split("/fabius/", 1)[-1]
+                                                  for x in (s.get("reads") or []) if "/fbpkg/" in (x.get("path") or "") and x.get("delivered")}),
                 })
                 ws = adir / "workspace.json"
                 if ws.exists():

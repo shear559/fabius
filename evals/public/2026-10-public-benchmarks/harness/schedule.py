@@ -14,7 +14,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 SEED = 20261006
 ARMS3 = ["baseline", "fabius-doc", "fabius-loaded"]
 EXCLUDED = {"humaneval": {"HumanEval_32": "canonical solution fails EvalPlus 0.3.1's own sandboxed check in the "

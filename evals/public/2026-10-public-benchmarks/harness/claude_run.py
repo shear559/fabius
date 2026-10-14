@@ -21,15 +21,22 @@ CLAUDE = os.path.expanduser(
     "~/.antigravity-ide/extensions/anthropic.claude-code-2.1.289-darwin-x64/resources/native-binary/claude")
 PLUGIN_DIR = "/private/tmp/fbplugin/fabius"
 MODEL = "claude-sonnet-5-5"
+# arm -> (prompt prefix, plugin directory or None). The cohort module registers its own arms (register_arms).
 ARMS = {
-    "baseline": ("", False),
-    "fabius-doc": ("fabius: ", True),
-    "fabius-loaded": ("/fabius ", True),
+    "baseline": ("", None),
+    "fabius-doc": ("fabius: ", PLUGIN_DIR),
+    "fabius-loaded": ("/fabius ", PLUGIN_DIR),
 }
 # Part B: each skill invoked directly by its own slash command (its contract enters the context).
 SKILLS = ["parcus", "disciplina", "decor", "cohors", "archivum", "mercatus", "praesidium", "ludus", "catena",
           "machina", "scientia", "doctrina", "fortuna", "concilium"]
-ARMS.update({f"fabius-{k}": (f"/fabius:fabius-{k} ", True) for k in SKILLS})
+ARMS.update({f"fabius-{k}": (f"/fabius:fabius-{k} ", PLUGIN_DIR) for k in SKILLS})
+
+
+def register_arms(mapping):
+    """Replace the arm table (the cohort's per-benchmark arms)."""
+    ARMS.clear()
+    ARMS.update(mapping)
 DENY = ["Read(//Users/**)", "Edit(//Users/**)", "Write(//Users/**)", "Read(//private/var/folders/**)"]
 
 
@@ -38,7 +45,7 @@ def claude_sha256():
 
 
 def build_cmd(prompt, arm, tools, allowed=None, max_turns=None, permission_mode=None, model=MODEL):
-    prefix, with_plugin = ARMS[arm]
+    prefix, plugin_dir = ARMS[arm]
     cmd = [CLAUDE, "-p", prefix + prompt, "--model", model,
            "--setting-sources", "project", "--strict-mcp-config", "--no-session-persistence",
            "--output-format", "stream-json", "--verbose",
@@ -49,8 +56,8 @@ def build_cmd(prompt, arm, tools, allowed=None, max_turns=None, permission_mode=
         cmd += ["--max-turns", str(max_turns)]
     if permission_mode:
         cmd += ["--permission-mode", permission_mode]
-    if with_plugin:
-        cmd += ["--plugin-dir", PLUGIN_DIR]
+    if plugin_dir:
+        cmd += ["--plugin-dir", plugin_dir]
     return cmd
 
 
@@ -58,7 +65,8 @@ def parse_stream(lines):
     """init, result, Skill calls, tool counts, all assistant text blocks, usage-meter events,
     and the prompt size of the first assistant turn."""
     out = {"init": None, "result": None, "skills": [], "tools": {}, "texts": [], "meters": [],
-           "first_turn_prompt_tokens": None, "assistant_text_messages": 0}
+           "first_turn_prompt_tokens": None, "assistant_text_messages": 0, "reads": []}
+    pending_reads = {}
     for raw in lines:
         raw = raw.strip()
         if not raw:
@@ -83,10 +91,26 @@ def parse_stream(lines):
                     if block["name"] == "Skill":
                         inp = block.get("input", {}) or {}
                         out["skills"].append(inp.get("skill") or inp.get("command") or json.dumps(inp))
+                    elif block["name"] == "Read":
+                        inp = block.get("input", {}) or {}
+                        rec = {"path": inp.get("file_path"), "offset": inp.get("offset"), "limit": inp.get("limit"),
+                               "delivered": None, "chars": None, "error": None}
+                        out["reads"].append(rec)
+                        pending_reads[block.get("id")] = rec
                 elif block.get("type") == "text" and (block.get("text") or "").strip():
                     out["texts"].append(block["text"])
                     had_text = True
             out["assistant_text_messages"] += had_text
+        elif kind == "user":
+            for block in (ev.get("message", {}) or {}).get("content", []) or []:
+                if block.get("type") == "tool_result" and block.get("tool_use_id") in pending_reads:
+                    rec = pending_reads.pop(block["tool_use_id"])
+                    content = block.get("content")
+                    text = content if isinstance(content, str) else "".join(
+                        c.get("text", "") for c in (content or []) if isinstance(c, dict))
+                    rec["delivered"] = not block.get("is_error", False)
+                    rec["chars"] = len(text)
+                    rec["error"] = text[:160] if block.get("is_error") else None
         elif kind == "result":
             out["result"] = ev
         elif kind == "rate_limit_event":
@@ -143,7 +167,7 @@ def run_attempt(prompt, arm, cwd, attempt_dir, tools, allowed=None, max_turns=No
         "init_model": init.get("model"), "init_tools": init.get("tools"), "init_skills": init.get("skills"),
         "init_plugins": init.get("plugins"),
         "skill_calls": p["skills"], "fabius_skills_loaded": sorted({s for s in p["skills"] if s and "fabius" in s}),
-        "tool_calls": p["tools"],
+        "tool_calls": p["tools"], "reads": p["reads"],
         "first_turn_prompt_tokens": p["first_turn_prompt_tokens"],
         "assistant_text_messages": p["assistant_text_messages"],
         "result_subtype": result.get("subtype"), "is_error": result.get("is_error"),

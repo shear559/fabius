@@ -11,7 +11,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 
 
 def main():

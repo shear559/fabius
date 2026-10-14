@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(__file__))
 from collect import records  # noqa: E402
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 PY = str(ROOT / ".venv/bin/python")
 OUT = ROOT / "results" / "swebench"
 
@@ -81,7 +81,8 @@ def main():
               "patch_lines", "patch_files", "router_injected", "fabius_skills_loaded", "skill_calls", "output_tokens",
               "total_tokens", "cost_usd", "elapsed_s", "num_turns", "outcome_reason", "timed_out", "result_subtype",
               "scored_attempt", "discarded_attempts", "discarded_reasons", "permission_denials", "init_model",
-              "first_turn_prompt_tokens", "prompt_sha256"]
+              "first_turn_prompt_tokens", "prompt_sha256", "package_reads_delivered", "package_reads_denied",
+              "package_files_read"]
     path = OUT / (f"items{'-unfiltered' if a.unfiltered else ''}-r{a.replicate}.csv")
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -104,7 +105,8 @@ def main():
                                                  "elapsed_s", "num_turns", "outcome_reason", "timed_out", "result_subtype",
                                                  "scored_attempt", "discarded_attempts", "discarded_reasons",
                                                  "permission_denials", "init_model", "first_turn_prompt_tokens",
-                                                 "prompt_sha256")}})
+                                                 "prompt_sha256", "package_reads_delivered", "package_reads_denied")},
+                        "package_files_read": json.dumps(r.get("package_files_read") or [])})
     print("wrote", path)
 
 

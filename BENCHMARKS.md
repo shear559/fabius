@@ -1,6 +1,64 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
-<!-- fabius-release: 3.3.0 -->
+<!-- fabius-release: 3.4.0 -->
 # The fabius benchmark
+
+## Public benchmarks, October 2026
+
+The current skill files were measured on nine established public benchmarks, each against the same model, harness and tasks without Fabius, under a protocol committed and pushed before each block of runs. Scope: Fabius 3.3.0 (sealed root `e1958cb5…`; 3.4.0 changes no skill contract), `claude-sonnet-5-5`, Claude Code 2.1.289 headless in a clean context, 2026-10-06 to 2026-10-08, one sample per task (two on SWE-bench).
+
+- **The router, `/fabius`:** no detectable difference on SWE-bench Verified Mini (88.0% vs 84.0% resolved, k = 2, n = 50) at ×1.60 the baseline's cost, a tie on IFEval (87.4% vs 89.1%, n = 540) at ×1.87, and a tie on HumanEval+ (96.3% vs 95.1%, n = 163) at ×1.98.
+- **Each skill by its own command, `/fabius:fabius-<skill>`:** ties for `fabius-parcus` (HumanEval+) at ×1.61 the cost, `fabius-scientia` (LAB-Bench) at ×1.74, `fabius-fortuna` (FinQA) at ×1.96 and `fabius-cohors` (BFCL) at ×2.03; non-inferior results for `fabius-praesidium` (CyberSecEval) at ×1.69, `fabius-doctrina` (DS-1000) at ×2.02 and `fabius-catena` (SmartBugs-curated) at ×1.89; no detectable difference for `fabius-disciplina` (SWE-bench Verified Mini) at ×1.84.
+- **Nothing gained or lost after correction.** The largest differences, `fabius-catena` at +4.9 points and `fabius-doctrina` at +4.0, have unadjusted 95% intervals above zero, but their Holm-adjusted p-values are 0.312 and 0.538, so neither is claimed as a gain.
+- **The invocation matters.** `/fabius` loaded the router's rules in 803 of 803 runs and each skill's command loaded that skill in 1,271 of 1,271; the README's earlier `fabius:` prefix loaded the router in 1 of 186. The router loaded a specialist on its own in 1 of its 803 runs.
+
+| Invocation | Benchmark (endpoint) | n | Fabius | Baseline | Difference (points) | 95% CI | p (Holm) | Verdict | Cost |
+|---|---|---|---|---|---|---|---|---|---|
+| `/fabius` | SWE-bench Verified Mini (resolved) | 50 × 2 | 88.0% | 84.0% | +4.0 | -1.0 to +10.0 | 0.867 | INCONCLUSIVE | ×1.60 |
+| `/fabius` | IFEval (prompt-level strict) | 540 | 87.4% | 89.1% | -1.7 | -4.6 to +1.2 | 0.867 | TIE | ×1.87 |
+| `/fabius` | HumanEval+ (plus tests pass) | 163 | 96.3% | 95.1% | +1.2 | -1.7 to +4.6 | 0.867 | TIE | ×1.98 |
+| `fabius:` prefix | HumanEval+ (plus tests pass) | 163 | 96.3% | 95.1% | +1.2 | -1.2 to +4.2 | 0.500 | TIE | ×1.33 |
+| `/fabius:fabius-disciplina` | SWE-bench Verified Mini (resolved) | 50 × 2 | 87.0% | 84.0% | +3.0 | -2.0 to +10.0 | 1.000 | INCONCLUSIVE | ×1.84 |
+| `/fabius:fabius-parcus` | HumanEval+ (plus tests pass) | 163 | 95.1% | 95.1% | +0.0 | -2.7 to +2.7 | 1.000 | TIE | ×1.61 |
+| `/fabius:fabius-praesidium` | CyberSecEval instruct, Python (not flagged insecure) | 137 | 86.9% | 82.5% | +4.4 | -0.6 to +9.7 | 0.876 | NON-INFERIOR | ×1.69 |
+| `/fabius:fabius-scientia` | LAB-Bench ProtocolQA + SeqQA (correct option) | 128 | 85.2% | 85.9% | -0.8 | -4.8 to +3.1 | 1.000 | TIE | ×1.74 |
+| `/fabius:fabius-fortuna` | FinQA (answer matches) | 200 | 83.5% | 85.0% | -1.5 | -4.4 to +1.3 | 1.000 | TIE | ×1.96 |
+| `/fabius:fabius-doctrina` | DS-1000, no PyTorch/TensorFlow (tests pass) | 200 | 87.5% | 83.5% | +4.0 | +0.1 to +8.2 | 0.538 | NON-INFERIOR | ×2.02 |
+| `/fabius:fabius-catena` | SmartBugs-curated (category matches) | 143 | 76.9% | 72.0% | +4.9 | +0.8 to +9.2 | 0.312 | NON-INFERIOR | ×1.89 |
+| `/fabius:fabius-cohors` | BFCL non-live AST (official AST check) | 200 | 92.0% | 92.5% | -0.5 | -3.2 to +2.1 | 1.000 | TIE | ×2.03 |
+
+Verdicts follow the registered rule: GAIN or LOSS at a Holm-adjusted p ≤ 0.05; otherwise TIE when the 90% interval lies inside ±5 points, NON-INFERIOR when the 95% interval's lower bound is above −5 points, and INCONCLUSIVE otherwise (SWE-bench, at n = 50, can only be GAIN, LOSS or INCONCLUSIVE). Cost is Fabius ÷ baseline per task, as Claude Code reported it.
+
+Not measured: `fabius-archivum` and `fabius-decor` (their harnesses were built and committed, and the usage cap was reached before they ran), `fabius-mercatus`, `fabius-machina` and `fabius-ludus` (no established public benchmark with an objective score for their work that runs here), and `fabius-concilium` (it needs several model providers).
+
+Method, every deviation, the limitations and the receipts: [the report](evals/public/2026-10-public-benchmarks/REPORT.md). The full receipts archive, with every run's event stream and every scorer's output, is attached to the GitHub Release `v3.4.0-sealed`.
+
+### The source-fold continuation, October 2026
+
+Release 3.4.0 adds four reference files and refines ten (no skill contract changed). A second pre-registered study measured that change: three contemporary arms — no package, the frozen 3.3.0 package and the frozen fold candidate `6fb0ab0` — on eleven public benchmarks (the nine above plus LongMemEval for `fabius-archivum` and Design2Code for `fabius-decor`), with the reference files readable by the model in every arm (`Read` confined to the run and the package). Scope: `claude-sonnet-5-5`, Claude Code 2.1.289 headless, 2026-10-11 to 2026-10-12, 6,501 invocations, 33 contrasts in one Holm family.
+
+- **No gain and no loss in any of the 33 contrasts.** The eleven fold-versus-3.3.0 contrasts came out as nine ties and two inconclusive comparisons (SWE-bench, Design2Code), with the cost ratio between ×0.99 and ×1.02.
+- **The fold never reached the model.** The invoked contract was in context in every package-arm run, but the reference files were opened in 6 of 4,328 package-arm runs — all six the same unchanged praesidium playbook — including none of the 200 agentic SWE-bench runs with full read access. Under these conditions the two packages were the same package; the fold ships as reference depth with no measured effect claimed.
+- **The 3.3.0 package against no package repeated the first study's pattern:** no detectable difference on SWE-bench (84.0% vs 84.0%), ties on IFEval, HumanEval+, FinQA, DS-1000, BFCL and LongMemEval, non-inferior results on CyberSecEval (+3.0), LAB-Bench (+4.1) and SmartBugs-curated (+4.9, the same +4.9 the first study found), inconclusive on Design2Code (0.973 vs 0.967, near the scorer's ceiling), at ×1.59 to ×2.03 the cost per task. LongMemEval in the oracle setting is at ceiling for this model (97.5–98.3% in every arm).
+
+Differences in points (Design2Code: in score units) with unadjusted 95% intervals; verdicts from the Holm-adjusted p over all 33 contrasts (every adjusted p is 1.000).
+
+| Benchmark (endpoint) | Invocation | n | candidate − old | old − baseline | candidate − baseline |
+|---|---|---|---|---|---|
+| SWE-bench Verified Mini (resolved, k = 2) | `/fabius:fabius-disciplina` | 50 | +4.0 (-2.0 to +12.0) INCONCLUSIVE | +0.0 (-6.0 to +6.0) INCONCLUSIVE | +4.0 (-2.0 to +12.0) INCONCLUSIVE |
+| IFEval (prompt-level strict) | `/fabius` | 539 | -2.0 (-4.4 to +0.3) TIE | -0.4 (-3.0 to +2.2) TIE | -2.4 (-5.4 to +0.5) TIE |
+| HumanEval+ (plus tests pass) | `/fabius:fabius-parcus` | 163 | +0.0 (-2.7 to +2.7) TIE | -0.6 (-3.2 to +1.6) TIE | -0.6 (-3.2 to +1.6) TIE |
+| CyberSecEval instruct, Python (not flagged insecure) | `/fabius:fabius-praesidium` | 200 | +0.0 (-2.4 to +2.4) TIE | +3.0 (-1.2 to +7.4) NON-INFERIOR | +3.0 (-0.7 to +7.0) NON-INFERIOR |
+| LAB-Bench ProtocolQA + SeqQA (correct option) | `/fabius:fabius-scientia` | 219 | -2.3 (-5.6 to +0.8) TIE | +4.1 (+0.6 to +7.9) NON-INFERIOR | +1.8 (-2.5 to +6.2) NON-INFERIOR |
+| FinQA (answer matches) | `/fabius:fabius-fortuna` | 200 | -1.5 (-3.7 to +0.5) TIE | +1.0 (-1.3 to +3.4) TIE | -0.5 (-2.6 to +1.6) TIE |
+| DS-1000, no PyTorch/TensorFlow (tests pass) | `/fabius:fabius-doctrina` | 200 | +0.5 (-3.5 to +4.5) TIE | +0.5 (-4.7 to +5.7) TIE | +1.0 (-3.3 to +5.3) TIE |
+| SmartBugs-curated (category matches) | `/fabius:fabius-catena` | 143 | -0.7 (-4.0 to +2.6) TIE | +4.9 (+0.8 to +9.2) NON-INFERIOR | +4.2 (+0.8 to +7.8) NON-INFERIOR |
+| BFCL non-live AST (official AST check) | `/fabius:fabius-cohors` | 200 | -1.5 (-4.3 to +1.0) TIE | +1.0 (-1.7 to +3.9) TIE | -0.5 (-3.8 to +2.8) TIE |
+| LongMemEval oracle (judged correct) | `/fabius:fabius-archivum` | 120 | +0.0 (-3.8 to +3.8) TIE | +0.8 (-2.2 to +4.5) TIE | +0.8 (-3.0 to +5.1) TIE |
+| Design2Code (visual score 0–1) | `/fabius:fabius-decor` | 80 | -0.000 (-0.003 to +0.003) INCONCLUSIVE | +0.006 (+0.001 to +0.016) INCONCLUSIVE | +0.005 (+0.001 to +0.016) INCONCLUSIVE |
+
+Not measured, as before: `fabius-mercatus`, `fabius-machina`, `fabius-ludus` and `fabius-concilium`. The protocol, addendum, harness, receipts and the report: [`evals/public/2026-10-source-fold-benchmarks/`](evals/public/2026-10-source-fold-benchmarks/REPORT.md); the full archive is attached to the GitHub Release `v3.4.0-sealed`.
+
+## Earlier panels, June–July 2026
 
 In Panel A, four Claude models answered the same 15 tasks three ways: the task alone, the task plus a plain "be concise" line, and the task plus Fabius's shipped rules. Two judges scored every answer blind. They never saw the model, the arm or the rules.
 

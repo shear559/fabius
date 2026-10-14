@@ -23,10 +23,11 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(__file__))
 import claude_run as cr  # noqa: E402
+import cohort  # noqa: E402
 from bench_items import load_items  # noqa: E402
 from classify import classify  # noqa: E402
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = cohort.ROOT
 STOP_7D, PAUSE_5H = 0.97, 0.90
 LOCK = threading.Lock()
 STATE = {"meter": None, "stop": False}
@@ -42,6 +43,25 @@ def log_budget(msg):
 def windows(meter):
     w = (meter or {}).get("unifiedWindows") or {}
     return (w.get("five_hour") or {}), (w.get("seven_day") or {})
+
+
+def seed_meter():
+    """A fresh runner process knows no meter and would start items into a pause: seed it from the newest
+    attempt summary under ROOT/runs whose five-hour window has not reset yet."""
+    newest, best = None, 0
+    for s in ROOT.glob("runs/**/attempt-*/summary.json"):
+        m = s.stat().st_mtime
+        if m > best:
+            newest, best = s, m
+    if newest is None:
+        return
+    meter = json.loads(newest.read_text()).get("meter")
+    five, _ = windows(meter)
+    if meter and (five.get("resetsAt") or 0) > time.time():
+        with LOCK:
+            STATE["meter"] = meter
+        log_budget(f"meter seeded from {newest.parent.parent.name}/{newest.parent.name}: 5h {five.get('utilization')} "
+                   f"(resets {dt.datetime.fromtimestamp(five['resetsAt']).strftime('%H:%M')})")
 
 
 def gate(tag):
@@ -84,8 +104,14 @@ def run_arm(bench, item, prompt, arm):
     while True:
         n += 1
         cwd = tempfile.mkdtemp(prefix="fbr-", dir="/private/tmp")
+        tools, allowed, run_prompt = "Skill", ["Skill"], prompt
+        if cohort.ACTIVE:  # the continuation: Read confined to the run directory and the arm's package
+            tools, allowed = cohort.single_turn_access(arm, cwd)
+            if bench in cohort.ASSET_BENCH:
+                shutil.copy2(ROOT / "skills-bench" / bench / "screenshots" / f"{item}.png", Path(cwd) / f"{item}.png")
+                run_prompt = cohort.design2code_prompt(prompt, cwd, item)
         try:
-            s = cr.run_attempt(prompt, arm, cwd, arm_dir / f"attempt-{n}", tools="Skill", allowed=["Skill"],
+            s = cr.run_attempt(run_prompt, arm, cwd, arm_dir / f"attempt-{n}", tools=tools, allowed=allowed,
                                max_turns=8, timeout_s=300)
         finally:
             shutil.rmtree(cwd, ignore_errors=True)
@@ -127,14 +153,23 @@ def main():
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
-    full = json.load(open(ROOT / "schedule.json"))
-    if a.bench not in full:  # Part B benchmarks have their own seeded schedule
-        full.update(json.load(open(ROOT / "schedule-skills.json")))
-    sched = full[a.bench]
+    if cohort.ACTIVE:
+        cr.register_arms(cohort.arms(a.bench))
+        sc = cohort.schedule()[a.bench]
+        sched = {"items": sc["items"], "arm_order": {i: sc["blocks"][(i, 1)] for i in sc["items"]}}
+        if a.arms == ap.get_default("arms"):
+            a.arms = ",".join(cohort.ARM_ORDER)
+    else:
+        full = json.load(open(ROOT / "schedule.json"))
+        if a.bench not in full:  # Part B benchmarks have their own seeded schedule
+            full.update(json.load(open(ROOT / "schedule-skills.json")))
+        sched = full[a.bench]
     prompts = dict(load_items(a.bench))
     wanted = set(a.arms.split(","))
     items = sched["items"][: a.limit] if a.limit else sched["items"]
-    log_budget(f"{a.bench}: start, {len(items)} items × arms {sorted(wanted)}, {a.workers} workers")
+    seed_meter()
+    log_budget(f"{a.bench}: start, {len(items)} items × arms {sorted(wanted)}, {a.workers} workers"
+               + (" · cohort fold" if cohort.ACTIVE else ""))
     done = 0
     with cf.ThreadPoolExecutor(a.workers) as ex:
         futs = [ex.submit(run_item, a.bench, i, prompts[i],

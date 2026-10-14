@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(__file__))
 import swe_prepare as sp  # noqa: E402
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 PY = str(ROOT / ".venv/bin/python")
 
 

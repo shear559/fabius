@@ -57,6 +57,6 @@ PASS sales: 120 + 90 + 70 = 280; items=10; largest=coffee; currency=unspecified
 
 Examples 3 and 4 are checked by reading: the checks are written at the foot of each output file.
 
-To try one yourself, paste its prompt into a fresh session and start it with `fabius:`. The [Quickstart](../QUICKSTART.md) has the install commands.
+To try one yourself, paste its prompt into a fresh session: in Claude Code start it with `/fabius`; in Codex or Grok Build, start with "Use Fabius to". The [Quickstart](../QUICKSTART.md) has the install commands.
 
 These are demonstrations prepared by the maintainer (Codex desktop, Fabius 2.8.1). They are not a benchmark and not a comparison against a bare model. Professional or client use needs permission: see [LICENSE](../LICENSE).

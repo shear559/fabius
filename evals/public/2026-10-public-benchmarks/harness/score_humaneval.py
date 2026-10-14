@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(__file__))
 from collect import records  # noqa: E402
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 OUT = ROOT / "results" / "humaneval"
 IMAGE = "fabius-evalplus:0.3.1"
 EXCLUDED = {"HumanEval_32"}
@@ -66,7 +66,7 @@ def main():
     fields = ["item", "arm", "replicate", "passed", "base_passed", "excluded", "flip", "solution_lines",
               "router_injected", "fabius_skills_loaded", "skill_calls", "output_tokens", "total_tokens", "cost_usd",
               "elapsed_s", "num_turns", "outcome_reason", "scored_attempt", "discarded_attempts", "discarded_reasons",
-              "assistant_text_messages", "init_model", "first_turn_prompt_tokens"]
+              "assistant_text_messages", "init_model", "first_turn_prompt_tokens", "package_reads_delivered", "package_reads_denied", "package_files_read"]
     with open(OUT / "items.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
@@ -86,7 +86,8 @@ def main():
                         **{k: r.get(k) for k in ("output_tokens", "total_tokens", "cost_usd", "elapsed_s", "num_turns",
                                                  "outcome_reason", "scored_attempt", "discarded_attempts",
                                                  "discarded_reasons", "assistant_text_messages", "init_model",
-                                                 "first_turn_prompt_tokens")}})
+                                                 "first_turn_prompt_tokens", "package_reads_delivered", "package_reads_denied")},
+                        "package_files_read": json.dumps(r.get("package_files_read") or [])})
     print("wrote", OUT / "items.csv")
 
 

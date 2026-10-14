@@ -1,0 +1,567 @@
+{
+ "swebench/r1/sphinx-doc__sphinx-9229/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-9229/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/file.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/conf.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/index.rst"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-9229/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-10673/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/out"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/out/index.html"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-7590/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-7590/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py;"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-9461/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-8548/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/inheritance"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/inheritance.py;"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/inheritance.py.new"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/inheritance.py.new"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-8548/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/m.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/m.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/zz_inh.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/zz_inh.py"
+  }
+ ],
+ "swebench/r1/django__django-12713/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-11510/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/b"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/b"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/b/index.html;"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/b/index.html"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-11510/baseline/attempt-1": [
+  {
+   "tool": "Glob",
+   "why": "host path outside run",
+   "input": "/usr"
+  }
+ ],
+ "swebench/r1/sphinx-doc__sphinx-11510/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r1/django__django-12143/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  }
+ ],
+ "swebench/r1/django__django-12325/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-8551/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/."
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-7748/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/docstring_signature_overloaded.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-9229/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-9229/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-7985/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-linkcheck;"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-10673/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-toctree/index.rst"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-toctree/index.rst"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-7590/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  }
+ ],
+ "swebench/r2/django__django-12406/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-9461/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/m.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/m.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/conf.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t/index.rst"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-9461/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-9461/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/cp"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/cp/m.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/cp/m.py"
+  }
+ ],
+ "swebench/r2/django__django-11885/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-8548/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/inheritance.py;"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/inheritance.py"
+  }
+ ],
+ "swebench/r2/django__django-12713/fabius-loaded/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-8035/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/roots/test-ext-autodoc/target/private_names.py"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-11510/fabius-disciplina/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-11510/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r2/sphinx-doc__sphinx-11510/fabius-loaded/attempt-1": [
+  {
+   "tool": "Grep",
+   "why": "host path outside run",
+   "input": "/private/tmp/fbw-hh5ua63/repo/sphinx"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/o"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/tmp/t"
+  }
+ ],
+ "swebench/r2/django__django-12143/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  },
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py"
+  }
+ ],
+ "swebench/r2/django__django-12325/baseline/attempt-1": [
+  {
+   "tool": "Bash",
+   "why": "host path outside run",
+   "input": "/options.py;"
+  }
+ ]
+}

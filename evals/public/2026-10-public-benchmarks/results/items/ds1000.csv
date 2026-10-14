@@ -1,0 +1,1550 @@
+item,arm,replicate,passed,excluded,first_turn_prompt_tokens,skill_injected,fabius_skills_loaded,skill_calls,output_tokens,total_tokens,cost_usd,cost_microusd,elapsed_s,num_turns,outcome_reason,scored_attempt,discarded_attempts,discarded_reasons,init_model,score_code,score_extraction,score_library,score_max_rss_mb,score_n_code_blocks,score_passed_without_reindent,score_perturbation_type,score_reindented,score_result,score_sandbox_error,score_seconds
+ds1000-0000,baseline,1,1,,6466,False,[],[],17,6483,0.021872600000000002,21873,3.9,1,success,1,0,,claude-sonnet-5-5,"result = df.iloc[List]
+",fenced,Pandas,46.9,1,1,Origin,False,passed,False,0.136
+ds1000-0000,fabius-doctrina,1,1,,12422,True,[],[],17,12439,0.044294599999999996,44295,4.3,1,success,1,0,,claude-sonnet-5-5,"result = df.iloc[List]
+",fenced,Pandas,47.1,1,1,Origin,False,passed,False,0.17
+ds1000-0007,baseline,1,1,,6416,False,[],[],50,6466,0.0219616,21962,4.9,1,success,1,0,,claude-sonnet-5-5,"result = df[~df.duplicated(subset='url', keep='first') | (df['keep_if_dup'] == 'Yes')]
+",fenced,Pandas,48.0,1,1,Origin,False,passed,False,0.139
+ds1000-0007,fabius-doctrina,1,1,,12324,True,[],[],236,12560,0.046092600000000004,46093,6.3,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[(df['keep_if_dup'] == 'Yes') | ~df['url'].duplicated()]
+",fenced,Pandas,47.9,1,1,Origin,False,passed,False,0.151
+ds1000-0012,baseline,1,1,,6440,False,[],[],38,6478,0.021934600000000002,21935,6.2,1,success,1,0,,claude-sonnet-5-5,"    df['datetime'] = df['datetime'].dt.tz_localize(None)
+    return df
+",fenced,Pandas,48.3,1,1,Surface,False,passed,False,0.16
+ds1000-0012,fabius-doctrina,1,1,,12366,True,[],[],47,12413,0.044370599999999996,44371,7.7,1,success,1,0,,claude-sonnet-5-5,"    result = df.copy()
+    result['datetime'] = result['datetime'].dt.tz_localize(None)
+    return result
+",fenced,Pandas,48.4,1,1,Surface,False,passed,False,0.174
+ds1000-0023,baseline,1,1,,6267,False,[],[],34,6301,0.0210726,21073,4.0,1,success,1,0,,claude-sonnet-5-5,"df['Date'] = df['Date'].dt.strftime('%b-%Y')
+",fenced,Pandas,48.6,1,1,Origin,False,passed,False,0.15
+ds1000-0023,fabius-doctrina,1,1,,12026,True,[],[],34,12060,0.0428806,42881,4.4,1,success,1,0,,claude-sonnet-5-5,"df['Date'] = df['Date'].dt.strftime('%b-%Y')
+",fenced,Pandas,48.8,1,1,Origin,False,passed,False,0.168
+ds1000-0028,baseline,1,1,,6798,False,[],[],167,6965,0.0250396,25040,5.7,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+df['#1'] = np.roll(df['#1'], shift=1)
+df['#2'] = np.roll(df['#2'], shift=-1)
+",fenced,Pandas,47.5,1,1,Difficult-Rewrite,False,passed,False,0.142
+ds1000-0028,fabius-doctrina,1,1,,13088,True,[],[],195,13283,0.0487386,48739,5.4,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+df = pd.DataFrame({'#1': np.roll(df['#1'].values, 1),
+                   '#2': np.roll(df['#2'].values, -1)},
+                  index=df.index)
+",fenced,Pandas,47.4,1,1,Difficult-Rewrite,False,passed,False,0.155
+ds1000-0031,baseline,1,1,,6256,False,[],[],19,6275,0.0208426,20843,5.3,1,success,1,0,,claude-sonnet-5-5,"df = df.add_prefix('X')
+",fenced,Pandas,45.9,1,1,Semantic,False,passed,False,0.145
+ds1000-0031,fabius-doctrina,1,1,,12008,True,[],[],19,12027,0.0426586,42659,11.5,1,success,1,0,,claude-sonnet-5-5,"df = df.add_prefix('X')
+",fenced,Pandas,46.1,1,1,Semantic,False,passed,False,0.148
+ds1000-0037,baseline,1,1,,6437,False,[],[],25,6462,0.0218216,21822,3.8,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[row_list, column_list].sum()
+",fenced,Pandas,48.2,1,1,Semantic,False,passed,False,0.16
+ds1000-0037,fabius-doctrina,1,1,,12368,True,[],[],25,12393,0.0441586,44159,4.1,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[row_list, column_list].sum()
+",fenced,Pandas,48.3,1,1,Semantic,False,passed,False,0.203
+ds1000-0038,baseline,1,1,,6466,False,[],[],40,6506,0.0207006,20701,4.3,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[row_list, column_list].sum()
+result = result.drop(result.idxmax())
+",fenced,Pandas,48.2,1,1,Difficult-Rewrite,False,passed,False,0.181
+ds1000-0038,fabius-doctrina,1,1,,12428,True,[],[],40,12468,0.0445486,44549,6.1,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[row_list, column_list].sum()
+result = result.drop(result.idxmax())
+",fenced,Pandas,48.2,1,1,Difficult-Rewrite,False,passed,False,0.19
+ds1000-0042,baseline,1,1,,6852,False,[],[],225,7077,0.025840600000000002,25841,5.2,1,success,1,0,,claude-sonnet-5-5,"result = df.iloc[1:].copy()
+result.columns = [str(a) if pd.isna(b) else str(b) for a, b in zip(df.columns, df.iloc[0])]
+result.columns = [b if not pd.isna(b) else a for a, b in zip(df.columns, df.iloc[0])]
+result = result.reset_index(drop=True)
+",fenced,Pandas,46.5,2,1,Origin,False,passed,False,0.2
+ds1000-0042,fabius-doctrina,1,0,,13194,True,[],[],358,13552,0.0507926,50793,7.5,1,success,1,0,,claude-sonnet-5-5,"result = df.copy()
+result.columns = [f""{a} | {b}"" if False else (a if pd.isna(b) else b) for a, b in zip(df.iloc[0].fillna(pd.Series(df.columns, index=df.columns)), df.columns)]
+result = result.iloc[1:].reset_index(drop=True)
+",fenced,Pandas,46.9,3,0,Origin,False,failed: ,False,0.122
+ds1000-0045,baseline,1,0,,6404,False,[],[],249,6653,0.0238796,23880,5.9,1,success,1,0,,claude-sonnet-5-5,"    arr = df.values
+    mask = np.isnan(arr)
+    idx = np.argsort(~mask, axis=1, kind='stable')
+    result = pd.DataFrame(np.take_along_axis(arr, idx, axis=1), index=df.index, columns=df.columns)
+",fenced,Pandas,45.4,1,0,Semantic,False,"failed: unexpected indent (<string>, line 5)",False,0.188
+ds1000-0045,fabius-doctrina,1,0,,12306,True,[],[],378,12684,0.0474406,47441,6.0,1,success,1,0,,claude-sonnet-5-5,"a = df.values.astype(float)
+mask = np.isnan(a)
+out = np.full(a.shape, np.nan)
+out[np.arange(a.shape[1]) >= mask.sum(axis=1)[:, None]] = a[~mask]
+result = pd.DataFrame(out, index=df.index, columns=df.columns)
+",fenced,Pandas,46.6,1,0,Semantic,False,failed: ,False,0.117
+ds1000-0050,baseline,1,1,,6352,False,[],[],33,6385,0.0214676,21468,4.4,1,success,1,0,,claude-sonnet-5-5,"result = df.join(df.rdiv(1).add_prefix(""inv_""))
+",fenced,Pandas,48.1,1,1,Origin,False,passed,False,0.216
+ds1000-0050,fabius-doctrina,1,1,,12198,True,[],[],33,12231,0.043558599999999996,43559,11.5,1,success,1,0,,claude-sonnet-5-5,"result = df.join(df.rdiv(1).add_prefix(""inv_""))
+",fenced,Pandas,48.4,1,1,Origin,False,passed,False,0.172
+ds1000-0055,baseline,1,0,,6724,False,[],[],216,6940,0.0251096,25110,5.5,1,success,1,0,,claude-sonnet-5-5,"result = df.mask(pd.DataFrame(np.arange(len(df))[:, None] > df.index.get_indexer(df.idxmin())[None, :],
+                              index=df.index, columns=df.columns)).idxmax()
+",fenced,Pandas,50.4,1,0,Semantic,False,failed: ,False,0.206
+ds1000-0055,fabius-doctrina,1,1,,12942,True,[],[],503,13445,0.0512346,51235,9.0,1,success,1,0,,claude-sonnet-5-5,"result = df.where(np.arange(len(df))[:, None] >= df.values.argmin(axis=0)).idxmax()
+",fenced,Pandas,49.7,1,1,Semantic,False,passed,False,0.179
+ds1000-0065,baseline,1,1,,6334,False,[],[],144,6478,0.0225366,22537,4.4,1,success,1,0,,claude-sonnet-5-5,"df = df.melt(id_vars=['user', 'someBool'], var_name='date', value_name='value')
+df = df[['user', 'date', 'value', 'someBool']].sort_values(['user', 'date']).reset_index(drop=True)
+",fenced,Pandas,49.6,1,1,Origin,False,passed,False,0.225
+ds1000-0065,fabius-doctrina,1,1,,12166,True,[],[],83,12249,0.0439306,43931,4.4,1,success,1,0,,claude-sonnet-5-5,"df = df.melt(id_vars=['user', 'someBool'], var_name='date', value_name='value')[['user', 'date', 'value', 'someBool']].sort_values(['user', 'date']).reset_index(drop=True)
+",fenced,Pandas,49.9,1,1,Origin,False,passed,False,0.218
+ds1000-0069,baseline,1,1,,6567,False,[],[],28,6595,0.0224836,22484,4.4,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[df['c'] > 0.45, columns]
+",fenced,Pandas,48.8,1,1,Semantic,False,passed,False,0.553
+ds1000-0069,fabius-doctrina,1,1,,12630,True,[],[],28,12658,0.0452366,45237,3.9,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[df['c'] > 0.45, columns]
+",fenced,Pandas,48.7,1,1,Semantic,False,passed,False,0.181
+ds1000-0072,baseline,1,1,,6478,False,[],[],33,6511,0.022087600000000002,22088,4.5,1,success,1,0,,claude-sonnet-5-5,"    result = df.loc[df['c'] > 0.5, columns]
+    return result
+",fenced,Pandas,52.0,1,1,Difficult-Rewrite,False,passed,False,0.665
+ds1000-0072,fabius-doctrina,1,1,,12452,True,[],[],23,12475,0.0444746,44475,4.3,1,success,1,0,,claude-sonnet-5-5,"    return df[df.c > 0.5][columns]
+",fenced,Pandas,52.3,1,1,Difficult-Rewrite,False,passed,False,0.284
+ds1000-0075,baseline,1,0,,6756,False,[],[],357,7113,0.0267216,26722,5.9,1,success,1,0,,claude-sonnet-5-5,"df['date'] = pd.to_datetime(df['date'], format='%m/%d/%y')
+keep = []
+last = None
+for i, d in zip(df.index, df['date']):
+    if last is None or (d - last).days >= 7 * X:
+        keep.append(i)
+        last = d
+result = df.loc[keep].copy()
+result['date'] = result['date'].dt.strftime('%d-%b-%Y')
+",fenced,Pandas,50.7,1,0,Difficult-Rewrite,False,failed: time data '1/14/9' does not match format '%m/%d/%y' (match),False,0.174
+ds1000-0075,fabius-doctrina,1,1,,13008,True,[],[],1263,14271,0.0590986,59099,12.4,1,success,1,0,,claude-sonnet-5-5,"df['date'] = df['date'].apply(pd.to_datetime)
+df = df.sort_values('date')
+keep = []
+last = None
+for i, d in df['date'].items():
+    if last is None or (d - last).days >= 7 * X:
+        keep.append(i)
+        last = d
+result = df.loc[keep].copy()
+result['date'] = result['date'].dt.strftime('%d-%b-%Y')
+",fenced,Pandas,51.4,1,1,Difficult-Rewrite,False,passed,False,0.178
+ds1000-0076,baseline,1,1,,6202,False,[],[],85,6287,0.021285600000000002,21286,4.4,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby(df.index // 3).mean()
+",fenced,Pandas,48.4,1,1,Origin,False,passed,False,0.187
+ds1000-0076,fabius-doctrina,1,1,,11890,True,[],[],86,11976,0.0428566,42857,5.4,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby(df.index // 3).mean()
+",fenced,Pandas,48.7,1,1,Origin,False,passed,False,0.13
+ds1000-0077,baseline,1,1,,6198,False,[],[],73,6271,0.0211476,21148,4.1,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby(df.index // 3).mean()
+",fenced,Pandas,48.8,1,1,Surface,False,passed,False,0.197
+ds1000-0077,fabius-doctrina,1,1,,11886,True,[],[],148,12034,0.0434606,43461,4.6,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby(df.index // 3).mean().round().astype(int)
+",fenced,Pandas,48.6,1,1,Surface,False,passed,False,0.158
+ds1000-0079,baseline,1,1,,6204,False,[],[],331,6535,0.0237796,23780,5.4,1,success,1,0,,claude-sonnet-5-5,"result = df.iloc[::-1].groupby([i // 3 for i in range(len(df))]).mean().iloc[::-1].reset_index(drop=True)
+",fenced,Pandas,48.6,1,1,Semantic,False,passed,False,0.168
+ds1000-0079,fabius-doctrina,1,1,,11904,True,[],[],331,12235,0.0453626,45363,6.6,1,success,1,0,,claude-sonnet-5-5,"result = df.iloc[::-1].groupby([i // 3 for i in range(len(df))]).mean().iloc[::-1].reset_index(drop=True)
+",fenced,Pandas,48.8,1,1,Semantic,False,passed,False,0.187
+ds1000-0082,baseline,1,0,,6321,False,[],[],38,6359,0.0213846,21385,4.7,1,success,1,0,,claude-sonnet-5-5,"df['A'] = df['A'].replace(0, pd.NA).ffill().astype(int)
+",fenced,Pandas,48.2,1,0,Origin,False,failed: maximum recursion depth exceeded while calling a Python object,False,0.244
+ds1000-0082,fabius-doctrina,1,0,,12134,True,[],[],38,12172,0.0433526,43353,5.4,1,success,1,0,,claude-sonnet-5-5,"df['A'] = df['A'].replace(0, pd.NA).ffill().astype(int)
+",fenced,Pandas,48.3,1,0,Origin,False,failed: maximum recursion depth exceeded while calling a Python object,False,0.279
+ds1000-0083,baseline,1,0,,6324,False,[],[],38,6362,0.021406599999999998,21407,6.6,1,success,1,0,,claude-sonnet-5-5,"df['A'] = df['A'].replace(0, pd.NA).bfill().astype(int)
+",fenced,Pandas,48.6,1,0,Semantic,False,failed: maximum recursion depth exceeded while calling a Python object,False,0.22
+ds1000-0083,fabius-doctrina,1,0,,12138,True,[],[],154,12292,0.0445286,44529,4.3,1,success,1,0,,claude-sonnet-5-5,"df['A'] = df['A'].replace(0, pd.NA).bfill().astype(df['A'].dtype)
+",fenced,Pandas,48.3,3,0,Semantic,False,failed: maximum recursion depth exceeded while calling a Python object,False,0.162
+ds1000-0085,baseline,1,0,,6398,False,[],[],119,6517,0.022562600000000002,22563,14.0,1,success,1,0,,claude-sonnet-5-5,"df['number'] = df.duration.str.extract(r'(\d+)', expand=False).astype(int)
+df['time'] = df.duration.str.extract(r'([A-Za-z]+)', expand=False)
+df['time_days'] = df['time'].map({'year': 365, 'month': 30, 'week': 7, 'day': 1})
+",fenced,Pandas,48.4,1,0,Origin,False,failed: ,False,0.186
+ds1000-0085,fabius-doctrina,1,0,,12280,True,[],[],109,12389,0.0446466,44647,5.8,1,success,1,0,,claude-sonnet-5-5,"df[['number', 'time']] = df.duration.str.extract(r'(\d+)\s*([A-Za-z]+)')
+df['number'] = df['number'].astype(int)
+df['time_days'] = df['time'].map({'year': 365, 'month': 30, 'week': 7, 'day': 1})
+",fenced,Pandas,48.4,1,0,Origin,False,failed: ,False,0.125
+ds1000-0092,baseline,1,1,,6312,False,[],[],45,6357,0.021382599999999998,21383,3.9,1,success,1,0,,claude-sonnet-5-5,"df.index = df.index.set_levels(pd.to_datetime(df.index.levels[1]), level='datetime')
+",fenced,Pandas,50.3,1,1,Surface,False,passed,False,0.181
+ds1000-0092,fabius-doctrina,1,1,,12110,True,[],[],43,12153,0.0433066,43307,4.3,1,success,1,0,,claude-sonnet-5-5,"df.index = df.index.set_levels(pd.to_datetime(df.index.levels[1]), level=1)
+",fenced,Pandas,49.8,1,1,Surface,False,passed,False,0.15
+ds1000-0094,baseline,1,0,,6213,False,[],[],124,6337,0.021732599999999998,21733,7.0,1,success,1,0,,claude-sonnet-5-5,"    df = df.copy()
+    df.index = df.index.set_levels(pd.to_datetime(df.index.levels[1]), level=1)
+    return df.swaplevel(0, 1).sort_index()
+",fenced,Pandas,49.7,1,0,Difficult-Rewrite,False,failed: Unknown string format: abc present at position 0,False,0.169
+ds1000-0094,fabius-doctrina,1,1,,11922,True,[],[],440,12362,0.0465246,46525,12.0,1,success,1,0,,claude-sonnet-5-5,"    df = df.copy()
+    df.index = df.index.set_levels(pd.to_datetime(df.index.levels[0]), level=0)
+    return df.swaplevel(0, 1)
+",fenced,Pandas,50.2,1,1,Difficult-Rewrite,False,passed,False,0.181
+ds1000-0098,baseline,1,1,,6789,False,[],[],37,6826,0.0236626,23663,4.7,1,success,1,0,,claude-sonnet-5-5,"df = df[(df.filter(like='Value').abs() > 1).any(axis=1)]
+",fenced,Pandas,47.3,1,1,Semantic,False,passed,False,0.173
+ds1000-0098,fabius-doctrina,1,1,,13064,True,[],[],37,13101,0.0470626,47063,4.0,1,success,1,0,,claude-sonnet-5-5,"df = df[(df.filter(like='Value').abs() > 1).any(axis=1)]
+",fenced,Pandas,47.0,1,1,Semantic,False,passed,False,0.148
+ds1000-0101,baseline,1,1,,6199,False,[],[],230,6429,0.022691600000000003,22692,5.3,1,success,1,0,,claude-sonnet-5-5,"df = df.replace('&LT;', '<', regex=True)
+",fenced,Pandas,46.6,1,1,Semantic,False,passed,False,0.191
+ds1000-0101,fabius-doctrina,1,1,,11886,True,[],[],196,12082,0.043940599999999996,43941,4.7,1,success,1,0,,claude-sonnet-5-5,"df = df.replace('&LT;', '<', regex=True)
+",fenced,Pandas,46.4,1,1,Semantic,False,passed,False,0.137
+ds1000-0102,baseline,1,1,,6215,False,[],[],33,6248,0.0208166,20817,7.4,1,success,1,0,,claude-sonnet-5-5,"    result = df.replace('&AMP;', '&', regex=True)
+    return result
+",fenced,Pandas,46.6,1,1,Surface,False,passed,False,0.169
+ds1000-0102,fabius-doctrina,1,1,,11926,True,[],[],33,11959,0.0424706,42471,5.3,1,success,1,0,,claude-sonnet-5-5,"    result = df.replace('&AMP;', '&', regex=True)
+    return result
+",fenced,Pandas,46.8,1,1,Surface,False,passed,False,0.16
+ds1000-0114,baseline,1,1,,6264,False,[],[],177,6441,0.0224966,22497,5.0,1,success,1,0,,claude-sonnet-5-5,"    result = [v for v in df[""Field1""] if not isinstance(v, (int, np.integer)) or isinstance(v, bool)]
+    return result
+",fenced,Pandas,47.0,2,1,Surface,False,passed,False,0.203
+ds1000-0114,fabius-doctrina,1,1,,12018,True,[],[],174,12192,0.0442486,44249,6.9,1,success,1,0,,claude-sonnet-5-5,"    result = [v for v in df[""Field1""] if not isinstance(v, (int, np.integer)) or isinstance(v, bool)]
+    return result
+",fenced,Pandas,47.1,1,1,Surface,False,passed,False,0.18
+ds1000-0115,baseline,1,1,,6357,False,[],[],45,6402,0.021641599999999997,21642,4.4,1,success,1,0,,claude-sonnet-5-5,"df = df.set_index('cat')
+df = df.div(df.sum(axis=1), axis=0).reset_index()
+",fenced,Pandas,48.5,1,1,Origin,False,passed,False,0.147
+ds1000-0115,fabius-doctrina,1,1,,12208,True,[],[],45,12253,0.0437186,43719,4.4,1,success,1,0,,claude-sonnet-5-5,"df = df.set_index('cat')
+df = df.div(df.sum(axis=1), axis=0).reset_index()
+",fenced,Pandas,48.4,1,1,Origin,False,passed,False,0.158
+ds1000-0121,baseline,1,1,,6692,False,[],[],234,6926,0.0251676,25168,12.5,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+from scipy.spatial.distance import cdist
+
+def nearest(g):
+    xy = g[['x', 'y']].values.astype(float)
+    cars = g['car'].values
+    d = cdist(xy, xy)
+    np.fill_diagonal(d, np.inf)
+    idx = d.argmin(axis=1)
+    return pd.DataFrame({'time': g['time'].values,
+                         'car': cars,
+                         'nearest_neighbour': cars[idx],
+                         'euclidean_distance': d[np.arange(len(g)), idx]})
+
+df = pd.concat([nearest(g) for _, g in df.groupby('time')], ignore_index=True)
+",fenced,Pandas,66.1,1,1,Origin,False,passed,False,0.982
+ds1000-0121,fabius-doctrina,1,1,,12880,True,[],[],745,13625,0.0534066,53407,10.8,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+
+def g(df):
+    rows = []
+    for t, grp in df.groupby('time'):
+        cars = grp['car'].to_numpy()
+        pts = grp[['x', 'y']].to_numpy(dtype=float)
+        d = np.sqrt(((pts[:, None, :] - pts[None, :, :]) ** 2).sum(-1))
+        np.fill_diagonal(d, np.inf)
+        idx = d.argmin(axis=1)
+        for i, c in enumerate(cars):
+            rows.append((t, c, cars[idx[i]], d[i, idx[i]]))
+    return pd.DataFrame(rows, columns=['time', 'car', 'nearest_neighbour', 'euclidean_distance'])
+
+df = g(df.copy())
+",fenced,Pandas,49.0,1,1,Origin,False,passed,False,0.173
+ds1000-0122,baseline,1,1,,6705,False,[],[],586,7291,0.028764599999999998,28765,6.8,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+
+def farmost(g):
+    xy = g[['x', 'y']].values
+    cars = g['car'].values
+    d = np.sqrt(((xy[:, None, :] - xy[None, :, :]) ** 2).sum(-1))
+    idx = d.argmax(axis=1)
+    return pd.DataFrame({
+        'time': g['time'].values,
+        'car': cars,
+        'farmost_neighbour': cars[idx],
+        'euclidean_distance': d[np.arange(len(g)), idx],
+    })
+
+df = pd.concat([farmost(g) for _, g in df.groupby('time')], ignore_index=True)
+",fenced,Pandas,49.0,1,1,Semantic,False,passed,False,0.187
+ds1000-0122,fabius-doctrina,1,1,,12902,True,[],[],667,13569,0.05271459999999999,52715,7.5,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+
+rows = []
+for t, g in df.groupby('time'):
+    xy = g[['x', 'y']].to_numpy(dtype=float)
+    cars = g['car'].to_numpy()
+    d = np.sqrt(((xy[:, None, :] - xy[None, :, :]) ** 2).sum(axis=2))
+    idx = d.argmax(axis=1)
+    for i, j in enumerate(idx):
+        rows.append((t, cars[i], cars[j], d[i, j]))
+df = pd.DataFrame(rows, columns=['time', 'car', 'farmost_neighbour', 'euclidean_distance'])
+",fenced,Pandas,48.9,1,1,Semantic,False,passed,False,0.224
+ds1000-0126,baseline,1,1,,6705,False,[],[],92,6797,0.023740599999999997,23741,4.3,1,success,1,0,,claude-sonnet-5-5,"cols = ['keywords_0', 'keywords_1', 'keywords_2', 'keywords_3']
+df['keywords_all'] = df[cols].apply(lambda r: '-'.join(r.dropna().iloc[::-1]), axis=1)
+",fenced,Pandas,48.1,1,1,Difficult-Rewrite,False,passed,False,0.306
+ds1000-0126,fabius-doctrina,1,1,,12908,True,[],[],82,12990,0.0468886,46889,4.2,1,success,1,0,,claude-sonnet-5-5,"cols = [c for c in df.columns if c.startswith('keywords_')]
+df['keywords_all'] = df[cols].apply(lambda r: '-'.join(r.dropna().iloc[::-1]), axis=1)
+",fenced,Pandas,48.4,1,1,Difficult-Rewrite,False,passed,False,0.213
+ds1000-0133,baseline,1,1,,6492,False,[],[],150,6642,0.0233226,23323,4.5,1,success,1,0,,claude-sonnet-5-5,"cols = ['col1', 'col2', '3col']
+first_idx = df.drop_duplicates(subset=cols, keep='first').reset_index().set_index(cols)['index']
+dup = df.loc[df.duplicated(subset=cols, keep='first')].copy()
+keys = pd.MultiIndex.from_frame(dup[cols])
+dup['index_original'] = first_idx.reindex(keys).values
+result = dup
+",fenced,Pandas,49.3,1,1,Difficult-Rewrite,False,passed,False,0.216
+ds1000-0133,fabius-doctrina,1,1,,12476,True,[],[],211,12687,0.0464506,46451,4.9,1,success,1,0,,claude-sonnet-5-5,"result = df.assign(index_original=df.groupby(['col1', 'col2', '3col']).transform('idxmin').iloc[:, 0])[df.duplicated(subset=['col1', 'col2', '3col'], keep='first')]
+",fenced,Pandas,49.0,2,1,Difficult-Rewrite,False,passed,False,0.228
+ds1000-0136,baseline,1,1,,6474,False,[],[],44,6518,0.022160600000000003,22161,6.1,1,success,1,0,,claude-sonnet-5-5,"result = df[df.groupby(['Sp', 'Mt'])['count'].transform('max') == df['count']]
+",fenced,Pandas,49.2,1,1,Surface,False,passed,False,0.202
+ds1000-0136,fabius-doctrina,1,1,,12442,True,[],[],132,12574,0.045524600000000005,45525,5.2,1,success,1,0,,claude-sonnet-5-5,"result = df[df.groupby(['Sp','Mt'])['count'].transform('max') == df['count']]
+",fenced,Pandas,48.9,1,1,Surface,False,passed,False,0.171
+ds1000-0138,baseline,1,1,,6709,False,[],[],44,6753,0.0232936,23294,5.2,1,success,1,0,,claude-sonnet-5-5,"result = df[df['count'] == df.groupby(['Sp', 'Value'])['count'].transform('max')]
+",fenced,Pandas,49.2,1,1,Difficult-Rewrite,False,passed,False,0.163
+ds1000-0138,fabius-doctrina,1,1,,12908,True,[],[],43,12951,0.0464986,46499,4.3,1,success,1,0,,claude-sonnet-5-5,"result = df[df.groupby(['Sp', 'Value'])['count'].transform('max') == df['count']]
+",fenced,Pandas,49.1,1,1,Difficult-Rewrite,False,passed,False,0.188
+ds1000-0141,baseline,1,1,,6837,False,[],[],31,6868,0.0238496,23850,5.9,1,success,1,0,,claude-sonnet-5-5,"result = pd.melt(df, value_vars=df.columns.tolist())
+",fenced,Pandas,49.2,1,1,Origin,False,passed,False,0.203
+ds1000-0141,fabius-doctrina,1,1,,13164,True,[],[],31,13195,0.047402599999999996,47403,4.9,1,success,1,0,,claude-sonnet-5-5,"result = pd.melt(df, value_vars=df.columns.tolist())
+",fenced,Pandas,49.6,1,1,Origin,False,passed,False,0.212
+ds1000-0144,baseline,1,1,,6446,False,[],[],33,6479,0.021955600000000002,21956,4.0,1,success,1,0,,claude-sonnet-5-5,"df['cumsum'] = df.groupby('id')['val'].cumsum()
+",fenced,Pandas,49.8,1,1,Surface,False,passed,False,0.209
+ds1000-0144,fabius-doctrina,1,1,,12382,True,[],[],33,12415,0.044294599999999996,44295,4.5,1,success,1,0,,claude-sonnet-5-5,"df['cumsum'] = df.groupby('id')['val'].cumsum()
+",fenced,Pandas,49.9,1,1,Surface,False,passed,False,0.166
+ds1000-0145,baseline,1,1,,6439,False,[],[],33,6472,0.0218926,21893,4.7,1,success,1,0,,claude-sonnet-5-5,"df['cumsum'] = df.groupby('id')['val'].cumsum()
+",fenced,Pandas,49.9,1,1,Surface,False,passed,False,0.233
+ds1000-0145,fabius-doctrina,1,1,,12370,True,[],[],33,12403,0.0442466,44247,4.3,1,success,1,0,,claude-sonnet-5-5,"df['cumsum'] = df.groupby('id')['val'].cumsum()
+",fenced,Pandas,49.9,1,1,Surface,False,passed,False,0.205
+ds1000-0146,baseline,1,1,,6520,False,[],[],31,6551,0.022284599999999998,22285,4.5,1,success,1,0,,claude-sonnet-5-5,"df['cummax'] = df.groupby('id')['val'].cummax()
+",fenced,Pandas,49.7,1,1,Semantic,False,passed,False,0.213
+ds1000-0146,fabius-doctrina,1,1,,12536,True,[],[],31,12567,0.044890599999999996,44891,6.5,1,success,1,0,,claude-sonnet-5-5,"df['cummax'] = df.groupby('id')['val'].cummax()
+",fenced,Pandas,50.1,1,1,Semantic,False,passed,False,0.192
+ds1000-0149,baseline,1,1,,6527,False,[],[],40,6567,0.022382599999999996,22383,4.8,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby('r')['v'].apply(lambda x: x.sum(skipna=False))
+",fenced,Pandas,48.7,1,1,Semantic,False,passed,False,0.232
+ds1000-0149,fabius-doctrina,1,1,,12552,True,[],[],115,12667,0.0457946,45795,5.3,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby('r')['v'].apply(lambda x: x.sum(skipna=False))
+",fenced,Pandas,48.4,1,1,Semantic,False,passed,False,0.162
+ds1000-0153,baseline,1,0,,6648,False,[],[],267,6915,0.0252906,25291,5.6,1,success,1,0,,claude-sonnet-5-5,"def get_relation(df, col1, col2):
+    first_max = df.groupby(col1)[col2].nunique().max()
+    second_max = df.groupby(col2)[col1].nunique().max()
+    if first_max > 1:
+        if second_max > 1:
+            return 'many-to-many'
+        else:
+            return 'many-to-one'
+    else:
+        if second_max > 1:
+            return 'one-to-many'
+        else:
+            return 'one-to-one'
+
+result = pd.DataFrame(index=df.columns, columns=df.columns)
+for col1 in df.columns:
+    for col2 in df.columns:
+        if col1 == col2:
+            result.loc[col1, col2] = float('nan')
+        else:
+            result.loc[col1, col2] = get_relation(df, col1, col2)
+",fenced,Pandas,48.8,1,0,Difficult-Rewrite,False,failed: ,False,0.353
+ds1000-0153,fabius-doctrina,1,1,,12790,True,[],[],832,13622,0.0539166,53917,9.8,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(index=df.columns, columns=df.columns, dtype=object)
+for a in df.columns:
+    for b in df.columns:
+        if a != b:
+            result.loc[a, b] = ('one' if df[a].is_unique else 'many') + '-to-' + ('one' if df[b].is_unique else 'many')
+",fenced,Pandas,48.8,1,1,Difficult-Rewrite,False,passed,False,0.391
+ds1000-0156,baseline,1,1,,8204,False,[],[],41,8245,0.0307146,30715,5.0,1,success,1,0,,claude-sonnet-5-5,"result = pd.to_numeric(s.str.replace(',', '', regex=False), errors='coerce')
+",fenced,Pandas,46.4,1,1,Origin,False,passed,False,0.189
+ds1000-0156,fabius-doctrina,1,1,,15894,True,[],[],41,15935,0.058422600000000005,58423,4.2,1,success,1,0,,claude-sonnet-5-5,"result = pd.to_numeric(s.str.replace(',', '', regex=False), errors='coerce')
+",fenced,Pandas,46.3,1,1,Origin,False,passed,False,0.138
+ds1000-0162,baseline,1,1,,6537,False,[],[],47,6584,0.0225106,22511,4.2,1,success,1,0,,claude-sonnet-5-5,"df.columns = pd.MultiIndex.from_tuples(df.columns, names=['Caps', 'Lower'])
+",fenced,Pandas,48.7,1,1,Origin,False,passed,False,0.163
+ds1000-0162,fabius-doctrina,1,1,,12570,True,[],[],47,12617,0.0451866,45187,5.7,1,success,1,0,,claude-sonnet-5-5,"df.columns = pd.MultiIndex.from_tuples(df.columns, names=['Caps', 'Lower'])
+",fenced,Pandas,49.0,1,1,Origin,False,passed,False,0.141
+ds1000-0166,baseline,1,1,,6303,False,[],[],31,6334,0.0212336,21234,4.0,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby('a').b.agg([np.mean, np.std])
+",fenced,Pandas,48.7,1,1,Origin,False,passed,False,0.175
+ds1000-0166,fabius-doctrina,1,1,,12102,True,[],[],131,12233,0.0441546,44155,5.5,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby('a').b.agg(['mean', 'std'])
+",fenced,Pandas,48.7,1,1,Origin,False,passed,False,0.165
+ds1000-0178,baseline,1,1,,6471,False,[],[],44,6515,0.022142600000000002,22143,4.4,1,success,1,0,,claude-sonnet-5-5,"result = df[df.groupby(['Sp', 'Mt'])['count'].transform('max') == df['count']]
+",fenced,Pandas,48.9,1,1,Surface,False,passed,False,0.181
+ds1000-0178,fabius-doctrina,1,1,,12444,True,[],[],170,12614,0.0459126,45913,5.0,1,success,1,0,,claude-sonnet-5-5,"result = df[df.groupby(['Sp', 'Mt'])['count'].transform('max') == df['count']]
+",fenced,Pandas,49.1,1,1,Surface,False,passed,False,0.167
+ds1000-0180,baseline,1,1,,6705,False,[],[],44,6749,0.0232776,23278,5.4,1,success,1,0,,claude-sonnet-5-5,"result = df[df['count'] == df.groupby(['Sp', 'Value'])['count'].transform('max')]
+",fenced,Pandas,49.2,1,1,Semantic,False,passed,False,0.158
+ds1000-0180,fabius-doctrina,1,1,,12906,True,[],[],44,12950,0.046500599999999996,46501,5.3,1,success,1,0,,claude-sonnet-5-5,"result = df[df['count'] == df.groupby(['Sp', 'Value'])['count'].transform('max')]
+",fenced,Pandas,49.2,1,1,Semantic,False,passed,False,0.139
+ds1000-0183,baseline,1,1,,6651,False,[],[],49,6700,0.023067599999999997,23068,4.8,1,success,1,0,,claude-sonnet-5-5,"    result = df.copy()
+    result['Date'] = result['Member'].map(dict).fillna(result['Date'])
+    return result
+",fenced,Pandas,48.0,1,1,Surface,False,passed,False,0.168
+ds1000-0183,fabius-doctrina,1,1,,12797,True,[],[],49,12846,0.0461146,46115,5.6,1,success,1,0,,claude-sonnet-5-5,"    result = df.copy()
+    result['Date'] = result['Member'].map(dict).fillna(result['Date'])
+    return result
+",fenced,Pandas,47.9,1,1,Surface,False,passed,False,0.18
+ds1000-0185,baseline,1,1,,6777,False,[],[],153,6930,0.0247986,24799,4.5,1,success,1,0,,claude-sonnet-5-5,"df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%y')
+y = df['Date'].dt.year
+m = df['Date'].dt.month
+df['Count_d'] = df.groupby('Date')['Date'].transform('size')
+df['Count_m'] = df.groupby([y, m])['Date'].transform('size')
+df['Count_y'] = df.groupby(y)['Date'].transform('size')
+",fenced,Pandas,49.6,1,1,Origin,False,passed,False,0.294
+ds1000-0185,fabius-doctrina,1,1,,13042,True,[],[],416,13458,0.0507646,50765,6.2,1,success,1,0,,claude-sonnet-5-5,"df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%y')
+y = df['Date'].dt.year
+m = df['Date'].dt.month
+df['Count_d'] = df.groupby('Date')['Date'].transform('size')
+df['Count_m'] = df.groupby([y, m])['Date'].transform('size')
+df['Count_y'] = df.groupby(y)['Date'].transform('size')
+",fenced,Pandas,49.5,1,1,Origin,False,passed,False,0.217
+ds1000-0187,baseline,1,0,,6863,False,[],[],1109,7972,0.034801599999999995,34802,12.9,1,success,1,0,,claude-sonnet-5-5,"y = df['Date'].dt.year
+m = df['Date'].dt.month
+w = df['Date'].dt.weekday
+df['Count_d'] = df.groupby('Date')['Date'].transform('size')
+df['Count_m'] = df.groupby([y, m])['Date'].transform('size')
+df['Count_y'] = df.groupby(y)['Date'].transform('size')
+df['Count_w'] = df.groupby(w)['Date'].transform('size')
+df['Count_Val'] = df.groupby(['Date', 'Val'])['Date'].transform('size')
+",fenced,Pandas,49.6,1,0,Difficult-Rewrite,False,failed: Can only use .dt accessor with datetimelike values,False,0.162
+ds1000-0187,fabius-doctrina,1,1,,13220,True,[],[],868,14088,0.0559966,55997,10.5,1,success,1,0,,claude-sonnet-5-5,"def g(df):
+    df = df.copy()
+    df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%y')
+    y = df['Date'].dt.year
+    m = df['Date'].dt.month
+    w = df['Date'].dt.weekday
+    df['Count_d'] = df.groupby('Date')['Date'].transform('size')
+    df['Count_m'] = df.groupby([y, m])['Date'].transform('size')
+    df['Count_y'] = df.groupby(y)['Date'].transform('size')
+    df['Count_w'] = df.groupby(w)['Date'].transform('size')
+    df['Count_Val'] = df.groupby(['Date', 'Val'])['Date'].transform('size')
+    return df
+
+df = g(df)
+",fenced,Pandas,49.9,1,1,Difficult-Rewrite,False,passed,False,0.198
+ds1000-0194,baseline,1,1,,6553,False,[],[],67,6620,0.0227776,22778,4.0,1,success,1,0,,claude-sonnet-5-5,"result = df.drop('var2', axis=1).join(
+    df.var2.str.split(',', expand=True).stack().reset_index(drop=True, level=1).rename('var2')
+)
+",fenced,Pandas,48.9,1,1,Origin,False,passed,False,0.179
+ds1000-0194,fabius-doctrina,1,1,,12602,True,[],[],36,12638,0.0452046,45205,4.7,1,success,1,0,,claude-sonnet-5-5,"result = df.assign(var2=df['var2'].str.split(',')).explode('var2')
+",fenced,Pandas,49.8,1,1,Origin,False,passed,False,0.151
+ds1000-0196,baseline,1,1,,6557,False,[],[],46,6603,0.0225736,22574,6.0,1,success,1,0,,claude-sonnet-5-5,"result = df.assign(var2=df['var2'].str.split('-')).explode('var2').reset_index(drop=True)
+",fenced,Pandas,49.6,1,1,Difficult-Rewrite,False,passed,False,0.212
+ds1000-0196,fabius-doctrina,1,1,,12604,True,[],[],46,12650,0.0453126,45313,10.2,1,success,1,0,,claude-sonnet-5-5,"result = df.assign(var2=df['var2'].str.split('-')).explode('var2').reset_index(drop=True)
+",fenced,Pandas,49.5,1,1,Difficult-Rewrite,False,passed,False,0.218
+ds1000-0198,baseline,1,1,,6404,False,[],[],105,6509,0.022440599999999998,22441,4.2,1,success,1,0,,claude-sonnet-5-5,"df['new'] = df['str'].apply(lambda s: sum(c.isalpha() for c in s))
+",fenced,Pandas,47.0,1,1,Semantic,False,passed,False,0.218
+ds1000-0198,fabius-doctrina,1,1,,12294,True,[],[],266,12560,0.0462726,46273,5.9,1,success,1,0,,claude-sonnet-5-5,"df['new'] = df['str'].apply(lambda s: sum(c.isalpha() for c in s))
+",fenced,Pandas,47.4,1,1,Semantic,False,passed,False,0.182
+ds1000-0203,baseline,1,1,,6397,False,[],[],869,7266,0.0300716,30072,12.7,1,success,1,0,,claude-sonnet-5-5,"df = df.copy()
+cols = list(df)[1:]
+for idx in df.index:
+    s = 0
+    cnt = 0
+    for col in cols[::-1]:
+        if df.loc[idx, col] != 0:
+            cnt = min(cnt + 1, 2)
+            s = (s + df.loc[idx, col]) / cnt
+        df.loc[idx, col] = s
+",fenced,Pandas,47.4,1,1,Semantic,False,passed,False,0.183
+ds1000-0203,fabius-doctrina,1,1,,12284,True,[],[],950,13234,0.053072600000000004,53073,9.6,1,success,1,0,,claude-sonnet-5-5,"cols = list(df)[1:]
+for idx in df.index:
+    s = 0
+    cnt = 0
+    for col in cols[::-1]:
+        if df.loc[idx, col] != 0:
+            cnt = min(cnt + 1, 2)
+            s = (s + df.loc[idx, col]) / cnt
+        df.loc[idx, col] = s
+",fenced,Pandas,47.4,1,1,Semantic,False,passed,False,0.161
+ds1000-0207,baseline,1,1,,6403,False,[],[],59,6462,0.0219796,21980,4.2,1,success,1,0,,claude-sonnet-5-5,"df['label'] = df['Close'].diff().fillna(1).apply(lambda x: 1 if x > 0 else (0 if x == 0 else -1))
+",fenced,Pandas,47.8,1,1,Semantic,False,passed,False,0.177
+ds1000-0207,fabius-doctrina,1,1,,12294,True,[],[],59,12353,0.0442026,44203,4.9,1,success,1,0,,claude-sonnet-5-5,"df['label'] = df['Close'].diff().fillna(1).apply(lambda x: 1 if x > 0 else (0 if x == 0 else -1))
+",fenced,Pandas,47.8,1,1,Semantic,False,passed,False,0.151
+ds1000-0208,baseline,1,1,,6463,False,[],[],496,6959,0.0266396,26640,7.2,1,success,1,0,,claude-sonnet-5-5,"d = df['Close'].diff(-1).fillna(1)
+df['label'] = (d > 0).astype(int) - (d < 0).astype(int)
+df['DateTime'] = df['DateTime'].dt.strftime('%d-%b-%Y')
+",fenced,Pandas,49.5,1,1,Difficult-Rewrite,False,passed,False,0.143
+ds1000-0208,fabius-doctrina,1,1,,12418,True,[],[],471,12889,0.0488186,48819,7.6,1,success,1,0,,claude-sonnet-5-5,"diff = df['Close'].diff(-1)
+df['label'] = (diff.gt(0).astype(int) - diff.lt(0).astype(int))
+df.loc[df.index[-1], 'label'] = 1
+df['DateTime'] = df['DateTime'].dt.strftime('%d-%b-%Y')
+",fenced,Pandas,49.1,1,1,Difficult-Rewrite,False,passed,False,0.232
+ds1000-0209,baseline,1,1,,7035,False,[],[],118,7153,0.0257016,25702,4.7,1,success,1,0,,claude-sonnet-5-5,"import numpy as np
+df['arrival_time'] = pd.to_datetime(df['arrival_time'].replace(""0"", np.nan))
+df['departure_time'] = pd.to_datetime(df['departure_time'])
+df['Duration'] = df['arrival_time'] - df.groupby('id')['departure_time'].shift(1)
+",fenced,Pandas,49.2,1,1,Origin,False,passed,False,0.172
+ds1000-0209,fabius-doctrina,1,1,,13560,True,[],[],513,14073,0.053806599999999996,53807,8.2,1,success,1,0,,claude-sonnet-5-5,"df['arrival_time'] = pd.to_datetime(df['arrival_time'].where(df['arrival_time'] != '0'))
+df['departure_time'] = pd.to_datetime(df['departure_time'])
+df['Duration'] = df['arrival_time'] - df.groupby('id')['departure_time'].shift()
+",fenced,Pandas,49.7,1,1,Origin,False,passed,False,0.302
+ds1000-0212,baseline,1,1,,6320,False,[],[],51,6371,0.021511600000000002,21512,5.1,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby('key1')['key2'].apply(lambda x: (x == 'one').sum()).reset_index(name='count')
+",fenced,Pandas,48.7,1,1,Origin,False,passed,False,0.197
+ds1000-0212,fabius-doctrina,1,1,,12130,True,[],[],51,12181,0.043466599999999994,43467,5.5,1,success,1,0,,claude-sonnet-5-5,"result = df.groupby('key1')['key2'].apply(lambda s: (s == 'one').sum()).reset_index(name='count')
+",fenced,Pandas,48.9,1,1,Origin,False,passed,False,0.161
+ds1000-0215,baseline,1,1,,6440,False,[],[],28,6468,0.0218976,21898,3.8,1,success,1,0,,claude-sonnet-5-5,"max_result = df.index.max()
+min_result = df.index.min()
+",fenced,Pandas,46.9,1,1,Origin,False,passed,False,0.151
+ds1000-0215,fabius-doctrina,1,1,,12374,True,[],[],28,12402,0.044212600000000005,44213,5.8,1,success,1,0,,claude-sonnet-5-5,"max_result = df.index.max()
+min_result = df.index.min()
+",fenced,Pandas,46.9,1,1,Origin,False,passed,False,0.144
+ds1000-0218,baseline,1,1,,6247,False,[],[],28,6275,0.0209126,20913,4.0,1,success,1,0,,claude-sonnet-5-5,"result = df[~df['closing_price'].between(99, 101)]
+",fenced,Pandas,48.3,1,1,Semantic,False,passed,False,0.206
+ds1000-0218,fabius-doctrina,1,1,,11988,True,[],[],28,12016,0.0426686,42669,4.2,1,success,1,0,,claude-sonnet-5-5,"result = df[~df['closing_price'].between(99, 101)]
+",fenced,Pandas,48.5,1,1,Semantic,False,passed,False,0.162
+ds1000-0219,baseline,1,0,,6640,False,[],[],43,6683,0.0229906,22991,4.5,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[df.groupby(""item"")[""diff""].idxmin()].reset_index(drop=True)
+",fenced,Pandas,48.7,1,0,Origin,False,failed: ,False,0.182
+ds1000-0219,fabius-doctrina,1,0,,12774,True,[],[],43,12817,0.0459626,45963,6.5,1,success,1,0,,claude-sonnet-5-5,"result = df.loc[df.groupby(""item"")[""diff""].idxmin()].reset_index(drop=True)
+",fenced,Pandas,48.8,1,0,Origin,False,failed: ,False,0.176
+ds1000-0223,baseline,1,1,,6807,False,[],[],80,6887,0.0241526,24153,5.0,1,success,1,0,,claude-sonnet-5-5,"mask = df['Column_x'].isna()
+n = mask.sum()
+vals = np.array([0] * (n // 2) + [1] * (n - n // 2))
+df.loc[mask, 'Column_x'] = vals
+",fenced,Pandas,47.7,1,1,Origin,False,passed,False,0.134
+ds1000-0223,fabius-doctrina,1,1,,13104,True,[],[],166,13270,0.0485126,48513,4.8,1,success,1,0,,claude-sonnet-5-5,"mask = df['Column_x'].isna()
+n = mask.sum()
+vals = np.array([0.0] * (n // 2) + [1.0] * (n - n // 2))
+df.loc[mask, 'Column_x'] = vals
+",fenced,Pandas,47.4,1,1,Origin,False,passed,False,0.126
+ds1000-0227,baseline,1,0,,6618,False,[],[],149,6767,0.023903599999999997,23904,15.8,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(
+    np.apply_along_axis(lambda x: [tuple(x)], 0, np.stack([a.values, b.values, c.values], axis=-1).reshape(-1, 3).T).reshape(a.shape)
+    if False else
+    [[tuple(v) for v in row] for row in np.stack([a.values, b.values, c.values], axis=-1)],
+    columns=a.columns,
+)
+",fenced,Pandas,45.8,1,0,Semantic,False,failed: ,False,0.183
+ds1000-0227,fabius-doctrina,1,0,,12728,True,[],[],84,12812,0.0461886,46189,4.7,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(
+    np.vectorize(lambda *x: tuple(x), otypes=[object])(*[d.values for d in (a, b, c)]),
+    columns=a.columns,
+    index=a.index,
+)
+",fenced,Pandas,46.5,1,0,Semantic,False,failed: ,False,0.131
+ds1000-0232,baseline,1,1,,6168,False,[],[],34,6202,0.0205996,20600,4.1,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame({'text': [', '.join(df['text'])]})
+",fenced,Pandas,47.1,1,1,Origin,False,passed,False,0.176
+ds1000-0232,fabius-doctrina,1,1,,11826,True,[],[],34,11860,0.0420806,42081,4.5,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame({'text': [', '.join(df['text'])]})
+",fenced,Pandas,47.0,1,1,Origin,False,passed,False,0.148
+ds1000-0238,baseline,1,1,,7052,False,[],[],528,7580,0.0298576,29858,7.2,1,success,1,0,,claude-sonnet-5-5,"df = pd.concat([df1, df2.merge(df1[['id', 'city', 'district']], how='left', on='id')], sort=False).reset_index(drop=True)
+df['date'] = pd.to_datetime(df['date']).dt.strftime('%d-%b-%Y')
+result = df.sort_values(by=['id', 'date']).reset_index(drop=True)[['id', 'city', 'district', 'date', 'value']]
+",fenced,Pandas,51.1,1,1,Difficult-Rewrite,False,passed,False,0.313
+ds1000-0238,fabius-doctrina,1,1,,13596,True,[],[],571,14167,0.0545306,54531,7.1,1,success,1,0,,claude-sonnet-5-5,"result = pd.concat([df1, df2.merge(df1[['id', 'city', 'district']], how='left', on='id')], sort=False).reset_index(drop=True)
+result['date'] = pd.to_datetime(result['date']).dt.strftime('%d-%b-%Y')
+result = result.sort_values(by=['id', 'date']).reset_index(drop=True)
+",fenced,Pandas,51.2,1,1,Difficult-Rewrite,False,passed,False,0.263
+ds1000-0244,baseline,1,0,,6692,False,[],[],171,6863,0.0245386,24539,5.7,1,success,1,0,,claude-sonnet-5-5,"df['amount-time-tuple'] = list(zip(df['time'], df['amount']))
+result = df.sort_values(['user', 'time']).groupby('user')['amount-time-tuple'].apply(list).to_frame()
+",fenced,Pandas,49.2,1,0,Semantic,False,failed: ,False,0.161
+ds1000-0244,fabius-doctrina,1,0,,12878,True,[],[],117,12995,0.0471186,47119,4.9,1,success,1,0,,claude-sonnet-5-5,"df['amount-time-tuple'] = list(zip(df['time'], df['amount']))
+result = df.groupby('user')['amount-time-tuple'].apply(list).to_frame()
+result['amount-time-tuple'] = result['amount-time-tuple'].apply(lambda x: [list(t) for t in sorted(x)])
+",fenced,Pandas,49.1,1,0,Semantic,False,failed: ,False,0.136
+ds1000-0251,baseline,1,1,,6375,False,[],[],44,6419,0.021702600000000002,21703,4.7,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(df['codes'].tolist(), index=df.index).add_prefix('code_')
+",fenced,Pandas,47.9,1,1,Origin,False,passed,False,0.174
+ds1000-0251,fabius-doctrina,1,1,,12242,True,[],[],171,12413,0.0451146,45115,4.8,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(df['codes'].tolist(), index=df.index).add_prefix('code_')
+",fenced,Pandas,47.8,1,1,Origin,False,passed,False,0.127
+ds1000-0254,baseline,1,1,,6287,False,[],[],27,6314,0.021108599999999998,21109,3.7,1,success,1,0,,claude-sonnet-5-5,"result = [x for lst in df['col1'] for x in lst]
+",fenced,Pandas,47.0,1,1,Origin,False,passed,False,0.157
+ds1000-0254,fabius-doctrina,1,1,,12066,True,[],[],142,12208,0.044120599999999996,44121,19.8,1,success,1,0,,claude-sonnet-5-5,"result = df['col1'].sum()
+",fenced,Pandas,46.5,1,1,Origin,False,passed,False,0.128
+ds1000-0256,baseline,1,1,,6305,False,[],[],34,6339,0.0212696,21270,7.7,1,success,1,0,,claude-sonnet-5-5,"result = ','.join(str(x) for x in df['col1'].explode().tolist())
+",fenced,Pandas,45.8,1,1,Difficult-Rewrite,False,passed,False,0.157
+ds1000-0256,fabius-doctrina,1,1,,12098,True,[],[],176,12274,0.0445886,44589,5.7,1,success,1,0,,claude-sonnet-5-5,"result = ','.join(str(x) for lst in df['col1'] for x in lst)
+",fenced,Pandas,46.6,1,1,Difficult-Rewrite,False,passed,False,0.139
+ds1000-0260,baseline,1,1,,6358,False,[],[],64,6422,0.021821599999999997,21822,4.5,1,success,1,0,,claude-sonnet-5-5,"df['TIME'] = pd.to_datetime(df['TIME'])
+df['RANK'] = df.groupby('ID')['TIME'].rank(ascending=False)
+",fenced,Pandas,49.7,1,1,Semantic,False,passed,False,0.151
+ds1000-0260,fabius-doctrina,1,1,,12204,True,[],[],93,12297,0.0441826,44183,4.6,1,success,1,0,,claude-sonnet-5-5,"df['TIME'] = pd.to_datetime(df['TIME'])
+df['RANK'] = df.groupby('ID')['TIME'].rank(ascending=False)
+",fenced,Pandas,49.9,1,1,Semantic,False,passed,False,0.106
+ds1000-0264,baseline,1,1,,6844,False,[],[],61,6905,0.0241556,24156,4.1,1,success,1,0,,claude-sonnet-5-5,"result = df.columns[~((df.iloc[0] == df.iloc[8]) | (df.iloc[0].isna() & df.iloc[8].isna()))]
+",fenced,Pandas,47.2,1,1,Origin,False,passed,False,0.156
+ds1000-0264,fabius-doctrina,1,1,,13182,True,[],[],62,13244,0.047784599999999997,47785,4.6,1,success,1,0,,claude-sonnet-5-5,"result = df.columns[df.iloc[0].ne(df.iloc[8]) & ~(df.iloc[0].isna() & df.iloc[8].isna())]
+",fenced,Pandas,47.2,1,1,Origin,False,passed,False,0.121
+ds1000-0265,baseline,1,1,,6816,False,[],[],150,6966,0.024903599999999998,24904,20.3,1,success,1,0,,claude-sonnet-5-5,"def get_equal_cols(df, r1, r2):
+    a = df.iloc[r1]
+    b = df.iloc[r2]
+    return df.columns[(a == b) | (a.isna() & b.isna())]
+
+result = get_equal_cols(df, 0, 8)
+",fenced,Pandas,47.1,1,1,Semantic,False,passed,False,0.189
+ds1000-0265,fabius-doctrina,1,1,,13122,True,[],[],203,13325,0.0489546,48955,8.8,1,success,1,0,,claude-sonnet-5-5,"result = df.columns[(df.iloc[0] == df.iloc[8]) | (df.iloc[0].isna() & df.iloc[8].isna())]
+",fenced,Pandas,47.2,1,1,Semantic,False,passed,False,0.179
+ds1000-0268,baseline,1,1,,6607,False,[],[],141,6748,0.023768599999999997,23769,5.2,1,success,1,0,,claude-sonnet-5-5,"ts = pd.Series(df['Value'].values, index=df['Date'])
+",fenced,Pandas,47.7,1,1,Origin,False,passed,False,0.139
+ds1000-0268,fabius-doctrina,1,1,,12706,True,[],[],125,12831,0.0465106,46511,5.2,1,success,1,0,,claude-sonnet-5-5,"ts = pd.Series(df['Value'].values, index=df['Date'])
+",fenced,Pandas,48.0,1,1,Origin,False,passed,False,0.138
+ds1000-0273,baseline,1,0,,6420,False,[],[],109,6529,0.022550600000000004,22551,4.1,1,success,1,0,,claude-sonnet-5-5,"df = df[list_of_my_columns].sum(axis=1).to_frame('Sum').join(df)
+",fenced,Pandas,49.6,2,0,Origin,False,failed: ,False,0.16
+ds1000-0273,fabius-doctrina,1,0,,12341,True,[],[],121,12462,0.0450106,45011,3.8,1,success,1,0,,claude-sonnet-5-5,"df = df[list_of_my_columns].sum(axis=1).to_frame('Sum').join(df)
+",fenced,Pandas,49.4,2,0,Origin,False,failed: ,False,0.106
+ds1000-0277,baseline,1,1,,6595,False,[],[],28,6623,0.0226156,22616,3.8,1,success,1,0,,claude-sonnet-5-5,"result = df.sort_values('VIM', kind='mergesort')
+",fenced,Pandas,48.5,1,1,Semantic,False,passed,False,0.157
+ds1000-0277,fabius-doctrina,1,1,,12690,True,[],[],63,12753,0.0458266,45827,4.4,1,success,1,0,,claude-sonnet-5-5,"result = df.sort_values(by='VIM', kind='mergesort')
+",fenced,Pandas,48.4,1,1,Semantic,False,passed,False,0.112
+ds1000-0297,baseline,1,1,,6220,False,[],[],60,6280,0.0211186,21119,7.2,1,success,1,0,,claude-sonnet-5-5,"b = np.zeros((a.size, a.max() - a.min() + 1), dtype=int)
+b[np.arange(a.size), a - a.min()] = 1
+",fenced,Numpy,48.8,1,1,Semantic,False,passed,False,0.254
+ds1000-0297,fabius-doctrina,1,1,,11930,True,[],[],60,11990,0.0427566,42757,5.0,1,success,1,0,,claude-sonnet-5-5,"b = np.zeros((a.size, a.max() - a.min() + 1), dtype=int)
+b[np.arange(a.size), a - a.min()] = 1
+",fenced,Numpy,49.0,1,1,Semantic,False,passed,False,0.285
+ds1000-0298,baseline,1,0,,6228,False,[],[],30,6258,0.020864599999999997,20865,4.6,1,success,1,0,,claude-sonnet-5-5,"b = (a == np.unique(a)[:, None]).astype(int)
+",fenced,Numpy,48.7,1,0,Difficult-Rewrite,False,"failed: 
+Arrays are not equal
+
+Mismatched elements: 6 / 9 (66.7%)
+Max absolute difference: 1.
+Max relative difference: 1.
+ x: array([[0, 1, 0],
+       [0, 0, 1],
+       [1, 0, 0]])
+ y: array([[0., 0., 1.],
+       [1., 0., 0.],
+       [0., 1., 0.]])",False,0.353
+ds1000-0298,fabius-doctrina,1,1,,11946,True,[],[],236,12182,0.044580600000000005,44581,5.5,1,success,1,0,,claude-sonnet-5-5,"b = (a[:, None] == np.unique(a)).astype(int)
+",fenced,Numpy,49.9,1,1,Difficult-Rewrite,False,passed,False,0.281
+ds1000-0300,baseline,1,1,,6160,False,[],[],19,6179,0.0203866,20387,5.1,1,success,1,0,,claude-sonnet-5-5,"result = np.percentile(a, p)
+",fenced,Numpy,49.2,1,1,Origin,False,passed,False,0.253
+ds1000-0300,fabius-doctrina,1,1,,11810,True,[],[],19,11829,0.0418666,41867,4.0,1,success,1,0,,claude-sonnet-5-5,"result = np.percentile(a, p)
+",fenced,Numpy,49.5,1,1,Origin,False,passed,False,0.242
+ds1000-0314,baseline,1,1,,6130,False,[],[],39,6169,0.0204716,20472,5.1,1,success,1,0,,claude-sonnet-5-5,"result = np.unravel_index(np.argsort(a, axis=None)[-2], a.shape)
+",fenced,Numpy,48.8,1,1,Difficult-Rewrite,False,passed,False,0.27
+ds1000-0314,fabius-doctrina,1,1,,11758,True,[],[],39,11797,0.0418586,41859,4.1,1,success,1,0,,claude-sonnet-5-5,"result = np.unravel_index(np.argsort(a, axis=None)[-2], a.shape)
+",fenced,Numpy,49.8,1,1,Difficult-Rewrite,False,passed,False,0.243
+ds1000-0315,baseline,1,1,,6350,False,[],[],31,6381,0.021446599999999996,21447,4.4,1,success,1,0,,claude-sonnet-5-5,"a = a[:, ~np.isnan(a).any(axis=0)]
+",fenced,Numpy,48.4,1,1,Origin,False,passed,False,0.303
+ds1000-0315,fabius-doctrina,1,1,,12198,True,[],[],31,12229,0.0435386,43539,6.6,1,success,1,0,,claude-sonnet-5-5,"a = a[:, ~np.isnan(a).any(axis=0)]
+",fenced,Numpy,48.7,1,1,Origin,False,passed,False,0.256
+ds1000-0318,baseline,1,1,,6389,False,[],[],181,6570,0.023128600000000003,23129,6.3,1,success,1,0,,claude-sonnet-5-5,"c = np.empty_like(permutation)
+c[permutation] = np.arange(len(permutation))
+a = a[:, c]
+",fenced,Numpy,48.4,1,1,Origin,False,passed,False,0.259
+ds1000-0318,fabius-doctrina,1,1,,12269,True,[],[],82,12351,0.0443326,44333,5.7,1,success,1,0,,claude-sonnet-5-5,"a = a[:, np.argsort(permutation)]
+",fenced,Numpy,49.9,1,1,Origin,False,passed,False,0.246
+ds1000-0321,baseline,1,1,,6127,False,[],[],30,6157,0.0203466,20347,5.0,1,success,1,0,,claude-sonnet-5-5,"result = np.unravel_index(np.argmax(a), a.shape)
+",fenced,Numpy,49.4,1,1,Semantic,False,passed,False,0.243
+ds1000-0321,fabius-doctrina,1,1,,11748,True,[],[],30,11778,0.041728600000000005,41729,4.7,1,success,1,0,,claude-sonnet-5-5,"result = np.unravel_index(np.argmax(a), a.shape)
+",fenced,Numpy,49.5,1,1,Semantic,False,passed,False,0.181
+ds1000-0322,baseline,1,1,,6171,False,[],[],80,6251,0.0210576,21058,4.2,1,success,1,0,,claude-sonnet-5-5,"result = np.argwhere(a == a.min())
+",fenced,Numpy,49.0,1,1,Difficult-Rewrite,False,passed,False,0.248
+ds1000-0322,fabius-doctrina,1,1,,11836,True,[],[],22,11858,0.0420006,42001,21.0,1,success,1,0,,claude-sonnet-5-5,"result = np.argwhere(a == a.min())
+",fenced,Numpy,49.0,1,1,Difficult-Rewrite,False,passed,False,0.212
+ds1000-0323,baseline,1,1,,6210,False,[],[],25,6235,0.020672600000000003,20673,3.8,1,success,1,0,,claude-sonnet-5-5,"result = np.sin(np.deg2rad(degree))
+",fenced,Numpy,45.4,1,1,Origin,False,passed,False,0.355
+ds1000-0323,fabius-doctrina,1,1,,11910,True,[],[],25,11935,0.0423266,42327,4.7,1,success,1,0,,claude-sonnet-5-5,"result = np.sin(np.deg2rad(degree))
+",fenced,Numpy,45.3,1,1,Origin,False,passed,False,0.098
+ds1000-0329,baseline,1,1,,6235,False,[],[],17,6252,0.0207596,20760,4.1,1,success,1,0,,claude-sonnet-5-5,"a = np.power(a, power)
+",fenced,Numpy,45.9,1,1,Origin,False,passed,False,0.139
+ds1000-0329,fabius-doctrina,1,1,,11972,True,[],[],67,12039,0.0429946,42995,4.5,1,success,1,0,,claude-sonnet-5-5,"a = np.power(a, power)
+",fenced,Numpy,45.9,1,1,Origin,False,passed,False,0.124
+ds1000-0331,baseline,1,1,,6146,False,[],[],39,6185,0.0205346,20535,5.4,1,success,1,0,,claude-sonnet-5-5,"g = np.gcd(numerator, denominator)
+result = (numerator // g, denominator // g)
+",fenced,Numpy,44.8,1,1,Origin,False,passed,False,0.142
+ds1000-0331,fabius-doctrina,1,1,,11786,True,[],[],44,11830,0.0420206,42021,4.9,1,success,1,0,,claude-sonnet-5-5,"from math import gcd
+g = gcd(numerator, denominator)
+result = (numerator // g, denominator // g)
+",fenced,Numpy,44.8,1,1,Origin,False,passed,False,0.133
+ds1000-0339,baseline,1,0,,6516,False,[],[],37,6553,0.0223256,22326,5.2,1,success,1,0,,claude-sonnet-5-5,"result = np.vstack((np.diag(a), np.diag(np.fliplr(a))))
+",fenced,Numpy,48.2,1,0,Difficult-Rewrite,False,"failed: 
+Arrays are not equal
+
+Mismatched elements: 5 / 10 (50%)
+Max absolute difference: 1
+Max relative difference: 0.25
+ x: array([[ 0,  6, 12, 18, 24],
+       [ 5,  9, 13, 17, 21]])
+ y: array([[ 0,  6, 12, 18, 24],
+       [ 4,  8, 12, 16, 20]])",False,0.294
+ds1000-0339,fabius-doctrina,1,1,,12522,True,[],[],885,13407,0.05337460000000001,53375,10.5,1,success,1,0,,claude-sonnet-5-5,"result = np.vstack((np.diag(a), np.diag(np.fliplr(a), a.shape[1] - a.shape[0])))
+",fenced,Numpy,48.2,1,1,Difficult-Rewrite,False,passed,False,0.26
+ds1000-0340,baseline,1,1,,6158,False,[],[],19,6177,0.020418600000000002,20419,3.3,1,success,1,0,,claude-sonnet-5-5,"result = X.flatten().tolist()
+",fenced,Numpy,49.2,1,1,Origin,False,passed,False,0.292
+ds1000-0340,fabius-doctrina,1,1,,11810,True,[],[],19,11829,0.0418666,41867,3.2,1,success,1,0,,claude-sonnet-5-5,"result = X.flatten().tolist()
+",fenced,Numpy,49.1,1,1,Origin,False,passed,False,0.307
+ds1000-0342,baseline,1,1,,6171,False,[],[],24,6195,0.020534600000000004,20535,3.6,1,success,1,0,,claude-sonnet-5-5,"    result = X.flatten().tolist()
+    return result
+",fenced,Numpy,49.0,1,1,Surface,False,passed,False,0.265
+ds1000-0342,fabius-doctrina,1,1,,11833,True,[],[],24,11857,0.0420086,42009,5.0,1,success,1,0,,claude-sonnet-5-5,"    result = X.flatten().tolist()
+    return result
+",fenced,Numpy,48.9,1,1,Surface,False,passed,False,0.297
+ds1000-0349,baseline,1,1,,6155,False,[],[],16,6171,0.0203756,20376,3.8,1,success,1,0,,claude-sonnet-5-5,"result = a.shape[1]
+",fenced,Numpy,49.4,1,1,Origin,False,passed,False,0.297
+ds1000-0349,fabius-doctrina,1,1,,11801,True,[],[],16,11817,0.0418006,41801,4.1,1,success,1,0,,claude-sonnet-5-5,"result = a.shape[1]
+",fenced,Numpy,49.6,1,1,Origin,False,passed,False,0.21
+ds1000-0352,baseline,1,1,,6183,False,[],[],180,6363,0.022149600000000002,22150,12.1,1,success,1,0,,claude-sonnet-5-5,"_, p_value = scipy.stats.ttest_ind_from_stats(
+    amean, np.sqrt(avar), anobs,
+    bmean, np.sqrt(bvar), bnobs,
+    equal_var=False,
+)
+",fenced,Numpy,89.2,1,1,Difficult-Rewrite,False,passed,False,1.338
+ds1000-0352,fabius-doctrina,1,1,,11858,True,[],[],77,11935,0.0426386,42639,3.8,1,success,1,0,,claude-sonnet-5-5,"p_value = scipy.stats.ttest_ind_from_stats(amean, np.sqrt(avar), anobs, bmean, np.sqrt(bvar), bnobs, equal_var=False)[1]
+",fenced,Numpy,90.3,1,1,Difficult-Rewrite,False,passed,False,1.273
+ds1000-0361,baseline,1,1,,6221,False,[],[],27,6248,0.0207726,20773,3.6,1,success,1,0,,claude-sonnet-5-5,"a = np.delete(a, [0, 2], axis=1)
+",fenced,Numpy,48.3,1,1,Difficult-Rewrite,False,passed,False,0.281
+ds1000-0361,fabius-doctrina,1,0,,11938,True,[],[],20,11958,0.0423886,42389,4.1,1,success,1,0,,claude-sonnet-5-5,"a = a[:, [1, 3]]
+",fenced,Numpy,49.2,1,0,Difficult-Rewrite,False,"failed: 
+Arrays are not equal
+
+(shapes (6, 2), (6, 4) mismatch)
+ x: array([[1., 1.],
+       [1., 1.],
+       [1., 1.],...
+ y: array([[1., 1., 1., 1.],
+       [1., 1., 1., 1.],
+       [1., 1., 1., 1.],...",False,0.293
+ds1000-0367,baseline,1,1,,6328,False,[],[],161,6489,0.022632600000000003,22633,5.3,1,success,1,0,,claude-sonnet-5-5,"import pickle
+result = pickle.loads(pickle.dumps(array_of_arrays))
+",fenced,Numpy,48.3,1,1,Origin,False,passed,False,0.343
+ds1000-0367,fabius-doctrina,1,1,,12154,True,[],[],349,12503,0.0465426,46543,6.2,1,success,1,0,,claude-sonnet-5-5,"import copy
+result = copy.deepcopy(array_of_arrays)
+",fenced,Numpy,49.0,1,1,Origin,False,passed,False,0.285
+ds1000-0376,baseline,1,1,,6187,False,[],[],56,6243,0.020902599999999997,20903,4.4,1,success,1,0,,claude-sonnet-5-5,"nums = np.zeros(size, dtype=int)
+nums[:int(size * one_ratio)] = 1
+np.random.shuffle(nums)
+",fenced,Numpy,44.9,1,1,Origin,False,passed,False,0.124
+ds1000-0376,fabius-doctrina,1,1,,11868,True,[],[],56,11924,0.0424686,42469,4.1,1,success,1,0,,claude-sonnet-5-5,"nums = np.zeros(size, dtype=int)
+nums[:int(one_ratio * size)] = 1
+np.random.shuffle(nums)
+",fenced,Numpy,44.7,1,1,Origin,False,passed,False,0.173
+ds1000-0377,baseline,1,1,,6074,False,[],[],17,6091,0.0199556,19956,5.0,1,success,1,0,,claude-sonnet-5-5,"a_np = a.numpy()
+",fenced,Numpy,196.4,1,1,Origin,False,passed,False,4.259
+ds1000-0377,fabius-doctrina,1,1,,11642,True,[],[],17,11659,0.0411746,41175,7.4,1,success,1,0,,claude-sonnet-5-5,"a_np = a.numpy()
+",fenced,Numpy,197.6,1,1,Origin,False,passed,False,2.842
+ds1000-0381,baseline,1,1,,6252,False,[],[],18,6270,0.020847599999999997,20848,4.5,1,success,1,0,,claude-sonnet-5-5,"result = np.argsort(-a)
+",fenced,Numpy,48.3,1,1,Origin,False,passed,False,0.31
+ds1000-0381,fabius-doctrina,1,1,,12000,True,[],[],28,12028,0.04271659999999999,42717,4.8,1,success,1,0,,claude-sonnet-5-5,"result = np.argsort(-a, kind='stable').tolist()
+",fenced,Numpy,48.7,1,1,Origin,False,passed,False,0.264
+ds1000-0383,baseline,1,1,,6240,False,[],[],22,6262,0.020826599999999997,20827,4.1,1,success,1,0,,claude-sonnet-5-5,"result = np.argsort(-a)[:N]
+",fenced,Numpy,48.5,1,1,Difficult-Rewrite,False,passed,False,0.248
+ds1000-0383,fabius-doctrina,1,1,,11980,True,[],[],28,12008,0.0426366,42637,6.1,1,success,1,0,,claude-sonnet-5-5,"result = np.argsort(-a, kind='stable')[:N]
+",fenced,Numpy,48.3,1,1,Difficult-Rewrite,False,passed,False,0.198
+ds1000-0384,baseline,1,1,,6233,False,[],[],25,6258,0.0208006,20801,3.8,1,success,1,0,,claude-sonnet-5-5,"result = np.linalg.matrix_power(A, n)
+",fenced,Numpy,48.4,1,1,Origin,False,passed,False,0.3
+ds1000-0384,fabius-doctrina,1,1,,11962,True,[],[],25,11987,0.0425346,42535,6.7,1,success,1,0,,claude-sonnet-5-5,"result = np.linalg.matrix_power(A, n)
+",fenced,Numpy,50.9,1,1,Origin,False,passed,False,0.213
+ds1000-0402,baseline,1,1,,6587,False,[],[],29,6616,0.0225876,22588,4.4,1,success,1,0,,claude-sonnet-5-5,"result = np.ravel_multi_index(index, dims, order='F')
+",fenced,Numpy,48.6,1,1,Origin,False,passed,False,0.259
+ds1000-0402,fabius-doctrina,1,1,,12664,True,[],[],29,12693,0.0453826,45383,21.6,1,success,1,0,,claude-sonnet-5-5,"result = np.ravel_multi_index(index, dims, order='F')
+",fenced,Numpy,49.7,1,1,Origin,False,passed,False,0.248
+ds1000-0411,baseline,1,1,,6421,False,[],[],103,6524,0.0224996,22500,4.0,1,success,1,0,,claude-sonnet-5-5,"n = high_index - low_index
+pad = max(0, -low_index, high_index - a.shape[0], high_index - a.shape[1])
+b = np.pad(a, pad, mode='constant')
+result = b[low_index + pad:high_index + pad, low_index + pad:high_index + pad]
+",fenced,Numpy,49.4,1,1,Origin,False,passed,False,0.311
+ds1000-0411,fabius-doctrina,1,1,,12330,True,[],[],536,12866,0.049116599999999996,49117,8.0,1,success,1,0,,claude-sonnet-5-5,"n = high_index - low_index
+lo = max(low_index, 0)
+hi = max(high_index, 0)
+src = a[lo:hi, lo:hi]
+off = lo - low_index
+result = np.zeros((n, n), dtype=a.dtype)
+result[off:off + src.shape[0], off:off + src.shape[1]] = src
+",fenced,Numpy,48.8,1,1,Origin,False,passed,False,0.269
+ds1000-0424,baseline,1,1,,7324,False,[],[],40,7364,0.026345599999999997,26346,4.9,1,success,1,0,,claude-sonnet-5-5,"result = df.values.reshape(len(names), len(times), -1).transpose(0, 2, 1)
+",fenced,Numpy,54.0,1,1,Semantic,False,passed,False,0.268
+ds1000-0424,fabius-doctrina,1,1,,14134,True,[],[],148,14282,0.0524526,52453,6.6,1,success,1,0,,claude-sonnet-5-5,"result = df.to_numpy().reshape(15, 5, 4).transpose(0, 2, 1)
+",fenced,Numpy,54.0,1,1,Semantic,False,passed,False,0.203
+ds1000-0433,baseline,1,1,,6236,False,[],[],34,6270,0.020952600000000002,20953,4.3,1,success,1,0,,claude-sonnet-5-5,"a[zero_rows, :] = 0
+a[:, zero_cols] = 0
+",fenced,Numpy,47.8,1,1,Origin,False,passed,False,0.206
+ds1000-0433,fabius-doctrina,1,1,,11964,True,[],[],34,11998,0.0426326,42633,4.0,1,success,1,0,,claude-sonnet-5-5,"a[zero_rows, :] = 0
+a[:, zero_cols] = 0
+",fenced,Numpy,48.1,1,1,Origin,False,passed,False,0.223
+ds1000-0437,baseline,1,1,,6193,False,[],[],30,6223,0.0206766,20677,4.2,1,success,1,0,,claude-sonnet-5-5,"mask = (a.min(axis=1, keepdims=True) == a)
+",fenced,Numpy,48.7,1,1,Semantic,False,passed,False,0.28
+ds1000-0437,fabius-doctrina,1,1,,11876,True,[],[],29,11905,0.0422306,42231,34.2,1,success,1,0,,claude-sonnet-5-5,"mask = (a == a.min(axis=1, keepdims=True))
+",fenced,Numpy,48.7,1,1,Semantic,False,passed,False,0.222
+ds1000-0438,baseline,1,1,,6301,False,[],[],28,6329,0.0211706,21171,4.5,1,success,1,0,,claude-sonnet-5-5,"result = np.corrcoef(post, distance)[0, 1]
+",fenced,Numpy,47.4,1,1,Origin,False,passed,False,0.143
+ds1000-0438,fabius-doctrina,1,1,,12096,True,[],[],28,12124,0.0431006,43101,3.9,1,success,1,0,,claude-sonnet-5-5,"result = np.corrcoef(post, distance)[0, 1]
+",fenced,Numpy,47.3,1,1,Origin,False,passed,False,0.162
+ds1000-0439,baseline,1,1,,6162,False,[],[],28,6190,0.0205006,20501,4.0,1,success,1,0,,claude-sonnet-5-5,"result = np.einsum('ij,kj->jik', X, X)
+",fenced,Numpy,49.9,1,1,Origin,False,passed,False,0.343
+ds1000-0439,fabius-doctrina,1,1,,11818,True,[],[],128,11946,0.042988599999999995,42989,4.7,1,success,1,0,,claude-sonnet-5-5,"result = np.einsum('ij,kj->jik', X, X)
+",fenced,Numpy,49.4,1,1,Origin,False,passed,False,0.239
+ds1000-0440,baseline,1,1,,6284,False,[],[],102,6386,0.021841600000000003,21842,5.1,1,success,1,0,,claude-sonnet-5-5,"X = np.sqrt(np.diagonal(Y, axis1=1, axis2=2)).T
+",fenced,Numpy,48.7,1,1,Difficult-Rewrite,False,passed,False,0.254
+ds1000-0440,fabius-doctrina,1,1,,12066,True,[],[],208,12274,0.0447806,44781,5.1,1,success,1,0,,claude-sonnet-5-5,"X = np.sqrt(np.diagonal(Y, axis1=1, axis2=2)).T
+",fenced,Numpy,48.7,1,1,Difficult-Rewrite,False,passed,False,0.212
+ds1000-0442,baseline,1,1,,6269,False,[],[],22,6291,0.0209816,20982,3.7,1,success,1,0,,claude-sonnet-5-5,"C = A[~np.isin(A, B)]
+",fenced,Numpy,49.7,1,1,Origin,False,passed,False,0.265
+ds1000-0442,fabius-doctrina,1,1,,12026,True,[],[],22,12048,0.042760599999999996,42761,5.6,1,success,1,0,,claude-sonnet-5-5,"C = A[~np.isin(A, B)]
+",fenced,Numpy,49.1,1,1,Origin,False,passed,False,0.221
+ds1000-0443,baseline,1,1,,6266,False,[],[],21,6287,0.0209506,20951,4.2,1,success,1,0,,claude-sonnet-5-5,"C = A[np.isin(A, B)]
+",fenced,Numpy,49.0,1,1,Semantic,False,passed,False,0.313
+ds1000-0443,fabius-doctrina,1,1,,12022,True,[],[],21,12043,0.042734600000000005,42735,3.9,1,success,1,0,,claude-sonnet-5-5,"C = A[np.isin(A, B)]
+",fenced,Numpy,49.3,1,1,Semantic,False,passed,False,0.264
+ds1000-0447,baseline,1,0,,6247,False,[],[],855,7102,0.029189600000000003,29190,10.0,1,success,1,0,,claude-sonnet-5-5,"    result = len(a) + 1 - rankdata(a, method='ordinal')
+    result = rankdata(-np.array(a), method='min').astype(int)
+    return result
+",fenced,Numpy,90.4,3,0,Surface,False,"failed: 
+Arrays are not equal
+
+Mismatched elements: 1 / 8 (12.5%)
+Max absolute difference: 1
+Max relative difference: 0.14285714
+ x: array([8, 6, 3, 1, 3, 6, 3, 1])
+ y: array([7, 6, 3, 1, 3, 6, 3, 1])",False,1.127
+ds1000-0447,fabius-doctrina,1,0,,11990,True,[],[],110,12100,0.043496599999999996,43497,5.0,1,success,1,0,,claude-sonnet-5-5,"    return len(a) + 1 - rankdata(a, method='max').astype(int)
+",fenced,Numpy,91.0,1,0,Surface,False,"failed: 
+Arrays are not equal
+
+Mismatched elements: 1 / 8 (12.5%)
+Max absolute difference: 1
+Max relative difference: 0.14285714
+ x: array([8, 6, 3, 1, 3, 6, 3, 1])
+ y: array([7, 6, 3, 1, 3, 6, 3, 1])",False,0.95
+ds1000-0450,baseline,1,1,,6498,False,[],[],23,6521,0.022117599999999998,22118,4.0,1,success,1,0,,claude-sonnet-5-5,"result = a[:, second, :][:, :, third]
+",fenced,Numpy,49.4,1,1,Origin,False,passed,False,0.246
+ds1000-0450,fabius-doctrina,1,1,,12486,True,[],[],23,12509,0.0446106,44611,4.5,1,success,1,0,,claude-sonnet-5-5,"result = a[:, second, :][:, :, third]
+",fenced,Numpy,48.9,1,1,Origin,False,passed,False,0.24
+ds1000-0454,baseline,1,1,,6356,False,[],[],34,6390,0.0215276,21528,13.7,1,success,1,0,,claude-sonnet-5-5,"result = X / np.max(np.abs(X), axis=1, keepdims=True)
+",fenced,Numpy,45.1,1,1,Semantic,False,passed,False,0.28
+ds1000-0454,fabius-doctrina,1,1,,12210,True,[],[],34,12244,0.0436166,43617,4.6,1,success,1,0,,claude-sonnet-5-5,"result = X / np.max(np.abs(X), axis=1, keepdims=True)
+",fenced,Numpy,45.2,1,1,Semantic,False,passed,False,0.131
+ds1000-0457,baseline,1,1,,6358,False,[],[],49,6407,0.021659599999999998,21660,6.1,1,success,1,0,,claude-sonnet-5-5,"result = np.sqrt(((a[:, None, :] - a[None, :, :]) ** 2).sum(axis=-1))
+",fenced,Numpy,49.5,1,1,Surface,False,passed,False,0.235
+ds1000-0457,fabius-doctrina,1,1,,12208,True,[],[],33,12241,0.0435986,43599,4.8,1,success,1,0,,claude-sonnet-5-5,"from scipy.spatial.distance import cdist
+result = cdist(a, a)
+",fenced,Numpy,64.4,1,1,Surface,False,passed,False,0.751
+ds1000-0460,baseline,1,1,,6216,False,[],[],29,6245,0.0207696,20770,3.5,1,success,1,0,,claude-sonnet-5-5,"AVG = np.mean(NA.astype(float), axis=0)
+",fenced,Numpy,48.7,1,1,Surface,False,passed,False,0.274
+ds1000-0460,fabius-doctrina,1,1,,11926,True,[],[],42,11968,0.0425606,42561,4.1,1,success,1,0,,claude-sonnet-5-5,"NA = np.asarray(A, dtype=float)
+AVG = np.mean(NA, axis=0)
+",fenced,Numpy,49.0,1,1,Surface,False,passed,False,0.226
+ds1000-0469,baseline,1,1,,6329,False,[],[],44,6373,0.0214436,21444,4.8,1,success,1,0,,claude-sonnet-5-5,"n = len(a)
+result = np.sum(a.real) / n + 1j * np.sum(a.imag) / n
+",fenced,Numpy,49.0,1,1,Origin,False,passed,False,0.313
+ds1000-0469,fabius-doctrina,1,1,,12152,True,[],[],169,12321,0.0447346,44735,5.6,1,success,1,0,,claude-sonnet-5-5,"result = np.mean(a.real) + 1j * np.mean(a.imag)
+",fenced,Numpy,48.9,1,1,Origin,False,passed,False,0.191
+ds1000-0483,baseline,1,1,,6285,False,[],[],23,6308,0.021044599999999997,21045,5.6,1,success,1,0,,claude-sonnet-5-5,"result = np.polyfit(x, y, degree)
+",fenced,Numpy,53.3,1,1,Semantic,False,passed,False,0.283
+ds1000-0483,fabius-doctrina,1,1,,12072,True,[],[],23,12095,0.0429546,42955,3.9,1,success,1,0,,claude-sonnet-5-5,"result = np.polyfit(x, y, degree)
+",fenced,Numpy,51.5,1,1,Semantic,False,passed,False,0.203
+ds1000-0485,baseline,1,0,,6278,False,[],[],152,6430,0.0222876,22288,5.1,1,success,1,0,,claude-sonnet-5-5,"result = np.einsum('ijk,lk->ijl', A, B)
+",fenced,Numpy,49.6,1,0,Origin,False,"failed: 
+Not equal to tolerance rtol=1e-07, atol=0
+
+Mismatched elements: 90 / 90 (100%)
+Max absolute difference: 0.35578903
+Max relative difference: 0.39900012
+ x: array([[[1.279775, 1.304646, 0.62086 ],
+        [0.301554, 0.533328, 0.383608],
+        [1.082061, 0.997222, 0.415968],...
+ y: array([[[0.961044, 1.313066, 0.77301 ],
+        [0.240709, 0.613969, 0.536457],
+        [0.807334, 0.966223, 0.487183],...",False,0.238
+ds1000-0485,fabius-doctrina,1,0,,12044,True,[],[],159,12203,0.0442026,44203,5.3,1,success,1,0,,claude-sonnet-5-5,"result = np.einsum('ijk,lk->ijl', A, B)
+",fenced,Numpy,49.8,1,0,Origin,False,"failed: 
+Not equal to tolerance rtol=1e-07, atol=0
+
+Mismatched elements: 90 / 90 (100%)
+Max absolute difference: 0.35578903
+Max relative difference: 0.39900012
+ x: array([[[1.279775, 1.304646, 0.62086 ],
+        [0.301554, 0.533328, 0.383608],
+        [1.082061, 0.997222, 0.415968],...
+ y: array([[[0.961044, 1.313066, 0.77301 ],
+        [0.240709, 0.613969, 0.536457],
+        [0.807334, 0.966223, 0.487183],...",False,0.285
+ds1000-0487,baseline,1,1,,6559,False,[],[],117,6676,0.023321599999999998,23322,6.9,1,success,1,0,,claude-sonnet-5-5,"result = MinMaxScaler().fit_transform(arr.T).T
+",fenced,Numpy,98.9,1,1,Semantic,False,passed,False,1.467
+ds1000-0487,fabius-doctrina,1,1,,12606,True,[],[],142,12748,0.0462806,46281,12.5,1,success,1,0,,claude-sonnet-5-5,"result = (arr - arr.min(axis=1, keepdims=True)) / (arr.max(axis=1, keepdims=True) - arr.min(axis=1, keepdims=True))
+",fenced,Numpy,99.0,1,1,Semantic,False,passed,False,1.382
+ds1000-0496,baseline,1,1,,6195,False,[],[],137,6332,0.0217486,21749,5.0,1,success,1,0,,claude-sonnet-5-5,"result = np.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), mode='constant')
+",fenced,Numpy,49.3,1,1,Surface,False,passed,False,0.27
+ds1000-0496,fabius-doctrina,1,1,,11882,True,[],[],86,11968,0.0428246,42825,4.8,1,success,1,0,,claude-sonnet-5-5,"result = np.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), 'constant')
+",fenced,Numpy,49.2,1,1,Surface,False,passed,False,0.208
+ds1000-0498,baseline,1,1,,6220,False,[],[],122,6342,0.021715599999999998,21716,5.2,1,success,1,0,,claude-sonnet-5-5,"    result = np.pad(arr, ((0, shape[0] - arr.shape[0]), (0, shape[1] - arr.shape[1])), 'constant')
+    return result
+",fenced,Numpy,49.1,1,1,Surface,False,passed,False,0.238
+ds1000-0498,fabius-doctrina,1,1,,11930,True,[],[],125,12055,0.043406600000000004,43407,6.2,1,success,1,0,,claude-sonnet-5-5,"    result = np.pad(arr, ((0, shape[0] - arr.shape[0]), (0, shape[1] - arr.shape[1])), 'constant')
+    return result
+",fenced,Numpy,48.9,1,1,Surface,False,passed,False,0.212
+ds1000-0503,baseline,1,1,,6708,False,[],[],39,6747,0.0233026,23303,4.2,1,success,1,0,,claude-sonnet-5-5,"result = np.take_along_axis(a, b[..., None], axis=2).squeeze(-1)
+",fenced,Numpy,48.4,1,1,Semantic,False,passed,False,0.244
+ds1000-0503,fabius-doctrina,1,1,,12906,True,[],[],39,12945,0.0464506,46451,4.7,1,success,1,0,,claude-sonnet-5-5,"result = np.take_along_axis(a, b[..., None], axis=2).squeeze(-1)
+",fenced,Numpy,48.4,1,1,Semantic,False,passed,False,0.266
+ds1000-0508,baseline,1,1,,6423,False,[],[],121,6544,0.0226986,22699,5.2,1,success,1,0,,claude-sonnet-5-5,"rows = np.any(A != 0, axis=1)
+cols = np.any(A != 0, axis=0)
+rmin, rmax = np.where(rows)[0][[0, -1]]
+cmin, cmax = np.where(cols)[0][[0, -1]]
+result = A[rmin:rmax + 1, cmin:cmax + 1]
+",fenced,Numpy,49.1,1,1,Surface,False,passed,False,0.271
+ds1000-0508,fabius-doctrina,1,1,,12338,True,[],[],36,12374,0.0441486,44149,4.1,1,success,1,0,,claude-sonnet-5-5,"result = A[np.ix_(A.any(axis=1), A.any(axis=0))]
+",fenced,Numpy,48.9,1,1,Surface,False,passed,False,0.226
+ds1000-0515,baseline,1,0,,6060,False,[],[],101,6161,0.020721600000000003,20722,4.1,1,success,1,0,,claude-sonnet-5-5,"styles = [""-"", ""--"", ""-."", "":""]
+for i, ls in enumerate(styles):
+    y = np.random.randn(10)
+    plt.plot(x, y, linestyle=ls, label=f""linestyle '{ls}'"")
+plt.legend()
+plt.show()
+",fenced,Matplotlib,159.2,1,0,Origin,False,failed: ,False,3.089
+ds1000-0515,fabius-doctrina,1,0,,11616,True,[],[],98,11714,0.041880600000000004,41881,5.6,1,success,1,0,,claude-sonnet-5-5,"line_styles = [""-"", ""--"", ""-."", "":""]
+for ls in line_styles:
+    y = np.random.rand(10)
+    plt.plot(x, y, linestyle=ls, label=f""linestyle '{ls}'"")
+plt.legend()
+plt.show()
+",fenced,Matplotlib,134.9,1,0,Origin,False,failed: ,False,2.514
+ds1000-0516,baseline,1,0,,6060,False,[],[],85,6145,0.020561600000000003,20562,6.1,1,success,1,0,,claude-sonnet-5-5,"styles = [""-"", ""--"", ""-."", "":""]
+for s in styles:
+    y = np.random.randn(10)
+    plt.plot(x, y, linestyle=s, label=f""linestyle '{s}'"")
+plt.legend()
+",fenced,Matplotlib,138.3,1,0,Semantic,False,failed: ,False,2.587
+ds1000-0516,fabius-doctrina,1,0,,11616,True,[],[],95,11711,0.0418506,41851,3.6,1,success,1,0,,claude-sonnet-5-5,"styles = [""-"", ""--"", ""-."", "":""]
+for i, ls in enumerate(styles):
+    y = np.random.randn(10)
+    plt.plot(x, y, linestyle=ls, label=f""linestyle '{ls}'"")
+plt.legend()
+",fenced,Matplotlib,138.4,1,0,Semantic,False,failed: ,False,2.573
+ds1000-0524,baseline,1,1,,6082,False,[],[],29,6111,0.0201166,20117,4.6,1,success,1,0,,claude-sonnet-5-5,"sns.lineplot(x=x, y=y)
+plt.show()
+",fenced,Matplotlib,157.1,1,1,Origin,False,passed,False,2.53
+ds1000-0524,fabius-doctrina,1,1,,11656,True,[],[],29,11685,0.0413506,41351,4.1,1,success,1,0,,claude-sonnet-5-5,"sns.lineplot(x=x, y=y)
+plt.show()
+",fenced,Matplotlib,138.5,1,1,Origin,False,passed,False,2.437
+ds1000-0527,baseline,1,1,,6100,False,[],[],20,6120,0.0201116,20112,6.9,1,success,1,0,,claude-sonnet-5-5,"plt.legend(fontsize=20)
+",fenced,Matplotlib,156.0,1,1,Origin,False,passed,False,2.726
+ds1000-0527,fabius-doctrina,1,1,,11688,True,[],[],20,11708,0.0413886,41389,6.5,1,success,1,0,,claude-sonnet-5-5,"plt.legend(fontsize=20)
+",fenced,Matplotlib,155.7,1,1,Origin,False,passed,False,2.755
+ds1000-0531,baseline,1,1,,6108,False,[],[],45,6153,0.020408600000000002,20409,4.5,1,success,1,0,,claude-sonnet-5-5,"l.set_color(""red"")
+l.set_markerfacecolor(""red"")
+l.set_markeredgecolor(""red"")
+",fenced,Matplotlib,156.9,1,1,Semantic,False,passed,False,2.66
+ds1000-0531,fabius-doctrina,1,1,,11706,True,[],[],45,11751,0.0417106,41711,4.2,1,success,1,0,,claude-sonnet-5-5,"l.set_color(""red"")
+l.set_markerfacecolor(""red"")
+l.set_markeredgecolor(""red"")
+",fenced,Matplotlib,153.0,1,1,Semantic,False,passed,False,2.383
+ds1000-0534,baseline,1,1,,6107,False,[],[],36,6143,0.0203276,20328,3.5,1,success,1,0,,claude-sonnet-5-5,"plt.xticks(np.arange(0, 2 * np.pi + 1, 2))
+",fenced,Matplotlib,158.2,1,1,Semantic,False,passed,False,2.681
+ds1000-0534,fabius-doctrina,1,1,,11702,True,[],[],33,11735,0.041574599999999996,41575,3.6,1,success,1,0,,claude-sonnet-5-5,"plt.xticks(np.arange(0, 2 * np.pi, 2))
+",fenced,Matplotlib,159.6,1,1,Semantic,False,passed,False,2.357
+ds1000-0537,baseline,1,1,,6047,False,[],[],29,6076,0.0199706,19971,4.7,1,success,1,0,,claude-sonnet-5-5,"plt.imshow(H, cmap=""gray"")
+plt.show()
+",fenced,Matplotlib,97.4,1,1,Semantic,False,passed,False,1.519
+ds1000-0537,fabius-doctrina,1,1,,11588,True,[],[],29,11617,0.0410786,41079,4.4,1,success,1,0,,claude-sonnet-5-5,"plt.imshow(H, cmap='gray')
+plt.show()
+",fenced,Matplotlib,97.4,1,1,Semantic,False,passed,False,1.461
+ds1000-0541,baseline,1,1,,6062,False,[],[],32,6094,0.0200526,20053,4.9,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.gca().invert_yaxis()
+",fenced,Matplotlib,75.9,1,1,Origin,False,passed,False,1.485
+ds1000-0541,fabius-doctrina,1,1,,11616,True,[],[],32,11648,0.0412206,41221,4.5,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.gca().invert_yaxis()
+",fenced,Matplotlib,75.5,1,1,Origin,False,passed,False,1.593
+ds1000-0542,baseline,1,1,,6082,False,[],[],21,6103,0.020036599999999998,20037,3.6,1,success,1,0,,claude-sonnet-5-5,"plt.xticks([0, 1.5])
+",fenced,Matplotlib,130.5,1,1,Origin,False,passed,False,2.483
+ds1000-0542,fabius-doctrina,1,1,,11652,True,[],[],21,11673,0.0412546,41255,3.9,1,success,1,0,,claude-sonnet-5-5,"plt.xticks([0, 1.5])
+",fenced,Matplotlib,130.2,1,1,Origin,False,passed,False,2.294
+ds1000-0547,baseline,1,1,,6161,False,[],[],28,6189,0.020500599999999997,20501,3.9,1,success,1,0,,claude-sonnet-5-5,"plt.ticklabel_format(style=""plain"", axis=""y"")
+",fenced,Matplotlib,170.2,1,1,Origin,False,passed,False,3.278
+ds1000-0547,fabius-doctrina,1,1,,11818,True,[],[],52,11870,0.0422286,42229,4.2,1,success,1,0,,claude-sonnet-5-5,"ax = plt.gca()
+for a in plt.gcf().axes:
+    a.ticklabel_format(style=""plain"", axis=""y"")
+",fenced,Matplotlib,163.8,1,1,Origin,False,passed,False,2.928
+ds1000-0550,baseline,1,0,,6119,False,[],[],98,6217,0.0209946,20995,4.9,1,success,1,0,,claude-sonnet-5-5,"fig, (ax1, ax2) = plt.subplots(1, 2)
+ax1.plot(x, y1)
+ax2.plot(x, y2)
+for ax in (ax1, ax2):
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+",fenced,Matplotlib,130.8,1,0,Semantic,False,failed: ,False,2.757
+ds1000-0550,fabius-doctrina,1,0,,11726,True,[],[],108,11834,0.042420599999999996,42421,4.7,1,success,1,0,,claude-sonnet-5-5,"fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+ax1.plot(x, y1)
+ax2.plot(x, y2)
+for ax in (ax1, ax2):
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+",fenced,Matplotlib,132.7,1,0,Semantic,False,failed: ,False,2.799
+ds1000-0553,baseline,1,0,,6094,False,[],[],218,6312,0.022076600000000002,22077,4.8,1,success,1,0,,claude-sonnet-5-5,"plt.xticks(np.arange(10))
+ax = plt.gca()
+ax.xaxis.grid(True, which=""major"")
+ax.set_xticks([3, 4], minor=True)
+ax.xaxis.grid(True, which=""minor"")
+ax.xaxis.grid(False, which=""major"")
+",fenced,Matplotlib,130.3,2,0,Origin,False,"failed: 
+Arrays are not equal
+
+(shapes (2,), (10,) mismatch)
+ x: array([3, 4])
+ y: array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])",False,2.458
+ds1000-0553,fabius-doctrina,1,1,,11678,True,[],[],43,11721,0.0415786,41579,6.7,1,success,1,0,,claude-sonnet-5-5,"plt.xticks([3, 4])
+ax = plt.gca()
+ax.xaxis.grid(True)
+",fenced,Matplotlib,131.9,1,1,Origin,False,passed,False,2.337
+ds1000-0557,baseline,1,1,,6083,False,[],[],20,6103,0.0200266,20027,3.6,1,success,1,0,,claude-sonnet-5-5,"plt.legend(loc=""lower right"")
+",fenced,Matplotlib,130.1,1,1,Origin,False,passed,False,2.721
+ds1000-0557,fabius-doctrina,1,1,,11656,True,[],[],20,11676,0.0412606,41261,4.4,1,success,1,0,,claude-sonnet-5-5,"plt.legend(loc=""lower right"")
+",fenced,Matplotlib,130.3,1,1,Origin,False,passed,False,2.313
+ds1000-0560,baseline,1,1,,6127,False,[],[],37,6164,0.0204286,20429,4.5,1,success,1,0,,claude-sonnet-5-5,"ax.xaxis.tick_top()
+ax.xaxis.set_label_position(""top"")
+",fenced,Matplotlib,102.7,1,1,Origin,False,passed,False,2.086
+ds1000-0560,fabius-doctrina,1,1,,11748,True,[],[],20,11768,0.0416286,41629,5.4,1,success,1,0,,claude-sonnet-5-5,"ax.xaxis.tick_top()
+",fenced,Matplotlib,101.1,1,1,Origin,False,passed,False,1.993
+ds1000-0561,baseline,1,1,,6089,False,[],[],35,6124,0.0202226,20223,4.8,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.xlabel(""X"", labelpad=20)
+",fenced,Matplotlib,76.7,1,1,Origin,False,passed,False,1.591
+ds1000-0561,fabius-doctrina,1,1,,11676,True,[],[],35,11711,0.041490599999999996,41491,8.3,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.xlabel(""X"", labelpad=20)
+",fenced,Matplotlib,78.2,1,1,Origin,False,passed,False,1.345
+ds1000-0563,baseline,1,1,,6066,False,[],[],58,6124,0.020345600000000002,20346,6.6,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+ax = plt.gca()
+ax.yaxis.tick_right()
+ax.yaxis.set_label_position(""right"")
+",fenced,Matplotlib,95.7,1,1,Origin,False,passed,False,1.458
+ds1000-0563,fabius-doctrina,1,1,,11630,True,[],[],58,11688,0.0415366,41537,4.5,1,success,1,0,,claude-sonnet-5-5,"ax = plt.gca()
+ax.plot(x, y)
+ax.yaxis.tick_right()
+ax.yaxis.set_label_position(""right"")
+",fenced,Matplotlib,95.8,1,1,Origin,False,passed,False,1.266
+ds1000-0567,baseline,1,0,,6111,False,[],[],44,6155,0.020404600000000002,20405,9.4,1,success,1,0,,claude-sonnet-5-5,"sns.jointplot(x=""total_bill"", y=""tip"", data=tips, kind=""reg"")
+plt.show()
+",fenced,Matplotlib,180.9,1,0,Semantic,False,failed: ,False,5.528
+ds1000-0567,fabius-doctrina,1,0,,11712,True,[],[],38,11750,0.041664599999999996,41665,3.6,1,success,1,0,,claude-sonnet-5-5,"sns.jointplot(data=tips, x=""total_bill"", y=""tip"", kind=""reg"")
+",fenced,Matplotlib,182.9,1,0,Semantic,False,failed: ,False,5.289
+ds1000-0573,baseline,1,1,,6041,False,[],[],43,6084,0.020055600000000003,20056,3.8,1,success,1,0,,claude-sonnet-5-5,"for x in [0.22058956, 0.33088437, 2.20589566]:
+    plt.axvline(x)
+",fenced,Matplotlib,103.6,1,1,Origin,False,passed,False,1.483
+ds1000-0573,fabius-doctrina,1,1,,11578,True,[],[],48,11626,0.041228600000000004,41229,4.2,1,success,1,0,,claude-sonnet-5-5,"plt.axvline(0.22058956)
+plt.axvline(0.33088437)
+plt.axvline(2.20589566)
+",fenced,Matplotlib,105.6,1,1,Origin,False,passed,False,1.565
+ds1000-0583,baseline,1,1,,6113,False,[],[],73,6186,0.0206976,20698,3.8,1,success,1,0,,claude-sonnet-5-5,"plt.hist(x, bins=bins, alpha=0.5, label=""x"")
+plt.hist(y, bins=bins, alpha=0.5, label=""y"")
+plt.legend()
+plt.show()
+",fenced,Matplotlib,86.1,1,1,Origin,False,passed,False,2.611
+ds1000-0583,fabius-doctrina,1,1,,11720,True,[],[],73,11793,0.0420466,42047,4.7,1,success,1,0,,claude-sonnet-5-5,"plt.hist(x, bins=bins, alpha=0.5, label='x')
+plt.hist(y, bins=bins, alpha=0.5, label='y')
+plt.legend()
+plt.show()
+",fenced,Matplotlib,106.7,1,1,Origin,False,passed,False,2.954
+ds1000-0593,baseline,1,1,,6104,False,[],[],252,6356,0.0224686,22469,5.2,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.xscale(""log"")
+plt.yscale(""log"")
+ax = plt.gca()
+ax.xaxis.set_major_formatter(plt.matplotlib.ticker.ScalarFormatter())
+ax.yaxis.set_major_formatter(plt.matplotlib.ticker.ScalarFormatter())
+ax.xaxis.get_major_formatter().set_scientific(False)
+ax.yaxis.get_major_formatter().set_scientific(False)
+plt.show()
+",fenced,Matplotlib,84.0,1,1,Origin,False,passed,False,2.389
+ds1000-0593,fabius-doctrina,1,1,,11700,True,[],[],153,11853,0.042766599999999995,42767,4.9,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.xscale(""log"")
+plt.yscale(""log"")
+ax = plt.gca()
+ax.set_xticks([1, 10, 100, 1000])
+ax.set_yticks([1, 10, 100, 1000])
+ax.get_xaxis().set_major_formatter(plt.ScalarFormatter())
+ax.get_yaxis().set_major_formatter(plt.ScalarFormatter())
+",fenced,Matplotlib,86.6,1,1,Origin,False,passed,False,2.789
+ds1000-0596,baseline,1,1,,6094,False,[],[],71,6165,0.0205916,20592,4.0,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, marker=""o"", markerfacecolor=(0, 0, 1, 0.5), markeredgecolor=(0, 0, 1, 0.5), color=""blue"")
+",fenced,Matplotlib,104.7,1,1,Origin,False,passed,False,1.711
+ds1000-0596,fabius-doctrina,1,1,,11686,True,[],[],77,11763,0.0419506,41951,4.6,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, marker=""o"", markerfacecolor=(0, 0, 1, 0.5), markeredgecolor=(0, 0, 1, 0.5), linestyle=""-"", color=""b"")
+",fenced,Matplotlib,101.0,1,1,Origin,False,passed,False,1.502
+ds1000-0600,baseline,1,1,,6074,False,[],[],35,6109,0.0201406,20141,10.3,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, label=r""$\lambda$"")
+plt.legend()
+",fenced,Matplotlib,111.3,1,1,Origin,False,passed,False,1.774
+ds1000-0600,fabius-doctrina,1,1,,11644,True,[],[],35,11679,0.0413626,41363,6.0,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, label=r""$\lambda$"")
+plt.legend()
+",fenced,Matplotlib,109.6,1,1,Origin,False,passed,False,1.608
+ds1000-0603,baseline,1,0,,6095,False,[],[],33,6128,0.0202346,20235,4.0,1,success,1,0,,claude-sonnet-5-5,"plt.yticks(rotation=-60)
+plt.xticks(va=""top"")
+",fenced,Matplotlib,100.5,1,0,Semantic,False,failed: ,False,1.545
+ds1000-0603,fabius-doctrina,1,0,,11688,True,[],[],33,11721,0.041518599999999996,41519,8.2,1,success,1,0,,claude-sonnet-5-5,"plt.yticks(rotation=-60)
+plt.xticks(va=""top"")
+",fenced,Matplotlib,99.4,1,0,Semantic,False,failed: ,False,1.361
+ds1000-0611,baseline,1,1,,6071,False,[],[],35,6106,0.0201276,20128,7.8,1,success,1,0,,claude-sonnet-5-5,"plt.scatter(x, y, marker=""*"", hatch=""*"")
+plt.show()
+",fenced,Matplotlib,103.0,1,1,Semantic,False,passed,False,1.695
+ds1000-0611,fabius-doctrina,1,1,,11638,True,[],[],29,11667,0.0412786,41279,4.2,1,success,1,0,,claude-sonnet-5-5,"plt.scatter(x, y, marker=""*"", hatch=""***"")
+",fenced,Matplotlib,103.3,1,1,Semantic,False,passed,False,1.83
+ds1000-0612,baseline,1,0,,6094,False,[],[],29,6123,0.0191026,19103,3.9,1,success,1,0,,claude-sonnet-5-5,"plt.scatter(x, y, s=100, hatch=""*|"")
+",fenced,Matplotlib,103.2,1,0,Semantic,False,failed: ,False,1.495
+ds1000-0612,fabius-doctrina,1,0,,11678,True,[],[],149,11827,0.0426386,42639,5.1,1,success,1,0,,claude-sonnet-5-5,"plt.scatter(x, y, s=100, marker=None, hatch=""*|"")
+",fenced,Matplotlib,101.1,2,0,Semantic,False,failed: ,False,1.787
+ds1000-0613,baseline,1,1,,6097,False,[],[],57,6154,0.0204776,20478,7.8,1,success,1,0,,claude-sonnet-5-5,"plt.xlim(0, 10)
+plt.ylim(0, 10)
+plt.imshow(data, extent=[1, 5, 1, 4])
+",fenced,Matplotlib,96.4,1,1,Origin,False,passed,False,1.569
+ds1000-0613,fabius-doctrina,1,1,,11682,True,[],[],57,11739,0.041734600000000004,41735,4.6,1,success,1,0,,claude-sonnet-5-5,"plt.xlim(0, 10)
+plt.ylim(0, 10)
+plt.imshow(data, extent=[1, 5, 1, 4])
+",fenced,Matplotlib,98.5,1,1,Origin,False,passed,False,1.392
+ds1000-0617,baseline,1,1,,6070,False,[],[],34,6104,0.0201086,20109,6.1,1,success,1,0,,claude-sonnet-5-5,"plt.subplot(111, projection=""polar"")
+plt.bar(labels, height)
+",fenced,Matplotlib,91.6,1,1,Origin,False,passed,False,2.123
+ds1000-0617,fabius-doctrina,1,1,,11628,True,[],[],48,11676,0.0414286,41429,6.4,1,success,1,0,,claude-sonnet-5-5,"fig, ax = plt.subplots(subplot_kw={""projection"": ""polar""})
+ax.bar(labels, height)
+",fenced,Matplotlib,91.2,1,1,Origin,False,passed,False,1.832
+ds1000-0622,baseline,1,1,,6125,False,[],[],48,6173,0.0205076,20508,4.4,1,success,1,0,,claude-sonnet-5-5,"plt.pie(sizes, labels=labels, colors=colors, textprops={""weight"": ""bold""})
+plt.show()
+",fenced,Matplotlib,91.2,1,1,Origin,False,passed,False,1.412
+ds1000-0622,fabius-doctrina,1,1,,11746,True,[],[],48,11794,0.0419006,41901,4.1,1,success,1,0,,claude-sonnet-5-5,"plt.pie(sizes, labels=labels, colors=colors, textprops={""weight"": ""bold""})
+plt.show()
+",fenced,Matplotlib,93.6,1,1,Origin,False,passed,False,1.192
+ds1000-0625,baseline,1,1,,6129,False,[],[],83,6212,0.0208976,20898,6.2,1,success,1,0,,claude-sonnet-5-5,"x = np.arange(len(blue_bar))
+width = 0.35
+
+plt.bar(x - width / 2, blue_bar, width, color=""blue"")
+plt.bar(x + width / 2, orange_bar, width, color=""orange"")
+",fenced,Matplotlib,79.8,1,1,Origin,False,passed,False,1.783
+ds1000-0625,fabius-doctrina,1,1,,11750,True,[],[],81,11831,0.0422466,42247,4.6,1,success,1,0,,claude-sonnet-5-5,"x = np.arange(len(blue_bar))
+width = 0.35
+plt.bar(x - width/2, blue_bar, width, color=""blue"")
+plt.bar(x + width/2, orange_bar, width, color=""orange"")
+",fenced,Matplotlib,81.6,1,1,Origin,False,passed,False,1.474
+ds1000-0639,baseline,1,1,,6060,False,[],[],32,6092,0.020046599999999998,20047,5.9,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.gca().invert_xaxis()
+",fenced,Matplotlib,98.8,1,1,Origin,False,passed,False,1.639
+ds1000-0639,fabius-doctrina,1,1,,11616,True,[],[],32,11648,0.0412206,41221,4.4,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.gca().invert_xaxis()
+",fenced,Matplotlib,96.5,1,1,Origin,False,passed,False,1.42
+ds1000-0647,baseline,1,1,,6141,False,[],[],93,6234,0.0210576,21058,4.2,1,success,1,0,,claude-sonnet-5-5,"fig, axes = plt.subplots(1, 2)
+axes[0].plot(x, y)
+axes[0].set_title(""Y"")
+axes[1].plot(a, z)
+axes[1].set_title(""Z"", y=1.08)
+plt.tight_layout()
+",fenced,Matplotlib,79.5,1,1,Origin,False,passed,False,2.431
+ds1000-0647,fabius-doctrina,1,1,,11768,True,[],[],83,11851,0.0423386,42339,4.3,1,success,1,0,,claude-sonnet-5-5,"fig, axes = plt.subplots(1, 2)
+axes[0].plot(x, y)
+axes[0].set_title(""Y"")
+axes[1].plot(a, z)
+axes[1].set_title(""Z"", y=1.08)
+",fenced,Matplotlib,103.5,1,1,Origin,False,passed,False,2.049
+ds1000-0652,baseline,1,1,,6079,False,[],[],51,6130,0.0203406,20341,5.4,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.tick_params(top=True, bottom=True, labeltop=True, labelbottom=True)
+",fenced,Matplotlib,79.2,1,1,Semantic,False,passed,False,1.865
+ds1000-0652,fabius-doctrina,1,1,,11656,True,[],[],51,11707,0.0415706,41571,7.6,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.tick_params(top=True, bottom=True, labeltop=True, labelbottom=True)
+",fenced,Matplotlib,81.1,1,1,Semantic,False,passed,False,1.863
+ds1000-0657,baseline,1,1,,6071,False,[],[],35,6106,0.0201236,20124,4.5,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, label=""y"")
+plt.legend(fontsize=8)
+",fenced,Matplotlib,98.5,1,1,Origin,False,passed,False,1.435
+ds1000-0657,fabius-doctrina,1,1,,11631,True,[],[],35,11666,0.041310599999999996,41311,5.3,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, label=""y"")
+plt.legend(fontsize=8)
+",fenced,Matplotlib,102.9,1,1,Origin,False,passed,False,1.462
+ds1000-0659,baseline,1,1,,6077,False,[],[],34,6111,0.0201356,20136,4.1,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, label=""y"")
+plt.legend(frameon=False)
+",fenced,Matplotlib,104.0,1,1,Origin,False,passed,False,1.521
+ds1000-0659,fabius-doctrina,1,1,,11646,True,[],[],34,11680,0.041360600000000004,41361,5.1,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y, label=""y"")
+plt.legend(frameon=False)
+",fenced,Matplotlib,102.5,1,1,Origin,False,passed,False,1.544
+ds1000-0661,baseline,1,1,,6124,False,[],[],53,6177,0.0205596,20560,4.9,1,success,1,0,,claude-sonnet-5-5,"ax = sns.stripplot(data=df, x=""sex"", y=""bill_length_mm"", hue=""species"")
+ax.legend_.remove()
+",fenced,Matplotlib,162.6,1,1,Origin,False,passed,False,3.012
+ds1000-0661,fabius-doctrina,1,1,,11748,True,[],[],44,11792,0.0418686,41869,4.3,1,success,1,0,,claude-sonnet-5-5,"sns.stripplot(data=df, x=""sex"", y=""bill_length_mm"", hue=""species"", legend=False)
+",fenced,Matplotlib,163.3,1,1,Origin,False,passed,False,2.562
+ds1000-0664,baseline,1,1,,6089,False,[],[],63,6152,0.0204916,20492,4.0,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.xlabel(""x"")
+plt.ylabel(""y"")
+plt.tick_params(labelbottom=False, labelleft=False)
+",fenced,Matplotlib,75.8,1,1,Origin,False,passed,False,1.54
+ds1000-0664,fabius-doctrina,1,1,,11672,True,[],[],63,11735,0.0417546,41755,5.0,1,success,1,0,,claude-sonnet-5-5,"plt.plot(x, y)
+plt.xlabel(""x"")
+plt.ylabel(""y"")
+plt.tick_params(labelbottom=False, labelleft=False)
+",fenced,Matplotlib,81.8,1,1,Origin,False,passed,False,1.36
+ds1000-0719,baseline,1,1,,6162,False,[],[],30,6192,0.0205266,20527,4.3,1,success,1,0,,claude-sonnet-5-5,"z_scores = scipy.stats.norm.ppf(p_values)
+",fenced,Scipy,90.7,1,1,Difficult-Rewrite,False,passed,False,1.12
+ds1000-0719,fabius-doctrina,1,1,,11814,True,[],[],30,11844,0.041992600000000005,41993,5.1,1,success,1,0,,claude-sonnet-5-5,"z_scores = scipy.stats.norm.ppf(p_values)
+",fenced,Scipy,90.9,1,1,Difficult-Rewrite,False,passed,False,0.939
+ds1000-0732,baseline,1,1,,6529,False,[],[],31,6560,0.022277599999999998,22278,5.6,1,success,1,0,,claude-sonnet-5-5,"Feature = sparse.hstack([c1, c2]).tocsr()
+",fenced,Scipy,59.3,1,1,Surface,False,passed,False,0.624
+ds1000-0732,fabius-doctrina,1,1,,12550,True,[],[],31,12581,0.044946599999999996,44947,4.9,1,success,1,0,,claude-sonnet-5-5,"Feature = sparse.hstack([c1, c2]).tocsr()
+",fenced,Scipy,59.2,1,1,Surface,False,passed,False,0.457
+ds1000-0736,baseline,1,1,,6588,False,[],[],36,6624,0.0225986,22599,4.6,1,success,1,0,,claude-sonnet-5-5,"b = b.copy()
+b.setdiag(0)
+b.eliminate_zeros()
+",fenced,Scipy,60.8,1,1,Origin,False,passed,False,0.495
+ds1000-0736,fabius-doctrina,1,1,,12670,True,[],[],47,12717,0.0455866,45587,5.3,1,success,1,0,,claude-sonnet-5-5,"b = b.tolil()
+b.setdiag(0)
+b = b.tocsr()
+b.eliminate_zeros()
+",fenced,Scipy,59.0,1,1,Origin,False,passed,False,0.453
+ds1000-0737,baseline,1,1,,6435,False,[],[],52,6487,0.0220846,22085,4.7,1,success,1,0,,claude-sonnet-5-5,"structure = np.ones((3, 3), dtype=int)
+labeled, result = ndimage.label(img > threshold, structure=structure)
+",fenced,Scipy,68.8,1,1,Origin,False,passed,False,0.631
+ds1000-0737,fabius-doctrina,1,1,,12362,True,[],[],40,12402,0.0442846,44285,4.7,1,success,1,0,,claude-sonnet-5-5,"labeled, result = ndimage.label(img > threshold, structure=np.ones((3, 3)))
+",fenced,Scipy,68.1,1,1,Origin,False,passed,False,0.616
+ds1000-0746,baseline,1,1,,6204,False,[],[],80,6284,0.0212126,21213,6.4,1,success,1,0,,claude-sonnet-5-5,"Max = col.max()
+Min = col.min()
+",fenced,Scipy,89.1,1,1,Semantic,False,passed,False,0.654
+ds1000-0746,fabius-doctrina,1,1,,11906,True,[],[],104,12010,0.0431006,43101,4.4,1,success,1,0,,claude-sonnet-5-5,"Max = col.max()
+Min = col.min()
+",fenced,Scipy,89.5,1,1,Semantic,False,passed,False,0.623
+ds1000-0747,baseline,1,1,,6206,False,[],[],491,6697,0.0253316,25332,6.5,1,success,1,0,,claude-sonnet-5-5,"data = col.data
+n = col.shape[0]
+nz = n - len(data)
+
+# Median
+if nz > n / 2:
+    Median = 0
+elif nz == n / 2 and n % 2 == 0:
+    # the two middle elements: one is zero, the other is the smallest nonzero (if it's >0) or largest negative
+    s = np.sort(data)
+    neg = s[s < 0]
+    pos = s[s > 0]
+    mid_low = neg[-1] if len(neg) else 0
+    mid_high = pos[0] if len(pos) else 0
+    # sorted order: negatives, zeros, positives; middle pair at indices n/2-1 and n/2
+    a = 0 if len(neg) == 0 else neg[0] if False else 0
+    Median = (0 + (pos[0] if len(pos) else 0)) / 2 if len(neg) == 0 else (mid_low + 0) / 2 if len(pos) == 0 else 0
+else:
+    full = np.concatenate([data, np.zeros(nz, dtype=data.dtype)])
+    Median = np.median(full)
+
+# Mode
+vals, counts = np.unique(data, return_counts=True)
+if len(vals) == 0 or nz >= counts.max():
+    if len(vals) and nz == counts.max():
+        Mode = min(0, vals[counts == counts.max()].min())
+    else:
+        Mode = 0
+else:
+    Mode = vals[counts == counts.max()].min()
+",fenced,Scipy,90.7,1,1,Difficult-Rewrite,False,passed,False,0.677
+ds1000-0747,fabius-doctrina,1,1,,11908,True,[],[],571,12479,0.0477786,47779,8.0,1,success,1,0,,claude-sonnet-5-5,"n = col.shape[0]
+data = col.data
+full = np.concatenate([np.zeros(n - len(data)), data])
+Median = np.median(full)
+vals, counts = np.unique(full, return_counts=True)
+Mode = vals[np.argmax(counts)]
+",fenced,Scipy,90.5,1,1,Difficult-Rewrite,False,passed,False,0.842
+ds1000-0748,baseline,1,1,,6988,False,[],[],124,7112,0.0254926,25493,15.7,1,success,1,0,,claude-sonnet-5-5,"def fourier(x, *a):
+    ret = np.zeros_like(x, dtype=float)
+    for deg, coef in enumerate(a, start=1):
+        ret += coef * np.cos(deg * np.pi / tau * x)
+    return ret
+
+popt, pcov = curve_fit(fourier, z, Ua, p0=np.ones(degree))
+",fenced,Scipy,72.6,1,1,Origin,False,passed,False,0.748
+ds1000-0748,fabius-doctrina,1,1,,13472,True,[],[],115,13587,0.0494746,49475,5.4,1,success,1,0,,claude-sonnet-5-5,"x = np.asarray(z, dtype=float)
+
+def fourier(x, *a):
+    return sum(a_i * np.cos((i + 1) * np.pi / tau * x) for i, a_i in enumerate(a))
+
+popt, pcov = curve_fit(fourier, x, Ua, p0=[1.0] * degree)
+",fenced,Scipy,72.7,1,1,Origin,False,passed,False,0.622
+ds1000-0755,baseline,1,1,,6899,False,[],[],230,7129,0.0260686,26069,5.5,1,success,1,0,,claude-sonnet-5-5,"import itertools
+for col1, col2 in itertools.combinations(['A', 'B', 'C'], 2):
+    vals = [np.nan] * len(df)
+    for i in range(2, len(df)):
+        vals[i] = stats.kendalltau(df[col1].iloc[i-2:i+1], df[col2].iloc[i-2:i+1])[0]
+    df[col1 + col2] = vals
+",fenced,Scipy,94.6,1,1,Origin,False,passed,False,1.09
+ds1000-0755,fabius-doctrina,1,1,,13288,True,[],[],663,13951,0.0542186,54219,9.0,1,success,1,0,,claude-sonnet-5-5,"from itertools import combinations
+for a, b in combinations(['A', 'B', 'C'], 2):
+    df[a + b] = df[a].rolling(3).apply(
+        lambda x: stats.kendalltau(x, df.loc[x.index, b])[0], raw=False)
+",fenced,Scipy,95.0,1,1,Origin,False,passed,False,1.006
+ds1000-0765,baseline,1,1,,6527,False,[],[],166,6693,0.022204599999999998,22205,6.0,1,success,1,0,,claude-sonnet-5-5,"from scipy.spatial import cKDTree
+kd = cKDTree(points)
+_, result = kd.query(extraPoints)
+",fenced,Scipy,67.0,1,1,Origin,False,passed,False,0.536
+ds1000-0765,fabius-doctrina,1,1,,12550,True,[],[],206,12756,0.0466966,46697,10.0,1,success,1,0,,claude-sonnet-5-5,"from scipy.spatial import cKDTree
+import numpy as np
+tree = cKDTree(points)
+_, result = tree.query(extraPoints)
+result = np.asarray(result)
+",fenced,Scipy,65.5,1,1,Origin,False,passed,False,0.552
+ds1000-0768,baseline,1,0,,6294,False,[],[],35,6329,0.0211916,21192,3.5,1,success,1,0,,claude-sonnet-5-5,"b = scipy.ndimage.median_filter(a, size=3, origin=-1)
+",fenced,Scipy,61.5,1,0,Origin,False,"failed: 
+Arrays are not equal
+
+Mismatched elements: 10 / 25 (40%)
+Max absolute difference: 4.
+Max relative difference: 1.
+ x: array([[0., 1., 0., 0., 0.],
+       [1., 4., 2., 0., 0.],
+       [0., 4., 0., 0., 0.],...
+ y: array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 1., 0.],
+       [0., 0., 1., 4., 2.],...",False,0.516
+ds1000-0768,fabius-doctrina,1,1,,12078,True,[],[],168,12246,0.0444286,44429,4.8,1,success,1,0,,claude-sonnet-5-5,"b = scipy.ndimage.median_filter(a, size=3, origin=(0, 1))
+",fenced,Scipy,60.9,1,1,Origin,False,passed,False,0.54
+ds1000-0772,baseline,1,0,,6472,False,[],[],82,6554,0.0225146,22515,4.2,1,success,1,0,,claude-sonnet-5-5,"dev = abs((x-u)/o2)
+P_inner = scipy.integrate.quad(NDfx, -dev, dev)[0]
+P_outer = 1 - P_inner
+prob = P_inner + P_outer/2
+",fenced,Scipy,70.1,1,0,Origin,False,failed: ,False,0.629
+ds1000-0772,fabius-doctrina,1,0,,12440,True,[],[],454,12894,0.0487366,48737,10.8,1,success,1,0,,claude-sonnet-5-5,"dev = abs((x - u) / o2)
+P_inner = scipy.integrate.quad(NDfx, -dev, dev)[0]
+P_outer = 1 - P_inner
+prob = P_inner + P_outer / 2
+",fenced,Scipy,70.4,1,0,Origin,False,failed: ,False,0.657
+ds1000-0778,baseline,1,1,,6576,False,[],[],140,6716,0.0236336,23634,11.9,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(stats.zscore(df, axis=0), index=df.index, columns=df.columns)
+",fenced,Scipy,94.0,1,1,Semantic,False,passed,False,1.044
+ds1000-0778,fabius-doctrina,1,1,,12644,True,[],[],48,12692,0.0454926,45493,4.4,1,success,1,0,,claude-sonnet-5-5,"result = pd.DataFrame(data=stats.zscore(df, axis=0), index=df.index, columns=df.columns)
+",fenced,Scipy,94.0,1,1,Semantic,False,passed,False,1.049
+ds1000-0780,baseline,1,0,,6615,False,[],[],524,7139,0.0276946,27695,7.9,1,success,1,0,,claude-sonnet-5-5,"zs = pd.DataFrame(stats.zscore(df, axis=0), index=df.index, columns=df.columns)
+result = pd.concat([df.assign(kind='data'), zs.assign(kind='zscore')])
+result = result.set_index('kind', append=True).sort_index(level=0, sort_remaining=True, kind='stable')
+result = result.round(3)
+",fenced,Scipy,94.7,1,0,Difficult-Rewrite,False,"failed: MultiIndex level [0] are different
+
+MultiIndex level [0] values are different (100.0 %)
+[left]:  Index(['    1415777_at Pnliprp1', '    1415777_at Pnliprp1',
+       '    1415805_at Clps', '    1415805_at Clps', '    1415884_at Cela3b',
+       '    1415884_at Cela3b'],
+      dtype='object', name='probegenes')
+[right]: Index(['1415777_at Pnliprp1', '1415777_at Pnliprp1', '1415805_at Clps',
+       '1415805_at Clps', '1415884_at Cela3b', '1415884_at Cela3b'],
+      dtype='object')",False,1.072
+ds1000-0780,fabius-doctrina,1,0,,12726,True,[],[],819,13545,0.0535306,53531,9.8,1,success,1,0,,claude-sonnet-5-5,"result = pd.concat({'data': df, 'zscore': df.apply(stats.zscore)}).swaplevel().sort_index().round(3)
+",fenced,Scipy,94.8,1,0,Difficult-Rewrite,False,"failed: MultiIndex level [0] are different
+
+MultiIndex level [0] values are different (100.0 %)
+[left]:  Index(['    1415777_at Pnliprp1', '    1415777_at Pnliprp1',
+       '    1415805_at Clps', '    1415805_at Clps', '    1415884_at Cela3b',
+       '    1415884_at Cela3b'],
+      dtype='object', name='probegenes')
+[right]: Index(['1415777_at Pnliprp1', '1415777_at Pnliprp1', '1415805_at Clps',
+       '1415805_at Clps', '1415884_at Cela3b', '1415884_at Cela3b'],
+      dtype='object')",False,1.173
+ds1000-0783,baseline,1,1,,6497,False,[],[],331,6828,0.025130600000000003,25131,6.5,1,success,1,0,,claude-sonnet-5-5,"y, x = np.indices(shape)
+mid = (np.array(shape) - 1) / 2.0
+result = distance.cdist(np.stack((y.ravel(), x.ravel()), axis=1), [mid], 'cityblock').reshape(shape)
+result = np.floor(result + 0.5 * 0) if False else result
+",fenced,Scipy,66.1,2,1,Semantic,False,passed,False,0.582
+ds1000-0783,fabius-doctrina,1,0,,12488,True,[],[],714,13202,0.0515286,51529,12.3,1,success,1,0,,claude-sonnet-5-5,"mid = (np.array(shape) - 1) / 2
+y, x = np.indices(shape)
+result = np.abs(y - mid[0]) + np.abs(x - mid[1])
+result = np.ceil(result)
+",fenced,Scipy,64.3,5,0,Semantic,False,"failed: 
+Arrays are not equal
+
+Mismatched elements: 30 / 30 (100%)
+Max absolute difference: 0.5
+Max relative difference: 1.
+ x: array([[6., 5., 6.],
+       [5., 4., 5.],
+       [4., 3., 4.],...
+ y: array([[5.5, 4.5, 5.5],
+       [4.5, 3.5, 4.5],
+       [3.5, 2.5, 3.5],...",False,0.587
+ds1000-0785,baseline,1,1,,6218,False,[],[],56,6274,0.0210656,21066,5.5,1,success,1,0,,claude-sonnet-5-5,"result = scipy.ndimage.zoom(x, (shape[0] / x.shape[0], shape[1] / x.shape[1]), order=1)
+",fenced,Scipy,61.8,1,1,Origin,False,passed,False,0.893
+ds1000-0785,fabius-doctrina,1,1,,11924,True,[],[],56,11980,0.0426926,42693,3.9,1,success,1,0,,claude-sonnet-5-5,"result = scipy.ndimage.zoom(x, (shape[0] / x.shape[0], shape[1] / x.shape[1]), order=1)
+",fenced,Scipy,61.8,1,1,Origin,False,passed,False,0.507
+ds1000-0787,baseline,1,0,,6781,False,[],[],116,6897,0.024411600000000002,24412,5.2,1,success,1,0,,claude-sonnet-5-5,"def residual(x, a, y):
+    return np.sum((y - a.dot(x ** 2)) ** 2)
+
+bounds = [(lb, None) for lb in x_lower_bounds]
+out = scipy.optimize.minimize(residual, x0, args=(a, y), method='L-BFGS-B', bounds=bounds)
+",fenced,Scipy,71.2,1,0,Difficult-Rewrite,False,"failed: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",False,0.717
+ds1000-0787,fabius-doctrina,1,0,,13052,True,[],[],562,13614,0.0522646,52265,10.5,1,success,1,0,,claude-sonnet-5-5,"def residual(x, a, y):
+    return np.sum((a.dot(x ** 2) - y) ** 2)
+
+bounds = [(lb, None) for lb in x_lower_bounds]
+out = scipy.optimize.minimize(residual, x0, args=(a, y), method='L-BFGS-B', bounds=bounds)
+",fenced,Scipy,70.2,1,0,Difficult-Rewrite,False,"failed: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",False,0.672
+ds1000-0788,baseline,1,1,,6328,False,[],[],90,6418,0.0219486,21949,3.8,1,success,1,0,,claude-sonnet-5-5,"def dN1_dt(t, N1):
+    return -100 * N1 + np.sin(t)
+sol = scipy.integrate.solve_ivp(fun=dN1_dt, t_span=time_span, y0=[N0,])
+result = sol.y
+",fenced,Scipy,70.4,1,1,Origin,False,passed,False,0.701
+ds1000-0788,fabius-doctrina,1,1,,12154,True,[],[],100,12254,0.044052600000000004,44053,5.8,1,success,1,0,,claude-sonnet-5-5,"def dN1_dt_time_variant(t, N1):
+    return -100 * N1 + np.sin(t)
+
+sol = scipy.integrate.solve_ivp(fun=dN1_dt_time_variant, t_span=time_span, y0=[N0,])
+result = sol.y
+",fenced,Scipy,70.6,1,1,Origin,False,passed,False,0.64
+ds1000-0793,baseline,1,1,,6312,False,[],[],28,6340,0.0212236,21224,4.6,1,success,1,0,,claude-sonnet-5-5,"result = sparse.hstack([sa, sb], format='csr')
+",fenced,Scipy,61.4,1,1,Semantic,False,passed,False,0.604
+ds1000-0793,fabius-doctrina,1,1,,12124,True,[],[],28,12152,0.043212600000000004,43213,4.8,1,success,1,0,,claude-sonnet-5-5,"result = sparse.hstack([sa, sb], format='csr')
+",fenced,Scipy,59.6,1,1,Semantic,False,passed,False,0.515
+ds1000-0810,baseline,1,1,,6843,False,[],[],461,7304,0.0281516,28152,7.3,1,success,1,0,,claude-sonnet-5-5,"df['Time'] = pd.to_datetime(df['Time'], format='%Y-%m-%d-%H:%M:%S')
+df = df.set_index('Time')
+integral_df = df.rolling('25S').apply(integrate.trapezoid)
+",fenced,Scipy,76.0,1,1,Origin,False,passed,False,0.63
+ds1000-0810,fabius-doctrina,1,1,,13182,True,[],[],421,13603,0.0513746,51375,7.0,1,success,1,0,,claude-sonnet-5-5,"df.Time = pd.to_datetime(df.Time, format='%Y-%m-%d-%H:%M:%S')
+df = df.set_index('Time')
+integral_df = df.rolling('25S').apply(integrate.trapz)
+",fenced,Scipy,76.2,1,1,Origin,False,passed,False,0.603
+ds1000-0819,baseline,1,1,,6193,False,[],[],53,6246,0.020894600000000003,20895,6.7,1,success,1,0,,claude-sonnet-5-5,"data1 = pd.DataFrame(data=np.c_[data.data, data.target], columns=list(data.feature_names) + ['target'])
+",fenced,Sklearn,109.1,1,1,Semantic,False,passed,False,1.657
+ds1000-0819,fabius-doctrina,1,1,,11874,True,[],[],57,11931,0.0425026,42503,7.3,1,success,1,0,,claude-sonnet-5-5,"data1 = pd.DataFrame(data=np.c_[data['data'], data['target']],
+                     columns=data['feature_names'] + ['target'])
+",fenced,Sklearn,108.9,1,1,Semantic,False,passed,False,1.447
+ds1000-0830,baseline,1,1,,6213,False,[],[],56,6269,0.021010599999999997,21011,4.3,1,success,1,0,,claude-sonnet-5-5,"    df = pd.concat([df.reset_index(drop=True), pd.DataFrame(transform_output.toarray())], axis=1)
+    return df
+",fenced,Sklearn,60.0,1,1,Surface,False,passed,False,0.594
+ds1000-0830,fabius-doctrina,1,1,,11914,True,[],[],70,11984,0.0427926,42793,5.9,1,success,1,0,,claude-sonnet-5-5,"    from scipy.sparse import hstack
+    result = pd.concat([df.reset_index(drop=True), pd.DataFrame(transform_output.toarray())], axis=1)
+    return result
+",fenced,Sklearn,59.4,1,1,Surface,False,passed,False,0.498
+ds1000-0832,baseline,1,1,,6474,False,[],[],142,6616,0.0230696,23070,5.2,1,success,1,0,,claude-sonnet-5-5,"clf.steps.pop(1)
+",fenced,Sklearn,108.0,1,1,Surface,False,passed,False,1.644
+ds1000-0832,fabius-doctrina,1,1,,12438,True,[],[],175,12613,0.0459386,45939,5.1,1,success,1,0,,claude-sonnet-5-5,"clf.steps.pop(1)
+",fenced,Sklearn,109.2,1,1,Surface,False,passed,False,1.466
+ds1000-0837,baseline,1,0,,6851,False,[],[],38,6889,0.0238956,23896,5.7,1,success,1,0,,claude-sonnet-5-5,"b = gridsearch.score(testX, testY)
+c = gridsearch.predict(testX)
+",fenced,Sklearn,123.3,1,0,Origin,False,failed: This GridSearchCV instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.,False,1.787
+ds1000-0837,fabius-doctrina,1,1,,13191,True,[],[],430,13621,0.0515006,51501,15.9,1,success,1,0,,claude-sonnet-5-5,"fit_params = {""early_stopping_rounds"": 42,
+              ""eval_metric"": ""mae"",
+              ""eval_set"": [[testX, testY]]}
+gridsearch.fit(trainX, trainY, **fit_params)
+b = gridsearch.score(trainX, trainY)
+c = gridsearch.predict(testX)
+",fenced,Sklearn,124.8,1,1,Origin,False,passed,False,1.823
+ds1000-0863,baseline,1,1,,6194,False,[],[],63,6257,0.021010599999999997,21011,4.5,1,success,1,0,,claude-sonnet-5-5,"km.fit(X)
+d = km.transform(X)[:, p]
+indexes = np.argsort(d)[::][:50]
+closest_50_samples = X[indexes]
+",fenced,Sklearn,129.3,1,1,Surface,False,passed,False,1.879
+ds1000-0863,fabius-doctrina,1,1,,11876,True,[],[],63,11939,0.0425706,42571,4.5,1,success,1,0,,claude-sonnet-5-5,"km.fit(X)
+d = km.transform(X)[:, p]
+indexes = np.argsort(d)[::][:50]
+closest_50_samples = X[indexes]
+",fenced,Sklearn,129.9,1,1,Surface,False,passed,False,1.738
+ds1000-0868,baseline,1,1,,6178,False,[],[],55,6233,0.0208366,20837,4.3,1,success,1,0,,claude-sonnet-5-5,"from sklearn.svm import SVR
+model = SVR(kernel='rbf')
+model.fit(X, y)
+predict = model.predict(X)
+",fenced,Sklearn,119.1,1,1,Origin,False,passed,False,1.863
+ds1000-0868,fabius-doctrina,1,1,,11848,True,[],[],55,11903,0.0423786,42379,5.1,1,success,1,0,,claude-sonnet-5-5,"from sklearn.svm import SVR
+model = SVR(kernel='rbf')
+model.fit(X, y)
+predict = model.predict(X)
+",fenced,Sklearn,119.3,1,1,Origin,False,passed,False,1.944
+ds1000-0869,baseline,1,1,,6144,False,[],[],55,6199,0.020667599999999998,20668,3.9,1,success,1,0,,claude-sonnet-5-5,"from sklearn.svm import SVR
+
+model = SVR(kernel='rbf')
+model.fit(X, y)
+predict = model.predict(X)
+",fenced,Sklearn,118.6,1,1,Surface,False,passed,False,1.825
+ds1000-0869,fabius-doctrina,1,1,,11780,True,[],[],47,11827,0.0420266,42027,6.0,1,success,1,0,,claude-sonnet-5-5,"from sklearn.svm import SVR
+model = SVR()
+model.fit(X, y)
+predict = model.predict(X)
+",fenced,Sklearn,119.1,1,1,Surface,False,passed,False,1.916
+ds1000-0870,baseline,1,1,,6186,False,[],[],59,6245,0.020918600000000002,20919,5.1,1,success,1,0,,claude-sonnet-5-5,"from sklearn.svm import SVR
+
+model = SVR(kernel='poly', degree=2)
+model.fit(X, y)
+predict = model.predict(X)
+",fenced,Sklearn,119.2,1,1,Semantic,False,passed,False,1.932
+ds1000-0870,fabius-doctrina,1,1,,11862,True,[],[],59,11921,0.0424746,42475,4.6,1,success,1,0,,claude-sonnet-5-5,"from sklearn.svm import SVR
+
+model = SVR(kernel='poly', degree=2)
+model.fit(X, y)
+predict = model.predict(X)
+",fenced,Sklearn,117.1,1,1,Semantic,False,passed,False,1.701
+ds1000-0878,baseline,1,1,,6287,False,[],[],63,6350,0.0214736,21474,4.9,1,success,1,0,,claude-sonnet-5-5,"    from sklearn.preprocessing import MultiLabelBinarizer
+    new_features = MultiLabelBinarizer().fit_transform(features)
+    return new_features
+",fenced,Sklearn,98.8,1,1,Surface,False,passed,False,1.254
+ds1000-0878,fabius-doctrina,1,1,,12066,True,[],[],73,12139,0.0434306,43431,5.5,1,success,1,0,,claude-sonnet-5-5,"    from sklearn.preprocessing import MultiLabelBinarizer
+    mlb = MultiLabelBinarizer()
+    new_features = mlb.fit_transform(features)
+    return new_features
+",fenced,Sklearn,99.0,1,1,Surface,False,passed,False,1.158
+ds1000-0879,baseline,1,0,,6321,False,[],[],55,6376,0.0215606,21561,3.9,1,success,1,0,,claude-sonnet-5-5,"from sklearn.preprocessing import MultiLabelBinarizer
+
+new_features = MultiLabelBinarizer().fit_transform(features)
+",fenced,Sklearn,99.1,1,0,Difficult-Rewrite,False,failed: ,False,1.199
+ds1000-0879,fabius-doctrina,1,1,,12130,True,[],[],629,12759,0.049246599999999995,49247,7.7,1,success,1,0,,claude-sonnet-5-5,"from sklearn.preprocessing import MultiLabelBinarizer
+
+new_features = 1 - MultiLabelBinarizer().fit_transform(features)
+",fenced,Sklearn,98.9,1,1,Difficult-Rewrite,False,passed,False,1.191
+ds1000-0880,baseline,1,1,,6344,False,[],[],130,6474,0.022381599999999998,22382,6.0,1,success,1,0,,claude-sonnet-5-5,"model = sklearn.cluster.AgglomerativeClustering(n_clusters=2, metric='precomputed', linkage='average')
+model.fit(np.array(data_matrix))
+cluster_labels = model.labels_.tolist()
+",fenced,Sklearn,117.6,1,1,Origin,False,passed,False,1.488
+ds1000-0880,fabius-doctrina,1,1,,12184,True,[],[],239,12423,0.045562599999999995,45563,5.3,1,success,1,0,,claude-sonnet-5-5,"model = sklearn.cluster.AgglomerativeClustering(metric='precomputed', linkage='complete', n_clusters=2)
+model.fit(np.array(data_matrix))
+cluster_labels = model.labels_.tolist()
+",fenced,Sklearn,117.5,1,1,Origin,False,passed,False,1.428
+ds1000-0884,baseline,1,0,,6293,False,[],[],109,6402,0.0219336,21934,5.1,1,success,1,0,,claude-sonnet-5-5,"from scipy.spatial.distance import squareform
+Z = scipy.cluster.hierarchy.linkage(squareform(np.array(data_matrix)), method='average')
+cluster_labels = scipy.cluster.hierarchy.fcluster(Z, 2, criterion='maxclust').tolist()
+",fenced,Sklearn,66.7,1,0,Surface,False,failed: ,False,0.612
+ds1000-0884,fabius-doctrina,1,0,,12078,True,[],[],117,12195,0.043918599999999995,43919,4.4,1,success,1,0,,claude-sonnet-5-5,"from scipy.cluster.hierarchy import linkage, fcluster
+from scipy.spatial.distance import squareform
+
+dm = np.array(data_matrix)
+Z = linkage(squareform(dm), method='average')
+cluster_labels = (fcluster(Z, t=2, criterion='maxclust') - 1).tolist()
+",fenced,Sklearn,66.3,1,0,Surface,False,failed: ,False,0.625
+ds1000-0885,baseline,1,0,,6288,False,[],[],111,6399,0.021924600000000002,21925,4.9,1,success,1,0,,claude-sonnet-5-5,"from scipy.cluster.hierarchy import linkage, fcluster
+from scipy.spatial.distance import squareform
+d = np.array(simM)
+Z = linkage(squareform(d), method='average')
+cluster_labels = (fcluster(Z, 2, criterion='maxclust') - 1).tolist()
+",fenced,Sklearn,65.3,1,0,Surface,False,failed: ,False,0.646
+ds1000-0885,fabius-doctrina,1,0,,12068,True,[],[],291,12359,0.045618599999999995,45619,9.6,1,success,1,0,,claude-sonnet-5-5,"import scipy.cluster.hierarchy as hierarchy
+from scipy.spatial.distance import squareform
+
+Z = hierarchy.linkage(squareform(np.array(simM)), method='average')
+cluster_labels = hierarchy.fcluster(Z, t=2, criterion='maxclust').tolist()
+",fenced,Sklearn,65.6,1,0,Surface,False,failed: ,False,0.648
+ds1000-0892,baseline,1,0,,6157,False,[],[],78,6235,0.0209696,20970,5.5,1,success,1,0,,claude-sonnet-5-5,"vectorizer = CountVectorizer(token_pattern=r""(?u)\b\w\w+\b|[!?\""']"", lowercase=False)
+transformed_text = vectorizer.fit_transform([text])
+",fenced,Sklearn,99.6,1,0,Origin,False,failed: ,False,1.34
+ds1000-0892,fabius-doctrina,1,1,,11809,True,[],[],75,11884,0.042422600000000005,42423,4.7,1,success,1,0,,claude-sonnet-5-5,"vectorizer = CountVectorizer(token_pattern=r""(?u)\b\w\w+\b|!|\?|\""|\'"")
+transformed_text = vectorizer.fit_transform([text])
+",fenced,Sklearn,100.1,1,1,Origin,False,passed,False,1.226
+ds1000-0893,baseline,1,1,,6233,False,[],[],90,6323,0.0214666,21467,5.2,1,success,1,0,,claude-sonnet-5-5,"from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(
+    dataset.iloc[:, :-1], dataset.iloc[:, -1], test_size=0.2, random_state=42
+)
+",fenced,Sklearn,112.8,1,1,Origin,False,passed,False,1.718
+ds1000-0893,fabius-doctrina,1,1,,11960,True,[],[],97,12057,0.0432466,43247,5.1,1,success,1,0,,claude-sonnet-5-5,"from sklearn.model_selection import train_test_split
+
+x = dataset.iloc[:, :-1]
+y = dataset.iloc[:, -1]
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+",fenced,Sklearn,112.7,1,1,Origin,False,passed,False,1.544
+ds1000-0898,baseline,1,1,,6421,False,[],[],55,6476,0.022021600000000002,22022,4.0,1,success,1,0,,claude-sonnet-5-5,"kmeans = KMeans(n_clusters=2, n_init=10).fit(df[['mse']].values)
+labels = kmeans.labels_
+",fenced,Sklearn,120.9,1,1,Surface,False,passed,False,1.885
+ds1000-0898,fabius-doctrina,1,1,,12324,True,[],[],74,12398,0.0444726,44473,4.3,1,success,1,0,,claude-sonnet-5-5,"mse = df['mse'].values.reshape(-1, 1)
+kmeans = KMeans(n_clusters=2, n_init=10).fit(mse)
+labels = kmeans.predict(mse)
+",fenced,Sklearn,120.9,1,1,Surface,False,passed,False,1.732
+ds1000-0900,baseline,1,1,,6341,False,[],[],98,6439,0.0220226,22023,3.7,1,success,1,0,,claude-sonnet-5-5,"svc = LinearSVC(penalty='l1', dual=False)
+svc.fit(X, y)
+mask = np.any(svc.coef_ != 0, axis=0)
+selected_feature_names = np.asarray(vectorizer.get_feature_names_out())[mask]
+",fenced,Sklearn,110.3,1,1,Surface,False,passed,False,1.779
+ds1000-0900,fabius-doctrina,1,1,,12170,True,[],[],88,12258,0.0439966,43997,4.4,1,success,1,0,,claude-sonnet-5-5,"svc = LinearSVC(penalty='l1', dual=False)
+svc.fit(X, y)
+selected_feature_names = np.asarray(vectorizer.get_feature_names_out())[np.flatnonzero(svc.coef_)]
+",fenced,Sklearn,110.0,1,1,Surface,False,passed,False,1.46
+ds1000-0903,baseline,1,1,,6892,False,[],[],212,7104,0.025816600000000002,25817,5.0,1,success,1,0,,claude-sonnet-5-5,"vocabulary = ['Jscript','.Net','TypeScript','NodeJS','Angular','Mongo','CSS','Python','PHP','Photoshop','Oracle','Linux','C++',""Java"",'TeamCity','Frontend','Backend','Full stack', 'UI Design', 'Web','Integration','Database design','UX']
+vectorizer = CountVectorizer(stop_words=""english"", binary=True, lowercase=False, vocabulary=vocabulary)
+X = vectorizer.fit_transform(corpus).toarray()
+feature_names = vectorizer.get_feature_names_out()
+",fenced,Sklearn,99.3,1,1,Surface,False,passed,False,1.31
+ds1000-0903,fabius-doctrina,1,1,,13278,True,[],[],248,13526,0.0500286,50029,5.2,1,success,1,0,,claude-sonnet-5-5,"vectorizer = CountVectorizer(stop_words=""english"", binary=True, lowercase=False,
+                             vocabulary=['Jscript', '.Net', 'TypeScript', 'NodeJS', 'Angular', 'Mongo',
+                                         'CSS', 'Python', 'PHP', 'Photoshop', 'Oracle', 'Linux', 'C++', 'Java',
+                                         'TeamCity', 'Frontend', 'Backend', 'Full stack', 'UI Design', 'Web',
+                                         'Integration', 'Database design', 'UX'])
+X = vectorizer.fit_transform(corpus).toarray()
+feature_names = vectorizer.get_feature_names_out()
+",fenced,Sklearn,99.7,1,1,Surface,False,passed,False,1.379
+ds1000-0906,baseline,1,1,,6802,False,[],[],115,6917,0.0244536,24454,5.1,1,success,1,0,,claude-sonnet-5-5,"slopes = []
+for col in df1.columns[1:]:
+    sub = df1[['Time', col]].dropna()
+    X = sub[['Time']].values
+    y = sub[col].values
+    m = LinearRegression().fit(X, y).coef_[0]
+    slopes.append(m)
+slopes = np.array(slopes)
+",fenced,Sklearn,112.0,1,1,Origin,False,passed,False,1.664
+ds1000-0906,fabius-doctrina,1,1,,13094,True,[],[],106,13200,0.0478726,47873,4.5,1,success,1,0,,claude-sonnet-5-5,"slopes = []
+for col in df1.columns[1:]:
+    d = df1[['Time', col]].dropna()
+    X = d[['Time']].values
+    y = d[col].values
+    slopes.append(LinearRegression().fit(X, y).coef_[0])
+slopes = np.array(slopes)
+",fenced,Sklearn,111.7,1,1,Origin,False,passed,False,1.525
+ds1000-0908,baseline,1,1,,6413,False,[],[],146,6559,0.0228456,22846,6.3,1,success,1,0,,claude-sonnet-5-5,"le = LabelEncoder()
+transformed_df = df.copy()
+transformed_df['Sex'] = le.fit_transform(df['Sex'])
+",fenced,Sklearn,102.2,1,1,Origin,False,passed,False,1.583
+ds1000-0908,fabius-doctrina,1,1,,12314,True,[],[],215,12529,0.0458426,45843,6.2,1,success,1,0,,claude-sonnet-5-5,"le = LabelEncoder()
+transformed_df = df.copy()
+transformed_df['Sex'] = le.fit_transform(df['Sex'])
+",fenced,Sklearn,102.1,1,1,Origin,False,passed,False,1.496
+ds1000-0910,baseline,1,1,,6420,False,[],[],119,6539,0.022611600000000003,22612,5.9,1,success,1,0,,claude-sonnet-5-5,"    le = LabelEncoder()
+    df['Sex'] = le.fit_transform(df['Sex'])
+    return df
+",fenced,Sklearn,102.3,1,1,Surface,False,passed,False,1.486
+ds1000-0910,fabius-doctrina,1,1,,12338,True,[],[],212,12550,0.0459086,45909,5.6,1,success,1,0,,claude-sonnet-5-5,"    le = LabelEncoder()
+    transformed_df = df.copy()
+    transformed_df['Sex'] = le.fit_transform(transformed_df['Sex'])
+    return transformed_df
+",fenced,Sklearn,102.5,1,1,Surface,False,passed,False,1.464
+ds1000-0918,baseline,1,1,,6247,False,[],[],108,6355,0.021703599999999997,21704,4.5,1,success,1,0,,claude-sonnet-5-5,"from sklearn.feature_extraction import DictVectorizer
+
+X_dicts = [dict(enumerate(row)) for row in X]
+vect = DictVectorizer(sparse=False)
+new_X = vect.fit_transform(X_dicts)
+clf.fit(new_X, ['4', '5'])
+",fenced,Sklearn,113.1,1,1,Surface,False,passed,False,1.777
+ds1000-0918,fabius-doctrina,1,1,,11990,True,[],[],129,12119,0.0436866,43687,5.4,1,success,1,0,,claude-sonnet-5-5,"from sklearn.feature_extraction import DictVectorizer
+
+X_arr = np.array(X, dtype=object)
+dicts = [{f""f{j}"": v for j, v in enumerate(row)} for row in X_arr]
+new_X = DictVectorizer(sparse=False).fit_transform(dicts)
+clf.fit(new_X, ['4', '5'])
+",fenced,Sklearn,114.0,1,1,Surface,False,passed,False,1.431
+ds1000-0921,baseline,1,1,,6407,False,[],[],137,6544,0.022774600000000002,22775,4.6,1,success,1,0,,claude-sonnet-5-5,"n = len(features_dataframe)
+train_size = 0.2
+train_dataframe = features_dataframe.iloc[:int(n * train_size)]
+test_dataframe = features_dataframe.iloc[int(n * train_size):]
+",fenced,Sklearn,105.2,1,1,Origin,False,passed,False,1.418
+ds1000-0921,fabius-doctrina,1,1,,12306,True,[],[],110,12416,0.0447606,44761,4.8,1,success,1,0,,claude-sonnet-5-5,"train_size = 0.2
+n = len(features_dataframe)
+train_len = int(n * train_size)
+features_dataframe = features_dataframe.sort_values(""date"")
+train_dataframe = features_dataframe.iloc[:train_len]
+test_dataframe = features_dataframe.iloc[train_len:]
+",fenced,Sklearn,106.6,1,1,Origin,False,passed,False,1.122
+ds1000-0924,baseline,1,1,,6592,False,[],[],100,6692,0.0233166,23317,6.2,1,success,1,0,,claude-sonnet-5-5,"cols = df.columns[2:4]
+def scale(g):
+    return pd.DataFrame(scaler.fit_transform(g[cols]), index=g.index, columns=cols + '_scale')
+df = df.join(df.groupby('Month', group_keys=False).apply(scale))
+",fenced,Sklearn,102.5,1,1,Origin,False,passed,False,1.328
+ds1000-0924,fabius-doctrina,1,0,,12678,True,[],[],188,12866,0.047028600000000004,47029,10.4,1,success,1,0,,claude-sonnet-5-5,"df[cols + '_scale'] = df.groupby('Month')[cols].transform(lambda x: scaler.fit_transform(x.to_frame() if x.ndim == 1 else x))
+",fenced,Sklearn,102.1,2,0,Origin,False,failed: name 'cols' is not defined,False,1.129
+ds1000-0926,baseline,1,1,,6259,False,[],[],79,6338,0.021479599999999998,21480,4.6,1,success,1,0,,claude-sonnet-5-5,"count = CountVectorizer(lowercase=False, token_pattern=r""[#@]?\b\w+\b"")
+vocabulary = count.fit_transform([words])
+feature_names = count.get_feature_names_out()
+",fenced,Sklearn,99.7,1,1,Origin,False,passed,False,1.268
+ds1000-0926,fabius-doctrina,1,1,,12006,True,[],[],420,12426,0.046660599999999997,46661,29.5,1,success,1,0,,claude-sonnet-5-5,"count = CountVectorizer(lowercase=False, token_pattern=r""[@#]?\b\w+\b"")
+count.fit_transform([words])
+feature_names = count.get_feature_names_out()
+",fenced,Sklearn,99.8,1,1,Origin,False,passed,False,1.124

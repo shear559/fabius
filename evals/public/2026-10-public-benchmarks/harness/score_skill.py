@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(__file__))
 from collect import records  # noqa: E402
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 PY = str(ROOT / ".venv/bin/python")
 
 
@@ -32,7 +32,17 @@ def main():
         rp.write_text("".join(json.dumps({"item": r["item"], "response": r.get("final_text") or ""}) + "\n"
                               for r in recs if r["arm"] == arm and r.get("scored_attempt")))
         sp = out / f"scored-{arm}.jsonl"
-        subprocess.run([PY, "score.py", str(rp), str(sp)], cwd=ROOT / "skills-bench" / bench, check=True)
+        if bench != "longmemeval":
+            subprocess.run([PY, "score.py", str(rp), str(sp)], cwd=ROOT / "skills-bench" / bench, check=True)
+        else:  # two stages: official judge prompts -> the calibrated judge -> the official rule
+            jp = out / f"judge-prompts-{arm}.jsonl"
+            subprocess.run([PY, "score.py", str(rp), str(sp), "--judge-prompts", str(jp)],
+                           cwd=ROOT / "skills-bench" / bench, check=True)
+            jd = out / f"judgements-{arm}.jsonl"
+            subprocess.run([PY, str(Path(__file__).resolve().parent / "judge_longmemeval.py"), str(jp), str(jd),
+                            "--workers", "6"], check=True)
+            subprocess.run([PY, "score_from_judgements.py", str(jp), str(jd), str(sp)],
+                           cwd=ROOT / "skills-bench" / bench, check=True)
         for line in open(sp):
             row = json.loads(line)
             scored[(str(row["item"]), arm)] = row
@@ -40,7 +50,7 @@ def main():
     fields = ["item", "arm", "replicate", "passed", "excluded", "first_turn_prompt_tokens", "skill_injected",
               "fabius_skills_loaded", "skill_calls", "output_tokens", "total_tokens", "cost_usd", "cost_microusd",
               "elapsed_s", "num_turns", "outcome_reason", "scored_attempt", "discarded_attempts", "discarded_reasons",
-              "init_model"] + [f"score_{k}" for k in extra]
+              "init_model", "package_reads_delivered", "package_reads_denied", "package_files_read"] + [f"score_{k}" for k in extra]
     base_tok = {r["item"]: r.get("first_turn_prompt_tokens") for r in recs if r["arm"] == "baseline"}
     with open(out / "items.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -58,7 +68,8 @@ def main():
                         "cost_microusd": "" if r.get("cost_usd") is None else round(r["cost_usd"] * 1e6),
                         **{k: r.get(k) for k in ("output_tokens", "total_tokens", "cost_usd", "elapsed_s", "num_turns",
                                                  "outcome_reason", "scored_attempt", "discarded_attempts",
-                                                 "discarded_reasons", "init_model")},
+                                                 "discarded_reasons", "init_model", "package_reads_delivered", "package_reads_denied")},
+                        "package_files_read": json.dumps(r.get("package_files_read") or []),
                         **{f"score_{k}": (s or {}).get(k) for k in extra}})
     for arm in arms:
         ps = [int(scored[(r["item"], arm)]["passed"]) for r in recs if r["arm"] == arm and (r["item"], arm) in scored]

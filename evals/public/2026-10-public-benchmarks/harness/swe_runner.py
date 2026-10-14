@@ -19,11 +19,12 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(__file__))
 import claude_run as cr  # noqa: E402
+import cohort  # noqa: E402
 import swe_prepare as sp  # noqa: E402
 from classify import classify  # noqa: E402
-from runner import gate, log_budget, STATE, LOCK, windows  # noqa: E402
+from runner import gate, log_budget, STATE, LOCK, windows, seed_meter  # noqa: E402
 
-ROOT = Path(os.path.expanduser("~/Documents/fabius-benchmark"))
+ROOT = Path(os.path.expanduser(os.environ.get("FB_ROOT", "~/Documents/fabius-benchmark")))
 TOOLS = "Read,Edit,Write,Glob,Grep,TodoWrite,Skill,Bash"
 ALLOWED = ["Read", "Edit", "Write", "Glob", "Grep", "TodoWrite", "Skill"]
 
@@ -111,10 +112,16 @@ def main():
     ap.add_argument("--items", default="")
     ap.add_argument("--arms", default="", help="Part B: run only these arms (the replicate's baseline is reused)")
     a = ap.parse_args()
-    sched = json.load(open(ROOT / "schedule.json"))["swebench"]
+    if cohort.ACTIVE:  # the continuation: three arms per block in the schedule's order for this replicate
+        cr.register_arms(cohort.arms("swebench"))
+        sc = cohort.schedule()["swebench"]
+        sched = {"items": sc["items"], "arm_order": {i: sc["blocks"][(i, a.replicate)] for i in sc["items"]}}
+        doc_subset = set()
+    else:
+        sched = json.load(open(ROOT / "schedule.json"))["swebench"]
+        doc_subset = set(json.load(open(ROOT / "swebench-doc-subset.json")))
     valid = json.load(open(ROOT / "swebench-validity.json"))
     pins = json.load(open(ROOT / "swebench-image-digests.json"))
-    doc_subset = set(json.load(open(ROOT / "swebench-doc-subset.json")))
     R = rows()
     items = [i for i in sched["items"] if valid.get(i, {}).get("valid")]
     if a.items:
@@ -125,9 +132,12 @@ def main():
     def arms_for(i):
         if a.arms:
             return a.arms.split(",")
+        if cohort.ACTIVE:
+            return list(sched["arm_order"][i])
         keep = {"baseline", "fabius-loaded"} | ({"fabius-doc"} if a.replicate == 1 and i in doc_subset else set())
         return [x for x in sched["arm_order"][i] if x in keep]
 
+    seed_meter()
     log_budget(f"swebench r{a.replicate}: start, {len(items)} valid items, {a.workers} workers")
     done = 0
     with cf.ThreadPoolExecutor(a.workers) as ex:
