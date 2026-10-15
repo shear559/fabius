@@ -1,4 +1,4 @@
-<!-- fabius-release: 3.5.0 -->
+<!-- fabius-release: 3.5.1 -->
 # Which agent apps Fabius was tested in
 
 Does it work in your app? Here is what was run, and what was not.
@@ -13,7 +13,7 @@ Does it work in your app? Here is what was run, and what was not.
 | Grok Build 0.2.103 | Clean install, update and remove; all fifteen skills found; disable and enable ran, but its list does not show whether Fabius is off | A model task; its updater skips an install pinned to a release tag |
 | Other tools that read `AGENTS.md` | Nothing run yet (the portable core is in `AGENTS.md`) | Everything; use outside the marketplace install needs separate permission |
 
-These app checks ran on Fabius 2.8.3 (the release published at the time of the check, 2026-09-10) and a local 3.0.0 build. Versions 3.1.0 and 3.2.0 changed skill text only; 3.3.0 also changed the evidence-ledger helper and the runtime model roster; 3.4.0 and 3.5.0 change no skill contract and add reference files. None changed the install format, and none were re-run in these apps. The Claude Code 2.1.289 row is the October 2026 public-benchmark study, which measured model tasks and loading, not installation: [BENCHMARKS.md](BENCHMARKS.md).
+These app checks ran on Fabius 2.8.3 (the release published at the time of the check, 2026-09-10) and a local 3.0.0 build. Versions 3.1.0 and 3.2.0 changed skill text only; 3.3.0 also changed the evidence-ledger helper and the runtime model roster; 3.4.0 and 3.5.0 change no skill contract and add reference files. Version 3.5.1 reorganizes public documentation and historical studies without changing skill contracts, runtime behavior or the install format; the host checks were not rerun. None changed the install format, and none were re-run in these apps. The Claude Code 2.1.289 row is the October 2026 public-benchmark study, which measured model tasks and loading, not installation: [BENCHMARKS.md](BENCHMARKS.md).
 
 ## Full test record
 

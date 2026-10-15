@@ -10,106 +10,68 @@
 
 </div>
 
-## What Fabius does
+## Put your skills to work together
 
-You keep your agent app and the model you already pay for. Fabius adds fifteen skills on top that set how the work gets done: read first, change the least, run the result, show the evidence.
+A growing skill library creates a coordination problem: several skills cover the same concern, instructions pull in different directions, and a useful skill can remain unloaded when the task needs it.
 
-- **Plans before it edits.** It reads the project record and the code, asks only the question whose answer changes the outcome, and gives multi-step work a plan where each step names its check.
-- **Uses the smallest machinery that holds.** An answer before a tool call, a plan before an agent, never a swarm when one tool call holds.
-- **Proves before it says done.** It runs the change and shows you the evidence. The verdicts are pass, fail, blocked and skip. "Should work" is none of them.
-- **Remembers, with your permission.** The project record is one page per project: the brief, the decisions and the open items. It is read in full before the first edit and updated before "done".
+Fabius organizes fifteen skills into one method. A router identifies the work, selects the relevant owners and combines their responsibilities. You keep your agent app, your model and your tools.
 
-<img src="assets/readme/fabius-loop.svg" alt="The six-step Fabius loop. Sense: read the project record and the code first. Classify: name the load and ask only what changes the outcome. Route: pick the skills, the machinery rung and the model tier. Strike: make the smallest correct change. Prove: run it and show the evidence. Compound: file the verified lesson with your permission." width="100%" />
+- **Select by the task.** Read the goal and project context, identify the domain, and decide whether the work needs memory, tools or a plan.
+- **Compose with clear ownership.** Engineering owns the process, the domain owner defines its requirements, and the lean core runs underneath. Each rule has one home; other skills refer to it instead of competing copies.
+- **Keep the result checkable.** Use the smallest sufficient tools, observe what they return, and verify the deliverable before calling it done. A missing capability stays visible.
 
-<img src="assets/readme/fabius-ladder.svg" alt="The machinery ladder, climbed one rung at a time: answer inline, one tool call, retrieval, a written plan, a single subagent, a swarm. In the example one tool call holds, so the four rungs above it are never started." width="100%" />
+The contracts guide the model; your agent app controls discovery, loading and execution. Automatic activation varies by app. Explicit invocation and the [Quickstart](QUICKSTART.md) help you check what actually loaded.
 
-Fabius governs how the work is done, never what you want. It states a concern once, then your instruction stands. A new irreversible step earns its own ask, and a missing tool is reported, never faked.
+## Fifteen skills, coordinated
 
-## Fifteen skills, one owner per job
+**Two layers hold the system together:**
 
-<img src="assets/readme/fabius-system.svg" alt="The Fabius system: your request goes to the fabius router, which picks the skills, the machinery and the model tier. Thirteen specialists are loaded only when the task needs them. The fabius-parcus lean core is always on underneath. The output is the smallest correct result, with its evidence." width="100%" />
+- **`fabius` — the router.** Selects skill owners, the amount of machinery and the model tier appropriate to the task.
+- **`fabius-parcus` — the lean core.** Keeps the work focused and the changes small while preserving validation, security, accessibility and data-loss handling.
 
-One router, one always-on lean core, thirteen specialists. Twenty-two core routing rules decide which of them a task loads, how much machinery it gets, and which model tier does the work.
+**Thirteen specialists provide the methods:**
 
-**Claude Code:** start a prompt with `/fabius` to load the router, or with one skill's own command, `/fabius:fabius-<skill>` (short form `/fabius-<skill>`). On Claude Code 2.1.289, `/fabius` loaded the router's rules in 803 of 803 measured runs and each skill's command loaded that skill in 1,271 of 1,271. A prompt that only began with the word `fabius:` loaded the router in 1 of 186. The router loaded a specialist on its own in 1 of its 803 runs, so call the specialist you want by its command.
+| Skill | What it brings to the task |
+|---|---|
+| `fabius-disciplina` | Engineering, architecture, debugging, plans and tests that cover the change |
+| `fabius-decor` | Interfaces, design systems, charts, diagrams and visual media |
+| `fabius-cohors` | Agent design, permissions, tool contracts and orchestration |
+| `fabius-archivum` | Project records, retrieval and continuity across sessions |
+| `fabius-mercatus` | Positioning, launch copy, funnels and SEO |
+| `fabius-praesidium` | Defensive security, threat models and evidence-backed audits |
+| `fabius-ludus` | Game loops, game feel and explicit state machines |
+| `fabius-catena` | On-chain development, transaction safety and provenance sealing |
+| `fabius-machina` | Deterministic automations, integrations and workflow verification |
+| `fabius-scientia` | Scientific research, competing hypotheses and reproducible analysis |
+| `fabius-doctrina` | Model training, serving, evaluation and monitoring |
+| `fabius-fortuna` | Sourced market research, valuation and risk analysis |
+| `fabius-concilium` | Independent model opinions, anonymized review and synthesis |
 
-**Codex and Grok Build:** name Fabius or the skill in the request. Codex loaded Fabius when it was named, in both tasks where that was checked; in Grok Build it has not been checked yet.
+<img src="assets/readme/fabius-system.svg" alt="Fabius architecture: the router coordinates thirteen specialists above an always-on lean core. Each selected skill owns a different concern." width="100%" />
 
-**Build and fix**
+The distinction matters: Machina wires fixed workflow steps; Cohors designs agents. Scientia owns scientific analysis; Doctrina owns the model lifecycle. Mercatus sets the message; Decor gives it visual form. A task can use several of them without giving each the same job.
 
-- `/fabius we're moving billing from cron scripts to a queue. How should we approach it?`<br/>
-  **`fabius`**, the router, reads this as an architecture call: its rules start at a written plan instead of a swarm and put the decision on a strong model tier. For the planning method itself, call `/fabius:fabius-disciplina`.
-- `/fabius:fabius-disciplina the export endpoint keeps regressing. Walk me through the fix before coding.`<br/>
-  **`fabius-disciplina`** reproduces the bug before the patch, maps the change to a test that really reaches it, and ends on one verdict: pass, fail, blocked or skip.
-- `/fabius:fabius-parcus this diff is bigger than the task. Strip it back.`<br/>
-  **`fabius-parcus`**, the lean core, ties the diff to the request and reuses your code and the standard library before adding anything. Validation, authorization and accessibility are never trimmed.
-- `/fabius:fabius-ludus make a small arcade shooter with a high-score loop.`<br/>
-  **`fabius-ludus`** grey-boxes the ten-second core loop first, then adds juice on purpose, on an explicit state machine, at jam-sized scope.
+Each specialist includes linked references for deeper work. External services—such as a browser, market data, a GPU, n8n or an RPC endpoint—still need to be available and authorized in your app. When a capability is missing, the rules call for an equivalent that can produce the same evidence, or an explicit limit.
 
-**Design and copy**
-
-- `/fabius:fabius-decor the pricing page looks amateur. Polish it, fix the focus states, and chart signups by month.`<br/>
-  **`fabius-decor`** works from named tokens and one accent color, holds WCAG 2.2 AA contrast, titles the chart with its takeaway, and checks the page live in a browser.
-- `/fabius:fabius-mercatus write the launch post for this release.`<br/>
-  **`fabius-mercatus`** fills a positioning sentence before any copy, swaps claims for evidence, and leaves one next action. Outreach stays a draft. Sending is your act.
-
-**Security and on-chain**
-
-- `/fabius:fabius-praesidium threat-model the file upload endpoint.`<br/>
-  **`fabius-praesidium`** runs STRIDE per trust boundary, then an OWASP pass. Every finding ships as severity, fix, regression test. Defensive only.
-- `/fabius:fabius-catena review this Solidity vault before we deploy, then seal the release.`<br/>
-  **`fabius-catena`** checks account validation first, simulates before signing, and never touches a private key. A seal is a hash, a signature and a timestamp reported as pending or confirmed. Defensive only.
-
-**Data, models and research**
-
-- `/fabius:fabius-scientia is this knockout result supported by the literature? Search PubMed.`<br/>
-  **`fabius-scientia`** writes three to five competing, falsifiable hypotheses and traces every fact to a named database.
-- `/fabius:fabius-doctrina should we fine-tune, or is RAG enough?`<br/>
-  **`fabius-doctrina`** climbs prompt, then RAG, then fine-tune, and decides on a held-out eval against a control.
-- `/fabius:fabius-fortuna backtest this moving-average strategy and show the max drawdown.`<br/>
-  **`fabius-fortuna`** leads with the risk, states every assumption, sources and dates every figure, and keeps the backtest out-of-sample. Analysis, never personalized advice.
-- `/fabius:fabius-concilium three runs gave the same wrong answer. Convene a council.`<br/>
-  **`fabius-concilium`** has several models answer independently and rank each other's anonymized answers, then a chairman model synthesizes, with the full audit trail. It needs your own multi-model API access and does not guarantee beating the best single model.
-
-**Agents, automation and memory**
-
-- `/fabius:fabius-cohors build a support-ticket triage agent. What permissions should it get?`<br/>
-  **`fabius-cohors`** writes the agent spec: a minimum tool allowlist, least privilege, a checkable output contract. One agent unless the work provably splits.
-- `/fabius:fabius-machina when the form is submitted, email the lead and add a row to the sheet.`<br/>
-  **`fabius-machina`** builds the workflow from the automation tool's live schema and tests it on safe sample data before it goes live.
-- `/fabius:fabius-archivum what did we decide last time about the auth flow?`<br/>
-  **`fabius-archivum`** answers from the project's page, reads it in full before the first edit, and writes to it only with your permission.
-
-The specialists bring method and knowledge. Live services such as market data, RPC endpoints, GPUs, n8n or database keys are yours to connect.
-
-## Try one you can check
-
-Four starter examples ship with their inputs, results and checks in [examples](examples/README.md). Here is the first, small enough to check by hand:
+## One project, several skills
 
 ```text
-/fabius summarize this CSV. Show each line total, the sum, and the largest product by revenue.
-Do not assume a currency.
-
-product,quantity,unit_price
-coffee,3,40
-tea,5,18
-mug,2,35
+/fabius improve this product's signup page. Keep the existing brand,
+clarify the message, fix the mobile form, and verify the result in a browser.
+Explain which skills the task needs before editing.
 ```
 
-The saved result is `examples/sales-output.json`:
+The responsibilities fit together like this:
 
-```json
-{"line_totals": {"coffee": 120, "tea": 90, "mug": 70}, "total": 280, "items": 10,
- "largest_product_by_revenue": "coffee", "currency": null}
-```
+1. **Archivum** reads the project's existing record, if one is available, so decisions and constraints carry forward.
+2. **Mercatus** clarifies the audience, message and next action. **Decor** handles the interface, mobile layout and focus states.
+3. **Disciplina** plans the change, maps the affected behavior to checks and verifies the result. **Parcus** keeps every change tied to the request.
 
-120 + 90 + 70 = 280, and `currency` is `null` because the file names none.
+This is an example of the intended composition. The app must load the relevant contracts and expose the browser for the live check. If a specialist stays unloaded, invoke it explicitly; if the browser is unavailable, the result must say that live verification remains open.
 
-- **Fix a Python bug.** `average()` divided by `len(values) - 1`. The four-line fix in `examples/average.py` raises `ValueError` on an empty list, and the checks hold: `[2, 4, 6]` gives 4, `[5]` gives 5, `[]` raises.
-- **Turn meeting notes into next steps.** [Three dated actions](examples/meeting-output.md). The launch-decision owner reads "Unspecified" because the notes never name one, and the result is an unsent draft: nothing was scheduled or sent.
-- **Plan a 30-second vertical video.** [Five shots](examples/video-output.md) from the supplied props only, 5 + 6 + 7 + 7 + 5 = 30 seconds, headed "This is a shot list, not a rendered video."
+For a small first task with a known answer, follow the [Quickstart](QUICKSTART.md). The [example collection](examples/README.md) includes supplied inputs, outputs and checks for data, code, meeting notes and a video brief. These are prepared demonstrations.
 
-These are demonstrations prepared by the maintainer, not a benchmark. Six builds are live on the [site](https://fabius-landing.vercel.app/#trials): three made with Fabius 3.1.0 — the Lattice product site (28/28 browser scenarios), the Fieldnote task workspace (68/68) and a six-regime math explorer (1,233/1,233 numerical probes) — and three made with 3.2.0 (a film, a key visual and an RNA-seq study), each batch with its verification page. They are worked refinements, not a controlled comparison, and the paired study is published beside them with its ties and misses.
+Explore the [four focused demos](https://fabius-landing.vercel.app/#trials): Math & visualization, Agent teams, Project memory and Clear code.
 
 ## Install in your agent app
 
@@ -121,6 +83,8 @@ These are demonstrations prepared by the maintainer, not a benchmark. Six builds
 /reload-plugins
 ```
 
+Start a request with `/fabius` for the router. To invoke a specialist directly, use its command, for example `/fabius:fabius-decor`.
+
 **Codex** (restart Codex afterwards)
 
 ```text
@@ -129,6 +93,8 @@ codex plugin add fabius@fabius
 codex plugin list --marketplace fabius
 ```
 
+Name Fabius in a fresh task: “Use Fabius to…”. You can also name the specialist the task needs.
+
 **Grok Build**
 
 ```text
@@ -136,10 +102,14 @@ grok plugin install shear559/fabius --trust
 grok plugin enable fabius
 ```
 
-It worked when your app lists fabius as installed. Claude Code and Grok Build also show its fifteen skills; in Codex, restart and look for the Fabius skills in a fresh task. Then paste the CSV prompt above and check that the total is 280. Updating, turning it off, removing it and troubleshooting are in the [Quickstart](QUICKSTART.md).
+Name Fabius or a specialist in the request. Check the [tested host behavior](COMPATIBILITY.md); installation and discovery alone do not establish model-task activation.
 
-Other instruction-reading tools: [AGENTS.md](AGENTS.md) carries the portable core, without the specialists. Using it outside the marketplace install needs permission.
+Confirm that your app lists Fabius as installed and exposes its skills in a fresh session. Update, disable, remove and troubleshooting instructions are in the [Quickstart](QUICKSTART.md).
 
-- **Cost and license.** Proprietary, and free to install for personal, non-commercial use through the marketplace command. Your model, connected services and compute are your own costs. Professional or client work needs permission: [LICENSE](LICENSE).
-- **What it touches.** Only the tools and permissions your agent app already grants. No Fabius server, no account, and your model's weights stay as they are. Say `stop fabius` and Fabius stops applying its rules until you invoke it again; it does not disable or uninstall the plugin.
-- **Measured and sealed.** On nine public benchmarks, neither `/fabius` nor any measured skill's own command showed a gain or a loss after correction for multiple comparisons: ties on IFEval, HumanEval+, LAB-Bench, FinQA and BFCL, non-inferior results on CyberSecEval, DS-1000 and SmartBugs-curated, and no detectable difference on SWE-bench Verified Mini, at 1.60 to 2.03 times the baseline's cost (Fabius 3.3.0, `claude-sonnet-5-5`, Claude Code 2.1.289 headless, 2026-10-06 to 10-08, 50 to 540 tasks per benchmark). A second study then compared the 3.3.0 package, the reference files this release adds and no package, on eleven benchmarks with the references readable: no gain and no loss in any of its 33 contrasts, and the reference files were opened in 6 of 4,328 runs. Every result and miss: [BENCHMARKS.md](BENCHMARKS.md). The fifteen skill contracts and three core documents (18 files) are content-sealed (SHA-256 and a Merkle root) and releases are signed: [PROVENANCE.md](PROVENANCE.md).
+## Help and boundaries
+
+Fabius uses the tools and permissions your agent app grants. There is no Fabius server or account. Project-memory writes require authorization; live services and model access are yours to connect. Say `stop fabius` to stop applying its rules in the session; use your plugin manager to disable or uninstall it.
+
+Fabius is publicly readable and proprietary. Personal, non-commercial installation through the marketplace command is free. Your model, services and compute have their own costs. Professional or client work needs permission: [LICENSE](LICENSE). [AGENTS.md](AGENTS.md) provides the portable core without the specialist library; use outside the marketplace grant also needs permission.
+
+[Get help](SUPPORT.md) · [Verification checks](evals/README.md) · [Release provenance](PROVENANCE.md) · [Historical evaluations](docs/archive/README.md)

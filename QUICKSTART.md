@@ -1,12 +1,12 @@
-# Quickstart: install Fabius, then run one task you can check by hand
+# Quickstart: install Fabius and use the right skills
 
-Install Fabius into the agent app you already use, open a fresh session, and give it a task whose right answer you know.
+Install Fabius into the agent app you already use, open a fresh session, and start with a task whose result you can check.
 
 ## 1 · Install
 
 **Claude Code** (type these inside Claude Code)
 
-```
+```text
 /plugin marketplace add shear559/fabius
 /plugin install fabius@fabius
 /reload-plugins
@@ -22,18 +22,32 @@ codex plugin list --marketplace fabius
 
 **Grok Build** (in a terminal)
 
-```
+```text
 grok plugin install shear559/fabius --trust
 grok plugin enable fabius
 ```
 
-It worked when your plugin manager lists **fabius** as installed. Claude Code and Grok Build also show its fifteen skills; in Codex, restart and look for the Fabius skills in a fresh task.
+Confirm that your plugin manager lists **fabius** as installed. Claude Code and Grok Build also show its fifteen skills; in Codex, restart and look for the Fabius skills in a fresh task.
 
-## 2 · Run a task with a known answer
+## 2 · Invoke the router or a specialist
 
-Paste this into a fresh Claude Code session (in Codex or Grok Build, start with "Use Fabius to" instead of `/fabius`):
+The router's job is to identify the needed skill owners, combine their responsibilities and choose sufficient tools and checks. Your app controls which contracts it actually loads.
 
-```
+| App | Start a request |
+|---|---|
+| Claude Code | `/fabius` for the router; `/fabius:fabius-disciplina` for engineering, or another specialist's command |
+| Codex | “Use Fabius to…”; name the relevant specialist when needed |
+| Grok Build | Name Fabius or the relevant specialist in the request |
+
+For a task spanning several concerns, ask it to state which skills are needed and why. A signup-page change may need Mercatus for the message, Decor for the interface and Disciplina for implementation and verification, with Parcus underneath.
+
+Automatic specialist activation is not assured. If a needed skill remains unloaded, invoke it explicitly through the app's supported mechanism. Merely typing `fabius:` is not equivalent to Claude Code's `/fabius` command. The [compatibility record](COMPATIBILITY.md) distinguishes installation, discovery and observed task behavior.
+
+## 3 · Run a task with a known answer
+
+Paste this into a fresh Claude Code session. In Codex or Grok Build, replace `/fabius` with “Use Fabius to”.
+
+```text
 /fabius summarize this CSV. Show each line total, the sum, and the largest product by revenue.
 Do not assume a currency. Show the arithmetic.
 
@@ -43,23 +57,23 @@ tea,5,18
 mug,2,35
 ```
 
-The right answer: coffee 120, tea 90, mug 70; total 280; ten items; coffee is the largest line. The currency stays unspecified, because the file never names one.
+Check the answer: coffee 120, tea 90, mug 70; total 280; ten items; coffee is the largest line. The currency stays unspecified because the file never names one.
 
-In Claude Code, `/fabius` at the start of a prompt loads the router, and `/fabius:fabius-<skill>` loads one skill, for example `/fabius:fabius-disciplina` (short form `/fabius-disciplina`). Measured on Claude Code 2.1.289: `/fabius` loaded the router in 803 of 803 runs and each skill's command loaded that skill in 1,271 of 1,271, while a prompt that only began with the word `fabius:` loaded the router in 1 of 186. The router seldom loads a specialist on its own, so call the one you want. In Codex and Grok Build, name Fabius or the skill in the request.
+This checks the artifact you receive. It does not by itself prove that a skill loaded; inspect the app's skill invocation or activity record for that.
 
-## 3 · Try three more
-
-[Meeting notes into next steps, a 30-second video shot list, and a Python bug fix with boundary tests](examples/README.md). Each one ships with its input, the result, and the check.
+[More prepared examples](examples/README.md): meeting notes into next steps, a video shot list and a Python bug fix. Each includes the input, result and check.
 
 ## If something is missing
 
 | You see | Do this |
 |---|---|
 | No plugin commands | Update your agent app through its normal channel, then check its help or version command |
-| Fabius is listed but no skills appear | Confirm it is enabled, restart, and check you are in the workspace you installed it for |
-| Old behavior after an update | Check the installed version and open a fresh session; a running session keeps the version it loaded |
-| The task needed a file, browser or renderer you have not connected | Fabius is built to report a missing tool, never to fake the result. Connect the tool, or ask for a clearly labeled draft |
-| A record was saved that you did not expect | Stop the task and check the project-memory folder you set up (one page per project). Fabius writes there only with your permission |
+| Fabius is listed but no skills appear | Confirm it is enabled, restart, and check the workspace where it was installed |
+| A needed specialist did not load | Invoke its command in Claude Code, or name it explicitly in the app; inspect the resulting activity |
+| Several skills appear to repeat or conflict | Ask which concern each owns. Keep one owner per concern and retain the host's instruction hierarchy and permissions |
+| Old behavior after an update | Check the installed version and open a fresh session; a running session keeps what it loaded |
+| A file, browser or renderer is unavailable | Connect an authorized tool, use an equivalent that can establish the same result, or keep the missing check explicit |
+| A record was saved that you did not expect | Stop the task and inspect the configured project-memory store; writes require authorization |
 
 ## Update, turn off, remove
 
@@ -67,10 +81,10 @@ In Claude Code, `/fabius` at the start of a prompt loads the router, and `/fabiu
 
 **Codex:** `codex plugin marketplace upgrade fabius`, then `codex plugin add fabius@fabius`, then restart. To turn it off without removing it, use Codex's own plugin controls. Remove it with `codex plugin remove fabius@fabius`.
 
-**Grok Build:** `grok plugin update fabius` updates an install that is not pinned to a release tag (a pinned install is moved to the new tag by hand). `grok plugin disable fabius` turns it off; `grok plugin uninstall fabius` removes it.
+**Grok Build:** `grok plugin update fabius` updates an install that is not pinned to a release tag; a pinned install must be moved to the new tag. `grok plugin disable fabius` turns it off, and `grok plugin uninstall fabius` removes it.
 
-In any session, say `stop fabius` and Fabius stops applying its rules until you invoke it again; it does not disable or uninstall the plugin — your plugin manager does that.
+Say `stop fabius` to stop applying its rules until you invoke it again. Your plugin manager handles disabling or uninstalling the plugin.
 
-Fabius is free to install for personal, non-commercial use. Your model, connected services and compute are your own costs. Professional or client work needs permission: see [LICENSE](LICENSE).
+Fabius is free to install for personal, non-commercial use. Your model, services and compute have their own costs. Professional or client work needs permission: [LICENSE](LICENSE).
 
-[Which app versions were tested](COMPATIBILITY.md) · [Get help](SUPPORT.md)
+[Tested apps](COMPATIBILITY.md) · [Get help](SUPPORT.md) · [Historical evaluations](docs/archive/README.md)
