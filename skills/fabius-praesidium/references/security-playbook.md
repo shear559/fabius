@@ -226,6 +226,7 @@ An audit pass ships a second artifact beside §6's findings: a row for every sur
 | Dependency + supply-chain audit (npm/pip/cargo) | §6 |
 | Secrets + cloud IAM least-privilege | §6–7 |
 | Quick-hardening a Node/Python/static/Worker stack | §8 |
+| Analyzing a shipped binary, package or capture (malware, a vulnerability, forensics) | disciplina's [reverse-engineering.md](../../fabius-disciplina/references/reverse-engineering.md) — its §1 authorization boundary applies without exception; findings still ship as severity → fix → proof |
 | Threat-modelling or containing an agent — one that runs code, or one that reads a person's accounts and acts outward | §9 (delete-a-leg triage first), then the agent rows in §1 above |
 | Securing a stateless LLM chat route where the client resends the transcript | §10 |
 | A public route that spends the owner's money upstream (paid API, model call) | §11 |

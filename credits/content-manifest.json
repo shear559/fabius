@@ -1,8 +1,8 @@
 {
   "schema": "fabius-local-content/v1",
-  "snapshot_date": "2026-10-10",
-  "source_head": "90f302b1ae29a18e945762b6c4a5a58c18317951",
-  "registry_sha256": "5899af26eb7f78c49f42b75b0fe04d190b405f1a6152b8c59397a8cd2a3e96bc",
+  "snapshot_date": "2026-10-15",
+  "source_head": "6d212171cd9c0c2d25ecc8e9e55c77da394ecffe",
+  "registry_sha256": "5f481bc9a187b73efe2bfe488cd58741e8a08c93d88b9b88913d9be3777cabcd",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
   "entries": [
@@ -22,11 +22,11 @@
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12183,
-          "sha256": "3540ef0b6d5565cf8041bafa7a0cc942c7c776ad9ece30b55da42214b74743f5"
+          "size": 12482,
+          "sha256": "ada78befcde21f39cf140ebf03485bdc5e01b651728d90c9c9717392716d4448"
         }
       ],
-      "local_tree_sha256": "4ddc10c82487171cce40fe65e9d80ba4f5fc5d99acdab3e5888a21551ae82862"
+      "local_tree_sha256": "4cd98c953fe93d33531c5c559d6c1195c26264dff7016379e7cd61b9d4939d76"
     },
     {
       "id": "archify-decor",
@@ -1055,6 +1055,28 @@
       "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
     },
     {
+      "id": "rea-disciplina",
+      "repo": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "pinned_commit": "cf0a38ad9774ee9acff3164052688f7a58a1c72c",
+      "pinned_version": null,
+      "pinned_at": "2026-10-15",
+      "local_paths": [
+        "skills/fabius-disciplina/references/reverse-engineering.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-disciplina/references/reverse-engineering.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 10993,
+          "sha256": "30dbf6c460227352c782619ce3a9d2fb5626a19f2206bbf7fa990470caaa1367"
+        }
+      ],
+      "local_tree_sha256": "967848389ee1a470594a38f1784fbe8000be88683cafdd4cf4efe6e6f086adb1"
+    },
+    {
       "id": "strix-cohors",
       "repo": "https://github.com/usestrix/strix",
       "license": "Apache-2.0",
@@ -1109,8 +1131,8 @@
           "path": "skills/fabius-praesidium/references/security-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 22740,
-          "sha256": "05c5ef6729530b76c2529b143c0fb5b9b124df5d417fa92991d14b14d9e9d915"
+          "size": 23040,
+          "sha256": "40132bc604ae79d21e15eb16f1d2ea233ff1b6e44d66ad1cfc42d4794e4d9fba"
         },
         {
           "path": "skills/fabius-praesidium/references/security-toolkit.md",
@@ -1120,7 +1142,7 @@
           "sha256": "cfb0728a439a817010564bdf0d301f5321beb06890b1851b555589f3a1f629f0"
         }
       ],
-      "local_tree_sha256": "a01065e32b42da8bd592bd443dfea04aca31d5bd587d4f97753df1228090a73d"
+      "local_tree_sha256": "540230d3516ff55b9bb119ba5283eea3faa26af6c12bfc821b8044a7f424bf25"
     },
     {
       "id": "system-prompts-leaks-archivum",
@@ -1236,11 +1258,11 @@
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12183,
-          "sha256": "3540ef0b6d5565cf8041bafa7a0cc942c7c776ad9ece30b55da42214b74743f5"
+          "size": 12482,
+          "sha256": "ada78befcde21f39cf140ebf03485bdc5e01b651728d90c9c9717392716d4448"
         }
       ],
-      "local_tree_sha256": "3dfcc42c60d56827daf300c465f70e72c9da322be88af49919200013da32692a"
+      "local_tree_sha256": "6e4c0f0ea4935012d81464aa41fc7047edcfa53fa86d35a99b2fa79840ca51dd"
     },
     {
       "id": "system-prompts-leaks-fabius",
@@ -1302,11 +1324,11 @@
           "path": "skills/fabius-praesidium/references/security-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 22740,
-          "sha256": "05c5ef6729530b76c2529b143c0fb5b9b124df5d417fa92991d14b14d9e9d915"
+          "size": 23040,
+          "sha256": "40132bc604ae79d21e15eb16f1d2ea233ff1b6e44d66ad1cfc42d4794e4d9fba"
         }
       ],
-      "local_tree_sha256": "63ae597e24efdd3edce09445fa86d98ac7058362e7751e8aecbf22f772324ccd"
+      "local_tree_sha256": "44b6e95cb93d5f513749e5d25b6d59dccf409cd8729435486950d54ce45c3a69"
     },
     {
       "id": "typesafe-skills-doctrina",

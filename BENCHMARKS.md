@@ -1,5 +1,5 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
-<!-- fabius-release: 3.4.0 -->
+<!-- fabius-release: 3.5.0 -->
 # The fabius benchmark
 
 ## Public benchmarks, October 2026

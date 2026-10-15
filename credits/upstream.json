@@ -936,6 +936,23 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Unfinished shared-workspace source studied for implemented pre-model admission, per-agent identities, delegation evidence and task outcome reconciliation. Future workflow approval plumbing remains a plan; no relay, keys, ACP runtime or workspace platform bundled."
+    },
+    {
+      "id": "rea-disciplina",
+      "repo": "https://github.com/morluto/rea",
+      "owner": "morluto",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/reverse-engineering.md"
+      ],
+      "pinned_commit": "cf0a38ad9774ee9acff3164052688f7a58a1c72c",
+      "pinned_version": null,
+      "pinned_at": "2026-10-15",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Local-only reverse-engineering MCP/CLI studied for its evidence classes (observation, derivation, inference, unknown), authorization boundary, target routing, bounded runtime captures, investigation ledger, reconstruction verification and analyst-question tool rules; re-expressed as Fabius's procedure. No code, catalog, engine or prompt bundled."
     }
   ]
 }
