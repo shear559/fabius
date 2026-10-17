@@ -121,7 +121,7 @@ Element counts the repo reports (e.g. ~1,246 elements, early-2026 snapshot) are 
 
 Pairs with `fabius-parcus` (no padded slots — the smallest prompt that lands the image) and [`visualization.md`](visualization.md) for the tokenized color rules shared with charts. No separate Figura palette library is bundled.
 
-Adapted from huangserva/skill-prompt-generator (MIT) — re-expressed in fabius's own voice.
+Adapted as independently worded methods from huangserva/skill-prompt-generator (README claims MIT; no license file found in the repository tree reviewed at `e9512498402f6625300f42b9633d907a28dda126`, 2026-10-17; permission to copy upstream material is unverified) — re-expressed in fabius's own voice.
 
 Studied (2026-09-20): a hosted multi-model image-and-video generation API — its vendor-published interface description (a commercial product; nothing carried) — observed for a prompt-rewrite flag and its default, absent seeds and per-endpoint guidance controls; no value, name or sentence taken.
 

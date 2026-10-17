@@ -2,7 +2,7 @@
 
 The on-demand depth for `fabius-scientia`'s empirical-method concern. The skill is the contract; this is how you run it. Scout wide, strike narrow.
 
-The skill (`../SKILL.md`) names the five moves: method-first, ground-every-claim, pipelines-as-routers, resource-aware, reproducibility-gotchas. This file is the operating manual behind each — templates, decision tables, per-API data, failure checklists. Versions and limits below are an **early-2026 snapshot** — re-verify before relying on them.
+The skill (`../SKILL.md`) names the five moves: method-first, ground-every-claim, pipelines-as-routers, resource-aware, reproducibility-gotchas. This file is the operating manual behind each — templates, decision tables, per-API data, failure checklists. Versions and limits are dated snapshots, not installation pins. The database and coordinate contracts were reviewed against the source on 2026-10-17; other examples keep their original scope and must be re-verified before use.
 
 ## 1. The hypothesis loop — run it as explicit steps
 
@@ -35,9 +35,9 @@ Turn many heterogeneous APIs into one deterministic retrieval. A scientific fact
 
 1. **Define the contract** — entity + constraints + fields + exhaustive-vs-targeted. ("All ClinVar pathogenic variants in BRCA1, fields: rsID/clin-sig/condition. Exhaustive.")
 2. **Pick a PRIMARY source + a VALIDATION source.** Avoid fan-out across many APIs — two well-understood sources beat six half-trusted ones.
-3. **COUNT first, then paginate deterministically.** Get the total, then walk fixed-size pages (sorted key) so the run is repeatable.
-4. **Reconcile the counts.** Records returned == count promised? If not, stop and report the gap — don't silently truncate.
-5. **Return auditable provenance** — endpoints hit, params, ID conversions performed, and any warnings (rate-limit retries, partial pages, deprecated fields).
+3. **COUNT when supported, then follow the API's pagination contract.** Record the query and snapshot date; follow returned cursors/links or the documented offset/page origin. Do not invent a count endpoint, increment an opaque cursor, or assume every API is zero-based.
+4. **Reconcile at each boundary.** Record the expected server total, retrieved total, duplicate removals, local-filter exclusions and final returned total separately. A local filter can legitimately reduce the result; unexplained loss or an unfinished page makes the retrieval incomplete. Without a reliable total, state how exhaustion was established and what completeness remains unproven.
+5. **Return auditable provenance** — endpoints, non-secret parameters, access date, identifier conversions and warnings. Keep authentication values, signed URLs and full response headers out of the evidence record.
 
 ## 3. Cross-identifier mapping — the conversion route IS knowledge
 
@@ -58,9 +58,11 @@ Every database lookup hits an **external REST API** the user configures (base UR
 
 | Fact | Databases | Consequence |
 |---|---|---|
-| POST-only (need `curl`, not a simple GET fetch) | Open Targets, gnomAD, GDC, SEC EDGAR | a plain GET fetch silently fails / 405s |
+| GraphQL POST | Open Targets, gnomAD | Send the documented JSON query with an HTTP client that preserves the body and response. |
+| Method depends on the query | GDC | GET and POST are supported; complex filters often fit POST better. |
+| Identified GET | SEC EDGAR | Use documented data endpoints with an identifying User-Agent; do not classify EDGAR as POST-only. |
 | Rate limits | NCBI 3/sec (10 with key), Ensembl 15/sec | exceed → 429; throttle + back off |
-| Free API key required | NCBI E-utilities (recommended) | raises your rate ceiling |
+| Optional API key | NCBI E-utilities | Anonymous access is available at the documented lower rate; a key raises the permitted ceiling. |
 | Paid / restricted (with free fallback) | DrugBank (paid → use ChEMBL/PubChem), COSMIC (academic → use cBioPortal/gnomAD) | don't block on access you lack |
 
 ### Database categories
@@ -127,6 +129,8 @@ Single-cell (scRNA-seq) — comparing *conditions*:
 - [ ] **≥3 biological samples per condition** — the same rule as bulk, applied at the donor level. Two mice is `n=2` however many cells you sequenced.
 - [ ] If you genuinely cannot pseudobulk, use a mixed model with a per-sample random effect — and say so in the report.
 
+At a genomic format boundary, carry the reference assembly/version, contig identity and coordinate convention alongside the interval. For a nonempty span on the same reference, converting 1-based inclusive to 0-based half-open subtracts one from the start and leaves the end unchanged. That arithmetic is not liftover and does not define an insertion or a structural variant. Normalize literal alleles against the pinned reference before joining; a REF mismatch or unsupported allele stays unresolved instead of becoming a claimed novel variant. Retain the original records and a conversion ledger, including rejected and ambiguous mappings.
+
 Every pipeline:
 - [ ] **Pin tool + database versions** — schemas and annotations drift upstream
 - [ ] **API keys in env, never in scripts or shell history**
@@ -134,7 +138,7 @@ Every pipeline:
 
 ## 8. Structuring science skills
 
-Build science as **many single-concern skills**, not one giant biology skill. But `fabius-scientia` must **not** mirror an entire 147-skill catalog — encode the transferable **patterns** (this playbook) plus a curated set of high-value workflows; the rest stays in `references/`. See the externalization rule in `../../../CORPUS.md` (M9: hold the index, not the bulk).
+Build science as **many single-concern skills**, not one giant biology skill. But `fabius-scientia` must **not** mirror the upstream's growing skill catalog — encode the transferable **patterns** (this playbook) plus a curated set of high-value workflows; the rest stays in `references/`. See the externalization rule in `../../../CORPUS.md` (M9: hold the index, not the bulk).
 
 **Supply-chain caution:** third-party science skills *execute code*. Scan and review before adopting — route that risk to `fabius-praesidium`.
 
@@ -149,4 +153,4 @@ Build science as **many single-concern skills**, not one giant biology skill. Bu
 
 ---
 
-Adapted from K-Dense-AI/scientific-agent-skills (MIT; per-skill licenses vary) — re-expressed in fabius's own voice.
+Informed by **scientific-agent-skills** (K-Dense-AI, MIT; per-skill terms must still be checked), reviewed at `a1043ef544e3a100c28e70a736b6cf32554d0677` (2026-10-17), especially database-lookup and genomic-coordinates. Procedures re-authored for this owner; no external skill catalog or scientific runtime bundled. See credits/README.md.

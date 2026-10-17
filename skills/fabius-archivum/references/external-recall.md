@@ -147,6 +147,8 @@ Store each corpus as metadata, select by topic at query time — the connector r
 
 **Registering an unknown corpus:** ask it to summarize **itself** first, then use that summary as its `description` + `topics`. Never tag a corpus generically ("docs", "stuff") — generic metadata defeats topic selection.
 
+**Source maintenance matters.** `PleasePrompto/notebooklm-skill` was archived in September 2026; retain its source-grounding method as historical credit, not as an actively maintained connector or installation recommendation. For the currently reviewed unofficial client, use [`notebook-connector.md`](notebook-connector.md) and its pinned snapshot and capability checks. Neither an archived skill nor an unofficial client establishes a supported Google API contract.
+
 ### Forced-follow-up grounding loop
 
 A single lookup is rarely the whole answer. After each retrieved answer:
@@ -196,7 +198,7 @@ Five rules govern the ingest:
 - **Batch-ingest on the typed-error contract.** Exit `0/1/2` = ok / conversion-failed / usage, one stderr line, never a prompt. Stable machine codes (`unsupported` / `malformed` / `encrypted` / `resourceLimit` / `missingPart` / `io`) let the ingester log encrypted and unsupported files and continue, and hard-fail the rest.
 - **Large documents:** write output to a file and read only the needed parts — never stream a whole converted document into context.
 - **Scanned / image-only PDFs fail as `unsupported` by design** — there is no OCR. Route them to an OCR step; don't retry the converter.
-- **A clean exit is not a clean body.** Before a converted record is stored or embedded, check for an error-marker title, an error-message body, empty content; a hit marks the job failed-and-retryable, so an error string never becomes a citable source. A media URL with no transcript gets its own failure. Extraction fills a title only when empty or placeholder — a user-set title survives.
+- **A clean exit is not a clean body.** Before a converted record is stored or embedded, check for an error-marker title, an error-message body, empty content; a hit fails ingestion before indexing, so an error string never becomes a citable source. Classify the cause before retrying: a deleted source, missing transformation or permanently rejected input is terminal for that job; a transient database/transport failure is retryable under a bounded policy and must not be rewritten as “not found.” Recheck source existence before embedding and saving if deletion can race processing. A permanently missing job must not repeatedly occupy a worker while valid jobs wait. A media URL with no transcript gets its own failure. Extraction fills a title only when empty or placeholder — a user-set title survives.
 
 If ever invoked via `npx`, **pin the package version** — a bare `npx -y <pkg>` is the unpinned supply-chain shape hardening-guides.md warns about (→ `fabius-praesidium`). And carry no converter benchmark numbers — vendor speed claims are the vendor's own, not measurements of your corpus.
 
@@ -228,4 +230,4 @@ Adapted from thedotmack/claude-mem (Apache-2.0) and PleasePrompto/notebooklm-ski
 
 Studied (2026-09-20): a hosted structured-output API platform's public documentation (a commercial product; nothing carried) — observed for locating a quote deterministically before asking one closed claim-relation question; no value, name or sentence taken.
 
-Informed by **open-notebook** (lfnovo, MIT) — studied for summary-share packing under a ceiling, closed-id-set citation discipline and success-shaped extractor errors, re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.
+Informed by **open-notebook** (lfnovo, MIT), current ingestion-failure tests reviewed at `a0f6f3081ae06328f0a451b3a3ef2959ca25721d` (2026-10-17) — studied for summary-share packing under a ceiling, closed-id-set citation discipline, success-shaped extractor errors and terminal-versus-transient ingestion failures, re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

@@ -5,7 +5,7 @@
   "note": "Content-bound seal of the fabius skill contracts and core docs. Every value is recomputable from the repo files: recompute each file's sha256 and the merkle root and compare. See PROVENANCE.md §3 and skills/fabius-catena/references/sealing.md.",
   "count": 18,
   "files": {
-    "AGENTS.md": "e81ceab02e3c0309bdb97e1a29e18e2c1ffbae4d674e1e47a2d066c6342915bc",
+    "AGENTS.md": "ffe0b65f26a14f88ac17da4203c0b1558086ff1e4b96bbc78ef406ee1561304b",
     "ARCHITECTURE.md": "e176e73b48535bf3962a12d170e940e31d4c90a5bb3709cb31538846abb15371",
     "CORPUS.md": "753f2a3a157c1a9d04bb5f611b60ca3ea719ecdd96baaa3258a2e3e586c18577",
     "skills/fabius-archivum/SKILL.md": "933b5f93599ee73162a9eebd8982a2ac32240436cacad4440271b82bf721d828",
@@ -21,8 +21,8 @@
     "skills/fabius-mercatus/SKILL.md": "5ea758dbe54d7ee216d2f56bc789e7ccc5f817a5bc3453098b61c30534523fc5",
     "skills/fabius-parcus/SKILL.md": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671",
     "skills/fabius-praesidium/SKILL.md": "92ac695dddcc4314862e9fdea7d24b87c4bee0574c60bb48f491b6323573406c",
-    "skills/fabius-scientia/SKILL.md": "762292ae34c5cee93aa215c7084f3b6952e03540edaeabaa76f4444b811f7292",
+    "skills/fabius-scientia/SKILL.md": "6b88ffccf036f9d04c620f238f5cc60e6d1df2b1fdb85e7305eeea27db669e5e",
     "skills/fabius/SKILL.md": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
   },
-  "merkle_root": "e1958cb5f9e8f36cef0e3f61a7b71b152281cbd0f7c14ae7a6ce370a68c1309d"
+  "merkle_root": "8fa18b1288faf177de11290ba60630cc0b2f3dcf37c403cd18c8cbb94ced0bbd"
 }

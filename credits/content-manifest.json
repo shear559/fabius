@@ -1,8 +1,8 @@
 {
   "schema": "fabius-local-content/v1",
-  "snapshot_date": "2026-10-15",
-  "source_head": "6d212171cd9c0c2d25ecc8e9e55c77da394ecffe",
-  "registry_sha256": "5f481bc9a187b73efe2bfe488cd58741e8a08c93d88b9b88913d9be3777cabcd",
+  "snapshot_date": "2026-10-17",
+  "source_head": "497c7e4c61b8054667997094e872c5036c37412d",
+  "registry_sha256": "5f04b8c0dbb465ed68c501b60f5a80f5a8d7ea8906da0a4202ee3f9615219d84",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
   "entries": [
@@ -99,9 +99,9 @@
       "repo": "https://github.com/google/ax",
       "license": "Apache-2.0",
       "consumed_as": "informed-by",
-      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
       "pinned_version": null,
-      "pinned_at": "2026-09-28",
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-cohors/references/agent-workloads.md"
       ],
@@ -110,20 +110,20 @@
           "path": "skills/fabius-cohors/references/agent-workloads.md",
           "kind": "file",
           "mode": "0644",
-          "size": 16867,
-          "sha256": "28f022497f93b274ed8be98ce14e5bdd7ad8c0b100d5c94989047aaa34058e24"
+          "size": 18439,
+          "sha256": "05fe3d884839ff965fc004395aa0d436851c4a38475be9e03f997fdf7bc85252"
         }
       ],
-      "local_tree_sha256": "0498c89dedba4523d5562389a9ea2bbfb6a4df0d4c5ef2a86d341957d4a2ef5f"
+      "local_tree_sha256": "843fe7765a198d8a64c1996a448d245784186e9ee675a04a3e7b01d8c78565e7"
     },
     {
       "id": "ax-fabius-disciplina",
       "repo": "https://github.com/google/ax",
       "license": "Apache-2.0",
       "consumed_as": "informed-by",
-      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
       "pinned_version": null,
-      "pinned_at": "2026-09-28",
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-disciplina/references/architecture-decisions.md",
         "skills/fabius-disciplina/references/codebase-and-proof.md"
@@ -140,11 +140,11 @@
           "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
           "kind": "file",
           "mode": "0644",
-          "size": 19496,
-          "sha256": "0e920fbbad7a673da48e7e698141b060b2b76ef7fb7c560b249fd205de50813b"
+          "size": 20700,
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
         }
       ],
-      "local_tree_sha256": "a2b3498eda99235237b6b8001e8c83f9862632f49ed287467c12ad7cbccda109"
+      "local_tree_sha256": "11449d4ea1a16c6b3f917767286a7d688ca53776ac5853040b8387411fa86982"
     },
     {
       "id": "ax-fabius-doctrina",
@@ -173,9 +173,9 @@
       "repo": "https://github.com/google/ax",
       "license": "Apache-2.0",
       "consumed_as": "informed-by",
-      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
       "pinned_version": null,
-      "pinned_at": "2026-09-28",
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-praesidium/references/hardening-guides.md",
         "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
@@ -185,18 +185,18 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 46803,
-          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
+          "size": 47770,
+          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
         },
         {
           "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
           "kind": "file",
           "mode": "0644",
-          "size": 29229,
-          "sha256": "340937d5207a573e64e0ceaafc67afbed2435cc2d969c9f11a04fe9ac2750f19"
+          "size": 30391,
+          "sha256": "3abf1c1c0db661ffacafb58fadaf929b88e0c0b8ece8269e70ded56b0c01482c"
         }
       ],
-      "local_tree_sha256": "d122f272b5b9b4ea310296452303289f315b2c15553b33429a11fe7a46466ba1"
+      "local_tree_sha256": "c9acda190d1c92de133c5acba4b92a416e256508e001bb2a99d564d6216928a1"
     },
     {
       "id": "book-to-skill-archivum",
@@ -277,9 +277,9 @@
       "repo": "https://github.com/virgiliojr94/book-to-skill",
       "license": "MIT",
       "consumed_as": "informed-by",
-      "pinned_commit": "526f362552562d88c1a8bbf8012d2cee93f831d5",
+      "pinned_commit": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
       "pinned_version": null,
-      "pinned_at": "2026-09-20",
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
       ],
@@ -288,11 +288,11 @@
           "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
           "kind": "file",
           "mode": "0644",
-          "size": 29229,
-          "sha256": "340937d5207a573e64e0ceaafc67afbed2435cc2d969c9f11a04fe9ac2750f19"
+          "size": 30391,
+          "sha256": "3abf1c1c0db661ffacafb58fadaf929b88e0c0b8ece8269e70ded56b0c01482c"
         }
       ],
-      "local_tree_sha256": "542e3fca68554eb05167680f916f267f32be7175170461ae0480fa3e096d80bf"
+      "local_tree_sha256": "2527aedffa680f7c3cad99496329de8b05e08e7ddf43b6ab268ebfe42478f1fb"
     },
     {
       "id": "buzz-cohors",
@@ -337,6 +337,50 @@
         }
       ],
       "local_tree_sha256": "4673bd3ac8261557d8ebac97d95f8fb9b9138da529bf2e5277751a1016261bc9"
+    },
+    {
+      "id": "flue-cohors",
+      "repo": "https://github.com/withastro/flue",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "pinned_commit": "deee93b40d275ecc9a50c50af2158f20089d54bc",
+      "pinned_version": "2.3.0",
+      "pinned_at": "2026-10-17",
+      "local_paths": [
+        "skills/fabius-cohors/references/agent-workloads.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-cohors/references/agent-workloads.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 18439,
+          "sha256": "05fe3d884839ff965fc004395aa0d436851c4a38475be9e03f997fdf7bc85252"
+        }
+      ],
+      "local_tree_sha256": "843fe7765a198d8a64c1996a448d245784186e9ee675a04a3e7b01d8c78565e7"
+    },
+    {
+      "id": "game-studios-ludus",
+      "repo": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "pinned_commit": "be8993bbc5a1f016bc770b2846ce06272d284526",
+      "pinned_version": "1.1.3",
+      "pinned_at": "2026-10-17",
+      "local_paths": [
+        "skills/fabius-ludus/references/game-playbook.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-ludus/references/game-playbook.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 11106,
+          "sha256": "00076a74ffb0f0c124a0ba726a8c03f8ae1e30d201950530242a77922d086356"
+        }
+      ],
+      "local_tree_sha256": "2cf41a9c802e8bd61c401480d4c5ac6765cebdd3ee1b22527a9403ec1b3c8352"
     },
     {
       "id": "gods-eye-view-decor",
@@ -431,9 +475,9 @@
       "repo": "https://github.com/pbakaus/impeccable",
       "license": "Apache-2.0",
       "consumed_as": "informed-by",
-      "pinned_commit": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "pinned_commit": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
       "pinned_version": null,
-      "pinned_at": "2026-10-10",
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-decor/references/design-critique.md"
       ],
@@ -442,11 +486,33 @@
           "path": "skills/fabius-decor/references/design-critique.md",
           "kind": "file",
           "mode": "0644",
-          "size": 27033,
-          "sha256": "90c1fd65512c609bbd20a0cff620bd1d6a8f6c6b059aebdcdc6a7e970c5b192c"
+          "size": 27757,
+          "sha256": "fa7ec11ffb932be2b70915c672068e8942558386a28627a7d2b2047ceac6f284"
         }
       ],
-      "local_tree_sha256": "57ed3a78947c44f747ad3ff13f165d50da0cd1d3aa124b271768eea3320e6283"
+      "local_tree_sha256": "7398b1a0f8efc705721bb714c1327e142db400c8ca928619cdc2ea0f5e5b79db"
+    },
+    {
+      "id": "n8n-skills-machina",
+      "repo": "https://github.com/czlonkowski/n8n-skills",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "pinned_commit": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+      "pinned_version": null,
+      "pinned_at": "2026-10-17",
+      "local_paths": [
+        "skills/fabius-machina/references/automation-playbook.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-machina/references/automation-playbook.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 24038,
+          "sha256": "57c80a2d4439801cdd84acbbca04f7f6d7129f590c1525ae7603e5a68f3394d0"
+        }
+      ],
+      "local_tree_sha256": "52324cca6f22e484b4b71db2ad8606bc1abd25eeea0561ab0ed7920cdc23f4b8"
     },
     {
       "id": "nanoclaw-code-architect",
@@ -615,9 +681,9 @@
       "repo": "https://github.com/teng-lin/notebooklm-py",
       "license": "MIT",
       "consumed_as": "informed-by",
-      "pinned_commit": "2aff0fcb27c1be734d720b409696fcd74c4ba604",
-      "pinned_version": "0.8.4",
-      "pinned_at": "2026-10-10",
+      "pinned_commit": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+      "pinned_version": null,
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-archivum/references/notebook-connector.md"
       ],
@@ -626,11 +692,11 @@
           "path": "skills/fabius-archivum/references/notebook-connector.md",
           "kind": "file",
           "mode": "0644",
-          "size": 18306,
-          "sha256": "57773358ea5f297dc62bf094f107138d70866f16eaf8a729880045de69b67d92"
+          "size": 19368,
+          "sha256": "2b14abecd3aa88bb881aae35b169553fba4159cb38b22a0c87b47bd7e2dd3ded"
         }
       ],
-      "local_tree_sha256": "e885e889680d2b0b5845e66e69f39c881403fa56dc427dd88baba073dbf282e7"
+      "local_tree_sha256": "c386b2ef17f7f235ee3eb5a6b431c61f1b0ee6f5def64d05b84b743633500991"
     },
     {
       "id": "omniroute-cohors",
@@ -730,11 +796,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 46803,
-          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
+          "size": 47770,
+          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
         }
       ],
-      "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
+      "local_tree_sha256": "22fb02a684cba461ddfbf4bf69331a830046163ad1bab30b4dad65178bad4756"
     },
     {
       "id": "open-generative-ai-decor",
@@ -753,8 +819,8 @@
           "path": "skills/fabius-decor/references/generative-imagery.md",
           "kind": "file",
           "mode": "0644",
-          "size": 8965,
-          "sha256": "ddb1f2aa30d4a1a3f06894a16e3cf224746ac1121c3d2a3381b56030ef8425b7"
+          "size": 9176,
+          "sha256": "1ee1334bdf9f37b8088fb16a224e021f8531ee3e79e98fbe88c9a24719784fa1"
         },
         {
           "path": "skills/fabius-decor/references/generative-media.md",
@@ -764,7 +830,7 @@
           "sha256": "e2bfb139ba6afb855e671ecbaceb581783f4a2693112d26ab0c5c39d947b4de3"
         }
       ],
-      "local_tree_sha256": "910a96260a0a320c2d5a80277b4285ad87679870249f1f66712a1fcdd29feff0"
+      "local_tree_sha256": "183700867e6e0c6b34f1614c449628ef568aa83d5f4ec8a4e1ec655502b2729c"
     },
     {
       "id": "open-generative-ai-doctrina",
@@ -804,11 +870,11 @@
           "path": "skills/fabius-machina/references/automation-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 20194,
-          "sha256": "ec6d97ff691944caace3f8a2110236f7ac65c10fd9003d58d0eca05183f117a4"
+          "size": 24038,
+          "sha256": "57c80a2d4439801cdd84acbbca04f7f6d7129f590c1525ae7603e5a68f3394d0"
         }
       ],
-      "local_tree_sha256": "8e3d19670f695b16c1707e14782dc023eb98f976952df7eb1f6f8cc1b716acea"
+      "local_tree_sha256": "52324cca6f22e484b4b71db2ad8606bc1abd25eeea0561ab0ed7920cdc23f4b8"
     },
     {
       "id": "open-generative-ai-praesidium",
@@ -826,20 +892,20 @@
           "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
           "kind": "file",
           "mode": "0644",
-          "size": 29229,
-          "sha256": "340937d5207a573e64e0ceaafc67afbed2435cc2d969c9f11a04fe9ac2750f19"
+          "size": 30391,
+          "sha256": "3abf1c1c0db661ffacafb58fadaf929b88e0c0b8ece8269e70ded56b0c01482c"
         }
       ],
-      "local_tree_sha256": "542e3fca68554eb05167680f916f267f32be7175170461ae0480fa3e096d80bf"
+      "local_tree_sha256": "2527aedffa680f7c3cad99496329de8b05e08e7ddf43b6ab268ebfe42478f1fb"
     },
     {
       "id": "open-notebook-archivum",
       "repo": "https://github.com/lfnovo/open-notebook",
       "license": "MIT",
       "consumed_as": "informed-by",
-      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_commit": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
       "pinned_version": null,
-      "pinned_at": "2026-09-20",
+      "pinned_at": "2026-10-17",
       "local_paths": [
         "skills/fabius-archivum/references/external-recall.md",
         "skills/fabius-archivum/references/retrieval-stack.md"
@@ -849,8 +915,8 @@
           "path": "skills/fabius-archivum/references/external-recall.md",
           "kind": "file",
           "mode": "0644",
-          "size": 26692,
-          "sha256": "e4df03135c60fb4337c1aa96f581489bea6c884262416843594acc1fcab14f6e"
+          "size": 27730,
+          "sha256": "18c74969fe53c7dd19591ada49476cbff917bd98dc3171fd187bbbf26132616e"
         },
         {
           "path": "skills/fabius-archivum/references/retrieval-stack.md",
@@ -860,7 +926,7 @@
           "sha256": "5e163bb46d61763dd5d7ef148cd6ada23b5d219bdf5e8e4889dfe7436804ba70"
         }
       ],
-      "local_tree_sha256": "29b59470c8de72b2e5689b8be71b2cdd3ee7d3dfeb939636d741f046ec5e43ef"
+      "local_tree_sha256": "4e5175ec4687bb9e2cb8723d8add1fd229409a87c35a88ad419939dcc6de80fb"
     },
     {
       "id": "open-notebook-cohors",
@@ -922,11 +988,11 @@
           "path": "skills/fabius-machina/references/automation-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 20194,
-          "sha256": "ec6d97ff691944caace3f8a2110236f7ac65c10fd9003d58d0eca05183f117a4"
+          "size": 24038,
+          "sha256": "57c80a2d4439801cdd84acbbca04f7f6d7129f590c1525ae7603e5a68f3394d0"
         }
       ],
-      "local_tree_sha256": "8e3d19670f695b16c1707e14782dc023eb98f976952df7eb1f6f8cc1b716acea"
+      "local_tree_sha256": "52324cca6f22e484b4b71db2ad8606bc1abd25eeea0561ab0ed7920cdc23f4b8"
     },
     {
       "id": "open-notebook-praesidium",
@@ -944,11 +1010,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 46803,
-          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
+          "size": 47770,
+          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
         }
       ],
-      "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
+      "local_tree_sha256": "22fb02a684cba461ddfbf4bf69331a830046163ad1bab30b4dad65178bad4756"
     },
     {
       "id": "open-seo-fabius",
@@ -988,11 +1054,11 @@
           "path": "skills/fabius-machina/references/automation-toolkit.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12075,
-          "sha256": "e005ef9ba118eaa5e898f0b153b44feb93de6e33db0c86c2d6fd15ff7d19088d"
+          "size": 12393,
+          "sha256": "9d628cc55a578a1488b813aa6ab85a4a64d3d9bb86d717642184113fec8aa112"
         }
       ],
-      "local_tree_sha256": "b36a9cb754aa5e5c2aed817d356fb838bae689d5716d4c8be7f2b8e4f89918c7"
+      "local_tree_sha256": "61baeb8dd1e3b70d53bbda682f87a69d93d33b9999a0a42a0dbf60edfb1de515"
     },
     {
       "id": "open-seo-mercatus",
@@ -1048,11 +1114,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 46803,
-          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
+          "size": 47770,
+          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
         }
       ],
-      "local_tree_sha256": "8d7881ffd3a1942c7f99d92811cd57b30c39ac39d91ea4f1d0abc22ac2849769"
+      "local_tree_sha256": "22fb02a684cba461ddfbf4bf69331a830046163ad1bab30b4dad65178bad4756"
     },
     {
       "id": "rea-disciplina",
@@ -1075,6 +1141,50 @@
         }
       ],
       "local_tree_sha256": "967848389ee1a470594a38f1784fbe8000be88683cafdd4cf4efe6e6f086adb1"
+    },
+    {
+      "id": "scientific-agent-skills-scientia",
+      "repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "pinned_commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+      "pinned_version": null,
+      "pinned_at": "2026-10-17",
+      "local_paths": [
+        "skills/fabius-scientia/references/science-playbook.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-scientia/references/science-playbook.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 12475,
+          "sha256": "109a4e8dc8f3ae7ea4f9cb1c8b864c81987d675adb47bac63353ffe52ef697a9"
+        }
+      ],
+      "local_tree_sha256": "01bd243c2ae14055b05ee4801b844fc79372eb10a14f7d9242e3ce8e4a961af7"
+    },
+    {
+      "id": "solana-dev-skill-catena",
+      "repo": "https://github.com/solana-foundation/solana-dev-skill",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "pinned_commit": "33e2663540685ae699039907cae080b72f1c2681",
+      "pinned_version": "2.7.0",
+      "pinned_at": "2026-10-17",
+      "local_paths": [
+        "skills/fabius-catena/references/onchain-playbook.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-catena/references/onchain-playbook.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 26436,
+          "sha256": "c729ba4fe74c1b0077115d9d3e2c67da049b48ecc48ec627205960d032d6432b"
+        }
+      ],
+      "local_tree_sha256": "f0d97849de8c585d2b630aafabec30d8d195b92fff818ca6b0f15a16e088550e"
     },
     {
       "id": "strix-cohors",
@@ -1124,8 +1234,8 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 46803,
-          "sha256": "e89cab98d7773d567c1a9576e9e5f467427ca37620306be34ec5f8fac3589ec5"
+          "size": 47770,
+          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
         },
         {
           "path": "skills/fabius-praesidium/references/security-playbook.md",
@@ -1142,7 +1252,7 @@
           "sha256": "cfb0728a439a817010564bdf0d301f5321beb06890b1851b555589f3a1f629f0"
         }
       ],
-      "local_tree_sha256": "540230d3516ff55b9bb119ba5283eea3faa26af6c12bfc821b8044a7f424bf25"
+      "local_tree_sha256": "39fc957eb85d0519e5dbcb3c81f885d7106d8b292b9b979a305ad4c11f7e9f9f"
     },
     {
       "id": "system-prompts-leaks-archivum",
@@ -1251,8 +1361,8 @@
           "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
           "kind": "file",
           "mode": "0644",
-          "size": 19496,
-          "sha256": "0e920fbbad7a673da48e7e698141b060b2b76ef7fb7c560b249fd205de50813b"
+          "size": 20700,
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
         },
         {
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
@@ -1262,7 +1372,7 @@
           "sha256": "ada78befcde21f39cf140ebf03485bdc5e01b651728d90c9c9717392716d4448"
         }
       ],
-      "local_tree_sha256": "6e4c0f0ea4935012d81464aa41fc7047edcfa53fa86d35a99b2fa79840ca51dd"
+      "local_tree_sha256": "879479563d20cfe7ecfa10e9eedfe869bbaeb435cf40f69ff85be1eb61d936d1"
     },
     {
       "id": "system-prompts-leaks-fabius",

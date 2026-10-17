@@ -141,6 +141,12 @@ fabius-ludus       → the loop + the feel            (THIS layer leads)
 
 `fabius-parcus` is always-on beneath the whole pipeline — it doesn't take a turn in the order, it sits under every step.
 
+## 8. Evidence for the loop, not just a green runner
+
+Map each selected acceptance criterion to the evidence that can actually establish it. Logic needs behavior assertions and integration where components meet; a test-file count, assertion quota, successful compilation or a mocked screenshot does not prove the player's loop. Visual readability, timing and feel need a rendered run or playtest at the relevant input/device conditions. Record the build, scene, controls, observed result and any missing coverage beside the criterion.
+
+An empty story selection, zero discovered tests or a filter matching nothing is **NOT ASSESSED**, never “all green, zero blockers.” A missing engine, device or runtime is **BLOCKED** for the claims that need it; static checks can still report their own narrower results. An explicitly accepted waiver names the unproven criterion and its consequence; it does not become a pass or waive a different visual/feel gate. End with separate proven, failed, blocked and waived claims so a useful local result cannot masquerade as a complete playtest.
+
 ## When NOT to build the engine
 
 - **Use the engine/platform; don't hand-roll it.** Physics, ECS, input, audio, the render loop — reach for the existing tool (`fabius-parcus` ladder: platform before app code). Hand-rolling a physics engine for a small game is the over-build trap in disguise. The recipes in [engine-recipes.md](engine-recipes.md) are for when you're *already* on raw canvas with no engine — they're the lean floor, not a license to rebuild Unity.
@@ -151,3 +157,6 @@ fabius-ludus       → the loop + the feel            (THIS layer leads)
 The deep library — the fixed-timestep loop, buffered input, the SFX pool, pixel-perfect render, AABB collision, the juice patterns with implementation, the pixel-art kit — is bundled at [engine-recipes.md](engine-recipes.md), indexed by [CORPUS.md](../../../CORPUS.md). Page in the **one** recipe the task needs; never load it wholesale (`fabius-parcus`; routing-policy R9 · M9).
 
 Boundary: lean code is `fabius-parcus`; plan + prove is `fabius-disciplina`; UI/animation laws are `fabius-decor`; enemy/NPC agents are `fabius-cohors`. This layer owns the loop, the feel, and the balance. The user's design and brand always win.
+
+
+Informed by **Claude-Code-Game-Studios** (Donchitos, MIT), revision `be8993bbc5a1f016bc770b2846ce06272d284526` (2026-10-17 review; 1.1.3) — studied for acceptance-criterion evidence, empty-scope verdicts and keeping runtime/playtest claims separate from static checks; Fabius uses behavior-relevant evidence rather than assertion-count thresholds. Mechanisms re-expressed, no upstream files bundled. See credits/README.md.
