@@ -137,7 +137,17 @@ The same rule binds an agent that signs (→ [`onchain-security.md`](onchain-sec
 
 Be explicit about every one of these — defaulting silently is the bug: **cluster + RPC + websocket** (and that they agree) · **fee payer + recent blockhash** (both set, blockhash fresh) · **compute budget / priority fees** sized for load · **expected owners / signers / writability** on every account · **SPL vs Token-2022** (detect it, never assume).
 
-`"signature received"` is **not** finality. Confirm to the commitment you actually need, and handle **blockhash expiry** with a fresh-blockhash retry rather than blind resend.
+`"signature received"` is **not** finality. Confirm the required commitment and retain the signed transaction's signature before submission. After a timeout, query that signature and reconcile the payment intent; while valid, rebroadcasting the same signed bytes preserves its identity. A new blockhash and signature create a different transaction, so an empty RPC result or client timeout must not trigger automatic re-signing. Resolve expiry and the original outcome before any separately authorized replacement.
+
+### Payment correlation does not prevent duplicate payment
+
+A memo or reference helps find an order's transfer; it cannot stop a second signed transfer. Fulfillment verifies successful chain settlement, cluster, recipient, mint, amount and the required commitment, then atomically claims the order once in the application's store. A duplicate notification must not fulfill twice, and a previously consumed settlement must not satisfy another order. A client callback alone is no proof. Exercise a lost submit response, repeated notification, wrong recipient/mint and two concurrent fulfillment attempts against a local fixture before enabling real payments.
+
+### Transaction format is an end-to-end capability
+
+The inspected Solana skill 2.7.0 prefers Kit 8 plugin clients and transaction v1 for new work (source checked 2026-10-17). Check the actual cluster, wallet and downstream readers first. Configure the version explicitly: the planner may otherwise produce v0. A wallet without v1 support needs a supported v0 path or an explicit limitation; never reinterpret its refusal as approval to use another signer.
+
+For v1, resource limits and priority fees belong in the message configuration; legacy ComputeBudget instructions do not set them. Use version-aware estimators/setters. RPC block/transaction readers must declare support for v1 where the API requires `maxSupportedTransactionVersion`, while continuing to decode legacy and v0. The inspected compatibility notes specifically say `@anchor-lang/core` 1.x through 1.2.1 cannot yet read transaction v1: an Anchor program/toolchain version is not proof that its TypeScript reader supports that format. Use a verified version-capable reader or keep the enabled transaction path at v0; do not silently downgrade the program or swap signers. Test both wallet paths and each reader; a send-side upgrade with a stale indexer is incomplete.
 
 ## The testing pyramid
 
@@ -167,7 +177,7 @@ Solidity deprecations to clear while they are still warnings (0.8.36, 2026-07-09
 | edition2024 cargo trap | **Fixed upstream in platform-tools v1.52 (2025-10-30)** — v1.52+ ship Rust/cargo **1.89.0**, past the 1.85 that stabilized edition 2024, and **v1.54 is the current default** (`DEFAULT_PLATFORM_TOOLS_VERSION` in `cargo-build-sbf`; verified 2026-08). Only **v1.51 and earlier** (Rust 1.84.1) hit this — still reachable on a stale install or a deliberately pinned toolchain. Confirm before believing the error: `cargo-build-sbf --version` prints the platform-tools version **and** the base Rust version. **Fix by upgrading** — update the Solana CLI, or `cargo-build-sbf --tools-version v1.54` — *not* by downgrade-pinning `blake3` / `constant_time_eq` / `base64ct` / `indexmap`. That pin-down was a 2025 stopgap; today it just holds you on older, less-maintained crates and blocks `solana-program` 3.x / Anchor v1. Pin only if the error actually reproduces on your installed toolchain — and record the version it reproduced on. |
 | `ECONNREFUSED ::1:8899` | the validator binds IPv4 — force `127.0.0.1`, not `localhost`. |
 
-Anchor migrations are stepwise: **0.29 → 0.30 → 0.31 → 0.32 → 1.0 → 1.1** — don't jump versions; apply each step's changes in order. **v1 is the shipped line**, not the horizon (1.0.0 on 2026-04-02; 1.1.2 still current, verified 2026-08), and three of its breaks change what compiles and what you install:
+Anchor migrations are stepwise: **0.29 → 0.30 → 0.31 → 0.32 → 1.0 → 1.1 → 1.2** — don't jump versions; apply each step's changes in order. **v1 is the shipped line**, not the horizon (1.2.1 in the inspected source snapshot of 2026-10-17), and three of its breaks change what compiles and what you install:
 
 - **Duplicate mutable accounts are rejected by default — but only half the row is delegated.** The default check covers the `mut` account types that *serialize on exit*: `Account`, `LazyAccount`, `InterfaceAccount`, `Migration`. Opt back in per context with the `dup` constraint when two writable slots legitimately alias. The types that do **not** serialize on exit — `AccountLoader` (zero-copy), `UncheckedAccount`, `Signer`, `SystemAccount`, `Program`, `Interface` — still take a duplicate without complaint, so on a context whose writable slot is one of those, the checklist row is still yours to read. (`AccountLoader` at least fails loudly if you hold two mutable borrows at once — a borrow error, not a validation check.) Outside Anchor (Pinocchio, raw Solidity) the whole check is code you write by hand.
 - **The TypeScript client changed scope: `@coral-xyz/anchor` → `@anchor-lang/core`.** The old scope is frozen at 0.32.1 (published 2025-10-10), a full major behind — installing it against a v1 program pairs a v1 IDL with a 0.32 client. Reach for `@anchor-lang/core`.
@@ -175,14 +185,16 @@ Anchor migrations are stepwise: **0.29 → 0.30 → 0.31 → 0.32 → 1.0 → 1.
 
 v1 also adds `Migration<'info, From, To>` for schema migrations between account types (`LazyAccount` is older — it landed in 0.31.0), and makes **surfpool the default backend for `anchor test` and `anchor localnet`**. That puts the tool the pyramid above lists in the *integration* row behind the command you run as the fast gate: keep the split deliberate — name an explicit in-process unit target (LiteSVM / Mollusk) rather than assuming `anchor test` is still in-process.
 
+The inspected 1.2.1 compatibility notes distinguish validator/CLI versions from SDK crate versions. Keep `anchor-*` crates aligned. The default SDK cohort remains `solana-v3`; opting into `solana-v4` requires consistent feature selection across those dependencies and its own IDL/build validation. Do not select an untested mixed cohort just because each package has a newer version. Older platform-tools rows in the upstream matrix conflict with its newer release guidance; retain the installed-toolchain probe above instead of reintroducing blanket dependency downgrades.
+
 ## Task-classify before scaffolding
 
 A one-shot read is not a project. A balance / transaction / token-account lookup is a public-RPC JSON-RPC `curl`, **not** an SDK install. Layer the work and pick the smallest building block per layer:
 
-| Layer | Building block (Solana defaults, early 2026) |
+| Layer | Building block (Solana skill 2.7.0, checked 2026-10-17) |
 |---|---|
-| UI / wallet | wallet adapter |
-| Client / scripts | **`@solana/kit` (framework-kit)** > web3-compat |
+| UI / wallet | Kit wallet plugin with Wallet Standard discovery + `@solana/react`; check the connected wallet's transaction versions |
+| Client / scripts | **`@solana/kit` 8 plugin clients**; isolate legacy class APIs at an adapter boundary. For existing web3.js v1 applications, inspect the official v3 migration path; `@solana/web3-compat` and framework-kit are no longer new-project defaults |
 | Program + IDL | **Anchor** > Pinocchio unless CU / size pressure forces manual `no_std` |
 | IDL → client | **Codama** |
 | Testing | LiteSVM / Mollusk (unit) → Surfpool (forked integration) |
@@ -196,4 +208,4 @@ Reach for the full kit only when you're actually *building*.
 
 ---
 
-Adapted from the Solana Foundation's solana-dev-skill (MIT) — re-expressed in fabius's own voice.
+Informed by **solana-dev-skill** (solana-foundation, MIT), reviewed at `33e2663540685ae699039907cae080b72f1c2681` (2026-10-17; skill 2.7.0), including payment settlement, transaction versions, frontend and compatibility references. Original Fabius procedures; no upstream code or wallet tooling bundled. See credits/README.md.

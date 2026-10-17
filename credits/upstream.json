@@ -1,6 +1,6 @@
 {
   "schema": "fabius-upstream/v1",
-  "generated": "2026-10-10",
+  "generated": "2026-10-17",
   "entries": [
     {
       "id": "nanoclaw-code-architect",
@@ -80,12 +80,12 @@
       "fabius_paths": [
         "skills/fabius-decor/references/design-critique.md"
       ],
-      "pinned_commit": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "pinned_commit": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
       "pinned_version": null,
-      "pinned_at": "2026-10-10",
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Retained the prior design-critique fold with its historical source snapshot; current additions cover independently changing visual regions and snapshot-bound finding closure. Historical detector examples are not a current upstream API or count. No engines, hooks, assets or third-party platform references bundled."
+      "notes": "Retained the prior design-critique fold with its historical source snapshot; current additions cover independently changing visual regions and snapshot-bound finding closure. Historical detector examples are not a current upstream API or count. No engines, hooks, assets or third-party platform references bundled. 2026-10-17 scoped refresh: Current review narrows the two-round visual budget to new work; authorized functional and accessibility corrections retain their own evidence gate. Earlier catalog and composition snapshots remain explicitly historical."
     },
     {
       "id": "claude-video",
@@ -114,12 +114,12 @@
       "fabius_paths": [
         "skills/fabius-archivum/references/notebook-connector.md"
       ],
-      "pinned_commit": "2aff0fcb27c1be734d720b409696fcd74c4ba604",
-      "pinned_version": "0.8.4",
-      "pinned_at": "2026-10-10",
+      "pinned_commit": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+      "pinned_version": null,
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Refreshed the existing unofficial notebook connector: source readiness, exact job/artifact/research identity, passive auth diagnosis, live usage availability and structured citation resolution. No provider credentials, client runtime or external service bundled."
+      "notes": "Refreshed the existing unofficial notebook connector: source readiness, exact job/artifact/research identity, passive auth diagnosis, live usage availability and structured citation resolution. No provider credentials, client runtime or external service bundled. 2026-10-17 scoped refresh: Reviewed HEAD after release 0.8.5; Windows event-loop and upload fixes are still in Unreleased, not claimed as installed or released. Existing source/job identity and readiness rules retained."
     },
     {
       "id": "system-prompts-leaks-cohors",
@@ -255,12 +255,12 @@
         "skills/fabius-archivum/references/external-recall.md",
         "skills/fabius-archivum/references/retrieval-stack.md"
       ],
-      "pinned_commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "pinned_commit": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
       "pinned_version": null,
-      "pinned_at": "2026-09-20",
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Studied for summary-share packing under a ceiling, closed-id-set citation discipline and success-shaped extractor errors; scope-before-cap filtering, typed scope errors and the vector-ingest failure shapes. Mechanisms re-expressed, no source text carried."
+      "notes": "Studied for summary-share packing under a ceiling, closed-id-set citation discipline and success-shaped extractor errors; scope-before-cap filtering, typed scope errors and the vector-ingest failure shapes. Mechanisms re-expressed, no source text carried. 2026-10-17 scoped refresh: Current source-deletion regression tests inform terminal-versus-transient ingestion failure and deletion races. Historical packing/retrieval rules retain their original scope; no server runtime imported."
     },
     {
       "id": "book-to-skill-archivum",
@@ -656,12 +656,12 @@
       "fabius_paths": [
         "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
       ],
-      "pinned_commit": "526f362552562d88c1a8bbf8012d2cee93f831d5",
+      "pinned_commit": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
       "pinned_version": null,
-      "pinned_at": "2026-09-20",
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Studied for ingest-side stripping of non-rendering code points with one shared predicate, and the review of a pack generated from untrusted material. Mechanisms re-expressed, no source text carried. A pack distilled from a copyrighted book is a private derivative and is never bundled."
+      "notes": "Studied for ingest-side stripping of non-rendering code points with one shared predicate, and the review of a pack generated from untrusted material. Mechanisms re-expressed, no source text carried. A pack distilled from a copyrighted book is a private derivative and is never bundled. 2026-10-17 scoped refresh: Current sanitizer/tests inform versioned Unicode-property coverage, shared detection/sanitization and legitimate-script regression probes. Raw originals and authored RTL remain intact."
     },
     {
       "id": "open-generative-ai-praesidium",
@@ -758,12 +758,12 @@
       "fabius_paths": [
         "skills/fabius-cohors/references/agent-workloads.md"
       ],
-      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
       "pinned_version": null,
-      "pinned_at": "2026-09-28",
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Studied for running an agent as a workload: the shape-blind unit and its lifecycle, brief immutability with successor units, ordered teardown with durable intent, alive-vs-ready with per-step verified outcomes, the outcome record over the exit code, the idempotence marker and second-boot probe, per-phase credentials at the hand-off, process-group supervision, declared files travelling with the environment, the runner as a swappable seam, waiting as a checkpoint with a declared wake condition, and the harness keeping the record. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+      "notes": "Studied for running an agent as a workload: the shape-blind unit and its lifecycle, brief immutability with successor units, ordered teardown with durable intent, alive-vs-ready with per-step verified outcomes, the outcome record over the exit code, the idempotence marker and second-boot probe, per-phase credentials at the hand-off, process-group supervision, declared files travelling with the environment, the runner as a swappable seam, waiting as a checkpoint with a declared wake condition, and the harness keeping the record. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried. 2026-10-17 scoped refresh: Current server implementation informs retryable launch failures retaining the same unit identity. Original lifecycle and roadmap distinctions remain historical; AX remains pre-stable."
     },
     {
       "id": "ax-fabius-praesidium",
@@ -776,12 +776,12 @@
         "skills/fabius-praesidium/references/hardening-guides.md",
         "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md"
       ],
-      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
       "pinned_version": null,
-      "pinned_at": "2026-09-28",
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Studied for the fail-closed credential resolver and secret-bearing artifacts, the launch spec as a copied carrier in the leak grep, debug attach treated as a remote shell (off by default), named-entry grants with no admin rung in production, a sandbox counting as a boundary only under a proven deny-by-default egress policy, and the unreadable-change-does-not-merge rule with a binary allowlist and lockfile regeneration. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+      "notes": "Studied for the fail-closed credential resolver and secret-bearing artifacts, the launch spec as a copied carrier in the leak grep, debug attach treated as a remote shell (off by default), named-entry grants with no admin rung in production, a sandbox counting as a boundary only under a proven deny-by-default egress policy, and the unreadable-change-does-not-merge rule with a binary allowlist and lockfile regeneration. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried. 2026-10-17 scoped refresh: Current metadata/server and security docs distinguish loopback metadata from routed probes and the unauthenticated control-plane trust model. Earlier launch-copy and supply-chain observations retain their historical scope; no production-isolation claim."
     },
     {
       "id": "ax-fabius-disciplina",
@@ -794,12 +794,12 @@
         "skills/fabius-disciplina/references/architecture-decisions.md",
         "skills/fabius-disciplina/references/codebase-and-proof.md"
       ],
-      "pinned_commit": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+      "pinned_commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
       "pinned_version": null,
-      "pinned_at": "2026-09-28",
+      "pinned_at": "2026-10-17",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Studied for storing by record shape with count, lifetime and write-rate as decision-changing unknowns; lock discipline where contention is observed; strict decode at the edge with legacy shapes named; emit-site plus consuming-branch in the impact map; the launcher as an injected second seam with a laptop-testable boot contract; restore-then-boot as the resume surface; readiness that can say not-attempted; and reporting the shapes not driven. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried."
+      "notes": "Studied for storing by record shape with count, lifetime and write-rate as decision-changing unknowns; lock discipline where contention is observed; strict decode at the edge with legacy shapes named; emit-site plus consuming-branch in the impact map; the launcher as an injected second seam with a laptop-testable boot contract; restore-then-boot as the resume surface; readiness that can say not-attempted; and reporting the shapes not driven. Pre-stable upstream; roadmap recorded as plan. Mechanisms re-expressed, no source text carried. 2026-10-17 scoped refresh: Current lock code implements best-effort renewal without fencing. Fabius adds a stale-writer acceptance probe and destination-enforced fencing requirement for correctness-critical writes; these are not claimed as AX features."
     },
     {
       "id": "ax-fabius-doctrina",
@@ -953,6 +953,91 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Local-only reverse-engineering MCP/CLI studied for its evidence classes (observation, derivation, inference, unknown), authorization boundary, target routing, bounded runtime captures, investigation ledger, reconstruction verification and analyst-question tool rules; re-expressed as Fabius's procedure. No code, catalog, engine or prompt bundled."
+    },
+    {
+      "id": "n8n-skills-machina",
+      "repo": "https://github.com/czlonkowski/n8n-skills",
+      "owner": "Romuald Członkowski",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-machina",
+      "fabius_paths": [
+        "skills/fabius-machina/references/automation-playbook.md"
+      ],
+      "pinned_commit": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+      "pinned_version": null,
+      "pinned_at": "2026-10-17",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Existing credited source, now pinned: per-call instance identity, executable test modes, template deployment as a write, binary item continuity and JSON-tool file boundaries. Root MIT; optional hooks separately Apache-2.0; neither carried."
+    },
+    {
+      "id": "solana-dev-skill-catena",
+      "repo": "https://github.com/solana-foundation/solana-dev-skill",
+      "owner": "Solana Foundation",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-catena",
+      "fabius_paths": [
+        "skills/fabius-catena/references/onchain-playbook.md"
+      ],
+      "pinned_commit": "33e2663540685ae699039907cae080b72f1c2681",
+      "pinned_version": "2.7.0",
+      "pinned_at": "2026-10-17",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Existing credited source, now pinned: Kit 8/Anchor 1.2.1 dependency cohorts, version-aware transaction paths, and payment reconciliation plus atomic fulfillment. Source compatibility-table conflicts are disclosed; no dependency install."
+    },
+    {
+      "id": "scientific-agent-skills-scientia",
+      "repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "owner": "K-Dense Inc.",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-scientia",
+      "fabius_paths": [
+        "skills/fabius-scientia/references/science-playbook.md"
+      ],
+      "pinned_commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+      "pinned_version": null,
+      "pinned_at": "2026-10-17",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Existing credited source, now pinned: API-specific methods/count/pagination, provenance without secrets, genomic assembly/coordinate/allele boundaries. Root license inspected; no full catalog imported and per-skill exceptions remain separate."
+    },
+    {
+      "id": "game-studios-ludus",
+      "repo": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "owner": "Donchitos",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-ludus",
+      "fabius_paths": [
+        "skills/fabius-ludus/references/game-playbook.md"
+      ],
+      "pinned_commit": "be8993bbc5a1f016bc770b2846ce06272d284526",
+      "pinned_version": "1.1.3",
+      "pinned_at": "2026-10-17",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Existing credited source, now pinned: acceptance-criterion evidence, NOT ASSESSED for empty selection, and runtime/feel versus static checks. Assertion-count heuristics and studio runtime not adopted."
+    },
+    {
+      "id": "flue-cohors",
+      "repo": "https://github.com/withastro/flue",
+      "owner": "withastro",
+      "license": "Apache-2.0",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-cohors",
+      "fabius_paths": [
+        "skills/fabius-cohors/references/agent-workloads.md"
+      ],
+      "pinned_commit": "deee93b40d275ecc9a50c50af2158f20089d54bc",
+      "pinned_version": "2.3.0",
+      "pinned_at": "2026-10-17",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Existing credited source, now pinned: process-group cleanup must finish even after parent exit and pipe closure; concrete surviving-descendant probe. Changelog informs the mechanism; runtime not imported."
     }
   ]
 }

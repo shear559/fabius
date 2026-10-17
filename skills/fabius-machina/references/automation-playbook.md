@@ -4,7 +4,7 @@ The on-demand depth for `fabius-machina`'s build-and-verify discipline. The skil
 
 n8n + `n8n-mcp` is the **worked example** throughout. The shape is platform-agnostic; the gotchas are n8n's. Carry the shape to Zapier/Make/Pipedream; rebuild the gotcha list per platform.
 
-> **Optional live tier.** The `n8n-mcp` MCP server and `N8N_API_URL`/`N8N_API_KEY` are **not bundled** — the user configures them. Discovery, validation, and design run without an instance; only *writing to a live instance* needs the API. Fabius bundles no n8n instance or MCP server (see [ARCHITECTURE.md](../../../ARCHITECTURE.md) → *External connections*).
+> **Optional live tier.** The `n8n-mcp` MCP server and `N8N_API_URL`/`N8N_API_KEY` are **not bundled** — the user configures them. Discovery, validation, and design run without an instance; instance reads, writes and execution need the corresponding connection. Some execution/history operations additionally need the instance-level MCP token; discover that capability separately. Fabius bundles no n8n instance or MCP server (see [ARCHITECTURE.md](../../../ARCHITECTURE.md) → *External connections*).
 
 ## The transferable shape
 
@@ -35,6 +35,12 @@ Two prefix formats coexist — **wrong prefix = node-not-found**:
 ### Discovery reads the present; the changelog reads the near future
 
 A platform publishes what it is about to take away, and reading that list is the other half of discovery — ship onto a doomed node and you have inherited someone else's migration. n8n's v3.0 cut (targeted October 2026) removes the legacy **Function**, **Function Item** and **Item Lists** nodes — migrate to the Code node, and to Split Out / Aggregate / Sort / Limit / Remove Duplicates / Summarize respectively — and drops the `$getPairedItem` expression helper in favour of standard item linking. Self-hosted installs become **Docker-only**: `npm` / `npx n8n` stops being supported, so a runbook that installs n8n from npm has an expiry date. Workflow-import-from-URL leaves the editor (file and CLI import stay). If a template you are about to deploy still carries a doomed node, replace it at build time.
+
+### Bind each call to its environment
+
+When the connection exposes multiple instances, discover their names with `n8n_instances` and read the actual tool schemas. If they expose `instance`, pass the intended name on **every** instance read and write, including credentials, execution polling and rollback. A shared default can be changed by another chat between two calls; selecting it once is not isolation. Verify the selected target before writing a credential. A name that resolves is still the wrong target if it is not the user's intended environment.
+
+An unfamiliar result or unexpected `NOT_FOUND` first calls for a target check, not recreating the workflow or deleting the explicit target argument. On an older server that offers only a shared `switch`, serialize the switch and its dependent work, read back the selection, and require exclusive use of that connection for the sequence. If exclusivity cannot be established, keep the deliverable local until a connection with safe targeting is available. Never infer that an error envelope authorized a different environment.
 
 ## 2. Build incrementally — patch, don't regenerate
 
@@ -79,7 +85,9 @@ validate_workflow({ workflow, profile: "runtime" })   # whole graph
 
 ## 4. Test on sample data, then activate
 
-Tests **execute**: writes write, messages send, emails leave. Run on safe sample input first, confirm the *real* effect (row appeared, message landed), then flip live. Never let the first real execution be the activation.
+Tests **execute**: writes write, messages send, emails leave. Use a disposable target or already-authorized sample effects, observe the result, then enable the production path. A method named `pinned` is not a dry run: it substitutes only certain nodes, while Code and credential-free file or command nodes can still act.
+
+Discover the test method before promising an inactive test. The community tool's `auto`/`trigger` path fires an **active** HTTP trigger. `prepare` is a read-only inventory; `pinned` and `direct` use the separate official MCP connection when available. `direct` acknowledges dispatch, not completion: retain its execution id and poll that execution to a terminal outcome. Missing MCP exposure, credentials or a safe execution target leaves execution **unverified**; validate the local graph and state the missing prerequisite. Do not activate production or expose a workflow merely to make a test tool work. Publishing, exposure and execution each stay within the user's actual authorization.
 
 ## Tool-per-intent map (n8n-mcp)
 
@@ -88,7 +96,8 @@ Tests **execute**: writes write, messages send, emails leave. Run on safe sample
 | discovery | `search_nodes` / `get_node(includeExamples:true)` | no |
 | node check | `validate_node` | no |
 | workflow check | `validate_workflow` | no |
-| templates | `search_templates` / `get_template` / `n8n_deploy_template` | no |
+| template discovery | `search_templates` / `get_template` | no |
+| **template deployment** | `n8n_deploy_template` | **yes — creates an instance workflow** |
 | docs | `get_node` docs | no |
 | **build** | `n8n_create_workflow` | **yes** |
 | **edit** | `n8n_update_partial_workflow` | **yes** |
@@ -99,7 +108,7 @@ Tests **execute**: writes write, messages send, emails leave. Run on safe sample
 | state / dedupe store | `n8n_manage_datatable` | **yes** |
 | credentials / audit | `n8n_manage_credentials` / `n8n_audit_instance` | **yes** |
 
-Split by configuration: **search / validate / template / docs need no API.** CRUD / credential / audit ops need `N8N_API_URL` + `N8N_API_KEY` set. Discover and validate fully without an instance; you only need the live instance to write.
+Split by configuration: **schema search / local validation / template retrieval / docs need no instance API.** Instance operations, including template deployment, need a configured target and its Public API credentials. Check the live schema and health response for operations needing a separate `N8N_MCP_ACCESS_TOKEN`; a Public API key does not supply that capability. No connection still permits a local workflow design and structural validation, never a claim of instance execution.
 
 Run autofix in **preview** (`applyFixes: false`) *before* the verify pass, never after: it rewrites expression formats, typeVersions, error outputs, webhook paths and node types, and you want to read that diff rather than inherit it. `n8n_test_workflow` makes gate four mechanical — it auto-detects the trigger kind (webhook / form / chat) — so a first real run in production is no longer an excuse, and `n8n_workflow_versions` is the rollback that makes a bad surgical edit cheap.
 
@@ -134,6 +143,14 @@ Prefer **smart parameters** over fragile index math: `branch: "true"` for an IF 
 **The general rule:** every automation platform has its own silent-failure set. Keep a living per-platform list and check it before activating. The list above is n8n's; the *practice* transfers.
 
 Two rows open every platform's list. **A limit that arrives as a plain client error** — a ceiling returned as an ordinary 4xx with no retry hint reads as a bad request and gets "fixed": read the error body before touching the payload (re-classing and the hint-less wait → cohors [§2](../../fabius-cohors/references/agent-evaluation-and-durability.md)). A *concurrency* ceiling has no clock to wait out — free a submit slot when one of your own jobs turns terminal, and keep polling traffic apart from submit concurrency. **Docs and SDK that disagree** — neither document wins; the live schema of the endpoint you call does (§1).
+
+### File payloads need their own proof
+
+An n8n item may carry both `json` and `binary`. A Code transform that returns only a new `json` object can discard its attachment without failing JSON validation. Carry the required binary slot and item association through the transform, use the runtime's binary-buffer helper when bytes are needed, and verify the output at the consumer. Do not assume the storage field contains directly decodable bytes on every deployment.
+
+If a bypass branch restores files after a transform, join by stable item identity whenever filtering, sorting or fan-out changed correspondence. Positional merging is valid only after proving equal cardinality **and order**; otherwise an invoice can reach the wrong customer. Check file identity/content as well as slot presence on representative multi-item input.
+
+At a JSON-only agent-tool boundary, store the file in authorized private storage and pass a scoped key or expiring URL. Model vision access does not imply that its tools received the file. Chat delivery needs the platform's file API or a URL the recipient can actually access; never make sensitive storage public to repair rendering. Missing storage or upload capability is a stated delivery limit, not a successful attachment.
 
 ## Day-2 — make it survive re-firing
 
@@ -194,4 +211,4 @@ Adapted from czlonkowski/n8n-skills by Romuald Członkowski (MIT; hooks layer Ap
 
 Studied (2026-09-20): a hosted media-generation API's public developer documentation (a commercial product; nothing carried) — observed for a billed submit with no dedupe key, status-by-id as the only read, limits returned as plain client errors, and one status code carrying different meanings across the vendor's documentation and its published client library; no value, name or sentence taken.
 
-Informed by **open-notebook** (lfnovo, MIT) — studied for the single-attempt policy on a job that creates records mid-run and its resolve-everything-before-the-run preflight; and **Open-Generative-AI** (Anil-matcha, MIT) — studied for the client side of a billed submit-then-poll job: status sets with unknown-means-continue and a distinct timed-out outcome that carries the job id (resume-by-id and clear-only-on-confirmed-terminal are fabius's own); re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.
+Informed by **n8n-skills** (czlonkowski/n8n-skills, MIT; hooks layer Apache-2.0), reviewed at `c640094d949c5a7bfce7d51fc9c049e3dcd3be44` (2026-10-17) for target-bound calls, binary continuity, deployment capabilities and execution outcomes; and **open-notebook** (lfnovo, MIT) — studied for the single-attempt policy on a job that creates records mid-run and its resolve-everything-before-the-run preflight; and **Open-Generative-AI** (Anil-matcha, MIT) — studied for the client side of a billed submit-then-poll job: status sets with unknown-means-continue and a distinct timed-out outcome that carries the job id (resume-by-id and clear-only-on-confirmed-terminal are fabius's own); re-expressed in fabius's own voice; no upstream files bundled. See credits/README.md.

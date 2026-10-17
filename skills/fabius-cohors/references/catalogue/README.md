@@ -25,7 +25,7 @@ A schema-valid answer can still be false. Review facts and cross-field condition
 | Previous source | Useful capability retained | Original replacement | Explicit limit |
 |---|---|---|---|
 | [Agency Agents](https://github.com/msitarzewski/agency-agents) | Precise role selection and bounded handoffs | Six Fabius definitions and this adaptation procedure | Does not reproduce hundreds of specialty personas |
-| [Google ADK samples](https://github.com/google/adk-samples) | Typed task inputs/results and testable adapters | The JSON contract, output validator and deterministic worked adapter | No provider SDK, retrieval connector or six-language SDK implementation |
+| [Google ADK recipes (formerly samples)](https://github.com/google/adk-recipes) | Typed task inputs/results and testable adapters | The JSON contract, output validator and deterministic worked adapter | No provider SDK, retrieval connector or six-language SDK implementation |
 | [Ruflo](https://github.com/ruvnet/ruflo) | Dependency coordination and explicit work ownership | The bounded static-DAG scheduler | No distributed service, dynamic agent spawning, persistent queue or process sandbox |
 
 The previous bundles had unknown historical revision pins. Removing their files does not recover those pins or change the origin of past releases. Existing authored research and local-runtime guidance remain alongside this original implementation. No new file is a renamed copy of a retired implementation.

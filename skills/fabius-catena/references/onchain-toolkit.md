@@ -17,8 +17,8 @@ Loaded on demand by `fabius-catena`. Best-in-class (2026) for the skill's two jo
 
 | Tool | License | Note |
 |---|---|---|
-| **Anchor** | Apache-2.0 | Default program framework — `#[account(...)]` constraints **enforce the account-validation-first rule** + emit the TS IDL client. (Repo now under `solana-foundation`.) |
-| **Solana Kit** (@solana/kit) | MIT | Modern tree-shakeable TS client (the renamed web3.js 2.x); full break from 1.x. |
+| **Anchor** | Apache-2.0 | Default program framework — `#[account(...)]` constraints **enforce the account-validation-first rule** + emit the TS IDL client. (The inspected Solana 2.7.0 source points Anchor 1.2.1 to [`otter-sec/anchor`](https://github.com/otter-sec/anchor); verify the selected release before installing.) |
+| **Solana Kit** (@solana/kit) | MIT | Kit 8 plugin clients for new work; wallet discovery through the Kit wallet plugin and React bindings through `@solana/react`. Keep legacy web3.js migration in an adapter; verify transaction-version support end to end (playbook, snapshot 2026-10-17). |
 | **LiteSVM** | Apache-2.0 | Fast in-process test VM — the Solana test gate (assert behavior, incl. clock/compute-budget, before mainnet). |
 | **Pinocchio** | Apache-2.0 | Zero-dep low-CU programs — but **NOT feature-complete and UNAUDITED** per Solana's docs; hand-rolls account validation → raises the review bar. Anchor stays the safe default. |
 

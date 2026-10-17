@@ -1,0 +1,4447 @@
+{
+  "schema": "fabius-upstream-review/v1",
+  "reviewed_at": "2026-10-17",
+  "fabius_base": "497c7e4c61b8054667997094e872c5036c37412d",
+  "scope": {
+    "public_skills": 15,
+    "existing_source_repositories": 87,
+    "successor_repositories": 1,
+    "source_files_retrieved": 308,
+    "no_new_public_skills": true,
+    "no_runtime_install": true,
+    "notes": "Existing credited/registered/retired sources only; OpenSpec excluded by the user's corrected scope. Full heads are review snapshots, not installed versions or blanket latest-release claims. One owner contract and the matching AGENTS.md sentence were reconciled; the local development seal manifest was recomputed without a release signature or timestamp."
+  },
+  "limits": [
+    "README/catalog checks cannot validate every implementation or every downstream component license.",
+    "GitHub comparisons used for registered sources can be capped; targeted source files establish adopted changes, not a claim of complete diff review.",
+    "Historical pins identify earlier method adoption; they are preserved when that method is retained, alongside current reviewed heads.",
+    "Retired source bundles remain retired. No dependency, external service, live user data, release signature or installed skill was updated.",
+    "Behavior checks use supplied facts and frozen instructions; runtime/provider claims require an authorized live task."
+  ],
+  "skills": [
+    {
+      "layer": "fabius",
+      "status": "reviewed-retained",
+      "decision": "Retained routing and source-maintenance rules; no new skill, OpenSpec, host installation or publication.",
+      "sources": [
+        "nanocoai/nanoclaw",
+        "asgeirtj/system_prompts_leaks",
+        "virgiliojr94/book-to-skill",
+        "diegosouzapw/OmniRoute",
+        "ayghri/i-have-adhd",
+        "every-app/open-seo",
+        "google/ax",
+        "musistudio/claude-code-router",
+        "farion1231/cc-switch",
+        "frankbria/ralph-claude-code"
+      ]
+    },
+    {
+      "layer": "fabius-parcus",
+      "status": "reviewed-retained",
+      "decision": "Retained lean-work and never-trim verification floor after current caveman/ponytail/no-ai-slop review.",
+      "sources": [
+        "asgeirtj/system_prompts_leaks",
+        "ayghri/i-have-adhd",
+        "petergyang/no-ai-slop",
+        "juliusbrussee/caveman",
+        "DietrichGebert/ponytail"
+      ]
+    },
+    {
+      "layer": "fabius-disciplina",
+      "status": "updated",
+      "decision": "Added lease-loss/stale-writer evidence requirements; corrected GSD source identity in credits.",
+      "sources": [
+        "nanocoai/nanoclaw-templates",
+        "nanocoai/nanoclaw",
+        "asgeirtj/system_prompts_leaks",
+        "google/ax",
+        "addyosmani/agent-skills",
+        "morluto/rea",
+        "obra/superpowers",
+        "mattpocock/skills",
+        "EveryInc/compound-engineering-plugin",
+        "gsd-build/get-shit-done",
+        "shareAI-lab/learn-claude-code",
+        "shanraisshan/claude-code-best-practice",
+        "garrytan/gstack",
+        "conorluddy/ios-simulator-skill",
+        "withastro/flue",
+        "NousResearch/hermes-agent",
+        "firecrawl/anydoc"
+      ]
+    },
+    {
+      "layer": "fabius-decor",
+      "status": "updated",
+      "decision": "Scoped visual iteration cap to new work; functional/accessibility fixes still need verification; corrected Graphify identity and unverified imagery-source licensing.",
+      "sources": [
+        "pbakaus/impeccable",
+        "asgeirtj/system_prompts_leaks",
+        "Anil-matcha/Open-Generative-AI",
+        "tt-a1i/archify",
+        "storytold/artcraft",
+        "bilawalsidhu/gods-eye-view",
+        "nexu-io/open-design",
+        "heygen-com/hyperframes",
+        "greensock/gsap-skills",
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "uiverse-io/galaxy",
+        "safishamsi/graphify",
+        "huangserva/skill-prompt-generator",
+        "Egonex-AI/Understand-Anything",
+        "skills-il/localization",
+        "skills-il/legal-tech",
+        "skills-il/marketing-growth",
+        "calesthio/OpenMontage"
+      ]
+    },
+    {
+      "layer": "fabius-cohors",
+      "status": "updated",
+      "decision": "Added retryable launch identity and descendant cleanup probes; corrected ADK link; no agent framework installed.",
+      "sources": [
+        "asgeirtj/system_prompts_leaks",
+        "lfnovo/open-notebook",
+        "virgiliojr94/book-to-skill",
+        "diegosouzapw/OmniRoute",
+        "usestrix/strix",
+        "google/ax",
+        "block/buzz",
+        "google/adk-samples",
+        "msitarzewski/agency-agents",
+        "ruvnet/ruflo",
+        "wshobson/agents",
+        "VoltAgent/awesome-claude-code-subagents",
+        "FlowiseAI/Flowise",
+        "bytedance/deer-flow",
+        "jamiepine/voicebox",
+        "withastro/flue",
+        "andrewyng/openworker",
+        "permissionlesstech/bitchat",
+        "abhigyanpatwari/GitNexus",
+        "microsoft/agent-framework",
+        "Kritt-ai/open-kritt",
+        "NousResearch/hermes-agent",
+        "deepseek-ai/deepseek-harness",
+        "ScrapeGraphAI/Scrapegraph-ai"
+      ]
+    },
+    {
+      "layer": "fabius-archivum",
+      "status": "updated",
+      "decision": "Added ingestion failure classification, archived-source warning and version-aware Windows upload guidance.",
+      "sources": [
+        "nanocoai/nanoclaw",
+        "bradautomates/claude-video",
+        "teng-lin/notebooklm-py",
+        "asgeirtj/system_prompts_leaks",
+        "lfnovo/open-notebook",
+        "virgiliojr94/book-to-skill",
+        "Crosstalk-Solutions/project-nomad",
+        "RyanCodrai/turbovec",
+        "microsoft/agent-framework",
+        "NousResearch/hermes-agent",
+        "ruvnet/ruvector",
+        "thedotmack/claude-mem",
+        "Yeachan-Heo/oh-my-claudecode",
+        "PleasePrompto/notebooklm-skill",
+        "Zackriya-Solutions/meetily",
+        "docsifyjs/docsify",
+        "firecrawl/anydoc",
+        "ScrapeGraphAI/Scrapegraph-ai"
+      ]
+    },
+    {
+      "layer": "fabius-mercatus",
+      "status": "reviewed-retained",
+      "decision": "Retained source-first measurement and bounded prose editing after marketing/SEO/humanizer review.",
+      "sources": [
+        "every-app/open-seo",
+        "petergyang/no-ai-slop",
+        "coreyhaines31/marketingskills",
+        "blader/humanizer"
+      ]
+    },
+    {
+      "layer": "fabius-praesidium",
+      "status": "updated",
+      "decision": "Added metadata/control-plane boundary checks and versioned Unicode/script-preservation probes. Generated output uses the same script-aware preservation policy as ingestion.",
+      "sources": [
+        "asgeirtj/system_prompts_leaks",
+        "lfnovo/open-notebook",
+        "virgiliojr94/book-to-skill",
+        "diegosouzapw/OmniRoute",
+        "usestrix/strix",
+        "Anil-matcha/Open-Generative-AI",
+        "every-app/open-seo",
+        "google/ax",
+        "firecrawl/anydoc",
+        "mukul975/Anthropic-Cybersecurity-Skills",
+        "anthropics/claude-code-security-review",
+        "onyx-dot-app/onyx",
+        "lissy93/web-check",
+        "guillaumemeyer/watermarks-remover"
+      ]
+    },
+    {
+      "layer": "fabius-ludus",
+      "status": "updated",
+      "decision": "Added criterion-linked game evidence and explicit NOT ASSESSED/BLOCKED/waived distinctions.",
+      "sources": [
+        "Donchitos/Claude-Code-Game-Studios"
+      ]
+    },
+    {
+      "layer": "fabius-catena",
+      "status": "updated",
+      "decision": "Updated Solana client/cohort and transaction-version guidance; corrected ambiguous payment retry and settlement deduplication. Anchor source identity and its TypeScript reader limitation are explicit.",
+      "sources": [
+        "solana-foundation/solana-dev-skill"
+      ]
+    },
+    {
+      "layer": "fabius-machina",
+      "status": "updated",
+      "decision": "Added explicit per-call instance identity, binary continuity, executable-test side effects and agent/workflow ownership.",
+      "sources": [
+        "lfnovo/open-notebook",
+        "Anil-matcha/Open-Generative-AI",
+        "every-app/open-seo",
+        "NousResearch/hermes-agent",
+        "czlonkowski/n8n-skills",
+        "ScrapeGraphAI/Scrapegraph-ai"
+      ]
+    },
+    {
+      "layer": "fabius-scientia",
+      "status": "updated",
+      "decision": "Corrected per-API lookup methods/count/pagination and added genomic assembly/coordinate/allele provenance. The owner-level count rule and AGENTS.md now match the conditional API rule.",
+      "sources": [
+        "K-Dense-AI/scientific-agent-skills"
+      ]
+    },
+    {
+      "layer": "fabius-doctrina",
+      "status": "reviewed-retained",
+      "decision": "Retained model-tier, stream deadline and evidence rules after current source review; no backend/model package installed.",
+      "sources": [
+        "lfnovo/open-notebook",
+        "diegosouzapw/OmniRoute",
+        "Anil-matcha/Open-Generative-AI",
+        "typesafe-ai/skills",
+        "ayghri/i-have-adhd",
+        "google/ax",
+        "NousResearch/hermes-agent",
+        "firecrawl/anydoc",
+        "onyx-dot-app/onyx",
+        "ggml-org/llama.cpp",
+        "open-webui/open-webui"
+      ]
+    },
+    {
+      "layer": "fabius-fortuna",
+      "status": "reviewed-retained",
+      "decision": "No versioned upstream skill appears in the provenance manifests for this original layer. Source-market/tool recommendations are task-time checks; no fabricated upstream version or financial-data freshness claim.",
+      "sources": []
+    },
+    {
+      "layer": "fabius-concilium",
+      "status": "reviewed-retained",
+      "decision": "Retained original council contracts and executable tests; historical prototype has no license file and was not copied.",
+      "sources": [
+        "karpathy/llm-council"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "repo": "nanocoai/nanoclaw-templates",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "0b9eeea30d1e6032a9fd1cadf1f0963f06b5c21a"
+      ],
+      "head": "7d3cb40409a4a7b8f2cf562b0d80fceb612b941b",
+      "date": "2026-09-15T17:43:22Z",
+      "parents": [
+        "0b9eeea30d1e6032a9fd1cadf1f0963f06b5c21a"
+      ],
+      "url": "https://github.com/nanocoai/nanoclaw-templates",
+      "disposition": "method-retained",
+      "decision": "Only the ignore-file change separates the adopted pin from HEAD; architecture evidence and review rules retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "7d3cb40409a4a7b8f2cf562b0d80fceb612b941b",
+          "url": "https://github.com/nanocoai/nanoclaw-templates/blob/7d3cb40409a4a7b8f2cf562b0d80fceb612b941b/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "7d3cb40409a4a7b8f2cf562b0d80fceb612b941b",
+          "url": "https://github.com/nanocoai/nanoclaw-templates/blob/7d3cb40409a4a7b8f2cf562b0d80fceb612b941b/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Ignore .worktrees/ (#62)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/nanocoai/nanoclaw-templates/blob/7d3cb40409a4a7b8f2cf562b0d80fceb612b941b/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "nanocoai/nanoclaw",
+      "layers": [
+        "fabius",
+        "fabius-disciplina",
+        "fabius-archivum"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "6656b326a900dcfba4be8ca76412d954cfc915b5"
+      ],
+      "head": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+      "date": "2026-10-16T13:16:09Z",
+      "parents": [
+        "d61af17b541f52632c6194692a166184839a926f"
+      ],
+      "url": "https://github.com/nanocoai/nanoclaw",
+      "disposition": "method-retained",
+      "decision": "Reviewed current update/migration and release material. Existing transaction recovery, permission activation and shared-store rules already cover the relevant method; no runtime or hooks imported.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/learn/SKILL.md",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/.claude/skills/learn/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/update-skills/SKILL.md",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/.claude/skills/update-skills/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/migrate-memory/SKILL.md",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/.claude/skills/migrate-memory/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/update-nanoclaw/SKILL.md",
+          "revision": "2105169d8f7f017cd1ba3222cbf9708273fa1a3b",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/.claude/skills/update-nanoclaw/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(sweep): global env overrides for ABSOLUTE_CEILING_MS and CLAIM_STUCK_MS (#3646)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/nanocoai/nanoclaw/blob/2105169d8f7f017cd1ba3222cbf9708273fa1a3b/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "d631a8827f99414d2b6daba4ef08b7f8701751d7"
+      ],
+      "head": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+      "date": "2026-10-16T07:19:47Z",
+      "parents": [
+        "5bf0a069dc857e1b5f4b090e004d9d5b231416ca"
+      ],
+      "url": "https://github.com/pbakaus/impeccable",
+      "disposition": "method-updated",
+      "decision": "Adopted the new-work scope of visual iteration limits; retained historical catalog snapshots and added the authorized targeted-fix boundary.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "NOTICE.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/NOTICE.md",
+          "role": "notice-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".agents/skills/impeccable/SKILL.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/.agents/skills/impeccable/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/craft-floor.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/.agents/skills/impeccable/reference/craft-floor.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/new-work.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/.agents/skills/impeccable/reference/new-work.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/audit.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/.agents/skills/impeccable/reference/audit.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/critique.md",
+          "revision": "6af45ac9a5eb8792f033d3242f52e99812fd91fa",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/.agents/skills/impeccable/reference/critique.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Measure what each rule costs the edit hook (#1052)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/pbakaus/impeccable/blob/6af45ac9a5eb8792f033d3242f52e99812fd91fa/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "bradautomates/claude-video",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "03ceb42f7fa2c4439aca01752118044baabffb8f"
+      ],
+      "head": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+      "date": "2026-09-25T01:25:42Z",
+      "parents": [
+        "7948897be8ca49fa6a57593778a12ef387288b48"
+      ],
+      "url": "https://github.com/bradautomates/claude-video",
+      "disposition": "method-retained",
+      "decision": "HEAD equals the adopted pin; existing sampled-frame/caption provenance and modality limits retained.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+          "url": "https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+          "url": "https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+          "url": "https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: release 0.3.2",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "teng-lin/notebooklm-py",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "2aff0fcb27c1be734d720b409696fcd74c4ba604"
+      ],
+      "head": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+      "date": "2026-10-15T18:33:12Z",
+      "parents": [
+        "fd7af2cd5c4afccad1da9e7d5ce51c1388193408"
+      ],
+      "url": "https://github.com/teng-lin/notebooklm-py",
+      "disposition": "method-updated",
+      "decision": "Updated source snapshot and Windows upload advice. Release 0.8.5 is distinct from the reviewed Unreleased transport fix; no package was installed.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "SKILL.md",
+          "revision": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/troubleshooting.md",
+          "revision": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/docs/troubleshooting.md",
+          "role": "source-material"
+        },
+        {
+          "path": "src/notebooklm/_web/sources/upload.py",
+          "revision": "4188d7e26a07b6b94b67bf95041c81bc1530c508",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/src/notebooklm/_web/sources/upload.py",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix: declare typing_extensions runtime dependency (#2500)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/teng-lin/notebooklm-py/blob/4188d7e26a07b6b94b67bf95041c81bc1530c508/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "asgeirtj/system_prompts_leaks",
+      "layers": [
+        "fabius-cohors",
+        "fabius-disciplina",
+        "fabius-archivum",
+        "fabius-decor",
+        "fabius-parcus",
+        "fabius",
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "f475e8b2b11ca7540a37234a451e9f085471bd94"
+      ],
+      "head": "dfa2e2855f65a8982b3360d6bd12eeabc049355f",
+      "date": "2026-10-16T08:29:37Z",
+      "parents": [
+        "3c4deaae9bbd6259e3d972f3bdb208ef6fd942f9"
+      ],
+      "url": "https://github.com/asgeirtj/system_prompts_leaks",
+      "disposition": "method-retained",
+      "decision": "Current collection identity/license checked; existing independently worded methods retained. Compilation CC0 does not license copying vendors' prompt text.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "dfa2e2855f65a8982b3360d6bd12eeabc049355f",
+          "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/dfa2e2855f65a8982b3360d6bd12eeabc049355f/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "dfa2e2855f65a8982b3360d6bd12eeabc049355f",
+          "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/dfa2e2855f65a8982b3360d6bd12eeabc049355f/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Update claude-code skills",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/dfa2e2855f65a8982b3360d6bd12eeabc049355f/LICENSE"
+        }
+      ],
+      "license_observed": "CC0-1.0 compilation only; vendor prompt rights separate"
+    },
+    {
+      "repo": "lfnovo/open-notebook",
+      "layers": [
+        "fabius-archivum",
+        "fabius-cohors",
+        "fabius-doctrina",
+        "fabius-machina",
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef"
+      ],
+      "head": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+      "date": "2026-10-05T02:29:29Z",
+      "parents": [
+        "95f76e5a59fbff0ffb451de7c9f1b150fc616496"
+      ],
+      "url": "https://github.com/lfnovo/open-notebook",
+      "disposition": "method-updated",
+      "decision": "Adopted current source-deletion/transient-failure tests into ingestion guidance. Existing scoped retrieval and resume rules retained; no server imported.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "commands/source_commands.py",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/commands/source_commands.py",
+          "role": "source-material"
+        },
+        {
+          "path": "tests/test_source_deleted_before_processing.py",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/tests/test_source_deleted_before_processing.py",
+          "role": "source-material"
+        },
+        {
+          "path": "tests/test_background_retry_visibility.py",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/tests/test_background_retry_visibility.py",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/2-CORE-CONCEPTS/ai-context-rag.md",
+          "revision": "a0f6f3081ae06328f0a451b3a3ef2959ca25721d",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/docs/2-CORE-CONCEPTS/ai-context-rag.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "docs: defaults table matches the code; CHANGELOG entry for the docs overhaul (#1462)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/lfnovo/open-notebook/blob/a0f6f3081ae06328f0a451b3a3ef2959ca25721d/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "virgiliojr94/book-to-skill",
+      "layers": [
+        "fabius-archivum",
+        "fabius-cohors",
+        "fabius-praesidium",
+        "fabius"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "526f362552562d88c1a8bbf8012d2cee93f831d5"
+      ],
+      "head": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+      "date": "2026-10-12T00:30:50Z",
+      "parents": [
+        "6f682c93f24e98c444c4cf4a0915f52e857d0cd0"
+      ],
+      "url": "https://github.com/virgiliojr94/book-to-skill",
+      "disposition": "method-updated",
+      "decision": "Adopted expanded invisible-codepoint coverage with explicit Unicode-version and legitimate-script checks. No book distillates or parser runtime imported.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE.md",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/LICENSE.md",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "SKILL.md",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/install.md",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/docs/install.md",
+          "role": "source-material"
+        },
+        {
+          "path": "scripts/extract.py",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/scripts/extract.py",
+          "role": "source-material"
+        },
+        {
+          "path": "book_to_skill/sanitize.py",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/book_to_skill/sanitize.py",
+          "role": "source-material"
+        },
+        {
+          "path": "tests/test_sanitize_bidi_controls.py",
+          "revision": "a24e62f4d8caf2ee433f6e48d9073800f56f906e",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/tests/test_sanitize_bidi_controls.py",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "ci: bump the github-actions group with 2 updates (#294)",
+      "license_findings": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/virgiliojr94/book-to-skill/blob/a24e62f4d8caf2ee433f6e48d9073800f56f906e/LICENSE.md"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "diegosouzapw/OmniRoute",
+      "layers": [
+        "fabius-cohors",
+        "fabius-doctrina",
+        "fabius-praesidium",
+        "fabius"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "7a921299c5b4c28dcf837f56a1c312b61414a646"
+      ],
+      "head": "759b3484935c182670c416b95d2b6cf34dcf25fd",
+      "date": "2026-10-17T05:42:40Z",
+      "parents": [
+        "c75b18bc37ed32a81b3bdff50e2f82a82de460f0"
+      ],
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "disposition": "method-retained",
+      "decision": "Current routing/release material reviewed against existing identity, quota and failure boundaries. No account-rotation, limit-bypass, credential collection or proxy runtime adopted.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "759b3484935c182670c416b95d2b6cf34dcf25fd",
+          "url": "https://github.com/diegosouzapw/OmniRoute/blob/759b3484935c182670c416b95d2b6cf34dcf25fd/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "759b3484935c182670c416b95d2b6cf34dcf25fd",
+          "url": "https://github.com/diegosouzapw/OmniRoute/blob/759b3484935c182670c416b95d2b6cf34dcf25fd/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "759b3484935c182670c416b95d2b6cf34dcf25fd",
+          "url": "https://github.com/diegosouzapw/OmniRoute/blob/759b3484935c182670c416b95d2b6cf34dcf25fd/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "ci(nightly-schemathesis): give the webpack backend-only build time to finish (#16953)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/diegosouzapw/OmniRoute/blob/759b3484935c182670c416b95d2b6cf34dcf25fd/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "usestrix/strix",
+      "layers": [
+        "fabius-cohors",
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "56e9ae982c2fdd00c7c0b9afc49af035470dd310"
+      ],
+      "head": "972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5",
+      "date": "2026-10-15T20:37:51Z",
+      "parents": [
+        "ca20626f844b64e26755b7d78ae206ba8dd3acc9"
+      ],
+      "url": "https://github.com/usestrix/strix",
+      "disposition": "method-retained",
+      "decision": "Reviewed stream timeout/model configuration changes; existing model-tier deadlines and defensive audit proof already cover the method. No scanner or attack workflow imported.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5",
+          "url": "https://github.com/usestrix/strix/blob/972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5",
+          "url": "https://github.com/usestrix/strix/blob/972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "strix/config/models.py",
+          "revision": "972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5",
+          "url": "https://github.com/usestrix/strix/blob/972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5/strix/config/models.py",
+          "role": "source-material"
+        },
+        {
+          "path": "tests/test_stream_idle_timeout.py",
+          "revision": "972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5",
+          "url": "https://github.com/usestrix/strix/blob/972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5/tests/test_stream_idle_timeout.py",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "feat(llm): extra request-body fields via LLM_EXTRA_BODY (#1495)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/usestrix/strix/blob/972f5097c2bfaf8f1dd8b55744ab8861f0d6b6e5/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "Anil-matcha/Open-Generative-AI",
+      "layers": [
+        "fabius-decor",
+        "fabius-doctrina",
+        "fabius-machina",
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "69b7fccaa946161473c765facebdb7c5f3f74d5d"
+      ],
+      "head": "0668c210ebfe893f16c5149405a08d00b9ae90df",
+      "date": "2026-10-15T09:55:04Z",
+      "parents": [
+        "62c7a0f904850b3aeb0bf9a0708e97837943a764"
+      ],
+      "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "disposition": "method-retained",
+      "decision": "Current catalog/service changes do not establish additional model capabilities; existing sizing, consent and asynchronous identity rules retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "0668c210ebfe893f16c5149405a08d00b9ae90df",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI/blob/0668c210ebfe893f16c5149405a08d00b9ae90df/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "0668c210ebfe893f16c5149405a08d00b9ae90df",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI/blob/0668c210ebfe893f16c5149405a08d00b9ae90df/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Update video links in README.md",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI/blob/0668c210ebfe893f16c5149405a08d00b9ae90df/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "typesafe-ai/skills",
+      "layers": [
+        "fabius-doctrina"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "65a39f393687675ce170e6094757de20370365b9"
+      ],
+      "head": "65a39f393687675ce170e6094757de20370365b9",
+      "date": "2026-09-12T05:42:05Z",
+      "parents": [
+        "619f78a23e52cadfed03c9483235e2f333ad2416"
+      ],
+      "url": "https://github.com/typesafe-ai/skills",
+      "disposition": "method-retained",
+      "decision": "HEAD equals the adopted pin; existing inference/backend method retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "65a39f393687675ce170e6094757de20370365b9",
+          "url": "https://github.com/typesafe-ai/skills/blob/65a39f393687675ce170e6094757de20370365b9/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "65a39f393687675ce170e6094757de20370365b9",
+          "url": "https://github.com/typesafe-ai/skills/blob/65a39f393687675ce170e6094757de20370365b9/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Release v0.5.7",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/typesafe-ai/skills/blob/65a39f393687675ce170e6094757de20370365b9/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "ayghri/i-have-adhd",
+      "layers": [
+        "fabius-doctrina",
+        "fabius-parcus",
+        "fabius"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "839872f9d1cd634fed642b4589ce7226199cc15f"
+      ],
+      "head": "1ecea1993b7fce257ffbd686c070948b5e07eda6",
+      "date": "2026-10-11T16:03:54Z",
+      "url": "https://github.com/ayghri/i-have-adhd",
+      "disposition": "method-retained",
+      "decision": "Current changes concern host setup and translations; existing reader-fit and single-action reporting rules retained without medical or diagnostic claims.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "1ecea1993b7fce257ffbd686c070948b5e07eda6",
+          "url": "https://github.com/ayghri/i-have-adhd/blob/1ecea1993b7fce257ffbd686c070948b5e07eda6/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "1ecea1993b7fce257ffbd686c070948b5e07eda6",
+          "url": "https://github.com/ayghri/i-have-adhd/blob/1ecea1993b7fce257ffbd686c070948b5e07eda6/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".cursor/skills/i-have-adhd/SKILL.md",
+          "revision": "1ecea1993b7fce257ffbd686c070948b5e07eda6",
+          "url": "https://github.com/ayghri/i-have-adhd/blob/1ecea1993b7fce257ffbd686c070948b5e07eda6/.cursor/skills/i-have-adhd/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/i-have-adhd/SKILL.md",
+          "revision": "1ecea1993b7fce257ffbd686c070948b5e07eda6",
+          "url": "https://github.com/ayghri/i-have-adhd/blob/1ecea1993b7fce257ffbd686c070948b5e07eda6/skills/i-have-adhd/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #251 from AxelBriche/docs/french-translation",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/ayghri/i-have-adhd/blob/1ecea1993b7fce257ffbd686c070948b5e07eda6/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "every-app/open-seo",
+      "layers": [
+        "fabius-machina",
+        "fabius-mercatus",
+        "fabius-praesidium",
+        "fabius"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "0ffff93101043aad7600a3b6a499a0cd2887ef49"
+      ],
+      "head": "d7ea7852480601af9bc8870942af8311a410e567",
+      "date": "2026-10-14T05:03:20Z",
+      "url": "https://github.com/every-app/open-seo",
+      "disposition": "method-retained",
+      "decision": "Reviewed current review/refinement/SEO material; existing source-first, failed-fetch and frozen-evaluation boundaries retained. Separately licensed third-party subskills not copied.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "d7ea7852480601af9bc8870942af8311a410e567",
+          "url": "https://github.com/every-app/open-seo/blob/d7ea7852480601af9bc8870942af8311a410e567/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "d7ea7852480601af9bc8870942af8311a410e567",
+          "url": "https://github.com/every-app/open-seo/blob/d7ea7852480601af9bc8870942af8311a410e567/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "plugins/openseo/skills/seo-audit/SKILL.md",
+          "revision": "d7ea7852480601af9bc8870942af8311a410e567",
+          "url": "https://github.com/every-app/open-seo/blob/d7ea7852480601af9bc8870942af8311a410e567/plugins/openseo/skills/seo-audit/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "plugins/openseo/skills/ai-visibility-audit/SKILL.md",
+          "revision": "d7ea7852480601af9bc8870942af8311a410e567",
+          "url": "https://github.com/every-app/open-seo/blob/d7ea7852480601af9bc8870942af8311a410e567/plugins/openseo/skills/ai-visibility-audit/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "src/server/lib/audit/crawl-throttle.ts",
+          "revision": "d7ea7852480601af9bc8870942af8311a410e567",
+          "url": "https://github.com/every-app/open-seo/blob/d7ea7852480601af9bc8870942af8311a410e567/src/server/lib/audit/crawl-throttle.ts",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Short PR descriptions, real bugs only, and fix two skill headers (#850)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/every-app/open-seo/blob/d7ea7852480601af9bc8870942af8311a410e567/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "petergyang/no-ai-slop",
+      "layers": [
+        "fabius-mercatus",
+        "fabius-parcus"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "000650b156983f5159695b441477f4e63b25dc85"
+      ],
+      "head": "000650b156983f5159695b441477f4e63b25dc85",
+      "date": "2026-09-02T04:19:00Z",
+      "url": "https://github.com/petergyang/no-ai-slop",
+      "disposition": "method-retained",
+      "decision": "HEAD equals the adopted pin; bounded editing and evidence-only prose lint retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "000650b156983f5159695b441477f4e63b25dc85",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "000650b156983f5159695b441477f4e63b25dc85",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Drop planning ritual and process self-check; add skill-folder agent metadata (#49)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "google/ax",
+      "layers": [
+        "fabius-cohors",
+        "fabius-praesidium",
+        "fabius-disciplina",
+        "fabius-doctrina",
+        "fabius"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "ac2332829f22360ff97b0ba34d94dd0dd782f17e"
+      ],
+      "head": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+      "date": "2026-10-16T20:29:44Z",
+      "url": "https://github.com/google/ax",
+      "disposition": "method-updated",
+      "decision": "Adopted launch-failure classification, reviewed loopback metadata and unauthenticated API boundaries, and exposed best-effort renewal's missing fencing. Pre-stable remains a source limitation, not a recommended production runtime.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/networking.md",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/networking.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/runner.md",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/runner.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/sandbox.md",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/sandbox.md",
+          "role": "source-material"
+        },
+        {
+          "path": "SECURITY.md",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/SECURITY.md",
+          "role": "source-material"
+        },
+        {
+          "path": "internal/lock/lock.go",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/internal/lock/lock.go",
+          "role": "source-material"
+        },
+        {
+          "path": "internal/lock/lock_test.go",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/internal/lock/lock_test.go",
+          "role": "source-material"
+        },
+        {
+          "path": "internal/server/server.go",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/internal/server/server.go",
+          "role": "source-material"
+        },
+        {
+          "path": "internal/metadata/server.go",
+          "revision": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/internal/metadata/server.go",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "lock,cli: renew Redis lock leases and lengthen suspend/resume timeout (#490)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "1be8e34187e34647bb83adc3a1323b26ae6f6abe"
+      ],
+      "head": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+      "date": "2026-10-13T20:21:06Z",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "disposition": "method-retained",
+      "decision": "Reviewed current quality-gate/review material; existing no-weakened-oracle and evidence-budget rules retained. No new public skills or host commands added.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/idea-refine/SKILL.md",
+          "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/idea-refine/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/performance-optimization/SKILL.md",
+          "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/performance-optimization/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/test-driven-development/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "agents/code-reviewer.md",
+          "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/agents/code-reviewer.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore(release): bump plugin manifests to 0.6.13",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "tt-a1i/archify",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "54edef453ca3fc495f488c30de97eaea0c789f19"
+      ],
+      "head": "88d1ae4498b6a1df610badf690c5406882622d15",
+      "date": "2026-10-17T03:14:31Z",
+      "url": "https://github.com/tt-a1i/archify",
+      "disposition": "method-retained",
+      "decision": "Current diagram/catalog expansions do not replace semantic graph proof; existing diagram guidance retained without installing a renderer.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "88d1ae4498b6a1df610badf690c5406882622d15",
+          "url": "https://github.com/tt-a1i/archify/blob/88d1ae4498b6a1df610badf690c5406882622d15/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "88d1ae4498b6a1df610badf690c5406882622d15",
+          "url": "https://github.com/tt-a1i/archify/blob/88d1ae4498b6a1df610badf690c5406882622d15/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "88d1ae4498b6a1df610badf690c5406882622d15",
+          "url": "https://github.com/tt-a1i/archify/blob/88d1ae4498b6a1df610badf690c5406882622d15/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #982 from tt-a1i/geo/published-case-metadata",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/tt-a1i/archify/blob/88d1ae4498b6a1df610badf690c5406882622d15/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "storytold/artcraft",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "8abde75133d2d66fe73b8184eaec8372efae2abf"
+      ],
+      "head": "d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373",
+      "date": "2026-10-11T13:47:59Z",
+      "url": "https://github.com/storytold/artcraft",
+      "disposition": "method-retained",
+      "decision": "Provider/native-interface additions are application capabilities; existing source composition, continuity and modality rules retained without claiming access to those providers.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE-APACHE",
+          "revision": "d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373",
+          "url": "https://github.com/storytold/artcraft/blob/d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373/LICENSE-APACHE",
+          "role": "license-file"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "revision": "d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373",
+          "url": "https://github.com/storytold/artcraft/blob/d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373/LICENSE-MIT",
+          "role": "license-file"
+        },
+        {
+          "path": "NOTICE",
+          "revision": "d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373",
+          "url": "https://github.com/storytold/artcraft/blob/d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373/NOTICE",
+          "role": "notice-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373",
+          "url": "https://github.com/storytold/artcraft/blob/d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "artcraft-native: generate with Midjourney or fal (provider choice) (#2115)",
+      "license_findings": [
+        {
+          "path": "LICENSE-APACHE",
+          "url": "https://github.com/storytold/artcraft/blob/d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373/LICENSE-APACHE"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "url": "https://github.com/storytold/artcraft/blob/d4e4ac69bbd93d237eaf5d0260bc6a5ff3a5e373/LICENSE-MIT"
+        }
+      ],
+      "license_observed": "Apache-2.0 + MIT"
+    },
+    {
+      "repo": "Crosstalk-Solutions/project-nomad",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "54ee30a44902e5c252b477f8685c26ec3064ab72"
+      ],
+      "head": "54ee30a44902e5c252b477f8685c26ec3064ab72",
+      "date": "2026-10-05T22:30:13Z",
+      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "disposition": "method-retained",
+      "decision": "HEAD equals the adopted pin; cold offline restart and restore/index compatibility guidance retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "54ee30a44902e5c252b477f8685c26ec3064ab72",
+          "url": "https://github.com/Crosstalk-Solutions/project-nomad/blob/54ee30a44902e5c252b477f8685c26ec3064ab72/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "54ee30a44902e5c252b477f8685c26ec3064ab72",
+          "url": "https://github.com/Crosstalk-Solutions/project-nomad/blob/54ee30a44902e5c252b477f8685c26ec3064ab72/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "docs(release): finalize v1.35.1 release notes [skip ci]",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Crosstalk-Solutions/project-nomad/blob/54ee30a44902e5c252b477f8685c26ec3064ab72/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "bilawalsidhu/gods-eye-view",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "591f299d11f38a612629a274463196d57ae3862e"
+      ],
+      "head": "1df2a272cf7cfbb2f1a4c637c897e90719b0af95",
+      "date": "2026-10-17T00:16:52Z",
+      "url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "disposition": "method-retained",
+      "decision": "Current feed/UI changes reviewed against existing observation/estimate/stale-data distinctions; no live feed or geospatial service imported.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "1df2a272cf7cfbb2f1a4c637c897e90719b0af95",
+          "url": "https://github.com/bilawalsidhu/gods-eye-view/blob/1df2a272cf7cfbb2f1a4c637c897e90719b0af95/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "1df2a272cf7cfbb2f1a4c637c897e90719b0af95",
+          "url": "https://github.com/bilawalsidhu/gods-eye-view/blob/1df2a272cf7cfbb2f1a4c637c897e90719b0af95/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "1df2a272cf7cfbb2f1a4c637c897e90719b0af95",
+          "url": "https://github.com/bilawalsidhu/gods-eye-view/blob/1df2a272cf7cfbb2f1a4c637c897e90719b0af95/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #1111 from Rohilalala/fix/map-fallback-retry",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/bilawalsidhu/gods-eye-view/blob/1df2a272cf7cfbb2f1a4c637c897e90719b0af95/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "block/buzz",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "326e2301cb4b1edcb8a72d01ac4b19a83545365f"
+      ],
+      "head": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+      "date": "2026-10-16T23:25:41Z",
+      "url": "https://github.com/block/buzz",
+      "disposition": "method-retained",
+      "decision": "Reviewed current shared-channel/capability material; existing principal admission and session-versus-sandbox boundaries retained; mobile runtime fixes do not become a Fabius dependency.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/agent-availability.md",
+          "revision": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/docs/agent-availability.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/agent-management-provenance.md",
+          "revision": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/docs/agent-management-provenance.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/practical-information-flow-for-buzz-agents.md",
+          "revision": "bf8b356f3bf551a01cc24041605ca77d009681dd",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/docs/practical-information-flow-for-buzz-agents.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Fix iOS channel crash from unbounded scroll depth (#8407)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/block/buzz/blob/bf8b356f3bf551a01cc24041605ca77d009681dd/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "morluto/rea",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "registered"
+      ],
+      "base_commits": [
+        "cf0a38ad9774ee9acff3164052688f7a58a1c72c"
+      ],
+      "head": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+      "date": "2026-10-17T05:49:27Z",
+      "url": "https://github.com/morluto/rea",
+      "disposition": "method-retained",
+      "decision": "Reviewed current SKILL/source boundary material; existing authority, static-first evidence and bounded dynamic-analysis rules retained.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".agents/skills/reverse-engineer-anything/SKILL.md",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/.agents/skills/reverse-engineer-anything/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/tool-design.md",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/docs/tool-design.md",
+          "role": "source-material"
+        },
+        {
+          "path": "docs/javascript-runtime-reconciliation.md",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/docs/javascript-runtime-reconciliation.md",
+          "role": "source-material"
+        },
+        {
+          "path": "DISCLAIMER.md",
+          "revision": "5717ad24aa6471aa4207c370e26274866fb8aee5",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/DISCLAIMER.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(kuna): attribute installation failures to caller operations",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/morluto/rea/blob/5717ad24aa6471aa4207c370e26274866fb8aee5/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "google/adk-samples",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "canonical": "google/adk-recipes",
+      "head": "05811bbacd9b0335c645e8d20e0d41cfdea08f7f",
+      "date": "2026-10-16T17:35:25Z",
+      "url": "https://github.com/google/adk-recipes",
+      "disposition": "identity-or-scope-corrected",
+      "decision": "Canonical identity is now google/adk-recipes; link/credit corrected. Former bundled examples remain retired; original adapter contracts retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "05811bbacd9b0335c645e8d20e0d41cfdea08f7f",
+          "url": "https://github.com/google/adk-recipes/blob/05811bbacd9b0335c645e8d20e0d41cfdea08f7f/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "05811bbacd9b0335c645e8d20e0d41cfdea08f7f",
+          "url": "https://github.com/google/adk-recipes/blob/05811bbacd9b0335c645e8d20e0d41cfdea08f7f/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Switch AI PR review to gemini-3.8-flash (#2813)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/google/adk-recipes/blob/05811bbacd9b0335c645e8d20e0d41cfdea08f7f/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "msitarzewski/agency-agents",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "652b2692f8d8ec2b1f1a38e559073e287dfdc469",
+      "date": "2026-10-15T05:33:20Z",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "disposition": "retired-kept-retired",
+      "decision": "Catalog and host support checked. Former bundle remains retired; no persona catalog or host placeholder syntax imported.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "652b2692f8d8ec2b1f1a38e559073e287dfdc469",
+          "url": "https://github.com/msitarzewski/agency-agents/blob/652b2692f8d8ec2b1f1a38e559073e287dfdc469/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "652b2692f8d8ec2b1f1a38e559073e287dfdc469",
+          "url": "https://github.com/msitarzewski/agency-agents/blob/652b2692f8d8ec2b1f1a38e559073e287dfdc469/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(qwen): document the 0.25.1 floor and reserve Qwen's launch placeholders (#1143)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/msitarzewski/agency-agents/blob/652b2692f8d8ec2b1f1a38e559073e287dfdc469/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "ruvnet/ruflo",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+      "date": "2026-10-14T16:21:54Z",
+      "url": "https://github.com/ruvnet/ruflo",
+      "disposition": "retired-kept-retired",
+      "decision": "Current release/catalog checked; former framework bundle remains retired. Fabius's own scheduler and role contracts retained.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+          "url": "https://github.com/ruvnet/ruflo/blob/1882006a02487590c8c66a7eec8d7504f6af33c3/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+          "url": "https://github.com/ruvnet/ruflo/blob/1882006a02487590c8c66a7eec8d7504f6af33c3/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+          "url": "https://github.com/ruvnet/ruflo/blob/1882006a02487590c8c66a7eec8d7504f6af33c3/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #4189 from ruvnet/release/3.56.10",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/ruvnet/ruflo/blob/1882006a02487590c8c66a7eec8d7504f6af33c3/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "obra/superpowers",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "date": "2026-10-10T00:28:04Z",
+      "url": "https://github.com/obra/superpowers",
+      "disposition": "retired-kept-retired",
+      "decision": "Reviewed v7 release notes, systematic debugging and verification-before-completion. Existing evidence gate already covers the useful method; no mandatory upstream ceremony or retired bundle restored.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "RELEASE-NOTES.md",
+          "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/RELEASE-NOTES.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/verification-before-completion/SKILL.md",
+          "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/systematic-debugging/SKILL.md",
+          "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Release v7.0.0: rebuilt brainstorming, Antigravity Marketplace manifest, Windows hook fixes (#2489)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "49dd158d1076134a641b33efb035946536778336",
+      "date": "2026-10-09T10:56:49Z",
+      "url": "https://github.com/mattpocock/skills",
+      "disposition": "retired-kept-retired",
+      "decision": "Reviewed diagnosing bugs, implementation and retrospective contracts; existing plan/prove/evidence scope retained. Retired bundle not restored.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "49dd158d1076134a641b33efb035946536778336",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "49dd158d1076134a641b33efb035946536778336",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "49dd158d1076134a641b33efb035946536778336",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "revision": "49dd158d1076134a641b33efb035946536778336",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/diagnosing-bugs/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/engineering/retro/SKILL.md",
+          "revision": "49dd158d1076134a641b33efb035946536778336",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/retro/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/engineering/implement-spec/SKILL.md",
+          "revision": "49dd158d1076134a641b33efb035946536778336",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/implement-spec/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "wizard: template fixes (#1220, #1142, #1081, #1041, #1003) (#1237)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "nexu-io/open-design",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "78d5637cb49da07e81314d1544b5fc6d37c95084",
+      "date": "2026-10-16T06:52:55Z",
+      "url": "https://github.com/nexu-io/open-design",
+      "disposition": "retired-kept-retired",
+      "decision": "Current runtime/plugin changes do not change original Fabius design procedures; former source bundle stays retired.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "78d5637cb49da07e81314d1544b5fc6d37c95084",
+          "url": "https://github.com/nexu-io/open-design/blob/78d5637cb49da07e81314d1544b5fc6d37c95084/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "78d5637cb49da07e81314d1544b5fc6d37c95084",
+          "url": "https://github.com/nexu-io/open-design/blob/78d5637cb49da07e81314d1544b5fc6d37c95084/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "78d5637cb49da07e81314d1544b5fc6d37c95084",
+          "url": "https://github.com/nexu-io/open-design/blob/78d5637cb49da07e81314d1544b5fc6d37c95084/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(daemon,web): forward pure plugin applies and honor persisted capability grants (#7597)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/nexu-io/open-design/blob/78d5637cb49da07e81314d1544b5fc6d37c95084/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "heygen-com/hyperframes",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "cc9e1bb33a430b878af6dcb257ce5c9a70f9f180",
+      "date": "2026-10-17T05:00:32Z",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "disposition": "retired-kept-retired",
+      "decision": "Current render-service changes are outside the retired bundle's replacement methods; no renderer dependency added.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "cc9e1bb33a430b878af6dcb257ce5c9a70f9f180",
+          "url": "https://github.com/heygen-com/hyperframes/blob/cc9e1bb33a430b878af6dcb257ce5c9a70f9f180/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "cc9e1bb33a430b878af6dcb257ce5c9a70f9f180",
+          "url": "https://github.com/heygen-com/hyperframes/blob/cc9e1bb33a430b878af6dcb257ce5c9a70f9f180/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "feat(producer): distributed renders accept 25 fps (#5423)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/heygen-com/hyperframes/blob/cc9e1bb33a430b878af6dcb257ce5c9a70f9f180/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "greensock/gsap-skills",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "date": "2026-04-21T23:47:02Z",
+      "url": "https://github.com/greensock/gsap-skills",
+      "disposition": "retired-kept-retired",
+      "decision": "Current host support checked; existing motion rules retained, no retired skill tree restored.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+          "url": "https://github.com/greensock/gsap-skills/blob/aed9cfd3277740755f6bfc1155c7aa645403b760/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+          "url": "https://github.com/greensock/gsap-skills/blob/aed9cfd3277740755f6bfc1155c7aa645403b760/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Added Google Antigravity Support",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/greensock/gsap-skills/blob/aed9cfd3277740755f6bfc1155c7aa645403b760/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+      "date": "2026-10-15T02:04:34Z",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "disposition": "retired-kept-retired",
+      "decision": "Current installation/catalog changes checked; existing token/state procedures retained without host installation.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/56ea9cf174ed86786187daa9de0e6247cb0747e4/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/56ea9cf174ed86786187daa9de0e6247cb0747e4/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "feat(copilot): install as an Agent Skill in .github/skills (#533)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/56ea9cf174ed86786187daa9de0e6247cb0747e4/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "uiverse-io/galaxy",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "adbd2adde0a299a3956ea288fb444ec01891ca41",
+      "date": "2024-09-02T14:32:05Z",
+      "url": "https://github.com/uiverse-io/galaxy",
+      "disposition": "retired-kept-retired",
+      "decision": "Current repository head is historical component material; no source corpus restored or new design asset imported.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "adbd2adde0a299a3956ea288fb444ec01891ca41",
+          "url": "https://github.com/uiverse-io/galaxy/blob/adbd2adde0a299a3956ea288fb444ec01891ca41/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "adbd2adde0a299a3956ea288fb444ec01891ca41",
+          "url": "https://github.com/uiverse-io/galaxy/blob/adbd2adde0a299a3956ea288fb444ec01891ca41/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Launching a new loader to space! 🚀 - https://uiverse.io/Cksunandh/helpless-moose-39",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/uiverse-io/galaxy/blob/adbd2adde0a299a3956ea288fb444ec01891ca41/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "RyanCodrai/turbovec",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "historical"
+      ],
+      "base_commits": [],
+      "head": "c3b043b992290ff223b903046af7f6683768241c",
+      "date": "2026-10-06T20:14:55Z",
+      "url": "https://github.com/RyanCodrai/turbovec",
+      "disposition": "retired-kept-retired",
+      "decision": "Current ANN release is a different runtime from Fabius's local retrieval helpers. Historical source stays retired; no false claim that Fabius gained ANN implementation.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "c3b043b992290ff223b903046af7f6683768241c",
+          "url": "https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "c3b043b992290ff223b903046af7f6683768241c",
+          "url": "https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "c3b043b992290ff223b903046af7f6683768241c",
+          "url": "https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "release: 1.1.2 (#565)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "musistudio/claude-code-router",
+      "layers": [
+        "fabius"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "057abaa1f95519ab8faf999e1ccef2b80ccdeb9e",
+      "date": "2026-10-10T03:35:09Z",
+      "url": "https://github.com/musistudio/claude-code-router",
+      "disposition": "method-retained",
+      "decision": "Current router/service material checked; provider routing remains a method, not a bundled proxy or credential service.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "057abaa1f95519ab8faf999e1ccef2b80ccdeb9e",
+          "url": "https://github.com/musistudio/claude-code-router/blob/057abaa1f95519ab8faf999e1ccef2b80ccdeb9e/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "057abaa1f95519ab8faf999e1ccef2b80ccdeb9e",
+          "url": "https://github.com/musistudio/claude-code-router/blob/057abaa1f95519ab8faf999e1ccef2b80ccdeb9e/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #1871 from mertkayacs/fix/docker-no-token-in-redirect",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/musistudio/claude-code-router/blob/057abaa1f95519ab8faf999e1ccef2b80ccdeb9e/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "layers": [
+        "fabius"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "7344cc37865da59308bca1a90c95ab2ee05c957c",
+      "date": "2026-10-17T03:44:39Z",
+      "url": "https://github.com/farion1231/cc-switch",
+      "disposition": "method-retained",
+      "decision": "Current client-routing changes checked; no native desktop installer, global config mutation or provider runtime adopted.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "7344cc37865da59308bca1a90c95ab2ee05c957c",
+          "url": "https://github.com/farion1231/cc-switch/blob/7344cc37865da59308bca1a90c95ab2ee05c957c/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "7344cc37865da59308bca1a90c95ab2ee05c957c",
+          "url": "https://github.com/farion1231/cc-switch/blob/7344cc37865da59308bca1a90c95ab2ee05c957c/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "7344cc37865da59308bca1a90c95ab2ee05c957c",
+          "url": "https://github.com/farion1231/cc-switch/blob/7344cc37865da59308bca1a90c95ab2ee05c957c/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(claude-desktop): allow native providers to bootstrap local routing (#8444)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/farion1231/cc-switch/blob/7344cc37865da59308bca1a90c95ab2ee05c957c/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "frankbria/ralph-claude-code",
+      "layers": [
+        "fabius"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "4fd2fe941ad79ffe85b7676266714e092dbf1cde",
+      "date": "2026-10-10T07:13:32Z",
+      "url": "https://github.com/frankbria/ralph-claude-code",
+      "disposition": "method-retained",
+      "decision": "Current sandbox/environment changes checked; existing bounded autonomous-loop and workspace rules retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "4fd2fe941ad79ffe85b7676266714e092dbf1cde",
+          "url": "https://github.com/frankbria/ralph-claude-code/blob/4fd2fe941ad79ffe85b7676266714e092dbf1cde/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "4fd2fe941ad79ffe85b7676266714e092dbf1cde",
+          "url": "https://github.com/frankbria/ralph-claude-code/blob/4fd2fe941ad79ffe85b7676266714e092dbf1cde/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(sandbox): E2B fails fast on RALPH_DIR at the workspace root or outside it (#383) (#387)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/frankbria/ralph-claude-code/blob/4fd2fe941ad79ffe85b7676266714e092dbf1cde/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "juliusbrussee/caveman",
+      "layers": [
+        "fabius-parcus"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+      "date": "2026-10-17T05:50:20Z",
+      "url": "https://github.com/juliusbrussee/caveman",
+      "disposition": "method-retained",
+      "decision": "Reviewed current skill and both root license files; retain concise writing without copying compression benchmarks or a new host installer.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "revision": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/LICENSE-MIT",
+          "role": "license-file"
+        },
+        {
+          "path": "NOTICE",
+          "revision": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/NOTICE",
+          "role": "notice-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "plugins/caveman/skills/caveman/SKILL.md",
+          "revision": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/plugins/caveman/skills/caveman/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #1310 from JuliusBrussee/maint/agent-pins-2026-10-16",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/LICENSE"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "url": "https://github.com/juliusbrussee/caveman/blob/84de42b871ec8f622aeecfc9f8710ea6f6ab1540/LICENSE-MIT"
+        }
+      ],
+      "license_observed": "Apache-2.0 + MIT"
+    },
+    {
+      "repo": "DietrichGebert/ponytail",
+      "layers": [
+        "fabius-parcus"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "16352ac229eb08a9598dcae48fe9f2b342567d86",
+      "date": "2026-10-16T23:04:13Z",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "disposition": "method-retained",
+      "decision": "Reviewed current trim/review skills; existing preserve-behavior and never-trim verification floor retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "16352ac229eb08a9598dcae48fe9f2b342567d86",
+          "url": "https://github.com/DietrichGebert/ponytail/blob/16352ac229eb08a9598dcae48fe9f2b342567d86/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "16352ac229eb08a9598dcae48fe9f2b342567d86",
+          "url": "https://github.com/DietrichGebert/ponytail/blob/16352ac229eb08a9598dcae48fe9f2b342567d86/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/ponytail/SKILL.md",
+          "revision": "16352ac229eb08a9598dcae48fe9f2b342567d86",
+          "url": "https://github.com/DietrichGebert/ponytail/blob/16352ac229eb08a9598dcae48fe9f2b342567d86/skills/ponytail/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/ponytail-review/SKILL.md",
+          "revision": "16352ac229eb08a9598dcae48fe9f2b342567d86",
+          "url": "https://github.com/DietrichGebert/ponytail/blob/16352ac229eb08a9598dcae48fe9f2b342567d86/skills/ponytail-review/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: release v5.3.2 (#1153)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/DietrichGebert/ponytail/blob/16352ac229eb08a9598dcae48fe9f2b342567d86/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "EveryInc/compound-engineering-plugin",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "94bda01bd5f7eb6e102c34f3797483aea5fa9b98",
+      "date": "2026-10-16T22:19:02Z",
+      "url": "https://github.com/EveryInc/compound-engineering-plugin",
+      "disposition": "method-retained",
+      "decision": "Current release and process catalog checked; existing scoped planning, review and compounding rules retained without importing plugin runtime.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "94bda01bd5f7eb6e102c34f3797483aea5fa9b98",
+          "url": "https://github.com/EveryInc/compound-engineering-plugin/blob/94bda01bd5f7eb6e102c34f3797483aea5fa9b98/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "94bda01bd5f7eb6e102c34f3797483aea5fa9b98",
+          "url": "https://github.com/EveryInc/compound-engineering-plugin/blob/94bda01bd5f7eb6e102c34f3797483aea5fa9b98/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "94bda01bd5f7eb6e102c34f3797483aea5fa9b98",
+          "url": "https://github.com/EveryInc/compound-engineering-plugin/blob/94bda01bd5f7eb6e102c34f3797483aea5fa9b98/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: release main (#1858)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/EveryInc/compound-engineering-plugin/blob/94bda01bd5f7eb6e102c34f3797483aea5fa9b98/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "gsd-build/get-shit-done",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+      "date": "2026-05-31T13:34:35Z",
+      "url": "https://github.com/gsd-build/get-shit-done",
+      "disposition": "identity-or-scope-corrected",
+      "decision": "Archived source points to open-gsd/gsd-core; followed successor README/LICENSE and recorded its exact HEAD. Corrected attribution without adding a spec framework.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+          "url": "https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+          "url": "https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+          "url": "https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #3886 from gsd-build/chore/update-discord-link",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "shareAI-lab/learn-claude-code",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "ce8f9f186058939da54c9d6fead78dfb5d0fd6c3",
+      "date": "2026-09-28T13:49:16Z",
+      "url": "https://github.com/shareAI-lab/learn-claude-code",
+      "disposition": "method-retained",
+      "decision": "Current tutorial cleanup changes checked; general process cleanup is covered by the Flue-informed descendant probe, not a copied tutorial runtime.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "ce8f9f186058939da54c9d6fead78dfb5d0fd6c3",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "ce8f9f186058939da54c9d6fead78dfb5d0fd6c3",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix: keep s11 and s15 process cleanup working on Windows (#586)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "shanraisshan/claude-code-best-practice",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "0f92b29599dd77c1b3de826a02bc8a4f4f490cad",
+      "date": "2026-10-17T05:13:59Z",
+      "url": "https://github.com/shanraisshan/claude-code-best-practice",
+      "disposition": "method-retained",
+      "decision": "Current versioned catalog checked; host-specific tips do not override Fabius routing or authorization.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "0f92b29599dd77c1b3de826a02bc8a4f4f490cad",
+          "url": "https://github.com/shanraisshan/claude-code-best-practice/blob/0f92b29599dd77c1b3de826a02bc8a4f4f490cad/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "0f92b29599dd77c1b3de826a02bc8a4f4f490cad",
+          "url": "https://github.com/shanraisshan/claude-code-best-practice/blob/0f92b29599dd77c1b3de826a02bc8a4f4f490cad/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore(skills): update Last Updated badge Oct 17, 2026 10:12 AM PKT, version v2.1.302",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/shanraisshan/claude-code-best-practice/blob/0f92b29599dd77c1b3de826a02bc8a4f4f490cad/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "garrytan/gstack",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "eca247e99a3b86642e907cdd11c309f8afe624e2",
+      "date": "2026-10-17T05:35:01Z",
+      "url": "https://github.com/garrytan/gstack",
+      "disposition": "method-retained",
+      "decision": "Current release/diagnostic changes checked; browser/Windows runtime fixes are not an update to Fabius's existing proof method.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "eca247e99a3b86642e907cdd11c309f8afe624e2",
+          "url": "https://github.com/garrytan/gstack/blob/eca247e99a3b86642e907cdd11c309f8afe624e2/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "eca247e99a3b86642e907cdd11c309f8afe624e2",
+          "url": "https://github.com/garrytan/gstack/blob/eca247e99a3b86642e907cdd11c309f8afe624e2/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "NOTICE.md",
+          "revision": "eca247e99a3b86642e907cdd11c309f8afe624e2",
+          "url": "https://github.com/garrytan/gstack/blob/eca247e99a3b86642e907cdd11c309f8afe624e2/NOTICE.md",
+          "role": "notice-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "eca247e99a3b86642e907cdd11c309f8afe624e2",
+          "url": "https://github.com/garrytan/gstack/blob/eca247e99a3b86642e907cdd11c309f8afe624e2/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "v1.91.120.0 test: split the doctor windows bash test so each case fits the Windows per-test timeout (#3241)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/garrytan/gstack/blob/eca247e99a3b86642e907cdd11c309f8afe624e2/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "conorluddy/ios-simulator-skill",
+      "layers": [
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "c535422ab4ee550c8994c179583f805cb0cb01b1",
+      "date": "2026-10-06T06:50:09Z",
+      "url": "https://github.com/conorluddy/ios-simulator-skill",
+      "disposition": "method-retained",
+      "decision": "Current installation notes checked; accessibility-tree-first verification retained. No Homebrew/idb installation recipe is maintained or installed by this refresh.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE.md",
+          "revision": "c535422ab4ee550c8994c179583f805cb0cb01b1",
+          "url": "https://github.com/conorluddy/ios-simulator-skill/blob/c535422ab4ee550c8994c179583f805cb0cb01b1/LICENSE.md",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "c535422ab4ee550c8994c179583f805cb0cb01b1",
+          "url": "https://github.com/conorluddy/ios-simulator-skill/blob/c535422ab4ee550c8994c179583f805cb0cb01b1/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Update README.md",
+      "license_findings": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/conorluddy/ios-simulator-skill/blob/c535422ab4ee550c8994c179583f805cb0cb01b1/LICENSE.md"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "safishamsi/graphify",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "canonical": "Graphify-Labs/graphify",
+      "head": "86c57be8204673c2a1b9849a3292a7dd3ab373d8",
+      "date": "2026-10-16T17:32:54Z",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "disposition": "identity-or-scope-corrected",
+      "decision": "Redirect resolved to Graphify-Labs/graphify. Corrected present-day scope to codebase knowledge graphs and recorded both root licenses; no chart-renderer claim.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "86c57be8204673c2a1b9849a3292a7dd3ab373d8",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "86c57be8204673c2a1b9849a3292a7dd3ab373d8",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "revision": "86c57be8204673c2a1b9849a3292a7dd3ab373d8",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/LICENSE-MIT",
+          "role": "license-file"
+        },
+        {
+          "path": "NOTICE",
+          "revision": "86c57be8204673c2a1b9849a3292a7dd3ab373d8",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/NOTICE",
+          "role": "notice-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "86c57be8204673c2a1b9849a3292a7dd3ab373d8",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore(release): 0.9.92",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/LICENSE"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/86c57be8204673c2a1b9849a3292a7dd3ab373d8/LICENSE-MIT"
+        }
+      ],
+      "license_observed": "Apache-2.0 + MIT"
+    },
+    {
+      "repo": "huangserva/skill-prompt-generator",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "e9512498402f6625300f42b9633d907a28dda126",
+      "date": "2026-05-10T09:16:50Z",
+      "url": "https://github.com/huangserva/skill-prompt-generator",
+      "disposition": "identity-or-scope-corrected",
+      "decision": "README claims MIT but recursive tree contains no license file. Corrected attribution to unverified copying permission; retained independently worded methods and imported no text/assets.",
+      "files_retrieved": [
+        {
+          "path": "README.md",
+          "revision": "e9512498402f6625300f42b9633d907a28dda126",
+          "url": "https://github.com/huangserva/skill-prompt-generator/blob/e9512498402f6625300f42b9633d907a28dda126/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/intelligent-prompt-generator/SKILL.md",
+          "revision": "e9512498402f6625300f42b9633d907a28dda126",
+          "url": "https://github.com/huangserva/skill-prompt-generator/blob/e9512498402f6625300f42b9633d907a28dda126/.claude/skills/intelligent-prompt-generator/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "update: elements.db latest data",
+      "license_findings": [],
+      "license_observed": "Unverified: README claims MIT; no license file in reviewed tree"
+    },
+    {
+      "repo": "Egonex-AI/Understand-Anything",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "f2d0164f72fe678805c34245a6df36acededfebd",
+      "date": "2026-10-12T10:24:59Z",
+      "url": "https://github.com/Egonex-AI/Understand-Anything",
+      "disposition": "method-retained",
+      "decision": "Current graph/explanation catalog checked; existing deterministic extraction and topology proof retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "f2d0164f72fe678805c34245a6df36acededfebd",
+          "url": "https://github.com/Egonex-AI/Understand-Anything/blob/f2d0164f72fe678805c34245a6df36acededfebd/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "f2d0164f72fe678805c34245a6df36acededfebd",
+          "url": "https://github.com/Egonex-AI/Understand-Anything/blob/f2d0164f72fe678805c34245a6df36acededfebd/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore(homepage): describe Egonex as \"An AI that gets to know you\" (#720)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Egonex-AI/Understand-Anything/blob/f2d0164f72fe678805c34245a6df36acededfebd/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "skills-il/localization",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "c6dbba434e415b9201b29cb9012246066a144c71",
+      "date": "2026-10-12T16:26:14Z",
+      "url": "https://github.com/skills-il/localization",
+      "disposition": "method-retained",
+      "decision": "Current localized-skill catalog checked. Existing RTL/localization method retained; domain-specific OCR form additions not imported.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "c6dbba434e415b9201b29cb9012246066a144c71",
+          "url": "https://github.com/skills-il/localization/blob/c6dbba434e415b9201b29cb9012246066a144c71/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "c6dbba434e415b9201b29cb9012246066a144c71",
+          "url": "https://github.com/skills-il/localization/blob/c6dbba434e415b9201b29cb9012246066a144c71/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "update: hebrew-ocr-forms v1.5.0 -- reviewer round fixes (text-height warning, 106 flags, encumbrance a/b labelling, restored checklist)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/skills-il/localization/blob/c6dbba434e415b9201b29cb9012246066a144c71/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "skills-il/legal-tech",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "1217f142a1013ff1f0cdf193d0894760d978ac38",
+      "date": "2026-10-13T08:30:15Z",
+      "url": "https://github.com/skills-il/legal-tech",
+      "disposition": "method-retained",
+      "decision": "Current catalog checked as a historical localization source; no new legal advice or legal-version update is claimed by this skill refresh.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "1217f142a1013ff1f0cdf193d0894760d978ac38",
+          "url": "https://github.com/skills-il/legal-tech/blob/1217f142a1013ff1f0cdf193d0894760d978ac38/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "1217f142a1013ff1f0cdf193d0894760d978ac38",
+          "url": "https://github.com/skills-il/legal-tech/blob/1217f142a1013ff1f0cdf193d0894760d978ac38/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "update: israeli-home-defect-report v1.2.0 -- pre-2011 apartments run on the pre-2011 text; reduced-not-forfeited repair rule",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/skills-il/legal-tech/blob/1217f142a1013ff1f0cdf193d0894760d978ac38/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "skills-il/marketing-growth",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "92f14037d52fb810099cc2818c91cda5e95e8433",
+      "date": "2026-10-08T20:59:50Z",
+      "url": "https://github.com/skills-il/marketing-growth",
+      "disposition": "method-retained",
+      "decision": "Current catalog checked; existing localization/marketing ownership retained without importing unrelated jurisdictional workflows.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "92f14037d52fb810099cc2818c91cda5e95e8433",
+          "url": "https://github.com/skills-il/marketing-growth/blob/92f14037d52fb810099cc2818c91cda5e95e8433/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "92f14037d52fb810099cc2818c91cda5e95e8433",
+          "url": "https://github.com/skills-il/marketing-growth/blob/92f14037d52fb810099cc2818c91cda5e95e8433/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: drop the legal-advice clause from display description openers",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/skills-il/marketing-growth/blob/92f14037d52fb810099cc2818c91cda5e95e8433/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "calesthio/OpenMontage",
+      "layers": [
+        "fabius-decor"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "c8066452325cb57c8fc1ba8c2a71b6e8842e6b65",
+      "date": "2026-10-16T15:07:32Z",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "disposition": "method-retained",
+      "decision": "AGPL source remains a historical method influence; no runtime, code or provider integration imported.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "c8066452325cb57c8fc1ba8c2a71b6e8842e6b65",
+          "url": "https://github.com/calesthio/OpenMontage/blob/c8066452325cb57c8fc1ba8c2a71b6e8842e6b65/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "c8066452325cb57c8fc1ba8c2a71b6e8842e6b65",
+          "url": "https://github.com/calesthio/OpenMontage/blob/c8066452325cb57c8fc1ba8c2a71b6e8842e6b65/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Remove remaining Sponsors section from README",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/calesthio/OpenMontage/blob/c8066452325cb57c8fc1ba8c2a71b6e8842e6b65/LICENSE"
+        }
+      ],
+      "license_observed": "AGPL-3.0"
+    },
+    {
+      "repo": "wshobson/agents",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "044b4b21f083948e69ec878a7b07c8d0951a6ffa",
+      "date": "2026-10-15T15:11:55Z",
+      "url": "https://github.com/wshobson/agents",
+      "disposition": "method-retained",
+      "decision": "Current agent catalog checked; Fabius's original role definitions retained without catalog expansion.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "044b4b21f083948e69ec878a7b07c8d0951a6ffa",
+          "url": "https://github.com/wshobson/agents/blob/044b4b21f083948e69ec878a7b07c8d0951a6ffa/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "044b4b21f083948e69ec878a7b07c8d0951a6ffa",
+          "url": "https://github.com/wshobson/agents/blob/044b4b21f083948e69ec878a7b07c8d0951a6ffa/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "docs(developer-essentials): fix the reflog expiry comment and note the deploy script (#776)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/wshobson/agents/blob/044b4b21f083948e69ec878a7b07c8d0951a6ffa/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "VoltAgent/awesome-claude-code-subagents",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
+      "date": "2026-10-11T08:20:37Z",
+      "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "disposition": "method-retained",
+      "decision": "Current catalog checked; newly added specialist roles are not new Fabius public skills.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
+          "url": "https://github.com/VoltAgent/awesome-claude-code-subagents/blob/408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
+          "url": "https://github.com/VoltAgent/awesome-claude-code-subagents/blob/408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Add telegram-ads-analyst subagent to Business & Product (#330)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/VoltAgent/awesome-claude-code-subagents/blob/408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "FlowiseAI/Flowise",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb",
+      "date": "2026-08-13T12:38:19Z",
+      "url": "https://github.com/FlowiseAI/Flowise",
+      "disposition": "identity-or-scope-corrected",
+      "decision": "Root license separates Apache core and commercial components. Retained optional-runtime boundary and corrected machina so agent ownership does not force Flowise.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE.md",
+          "revision": "9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb",
+          "url": "https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/LICENSE.md",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb",
+          "url": "https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Update README.md (#6728)",
+      "license_findings": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/LICENSE.md"
+        }
+      ],
+      "license_observed": "Apache-2.0 core; commercial portions separately licensed"
+    },
+    {
+      "repo": "bytedance/deer-flow",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "169002a4c995881ae046f34a540bb83b6ac828d6",
+      "date": "2026-10-17T01:41:15Z",
+      "url": "https://github.com/bytedance/deer-flow",
+      "disposition": "method-retained",
+      "decision": "Current immutable-artifact/approval material checked against existing lifecycle rules; no workflow service or new approval ceremony imported.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "169002a4c995881ae046f34a540bb83b6ac828d6",
+          "url": "https://github.com/bytedance/deer-flow/blob/169002a4c995881ae046f34a540bb83b6ac828d6/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "169002a4c995881ae046f34a540bb83b6ac828d6",
+          "url": "https://github.com/bytedance/deer-flow/blob/169002a4c995881ae046f34a540bb83b6ac828d6/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "169002a4c995881ae046f34a540bb83b6ac828d6",
+          "url": "https://github.com/bytedance/deer-flow/blob/169002a4c995881ae046f34a540bb83b6ac828d6/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "feat(workflows): add Phase 2 approvals, immutable artifacts and configuration evidence (#6920)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/bytedance/deer-flow/blob/169002a4c995881ae046f34a540bb83b6ac828d6/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "jamiepine/voicebox",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "8af7efe62fab8d33e2a5dfbedabaa45f68a5184f",
+      "date": "2026-10-07T01:17:56Z",
+      "url": "https://github.com/jamiepine/voicebox",
+      "disposition": "method-retained",
+      "decision": "Current voice runtime material checked; backend confirmation and unknown-outcome rules retained without importing audio runtime.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "8af7efe62fab8d33e2a5dfbedabaa45f68a5184f",
+          "url": "https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "8af7efe62fab8d33e2a5dfbedabaa45f68a5184f",
+          "url": "https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "8af7efe62fab8d33e2a5dfbedabaa45f68a5184f",
+          "url": "https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #1168 from jamiepine/prep/pr-1062",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "withastro/flue",
+      "layers": [
+        "fabius-cohors",
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "deee93b40d275ecc9a50c50af2158f20089d54bc",
+      "date": "2026-10-12T18:48:06Z",
+      "url": "https://github.com/withastro/flue",
+      "disposition": "method-updated",
+      "decision": "Adopted process-group escalation after parent and pipe exit from the 2.3.0 changelog; retained resume and capability rules. Root license is Apache-2.0.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "deee93b40d275ecc9a50c50af2158f20089d54bc",
+          "url": "https://github.com/withastro/flue/blob/deee93b40d275ecc9a50c50af2158f20089d54bc/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "deee93b40d275ecc9a50c50af2158f20089d54bc",
+          "url": "https://github.com/withastro/flue/blob/deee93b40d275ecc9a50c50af2158f20089d54bc/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "deee93b40d275ecc9a50c50af2158f20089d54bc",
+          "url": "https://github.com/withastro/flue/blob/deee93b40d275ecc9a50c50af2158f20089d54bc/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "v2.3.0",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/withastro/flue/blob/deee93b40d275ecc9a50c50af2158f20089d54bc/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "andrewyng/openworker",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "7e20213dc88faaaaccace59461876c76e76b134a",
+      "date": "2026-10-10T06:05:52Z",
+      "url": "https://github.com/andrewyng/openworker",
+      "disposition": "method-retained",
+      "decision": "Current beta catalog checked; not promoted to a stable production runtime. Existing autonomy grant boundaries retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "7e20213dc88faaaaccace59461876c76e76b134a",
+          "url": "https://github.com/andrewyng/openworker/blob/7e20213dc88faaaaccace59461876c76e76b134a/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "7e20213dc88faaaaccace59461876c76e76b134a",
+          "url": "https://github.com/andrewyng/openworker/blob/7e20213dc88faaaaccace59461876c76e76b134a/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #600 from andrewyng/issue/skip-question-card",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/andrewyng/openworker/blob/7e20213dc88faaaaccace59461876c76e76b134a/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "permissionlesstech/bitchat",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "5e9287fae1e5fea80ca741d4ea669829dc16f144",
+      "date": "2026-09-24T07:35:50Z",
+      "url": "https://github.com/permissionlesstech/bitchat",
+      "disposition": "method-retained",
+      "decision": "Current messaging runtime checked; mesh/chat UI changes do not alter Fabius's scoped communication method.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "5e9287fae1e5fea80ca741d4ea669829dc16f144",
+          "url": "https://github.com/permissionlesstech/bitchat/blob/5e9287fae1e5fea80ca741d4ea669829dc16f144/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "5e9287fae1e5fea80ca741d4ea669829dc16f144",
+          "url": "https://github.com/permissionlesstech/bitchat/blob/5e9287fae1e5fea80ca741d4ea669829dc16f144/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Keep composer drafts across mesh, geohash, and DM switches (#1569)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/permissionlesstech/bitchat/blob/5e9287fae1e5fea80ca741d4ea669829dc16f144/LICENSE"
+        }
+      ],
+      "license_observed": "Unlicense"
+    },
+    {
+      "repo": "abhigyanpatwari/GitNexus",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "22a7608b7c5ff77302357c0f90c8d31294801b25",
+      "date": "2026-10-17T04:38:45Z",
+      "url": "https://github.com/abhigyanpatwari/GitNexus",
+      "disposition": "method-retained",
+      "decision": "Current PolyForm Noncommercial source checked; no code or parser/cache implementation imported or reclassified as permissive.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "22a7608b7c5ff77302357c0f90c8d31294801b25",
+          "url": "https://github.com/abhigyanpatwari/GitNexus/blob/22a7608b7c5ff77302357c0f90c8d31294801b25/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "22a7608b7c5ff77302357c0f90c8d31294801b25",
+          "url": "https://github.com/abhigyanpatwari/GitNexus/blob/22a7608b7c5ff77302357c0f90c8d31294801b25/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "22a7608b7c5ff77302357c0f90c8d31294801b25",
+          "url": "https://github.com/abhigyanpatwari/GitNexus/blob/22a7608b7c5ff77302357c0f90c8d31294801b25/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "feat(cache): derive parser and PDG cache identities automatically (#3606)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/abhigyanpatwari/GitNexus/blob/22a7608b7c5ff77302357c0f90c8d31294801b25/LICENSE"
+        }
+      ],
+      "license_observed": "PolyForm-Noncommercial-1.0.0"
+    },
+    {
+      "repo": "microsoft/agent-framework",
+      "layers": [
+        "fabius-cohors",
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "44fe223da7ea6853eefb7053e25c2c213a2e5c15",
+      "date": "2026-10-16T19:29:27Z",
+      "url": "https://github.com/microsoft/agent-framework",
+      "disposition": "method-retained",
+      "decision": "Current adapter/sample material checked; Fabius's original adapter validation and memory contracts retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "44fe223da7ea6853eefb7053e25c2c213a2e5c15",
+          "url": "https://github.com/microsoft/agent-framework/blob/44fe223da7ea6853eefb7053e25c2c213a2e5c15/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "44fe223da7ea6853eefb7053e25c2c213a2e5c15",
+          "url": "https://github.com/microsoft/agent-framework/blob/44fe223da7ea6853eefb7053e25c2c213a2e5c15/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": ".NET: Fix A2A message validation and sample server capabilities (#9465)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/microsoft/agent-framework/blob/44fe223da7ea6853eefb7053e25c2c213a2e5c15/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "Kritt-ai/open-kritt",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3",
+      "date": "2026-09-15T18:07:54Z",
+      "url": "https://github.com/Kritt-ai/open-kritt",
+      "disposition": "method-retained",
+      "decision": "Current AGPL runtime checked; existing source-informed agent boundary retained without code import.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3",
+          "url": "https://github.com/Kritt-ai/open-kritt/blob/43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3",
+          "url": "https://github.com/Kritt-ai/open-kritt/blob/43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3",
+          "url": "https://github.com/Kritt-ai/open-kritt/blob/43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix: accept valid duplicate scan payloads (#119)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Kritt-ai/open-kritt/blob/43e1d19a00ce50bd93253d1c6c3a48cfffbcc4c3/LICENSE"
+        }
+      ],
+      "license_observed": "AGPL-3.0"
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "layers": [
+        "fabius-cohors",
+        "fabius-archivum",
+        "fabius-disciplina",
+        "fabius-doctrina",
+        "fabius-machina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "ab44d8acf7bca230aea8574f2f2ab4666ca293ce",
+      "date": "2026-10-17T04:29:02Z",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "disposition": "method-retained",
+      "decision": "Current framework catalog checked; host/ACP changes do not establish features in Fabius. Existing identity, memory and adapter boundaries retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "ab44d8acf7bca230aea8574f2f2ab4666ca293ce",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/ab44d8acf7bca230aea8574f2f2ab4666ca293ce/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "ab44d8acf7bca230aea8574f2f2ab4666ca293ce",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/ab44d8acf7bca230aea8574f2f2ab4666ca293ce/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #140190 from NousResearch/fix/pkg7-acp-commands",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/ab44d8acf7bca230aea8574f2f2ab4666ca293ce/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "deepseek-ai/deepseek-harness",
+      "layers": [
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "1600d8a1e140dcde43a1a0941940a0480712c011",
+      "date": "2026-10-16T13:46:57Z",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "disposition": "method-retained",
+      "decision": "Current 0.2.1-rc.1 source is pre-release; reviewed as source only, not installed or promoted as stable.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "1600d8a1e140dcde43a1a0941940a0480712c011",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/blob/1600d8a1e140dcde43a1a0941940a0480712c011/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "1600d8a1e140dcde43a1a0941940a0480712c011",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/blob/1600d8a1e140dcde43a1a0941940a0480712c011/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #6387 from deepseek-harness/worktree/release-dsh-0.2.1-rc.1",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/blob/1600d8a1e140dcde43a1a0941940a0480712c011/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "ruvnet/ruvector",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+      "date": "2026-10-14T09:49:14Z",
+      "url": "https://github.com/ruvnet/ruvector",
+      "disposition": "method-retained",
+      "decision": "Current native index/runtime changes checked; no vector engine added and local retrieval claims unchanged.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+          "url": "https://github.com/ruvnet/ruvector/blob/46d816ddc4c2a8a06cd3613534a79b1d557d858b/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+          "url": "https://github.com/ruvnet/ruvector/blob/46d816ddc4c2a8a06cd3613534a79b1d557d858b/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+          "url": "https://github.com/ruvnet/ruvector/blob/46d816ddc4c2a8a06cd3613534a79b1d557d858b/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: Update NAPI-RS binaries for all platforms",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/ruvnet/ruvector/blob/46d816ddc4c2a8a06cd3613534a79b1d557d858b/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "b1527d4bdeaecb9bbe1fa885b86359bdf75e4419",
+      "date": "2026-10-17T03:16:17Z",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "disposition": "method-retained",
+      "decision": "Current release and root license checked; existing staged recall and source-of-truth guidance retained, no hooks or runtime installed.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "b1527d4bdeaecb9bbe1fa885b86359bdf75e4419",
+          "url": "https://github.com/thedotmack/claude-mem/blob/b1527d4bdeaecb9bbe1fa885b86359bdf75e4419/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "b1527d4bdeaecb9bbe1fa885b86359bdf75e4419",
+          "url": "https://github.com/thedotmack/claude-mem/blob/b1527d4bdeaecb9bbe1fa885b86359bdf75e4419/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "NOTICE",
+          "revision": "b1527d4bdeaecb9bbe1fa885b86359bdf75e4419",
+          "url": "https://github.com/thedotmack/claude-mem/blob/b1527d4bdeaecb9bbe1fa885b86359bdf75e4419/NOTICE",
+          "role": "notice-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "b1527d4bdeaecb9bbe1fa885b86359bdf75e4419",
+          "url": "https://github.com/thedotmack/claude-mem/blob/b1527d4bdeaecb9bbe1fa885b86359bdf75e4419/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "test(windows): spawn the running Bun instead of the PATH shim (#4814)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/thedotmack/claude-mem/blob/b1527d4bdeaecb9bbe1fa885b86359bdf75e4419/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "44c27308912cc4e95cc5f5d13543b64845ece432",
+      "date": "2026-10-14T04:20:05Z",
+      "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "disposition": "method-retained",
+      "decision": "Current release/host artifacts checked; existing recall discipline retained without host configuration.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "44c27308912cc4e95cc5f5d13543b64845ece432",
+          "url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/44c27308912cc4e95cc5f5d13543b64845ece432/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "44c27308912cc4e95cc5f5d13543b64845ece432",
+          "url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/44c27308912cc4e95cc5f5d13543b64845ece432/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "44c27308912cc4e95cc5f5d13543b64845ece432",
+          "url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/44c27308912cc4e95cc5f5d13543b64845ece432/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "ci: authorize generated artifacts for release PR #4378 (#4381)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/44c27308912cc4e95cc5f5d13543b64845ece432/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "PleasePrompto/notebooklm-skill",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "c80722d3f27d65e06b6579add201bf69b99101d0",
+      "date": "2026-09-10T07:43:42Z",
+      "url": "https://github.com/PleasePrompto/notebooklm-skill",
+      "disposition": "identity-or-scope-corrected",
+      "decision": "Repository explicitly archived/unmaintained in September 2026. Marked the historical method separately from the actively reviewed unofficial client.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "c80722d3f27d65e06b6579add201bf69b99101d0",
+          "url": "https://github.com/PleasePrompto/notebooklm-skill/blob/c80722d3f27d65e06b6579add201bf69b99101d0/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "c80722d3f27d65e06b6579add201bf69b99101d0",
+          "url": "https://github.com/PleasePrompto/notebooklm-skill/blob/c80722d3f27d65e06b6579add201bf69b99101d0/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "c80722d3f27d65e06b6579add201bf69b99101d0",
+          "url": "https://github.com/PleasePrompto/notebooklm-skill/blob/c80722d3f27d65e06b6579add201bf69b99101d0/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "docs: mark project as unmaintained and archived",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/PleasePrompto/notebooklm-skill/blob/c80722d3f27d65e06b6579add201bf69b99101d0/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "Zackriya-Solutions/meetily",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "a2cb62e827da7ef59f65064c97233efb2313878e",
+      "date": "2026-09-10T18:28:42Z",
+      "url": "https://github.com/Zackriya-Solutions/meetily",
+      "disposition": "method-retained",
+      "decision": "Current capture release checked; existing partial-capture, consent/provenance and draft-only follow-up rules retained.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE.md",
+          "revision": "a2cb62e827da7ef59f65064c97233efb2313878e",
+          "url": "https://github.com/Zackriya-Solutions/meetily/blob/a2cb62e827da7ef59f65064c97233efb2313878e/LICENSE.md",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "a2cb62e827da7ef59f65064c97233efb2313878e",
+          "url": "https://github.com/Zackriya-Solutions/meetily/blob/a2cb62e827da7ef59f65064c97233efb2313878e/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Release v0.4.1 ",
+      "license_findings": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/Zackriya-Solutions/meetily/blob/a2cb62e827da7ef59f65064c97233efb2313878e/LICENSE.md"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "docsifyjs/docsify",
+      "layers": [
+        "fabius-archivum"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "2d8cb5a74c29797e6016dea857e36d1e339675bf",
+      "date": "2026-10-16T03:57:01Z",
+      "url": "https://github.com/docsifyjs/docsify",
+      "disposition": "method-retained",
+      "decision": "Current v5/index changes checked; a docs renderer is not the canonical memory store, and no renderer dependency installed.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "2d8cb5a74c29797e6016dea857e36d1e339675bf",
+          "url": "https://github.com/docsifyjs/docsify/blob/2d8cb5a74c29797e6016dea857e36d1e339675bf/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "2d8cb5a74c29797e6016dea857e36d1e339675bf",
+          "url": "https://github.com/docsifyjs/docsify/blob/2d8cb5a74c29797e6016dea857e36d1e339675bf/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "2d8cb5a74c29797e6016dea857e36d1e339675bf",
+          "url": "https://github.com/docsifyjs/docsify/blob/2d8cb5a74c29797e6016dea857e36d1e339675bf/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(search): replace stale records when saving an index (#2817)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/docsifyjs/docsify/blob/2d8cb5a74c29797e6016dea857e36d1e339675bf/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "firecrawl/anydoc",
+      "layers": [
+        "fabius-archivum",
+        "fabius-doctrina",
+        "fabius-praesidium",
+        "fabius-disciplina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "261fc257d17c3eab0f673be31c408fd9fdc2171a",
+      "date": "2026-08-28T02:13:16Z",
+      "url": "https://github.com/firecrawl/anydoc",
+      "disposition": "method-retained",
+      "decision": "Current document toolkit checked; original source/provenance and write boundaries retained without adding a hosted service.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "261fc257d17c3eab0f673be31c408fd9fdc2171a",
+          "url": "https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "261fc257d17c3eab0f673be31c408fd9fdc2171a",
+          "url": "https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Update README.md",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "layers": [
+        "fabius-mercatus"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "365b412152b9542499ca1439426f7fc3cc92bb65",
+      "date": "2026-10-15T18:35:07Z",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "disposition": "method-retained",
+      "decision": "Reviewed current analytics, A/B testing and SEO skills; existing measurement/source-first workflow retained without new marketing tools.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "365b412152b9542499ca1439426f7fc3cc92bb65",
+          "url": "https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "365b412152b9542499ca1439426f7fc3cc92bb65",
+          "url": "https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/analytics/SKILL.md",
+          "revision": "365b412152b9542499ca1439426f7fc3cc92bb65",
+          "url": "https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/analytics/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/ab-testing/SKILL.md",
+          "revision": "365b412152b9542499ca1439426f7fc3cc92bb65",
+          "url": "https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/ab-testing/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/seo-audit/SKILL.md",
+          "revision": "365b412152b9542499ca1439426f7fc3cc92bb65",
+          "url": "https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/seo-audit/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #850 from coreyhaines31/fix/learnings-ledger-copywriting-ads",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "blader/humanizer",
+      "layers": [
+        "fabius-mercatus"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "8c307f367c91bd974002f10f2be2965d642c13df",
+      "date": "2026-10-16T19:12:03Z",
+      "url": "https://github.com/blader/humanizer",
+      "disposition": "method-retained",
+      "decision": "Reviewed current v3.1 skill; conversation-vs-standalone scoping does not justify authorship detection or detector-evasion promises. Existing bounded evidence-based editing retained.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "8c307f367c91bd974002f10f2be2965d642c13df",
+          "url": "https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "8c307f367c91bd974002f10f2be2965d642c13df",
+          "url": "https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "8c307f367c91bd974002f10f2be2965d642c13df",
+          "url": "https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "SKILL.md",
+          "revision": "8c307f367c91bd974002f10f2be2965d642c13df",
+          "url": "https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Update README to fix sponsorship duplication",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "mukul975/Anthropic-Cybersecurity-Skills",
+      "layers": [
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "54a798831d2266a3ca61ce68a7acb80b81160d57",
+      "date": "2026-08-31T04:32:42Z",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "disposition": "method-retained",
+      "decision": "Current security catalog checked; no wholesale skill import, payload set or unsupported audit-coverage claim.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "54a798831d2266a3ca61ce68a7acb80b81160d57",
+          "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "54a798831d2266a3ca61ce68a7acb80b81160d57",
+          "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: update contributor wall",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/LICENSE"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repo": "anthropics/claude-code-security-review",
+      "layers": [
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+      "date": "2026-02-11T18:01:23Z",
+      "url": "https://github.com/anthropics/claude-code-security-review",
+      "disposition": "method-retained",
+      "decision": "Current review source checked; existing threat-model/reachability/evidence gates retained without installing a CI action.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+          "url": "https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+          "url": "https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #55 from Eduard-Voiculescu/main",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "onyx-dot-app/onyx",
+      "layers": [
+        "fabius-praesidium",
+        "fabius-doctrina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "f778b97d4b9401700e88f5ba1167f9580b58a545",
+      "date": "2026-10-16T23:34:14Z",
+      "url": "https://github.com/onyx-dot-app/onyx",
+      "disposition": "method-retained",
+      "decision": "Root license distinguishes MIT scope from enterprise components; existing defensive trust-boundary guidance retained without server import.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "f778b97d4b9401700e88f5ba1167f9580b58a545",
+          "url": "https://github.com/onyx-dot-app/onyx/blob/f778b97d4b9401700e88f5ba1167f9580b58a545/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "f778b97d4b9401700e88f5ba1167f9580b58a545",
+          "url": "https://github.com/onyx-dot-app/onyx/blob/f778b97d4b9401700e88f5ba1167f9580b58a545/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(web): show optional tracing fields with the optional suffix (#16182)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/onyx-dot-app/onyx/blob/f778b97d4b9401700e88f5ba1167f9580b58a545/LICENSE"
+        }
+      ],
+      "license_observed": "MIT outside enterprise scope; enterprise terms separate"
+    },
+    {
+      "repo": "lissy93/web-check",
+      "layers": [
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "c38c3e28a23ed7bc7cc524285d843ee3fc2e274e",
+      "date": "2026-10-16T11:18:26Z",
+      "url": "https://github.com/lissy93/web-check",
+      "disposition": "method-retained",
+      "decision": "Current v2.3.7 README and MIT file checked; existing scoped reconnaissance method retained without service installation.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "c38c3e28a23ed7bc7cc524285d843ee3fc2e274e",
+          "url": "https://github.com/lissy93/web-check/blob/c38c3e28a23ed7bc7cc524285d843ee3fc2e274e/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": ".github/README.md",
+          "revision": "c38c3e28a23ed7bc7cc524285d843ee3fc2e274e",
+          "url": "https://github.com/lissy93/web-check/blob/c38c3e28a23ed7bc7cc524285d843ee3fc2e274e/.github/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Bump version to 2.3.7",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/lissy93/web-check/blob/c38c3e28a23ed7bc7cc524285d843ee3fc2e274e/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "guillaumemeyer/watermarks-remover",
+      "layers": [
+        "fabius-praesidium"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "980c0b4c5786ca710ed77276b6e55b622f340d4c",
+      "date": "2026-10-17T05:28:05Z",
+      "url": "https://github.com/guillaumemeyer/watermarks-remover",
+      "disposition": "method-retained",
+      "decision": "Current source distinguishes container scanning and optional backends; retained authorized-content/defensive hygiene boundary and no detector-evasion or unknown-license backend adoption.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "980c0b4c5786ca710ed77276b6e55b622f340d4c",
+          "url": "https://github.com/guillaumemeyer/watermarks-remover/blob/980c0b4c5786ca710ed77276b6e55b622f340d4c/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "980c0b4c5786ca710ed77276b6e55b622f340d4c",
+          "url": "https://github.com/guillaumemeyer/watermarks-remover/blob/980c0b4c5786ca710ed77276b6e55b622f340d4c/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "fix(container): value-scan Markdown frontmatter values that span lines (block scalars, wrapped values, lists) (#402)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/guillaumemeyer/watermarks-remover/blob/980c0b4c5786ca710ed77276b6e55b622f340d4c/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "Donchitos/Claude-Code-Game-Studios",
+      "layers": [
+        "fabius-ludus"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "be8993bbc5a1f016bc770b2846ce06272d284526",
+      "date": "2026-10-08T06:52:48Z",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "disposition": "method-updated",
+      "decision": "Adopted empty-selection NOT ASSESSED and criterion-linked runtime/playtest evidence. Did not adopt numeric assertion quotas or studio orchestration.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/test-evidence-review/SKILL.md",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/.claude/skills/test-evidence-review/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/soak-test/SKILL.md",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/.claude/skills/soak-test/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/propagate-design-change/SKILL.md",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/.claude/skills/propagate-design-change/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": ".claude/skills/playtest-report/SKILL.md",
+          "revision": "be8993bbc5a1f016bc770b2846ce06272d284526",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/.claude/skills/playtest-report/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Release 1.1.3 — long skills keep their later steps",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/be8993bbc5a1f016bc770b2846ce06272d284526/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "solana-foundation/solana-dev-skill",
+      "layers": [
+        "fabius-catena"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "33e2663540685ae699039907cae080b72f1c2681",
+      "date": "2026-10-16T18:12:57Z",
+      "url": "https://github.com/solana-foundation/solana-dev-skill",
+      "disposition": "method-updated",
+      "decision": "Adopted current client/cohort and transaction-version guidance plus payment-reference versus deduplication separation. Conflicting compatibility-table details are explicit and installed tools must be probed.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/SKILL.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/references/frontend.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/references/frontend.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/references/payments.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/references/payments.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/references/security.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/references/security.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/references/testing.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/references/testing.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/references/compatibility-matrix.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/references/compatibility-matrix.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/solana-dev/references/transactions-v1.md",
+          "revision": "33e2663540685ae699039907cae080b72f1c2681",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/skills/solana-dev/references/transactions-v1.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "docs: distinguish payment references from replay protection (#90)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/solana-foundation/solana-dev-skill/blob/33e2663540685ae699039907cae080b72f1c2681/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "czlonkowski/n8n-skills",
+      "layers": [
+        "fabius-machina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+      "date": "2026-10-15T21:35:29Z",
+      "url": "https://github.com/czlonkowski/n8n-skills",
+      "disposition": "method-updated",
+      "decision": "Read all 15 current skill contracts; adopted per-call instance targeting, binary continuity and safe test/deploy semantics. Agent behavior remains Cohors-owned even on n8n.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-agents/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-agents/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-binary-and-data/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-binary-and-data/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-code-javascript/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-code-javascript/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-code-python/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-code-python/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-code-tool/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-code-tool/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-error-handling/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-error-handling/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-expression-syntax/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-expression-syntax/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-mcp-tools-expert/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-mcp-tools-expert/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-multi-instance/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-multi-instance/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-node-configuration/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-node-configuration/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-self-hosting/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-self-hosting/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-subworkflows/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-subworkflows/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-validation-expert/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-validation-expert/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/n8n-workflow-patterns/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/n8n-workflow-patterns/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/using-n8n-mcp-skills/SKILL.md",
+          "revision": "c640094d949c5a7bfce7d51fc9c049e3dcd3be44",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/skills/using-n8n-mcp-skills/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #66 from czlonkowski/docs/per-call-instance-argument",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/czlonkowski/n8n-skills/blob/c640094d949c5a7bfce7d51fc9c049e3dcd3be44/LICENSE"
+        }
+      ],
+      "license_observed": "MIT skills; hooks separately Apache-2.0"
+    },
+    {
+      "repo": "ScrapeGraphAI/Scrapegraph-ai",
+      "layers": [
+        "fabius-machina",
+        "fabius-archivum",
+        "fabius-cohors"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "194055e203afce41ed4e70365dbc416bad756115",
+      "date": "2026-10-06T08:27:50Z",
+      "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai",
+      "disposition": "method-retained",
+      "decision": "Current release changes include optional extraction fields; existing explicit missing-value and extraction/provenance rules retained without scraper runtime.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "194055e203afce41ed4e70365dbc416bad756115",
+          "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai/blob/194055e203afce41ed4e70365dbc416bad756115/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "194055e203afce41ed4e70365dbc416bad756115",
+          "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai/blob/194055e203afce41ed4e70365dbc416bad756115/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "194055e203afce41ed4e70365dbc416bad756115",
+          "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai/blob/194055e203afce41ed4e70365dbc416bad756115/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "ci(release): 2.3.1 [skip ci]",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai/blob/194055e203afce41ed4e70365dbc416bad756115/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "layers": [
+        "fabius-scientia"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+      "date": "2026-10-12T09:43:29Z",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "disposition": "method-updated",
+      "decision": "Reviewed database lookup, genomic coordinates, hypothesis and statistical contracts. Corrected API-method/count claims and added assembly/coordinate provenance without importing the full catalog.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE.md",
+          "revision": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/LICENSE.md",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/README.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/database-lookup/SKILL.md",
+          "revision": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/database-lookup/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/genomic-coordinates/SKILL.md",
+          "revision": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/genomic-coordinates/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/statistical-analysis/SKILL.md",
+          "revision": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/statistical-analysis/SKILL.md",
+          "role": "source-material"
+        },
+        {
+          "path": "skills/hypothesis-generation/SKILL.md",
+          "revision": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/hypothesis-generation/SKILL.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "chore: update security scan report [skip ci]",
+      "license_findings": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/LICENSE.md"
+        }
+      ],
+      "license_observed": "MIT root; individual skills may have separate terms"
+    },
+    {
+      "repo": "ggml-org/llama.cpp",
+      "layers": [
+        "fabius-doctrina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "f74e2fa6a31cc33ab4ee4ae516641cfe62df3924",
+      "date": "2026-10-17T02:03:41Z",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "disposition": "method-retained",
+      "decision": "Current backend/kernel fixes require their actual runtime; existing probe/evaluate/serve method retained without model or native dependency download.",
+      "files_retrieved": [
+        {
+          "path": "LICENSE",
+          "revision": "f74e2fa6a31cc33ab4ee4ae516641cfe62df3924",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/f74e2fa6a31cc33ab4ee4ae516641cfe62df3924/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "f74e2fa6a31cc33ab4ee4ae516641cfe62df3924",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/f74e2fa6a31cc33ab4ee4ae516641cfe62df3924/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "sycl: fix prompt-processing regression after Q4_0/Q8_0 weight reorder (#30374)",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/f74e2fa6a31cc33ab4ee4ae516641cfe62df3924/LICENSE"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repo": "open-webui/open-webui",
+      "layers": [
+        "fabius-doctrina"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "91ea4e3421d1d8069f13d4a463fcb5986d94ea60",
+      "date": "2026-10-16T11:46:08Z",
+      "url": "https://github.com/open-webui/open-webui",
+      "disposition": "method-retained",
+      "decision": "Current branding-bearing custom license recorded; no assumption of unrestricted MIT or new UI/server dependency.",
+      "files_retrieved": [
+        {
+          "path": "CHANGELOG.md",
+          "revision": "91ea4e3421d1d8069f13d4a463fcb5986d94ea60",
+          "url": "https://github.com/open-webui/open-webui/blob/91ea4e3421d1d8069f13d4a463fcb5986d94ea60/CHANGELOG.md",
+          "role": "source-material"
+        },
+        {
+          "path": "LICENSE",
+          "revision": "91ea4e3421d1d8069f13d4a463fcb5986d94ea60",
+          "url": "https://github.com/open-webui/open-webui/blob/91ea4e3421d1d8069f13d4a463fcb5986d94ea60/LICENSE",
+          "role": "license-file"
+        },
+        {
+          "path": "README.md",
+          "revision": "91ea4e3421d1d8069f13d4a463fcb5986d94ea60",
+          "url": "https://github.com/open-webui/open-webui/blob/91ea4e3421d1d8069f13d4a463fcb5986d94ea60/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "Merge pull request #32511 from open-webui/dev",
+      "license_findings": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/open-webui/open-webui/blob/91ea4e3421d1d8069f13d4a463fcb5986d94ea60/LICENSE"
+        }
+      ],
+      "license_observed": "Open WebUI custom license, including branding conditions"
+    },
+    {
+      "repo": "karpathy/llm-council",
+      "layers": [
+        "fabius-concilium"
+      ],
+      "origins": [
+        "credited"
+      ],
+      "base_commits": [],
+      "head": "92e1fccb1bdcf1bab7221aa9ed90f9dc72529131",
+      "date": "2025-11-22T23:35:19Z",
+      "url": "https://github.com/karpathy/llm-council",
+      "disposition": "method-retained",
+      "decision": "Current historical prototype has no root license file. Original Fabius council implementation and tests retained; no upstream implementation copied.",
+      "files_retrieved": [
+        {
+          "path": "README.md",
+          "revision": "92e1fccb1bdcf1bab7221aa9ed90f9dc72529131",
+          "url": "https://github.com/karpathy/llm-council/blob/92e1fccb1bdcf1bab7221aa9ed90f9dc72529131/README.md",
+          "role": "source-material"
+        }
+      ],
+      "head_subject": "readme tweaks",
+      "license_findings": [],
+      "license_observed": "No license file found in reviewed root/tree; no code copied"
+    }
+  ],
+  "followed_successors": [
+    {
+      "from": "gsd-build/get-shit-done",
+      "repo": "open-gsd/gsd-core",
+      "head": "b995cf0e40243d15688f1d6af83a622510423237",
+      "date": "2026-10-17T00:12:11Z",
+      "tree": "e2c9bedb67cafde010f7115b8ab6c6635b531b9c",
+      "message": "fix(#5473): extract the commit subject byte-wise so a 112KB message is not slow in a UTF-8 locale (#5485)",
+      "url": "https://github.com/open-gsd/gsd-core",
+      "files_retrieved": [
+        "README.md",
+        "LICENSE"
+      ],
+      "decision": "Followed the archived source's stated successor for identity/current documentation only; no new spec workflow imported."
+    }
+  ],
+  "validation_receipt": "evals/maintenance-smoke/2026-10-17-upstream-refresh.json",
+  "verification": {
+    "development_gate": {
+      "command": "bash scripts/verify-all.sh --mode=dev",
+      "passed_gate_groups": 31,
+      "failed_gate_groups": 0,
+      "skipped_gate_groups": 1,
+      "skip_reason": "Maintainer-private launch/ is absent; optional runtime test skips are also explicit in the gate output.",
+      "aggregate_observed": true,
+      "exit_code": 0,
+      "captured_trace_sha256": "05b6996ae45ae40d2f017c28dfa915ff04a5c793ce39e8640faf31fea34f2027"
+    },
+    "strict_smoke_freshness": {
+      "command": "node evals/verify-maintenance-smoke.mjs --mode=release",
+      "fresh": 43,
+      "stale": 0,
+      "actual_response_runs_in_refresh": 24,
+      "unique_scenarios_in_refresh": 19,
+      "new_scenarios": 12,
+      "rerun_prior_scenarios": 7,
+      "retained_prior_scenarios": 24
+    },
+    "review": {
+      "findings_corrected": 3,
+      "independent_passage_recheck": "No remaining material contradiction in the corrected passages.",
+      "isolated_prompt_rerun": "The earlier whole-case-prompt input is disclosed and retained; a final fresh responder used only its own prompt and contracts."
+    },
+    "earlier_checks": "Baseline: 31 passed / 0 failed / 1 skipped. Initial updated run: 29 passed / 2 failed / 1 skipped due to stale receipts and inventory drift, both corrected. Two incomplete captures lacked an aggregate and are not accepted as final results.",
+    "release_state": "Development source and local seal only; no version bump, new signature/timestamp, release, installed activation or live provider execution."
+  }
+}

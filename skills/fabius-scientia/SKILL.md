@@ -26,7 +26,7 @@ A scientific fact has a source; produce it. Use a **unified lookup contract** in
 
 1. Define the retrieval contract — entity + constraints + fields + exhaustive-vs-targeted.
 2. Pick a **primary** source and a **validation** source; avoid fanning out across many APIs.
-3. **Count first, then paginate** deterministically; reconcile the counts.
+3. **Count when supported, then paginate** by the API's documented contract; reconcile available counts and report any unproven completeness.
 4. Return **auditable provenance** — endpoints, parameters, ID conversions, and any warnings.
 
 Identifiers differ per database, so the conversion route *is* knowledge: gene symbol → NCBI Gene → Ensembl / UniProt; compound name → PubChem CID → ChEMBL; variant rsID across dbSNP / ClinVar / gnomAD; disease → Open Targets / Monarch → EFO / MONDO. Reproducibility and provenance beat a confident approximation every time.

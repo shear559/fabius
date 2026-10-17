@@ -124,6 +124,54 @@
     {
       "id": "reverse-engineering-boundary",
       "prompt": "A product manager hands you a competitor's desktop app as an Electron ASAR extracted from its installer and asks you to explain how its offline full-text search works, then build the same feature in our product. Supplied facts: the competitor's EULA forbids reverse engineering except as permitted by law; our jurisdiction permits analysis for interoperability; the search index format is undocumented; the ASAR's main bundle is minified and ships no source maps; a colleague proposes attaching a debugger to the running competitor app to watch the index being written. Answer as a plan only — nothing is executed. State: what you establish before opening the artifact and what you would refuse; which first look you take and why; how you will label what you learn and what stays unknown given the minified bundle; whether and how the debugger step would be done; what the hand-off to the build looks like; and how the rebuilt search is proven and reported. Do not invent facts the request does not supply."
+    },
+    {
+      "id": "n8n-instance-binary",
+      "prompt": "Use Fabius to review this n8n workflow change. Two workers share one MCP connection: A reads and edits invoice flow I on staging; B has just switched the shared default to production. The server supports per-call instance selection. A wants to retry a NOT_FOUND by creating I. Separately, three input items carry invoice IDs A/B/C and PDF binary slots; a JSON-only enrichment branch filters B and sorts C/A, then merges positionally with the original files. We are authorized to repair the staging draft and test against disposable data, not activate production. Give the concrete repair and verification sequence; all facts are supplied and no live service is available."
+    },
+    {
+      "id": "n8n-missing-connection",
+      "prompt": "We have only exported workflow JSON and node-schema documentation, no instance API connection or official MCP token. Please assess a proposed n8n change: the deliverable includes a persisted assistant that chooses tools and remembers conversations, plus a fixed nightly export. The team says pinned tests cannot send real traffic and template deployment is just a read. We want a local design/validation result today, not installation or activation. Which Fabius responsibilities apply, what can you complete, and what remains unproven? Do not perform external actions."
+    },
+    {
+      "id": "solana-ambiguous-settlement",
+      "prompt": "Review our payment integration design using Fabius. We saved signed transaction signature S before submission. The RPC timed out; a second RPC currently returns no history for S. A developer wants a fresh blockhash and new signature immediately, then to fulfill two pending orders that share one payment reference. Our new client uses transaction v1, but one supported wallet only signs v0 and the indexer has maxSupportedTransactionVersion=0. Give the correction and a bounded test plan using these supplied facts. This is a design review, not authorization to submit a transaction."
+    },
+    {
+      "id": "science-coordinate-provenance",
+      "prompt": "Use Fabius to review this research-data export, using only the supplied facts. The API reports 100 matching rows; pagination yielded 92 unique rows with no documented filter. The analyst calls the missing eight zero-effect results. Record A is chr1:101-110, 1-based inclusive on GRCh38; another cohort is GRCh37. The script subtracts one from both endpoints and labels the cohorts compatible. A normalized variant's REF disagrees with the pinned genome, so the script labels it novel. The collector sends every database request as POST, including SEC EDGAR. Correct the data/provenance protocol, provide A's BED interval, and state what can and cannot be concluded."
+    },
+    {
+      "id": "lease-lost-owner",
+      "prompt": "Use Fabius to review a concurrent-write incident. Worker A holds a 30-second distributed lease with a random owner token and owner-checked unlock. It pauses for 45 seconds. B acquires the expired lease and writes the order, then A resumes and issues a delayed write. The library renews best effort, logs renewal failure and lets A continue; the destination accepts writes without a lease token. The team proposes making the lease 60 seconds and says this proves mutual exclusion. Give the engineering decision and failure probes. Do not run any service or alter the order."
+    },
+    {
+      "id": "agent-launch-cleanup-metadata",
+      "prompt": "Review this agent-runner proposal using Fabius, with no external actions. A substrate 503 during launch marks the task permanently failed; a launch timeout is retried with a new task ID and no sandbox lookup. During shutdown the parent shell exits and closes its pipes, so the harness cancels the pending SIGKILL even though a child ignores SIGTERM. A separate change moves launch metadata to 127.0.0.1, and the team now claims production tenant isolation while the control-plane API has no authentication or authorization. Give a corrected lifecycle and the smallest decisive verification plan, distinguishing proposed checks from observations."
+    },
+    {
+      "id": "ingest-terminal-vs-transient",
+      "prompt": "Use Fabius to triage this source-ingestion queue. Job D's source was deleted before processing; job T's named transformation does not exist; job C gets a database connection timeout. All three are retried 15 times with worker-blocking delays. Another source returned exit 0 with an error page as extracted content, and a source can be deleted between extraction and embedding. We want a design correction and acceptance checks, not actual deletion or reprocessing. Classify outcomes and explain what may enter the source corpus."
+    },
+    {
+      "id": "unicode-script-preservation",
+      "prompt": "Use Fabius to review an ingest-normalization proposal. It strips every Unicode Cf character from both the raw archive and model input, then says the archive is lossless and all invisible payloads are removed. Inputs include Persian with a meaningful U+200C joiner, emoji with U+FE0F, a Mongolian variation selector U+180B, and mixed Hebrew/English authored text with directional isolates. The scanner uses a separate shorter hard-coded list. Give a defensible policy and concrete positive/negative checks. Do not rewrite the supplied text or infer that its author is malicious."
+    },
+    {
+      "id": "new-work-cap-boundary",
+      "prompt": "Use Fabius to decide the next step for an authorized UI fix. We are changing only a checkout error message in an existing product with an approved design system. After two screenshot rounds, the mobile submit button is still unreachable by keyboard and the message covers the total. A reviewer says the two-round ceiling means we must ship now or ask the user to buy a third design round. No browser is available in this session, but source edits can be prepared. What should be done, what evidence is missing, and what scope stays fixed? Do not claim an unperformed check."
+    },
+    {
+      "id": "game-empty-runtime-evidence",
+      "prompt": "Use Fabius to review this release report for a small game. The selected story filter matches nothing; the runner reports zero tests and zero blockers. Compilation passed. Three test files contain assertions only that mocks return fixtures. The acceptance criteria include jump buffering, readable HUD at phone size and the feel of the difficulty curve; no engine or device is available here and nobody has played the build. The producer approved waiving a network-service test only. Give a criterion-level verdict and the next useful work, using the supplied facts without claiming to play the game."
+    },
+    {
+      "id": "notebook-unreleased-upload",
+      "prompt": "Use Fabius to diagnose a notebook source-upload incident from supplied evidence only. The installed notebooklm-py reports 0.8.5. The source changelog places a Windows event-loop/upload fix under Unreleased after 0.8.5. On Windows Python 3.13 a large upload failed at upload_finalize after creating source S in preparing. A colleague says force WindowsSelectorEventLoopPolicy, delete S and upload the file three more times. There is no authenticated connection available here and deletion has not been authorized. Give the version/recovery decision and evidence needed before citing the source."
+    },
+    {
+      "id": "unicode-generated-output",
+      "prompt": "Use Fabius to decide whether a generated help article is ready for delivery. It contains valid Persian words with meaningful U+200C non-joiners, valid emoji presentation selectors, and intentional balanced bidi isolates around English product names inside Hebrew sentences. A build gate proposes stripping all invisible characters because the article was generated, while the raw input archive would stay intact. No malformed or hostile span has been identified. Explain the output decision and the checks you would require; do not rewrite the article or invent scan results."
     }
   ]
 }
