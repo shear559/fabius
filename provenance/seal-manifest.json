@@ -6,7 +6,7 @@
   "count": 18,
   "files": {
     "AGENTS.md": "ffe0b65f26a14f88ac17da4203c0b1558086ff1e4b96bbc78ef406ee1561304b",
-    "ARCHITECTURE.md": "e176e73b48535bf3962a12d170e940e31d4c90a5bb3709cb31538846abb15371",
+    "ARCHITECTURE.md": "da6dd7fdcc2579ef08b1c4c64cf1083d7cebbeffb46f375cc5622be9b47bcb32",
     "CORPUS.md": "753f2a3a157c1a9d04bb5f611b60ca3ea719ecdd96baaa3258a2e3e586c18577",
     "skills/fabius-archivum/SKILL.md": "933b5f93599ee73162a9eebd8982a2ac32240436cacad4440271b82bf721d828",
     "skills/fabius-catena/SKILL.md": "e37b127caf6b36cc54bba66c5fc49d8b567468fbbb378efc13815ed8bb3c9a58",
@@ -24,5 +24,5 @@
     "skills/fabius-scientia/SKILL.md": "6b88ffccf036f9d04c620f238f5cc60e6d1df2b1fdb85e7305eeea27db669e5e",
     "skills/fabius/SKILL.md": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
   },
-  "merkle_root": "8fa18b1288faf177de11290ba60630cc0b2f3dcf37c403cd18c8cbb94ced0bbd"
+  "merkle_root": "8675cf152734a2883b8f71684cb707f47039301197b2766ad0a4bf97bb864414"
 }

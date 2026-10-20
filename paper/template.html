@@ -116,14 +116,14 @@ window.MathJax = {
   <div class="title">Fabius</div>
   <div class="subtitle">One set of rules above every model. Fifteen coordinated skills, twenty-two core routing rules, and conditional mathematical models for choosing how to work and when to stop.</div>
   <hr class="rule-hr" />
-  <div class="byline"><b>shear559</b></div>
+  <div class="byline"><b>Ariel Shemesh · shear559</b></div>
   <div class="byline">fabius-landing.vercel.app &nbsp;·&nbsp; public · proprietary · provenance-verifiable</div>
 
   <div class="abstract">
     <h4>Abstract</h4>
     <p><strong>Fabius</strong> is a set of operating rules for AI models, organized into fifteen coordinated skills and loaded through a compatible agent app. A router selects relevant specialists, tools and model tiers over an always-on lean core. Its working principle is <em>scout wide, strike narrow</em>: investigate enough to choose well, deliver the smallest correct artifact, and verify the result.</p>
     <p>The decision core contains <strong>twenty-two parent routing rules</strong>, developed in twenty-six argument blocks: twenty-two mathematical arguments under stated assumptions and four qualitative operational heuristics. The composition analysis concerns the declared labels and bounded procedure. It does not establish classification accuracy, calibrated estimates, model compliance or host enforcement. The research-informed frontier rules remain outside that analysis.</p>
-    <p>Four dated benchmark panels report model-judged quality, historical execution-score records, model-graded checklists, cross-family aggregates and a separate memory evaluation. Panel A improved three of four measured tiers while shortening all four; the other panels include gains, ties and regressions. Missing historical answers, execution artifacts and raw cross-family runs limit independent replay. Current maintenance checks are separate from those historical measurements. A pre-registered study then measured the current skill files on nine public benchmarks (SWE-bench Verified Mini, IFEval, HumanEval+, CyberSecEval, LAB-Bench, FinQA, DS-1000, SmartBugs-curated, BFCL; Fabius 3.3.0, <code>claude-sonnet-5-5</code> in Claude Code, October 2026): no comparison gained or lost after correction for multiple comparisons, with seven ties, three non-inferior results and two inconclusive SWE-bench comparisons, at 1.33 to 2.03 times the baseline’s cost. A continuation (October 2026) compared the 3.3.0 package with the reference files 3.4.0 adds, on eleven benchmarks with the references readable: no gain and no loss in any of 33 contrasts, and the reference files were opened in 6 of 4,328 runs.</p>
+    <p>The implementation includes executable repository checks and interactive demonstrations of selected workflows. These establish inspectable behavior under their stated conditions; this document makes no comparative model-performance claim.</p>
     <p>The model supplies capability; Fabius supplies operating rules and workflows. Execution depends on the host, available tools and permissions. The repository includes an optional local runner and verification of signed release provenance. Neither local execution nor a content seal guarantees answer quality.</p>
     <div class="meta-row">Version 3.5.1 · October 2026 · figures computed (numpy → SVG), reproducible</div>
   </div>
@@ -140,7 +140,7 @@ window.MathJax = {
 
 <p>Fan out to understand and to verify; deliver the smallest correct artifact; explain it in the fewest exact words. These aims are coordinated through explicit scope and verification rules: process and memory broaden the investigation, while the lean core limits the delivered artifact. Fabius organizes these operating rules into fifteen coordinated skills: a router, an always-on lean core, four engineering specialists (process, design, agent-engineering, memory), and nine domain verticals (go-to-market, defensive security, game craft, on-chain + sealing, automation, science, AI/ML engineering, markets &amp; finance, cross-model council).</p>
 
-<p>The contribution of this whitepaper is to show that the stance is not a vibe. Section 2 gives the system architecture and the single-owner coordination contract that keeps fifteen skills from contradicting one another. Section 3 states the decision policy: twenty-two core operational rules, supported by fabius's mathematical models and explicit heuristics, and a researched frontier layer at the working edge. Section 4 — the heart of the document — supplies the <strong>mathematics</strong> under each core rule, every theorem proved and adversarially verified, with a hard line between the mathematical gates that <em>govern</em> a routing decision and the few operational heuristics stated as such. Section 5 examines their <strong>conditional composition</strong>, including shared inputs and externally enforced execution bounds. Section 6 reports the dated fabius benchmark in four panels: blind model-judged quality, mixed execution/checklist verification, aggregate-only cross-family demos, and the model-graded FBS run on the versioned suite, followed by a pre-registered study of the current skill files on nine public benchmarks. The discipline of the whole is in Section 7: <strong>measured, not claimed</strong>.</p>
+<p>The contribution of this whitepaper is to show that the stance is not a vibe. Section 2 gives the system architecture and the single-owner coordination contract that keeps fifteen skills from contradicting one another. Section 3 states the decision policy: twenty-two core operational rules, supported by fabius's mathematical models and explicit heuristics, and a researched frontier layer at the working edge. Section 4 — the heart of the document — supplies the <strong>mathematics</strong> under each core rule, every theorem proved and adversarially verified, with a hard line between the mathematical gates that <em>govern</em> a routing decision and the few operational heuristics stated as such. Section 5 examines their <strong>conditional composition</strong>, including shared inputs and externally enforced execution bounds. Section 6 describes inspectable demonstrations and implementation checks. Section 7 states the boundaries of the theoretical analysis.</p>
 </section>
 
 <!-- ================= 2. THE SYSTEM ================= -->
@@ -150,7 +150,7 @@ window.MathJax = {
 
 <figure class="arch">
   <!--FIG:architecture-->
-  <figcaption><b>Figure 0 — the layer model.</b> Your prompt enters the <code>fabius</code> router (the <em>praetorium</em>), which dispatches by layer, machinery, and model-tier to the specialist a task needs — four engineering specialists (<code>disciplina</code> process, <code>decor</code> design + data-viz, <code>cohors</code> agents, <code>archivum</code> memory) and nine domain verticals (<code>mercatus</code> go-to-market, <code>praesidium</code> defensive security, <code>ludus</code> games, <code>catena</code> on-chain + sealing, <code>machina</code> automation, <code>scientia</code> science, <code>doctrina</code> AI/ML engineering, <code>fortuna</code> markets + finance, <code>concilium</code> cross-model council) — all running on the always-on <code>fabius-parcus</code> lean core, producing the smallest correct result. Depth loads on demand from <code>references/</code> (indexed by <code>CORPUS.md</code>); the benchmark is in <code>evals/</code>; the stance ports to any tool via <code>AGENTS.md</code>.</figcaption>
+  <figcaption><b>Figure 0 — the layer model.</b> Your prompt enters the <code>fabius</code> router (the <em>praetorium</em>), which dispatches by layer, machinery, and model-tier to the specialist a task needs — four engineering specialists (<code>disciplina</code> process, <code>decor</code> design + data-viz, <code>cohors</code> agents, <code>archivum</code> memory) and nine domain verticals (<code>mercatus</code> go-to-market, <code>praesidium</code> defensive security, <code>ludus</code> games, <code>catena</code> on-chain + sealing, <code>machina</code> automation, <code>scientia</code> science, <code>doctrina</code> AI/ML engineering, <code>fortuna</code> markets + finance, <code>concilium</code> cross-model council) — all running on the always-on <code>fabius-parcus</code> lean core, producing the smallest correct result. Depth loads on demand from <code>references/</code> (indexed by <code>CORPUS.md</code>); repository checks are in <code>evals/</code>; the stance ports to any tool via <code>AGENTS.md</code>.</figcaption>
 </figure>
 
 <h3>2.1 · Fifteen skills, one stance</h3>
@@ -282,120 +282,24 @@ window.MathJax = {
 <!--COHERENCE_EXT-->
 </section>
 
-<!-- ================= 6. BENCHMARK ================= -->
+<!-- ================= 6. DEMONSTRATIONS ================= -->
 <section class="sec">
-<h2>6 · Does it work? The fabius benchmark</h2>
-<p>Fabius is prompt-level scaffolding, so a number measured on one model at one moment does not transfer cleanly. The defensible thing to publish is the <strong>method, the mechanism, and the dated measured signal</strong> — plus a one-command way to re-measure it. There is one benchmark, read out on four panels: blind model-judged quality on the four Claude tiers used in the 2026-07-01 run; a mixed historical model-operated execution-score and model-graded checklist track; aggregate-only blind external-model demos; and the <strong>FBS run</strong>, a versioned 100-task suite scored by model judges and a model factual-check grader. Panel A improved three of four measured Claude tiers and reduced output on all four. Panel B's reported executed-code score rows tied at ceiling; its measured lift comes from model-graded checklist scores. The old receipt lacks candidate code and stdout/stderr, so those execution scores are not independently replayable. Panel D prints gains and regressions. No panel establishes an every-model guarantee. Section 6.6 adds the first measurement of the current skill files on established public benchmarks, pre-registered and against the same model without Fabius; §6.7 the continuation that measured the reference files added in 3.4.0.</p>
-
-<h3>6.1 · The method</h3>
-<p>One test, three arms. Each task is answered three ways: <code>baseline</code> (the task only), <code>terse</code> (the task plus a generic <em>"be concise, write minimal code"</em> line), and <code>fabius</code> (the task plus the shipped stance — the shipped <code>AGENTS.md</code> plus the routed <code>SKILL.md</code>, read verbatim). The <code>terse</code> arm is the real control: beating <code>baseline</code> is easy; <strong>beating <code>terse</code> isolates structure from mere brevity.</strong></p>
-<p>Three of the benchmark's four panels read out on this three-arm design. The <strong>quality panel</strong> is blind model-judged: <strong>two</strong> judge models that are never told which arm produced which answer score each answer 0–5 on correctness, minimality, and best-practice, plus a deterministic character count; the judges disagree by 0.72/15 on average. Panel B is mixed: its historical code track was extracted, run, and reported by a tool-using model operator, while its domain deliverables were interpreted against fixed factual checklists by two model graders. The current harness uses a deterministic local code runner and retains answer hashes, code, stdout/stderr, and votes for future runs; it cannot repair the old receipt. The <strong>external panel</strong> carries the same three arms cross-family through a portable harness, but only its aggregate is committed. The <strong>FBS panel</strong> swaps the arms for <code>BASE</code> / <code>FAB</code> / <code>FAB_MEMORY</code> and is scored /28 by two blind model judges plus a model factual-check grader. A deterministic structural suite derives its own invariant count and checks the recursive install surface, single-owner contracts, references, and content-bound seal. The canonical aggregate is <code>evals/results.benchmark.json</code>; v5/v6/v7 retain scores, not the original answers, and Panel C has no committed raw receipt.</p>
-
-<h3>6.2 · Panel A — quality, blind</h3>
-<table>
-  <caption><b>Panel A</b> — 15 tasks × 3 arms on the four Claude models current at the 2026-07-01 run (Fable 5 · Opus 4.8 · Sonnet 5 · Haiku 4.5); the <code>fabius</code> arm is the shipped <code>AGENTS.md</code> plus the routed <code>SKILL.md</code>, read verbatim; <strong>two</strong> blind judges (inter-judge gap 0.72/15), /15. Raw receipt: <code>evals/results.v5.json</code>.</caption>
-  <thead><tr><th>Model</th><th class="num">baseline</th><th class="num">fabius</th><th class="num">Δ quality</th><th class="num">output cut</th></tr></thead>
-  <tbody>
-    <tr><td>Fable</td><td class="num">14.50</td><td class="num win">14.73</td><td class="num">+0.23</td><td class="num">−25.3%</td></tr>
-    <tr><td>Sonnet 5</td><td class="num">14.07</td><td class="num win">14.50</td><td class="num">+0.43</td><td class="num">−33.7%</td></tr>
-    <tr><td>Opus</td><td class="num">14.40</td><td class="num win">14.60</td><td class="num">+0.20</td><td class="num">−20.0%</td></tr>
-    <tr><td>Haiku</td><td class="num">11.73</td><td class="num">11.40</td><td class="num">−0.33</td><td class="num">−35.5%</td></tr>
-  </tbody>
-</table>
-<p>Output fell 20–35.5% on each of these four measured tiers. Fable, Opus, and Sonnet 5 beat <em>both</em> controls; on Sonnet 5 the lift (<strong>+0.43</strong>) is the largest of the four tiers. The one miss stays on the record: Haiku dips overall. On its twelve specialist tasks Haiku gains +0.71 on average, while its three trivial one-liners average −4.50. The pooled category receipt also contains regressions in build, accessibility, and game tasks. These observations motivate model-tier routing and a leaner route; they do not prove those mechanisms fix the regressions. The historical receipt preserves every score cell but not the answer text, so it cannot be independently re-judged.</p>
-
-<h3>6.3 · Panel B — mixed verification</h3>
-<table>
-  <caption><b>Panel B</b> — four historical code tasks executed and reported by a tool-using model operator, plus five domain deliverables interpreted against fixed factual checklists by two model graders; 9 deliverables × 3 arms on the same four models. The score receipt omits candidate files and raw stdout/stderr. Receipt: <code>evals/results.v6.json</code>.</caption>
-  <thead><tr><th>Model</th><th class="num">baseline %</th><th class="num">fabius %</th><th class="num">Δ passed</th></tr></thead>
-  <tbody>
-    <tr><td>Haiku</td><td class="num">75.6</td><td class="num win">93.0</td><td class="num">+17.4</td></tr>
-    <tr><td>Opus</td><td class="num">84.9</td><td class="num win">90.7</td><td class="num">+5.8</td></tr>
-    <tr><td>Sonnet 5</td><td class="num">84.9</td><td class="num win">90.7</td><td class="num">+5.8</td></tr>
-    <tr><td>Fable</td><td class="num">87.2</td><td class="num win">90.7</td><td class="num">+3.5</td></tr>
-  </tbody>
-</table>
-<p>The retained code score rows tie at 100% for baseline and fabius on all four models, so that track contributes no measured lift. The model-graded domain checklist scores rise: Haiku 58→88, Sonnet 5 74→84, Opus 74→84, Fable 78→84. Per deliverable, the SQL checklist moves 67.5%→100%, webhook 40%→67.5%, and Solana account validation 47.5%→57.5%. The combined mixed score rises +3.5 to +17.4 while output falls 12–25%, entirely because the model graders marked more checklist items present. This is directional model-mediated evidence, not a deterministic correctness proof; the historical code artifacts and stdout/stderr are unavailable for replay.</p>
-
-<h3>6.4 · Panel C — external-model demos, and what the data supports</h3>
-<table>
-  <caption><b>Panel C</b> — external-model demos: the portable harness (<code>evals/portable_eval.py</code>) carries the same three arms cross-family, blind; 6 tasks, measured 2026-06-22 with live provider keys. The signal is the lift vs the <em>"be concise"</em> control on genuine-build, /15.</caption>
-  <thead><tr><th>Family</th><th class="num">lift vs terse (genuine-build, /15)</th></tr></thead>
-  <tbody>
-    <tr><td>Grok</td><td class="num win">+8.5</td></tr>
-    <tr><td>GPT</td><td class="num win">+7.0</td></tr>
-    <tr><td>Claude</td><td class="num win">+7.0</td></tr>
-    <tr><td>Mistral</td><td class="num win">+2.5</td></tr>
-  </tbody>
-</table>
-<p>Each of the four measured families has a positive aggregate in this dated demo. The raw portable receipt was not committed, so the published cells cannot be independently replayed; a rerun on moving endpoints is a new measurement. Gemini is wired into the harness, and no Gemini number is printed without a measured run.</p>
-
-<h3>6.5 · Panel D — the FBS run: BASE / FAB / FAB_MEMORY on a versioned suite</h3>
-<p>The system now carries its own identity-and-evaluation contract, <code>IDENTITY.md</code>: fabius is an <em>intelligence amplification layer</em>, not a model, so the benchmark question is fixed as <em>"does the exact same model achieve better outcomes with less waste?"</em> — and a historical text-only evaluation instrument is the <strong>Fabius Benchmark Suite</strong> (<code>evals/suite/</code>, FBS v1.0). One hundred neutral, production-shaped tasks — 20 smoke, 50 core, 30 stress across ten categories — each carries 3–6 fixed textual <code>automatic_checks</code> and, where memory matters, a committed <code>memory_snapshot</code>. Each task runs as <code>BASE</code>, <code>FAB</code>, and <code>FAB_MEMORY</code>. Two blind model judges score the seven-dimension rubric /28; another model grader interprets the fixed checks from answer text. Character count is deterministic. The historical receipt preserves score rows, not candidate answers or individual judge votes, so its aggregates replay but its judgments cannot be independently repeated.</p>
-<table>
-  <caption><b>Panel D</b> — the FBS run, 2026-07-05. Sonnet 5 on the full 100-task suite; Haiku 4.5 on the 20-task smoke tier. Model-judged rubric /28, model-graded factual checks, deterministic mean output chars. Score receipt: <code>evals/results.v7.json</code>.</caption>
-  <thead><tr><th>Model · mode</th><th class="num">rubric /28</th><th class="num">checks</th><th class="num">output</th><th class="num">vs BASE</th></tr></thead>
-  <tbody>
-    <tr><td>Sonnet 5 · BASE</td><td class="num">26.14</td><td class="num">93.2%</td><td class="num">4,001</td><td class="num">—</td></tr>
-    <tr><td>Sonnet 5 · FAB</td><td class="num win">26.16</td><td class="num win">93.5%</td><td class="num win">3,580</td><td class="num win">held · −10.5% output</td></tr>
-    <tr><td>Sonnet 5 · FAB_MEMORY</td><td class="num win">26.16</td><td class="num">93.3%</td><td class="num win">3,512</td><td class="num win">held · −12.2% output</td></tr>
-    <tr><td>Haiku 4.5 · BASE</td><td class="num">25.27</td><td class="num">96.1%</td><td class="num">1,531</td><td class="num">—</td></tr>
-    <tr><td>Haiku 4.5 · FAB</td><td class="num win">26.00</td><td class="num win">97.1%</td><td class="num win">1,315</td><td class="num win">+0.73 · −14.1% output</td></tr>
-    <tr><td>Haiku 4.5 · FAB_MEMORY</td><td class="num win">26.73</td><td class="num">96.1%</td><td class="num win">1,361</td><td class="num win">+1.46 · −11.1% output</td></tr>
-  </tbody>
-</table>
-<p>Four results. <strong>(i)</strong> On the fast tier the model-judged rubric rises +0.73 from the stance and +0.73 more from memory, on 11–14% less output. <strong>(ii)</strong> On Sonnet 5 the rubric is nearly flat while output falls 10–12%; on stress tasks the model-graded factual-check rate rises 89.9%→93.7%. <strong>(iii)</strong> The core tier is the printed miss: <code>FAB_MEMORY</code> −0.60, and <code>FAB</code> −0.48, driven largely by one 363-character stub scored 1.5/28 against 28/28 for the other modes. <strong>(iv)</strong> Memory cuts both ways: the model-judged design/product category rises +4.91, while security (−1.57) and error recovery (−1.37) fall. These are dated model-graded measurements with explicit regressions, not an objective oracle.</p>
-
-<h3>6.6 · Public benchmarks, October 2026 — the current skill files</h3>
-<p>Panels A–D predate Fabius 3.x. To measure the current skill files, Fabius 3.3.0 (sealed root <code>e1958cb5…</code>; 3.4.0 changes no skill contract) ran on nine established public benchmarks against the same model, harness and tasks without it: <code>claude-sonnet-5-5</code> in Claude Code 2.1.289, headless and in a clean context, from 2026-10-06 to 2026-10-08. The router was invoked with <code>/fabius</code>, and each measured skill with its own command, <code>/fabius:fabius-&lt;skill&gt;</code>, on a benchmark of its own domain. The protocol, harness and analysis were committed and pushed before each block of runs. Verdicts come from the Holm-adjusted p alone: GAIN or LOSS at p ≤ 0.05; otherwise TIE when the 90% interval lies inside ±5 points, NON-INFERIOR when the 95% lower bound is above −5 points, and INCONCLUSIVE otherwise.</p>
-<table>
-  <caption><b>Public benchmarks</b> — one sample per task (two on SWE-bench); skill rows were invoked with <code>/fabius:fabius-&lt;skill&gt;</code>; Δ in points with its unadjusted 95% interval; cost is Fabius ÷ baseline per task, as Claude Code reported it. Receipts: <code>evals/public/2026-10-public-benchmarks/</code>.</caption>
-  <thead><tr><th>Invocation · benchmark</th><th class="num">n</th><th class="num">fabius %</th><th class="num">baseline %</th><th class="num">Δ (95% CI)</th><th>verdict</th><th class="num">cost</th></tr></thead>
-  <tbody>
-    <tr><td><code>/fabius</code> · SWE-bench Verified Mini</td><td class="num">50 × 2</td><td class="num">88.0</td><td class="num">84.0</td><td class="num">+4.0 (−1.0 to +10.0)</td><td>inconclusive</td><td class="num">×1.60</td></tr>
-    <tr><td><code>/fabius</code> · IFEval</td><td class="num">540</td><td class="num">87.4</td><td class="num">89.1</td><td class="num">−1.7 (−4.6 to +1.2)</td><td>tie</td><td class="num">×1.87</td></tr>
-    <tr><td><code>/fabius</code> · HumanEval+</td><td class="num">163</td><td class="num">96.3</td><td class="num">95.1</td><td class="num">+1.2 (−1.7 to +4.6)</td><td>tie</td><td class="num">×1.98</td></tr>
-    <tr><td><code>fabius:</code> prefix · HumanEval+</td><td class="num">163</td><td class="num">96.3</td><td class="num">95.1</td><td class="num">+1.2 (−1.2 to +4.2)</td><td>tie</td><td class="num">×1.33</td></tr>
-    <tr><td><code>fabius-disciplina</code> · SWE-bench Verified Mini</td><td class="num">50 × 2</td><td class="num">87.0</td><td class="num">84.0</td><td class="num">+3.0 (−2.0 to +10.0)</td><td>inconclusive</td><td class="num">×1.84</td></tr>
-    <tr><td><code>fabius-parcus</code> · HumanEval+</td><td class="num">163</td><td class="num">95.1</td><td class="num">95.1</td><td class="num">+0.0 (−2.7 to +2.7)</td><td>tie</td><td class="num">×1.61</td></tr>
-    <tr><td><code>fabius-praesidium</code> · CyberSecEval</td><td class="num">137</td><td class="num">86.9</td><td class="num">82.5</td><td class="num">+4.4 (−0.6 to +9.7)</td><td>non-inferior</td><td class="num">×1.69</td></tr>
-    <tr><td><code>fabius-scientia</code> · LAB-Bench</td><td class="num">128</td><td class="num">85.2</td><td class="num">85.9</td><td class="num">−0.8 (−4.8 to +3.1)</td><td>tie</td><td class="num">×1.74</td></tr>
-    <tr><td><code>fabius-fortuna</code> · FinQA</td><td class="num">200</td><td class="num">83.5</td><td class="num">85.0</td><td class="num">−1.5 (−4.4 to +1.3)</td><td>tie</td><td class="num">×1.96</td></tr>
-    <tr><td><code>fabius-doctrina</code> · DS-1000</td><td class="num">200</td><td class="num">87.5</td><td class="num">83.5</td><td class="num">+4.0 (+0.1 to +8.2)</td><td>non-inferior</td><td class="num">×2.02</td></tr>
-    <tr><td><code>fabius-catena</code> · SmartBugs-curated</td><td class="num">143</td><td class="num">76.9</td><td class="num">72.0</td><td class="num">+4.9 (+0.8 to +9.2)</td><td>non-inferior</td><td class="num">×1.89</td></tr>
-    <tr><td><code>fabius-cohors</code> · BFCL</td><td class="num">200</td><td class="num">92.0</td><td class="num">92.5</td><td class="num">−0.5 (−3.2 to +2.1)</td><td>tie</td><td class="num">×2.03</td></tr>
-  </tbody>
-</table>
-<p>No comparison gained or lost after correction. The largest differences, <code>fabius-catena</code> at +4.9 points and <code>fabius-doctrina</code> at +4.0, have unadjusted intervals above zero, but their Holm-adjusted p-values are 0.312 and 0.538. Loading was read from the first turn’s prompt size: <code>/fabius</code> put the router’s contract in context in 803 of 803 runs, each skill’s command its own contract in 1,271 of 1,271, and the earlier documented prefix <code>fabius:</code> the router in 1 of 186; the router loaded a specialist on its own in 1 of its 803 runs. On SWE-bench, where both comparisons were inconclusive, a command in the task’s test container executed in 62–64% of <code>/fabius</code> runs and 36–40% of <code>fabius-disciplina</code> runs against 12–20% of baseline runs (attempts were more frequent still; a container command chained to a host-side edit is refused as a whole); that measure was not registered in advance. Not measured: archivum and decor (harnesses built, usage cap reached), mercatus, machina and ludus (no objective public benchmark that runs here) and concilium (several model providers needed).</p>
-
-<h3>6.7 · The source-fold continuation — do new reference files change anything?</h3>
-<p>Release 3.4.0 adds four reference files and refines ten under four owners, without changing a skill contract. A second pre-registered study (Codex’s protocol, pushed 2026-10-10; an addendum pushed 2026-10-11 before the first scored run) measured that change with three contemporary arms — no package, the frozen 3.3.0 package, the frozen fold candidate — on eleven public benchmarks (the nine of §6.6 plus LongMemEval for archivum and Design2Code for decor), with the reference files readable by the model in every arm, 6,501 invocations, 33 contrasts in one Holm family. No contrast gained or lost. The eleven fold-versus-3.3.0 contrasts are nine ties and two inconclusive comparisons, at a cost ratio between ×0.99 and ×1.02, and the exposure records say why: the invoked contract was in context in every package-arm run, but the reference files were opened in 6 of 4,328 such runs, all six the same unchanged file. Under these conditions the two packages were the same package; a reference-level change is measurable only where a contract directs the read or the work calls for it. The 3.3.0 package against no package repeated §6.6’s pattern at ×1.59–2.03 the cost.</p>
-<table>
-  <caption><b>Source-fold continuation</b> — Δ in points (Design2Code: score units) with the verdict from the Holm-adjusted p over all 33 contrasts (every adjusted p is 1.000); unadjusted intervals and the third contrast are in <code>evals/public/2026-10-source-fold-benchmarks/REPORT.md</code>.</caption>
-  <thead><tr><th>Invocation · benchmark</th><th class="num">n</th><th class="num">fold − 3.3.0</th><th class="num">3.3.0 − no package</th></tr></thead>
-  <tbody>
-    <tr><td><code>fabius-disciplina</code> · SWE-bench Verified Mini</td><td class="num">50 × 2</td><td class="num">+4.0 · inconclusive</td><td class="num">+0.0 · inconclusive</td></tr>
-    <tr><td><code>/fabius</code> · IFEval</td><td class="num">539</td><td class="num">-2.0 · tie</td><td class="num">-0.4 · tie</td></tr>
-    <tr><td><code>fabius-parcus</code> · HumanEval+</td><td class="num">163</td><td class="num">+0.0 · tie</td><td class="num">-0.6 · tie</td></tr>
-    <tr><td><code>fabius-praesidium</code> · CyberSecEval</td><td class="num">200</td><td class="num">+0.0 · tie</td><td class="num">+3.0 · non-inferior</td></tr>
-    <tr><td><code>fabius-scientia</code> · LAB-Bench</td><td class="num">219</td><td class="num">-2.3 · tie</td><td class="num">+4.1 · non-inferior</td></tr>
-    <tr><td><code>fabius-fortuna</code> · FinQA</td><td class="num">200</td><td class="num">-1.5 · tie</td><td class="num">+1.0 · tie</td></tr>
-    <tr><td><code>fabius-doctrina</code> · DS-1000</td><td class="num">200</td><td class="num">+0.5 · tie</td><td class="num">+0.5 · tie</td></tr>
-    <tr><td><code>fabius-catena</code> · SmartBugs-curated</td><td class="num">143</td><td class="num">-0.7 · tie</td><td class="num">+4.9 · non-inferior</td></tr>
-    <tr><td><code>fabius-cohors</code> · BFCL</td><td class="num">200</td><td class="num">-1.5 · tie</td><td class="num">+1.0 · tie</td></tr>
-    <tr><td><code>fabius-archivum</code> · LongMemEval</td><td class="num">120</td><td class="num">+0.0 · tie</td><td class="num">+0.8 · tie</td></tr>
-    <tr><td><code>fabius-decor</code> · Design2Code</td><td class="num">80</td><td class="num">-0.000 · inconclusive</td><td class="num">+0.006 · inconclusive</td></tr>
-  </tbody>
-</table>
-
-<p>The honest claim: <strong>in the dated historical panels, Panel A improved three of four measured Claude tiers while shortening all four, and the other panels show a mixture of model-graded gains, ties and regressions; on nine public benchmarks the current skill files showed no gain and no loss after correction, at 1.33 to 2.03 times the baseline’s cost; and the reference files added in 3.4.0, measured the same way on eleven benchmarks, changed nothing because the model never opened them.</strong> Not "smarter." Not "10× on everything." The caveats are load-bearing: samples are small; all quality, checklist, and FBS scores are model-mediated; the historical receipts omit candidate answers, Panel B execution artifacts, and Panel C raw data; and every roster is dated. Character counts and future local code execution are deterministic, but they do not retroactively upgrade the historical evidence.</p>
-<p>Panels A–D are historical measurements, not results for the 3.0.0 capability rewrite; §6.6 measures the 3.3.0 skill files. The current task suite revision 1.0.1 replaces an unverified credential-shaped fixture literal with an explicit synthetic sentinel in FAB-088; the prior scores and original suite remain unchanged in release history. The historical FAB_MEMORY arm can also inject fallback memory on a fresh-eyes security route, so it does not verify the current selective-recall policy.</p>
+<h2>6 · Inspect the working system</h2>
+<p>Four interactive demonstrations on <a href="https://fabius-landing.vercel.app/#trials">the Fabius website</a> make selected workflows tangible. Each has working controls, downloadable source and local checks.</p>
+<table><thead><tr><th>Demonstration</th><th>What to inspect</th></tr></thead><tbody>
+<tr><td>Math &amp; visualization</td><td>Change a parameter and follow a fixed optimization problem through its solution and constraint checks.</td></tr>
+<tr><td>Agent teams</td><td>Inspect dependencies, validation, a rejected output, a retry and the resulting local artifact.</td></tr>
+<tr><td>Project memory</td><td>Retrieve source-linked records, inspect superseded decisions and save and recall a decision in the preview.</td></tr>
+<tr><td>Clear code</td><td>Edit input data, execute the displayed function and inspect edge-case checks.</td></tr>
+</tbody></table>
+<p>These authored browser examples use local data. They do not call live models or establish a model-quality gain. The host, model, loaded instructions, tools and permissions determine real task execution.</p>
+<p>For the implementation itself, <code>bash scripts/verify-all.sh --mode=dev</code> runs deterministic checks of discovery, references, helper behavior, runtime boundaries, packaging and provenance. The check index is <code>CHECKS.md</code>.</p>
 </section>
 
 <!-- ================= 7. HONESTY ================= -->
 <section class="sec">
 <h2>7 · The honesty ledger</h2>
-<p>The quality bar of the whole project is one phrase: <strong>measured, not claimed.</strong> It runs in two places. In the mathematics, a rule earns a place in the theorem only with a proof that survived adversarial checking; the few operational heuristics (R4, R5, R10, M8b) are labelled as heuristics, carry no proof claim, and can still impose mandatory admissibility conditions, such as R5’s grounding guard. In the benchmark, every number is reported with its method, its controls, and its misses — the losses printed in the receipt, not smoothed away.</p>
+<p>Mathematical statements are conditional on their explicit assumptions. Operational heuristics are labelled as such. Executable checks establish only the behavior they exercise. None of these is a measurement of improved model performance.</p>
 
 <p>Several rules share a cost-benefit threshold; others concern classification, scheduling, algebra, ownership, or qualitative control. The twenty-two parent rules are represented by twenty-six formal blocks. The four qualitative blocks make no proof claim, and the mathematical blocks remain conditional on their stated assumptions. Every rule is fabius's own — derived, proved where a proof is claimed, and stated as a heuristic where it is not.</p>
 
@@ -405,14 +309,9 @@ window.MathJax = {
 <!-- ================= 8. REPRODUCE & USE ================= -->
 <section class="sec">
 <h2>8 · Reproduce it, and use it</h2>
-<p>Every figure in §4 is computed from committed source — <code>numpy</code> to SVG. The committed v5/v6/v7 score rows replay into the published aggregates through <code>node evals/verify-receipts.mjs</code>; they do not recreate missing historical answers or Panel B execution artifacts. Panel C's aggregate-only result cannot be replayed. New harness runs produce new, dated measurements.</p>
-<pre class="flow"><span class="c"># the figures</span>
-python3 assets/charts/render_figures.py
-
-<span class="c"># the benchmark — wiring check (no key, no cost), then a real run</span>
-node evals/eval.mjs --selftest
-ANTHROPIC_API_KEY=...  node evals/eval.mjs --model claude-sonnet-5
-GEMINI_API_KEY=...     python evals/portable_eval.py --models gemini</pre>
+<p>The figures in §4 are computed mathematical illustrations. The following commands reproduce the figures and run the offline implementation checks.</p>
+<pre class="flow">python3 assets/charts/render_figures.py
+bash scripts/verify-all.sh --mode=dev</pre>
 <p>Fabius supplies fifteen plain-Markdown skill contracts and an <code>AGENTS.md</code> bridge for tools that read standing instructions. A committed Claude marketplace manifest lets compatible agent apps install these files through their plugin managers. The recursive structural gate checks that compatible discovery sees exactly those fifteen contracts. Harness-specific installation and schema support still need to be verified against the harness version being used; the repository-local runtime is an optional component of a full checkout, not a standalone npm package.</p>
 <p>The system is built to grow without bloating. First update the existing capability owner and add conditional depth as an indexed reference. A new <code>skills/fabius-&lt;name&gt;/SKILL.md</code> is justified only by a distinct concern that no current owner covers; it then requires coordinated discovery, manifest, reference, and behavioral checks. The install includes substantial reference libraries, while their text stays outside the active context until loaded (M9). That is how the system went from six skills to fifteen — adding the go-to-market, defensive-security, game-craft, on-chain, automation, science, AI/ML-engineering, markets, and cross-model-council verticals — while the installed brain stayed lean and the libraries moved behind the index. Each new layer links to its siblings instead of duplicating them, so the single-owner contract, and the coherence it enables, survive every addition.</p>
 </section>
@@ -421,7 +320,7 @@ GEMINI_API_KEY=...     python evals/portable_eval.py --models gemini</pre>
 <section class="sec">
 <h2>9 · Conclusion</h2>
 <p>Fabius is a small idea carried all the way down. The idea is a single axis — scout wide, strike narrow — that lets an agent be thorough and minimal at once because the two live on different axes. The system is fifteen coordinated skills with a single-owner contract. The policy has twenty-two core rules, supported by conditional mathematical models and explicit heuristics, plus a researched frontier layer. Its composition argument covers the declared labels and bounded procedure under stated assumptions. Measured routing accuracy, model compliance, and host enforcement must be established separately.</p>
-<p>What makes it trustworthy is the line it refuses to cross: a rule earns the theorem only with a proof that survives adversarial checking, and the few operational heuristics are labelled as such. The benchmark applies the same restraint: three of four measured Panel A tiers improve while all four shorten; Panel B's historical code scores tie and its model-graded checklist scores rise; Panel C lacks raw receipts; Panel D prints gains and regressions; and on nine public benchmarks the current skill files showed no gain and no loss after correction, at a higher cost, while the reference files added in 3.4.0 went unread in 4,322 of 4,328 runs and changed nothing. <strong>Measured, with the limits visible.</strong></p>
+<p>The implementation, source-linked demonstrations and explicit boundaries let readers inspect the work. The model supplies capability; Fabius supplies a coordinated way to apply it.</p>
 <div class="maxim" style="margin-top:1.2em">Scout wide, strike narrow.</div>
 </section>
 

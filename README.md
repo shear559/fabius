@@ -14,7 +14,7 @@
 
 A growing skill library creates a coordination problem: several skills cover the same concern, instructions pull in different directions, and a useful skill can remain unloaded when the task needs it.
 
-Fabius organizes fifteen skills into one method. A router identifies the work, selects the relevant owners and combines their responsibilities. You keep your agent app, your model and your tools.
+Created by **Ariel Shemesh**, Fabius organizes fifteen skills into one method. A router identifies the work, selects the relevant owners and combines their responsibilities. You keep your agent app, your model and your tools.
 
 - **Select by the task.** Read the goal and project context, identify the domain, and decide whether the work needs memory, tools or a plan.
 - **Compose with clear ownership.** Engineering owns the process, the domain owner defines its requirements, and the lean core runs underneath. Each rule has one home; other skills refer to it instead of competing copies.
@@ -112,4 +112,4 @@ Fabius uses the tools and permissions your agent app grants. There is no Fabius 
 
 Fabius is publicly readable and proprietary. Personal, non-commercial installation through the marketplace command is free. Your model, services and compute have their own costs. Professional or client work needs permission: [LICENSE](LICENSE). [AGENTS.md](AGENTS.md) provides the portable core without the specialist library; use outside the marketplace grant also needs permission.
 
-[Get help](SUPPORT.md) · [Verification checks](evals/README.md) · [Release provenance](PROVENANCE.md) · [Historical evaluations](docs/archive/README.md)
+[Get help](SUPPORT.md) · [Verification checks](evals/README.md) · [Release provenance](PROVENANCE.md) · [How to verify](CHECKS.md)

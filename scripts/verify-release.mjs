@@ -16,7 +16,7 @@
 //                separately required by verify-all.sh.
 
 import { createHash } from "node:crypto";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { execFileSync, spawnSync } from "node:child_process";
 import { dirname, join, resolve } from "node:path";
 import { tmpdir } from "node:os";
@@ -114,7 +114,8 @@ check("every canonical sealed tag preserves and verifies against the pinned hist
 
 const citationVersion = text("CITATION.cff").match(/^version:\s*([^\s]+)\s*$/m)?.[1] || "";
 const releaseMarker = /<!--\s*fabius-release:\s*([^\s]+)\s*-->/;
-const benchmarks = text("BENCHMARKS.md");
+const checksPath = existsSync(join(ROOT, "CHECKS.md")) ? "CHECKS.md" : "BENCHMARKS.md";
+const benchmarks = text(checksPath);
 const benchmarkVersion = benchmarks.match(releaseMarker)?.[1] || "";
 // COMPATIBILITY.md carries release-specific facts (which versions were re-run, the shipped
 // skill-file count) and joined the version matrix at 3.3.0 through the same marker. A tree
@@ -141,7 +142,7 @@ const matrix = {
   "runtime package": runtimePackage.version,
   "runtime CLI": runtimeCliVersion,
   "CITATION.cff": citationVersion,
-  "BENCHMARKS.md": benchmarkVersion,
+  [checksPath]: benchmarkVersion,
   ...(compatibilityRequired ? { "COMPATIBILITY.md": compatibilityVersion } : {}),
   "bug template": issueVersion,
   "paper README": paperReadmeVersion,

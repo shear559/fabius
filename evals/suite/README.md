@@ -1,5 +1,5 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: ../../PROVENANCE.md · github.com/shear559/fabius -->
-# Fabius Benchmark Suite (FBS) — v1.0.1
+# Developer evaluation fixtures — v1.0.1
 
 **A fixed suite for comparing model answers with and without Fabius instructions.** The current harness is a **text-only, model-graded experiment**. It measures answer scores, check decisions and output length. It does not execute generated code, observe tool use, prove host installation, or measure operational retries and token savings. Those require separate agent execution and human-use evidence.
 
@@ -10,12 +10,12 @@ Version 1.0.1 changes only the explicitly synthetic credential sentinel in FAB-0
 | File | What it is |
 |---|---|
 | `tier1.smoke.jsonl` | **Tier 1 — smoke** (20 tasks): quick regression detection. Categories A · B · D · E · I. |
-| `tier2.core.jsonl` | **Tier 2 — core** (50 tasks): the primary public benchmark. Balanced across all ten categories A–J; realistic production workloads. |
+| `tier2.core.jsonl` | **Tier 2 — core** (50 tasks): the core developer fixture set. Balanced across all ten categories A–J; realistic production workloads. |
 | `tier3.stress.jsonl` | **Tier 3 — stress** (30 tasks): limits. Instruction conflicts, tool traps, security traps, prompt injection, false assumptions, competing objectives, long/polluted context, resource constraints, memory overload, agent/multi-agent failures. |
 | `schema.json` | The task metadata schema (JSON Schema). Every line of every JSONL validates against it. |
 | `validate.mjs` | Deterministic suite validator — no model, no key: schema conformance, exact counts (20/50/30), unique IDs, category balance, tier rules, neutrality lint. `node evals/suite/validate.mjs` |
 
-The shared implementation is [`../text-eval-core.mjs`](../text-eval-core.mjs). The ordinary Node entry point [`../text-eval.mjs`](../text-eval.mjs) prepares inputs, exercises synthetic fixtures and replays receipts offline. [`../harness.v7.workflow.js`](../harness.v7.workflow.js) preserves the legacy host Workflow adapter. Historical `results.v7.json` remains unchanged; new experiments use separate versioned receipts. Historical arithmetic is checked by `node evals/verify-receipts.mjs` and described in [BENCHMARKS.md](../../BENCHMARKS.md).
+The shared implementation is [`../text-eval-core.mjs`](../text-eval-core.mjs). The ordinary Node entry point [`../text-eval.mjs`](../text-eval.mjs) prepares inputs, exercises synthetic fixtures and replays receipts offline. [`../harness.v7.workflow.js`](../harness.v7.workflow.js) preserves the legacy host Workflow adapter. Current checks use synthetic fixtures; no comparison scores ship with the product.
 
 ## The three evaluation modes
 
@@ -27,7 +27,7 @@ Each task requests the same generation model and task text in three modes. The h
 | **FAB** | the same model + the shipped fabius stance (`AGENTS.md`) and the task's routed specialist `SKILL.md`, injected **verbatim** — no persistent memory |
 | **FAB_MEMORY** | FAB + persistent memory: the task's realistic prior-session memory snapshot (or, where none exists, the shipped lesson log) injected as recalled `fabius-archivum` memory |
 
-## Benchmark rules
+## Experiment rules
 
 - **Isolation** — require fresh conversations and no hidden memory in the host setup; document that setup separately. A text receipt alone does not prove isolation.
 - **Task equality** — every mode receives the exact same task text.
@@ -135,7 +135,6 @@ Save that returned receipt to a new file. Replay it without calling models:
 node evals/text-eval.mjs replay --input /tmp/fabius-text-fixture.json --out /tmp/fabius-text-replayed.json
 node --test evals/text-eval.test.mjs
 node evals/suite/validate.mjs
-node evals/verify-receipts.mjs
 ```
 
 The versioned `fabius-text-eval/v1` receipt retains candidate answers and SHA-256 digests, full grade/vote responses, original judge identities, request options and prompt hashes, elapsed call time, task/contract snapshots and errors. Returned string bytes are preserved as UTF-8; a host's structured object is preserved as its JSON serialization, **not** claimed as raw provider wire bytes. Resolved provider model versions and token usage are `null` because this adapter does not receive them. Exact response-envelope validation rejects invented provider/usage fields, unsupported raw-byte labels and invalid timing values. Prompts are reproducible from the retained plan and answers. No tools, execution artifacts or stdout traces are asserted by this experiment.

@@ -1,7 +1,7 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
 # The whitepaper
 
-**[fabius-as-a-system.pdf](fabius-as-a-system.pdf)** — *Fabius — one set of rules above every model (v3.5.1).* The canonical, full whitepaper: the fifteen-skill architecture (the *praetorium* router that dispatches by layer + machinery + model-tier, four engineering specialists, nine domain verticals, on the always-on lean core), **twenty-two core routing rules**, represented by **twenty-six formal blocks** (twenty-two conditional mathematical arguments and four qualitative rules), and a composition analysis that states its assumptions and exceptions, and one dated benchmark in four panels. Panel A improved three of four measured Claude tiers while shortening all four; Panel B's historical model-operated executed-code score records tied while its model-graded checklist scores rose; Panel C retains only aggregate cross-family demo scores; Panel D prints both gains and regressions. The score receipts do not retain the original answer text, Panel B artifacts, or Panel C raw run, so those historical results cannot be independently re-judged. The composition analysis concerns an abstract routing model. New verticals must preserve the ownership and execution assumptions; correctness, measured routing accuracy, and host compliance require separate verification.
+**[fabius-as-a-system.pdf](fabius-as-a-system.pdf)** — *Fabius — one set of rules above every model (v3.5.1).* By Ariel Shemesh. The paper describes the fifteen-skill architecture, twenty-two parent routing rules and twenty-six argument blocks: twenty-two conditional mathematical arguments and four qualitative rules. It includes the working demonstrations and implementation-check entry points. It makes no comparative model-performance claim.
 
 ## Mathematical scope and review history
 
@@ -28,7 +28,7 @@ This self-hosts MathJax, recomputes the figures (`numpy` → SVG), assembles the
 | `coherence.html` | the coherence capstone theorem |
 | `build.sh` | one-command reproduce |
 
-The figures and the benchmark's numbers are the same ones used in [`../RESEARCH.md`](../RESEARCH.md) and [`../BENCHMARKS.md`](../BENCHMARKS.md) — one benchmark, four panels, canonical receipt `../evals/results.benchmark.json`; the paper collects them with the formal assumptions and empirical limits made explicit.
+The figures are mathematical illustrations shared with [RESEARCH.md](../RESEARCH.md). They express the assumptions of the design, not measured model performance.
 
 The September 2026 accuracy pass distinguishes the parent-rule count from the block count, scopes the composition argument to its assumptions, and corrects local statement boundaries. Review annotations remain in `proofs.json`; updated prose does not turn historical review metadata into a new independent certification.
 
@@ -36,6 +36,6 @@ The September 2026 accuracy pass distinguishes the parent-rule count from the bl
 
 The September 9 pass removes R5’s scalar-impossibility claim, specifies a fixed bounded-response window and terminal semantics, and corrects M4’s equality, zero-gain, and retry-index boundaries. It also distinguishes a myopic retry-value comparison from repeated-cause and retry-budget heuristics. This is a focused correction, not a claim that all 26 blocks were re-proven; earlier review notes remain in `proofs.json` with the superseding correction appended.
 
-Run `node evals/proof-boundaries.mjs` from the repository root for source-bound checks and independent counterexamples. These checks cover the named examples and boundary conditions; they do not formally verify every argument or establish host behavior. Historical benchmark receipts are unchanged. Safety/liveness terminology follows [Alpern and Schneider, *Defining Liveness* (1985)](https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf).
+Run `node evals/proof-boundaries.mjs` from the repository root for source-bound checks and independent counterexamples. These checks cover the named examples and boundary conditions; they do not formally verify every argument or establish host behavior. Safety/liveness terminology follows [Alpern and Schneider, *Defining Liveness* (1985)](https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf).
 
 The PDF rendering pass also converts escaped Markdown stars inside TeX into supported mathematical star commands and keeps rule headings with their bodies. `python3 -B paper/test_rendering.py` checks the conversion boundary; the rebuilt PDF was visually inspected at the changed proof pages.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // fabius structural tests — the invariants that hold with NO model, NO key, NO network.
 //
-// Where eval.mjs / harness.workflow.js measure whether the *stance* improves output,
+// Development experiments are separate from these deterministic checks;
 // this file proves the *system* is well-formed: one router + one always-on core + thirteen
 // single-owner specialists, every lean contract under budget (progressive disclosure), every
 // flattened description under the discovery budget, every reference resolvable (markdown links

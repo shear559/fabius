@@ -28,7 +28,7 @@ try {
     if (!options['--input']) throw new Error('--input is required for replay')
     inputBytes = readFileSync(options['--input'])
     const receipt = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(inputBytes))
-    if (receipt._meta?.receipt_schema !== RECEIPT_SCHEMA || typeof receipt._meta.fixture !== 'boolean') throw new Error('unsupported receipt; historical files use verify-receipts.mjs')
+    if (receipt._meta?.receipt_schema !== RECEIPT_SCHEMA || typeof receipt._meta.fixture !== 'boolean') throw new Error('unsupported receipt schema')
     result = replay(receipt.plan, receipt.perTask.map(row => row.evidence).filter(cell => cell !== null), { fixture: receipt._meta.fixture })
     result.replayed_input = { sha256: sha256(inputBytes), bytes: inputBytes.length }
   } else {

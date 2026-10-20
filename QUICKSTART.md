@@ -87,4 +87,4 @@ Say `stop fabius` to stop applying its rules until you invoke it again. Your plu
 
 Fabius is free to install for personal, non-commercial use. Your model, services and compute have their own costs. Professional or client work needs permission: [LICENSE](LICENSE).
 
-[Tested apps](COMPATIBILITY.md) · [Get help](SUPPORT.md) · [Historical evaluations](docs/archive/README.md)
+[Tested apps](COMPATIBILITY.md) · [Get help](SUPPORT.md) · [Repository checks](CHECKS.md)

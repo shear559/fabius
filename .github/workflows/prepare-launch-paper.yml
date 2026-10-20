@@ -1,0 +1,30 @@
+name: Prepare launch paper
+on:
+  push:
+    branches: [codex/launch-paper-20261020]
+permissions:
+  contents: write
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Render reviewed source
+        run: |
+          npm install --prefix /tmp/paper-render playwright@1.51.1 --ignore-scripts --no-audit --no-fund
+          mkdir -p paper/lib
+          curl -fsSL https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js -o paper/lib/tex-svg.js
+          echo 'd4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882  paper/lib/tex-svg.js' | sha256sum -c -
+          python3 paper/build.py
+          node .github/prepare-launch-paper.cjs
+          python3 paper/build.py --write-artifact
+          git add paper/fabius-as-a-system.pdf paper/artifact.json
+          python3 scripts/distribution.py inventory --snapshot-date 2026-10-20
+          git add credits/content-manifest.json
+          node scripts/verify-paper-artifact.mjs
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Build cleaned launch paper from reviewed source'
+          git push origin HEAD:codex/launch-paper-20261020

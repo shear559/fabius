@@ -20,7 +20,7 @@ Climb from cheapest to most expensive and **stop at the first rung the eval clea
 
 ## 2. Evaluation — the load-bearing step, in detail
 
-A model claim without an eval is a vibe. This is fabius's own benchmark discipline (`BENCHMARKS.md`) applied to every model decision.
+A model claim without an eval is a vibe. Apply explicit, task-specific evaluation to every model decision; repository checks are indexed in `CHECKS.md`.
 
 **Build the eval set first.**
 - **Held-out and representative** — sampled from the real input distribution, never seen in training. *Leakage* (any train/eval overlap) manufactures a number that dies in production; check for it explicitly (dedup by content hash, split by entity/time not at random when rows are correlated).

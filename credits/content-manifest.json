@@ -1,7 +1,7 @@
 {
   "schema": "fabius-local-content/v1",
-  "snapshot_date": "2026-10-17",
-  "source_head": "497c7e4c61b8054667997094e872c5036c37412d",
+  "snapshot_date": "2026-10-20",
+  "source_head": "d4bcd648510d436ae2e8b6ba857208ed9978fdb9",
   "registry_sha256": "5f04b8c0dbb465ed68c501b60f5a80f5a8d7ea8906da0a4202ee3f9615219d84",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
@@ -420,11 +420,11 @@
           "path": "skills/fabius-doctrina/references/ml-engineering-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 20525,
-          "sha256": "5f67286a693215e224f83e9bdd1a9c6ec460f80e0e357370f969939a6c4c4f17"
+          "size": 20544,
+          "sha256": "04e52948e654816ec7de885cd3465659e462f24d4a8c802ce80e4835fb6e1c7d"
         }
       ],
-      "local_tree_sha256": "46c8a1116d446606e85a092839572bd32aa6ee56560fc0a451ef0d036faee43c"
+      "local_tree_sha256": "44f19d185121f8bf94cb72c4f54059de658cc95918258b3a06c04628e75d20f8"
     },
     {
       "id": "i-have-adhd-fabius",
@@ -752,11 +752,11 @@
           "path": "skills/fabius-doctrina/references/ml-engineering-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 20525,
-          "sha256": "5f67286a693215e224f83e9bdd1a9c6ec460f80e0e357370f969939a6c4c4f17"
+          "size": 20544,
+          "sha256": "04e52948e654816ec7de885cd3465659e462f24d4a8c802ce80e4835fb6e1c7d"
         }
       ],
-      "local_tree_sha256": "b2f8073b62534b591f248966408bee8f519e969edacb16be6dbfbad5a1b82ea4"
+      "local_tree_sha256": "2f001f68a6361350170a36788c88e75aed41f4a18abcdc07147a165422563a2a"
     },
     {
       "id": "omniroute-fabius",
@@ -848,11 +848,11 @@
           "path": "skills/fabius-doctrina/references/ml-engineering-playbook.md",
           "kind": "file",
           "mode": "0644",
-          "size": 20525,
-          "sha256": "5f67286a693215e224f83e9bdd1a9c6ec460f80e0e357370f969939a6c4c4f17"
+          "size": 20544,
+          "sha256": "04e52948e654816ec7de885cd3465659e462f24d4a8c802ce80e4835fb6e1c7d"
         }
       ],
-      "local_tree_sha256": "46c8a1116d446606e85a092839572bd32aa6ee56560fc0a451ef0d036faee43c"
+      "local_tree_sha256": "44f19d185121f8bf94cb72c4f54059de658cc95918258b3a06c04628e75d20f8"
     },
     {
       "id": "open-generative-ai-machina",
