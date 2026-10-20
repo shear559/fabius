@@ -16,6 +16,8 @@ A growing skill library creates a coordination problem: several skills cover the
 
 Created by **Ariel Shemesh**, Fabius organizes fifteen skills into one method. A router identifies the work, selects the relevant owners and combines their responsibilities. You keep your agent app, your model and your tools.
 
+**One set of rules, across LLMs and providers.** Fabius is model-agnostic: its working method is written for instruction-following LLMs, including open models. Bring your chosen model through an app that can load the instructions and expose the tools your task needs. The app-specific installation examples below are setup routes, not a model whitelist.
+
 - **Select by the task.** Read the goal and project context, identify the domain, and decide whether the work needs memory, tools or a plan.
 - **Compose with clear ownership.** Engineering owns the process, the domain owner defines its requirements, and the lean core runs underneath. Each rule has one home; other skills refer to it instead of competing copies.
 - **Keep the result checkable.** Use the smallest sufficient tools, observe what they return, and verify the deliverable before calling it done. A missing capability stays visible.
@@ -56,7 +58,7 @@ Each specialist includes linked references for deeper work. External services—
 ## One project, several skills
 
 ```text
-/fabius improve this product's signup page. Keep the existing brand,
+Use Fabius to improve this product's signup page. Keep the existing brand,
 clarify the message, fix the mobile form, and verify the result in a browser.
 Explain which skills the task needs before editing.
 ```
@@ -74,6 +76,14 @@ For a small first task with a known answer, follow the [Quickstart](QUICKSTART.m
 Explore the [four focused demos](https://fabius-landing.vercel.app/#trials): Math & visualization, Agent teams, Project memory and Clear code.
 
 ## Install in your agent app
+
+Choose the setup mechanism your app supports. The model and the app are separate choices: a model follows the rules, while its app loads the files, supplies tools and controls permissions. The [compatibility record](COMPATIBILITY.md) reports specific host checks; it does not limit Fabius to those model families or establish identical behavior across every model.
+
+**Other instruction-reading apps and model APIs**
+
+The portable core is [AGENTS.md](AGENTS.md). Where separately authorized under the [licence](LICENSE), load it through your app's supported standing-instruction or system-prompt mechanism, preserving existing project rules. For the full fifteen-skill method, make the [router](skills/fabius/SKILL.md), [lean core](skills/fabius-parcus/SKILL.md) and relevant specialist contracts and references available. The portable core alone does not install the specialist library. Start a fresh task with “Use Fabius to…” and verify what actually loaded. Tool use and persistent memory depend on the app's capabilities and authorized storage.
+
+The plugin managers below offer packaged setup routes:
 
 **Claude Code**
 

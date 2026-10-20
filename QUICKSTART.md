@@ -2,7 +2,13 @@
 
 Install Fabius into the agent app you already use, open a fresh session, and start with a task whose result you can check.
 
+Fabius is a model-agnostic working method for instruction-following LLMs across providers, including open models. Your model follows the rules; your agent app loads them and supplies tools. The named apps below are installation examples, not a model whitelist.
+
 ## 1 · Install
+
+**Your LLM through another app or API**
+
+Use the app's supported standing-instruction or system-prompt mechanism. The portable core is [AGENTS.md](AGENTS.md); the full method also needs the router, lean core and selected specialist contracts and references. [The setup guide](README.md#install-in-your-agent-app) explains that route and its separate licence-permission requirement. Do not assume that providing the core alone loads all fifteen skills. The following plugin managers provide packaged installation paths.
 
 **Claude Code** (type these inside Claude Code)
 
@@ -38,6 +44,7 @@ The router's job is to identify the needed skill owners, combine their responsib
 | Claude Code | `/fabius` for the router; `/fabius:fabius-disciplina` for engineering, or another specialist's command |
 | Codex | “Use Fabius to…”; name the relevant specialist when needed |
 | Grok Build | Name Fabius or the relevant specialist in the request |
+| Other instruction-reading apps or APIs | Load the authorized core and relevant contracts through the host's instruction mechanism, then ask “Use Fabius to…” |
 
 For a task spanning several concerns, ask it to state which skills are needed and why. A signup-page change may need Mercatus for the message, Decor for the interface and Disciplina for implementation and verification, with Parcus underneath.
 
@@ -45,10 +52,10 @@ Automatic specialist activation is not assured. If a needed skill remains unload
 
 ## 3 · Run a task with a known answer
 
-Paste this into a fresh Claude Code session. In Codex or Grok Build, replace `/fabius` with “Use Fabius to”.
+After loading Fabius, paste this into a fresh session with your chosen model. If your app requires a dedicated skill command, invoke it first (for example, `/fabius` in Claude Code).
 
 ```text
-/fabius summarize this CSV. Show each line total, the sum, and the largest product by revenue.
+Use Fabius to summarize this CSV. Show each line total, the sum, and the largest product by revenue.
 Do not assume a currency. Show the arithmetic.
 
 product,quantity,unit_price

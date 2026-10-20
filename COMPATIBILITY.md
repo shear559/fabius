@@ -3,6 +3,8 @@
 
 Does it work in your app? Here is what was run, and what was not.
 
+Fabius is model-agnostic: its rules target instruction-following LLMs across providers, including open models. This page records checks of the **apps that load those rules**, not a whitelist of model families. A setup route is not proof of identical behavior across every model; the chosen app must expose the required instructions, tools and permissions.
+
 | App (version tested) | What was checked | Not checked yet |
 |---|---|---|
 | Claude Code 2.1.260 | Clean install, update, disable, enable and remove; all fifteen skills found | A model task in a clean profile; loading from a plain sentence |
