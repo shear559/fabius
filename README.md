@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/fabius-contour.webp" alt="Fabius" width="100%" />
+https://github.com/user-attachments/assets/b5859a6c-f4d2-4068-b9a9-cbb034d3afa3
 
 #### scout wide · strike narrow
 
