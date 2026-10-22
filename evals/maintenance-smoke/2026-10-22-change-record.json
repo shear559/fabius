@@ -2,15 +2,15 @@
   "schema": "fabius-maintenance-smoke/v1",
   "date": "2026-10-22",
   "kind": "maintainer-reviewed qualitative smoke; not a benchmark",
-  "source_base": "c0329acfaa531311250c2e1282b8fe3e8dcdb58c",
-  "candidate": "Fabius 3.6.0 content on main after the fold commit: the new reference skills/fabius-disciplina/references/spec-driven-change.md with its directed pointer in the engineering contract, the CORPUS and ARCHITECTURE rows, the two stale-reference fixes (CHECKS.md for the deleted BENCHMARKS.md; a separate project's name removed from two references) and the two new change-record scenarios; the signed 3.5.1 release and installed copies unchanged.",
-  "harness": "Headless Claude Code (the native binary 2.1.296, claude-sonnet-5-5) in a fresh working directory containing only the request file and the named frozen inputs; reads allowed only inside that directory (checked by a probe: a read of /etc/hosts was denied), user settings, plugins, hooks and user-level skills removed, no MCP servers, no session persistence; the responder answered without seeing the rubric. A separate fresh context of the same kind graded the answer against the fixed rubric rows (the README table cell split on semicolons) and quoted the passages; the maintainer reviewed every verdict, normalized one grader verdict to its rows, and traced each partial to the rule line in the supplied inputs before any edit. Where a first round was partial a second fresh round was run and both are archived, the second listed after the first.",
+  "source_base": "490a9244dcb743f1d9aa2304a509335dfbd00692",
+  "candidate": "Fabius 3.6.0 content on main: the fold commit c0329ac (the new reference skills/fabius-disciplina/references/spec-driven-change.md with its directed pointer in the engineering contract, the CORPUS and ARCHITECTURE rows, two stale-reference fixes and two new change-record scenarios) and the review pass 490a924 (one trigger across the three pointers, the reference re-expressed in Fabius's own order, the before-code scenario re-authored); the signed 3.5.1 release and installed copies unchanged.",
+  "harness": "Headless Claude Code (the native binary 2.1.296, claude-sonnet-5-5) in a fresh working directory containing only the request file and the named frozen inputs; reads allowed only inside that directory (checked by a probe: a read of /etc/hosts was denied), user settings, plugins, hooks and user-level skills removed, no MCP servers, no session persistence; the responder answered without seeing the rubric. A separate fresh context of the same kind graded the answer against the fixed rubric rows (the README table cell split on semicolons) and quoted the passages; the maintainer reviewed every verdict, normalized a grader verdict to its rows where they disagreed, and traced each partial to the rule line in the supplied inputs before any edit. Runs are listed oldest first; a case's last listed run is the one the freshness gate reads.",
   "limits": [
     "Hypothetical supplied facts only. Nothing was built, run, browsed or written; each responder read only the request and the named frozen inputs.",
-    "Qualitative evidence for the new reference, the directed pointer and the fourteen scenarios whose named inputs changed in this release; not a benchmark and not a measure of model quality.",
-    "One response and one grading pass per case; the responder never saw the rubric; the grader never saw the contracts; the maintainer reviewed every verdict and traced each partial before any edit.",
+    "Qualitative evidence for the new reference, the directed pointer and the scenarios whose named inputs changed in this release; not a benchmark and not a measure of model quality.",
+    "One response and one grading pass per run; the responder never saw the rubric; the grader never saw the contracts; the maintainer reviewed every verdict, normalized two grader verdicts to their rows, and traced each partial to the rule line in the supplied inputs before any edit.",
     "The responder ran inside the maintainer's account with user settings, plugins, hooks and user-level skills removed (--setting-sources project, --strict-mcp-config, no session persistence); reads outside the run directory were denied by permission rules, checked on a probe before the runs.",
-    "The fourteen scenarios whose named inputs changed in this release were rerun here; the other twenty-nine keep their prior receipts, checked mechanically for freshness."
+    "Sixteen scenarios ran on the fold commit (c0329ac); after the review pass (490a924) changed the engineering contract, the new reference, the engineering workflows and Archivum's project records, the eight scenarios naming those inputs ran again on the final bytes and are archived after the earlier runs, which stay as history; the other twenty-nine keep their prior receipts, checked mechanically for freshness. Where a round was partial a second fresh round was run and both are archived."
   ],
   "runs": [
     {
@@ -216,7 +216,8 @@
                 "note": "The answer claims no runs or results, and it only proposes the experiment without running or deploying anything."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 7 turns, 19.3 s; grader claude-sonnet-5-5, a separate conversation"
@@ -314,7 +315,8 @@
                 "note": "No invented facts. Unknowns are flagged as unverified."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: this prompt was the fold's first world, re-authored in the review pass of 2026-10-22 because it reproduced the source's own worked example; the rerun of the re-authored case on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 11 turns, 46.8 s; grader claude-sonnet-5-5, a separate conversation"
@@ -406,7 +408,8 @@
                 "note": "Nothing invented. The three tested scenarios follow from five minus two."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 11 turns, 37.1 s; grader claude-sonnet-5-5, a separate conversation"
@@ -660,7 +663,8 @@
                 "note": "Includes a delayed stale write probe. States that nothing was run and the verdict is blocked, so no test success is invented."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 7 turns, 27.4 s; grader claude-sonnet-5-5, a separate conversation"
@@ -712,7 +716,8 @@
                 "note": "The answer contains no invented latency or scale figures."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 8 turns, 25.5 s; grader claude-sonnet-5-5, a separate conversation"
@@ -776,7 +781,8 @@
                 "note": "No omission. Stage placement is deferred until the costs are measured."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 7 turns, 31.5 s; grader claude-sonnet-5-5, a separate conversation"
@@ -865,7 +871,7 @@
               }
             ]
           },
-          "maintainer_note": "Standing partial, traced before any edit, the same row as the 2026-10-15 receipt: reverse-engineering.md section 5 step 7 states that a broad investigation is not called complete while a required question is open; the answer keeps an unknowns register with resolving evidence and reports completeness from what was examined without stating that rule. The reference is unchanged and the rubric was not reworded after the answer was seen."
+          "maintainer_note": "Standing partial, traced before any edit, the same row as the 2026-10-15 receipt: reverse-engineering.md section 5 step 7 states that a broad investigation is not called complete while a required question is open; the answer keeps an unknowns register with resolving evidence and reports completeness from what was examined without stating that rule. The reference is unchanged and the rubric was not reworded after the answer was seen.\n Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 9 turns, 37.2 s; grader claude-sonnet-5-5, a separate conversation"
@@ -1061,7 +1067,8 @@
                 "note": "It treats the unnamed book's edition claim as unverified and dismisses the reviewers' training recall. It also labels the plan as not independently reviewed."
               }
             ]
-          }
+          },
+          "maintainer_note": "Superseded within this receipt: the named inputs changed in the review pass of 2026-10-22 (commit 490a924); the rerun on the final bytes is archived after this run."
         }
       ],
       "model": "responder claude-sonnet-5-5, 7 turns, 22.6 s; grader claude-sonnet-5-5, a separate conversation"
@@ -1369,6 +1376,756 @@
         }
       ],
       "model": "responder claude-sonnet-5-5, 9 turns, 34.1 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/architecture-decisions.md",
+          "sha256": "bb7e141b932fa7b1e894b0c19a0a6f99af3b21970697a2679adecb4b62f365ec"
+        }
+      ],
+      "responses": [
+        {
+          "id": "architecture-evidence",
+          "prompt_sha256": "1bd586df69e90393f49f7efe6504e200b627fef4851320d3d1c527adbb002129",
+          "answer": "**Recommendation:** Keep the design: one process calling a sandbox adapter. Don't add queues, extra services or providers yet. The next step is one small isolation experiment against the real adapter, run before anything else. It is a proposal only, and I haven't implemented, run or deployed anything.\n\n**Established (reasoned direction and documented capability only)**\n- The design is the simplest one that could work. It has one process and one adapter, with no extra moving parts.\n- A provider guide says the adapter can mount a workspace read-only and offer writable scratch. That is documented capability. I haven't read the guide myself. Its version and the conditions it applies under are unverified, and I only have your summary of it.\n\n**Not established (no check has run)**\n- **Isolation.** The guide's claim doesn't show that this deployment enforces the read-only mount.\n  - A write to the workspace might succeed by some path, such as a symlink, a bind-mount quirk or a different mount option.\n  - Scratch might reach the workspace or other sandboxes.\n  - Escape or cross-sandbox access hasn't been tested.\n- **Restart.** Nothing shows what happens to scratch contents, in-flight calls or the mount state if the process or the adapter restarts. Orphaned sandboxes and leaked scratch are unexamined.\n- **Load.** Nothing shows capacity or concurrency limits. A single process may become a bottleneck or single point of failure, but that is a hypothesis, not a finding.\n- **Missing requirements.** No scale, latency or reliability figures were supplied, so I can't judge whether one process is enough. Those figures would change the recommendation.\n- **Review status.** This is single-author reasoning, not independently reviewed.\n\n**Next smallest experiment (proposed, not run)**\n- **Who:** whoever owns the adapter integration.\n- **What:** in the target provider environment, mount a test workspace read-only with writable scratch. Then try the following:\n  1. Write to the workspace directly.\n  2. Write to it through a symlink or a path outside scratch.\n  3. Write to scratch and read the result back.\n  4. Check whether a second sandbox can see the first one's scratch.\n- **Pass:** every workspace write is refused, scratch writes work, and scratch is isolated per sandbox.\n- **Fail:** any workspace write succeeds or scratch leaks. In that case, rework the design before building on it.\n- **Capture:** the commands, the adapter and provider versions, the environment, the observed output and exit codes, and the limitations. Keep these as a proof receipt.\n\n**After that, in order**\n1. A restart test: kill the process mid-call, then check scratch state, orphaned sandboxes and whether the workspace is still read-only.\n2. A load test at a workload you define. I can't set the figures, because none were supplied.\n\nIsolation comes first because a failure there invalidates the design. A restart or load failure would only mean tuning it.\n\n**Unresolved decision:** how long scratch should live, how many sandboxes run at once, and how often they are created. None of these were supplied. If sandboxes are numerous and short-lived, that affects whether one process holding the state is adequate.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "Keep the design: one process calling a sandbox adapter. Don't add queues, extra services or providers yet. The next step is one small isolation experiment against the real adapter",
+                "note": "The recommendation is conditional. Missing scale, latency and reliability figures \"would change the recommendation\", and a failed experiment means rework."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "The guide's claim doesn't show that this deployment enforces the read-only mount.",
+                "note": "The answer separates documented capability from observed isolation. It also states that no check has run."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "Pass: every workspace write is refused, scratch writes work, and scratch is isolated per sandbox. Fail: any workspace write succeeds or scratch leaks.",
+                "note": "The experiment is bounded and has explicit pass and fail criteria, plus an owner and a list of evidence to capture."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "It is a proposal only, and I haven't implemented, run or deployed anything.",
+                "note": "The answer invents no runs or results and labels the experiment \"proposed, not run\"."
+              }
+            ]
+          }
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 7 turns, 26.8 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/spec-driven-change.md",
+          "sha256": "74cd5253bdce8ac3ea007af070e2e18b8113f2c0d292401df327dbe5bd2160ee"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
+        },
+        {
+          "path": "skills/fabius-archivum/SKILL.md",
+          "sha256": "933b5f93599ee73162a9eebd8982a2ac32240436cacad4440271b82bf721d828"
+        },
+        {
+          "path": "skills/fabius-archivum/references/project-records.md",
+          "sha256": "ab34b9f3e5468451d19902383cb18dba5537f9db9bda49efe116ae390f837750"
+        }
+      ],
+      "responses": [
+        {
+          "id": "change-record-before-code",
+          "prompt_sha256": "5bc8633c5b99116860ccce1f05a5bc1b4af19ce19f46f5254bb4aede86d181ef",
+          "answer": "# Change record plan: signed export links, no \"keep drafts\", 6-hour retention\n\nNothing is built or filed, and I have not read the code. Everything I know about it comes from your request. That includes how exports are delivered today, how the clock is handled in tests, and how \"keep drafts\" is wired. I mark each of those as unverified where it matters.\n\nI would write one **full** record. A wrong build here is costly to undo: it touches a security property (who can fetch a file), it deletes data sooner, and two engineers will work on it across sessions. I would keep it beside the code. You have not named a record store, so I would offer to set one up once and not create one. No planning tool is used, since the project has none and nobody asked for one.\n\n## 1. What the record contains, and the order it is reviewed\n\nThe record has four parts. The reviewer reads them in this order and stops at the first one that fails.\n\n1. **Intent and scope.**\n   - Intent: change how exports are delivered and how long they are kept, and retire one option.\n   - In scope: the signed link, the removal of \"keep drafts\", and the 6-hour retention.\n   - Non-goals: the dashboard re-skin and anything else not listed.\n   - The reviewer asks whether this is the right problem and whether anything crept in. The re-skin is caught here (see section 3).\n2. **The behavior delta.** This is written as differences against current behavior, using the verbs added, changed, removed and renamed.\n   - The reviewer asks whether each statement can be checked by someone without code access, and whether each has a scenario.\n   - Most of the review effort goes to what is missing. I list the gaps I already see in section 5.\n3. **The design note.** It is written only for a decision that needs recording. The one candidate is how long a link stays valid compared with file retention, and I would write it after the questions in section 5 are answered. If no decision is needed, the record says so.\n4. **The tasks.** Each task is one line ending in the observation that closes it. The reviewer rejects any line that stands for the whole build and any task that crosses a non-goal.\n\nA tick is the only progress state, so a later session or the second engineer resumes at the first open line. One engineer drafts and the other reviews before the first edit. Any part that is pushed back is edited and read again before work proceeds.\n\n## 2. Requirements and how each is checked\n\nEach requirement is one behavior. Each scenario gives the state before, the action and the observable result. Every check runs at the surface a user or caller meets: a request goes in and the response is kept. The verdict is pass, fail, blocked or skip.\n\n| Verb | Requirement | Scenario and check |\n|---|---|---|\n| changed | An export file **must** be delivered only through a signed download link. The record carries the current delivery wording, which I must read from the code first. | A valid link returns the file. The same link with an altered signature is refused. A request with no signature is refused. |\n| added | A signed link **must** stop working once its file is no longer retained. | An expired file with an otherwise valid link returns a clear refusal, not a file or a silent empty response. |\n| changed | An exported file **must** be retained for 6 hours, replacing 24 hours. | Just under 6 hours after export the file is retrievable. At 6 hours and after, it is not. |\n| removed | The \"keep drafts\" option **must not** be offered. The reason is the request, and the record says what its dependents do instead. | The export screen and any request path show no such option. |\n| removed | An export **must not** contain unfinished reports. | With one draft and one finished report present, the export holds only the finished one. |\n| added | A request that still sends the old option **must** be refused with the field named (assumed default; see question 5). | An old-style request is answered as the record says, not silently accepted. |\n\n- **Retention check.** The suite has no test for expiry, so I write one first and run it against the current 24-hour code. It must fail because the file is still available after 6 hours, not because of missing setup. The same test then passes after the change.\n  - How time is controlled in tests is unverified. I read the repository for an existing clock seam and ask only if none exists.\n- **Draft removal check.** Before the change I run the draft scenario against current code and confirm it includes the draft. That shows the check can fail.\n- **Existing export tests.** These run after every change.\n- **Not verified.** The close-out names at least one shape the checks did not cover, or writes `not verified: none`. A check that does not apply is dropped with its reason, which is not the same as a skip.\n\n## 3. What stays out of the record, and why\n\n- **The dashboard re-skin.** It is a second intent, and each record has one. \"Re-skin\" is also an adjective, and nobody could check it. It would need its own record with its own browser-driven checks. I would tell the product manager it is not refused, only separate, and ask them to say what it covers.\n- **Mechanism names.** The signing method, any library, class names and the order of internal steps are invisible to an outsider. They go to the design note or the tasks, and I invent none of them.\n- **Requirements for code this change does not touch.** No check would keep them true.\n- **Any test result or fact about the current code.** I record none until I have read it.\n- **A planning tool, tree or configuration.** None is initialized.\n\n## 4. How the removed behavior is later shown to be gone\n\nFirst I read the pre-change description of the behavior from the code and the record. Without a usable pre-change description, the removal is reported as **not verified**. I do not report it as a pass.\n\nThen I search for what the behavior did, not only for its name:\n- the place that sets the option, in the screen, the request and any default;\n- the code that includes unfinished reports in an export, even if it is named differently;\n- tests, docs, help text and configuration that mention it.\n\nAn empty search is the pass, so the search vocabulary comes from the pre-change behavior. I then drive the draft scenario at the surface. The export must hold only finished reports, and the old option must not appear or be accepted.\n\n## 5. Questions before building\n\nEach question changes what gets built. I give a default only where one is safe to assume.\n\n1. **Drafts after removal.** Are unfinished reports always left out of exports? *Default: yes.*\n2. **Who may use a link.** Can anyone holding the link download, or only the signed-in requester? *No default. This is a security decision.*\n3. **Link lifetime.** How long is a link valid? *Default: never longer than file retention.*\n4. **Files already stored under the 24-hour rule.** Are they deleted at 6 hours from their export time, which may remove many files at rollout, or left to age out? *No default. This deletes data and is hard to reverse.*\n5. **Old callers still sending \"keep drafts\".** Reject with the field named, or ignore? *Default: reject.*\n6. **When the 6 hours start.** Is it counted from export creation or from last download? *Default: creation.*\n7. **The re-skin.** Does the product manager accept a separate record, and what does it cover? This does not block the export work.\n\nWhile questions 2 and 4 are open, work that does not touch them can proceed. That is the retention test and the draft-removal scenarios.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "partial",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "The dashboard re-skin. It is a second intent, and each record has one. ... It would need its own record with its own browser-driven checks.",
+                "note": "The re-skin is excluded and named as separate work."
+              },
+              {
+                "id": "R2",
+                "status": "partly met",
+                "quote": "| changed | An exported file **must** be retained for 6 hours, replacing 24 hours. |",
+                "note": "Retention carries its previous value, and removed rows carry a reason. The signed-link row has no stated previous value, and the 'keep drafts' removal reason is only 'the request'."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "Each requirement is one behavior. Each scenario gives the state before, the action and the observable result.",
+                "note": "Scenarios are concrete and name no libraries or classes. The 'added' row for refusing old-option requests is a mildly invented requirement, though it is flagged as an assumed default."
+              },
+              {
+                "id": "R4",
+                "status": "partly met",
+                "quote": "Each task is one line ending in the observation that closes it.",
+                "note": "The retention test is named as a check to add, run first against the current code. Tasks are described only generically and are not individually bound to named checks."
+              },
+              {
+                "id": "R5",
+                "status": "met",
+                "quote": "Then I search for what the behavior did, not only for its name: ... the code that includes unfinished reports in an export, even if it is named differently;",
+                "note": "No omission."
+              },
+              {
+                "id": "R6",
+                "status": "met",
+                "quote": "One engineer drafts and the other reviews before the first edit.",
+                "note": "Review happens before code. Link lifetime, who may use a link (forwarding) and expired-file behavior are raised as questions."
+              },
+              {
+                "id": "R7",
+                "status": "met",
+                "quote": "Nothing is built or filed ... I would offer to set one up once and not create one.",
+                "note": "No file or planning tool is created."
+              },
+              {
+                "id": "R8",
+                "status": "met",
+                "quote": "I have not read the code. Everything I know about it comes from your request.",
+                "note": "Unknowns are marked unverified, and the defaults are labelled as defaults rather than facts."
+              }
+            ]
+          },
+          "maintainer_note": "First round after the review pass partial on R2 and R4: the added signed-link requirement carried no previous value (none exists for an added behavior, so that half of the row is the grader's over-reading) and the removal's reason was 'the request'; tasks were described generically rather than each bound to a named check, which spec-driven-change.md section 2 requires. A second fresh round, archived after this one, met every row. Nothing was changed between the rounds."
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 11 turns, 57.0 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/spec-driven-change.md",
+          "sha256": "74cd5253bdce8ac3ea007af070e2e18b8113f2c0d292401df327dbe5bd2160ee"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
+        },
+        {
+          "path": "skills/fabius-archivum/SKILL.md",
+          "sha256": "933b5f93599ee73162a9eebd8982a2ac32240436cacad4440271b82bf721d828"
+        },
+        {
+          "path": "skills/fabius-archivum/references/project-records.md",
+          "sha256": "ab34b9f3e5468451d19902383cb18dba5537f9db9bda49efe116ae390f837750"
+        }
+      ],
+      "responses": [
+        {
+          "id": "change-record-verify-partial",
+          "prompt_sha256": "d26aee35208d3cfe1bfb06daece6bbdfdac7955b1c08b824701924bb0819e3f0",
+          "answer": "**Verdict: blocked.** This is not a pass. Nothing I was given shows a traced behavior defect, so it is not a fail either. The surface where the 3-attempt limit applies can't be driven with this evidence. The missing precondition is any test run output, CI record or browser. The last step that worked was reading the task list and the repository. The first that didn't was observing the change run. A ticked task list never turns this into a pass. I have implemented, fixed and archived nothing.\n\n## Dimensions: what each can and can't establish\n\n**Completeness** asks whether any task is open, any requirement has no code reaching it, or any scenario has no check reaching it. A missing result is never counted as success.\n- Established: every task box is ticked. That shows the tasks were marked done and nothing more.\n- Established from the repository: whether code reaches each added and modified requirement, and which scenarios have a test whose assertion I can read.\n- Not established: that any test passes.\n\n**Correctness** asks whether each added and modified requirement is implemented against its new wording, including failure branches.\n- Established by reading the code and tests: whether the implementation matches the wording, and whether a test asserts the right thing.\n- Not established: how it behaves at runtime. Static reading is not a drive of the real surface.\n\n**Coherence** asks whether each recorded design decision is visible in the code, and whether the code took any decision the record doesn't know.\n\n## The four special cases\n\n- **Omitted design document.** If the record left the design part out because no decision needed recording, the design-decision half of this dimension is not applicable. That check is dropped with its reason stated. It is neither a skip nor a pass.\n  - If the document was instead withheld from me, that half is not verified and goes on the not-verified line.\n  - I would not guess at what the design said. If the code shows a material decision the record doesn't mention, that is a finding to record. I make no such finding here because I have no code facts.\n- **Two untested scenarios.** This is a completeness finding: a scenario with no check that reaches it. It is not a traced behavior defect, so by itself it neither blocks nor fails the change. Those two scenarios are not verified. The facts don't say which two they are, so I name none. Whether they matter depends on which requirements they exercise, and that needs the record and the suite.\n- **Modified limit, 5 to 3.** I check the code against the new wording:\n  - The count of 3 is exact at the boundary, so the third attempt is handled as the wording says and the fourth is where it stops.\n  - The failure branch after the limit behaves as the scenario says.\n  - No code, configuration, message, documentation or test still carries the old 5.\n  - Whether the limit-3 scenario is one of the two untested ones is unknown from the facts. If it is, that raises the weight of that gap. I don't claim it is.\n- **Removed requirement.** I search for the behavior the pre-change text described, across producer, consumer, test, documentation and configuration. A search on the requirement's name alone would pass by accident, so I don't use it. The pre-change text isn't in the record. If the store or repository history holds it, I use that. If neither does, the removal is **not verified**, and an empty name search is not reported as a pass. I also check that the record states the reason for removal and what dependents do instead.\n\n## Grading and blocking\n\nI separate findings into three kinds: behavior defects (with a traced path), maintainability costs, and stylistic preferences. Each is graded from the demonstrated consequence, lowered when I doubt it, never raised. A finding informs and never blocks by itself. The verdict decides the close.\n- A traced behavior defect would make the verdict **fail**.\n- Accepting any lesser finding is your decision, and I would name it in the report.\n\n## Findings the facts support\n\n- The two scenarios with no test are a completeness gap. No defect is traced, so this is not graded as a behavior defect.\n- The removal and the runtime behavior are not verified.\n- I report no other finding, test result or file.\n\n## Not verified\n\n- Any runtime behavior, including the limit of 3 at the boundary.\n- Whether any existing test passes.\n- The two untested scenarios.\n- The removed requirement, unless its pre-change text is found.\n- The design-decision half of coherence, if the document was withheld rather than absent by choice.\n\n## What would change the verdict\n\n- **Pass** needs a driven surface or captured run output showing the requested behavior, with the two scenarios covered or accepted by you.\n- **Fail** needs a traced defect, or a drive showing the change doesn't do what it claims.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "partial",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "**Completeness** asks whether any task is open... **Correctness** asks whether each added and modified requirement is implemented against its new wording... **Coherence** asks whether each recorded design decision is visible in the code",
+                "note": "All three dimensions are separated, each with its own established and not-established evidence."
+              },
+              {
+                "id": "R2",
+                "status": "partly met",
+                "quote": "If the record left the design part out because no decision needed recording, the design-decision half of this dimension is not applicable.",
+                "note": "It treats the design document as not applicable only conditionally and hedges that it may be unverified. It does list the untested scenarios as not verified."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "I check the code against the new wording: The count of 3 is exact at the boundary, so the third attempt is handled as the wording says",
+                "note": "The check is against the new limit of 3, and the answer also looks for leftover references to the old 5."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "A search on the requirement's name alone would pass by accident, so I don't use it... If neither does, the removal is **not verified**",
+                "note": "It checks the removal by pre-change behavior and reports it not verified when the text is absent."
+              },
+              {
+                "id": "R5",
+                "status": "met",
+                "quote": "A finding informs and never blocks by itself. The verdict decides the close.",
+                "note": "Grading is advisory and based on demonstrated consequence. Accepting lesser findings is left to the user."
+              },
+              {
+                "id": "R6",
+                "status": "partly met",
+                "quote": "**Verdict: blocked.** This is not a pass... A ticked task list never turns this into a pass.",
+                "note": "It uses blocked and has a not-verified section, and ticked boxes are never promoted to verified. It does not list the exact verdict vocabulary of pass, fail, blocked or skip. The blocked verdict is also arguably at odds with the partial-evidence facts."
+              },
+              {
+                "id": "R7",
+                "status": "met",
+                "quote": "I report no other finding, test result or file.",
+                "note": "No invented runs, files or findings."
+              }
+            ]
+          },
+          "maintainer_note": "Standing partial, traced before any edit (two fresh rounds, both archived): spec-driven-change.md section 6 states that a part the record omits by choice makes its check not applicable, dropped from the run with its reason; the supplied facts say the design document was deliberately omitted. The answer conditioned not-applicable on the reason for the omission (section 2's 'no decision, no design note') instead of on the choice itself, and in this round also left the verdict vocabulary unlisted although the request asked for the exact words. It never treated the omission as a failure and reported the untested scenarios as not verified. The reference is unchanged and the rubric was not reworded after the answers were seen."
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 11 turns, 48.5 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
+        }
+      ],
+      "responses": [
+        {
+          "id": "lease-lost-owner",
+          "prompt_sha256": "34fae5eaa6840342fc15fd136bee238741fbc369a5bf71f8ad88e8ede31d0aec",
+          "answer": "**Decision: reject the 60-second lease as a fix. It doesn't prove mutual exclusion. Treat the order write as unprotected until the destination enforces a fencing token.**\n\n**What the incident shows**\n- A holds a 30s lease, then pauses for 45s. The lease expires and B acquires it and writes the order.\n- When A resumes, its delayed write is accepted. The destination takes writes without a lease token, so it can't tell A's stale write from B's.\n- The owner-checked unlock with a random token does its job, because A can't release B's lease. But that only guards the release. It does nothing to stop a stale write.\n- The library renews on a best-effort basis, logs a renewal failure and lets A continue. A therefore keeps working after it has lost ownership.\n- Two writers overlapped. The incident disproves mutual exclusion for this path.\n\n**Why 60 seconds fails**\n- It only moves the threshold. A 45s pause survives a 60s lease, but a 70s pause, a long GC or VM stall, or a network partition brings back the same failure.\n- No lease length can be proven to outlast an arbitrary pause. An expiry that fires mid-section quietly admits a second writer.\n- Not verified: how long A's real critical section runs, or how long pauses get in production. I don't have those facts.\n\n**Engineering decision**\n1. **Fence the destination.** Issue a monotonically increasing fencing token with each lease acquisition. A must send it with every write, and the destination must reject any token lower than the highest it has seen. This is the real fix. If the destination can't enforce it, use a proven equivalent that stops and drains the old operation before ownership transfers.\n2. **Change renewal-failure handling.** Stop admitting new side effects. Reconcile any in-flight outcome and re-establish ownership before proceeding. Don't just log and continue.\n3. **If the destination can't enforce exclusion,** don't claim distributed mutual exclusion. Report the remaining overlap risk, and describe the lease as a best-effort efficiency measure.\n4. **Keep the 60s lease only as an optional extra.** It can reduce how often a stale write happens, but it isn't the guarantee.\n5. **Check the order as it stands now.** Compare it against B's intended write, since A's delayed write may have overwritten it. I haven't inspected the order and haven't altered it.\n\n**Failure probes**\n\nRun these against an in-process lock implementation first, then at the real surface with two sessions at once. Each should fail on the current design and pass after the fix.\n\n| # | Probe | Expected after fix |\n|---|---|---|\n| 1 | Hold the lock for a section longer than the lease. | The holder renews, or is stopped before it writes. |\n| 2 | Force renewal to fail, for example by blocking the renewal path. | The holder stops new side effects, with no silent continue. |\n| 3 | Pause A for 45s, let B take over and write, then resume A. | A's write is rejected. |\n| 4 | Send a delayed stale write with a lower token directly to the destination. | The destination rejects it. |\n| 5 | Send a write with no token. | The destination refuses it. This is the current hole. |\n| 6 | Pause A past 60s, to test the proposed lease. | It still fails without fencing, which disproves the 60s claim. |\n| 7 | Let A's write be in flight when ownership transfers. | The outcome is reconciled and not duplicated. |\n| 8 | Have A try to release after B holds the lock. | The unlock is a no-op, so the owner-check still holds. |\n| 9 | Run two writers on different order records. | They don't block each other, because exclusion is per record. |\n\n**Not verified:** I ran nothing, so none of the probes above has been run. I don't know the destination's ability to compare tokens, the lock service's token support, or the real section and pause durations. If the destination can't be changed, the overlap risk stays open.\n\n**Verdict: blocked for any \"mutual exclusion\" claim.** The incident itself is a fail, and the 60s lease proposal is not accepted.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "No lease length can be proven to outlast an arbitrary pause. An expiry that fires mid-section quietly admits a second writer.",
+                "note": "It also says owner-checked unlock only guards release, so it does not stop a stale write."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "Issue a monotonically increasing fencing token with each lease acquisition. A must send it with every write, and the destination must reject any token lower than the highest it has seen.",
+                "note": "It also covers a proven equivalent, stopping new side effects, and reconciling in-flight outcomes."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "The library renews on a best-effort basis, logs a renewal failure and lets A continue. A therefore keeps working after it has lost ownership.",
+                "note": "It also says to describe the lease as a best-effort efficiency measure if the destination can't enforce exclusion."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "Pause A for 45s, let B take over and write, then resume A. | A's write is rejected.",
+                "note": "Probe 4 covers a delayed stale write. It states 'I ran nothing', so no test result is invented."
+              }
+            ]
+          }
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 8 turns, 24.0 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/architecture-decisions.md",
+          "sha256": "bb7e141b932fa7b1e894b0c19a0a6f99af3b21970697a2679adecb4b62f365ec"
+        }
+      ],
+      "responses": [
+        {
+          "id": "preserve-transaction",
+          "prompt_sha256": "f75542842b68bd8d4d971f85995bd037db7e8e2745be0e91de540b1ae9cf61df",
+          "answer": "**Recommendation: keep the single order-and-stock transaction and don't adopt the three-service split now. Measure the report slowness first. If the measurements show the reports are the problem, extract only the report reader.**\n\n**Why**\n- The ADR chose one transaction for orders and stock to prevent overselling. That rationale is still valid, and nothing supplied argues against it. Splitting orders from stock would replace a single database guarantee with cross-service coordination, such as sagas or reservation protocols. That would need a clear, demonstrated reason, and none has been given.\n- \"Reports feel slow\" is a perception. No workload or contention measurement exists, so the cause is unknown. It could be slow report queries, lock contention with order writes, missing indexes, or something else. A three-way split is a large, hard-to-reverse change aimed at a cause nobody has identified.\n- The proposal promises independent deployment, but no scaling need has been shown. I can't claim any throughput gain from it.\n\n**Options**\n\n| Option | Gain | Cost and risk | Verdict |\n|---|---|---|---|\n| 1. Keep the current design and measure first | Preserves the no-oversell guarantee. It is cheap and fully reversible. | The slowness stays until the cause is found. | **Recommended first step** |\n| 2. Extract only the report reader, for example a read replica or separate read model | Isolates report load from order writes. The order and stock transaction stays intact. | Reports become stale by the replication lag or refresh interval. Someone has to confirm that is acceptable. | **Take this only if the measurements implicate report load or contention** |\n| 3. Split into three services (orders, stock, reports) | Independent deployment and scaling. | It breaks the shared transaction, so overselling must be handled by distributed coordination. It adds operational overhead and is hard to reverse. No supplied evidence shows a benefit. | **Not supported by the facts given** |\n\n**Evidence that could change this conclusion**\nEverything below is proposed, not done. Nothing has been run.\n1. **Representative workload run.** Run realistic order and report traffic together and record report latency and order latency.\n   - If report queries are slow even with no order traffic, the cause is query or indexing work, not architecture.\n   - If report latency only degrades under concurrent order writes, contention is the cause, and option 2 becomes justified.\n2. **Lock and contention observations.** Capture lock waits, transaction duration and blocking between report reads and order/stock writes during that run. Long waits on stock rows or tables, tied to reports, would point to option 2.\n3. **Staleness tolerance.** If the business needs reports to be real-time consistent, option 2 loses much of its value and the alternatives need rethinking.\n4. **A demonstrated scaling or deployment need.** This would be a concrete case where orders, stock and reports must scale or ship independently, and where the current deployment can't meet it. That is the only thing that would reopen option 3. It would also reopen the ADR, because the case would have to address the overselling rationale, not just the load.\n5. **Callers and data ownership.** If other consumers already read or write stock outside the shared transaction, the \"single boundary\" assumption is weaker than it appears. I haven't inspected any callers.\n\n**Evidence state:** this is reasoned direction from the supplied facts only, and no code, callers or measurements were inspected. It is single-author reasoning, not independently reviewed. Operational readiness of any option is unproven.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "keep the single order-and-stock transaction and don't adopt the three-service split now.",
+                "note": "It keeps the ADR's single-transaction no-oversell invariant and lists the current design as the baseline option."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "Measure the report slowness first.",
+                "note": "It asks for workload, lock and contention measurements before any split, and makes any extraction conditional on the results."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "No workload or contention measurement exists, so the cause is unknown.",
+                "note": "It gives no latency, throughput or scale figures, and says it cannot claim a throughput gain."
+              }
+            ]
+          }
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 7 turns, 20.1 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
+        }
+      ],
+      "responses": [
+        {
+          "id": "quality-gate-ratchet",
+          "prompt_sha256": "e77eb4670d1dca7e5fa53435dcac5beb71fc1fdfbc12d46a52aa54e126aa4149",
+          "answer": "**Verdict: do not merge as written.** All three changes weaken a check, and \"all checks now pass\" doesn't count as evidence here. The checks were changed until they passed, so they no longer show what they showed before. I reviewed only the facts you supplied. I haven't seen the diff, the code or any run output.\n\n## Findings (most severe first)\n\n1. **The rollback assertion was deleted.** This is the blocking finding.\n   - **Protection lost:** the integration test covered order rollback, so it guarded against a failed order leaving partial state behind.\n   - **What the diff shows:** nothing in what you gave me says another line now holds that invariant. A removed guard with no replacement is a finding in its own right.\n   - **Failure scenario:** an order step fails midway. Rollback doesn't happen, and the suite stays green because the assertion that would have caught it is gone.\n   - **Fix:** restore the assertion. If the feature legitimately changes rollback behavior, replace it with an assertion of the new behavior and name who owns that decision. Renaming a test with equivalent coverage is acceptable. Deleting one is not, and I haven't seen the diff, so I can't tell which this is.\n\n2. **The blanket lint suppression is a broader exception than the problem needs.**\n   - **Hidden risk:** it silences every present and future violation in its scope, not just the one that was failing.\n   - **Fix:** remove it and find out which rule fired and where. Then use a narrow, per-line or per-rule suppression with a stated reason, an owner and an expiry. Or fix the underlying code.\n\n3. **The bundle budget was doubled from 300 KB to 600 KB.**\n   - **Problem:** the new number rests on no evidence. It simply lets the feature through. A failing gate is not permission to weaken it.\n   - **Fix:** measure the feature's actual contribution first. Then choose one of these:\n     - Reduce the size, for example with lazy loading, splitting the feature out or dropping a dependency.\n     - Raise the budget deliberately, recording who approved it, the measured reason and the evidence that could reverse the decision.\n   - I'm not proposing a replacement number. The right limit depends on a measurement we don't have.\n\n4. **The team's request for faster local feedback is unmeasured.** This is not a defect in the patch, but it shouldn't be done by loosening checks. No test costs have been measured, so any claim about what to move or skip is a guess.\n\n## Verification plan\n\n1. **Restore the old checks on a copy of the patch.** Put back the 300 KB budget, the rollback assertion and the lint config, and keep the feature code. Run everything and record the commands, output and exit codes. Expected result: the budget check fails on size. That confirms the gate really fires on this feature.\n2. **Check that the rollback assertion catches a real fault.** On the pre-patch code, force a failure partway through an order and confirm the assertion fails. Then confirm it passes on the unmodified code. If the feature changed rollback behavior, confirm the replacement assertion fails when the new behavior is broken.\n3. **Find what the suppression is hiding.** Remove it and list the rules and files that fire. Compare against the correct base, and include staged, unstaged and untracked files. Triage each hit as fix, narrow exception or accepted, with an owner and an expiry for any exception.\n4. **Measure the bundle.**\n   - Build the base and the patch under the same conditions and record the size of each, plus the per-module breakdown for the feature.\n   - Decide between shrinking and an approved budget raise using that data.\n   - If you adopt a ratchet, define it as: scope, measured baseline, direction of improvement (no regression), exact check and the stage where it runs.\n   - Keep the current overage visible beside any new regression.\n5. **Measure test costs before changing the test setup.**\n   - Time each suite on a fixed workload and environment.\n   - Repeat the runs, and state the cache state and sample count.\n   - Compare distributions, not single runs.\n6. **Place checks by cost once the numbers exist.** Run cheap checks near the edit, such as lint and affected unit tests. Run related behavior checks, including the rollback integration test, at completion. Run the bundle check in CI or pre-merge. Faster feedback should come from moving checks to the right stage, not from weakening or deleting them.\n7. **Run the full suite on the combined tree** once the fixes are in. Report pass, fail, blocked or skip for each check. A missing tool or environment counts as blocked, not as a pass.\n\n**Not verified:** everything above is from the description alone. I haven't seen the actual diff, which lint rule was suppressed, the real bundle sizes or any test timings. I also haven't confirmed whether rollback is covered elsewhere.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "\"all checks now pass\" doesn't count as evidence here. The checks were changed until they passed, so they no longer show what they showed before.",
+                "note": "No omission. The answer rejects the green result because the oracle was weakened."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "The rollback assertion was deleted. ... The blanket lint suppression is a broader exception than the problem needs. ... The bundle budget was doubled from 300 KB to 600 KB.",
+                "note": "No omission. The budget, test and suppression changes each get their own finding."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "restore the assertion. If the feature legitimately changes rollback behavior, replace it with an assertion of the new behavior and name who owns that decision.",
+                "note": "No omission. The answer also adds a plan step to check that the assertion catches a real fault."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "I'm not proposing a replacement number. The right limit depends on a measurement we don't have.",
+                "note": "No omission. A budget raise needs measurement, an approver and a recorded reason, and the answer invents no limit."
+              },
+              {
+                "id": "R5",
+                "status": "met",
+                "quote": "Measure test costs before changing the test setup. ... Place checks by cost once the numbers exist.",
+                "note": "No omission. Measurement comes first and stage assignment follows."
+              }
+            ]
+          }
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 8 turns, 27.2 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/reverse-engineering.md",
+          "sha256": "30dbf6c460227352c782619ce3a9d2fb5626a19f2206bbf7fa990470caaa1367"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
+        },
+        {
+          "path": "skills/fabius-praesidium/SKILL.md",
+          "sha256": "92ac695dddcc4314862e9fdea7d24b87c4bee0574c60bb48f491b6323573406c"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "ffe0b65f26a14f88ac17da4203c0b1558086ff1e4b96bbc78ef406ee1561304b"
+        }
+      ],
+      "responses": [
+        {
+          "id": "reverse-engineering-boundary",
+          "prompt_sha256": "fa4f9bc36ff5665389ed9d305f4c73fc26130774671d4c1e05b5054dd96f3228",
+          "answer": "# Plan: explain the competitor's offline search, then build our own\n\nNothing here has been executed. It is a plan only, and it says nothing about what the artifact contains.\n\n## 1. Before opening the artifact\n\n**Authority, written into the plan.** The competitor's EULA forbids reverse engineering except as permitted by law. Our jurisdiction permits analysis for interoperability. That legal exception is the authority I would name. Three limits follow from it:\n- **Counsel check.** I can't tell from the supplied facts whether \"explain how it works so we can build the same feature\" counts as interoperability under that exception. I would flag this once, as a question for legal to confirm before the analysis starts. The product manager's request doesn't settle it.\n- **Scope.** The grant covers inspecting the ASAR, and nothing more. Running the app, attaching to it, intercepting its traffic and changing a device each need their own grant.\n- **Obtaining the file.** I don't know how the ASAR was obtained beyond \"extracted from its installer\". I'm assuming the installer was obtained lawfully. If that is wrong, say so before I start.\n\n**What I would refuse, and say why:**\n- Circumventing licence checks, DRM or other technical protection.\n- Tampering with the live service.\n- Copying the competitor's code or assets into our product. Understanding how the feature works and building our own is engineering. Lifting their code or assets is not.\n- Treating a decompilation or a report as granting any rights to the original. Anything generated from their code may carry their rights.\n\n**Handling the file.** The ASAR is untrusted data. I would extract it into its own new, empty directory. Scripts and tools would live elsewhere and receive paths as arguments. I would also record the artifact's digest as its identity.\n\n## 2. First look: static module graph\n\nI would start with a static read of the ASAR's module graph, without running anything. The target is a packaged Electron app, and that is where this first look pays off most. It yields:\n- modules and imports\n- IPC and preload boundaries\n- native add-on edges\n- the packaged resources and config that sit beside the code\n\nI would pick this because static inspection reads files without executing the app, and it answers most questions. Runtime comes in only if static evidence can't settle a question.\n\nThe first pass would trace from the search entry points (UI, IPC handler) through to wherever the index is read or written. The aim is to find:\n- whether the index is built in JavaScript or in a native add-on\n- where the index files go on disk\n- which modules touch them\n\nSource maps are absent, so I would not look for them. Names and strings alone are not behavior, so I would trace data flow instead of trusting labels.\n\n## 3. Labeling what I learn, and what stays unknown\n\nEvery finding goes into one ledger, tagged as exactly one of:\n- **Observation:** bytes, a string or an import, with the artifact digest and the module location.\n- **Derivation:** a decoded structure or a reconstructed call path.\n- **Inference:** what the code probably does, judged from naming, constants or shape.\n- **Unknown.**\n\nEach entry carries:\n- its provenance: artifact digest, tool and version, module id\n- its search boundary\n- the remaining unknowns\n\nThe minified bundle limits what I can claim:\n- Mangled names carry no meaning, so any intent read from a variable name is an inference.\n- A static read never observed execution. An unresolved call is unknown, not absent.\n- \"No other index path exists\" is only true over the modules I walked. I would report completeness from what I examined, never from an empty list of failures.\n- The undocumented index format is unknown until corroborated. A format derived from reading the code is confirmed by a second path to the same fact, or by a bounded runtime observation. A static pattern matched to a runtime event is a hypothesis until the mapping is explicit.\n\nIf a native add-on holds the index logic, the JavaScript read stops there. I would list it as a remaining unknown, and it would need a separate, authorized native-binary analysis.\n\n## 4. The debugger step\n\nStatic analysis comes first. I would use the debugger only if it leaves a question that affects the rebuild unanswered, such as the exact on-disk layout and write order.\n\nEven then, this is a separate grant. Authorization to inspect the ASAR does not cover running the app or attaching to it. Before I proceed, I need explicit authority covering execution and attachment. The legal exception may or may not reach that far, which is another question for legal. Without that authority, I would do nothing and the question stays unknown.\n\nIf it is granted, I would design the experiment before running anything:\n- **Target and lifecycle:** a launch (or attach) of a named app version, and how it ends.\n- **Declared effects:** on processes, files, network, UI and devices.\n- **Environment:** an isolated environment built for an untrusted target. A capture is not a sandbox and does not contain the app.\n- **What is observed:** for example, the files created and the byte layout of the index as the app writes it, plus the module that wrote them.\n- **How it is read back:** the evidence kept, with credentials and sensitive values redacted.\n- **Read-only discipline:** I never modify the app's bytes.\n\nA debugger run establishes only what that run showed. A plan that was never run establishes nothing about runtime. I would also not use the debugger to bypass any protection or touch any live service. The app would use local test content only.\n\n## 5. Hand-off to the build\n\nThe hand-off is a written specification of observed behavior:\n- inputs, outputs and edge cases\n- the exact formats and constants that were observed\n- each item tagged observation, derivation, inference or unknown\n\n**Design choices.** Our own design decisions go in a separate section, so nobody mistakes them for observed fact. We are not bound to the competitor's index format. Where the product requires interoperability with theirs, that requirement is stated, and the format is built from the spec.\n\n**Clean separation.** The new code is our own and does not transcribe the original's decompiled code. The spec carries behavior and facts, not pasted code or assets. Whoever builds from it should preferably not be the person who read the bundle line by line. That is my recommendation and not a stated requirement.\n\n**Open unknowns.** The spec lists each remaining unknown. For each one, it states what evidence would resolve it and whether it affects the rebuilt behavior.\n\n## 6. Proving and reporting the rebuilt search\n\nI would build a case set from the competitor's observed behavior. Its sources would be the static findings and, only if the debugger step was authorized and run, the runtime observations. I would check our search against it:\n- **Behavioral comparison:** queries and results on a fixed corpus.\n- **Byte-exact comparison:** only where we deliberately match an on-disk format and that format was observed.\n\nI would execute the checks, keep the command output and report one verdict: **pass, fail, blocked or skip**.\n\nThe report would say:\n- A pass covers only the declared cases and is never global equivalence to the competitor's search.\n- **Not verified:** a named list, including every case drawn from an unresolved unknown. If the debugger step was not authorized, that includes anything only runtime could confirm.\n- The residual unknown heads, with the evidence that would resolve each.\n- The authority we relied on and the legal question that was open, so the record shows the boundary was respected.\n\nIf the checks can't be run, the verdict is blocked, never a pass.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "Our jurisdiction permits analysis for interoperability. That legal exception is the authority I would name.",
+                "note": "Authority is named before analysis, and refusals are listed: circumvention, tampering, copying code, and treating a decompilation as granting rights."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "I would start with a static read of the ASAR's module graph, without running anything.",
+                "note": "No omission. The reason for choosing it is given."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "Observation: bytes, a string or an import, with the artifact digest and the module location. Derivation... Inference... Unknown.",
+                "note": "All four labels are used with provenance. The gaps from minification, such as mangled names and unresolved calls, are kept as unknown."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "Even then, this is a separate grant. Authorization to inspect the ASAR does not cover running the app or attaching to it.",
+                "note": "The experiment is bounded and declared (target, effects, environment), and the plan says a capture is not a sandbox."
+              },
+              {
+                "id": "R5",
+                "status": "met",
+                "quote": "Our own design decisions go in a separate section, so nobody mistakes them for observed fact.",
+                "note": "The spec records observed behavior, and the new code is our own, not transcribed from the original."
+              },
+              {
+                "id": "R6",
+                "status": "met",
+                "quote": "A pass covers only the declared cases and is never global equivalence to the competitor's search.",
+                "note": "Covers a finite case set, a named not-verified list, and a pass/fail/blocked/skip verdict."
+              },
+              {
+                "id": "R7",
+                "status": "met",
+                "quote": "The spec lists each remaining unknown. For each one, it states what evidence would resolve it",
+                "note": "Residual unknowns are listed with resolving evidence. Completeness is limited to what was examined, but there is no explicit statement that the investigation stays incomplete while a required question is open."
+              }
+            ]
+          }
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 9 turns, 32.8 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/architecture-decisions.md",
+          "sha256": "bb7e141b932fa7b1e894b0c19a0a6f99af3b21970697a2679adecb4b62f365ec"
+        }
+      ],
+      "responses": [
+        {
+          "id": "unavailable-reviewers",
+          "prompt_sha256": "c182e5a7e8c1dcb5ed25b2472433738034ffd2df23ce00005a5b27e18d357485",
+          "answer": "**Plan: put an in-process interface between the order endpoint and the storage adapter. Deployment stays unchanged, with the same process, binary and datastore.**\n\n**Evidence state:** this is single-author reasoning from your description. No code was supplied, so I inspected nothing. The plan was not independently reviewed, because no reviewer or delegation capability was available. No check has been run, so everything below is a reasoned direction, not observed behavior.\n\n**Authority claims**\n- **\"An unnamed book's seventh edition mandates this.\"** I can't verify this. The book, author, chapter and quote are all missing, and I can't browse. A claim with no identifiable source can't support a design, so I'm giving it no weight. Even a real book would only count if you could show it supports this decision in your context. If you can name the title, author and chapter and paste the passage, I'll check whether it applies.\n- **\"Three reviewers remember the chapter from training.\"** This isn't evidence either. A model's recollection of a chapter can't be checked, and I can't confirm that any of them read it. Three recollections of the same unverified source are one unverified claim, not three confirmations. I also can't tell whether those reviewers exist, and none of them took part in this answer. Treat the plan as unreviewed.\n- **The plan stands on its own reasons.** It rests on your stated constraints and the reasoning below, not on either claim.\n\n**Assumptions** (all reversible; correct me if they're wrong)\n- Both pieces run in one process and one deployable.\n- The endpoint calls the adapter directly today.\n- I don't know the call sites, the transaction scope, the error types or the load.\n\n**Alternatives**\n1. **Keep the current coupling.** This is cheapest, but the endpoint stays tied to storage details. Choose it if the code is small and stable.\n2. **In-process interface (recommended).** It's a small change, easy to reverse and needs no deployment change. It gives the endpoint a seam for testing and for swapping storage later.\n3. **Separate service or network boundary.** This would change deployment, which you ruled out. Nothing you've described needs it, and a hypothetical future need isn't enough reason.\n\n**Steps** (each followed by its check)\n1. **Inventory every place the endpoint touches the adapter.** List the operations (create, read, update, list), the transaction expectations and the error cases.\n   - Verify: the list matches a search of the call sites.\n2. **Define a narrow interface in the endpoint's vocabulary.** For example, `OrderStore` with only the operations found in step 1. Keep storage types out of its signatures. Define its own error kinds, such as not-found, conflict and unavailable, and map the adapter's errors to them.\n   - Verify: the endpoint code compiles against the interface alone.\n3. **Keep transaction ownership explicit.** If an order write and a related write (stock, for example) currently share one transaction, don't split them across the interface. Either expose one operation that covers both, or leave that path on the current design.\n   - Verify: a test confirms that a failure mid-operation leaves no partial state.\n4. **Make the adapter implement the interface, and wire it at startup.** Use plain constructor injection, with no framework and no registry. Behavior must not change.\n   - Verify: the existing tests pass unmodified, and a characterization test per operation shows the same results as before.\n5. **Move the endpoint onto the interface one operation at a time.** Start with a read, since it's the least risky.\n   - Verify: run the tests after each move. To revert, change the call back.\n6. **Add an in-memory fake that implements the interface, and test the endpoint against it.** Only do this if it removes real test friction.\n   - Verify: run the same contract tests against both the fake and the real adapter.\n7. **Enforce the boundary.** Add an import or lint rule so the endpoint can't import the adapter package directly.\n   - Verify: a deliberate violation fails the build.\n\n**What would change this plan**\n- Transactions that span the boundary (step 3).\n- Latency-sensitive paths, if the interface adds allocations or copying. Measure before and after on a fixed workload.\n- Any later need for independent deployment. That would be a separate decision with its own evidence, such as load and contention data. This plan doesn't claim a performance or scaling benefit.\n\n**Not verified:** I haven't seen your code, the transaction scope, the error types or the test coverage. I haven't run any check, and I haven't confirmed that any book or reviewer exists.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "Plan: put an in-process interface between the order endpoint and the storage adapter. Deployment stays unchanged, with the same process, binary and datastore.",
+                "note": "A bounded, stepwise plan with checks. It keeps deployment unchanged and uses no panel or delegation."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "A claim with no identifiable source can't support a design, so I'm giving it no weight.",
+                "note": "It also rejects the training-recall claim and states 'The plan was not independently reviewed, because no reviewer or delegation capability was available.'"
+              }
+            ]
+          }
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 7 turns, 25.1 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/spec-driven-change.md",
+          "sha256": "74cd5253bdce8ac3ea007af070e2e18b8113f2c0d292401df327dbe5bd2160ee"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
+        },
+        {
+          "path": "skills/fabius-archivum/SKILL.md",
+          "sha256": "933b5f93599ee73162a9eebd8982a2ac32240436cacad4440271b82bf721d828"
+        },
+        {
+          "path": "skills/fabius-archivum/references/project-records.md",
+          "sha256": "ab34b9f3e5468451d19902383cb18dba5537f9db9bda49efe116ae390f837750"
+        }
+      ],
+      "responses": [
+        {
+          "id": "change-record-before-code",
+          "prompt_sha256": "5bc8633c5b99116860ccce1f05a5bc1b4af19ce19f46f5254bb4aede86d181ef",
+          "answer": "**Nothing is built and no file is created. This is the change record I would write, with the questions that block it. Nothing was run or read in the code, so every code-level fact is marked unverified.**\n\n## 1. What the record contains, and the order it is reviewed\n\nI would write the full record, not the short one. A signed link is a security property, a retention change affects stored data, and two engineers will work across several sessions. There is no planning tool in the project and none was asked for, so I would initialize none and use no planning tree. The record is plain text, and where it is kept is for the project's record store to decide.\n\nThe record has four parts, in the order they become writable. Review reads them in the same order, and the first failed answer ends the read:\n\n1. **Intent and scope.** The review asks whether this is the right problem and whether anything crept in.\n   - *Intent:* export delivery moves to signed links, the \"keep drafts\" option goes away, and retention drops from 24 hours to 6.\n   - *Non-goals:* the dashboard re-skin and any change to what the export itself produces.\n2. **Behavior delta.** The review asks whether each statement is checkable, whether each has a scenario, and what is missing. The test is whether the reviewer would accept the system doing exactly this and no more.\n3. **Design note.** There is one decision to record, which is how links are signed and what lifetime they carry. I can't write the approach yet because the request doesn't name one. I would fill it in after reading the existing export code, and it states the alternative refused and why. I would not name a library in advance.\n4. **Tasks.** Each task is one line ending in the observation that closes it, and each serves a requirement without crossing a non-goal. A single line that stands for the whole build fails this read. Ticks are the only progress state, and the next session resumes at the first open line.\n\nReview happens before the first edit. Composing the record is not permission to build from it.\n\n## 2. Requirements and how each is checked\n\nEach requirement is written as a difference against current behavior, one behavior per statement. Items marked *pending* depend on a question in section 5.\n\n**R1, added: an exported file must be downloadable only through a signed link.**\n- *Scenario A:* a user exports a report and receives a link, and fetching the link returns the file.\n- *Scenario B:* the same link with one character of the signature altered is refused and returns no file.\n- *Scenario C:* a link signed for one export does not return a different export.\n- *Scenario D:* the failure response for an invalid link is *pending* (Q3).\n- *Check:* a request-level test for each scenario at the real download boundary. Scenarios B and C are the cases whose failure would cost the most, so they come first in the review.\n\n**R2, removed: the \"keep drafts\" option.**\n- *Reason:* requested.\n- *Dependents:* what an export contains instead is *pending* (Q1), and so is how a request that still sends the old option is handled (Q2).\n- *Scenario:* an account has one unfinished report. An export is run, and the file's contents match the answer to Q1.\n- *Check:* the removal proof in section 4, plus the export-contents scenario driven through the real export path.\n\n**R3, changed: an exported file must be kept for 6 hours (previously 24).**\n- *Scenarios:* a file is still retrievable 5 hours 59 minutes after export and gone after 6 hours.\n- *Check:* the suite has no retention-expiry test, so I would write one first. It must fail on the current 24-hour behavior for the right reason, which is the age at which the file disappears and not missing setup. Only then does the change go in. If the project has no seam to control the clock, the record says so and the check becomes a direct observation at the real boundary.\n- *Open point:* files already stored at deploy time are *pending* (Q5).\n\n**R4, unchanged, stated once: exporting a report still produces the report.** The existing export test must stay green. Its assertions are read, not assumed to cover the new paths.\n\n## 3. What stays out of the record, and why\n\n- **The dashboard re-skin.** It is a second intent and so belongs in a second record. It is a different kind of work: a visual change with its own checks, unrelated to delivery, drafts or retention. Putting it in this record would let a task cross the non-goals. I would raise it with the product manager as a separate request.\n- **Mechanism details.** Class names, the signing library, the order of steps and storage layout can't be observed by an outsider. They go to the design note or the tasks.\n- **Invented facts.** The request names no signing scheme, link lifetime, library or test result, so the record contains none.\n- **Any planning tool or tree.** Nothing was asked for and nothing is initialized.\n- **Merging into the current-behavior record.** That is a separate decision for the user after the change closes. It does not follow automatically from a pass.\n\n## 4. How the removed behavior is later shown to be gone\n\nThe pass condition is an empty search for the behavior the pre-change record described, not for the option's name alone. The search covers:\n- the producer: whatever sets the option, in the UI or the request;\n- the consumer: the export code that branches on it to include unfinished reports;\n- the tests and documentation that mention it;\n- configuration and defaults.\n\nA search for the name alone passes by accident if the code uses other words, so the search vocabulary comes from reading the code before the change.\n\nTwo limits apply:\n- The request gives only a prose description of the behavior. Unless the record store or its history holds a usable pre-change description, the removal is reported as **not verified**. I would write the removed behavior into the record from the code before editing, which makes the later search possible.\n- The search is backed by driving the real export with an unfinished report present, and with the old option still sent. The result is reported as pass, fail, blocked or skip, with what was not covered on its own line.\n\n## 5. Questions to ask before building\n\nEach answer changes the build:\n\n1. **After \"keep drafts\" is removed, do exports always include unfinished reports, or never include them?** This is the biggest fork. I would propose \"never\" as the default, since it is the safer reading, and mark it as an assumption if unanswered.\n2. **What should happen to a request that still sends the old option?** It could be rejected as unknown, which is my default, or silently ignored.\n3. **What does an invalid or expired link return?** Who can use a valid link also needs an answer: anyone holding it, or only the user who exported.\n4. **How long is a link valid compared with the 6-hour retention?** Is it the same, or shorter?\n5. **What happens to files already stored with the 24-hour rule when this ships?** They could be purged at deploy, or aged out under the new rule.\n6. **Is the 6 hours counted from export time or from the last download?** The request doesn't say.\n7. **Is the old direct download path to be shut off, or kept alongside the signed link?** Keeping both would defeat R1.\n8. **Where does the signing secret come from, and who owns it?** The request supplies no answer, so I wouldn't assume one.\n9. **Should the re-skin proceed as its own record, and who owns that request?** The product manager's addition stays out of this one.\n\nQuestions 1, 5 and 7 change behavior or touch stored data, so they stay pending. For the rest I would proceed on the stated defaults, listed as assumptions in the record.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "pass",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "The dashboard re-skin. It is a second intent and so belongs in a second record.",
+                "note": "The re-skin is kept out as a non-goal and raised with the product manager as a separate request."
+              },
+              {
+                "id": "R2",
+                "status": "met",
+                "quote": "Each requirement is written as a difference against current behavior, one behavior per statement.",
+                "note": "The requirements are labelled added, removed (with reason: requested) and changed (previously 24 hours), and none is a whole-system spec."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "the same link with one character of the signature altered is refused and returns no file.",
+                "note": "Each requirement has concrete scenarios, and libraries and class names are explicitly excluded."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "the suite has no retention-expiry test, so I would write one first. It must fail on the current 24-hour behavior for the right reason",
+                "note": "The missing retention test is named as a check to add, and each task ends in the observation that closes it."
+              },
+              {
+                "id": "R5",
+                "status": "met",
+                "quote": "The pass condition is an empty search for the behavior the pre-change record described, not for the option's name alone.",
+                "note": "The record also covers the producer and consumer, and it says to drive the export with an unfinished report present."
+              },
+              {
+                "id": "R6",
+                "status": "met",
+                "quote": "Review happens before the first edit. Composing the record is not permission to build from it.",
+                "note": "Link handling after expiry and link forwarding are raised as Q3 and Q4 instead of being answered."
+              },
+              {
+                "id": "R7",
+                "status": "met",
+                "quote": "I would initialize none and use no planning tree.",
+                "note": "No planning tree, tool or file is created."
+              },
+              {
+                "id": "R8",
+                "status": "met",
+                "quote": "Nothing was run or read in the code, so every code-level fact is marked unverified.",
+                "note": "No invented libraries, class names or results appear, and unknowns are flagged as pending or as assumptions."
+              }
+            ]
+          },
+          "maintainer_note": "Second fresh round after the first round's partial; same inputs, same rubric; every row met."
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 11 turns, 53.4 s; grader claude-sonnet-5-5, a separate conversation"
+    },
+    {
+      "input_files": [
+        {
+          "path": "skills/fabius/SKILL.md",
+          "sha256": "4f8960dd75ed0479bff2dc1e3b153a3696189a03c165aa5ce3e242807429614d"
+        },
+        {
+          "path": "skills/fabius-parcus/SKILL.md",
+          "sha256": "8b77073586c987009d9ce0d8ca2f2bf03ee6b1be5e417c1a5558962c4d64a671"
+        },
+        {
+          "path": "skills/fabius-disciplina/SKILL.md",
+          "sha256": "2bebabfe1d6c0d470ae12c390ba482b8b6db10da531f0cc9893af54f61e18c70"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/spec-driven-change.md",
+          "sha256": "74cd5253bdce8ac3ea007af070e2e18b8113f2c0d292401df327dbe5bd2160ee"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/engineering-workflows.md",
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
+        },
+        {
+          "path": "skills/fabius-disciplina/references/codebase-and-proof.md",
+          "sha256": "6026ff5edb814044c47826fa8a0c19a2e8a30e084b9396d91ff8f1bb1025266a"
+        },
+        {
+          "path": "skills/fabius-archivum/SKILL.md",
+          "sha256": "933b5f93599ee73162a9eebd8982a2ac32240436cacad4440271b82bf721d828"
+        },
+        {
+          "path": "skills/fabius-archivum/references/project-records.md",
+          "sha256": "ab34b9f3e5468451d19902383cb18dba5537f9db9bda49efe116ae390f837750"
+        }
+      ],
+      "responses": [
+        {
+          "id": "change-record-verify-partial",
+          "prompt_sha256": "d26aee35208d3cfe1bfb06daece6bbdfdac7955b1c08b824701924bb0819e3f0",
+          "answer": "**Verdict I would give with this evidence: BLOCKED, never PASS.** The change has a runtime surface and nothing here drives it: there is no test output, no CI record and no browser. That is a gap in the environment, not a finding about the change. If reading the repository traces a behavior defect, the verdict becomes FAIL instead. SKIP does not apply, because the change has a runtime surface. I would not implement, fix, merge the delta or archive anything. Merging the delta into the current-behavior record is your decision.\n\nI have not yet read the repository, so I report no finding. Every finding below is conditional on what that read shows.\n\n## Dimensions\n\n**Completeness** asks whether all tasks are done, every requirement has code that reaches it, and every scenario has a check that reaches it.\n- **What it can establish:** from the repository, whether each requirement has code that reaches it, and whether each scenario has a test whose assertion I have read. A nearby test does not count.\n- **What it cannot establish:** that any test passes. A ticked box proves only that the task was marked done. A missing result is never a success.\n\n**Correctness** asks whether each added and changed requirement is implemented against its new wording, including the failure branches.\n- **What it can establish:** a static read of the code against that wording.\n- **What it cannot establish:** runtime behavior. No run output exists, so nothing here is observed to work.\n\n**Coherence** asks whether each recorded design decision is visible in the code, and whether the code took any decision the record does not know.\n- **What it can establish:** very little, because the design document was omitted (see below).\n\n## The four specific items\n\n- **Omitted design document:** I treat coherence as *not verified*, because the check applies and nothing usable supports it. I do not mark it *not applicable*. The record does not say \"no decision was taken\"; the document is simply missing. I also do not rebuild a design from the code and call the code coherent with it. The reason goes on the not-verified line.\n- **Two untested scenarios:** these are a completeness finding. Each is a scenario with no check that reaches it, and I cannot pass them. I name which two when I read the suite. I do not claim the behavior is wrong, because the facts show only that no test exists. Its grade rises with the consequence of the uncovered case: higher if one is the boundary of the changed limit, lower if it is peripheral. Doubt lowers the grade and never raises it.\n- **Modified limit (5 → 3 attempts):** I read the code against the full new wording.\n  - I look for the limit of 3 being enforced, and for the behavior at the third attempt versus the fourth, since off-by-one is the likely fault.\n  - I look for what happens once the limit is hit, including the failure branch.\n  - I search for leftovers of the old value of 5 in code, configuration, messages, docs and tests.\n  - A test asserting 5 that still passes, or a stale \"5\" in docs, is a finding.\n  - Without a run, this stays a static reading and is not PASS evidence.\n- **Removed requirement:** the pre-change text is not in the record, so I cannot search for the behavior it described. A search by name alone passes by accident when it uses the wrong vocabulary. The removal is therefore *not verified*, and it goes on the not-verified line. Hits from a name search would be leads to follow, not a verdict, and an empty search proves nothing. I also check whether the record states the reason for the removal and what dependents do instead. If the record omits either, that is a finding.\n\n## Grading and blocking\n\nI separate findings into behavior defects (each with a traced path), maintainability costs, and stylistic preferences. Each is graded from the demonstrated consequence.\n\nA finding informs and never blocks by itself. The verdict decides the close:\n- A traced behavior defect makes the verdict FAIL.\n- A lesser finding, such as the untested scenarios, does not block on its own. Accepting it is your decision, and I name that in the report.\n\nNot-applicable and not-verified items stay apart, and neither counts as a pass.\n\n## Closing line\n\n`BLOCKED — runtime surface not driven (no test output, no CI record, no browser).`\n\n`Not verified:` design coherence (design document omitted); removal of the requirement (pre-change text absent); runtime behavior of all five scenarios; the two scenarios with no test.",
+          "response_limits": "Supplied facts only; nothing executed, browsed or written; the responder read only the request and the named frozen inputs.",
+          "review": {
+            "verdict": "partial",
+            "rows": [
+              {
+                "id": "R1",
+                "status": "met",
+                "quote": "**Completeness** asks whether all tasks are done... **Correctness** asks whether each added and changed requirement is implemented... **Coherence** asks whether each recorded design decision is visible in the code",
+                "note": "Three separate dimensions, each with its own can and cannot establish."
+              },
+              {
+                "id": "R2",
+                "status": "partly met",
+                "quote": "I treat coherence as *not verified*, because the check applies and nothing usable supports it. I do not mark it *not applicable*.",
+                "note": "It correctly never treats the omission as a failure and reports the untested scenarios as not verified. But it rejects the rubric's 'not applicable' treatment of coherence."
+              },
+              {
+                "id": "R3",
+                "status": "met",
+                "quote": "I look for the limit of 3 being enforced, and for the behavior at the third attempt versus the fourth, since off-by-one is the likely fault.",
+                "note": "Checks against the new value and searches for leftovers of 5."
+              },
+              {
+                "id": "R4",
+                "status": "met",
+                "quote": "The removal is therefore *not verified*, and it goes on the not-verified line.",
+                "note": "Reports it not verified, treats name-search hits only as leads, and does not count it as passing."
+              },
+              {
+                "id": "R5",
+                "status": "met",
+                "quote": "A finding informs and never blocks by itself. The verdict decides the close:",
+                "note": "Findings are graded from consequence and are advisory. It does not archive the change."
+              },
+              {
+                "id": "R6",
+                "status": "met",
+                "quote": "`BLOCKED — runtime surface not driven (no test output, no CI record, no browser).`",
+                "note": "Uses the verdict words, includes a Not verified line, and says a ticked box proves only that the task was marked done."
+              },
+              {
+                "id": "R7",
+                "status": "met",
+                "quote": "I have not yet read the repository, so I report no finding.",
+                "note": "No invented run, file or finding."
+              }
+            ]
+          },
+          "maintainer_note": "Second fresh round after the first round's partial; same inputs, same rubric; R2 stays partly met for the same reason (not-applicable conditioned on the reason for the omission rather than on the choice), every other row met. Standing partial; see the first round's note."
+        }
+      ],
+      "model": "responder claude-sonnet-5-5, 11 turns, 78.1 s; grader claude-sonnet-5-5, a separate conversation"
     }
   ]
 }
