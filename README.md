@@ -1,6 +1,6 @@
-<div align="center">
+![Fabius — animated preview of the full 30-second marketing film](assets/readme/fabius-promo.gif)
 
-https://github.com/user-attachments/assets/b5859a6c-f4d2-4068-b9a9-cbb034d3afa3
+<div align="center">
 
 #### scout wide · strike narrow
 
@@ -9,6 +9,15 @@ https://github.com/user-attachments/assets/b5859a6c-f4d2-4068-b9a9-cbb034d3afa3
 <a href="#install-in-your-agent-app"><img src="assets/readme/cta-install.svg" alt="Install Fabius in your agent app" height="44" /></a>
 
 </div>
+
+<details>
+<summary>Watch the video with sound</summary>
+
+In GitHub Mobile, open this page in your browser to use the video player.
+
+https://github.com/user-attachments/assets/b5859a6c-f4d2-4068-b9a9-cbb034d3afa3
+
+</details>
 
 ## Put your skills to work together
 
