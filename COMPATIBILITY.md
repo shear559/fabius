@@ -1,4 +1,4 @@
-<!-- fabius-release: 3.5.1 -->
+<!-- fabius-release: 3.6.0 -->
 # Which agent apps Fabius was tested in
 
 Does it work in your app? Here is what was run, and what was not.

@@ -1,4 +1,4 @@
-<!-- fabius-release: 3.5.1 -->
+<!-- fabius-release: 3.6.0 -->
 # Verify the working system
 
 Fabius is a skill system by **Ariel Shemesh**. Explore the [interactive demonstrations](https://fabius-landing.vercel.app/#trials), [install the plugin](QUICKSTART.md), or inspect its [architecture](ARCHITECTURE.md).

@@ -1,7 +1,7 @@
 <!-- © 2026 shear559 · fabius · provenance fab1-6bbf82d118bce2cee9d7ac71f034fa26 · release evidence: PROVENANCE.md · github.com/shear559/fabius -->
 # The whitepaper
 
-**[fabius-as-a-system.pdf](fabius-as-a-system.pdf)** — *Fabius — one set of rules above every model (v3.5.1).* By Ariel Shemesh. The paper describes the fifteen-skill architecture, twenty-two parent routing rules and twenty-six argument blocks: twenty-two conditional mathematical arguments and four qualitative rules. It includes the working demonstrations and implementation-check entry points. It makes no comparative model-performance claim.
+**[fabius-as-a-system.pdf](fabius-as-a-system.pdf)** — *Fabius — one set of rules above every model (v3.6.0).* By Ariel Shemesh. The paper describes the fifteen-skill architecture, twenty-two parent routing rules and twenty-six argument blocks: twenty-two conditional mathematical arguments and four qualitative rules. It includes the working demonstrations and implementation-check entry points. It makes no comparative model-performance claim.
 
 ## Mathematical scope and review history
 

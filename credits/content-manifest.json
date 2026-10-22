@@ -1,8 +1,8 @@
 {
   "schema": "fabius-local-content/v1",
   "snapshot_date": "2026-10-22",
-  "source_head": "39eb016f2b95081eb6ac06a6988826c0ef5c56a6",
-  "registry_sha256": "d6a3a320e63ec6bab7d7cb36630deaf661ae65e96ad1c4e1e3a805ed97c1ce4f",
+  "source_head": "490a9244dcb743f1d9aa2304a509335dfbd00692",
+  "registry_sha256": "42cb10381067db9100a279f670e20652a0e17eebd537096aaea9e9071b1b20aa",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
   "entries": [
@@ -22,11 +22,11 @@
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12699,
-          "sha256": "58a8f4bf156b5668d1b1a94915deebe350eaad37574c9c71d43553c9e6d5c3db"
+          "size": 12706,
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
         }
       ],
-      "local_tree_sha256": "5bbef89a1552cd2eb3c266cf67a43528b67ed1904754f46eb6b26776f0a97797"
+      "local_tree_sha256": "4ab6c60279edf6f97082a30ddd0f4169fdc4de80f2412f864160fb1c580e6c95"
     },
     {
       "id": "archify-decor",
@@ -1136,11 +1136,11 @@
           "path": "skills/fabius-disciplina/references/spec-driven-change.md",
           "kind": "file",
           "mode": "0644",
-          "size": 11963,
-          "sha256": "5125e15172eddb2c6e7c57395ae19266e3eaf69e2eafb52f7a703b1669db76ea"
+          "size": 11946,
+          "sha256": "74cd5253bdce8ac3ea007af070e2e18b8113f2c0d292401df327dbe5bd2160ee"
         }
       ],
-      "local_tree_sha256": "89ad9020f86b4e396a42865a5904702472fc5c5f73fbac710673617d346cec3c"
+      "local_tree_sha256": "a7353d83974aac0e5e2d538d4bf6c8774107b565135b96aae1c37a2cc7125935"
     },
     {
       "id": "rea-disciplina",
@@ -1390,11 +1390,11 @@
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12699,
-          "sha256": "58a8f4bf156b5668d1b1a94915deebe350eaad37574c9c71d43553c9e6d5c3db"
+          "size": 12706,
+          "sha256": "2864fad7280b02ce88680aa0dacb7bacaace2a99ac30e8547aa2690cc09cd70f"
         }
       ],
-      "local_tree_sha256": "6d497087d7113599f5b6339f9d36a79a166e6a41286d02c73f447c1d496b9621"
+      "local_tree_sha256": "0d2e31f824cfbfc2cce7cb4941d5f542be9621a29323a5766d1bd399e446cc35"
     },
     {
       "id": "system-prompts-leaks-fabius",
