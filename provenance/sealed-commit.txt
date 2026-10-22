@@ -1,9 +1,9 @@
 fabius — sealed provenance record
 author:       shear559
 repository:   github.com/shear559/fabius
-sealed (UTC): 2026-10-15T17:24:56Z
-commit:       044d48d6f5de7d236c4aca97e3bbc270aa2b156b
-tree:         fbb62a6f5ea25b726d4847e262ba5ea6efde1ec7
+sealed (UTC): 2026-10-22T11:37:46Z
+commit:       238626a9a9c5e424851b21b5d0f929f5e17f84a1
+tree:         cc18933f9ca039b5d4a5abfb7ec558a6b5c451e2
 object-format: sha1 (git) · the .ots anchor over this file is sha256
 fingerprint:  fab1-6bbf82d118bce2cee9d7ac71f034fa26
 
