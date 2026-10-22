@@ -22,7 +22,7 @@ Two sanctioned shapes, one set of conventions. Decide which is in play *before* 
   outputs/             # generated artifacts (decks, charts, reports) — derivative
 ```
 
-**B. In-project store** — one project, memory beside the code: a `MEMORY.md` index + `log.md` + topic pages, growing into `wiki/` (`decisions/` · `gotchas/` · `<topic>.md`) only once the page count demands it. A behavior record kept beside the code — current-behavior specifications plus archived change folders — is a store of this shape; the form of one change record is Disciplina's [spec-driven-change.md](../../fabius-disciplina/references/spec-driven-change.md).
+**B. In-project store** — one project, memory beside the code: a `MEMORY.md` index + `log.md` + topic pages, growing into `wiki/` (`decisions/` · `gotchas/` · `<topic>.md`) only once the page count demands it. A behavior record kept beside the code — current-behavior specifications plus archived change folders — is the code's own record, not a second project store: the page keeps state and decisions (§6 splits by owner), the behavior record keeps what the system does, and §11 governs its schema; the form of one change record is Disciplina's [spec-driven-change.md](../../fabius-disciplina/references/spec-driven-change.md).
 
 Never both for one project. A hub that already holds the project's page IS the answer: no second index is created in that repo, and nothing about the project is copied into the harness's own memory.
 

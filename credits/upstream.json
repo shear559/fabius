@@ -1054,7 +1054,7 @@
       "pinned_at": "2026-10-22",
       "notice_required": false,
       "sync": "manual",
-      "notes": "Studied for the change record agreed before code: intent and scope, behavior-first requirements with scenarios, the delta against current behavior, tasks bound to checks, plan review before code, advisory verification across completeness, correctness and coherence, reconciliation and the archive as the record of truth; reviewed head of 2026-10-20 after upstream release v1.14.3 (2026-10-17); mechanisms re-expressed, no CLI, templates, schemas, skills or prompt text carried."
+      "notes": "Studied for the change record agreed before code: intent and scope, behavior-first requirements with scenarios, the delta against current behavior, tasks bound to checks, plan review before code, advisory verification across completeness, correctness and coherence, reconciliation, then archiving that merges the delta into the specs, which are the source of truth, and keeps the change folder as history; reviewed head of 2026-10-20 after upstream release v1.14.3 (2026-10-17); mechanisms re-expressed, no CLI, templates, schemas, skills or prompt text carried."
     }
   ]
 }

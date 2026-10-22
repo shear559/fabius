@@ -154,10 +154,10 @@ if (!compatibilityRequired) {
 }
 check("version matrix: every paper template marker matches", templateVersions.length >= 3 && templateVersions.every((v) => v === version),
   templateVersions.join(", ") || "none");
-// The BENCHMARKS.md structural table once hard-coded the version beside "valid semver"; the
+// The checks table (formerly BENCHMARKS.md) once hard-coded the version beside "valid semver"; the
 // marker is the single source now. A literal there, if one returns, must equal the marker.
 const benchmarkLiteral = benchmarks.match(/version is valid semver \(`(\d+\.\d+\.\d+)`\)/)?.[1] || "";
-check("BENCHMARKS.md structural table carries no stale version literal beside the release marker",
+check(`${checksPath} structural table carries no stale version literal beside the release marker`,
   !benchmarkLiteral || benchmarkLiteral === benchmarkVersion,
   benchmarkLiteral ? `${benchmarkLiteral} / marker ${benchmarkVersion || "missing"}` : "no literal; the marker is the single source");
 
