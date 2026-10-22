@@ -26,7 +26,7 @@ The clarifying-question rule: ask only when the answer changes the implementatio
 
 ## Build a plan that can fail
 
-For multi-step work, connect each step to a verification observation: `step → verify`. Name inputs that depend on earlier results before scheduling later work. Batch independent reads and revise only the affected portion when evidence changes. Revisit remaining acceptance conditions during long runs so incidental subproblems do not replace the objective.
+For multi-step work, connect each step to a verification observation: `step → verify`. Name inputs that depend on earlier results before scheduling later work. Batch independent reads and revise only the affected portion when evidence changes. Revisit remaining acceptance conditions during long runs so incidental subproblems do not replace the objective. For a feature or behavior change to an existing system, write the change record before code — intent and scope, the behavior delta as requirements with scenarios, tasks each bound to a check — and review it while it is still words; its shape and its verification are in [spec-driven-change.md](references/spec-driven-change.md).
 
 Choose an early vertical slice that reaches a useful output. Use [engineering-workflows.md](references/engineering-workflows.md) for ambiguity, prototyping, implementation, review, integration and handoff. Keep a prototype tied to one uncertainty; it does not acquire production guarantees by working once.
 

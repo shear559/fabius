@@ -1,6 +1,6 @@
 {
   "schema": "fabius-upstream/v1",
-  "generated": "2026-10-17",
+  "generated": "2026-10-22",
   "entries": [
     {
       "id": "nanoclaw-code-architect",
@@ -1038,6 +1038,23 @@
       "notice_required": false,
       "sync": "manual",
       "notes": "Existing credited source, now pinned: process-group cleanup must finish even after parent exit and pipe closure; concrete surviving-descendant probe. Changelog informs the mechanism; runtime not imported."
+    },
+    {
+      "id": "openspec-disciplina",
+      "repo": "https://github.com/Fission-AI/OpenSpec",
+      "owner": "Fission-AI",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "fabius_layer": "fabius-disciplina",
+      "fabius_paths": [
+        "skills/fabius-disciplina/references/spec-driven-change.md"
+      ],
+      "pinned_commit": "c04f30e57817422c1a107ea00a682c1d29a423ca",
+      "pinned_version": null,
+      "pinned_at": "2026-10-22",
+      "notice_required": false,
+      "sync": "manual",
+      "notes": "Studied for the change record agreed before code: intent and scope, behavior-first requirements with scenarios, the delta against current behavior, tasks bound to checks, plan review before code, advisory verification across completeness, correctness and coherence, reconciliation and the archive as the record of truth; reviewed head of 2026-10-20 after upstream release v1.14.3 (2026-10-17); mechanisms re-expressed, no CLI, templates, schemas, skills or prompt text carried."
     }
   ]
 }

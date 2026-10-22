@@ -35,7 +35,7 @@ Run it in order, and never skip the hinge: **data → train / fine-tune → EVAL
 
 ## 3. Evaluation is the load-bearing step — eval before you ship, eval to compare
 
-A model claim without an eval is a vibe. The discipline is fabius's own benchmark posture (see the repo's `BENCHMARKS.md`), applied to every model decision:
+A model claim without an eval is a vibe. The discipline is fabius's own evidence posture (see the repo's `CHECKS.md`), applied to every model decision:
 
 - **A held-out, representative eval set** excluded from training and tuning. Document contamination uncertainty for externally trained models. Held-out performance estimates behavior on the sampled distribution; distribution shifts and untested failure modes still require production monitoring.
 - **The metric matches the job**: classification → precision/recall/F1 at the operating threshold (accuracy lies on imbalance); generation/LLM → a task rubric scored by a **blind judge** (never told which system produced the answer) plus an objective signal (length, exact-match, latency) that can't be flattered.

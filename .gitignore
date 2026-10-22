@@ -12,10 +12,6 @@ __pycache__/
 .env.*
 evals/results.json
 evals/results.*.json
-!evals/results.v3.json
-!evals/results.v5.json
-!evals/results.v6.json
-!evals/results.v7.json
 evals/structural.json
 
 # partial / temp downloads
@@ -23,7 +19,6 @@ evals/structural.json
 *.crdownload
 *.part
 *.partial
-!evals/results.benchmark.json
 
 # Full BIP-340 and NIP-44 vector files are fetched on demand and excluded.
 # The small retained BIP-173 literal set is attributed in credits/retained-test-data.json.
@@ -33,8 +28,8 @@ runtime/test/vectors/
 *.ots.bak
 
 # Internal working notes, unpublished by design.
-# Both files are titled "synapse (on the fabius rules) -> ... roadmap" and describe a
-# SEPARATE project's worker internals, commit SHAs, env-var names and file paths.
+# Both files are a separate project's roadmap notes and describe that project's
+# worker internals, commit SHAs, env-var names and file paths.
 # No Fabius surface links to or describes this separate project.
 # They were tracked in the public repo until 2026-08-26. Neither is in the 18-file
 # content seal, neither is referenced by README/ARCHITECTURE/AGENTS/CORPUS or any gate,

@@ -1,8 +1,8 @@
 {
   "schema": "fabius-local-content/v1",
-  "snapshot_date": "2026-10-20",
-  "source_head": "d4bcd648510d436ae2e8b6ba857208ed9978fdb9",
-  "registry_sha256": "5f04b8c0dbb465ed68c501b60f5a80f5a8d7ea8906da0a4202ee3f9615219d84",
+  "snapshot_date": "2026-10-22",
+  "source_head": "39eb016f2b95081eb6ac06a6988826c0ef5c56a6",
+  "registry_sha256": "d6a3a320e63ec6bab7d7cb36630deaf661ae65e96ad1c4e1e3a805ed97c1ce4f",
   "meaning": "Local inventory at snapshot_date, not upstream originality, import date, or proof of an upstream revision. Null historical pins remain unknown. Symlink hashes cover their literal target bytes, not dereferenced contents.",
   "tree_hash_method": "SHA-256 of UTF-8 canonical JSON (sorted keys, compact separators, one trailing LF) of path-sorted file records.",
   "entries": [
@@ -22,11 +22,11 @@
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12482,
-          "sha256": "ada78befcde21f39cf140ebf03485bdc5e01b651728d90c9c9717392716d4448"
+          "size": 12699,
+          "sha256": "58a8f4bf156b5668d1b1a94915deebe350eaad37574c9c71d43553c9e6d5c3db"
         }
       ],
-      "local_tree_sha256": "4cd98c953fe93d33531c5c559d6c1195c26264dff7016379e7cd61b9d4939d76"
+      "local_tree_sha256": "5bbef89a1552cd2eb3c266cf67a43528b67ed1904754f46eb6b26776f0a97797"
     },
     {
       "id": "archify-decor",
@@ -185,8 +185,8 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47770,
-          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
+          "size": 47740,
+          "sha256": "c18b73473ef64c04cac03cd13e0a5761e6fc9ff1e5c45214b6f864f9de204e66"
         },
         {
           "path": "skills/fabius-praesidium/references/supply-chain-and-ai-artifacts.md",
@@ -196,7 +196,7 @@
           "sha256": "3abf1c1c0db661ffacafb58fadaf929b88e0c0b8ece8269e70ded56b0c01482c"
         }
       ],
-      "local_tree_sha256": "c9acda190d1c92de133c5acba4b92a416e256508e001bb2a99d564d6216928a1"
+      "local_tree_sha256": "f8e7f26cce984a8e56816433c604677f9dd34c35662915c676bcd703ca8e56d2"
     },
     {
       "id": "book-to-skill-archivum",
@@ -244,11 +244,11 @@
           "path": "skills/fabius-cohors/references/agent-patterns.md",
           "kind": "file",
           "mode": "0644",
-          "size": 48210,
-          "sha256": "1324933e46b808153fadcabf613413868b2d1b535ac05047221a7405403942cc"
+          "size": 48101,
+          "sha256": "35c2cca7ee98d98af1ddecb5bd74527739cbbc6bc96e99138a59490e2882e057"
         }
       ],
-      "local_tree_sha256": "b448754c7be653f6ead3cb2e4180715061906d217169c6a023bf16d79dcd4445"
+      "local_tree_sha256": "9ba35fb41756dea61e9aa46ee588cf993cdb38ad31cfe60afdf03de59cb8cb0b"
     },
     {
       "id": "book-to-skill-fabius",
@@ -442,11 +442,11 @@
           "path": "skills/fabius/references/routing-policy.md",
           "kind": "file",
           "mode": "0644",
-          "size": 51857,
-          "sha256": "fa5b9c986132fd26e1270a5843dbc0ea54775431e7251e752745c98c05a6353d"
+          "size": 51956,
+          "sha256": "9f520ee08c9f81dd536dcc635632d603a1a0b9095d1436582d1ba384258b5918"
         }
       ],
-      "local_tree_sha256": "32206807602f82b8e4d10fa51fa83a2fb8b70e5666c9ff5bb94e96db8ca59dba"
+      "local_tree_sha256": "87d91e1a9c8924eff4d1ad854f72bc8c0aaf58768a20fb3396bb2c2629da5bd5"
     },
     {
       "id": "i-have-adhd-parcus",
@@ -796,11 +796,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47770,
-          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
+          "size": 47740,
+          "sha256": "c18b73473ef64c04cac03cd13e0a5761e6fc9ff1e5c45214b6f864f9de204e66"
         }
       ],
-      "local_tree_sha256": "22fb02a684cba461ddfbf4bf69331a830046163ad1bab30b4dad65178bad4756"
+      "local_tree_sha256": "6a141c15fece246e1e189e79416e606937dab971bfb18dfa1480a7f58adc6a23"
     },
     {
       "id": "open-generative-ai-decor",
@@ -1010,11 +1010,11 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47770,
-          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
+          "size": 47740,
+          "sha256": "c18b73473ef64c04cac03cd13e0a5761e6fc9ff1e5c45214b6f864f9de204e66"
         }
       ],
-      "local_tree_sha256": "22fb02a684cba461ddfbf4bf69331a830046163ad1bab30b4dad65178bad4756"
+      "local_tree_sha256": "6a141c15fece246e1e189e79416e606937dab971bfb18dfa1480a7f58adc6a23"
     },
     {
       "id": "open-seo-fabius",
@@ -1114,11 +1114,33 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47770,
-          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
+          "size": 47740,
+          "sha256": "c18b73473ef64c04cac03cd13e0a5761e6fc9ff1e5c45214b6f864f9de204e66"
         }
       ],
-      "local_tree_sha256": "22fb02a684cba461ddfbf4bf69331a830046163ad1bab30b4dad65178bad4756"
+      "local_tree_sha256": "6a141c15fece246e1e189e79416e606937dab971bfb18dfa1480a7f58adc6a23"
+    },
+    {
+      "id": "openspec-disciplina",
+      "repo": "https://github.com/Fission-AI/OpenSpec",
+      "license": "MIT",
+      "consumed_as": "informed-by",
+      "pinned_commit": "c04f30e57817422c1a107ea00a682c1d29a423ca",
+      "pinned_version": null,
+      "pinned_at": "2026-10-22",
+      "local_paths": [
+        "skills/fabius-disciplina/references/spec-driven-change.md"
+      ],
+      "files": [
+        {
+          "path": "skills/fabius-disciplina/references/spec-driven-change.md",
+          "kind": "file",
+          "mode": "0644",
+          "size": 11963,
+          "sha256": "5125e15172eddb2c6e7c57395ae19266e3eaf69e2eafb52f7a703b1669db76ea"
+        }
+      ],
+      "local_tree_sha256": "89ad9020f86b4e396a42865a5904702472fc5c5f73fbac710673617d346cec3c"
     },
     {
       "id": "rea-disciplina",
@@ -1234,8 +1256,8 @@
           "path": "skills/fabius-praesidium/references/hardening-guides.md",
           "kind": "file",
           "mode": "0644",
-          "size": 47770,
-          "sha256": "6140574aed42a8e154541674be7c6bd57e38f680c66ce81f596591a19552dd81"
+          "size": 47740,
+          "sha256": "c18b73473ef64c04cac03cd13e0a5761e6fc9ff1e5c45214b6f864f9de204e66"
         },
         {
           "path": "skills/fabius-praesidium/references/security-playbook.md",
@@ -1252,7 +1274,7 @@
           "sha256": "cfb0728a439a817010564bdf0d301f5321beb06890b1851b555589f3a1f629f0"
         }
       ],
-      "local_tree_sha256": "39fc957eb85d0519e5dbcb3c81f885d7106d8b292b9b979a305ad4c11f7e9f9f"
+      "local_tree_sha256": "c6b814f3152a9a9563380db4a6ceca8daa9fad7c1f571c2395f38efb4c8b19c8"
     },
     {
       "id": "system-prompts-leaks-archivum",
@@ -1301,8 +1323,8 @@
           "path": "skills/fabius-cohors/references/agent-patterns.md",
           "kind": "file",
           "mode": "0644",
-          "size": 48210,
-          "sha256": "1324933e46b808153fadcabf613413868b2d1b535ac05047221a7405403942cc"
+          "size": 48101,
+          "sha256": "35c2cca7ee98d98af1ddecb5bd74527739cbbc6bc96e99138a59490e2882e057"
         },
         {
           "path": "skills/fabius-cohors/references/local-agent-runtime.md",
@@ -1312,7 +1334,7 @@
           "sha256": "8fa0d236b46c3c9a6ffd60d5ee38f116fbbdc51c6653ad10ee1544d0674627b2"
         }
       ],
-      "local_tree_sha256": "58e8860e77df96282ce89bfcb12b5cd2f24119703be6352cfaff1cefc7f4b293"
+      "local_tree_sha256": "1e0a6f54d2339badc3ebdb23b113c58cacc6bfd665e55016ad2260f6c4cf5182"
     },
     {
       "id": "system-prompts-leaks-decor",
@@ -1368,11 +1390,11 @@
           "path": "skills/fabius-disciplina/references/engineering-workflows.md",
           "kind": "file",
           "mode": "0644",
-          "size": 12482,
-          "sha256": "ada78befcde21f39cf140ebf03485bdc5e01b651728d90c9c9717392716d4448"
+          "size": 12699,
+          "sha256": "58a8f4bf156b5668d1b1a94915deebe350eaad37574c9c71d43553c9e6d5c3db"
         }
       ],
-      "local_tree_sha256": "879479563d20cfe7ecfa10e9eedfe869bbaeb435cf40f69ff85be1eb61d936d1"
+      "local_tree_sha256": "6d497087d7113599f5b6339f9d36a79a166e6a41286d02c73f447c1d496b9621"
     },
     {
       "id": "system-prompts-leaks-fabius",

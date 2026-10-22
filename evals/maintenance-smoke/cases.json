@@ -172,6 +172,14 @@
     {
       "id": "unicode-generated-output",
       "prompt": "Use Fabius to decide whether a generated help article is ready for delivery. It contains valid Persian words with meaningful U+200C non-joiners, valid emoji presentation selectors, and intentional balanced bidi isolates around English product names inside Hebrew sentences. A build gate proposes stripping all invisible characters because the article was generated, while the raw input archive would stay intact. No malformed or hostile span has been identified. Explain the output decision and the checks you would require; do not rewrite the article or invent scan results."
+    },
+    {
+      "id": "change-record-before-code",
+      "prompt": "Plan this change as a written change record only; nothing is implemented and no file is created. Supplied facts: an existing web application has password login with a 'remember me' option and a 60-minute idle timeout; its test suite covers login but has no test for the idle timeout; the project uses no planning tool and nobody asked for one. The request: add two-factor authentication, remove 'remember me', shorten the idle timeout to 15 minutes, and — the product manager adds — redesign the settings page while you are in there. State what the record would contain and in what order it is reviewed; which requirements you would write and how each is checked; what you keep out of the record and why; how the removed behavior is later shown to be gone; and which questions you would ask before building. Do not invent a library, a class name, a test result or a fact the request does not supply."
+    },
+    {
+      "id": "change-record-verify-partial",
+      "prompt": "Use Fabius to verify a change that someone else built, and report; do not implement, fix or archive anything. Supplied facts: the change record has a proposal, delta requirements for one area (two added requirements, one modified requirement that changed a limit from 5 to 3 attempts, one removed requirement), and a task list in which every box is ticked; the design document was deliberately omitted; only the task list and the repository are available to you — no test run output, no CI record, no browser; two of the five scenarios have no test anywhere in the suite; the pre-change text of the removed requirement is not in the record. State the dimensions you check, what each one can and cannot establish from this evidence, how you treat the omitted design document, the untested scenarios, the modified limit and the removed requirement, how findings are graded and whether they block, and the exact verdict words you would use. Do not invent a test result, a file or a finding the facts do not support."
     }
   ]
 }
