@@ -1,6 +1,6 @@
-<img src="https://raw.githubusercontent.com/shear559/fabius/main/assets/readme/fabius-promo-inline.gif" alt="Fabius" width="100%" />
-
 <div align="center">
+
+<img src="assets/fabius-contour.webp" alt="Fabius" width="100%" />
 
 #### scout wide · strike narrow
 
