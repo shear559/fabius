@@ -1,10 +1,23 @@
-import { test } from 'node:test';
+import { test, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, rmSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { reserveCallBudget } from '../src/providers.mjs';
-import { run } from '../src/loop.mjs';
+
+// Like the other runtime tests: point FABIUS_HOME at a disposable directory BEFORE the
+// runtime modules load. A static import would evaluate config.mjs first, and run()
+// would then save its run record into the user's real ~/.fabius/runs.
+const home = mkdtempSync(join(tmpdir(), 'fabius-budget-home-'));
+process.env.FABIUS_HOME = home;
+after(() => rmSync(home, { recursive: true, force: true }));
+
+const { HOME } = await import('../src/config.mjs');
+const { reserveCallBudget } = await import('../src/providers.mjs');
+const { run } = await import('../src/loop.mjs');
+
+test('the runtime resolves its home to the disposable directory, not the user home', () => {
+  assert.equal(HOME, home);
+});
 
 test('a call is sized before dispatch so its worst case fits the remaining wall', () => {
   const fit = reserveCallBudget({
@@ -38,5 +51,6 @@ test('missing provider usage is charged conservatively, never as a free call', a
   assert.equal(res.budget.estimatedCalls, 1);
   assert.ok(res.cost > 0, 'missing usage cannot make the call free');
   assert.ok(res.budget.reservedUsd <= res.budget.limitUsd);
+  assert.equal(readdirSync(join(home, 'runs')).length, 1, 'the run record lands in the disposable home');
   rmSync(jail, { recursive: true, force: true });
 });

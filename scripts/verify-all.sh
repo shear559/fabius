@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # One read-only entry point for the repository's deterministic gates.
 set -uo pipefail
+# Read-only: no Python launched by any gate (including the OpenTimestamps client) writes bytecode caches.
+export PYTHONDONTWRITEBYTECODE=1
 cd "$(git rev-parse --show-toplevel 2>/dev/null || (cd "$(dirname "$0")/.." && pwd))"
 
 mode=dev
@@ -48,7 +50,7 @@ else
   skipped=$((skipped+1))
 fi
 run_gate "base eval harness selftest" node evals/eval.mjs --selftest
-run_gate "portable eval harness selftest" python3 evals/portable_eval.py --selftest
+run_gate "portable eval harness selftest" python3 -B evals/portable_eval.py --selftest
 run_gate "runtime unit/integration tests" node --test runtime/test/*.test.mjs
 run_gate "Concilium deterministic protocol selftest" node skills/fabius-concilium/references/council.mjs --selftest
 run_gate "repo-local package truth" node scripts/verify-package.mjs

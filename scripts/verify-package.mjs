@@ -27,14 +27,20 @@ check("repo-local boundary is explicit in package description", /repo-local/i.te
 check("package uses an explicit file allowlist", Array.isArray(pkg.files) && pkg.files.length > 0, `${pkg.files?.length || 0} patterns`);
 
 let packed = null;
+// Read-only gate: the dry run gets a disposable npm cache and writes no debug log or
+// update-check stamp, so nothing lands in the user's ~/.npm.
+const npmCache = mkdtempSync(join(tmpdir(), "fabius-npm-cache-"));
 try {
   const text = execFileSync("npm", ["pack", "--dry-run", "--json", "--ignore-scripts"], {
     cwd: join(ROOT, "runtime"), encoding: "utf8", stdio: ["ignore", "pipe", "pipe"],
+    env: { ...process.env, npm_config_cache: npmCache, npm_config_logs_max: "0", npm_config_update_notifier: "false" },
   });
   packed = JSON.parse(text)[0];
   check("npm dry-run can enumerate the repo-local component", !!packed && Array.isArray(packed.files), `${packed?.entryCount || 0} files`);
 } catch (error) {
   check("npm dry-run can enumerate the repo-local component", false, String(error.stderr || error.message || error));
+} finally {
+  rmSync(npmCache, { recursive: true, force: true });
 }
 
 if (packed) {
