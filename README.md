@@ -1,4 +1,4 @@
-![Fabius](assets/readme/fabius-promo.gif)
+![Fabius](https://raw.githubusercontent.com/shear559/fabius/main/assets/readme/fabius-promo-inline.gif)
 
 <div align="center">
 
