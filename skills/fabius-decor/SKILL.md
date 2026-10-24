@@ -20,7 +20,7 @@ metadata:
 
 Never inline a raw hex or px. Name a token once, reference it everywhere:
 
-- **Color** — one `accent`, neutral `text` and `muted`, `canvas`/`surface` backgrounds, and `border`/`focus` roles. Keep functional controls monochrome; use accent for emphasis.
+- **Color** — one primary `accent`, neutral `text` and `muted`, `canvas`/`surface` backgrounds, and `border`/`focus` roles. Add supporting brand colors only with recorded roles; keep the primary action unmistakable.
 - **Type scale** — a fixed ladder of sizes and weights (e.g. 300/400/600/700; skip 500 if the brand does). Display sizes carry **negative letter-spacing** for the tight modern feel; body runs 16–17px with generous line-height (~1.5). Set the ragging too — `text-wrap: balance` on headings, never a `<br>`.
 - **Spacing** — one base unit (8px); every structural step snaps to it (8 / 12 / 16 / 24 / 32 / 48 / 80). Section padding runs large (64–80px).
 - **Radius** — a small fixed set (e.g. sm / md / lg / pill). One grammar per element type; don't mix radii at random.
@@ -28,7 +28,7 @@ Never inline a raw hex or px. Name a token once, reference it everywhere:
 
 ## The laws — break these and it reads amateur
 
-1. **One accent color.** Monochrome controls, consistent focus, one emphasis color. Data colors must carry meaning.
+1. **One primary accent by default.** Keep controls and focus consistent. A recorded brand may add supporting colors with explicit Role/Never boundaries; never scatter competing accents. Data colors must carry meaning.
 2. **Tokens, never inline values.** Change a token once and the whole surface follows. Inline hex is where drift begins.
 3. **Type carries the hierarchy, not boxes.** Size + weight + spacing set the rank. Reach for a border or a background only after type has failed.
 4. **Whitespace is a feature.** Crowded reads as cheap. Give headlines air (≥48–64px), keep content off the edges, let the primary thing breathe.
@@ -48,6 +48,7 @@ External tools and materials carry their own terms; inspect before use. Page in 
 - **Icons** — one family, one stroke, `currentColor`→token, static by default; systems, animated icons, brand marks, emoji, flags → `references/icons.md`.
 - **Motion** — climb the native ladder (`@starting-style` · View Transitions · scroll-driven · WAAPI) before a JS engine; reduced-motion default-on → `references/motion-libraries.md`.
 - **Materials** — illustration, 3D, texture, gradient, fonts, color tooling, HuggingFace pipeline; recolor to accent, license-honest → `references/design-assets.md`.
+- **Granular product design** — for an approved illustrated technology/product direction: grain, a coordinated supporting palette, outlined geometry and a standalone motion scene → [granular-product-design.md](references/granular-product-design.md). Adapt the recipe to the actual brand; do not impose it on unrelated surfaces.
 - **Right-to-left / bidirectional** (Hebrew · Arabic · Persian · Urdu) — author *logical* not physical, `dir` on root, isolate every LTR run (`<bdi>`), mirror directional icons only → `references/rtl-bidi.md`.
 
 ## Visualize data — charts, graphs, diagrams
@@ -101,7 +102,7 @@ Name the surface mode (persuade · operate · read · experience) and the reques
 
 Before calling UI done:
 
-- [ ] Laws 1–8 hold: one accent, tokens only, one type ladder (body ≥16px), base-unit spacing, calm transform/opacity motion.
+- [ ] Laws 1–8 hold: one primary accent or a documented brand palette, tokens only, one type ladder (body ≥16px), base-unit spacing, calm transform/opacity motion.
 - [ ] Mobile layout designed first and actually checked at ~375px.
 - [ ] Focus-visible, never obscured; **≥ 4.5:1** body text, **≥ 3:1** UI parts, icons, chart series (WCAG 2.2 AA).
 - [ ] Verified **live** in a browser, not just read in the code (`fabius-disciplina`'s prove rule).
